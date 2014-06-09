@@ -55,8 +55,9 @@
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
+    [self.jogador removeActionForKey:@"andar"];
+    [self.jogador removeActionForKey:@"animandoAndando"];
     
-    [self.jogador removeAllActions];
 }
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     

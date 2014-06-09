@@ -12,6 +12,7 @@
 
 {
     NSMutableArray *framesAndando;
+    NSMutableArray *framesPulando;
 }
 
 //variável int - Define a vida do jogador
@@ -27,7 +28,7 @@
 @property int respeito;
 
 @property BOOL estaNoChao;
-    
+
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
 -(void)andarParaDirecao:(NSString*)direcao;

@@ -23,8 +23,10 @@
         self.physicsBody.restitution = 0;
         
         SKTextureAtlas *pastaFramesAndando= [SKTextureAtlas atlasNamed:@"Andando"];
+        SKTextureAtlas *pastaFramesPulando= [SKTextureAtlas atlasNamed:@"Pulando"];
         
         framesAndando = [[NSMutableArray alloc]init];
+        framesPulando = [[NSMutableArray alloc]init];
         
         int numImagens = pastaFramesAndando.textureNames.count;
         for (int i=1; i <= numImagens; i++) {
@@ -32,7 +34,14 @@
             SKTexture *temp = [pastaFramesAndando textureNamed:textureName];
             [framesAndando addObject:temp];
         }
-
+        
+        numImagens = pastaFramesPulando.textureNames.count;
+        for (int i=1; i <= numImagens; i++) {
+            NSString *textureName = [NSString stringWithFormat:@"Jumping%d", i];
+            SKTexture *temp = [pastaFramesPulando textureNamed:textureName];
+            [framesPulando addObject:temp];
+        }
+        
         
     }
     
@@ -44,6 +53,8 @@
 
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
+    
+    
     
     //variavel SKAction- define a direcao do movimento
     SKAction *movimentar =[[SKAction alloc]init];
@@ -57,11 +68,11 @@
         movimentar =[SKAction moveByX:-50 y:0 duration:1.0];
         self.xScale = fabs(self.xScale)* -1;
     }
-    
+    [self removeActionForKey:@"animandoPulando"];
     [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
                                                                    timePerFrame:0.1f
                                                                          resize:NO
-                                                                        restore:YES]] withKey:@"animando"];
+                                                                        restore:YES]] withKey:@"animandoAndando"];
     
     //anda para direcao
     [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
@@ -73,7 +84,11 @@
     self.physicsBody.velocity = CGVectorMake(0, 0);
     [self.physicsBody applyImpulse:CGVectorMake(0, 25)];
     self.estaNoChao = false;
-
+    [self removeActionForKey:@"animandoPulando"];
+    [self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.2f
+                                           resize:NO
+                                          restore:YES] withKey:@"animandoPulo"];
+    
 }
 -(void)interagir{
     
