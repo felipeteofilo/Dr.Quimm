@@ -29,12 +29,9 @@
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
 		9433F5CD1937B40A00E55E73 /* cenaTeste1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5CC1937B40A00E55E73 /* cenaTeste1.jpg */; };
-		9433F5D01937B48800E55E73 /* DQTela.m in Sources */ = {isa = PBXBuildFile; fileRef = 9433F5CF1937B48800E55E73 /* DQTela.m */; };
-		9433F5D31937B49D00E55E73 /* DQControleTela.m in Sources */ = {isa = PBXBuildFile; fileRef = 9433F5D21937B49D00E55E73 /* DQControleTela.m */; };
 		9433F5D61937B4B000E55E73 /* DQTesteCenaLeo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9433F5D51937B4B000E55E73 /* DQTesteCenaLeo.m */; };
 		9433F5D91937B4BB00E55E73 /* personagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5D81937B4BB00E55E73 /* personagem.png */; };
 		9433F5DB1937B77800E55E73 /* imagemTestePadrao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5DA1937B77800E55E73 /* imagemTestePadrao.jpg */; };
-		94AE258919350CC2003E6015 /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 94AE258819350CC2003E6015 /* DQFala.m */; };
 		CDE817F31933C790003516E7 /* DQJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE817F21933C790003516E7 /* DQJogador.m */; };
 /* End PBXBuildFile section */
 
@@ -77,16 +74,10 @@
 		94080ECE1933BA2A0024FB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
 		9433F5CC1937B40A00E55E73 /* cenaTeste1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cenaTeste1.jpg; sourceTree = "<group>"; };
-		9433F5CE1937B48800E55E73 /* DQTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTela.h; sourceTree = "<group>"; };
-		9433F5CF1937B48800E55E73 /* DQTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTela.m; sourceTree = "<group>"; };
-		9433F5D11937B49D00E55E73 /* DQControleTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleTela.h; sourceTree = "<group>"; };
-		9433F5D21937B49D00E55E73 /* DQControleTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleTela.m; sourceTree = "<group>"; };
 		9433F5D41937B4B000E55E73 /* DQTesteCenaLeo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTesteCenaLeo.h; sourceTree = "<group>"; };
 		9433F5D51937B4B000E55E73 /* DQTesteCenaLeo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTesteCenaLeo.m; sourceTree = "<group>"; };
 		9433F5D81937B4BB00E55E73 /* personagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personagem.png; sourceTree = "<group>"; };
 		9433F5DA1937B77800E55E73 /* imagemTestePadrao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imagemTestePadrao.jpg; sourceTree = "<group>"; };
-		94AE258719350CC2003E6015 /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
-		94AE258819350CC2003E6015 /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		CDE817F11933C790003516E7 /* DQJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJogador.h; sourceTree = "<group>"; };
 		CDE817F21933C790003516E7 /* DQJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJogador.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,16 +143,10 @@
 			children = (
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
 				94080EB01933BA290024FB94 /* DQAppDelegate.m */,
-				9433F5D11937B49D00E55E73 /* DQControleTela.h */,
-				9433F5D21937B49D00E55E73 /* DQControleTela.m */,
-				94AE258719350CC2003E6015 /* DQFala.h */,
-				94AE258819350CC2003E6015 /* DQFala.m */,
 				752FB1D01935146300DB4328 /* DQFlorestaParte1.h */,
 				752FB1D11935146300DB4328 /* DQFlorestaParte1.m */,
 				CDE817F11933C790003516E7 /* DQJogador.h */,
 				CDE817F21933C790003516E7 /* DQJogador.m */,
-				9433F5CE1937B48800E55E73 /* DQTela.h */,
-				9433F5CF1937B48800E55E73 /* DQTela.m */,
 				9433F5D41937B4B000E55E73 /* DQTesteCenaLeo.h */,
 				9433F5D51937B4B000E55E73 /* DQTesteCenaLeo.m */,
 				94080EB51933BA290024FB94 /* DQViewController.h */,
@@ -340,14 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94AE258919350CC2003E6015 /* DQFala.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
-				9433F5D31937B49D00E55E73 /* DQControleTela.m in Sources */,
 				9433F5D61937B4B000E55E73 /* DQTesteCenaLeo.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
-				9433F5D01937B48800E55E73 /* DQTela.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
