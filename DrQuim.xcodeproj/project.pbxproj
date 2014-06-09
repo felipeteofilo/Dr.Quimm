@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF31946302A00479AFE /* Aterrissagem.atlas */; };
+		23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF5194636C800479AFE /* Cutscene01.atlas */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
 		755E335D194626A300C0C029 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 755E335C194626A300C0C029 /* Andando.atlas */; };
 		755E335F194626DA00C0C029 /* Standing.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E335E194626DA00C0C029 /* Standing.png */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		23477FF31946302A00479AFE /* Aterrissagem.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aterrissagem.atlas; sourceTree = "<group>"; };
+		23477FF5194636C800479AFE /* Cutscene01.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Cutscene01.atlas; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
 		755E335C194626A300C0C029 /* Andando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Andando.atlas; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				23477FF5194636C800479AFE /* Cutscene01.atlas */,
 				23477FF31946302A00479AFE /* Aterrissagem.atlas */,
 				755E335C194626A300C0C029 /* Andando.atlas */,
 				9433F5D71937B4BB00E55E73 /* Personagens */,
@@ -311,6 +314,7 @@
 				755E335F194626DA00C0C029 /* Standing.png in Resources */,
 				9433F5DB1937B77800E55E73 /* imagemTestePadrao.jpg in Resources */,
 				9433F5CD1937B40A00E55E73 /* cenaTeste1.jpg in Resources */,
+				23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */,
 				23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
 				9433F5D91937B4BB00E55E73 /* personagem.png in Resources */,
