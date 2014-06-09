@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF31946302A00479AFE /* Aterrissagem.atlas */; };
 		23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF5194636C800479AFE /* Cutscene01.atlas */; };
+		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
 		755E335D194626A300C0C029 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 755E335C194626A300C0C029 /* Andando.atlas */; };
 		755E335F194626DA00C0C029 /* Standing.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E335E194626DA00C0C029 /* Standing.png */; };
@@ -48,6 +49,8 @@
 /* Begin PBXFileReference section */
 		23477FF31946302A00479AFE /* Aterrissagem.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aterrissagem.atlas; sourceTree = "<group>"; };
 		23477FF5194636C800479AFE /* Cutscene01.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Cutscene01.atlas; sourceTree = "<group>"; };
+		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
+		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
 		755E335C194626A300C0C029 /* Andando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Andando.atlas; sourceTree = "<group>"; };
@@ -107,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23477FF719463E0E00479AFE /* Falas e Cutscenes */ = {
+			isa = PBXGroup;
+			children = (
+				23477FF819463E7500479AFE /* DQFala.h */,
+				23477FF919463E7500479AFE /* DQFala.m */,
+			);
+			name = "Falas e Cutscenes";
+			sourceTree = "<group>";
+		};
 		94080E921933BA290024FB94 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +153,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
 				94080EB01933BA290024FB94 /* DQAppDelegate.m */,
 				752FB1D01935146300DB4328 /* DQFlorestaParte1.h */,
@@ -328,6 +341,7 @@
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
+				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
 				9433F5D61937B4B000E55E73 /* DQTesteCenaLeo.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
