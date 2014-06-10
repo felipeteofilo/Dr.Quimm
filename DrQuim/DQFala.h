@@ -20,6 +20,7 @@
 //init com SUJEITO que fala, TEXTO do que fala e NOME DA FOTO de quem fala
 -(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_ NomeFoto:(NSString *)nomeFoto_;
 
+//EXCLUSIVAMENTE PARA TESTES!
 //Método de retorno void - Mostra as falas dos personagens
 -(void)desenhaNaTela;
 
