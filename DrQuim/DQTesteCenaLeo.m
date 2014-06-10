@@ -13,7 +13,7 @@
 -(id)initWithSize:(CGSize)size {
     self = [super initWithSize:size];
     if (self) {
-        self.falaTeste = [[DQFala alloc]initComSujeito:@"Sujeito" Texto:@"Esta é uma fala teste. \rVou ficar feliz se funcionar!"];
+        self.falaTeste = [[DQFala alloc]initComSujeito:@"Sujeito" Texto:@"Esta é uma fala teste. Vou ficar feliz se funcionar!"];
         
         [self.falaTeste desenhaNaTela];
         
