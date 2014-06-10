@@ -8,19 +8,19 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface DQFala : SKNode
+@interface DQFala : SKSpriteNode
 
 @property NSString *sujeito;
 @property NSString *texto;
 @property NSString *nomeFoto;
 
 //init com SUJEITO que fala e TEXTO do que fala
--(id)initComSujeito: (NSString *)sujeito Texto:(NSString *)texto;
+-(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_;
 
 //init com SUJEITO que fala, TEXTO do que fala e NOME DA FOTO de quem fala
--(id)initComSujeito: (NSString *)sujeito Texto:(NSString *)texto NomeFoto:(NSString *)nomeFoto;
+-(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_ NomeFoto:(NSString *)nomeFoto_;
 
-//Método de retorno void que mostra a fala na tela
+//Método de retorno void - Mostra as falas dos personagens
 -(void)desenhaNaTela;
 
 @end

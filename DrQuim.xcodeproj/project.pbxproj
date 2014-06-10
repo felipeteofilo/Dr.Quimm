@@ -29,10 +29,8 @@
 		94080EC71933BA2A0024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
-		9433F5CD1937B40A00E55E73 /* cenaTeste1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5CC1937B40A00E55E73 /* cenaTeste1.jpg */; };
 		9433F5D61937B4B000E55E73 /* DQTesteCenaLeo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9433F5D51937B4B000E55E73 /* DQTesteCenaLeo.m */; };
 		9433F5D91937B4BB00E55E73 /* personagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5D81937B4BB00E55E73 /* personagem.png */; };
-		9433F5DB1937B77800E55E73 /* imagemTestePadrao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5DA1937B77800E55E73 /* imagemTestePadrao.jpg */; };
 		CDE817F31933C790003516E7 /* DQJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE817F21933C790003516E7 /* DQJogador.m */; };
 /* End PBXBuildFile section */
 
@@ -76,11 +74,9 @@
 		94080ECC1933BA2A0024FB94 /* DrQuimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrQuimTests-Info.plist"; sourceTree = "<group>"; };
 		94080ECE1933BA2A0024FB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
-		9433F5CC1937B40A00E55E73 /* cenaTeste1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cenaTeste1.jpg; sourceTree = "<group>"; };
 		9433F5D41937B4B000E55E73 /* DQTesteCenaLeo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTesteCenaLeo.h; sourceTree = "<group>"; };
 		9433F5D51937B4B000E55E73 /* DQTesteCenaLeo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTesteCenaLeo.m; sourceTree = "<group>"; };
 		9433F5D81937B4BB00E55E73 /* personagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personagem.png; sourceTree = "<group>"; };
-		9433F5DA1937B77800E55E73 /* imagemTestePadrao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imagemTestePadrao.jpg; sourceTree = "<group>"; };
 		CDE817F11933C790003516E7 /* DQJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJogador.h; sourceTree = "<group>"; };
 		CDE817F21933C790003516E7 /* DQJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJogador.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,15 +197,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9433F5CB1937B40A00E55E73 /* Telas */ = {
-			isa = PBXGroup;
-			children = (
-				9433F5CC1937B40A00E55E73 /* cenaTeste1.jpg */,
-				9433F5DA1937B77800E55E73 /* imagemTestePadrao.jpg */,
-			);
-			path = Telas;
-			sourceTree = "<group>";
-		};
 		9433F5D71937B4BB00E55E73 /* Personagens */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +214,6 @@
 				23477FF31946302A00479AFE /* Aterrissagem.atlas */,
 				755E335C194626A300C0C029 /* Andando.atlas */,
 				9433F5D71937B4BB00E55E73 /* Personagens */,
-				9433F5CB1937B40A00E55E73 /* Telas */,
 			);
 			path = Imagens;
 			sourceTree = "<group>";
@@ -314,8 +300,6 @@
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
 				755E3365194639BD00C0C029 /* Pulando.atlas in Resources */,
 				755E335F194626DA00C0C029 /* Standing.png in Resources */,
-				9433F5DB1937B77800E55E73 /* imagemTestePadrao.jpg in Resources */,
-				9433F5CD1937B40A00E55E73 /* cenaTeste1.jpg in Resources */,
 				23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */,
 				23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
