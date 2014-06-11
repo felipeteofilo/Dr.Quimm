@@ -1,12 +1,163 @@
-<?xml version="1.0" econding="UTF-8">
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <cutscenes>
     <parte1>
         <cena1>
-            <sujeito>           </sujeito>
-            <texto>             </texto>
-            <nomeFoto>          </nomeFoto>
-            <nomeImagemCena>    </nomeImagemCena>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena1.png </nomeImagemCena>
+        </cena1>
+        <cena2>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena2.png </nomeImagemCena>
+        </cena2>
+        <cena3>
+            <sujeito> Piloto </sujeito>
+            <texto> Uau! Um dos maiores cientistas do mundo está no meu helicóptero... Preciso falar algo... </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena3.png </nomeImagemCena>
+        </cena3>
+        <cena4>
+            <sujeito> Piloto </sujeito>
+            <texto> B-bonito o jaleco do senhor. </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena4.png </nomeImagemCena>
+        </cena4>
+        <cena5>
+            <sujeito> Cientista </sujeito>
+            <texto> É algodão egípcio </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena5.png </nomeImagemCena>
+        </cena5>
+        <cena6>
+            <sujeito> Piloto </sujeito>
+            <texto> Que legal! onde o senhor conseguiu? </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena6.png </nomeImagemCena>
+        </cena6>
+        <cena7>
+            <sujeito> Cientista </sujeito>
+            <texto> Egito </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena7.png </nomeImagemCena>
+        </cena7>
+        <cena8>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena8.png </nomeImagemCena>
+        </cena8>
+        <cena9>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena9.png </nomeImagemCena>
+        </cena9>
+        <cena10>
+            <sujeito> Piloto </sujeito>
+            <texto> Mas porque alguém como o senhor está indo para uma ilha como aquela? Meu primo, ele é marinheiro, ele disse que uma vez viu monstros naquela ilha. </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena10.png </nomeImagemCena>
+        </cena10>
+        <cena11>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena11.png </nomeImagemCena>
+        </cena11>
+        <cena12>
+            <sujeito> Cientista </sujeito>
+            <texto> Tenho um trabalho a fazer. </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena12.png </nomeImagemCena>
+        </cena12>
+        <cena13>
+            <sujeito> Piloto </sujeito>
+            <texto> Entendo... que trabalho é esse? </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena13.png </nomeImagemCena>
+        </cena13>
+        <cena14>
+            <sujeito> Cientista </sujeito>
+            <texto> Coleta de amostras </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena14.png </nomeImagemCena>
+        </cena14>
+        <cena15>
+            <sujeito> Piloto </sujeito>
+            <texto> Amostras... legal! De que? </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena15.png </nomeImagemCena>
+        </cena15>
+        <cena16>
+            <sujeito> Cientista </sujeito>
+            <texto> Material radioativo. </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena16.png </nomeImagemCena>
+        </cena16>
+        <cena17>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena17.png </nomeImagemCena>
+        </cena17>
+        <cena18>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena18.png </nomeImagemCena>
+        </cena18>
+        <cena19>
+            <sujeito> Piloto </sujeito>
+            <texto> radioativo? </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena19.png </nomeImagemCena>
+        </cena19>
+        <cena20>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena20.png </nomeImagemCena>
+        </cena20>
+        <cena21>
+            <sujeito> Cientista </sujeito>
+            <texto> Pela barbas de darwin! O que foi aquilo? </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena21.png </nomeImagemCena>
+        </cena21>
+        <cena22>
+            <sujeito> Piloto </sujeito>
+            <texto> Precisamos sair daqui. </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena22.png </nomeImagemCena>
+        </cena22>
+        <cena23>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena23.png </nomeImagemCena>
+        </cena23>
+        <cena24>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena24.png </nomeImagemCena>
+        </cena24>
+        <cena25>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena25.png </nomeImagemCena>
+        </cena25>
+        <cena26>
+            <sujeito> nil </sujeito>
+            <texto> nil </texto>
+            <nomeFoto> nil </nomeFoto>
+            <nomeImagemCena> cena26.png </nomeImagemCena>
+        </cena26>
     </parte1>
 
 
