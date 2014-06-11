@@ -36,6 +36,7 @@
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
 		9433F5D61937B4B000E55E73 /* DQTesteCenaLeo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9433F5D51937B4B000E55E73 /* DQTesteCenaLeo.m */; };
 		9433F5D91937B4BB00E55E73 /* personagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5D81937B4BB00E55E73 /* personagem.png */; };
+		CDCACF531948F23500FC1070 /* Falas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDCACF521948F23500FC1070 /* Falas.plist */; };
 		CDE817F31933C790003516E7 /* DQJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE817F21933C790003516E7 /* DQJogador.m */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		9433F5D41937B4B000E55E73 /* DQTesteCenaLeo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTesteCenaLeo.h; sourceTree = "<group>"; };
 		9433F5D51937B4B000E55E73 /* DQTesteCenaLeo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTesteCenaLeo.m; sourceTree = "<group>"; };
 		9433F5D81937B4BB00E55E73 /* personagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personagem.png; sourceTree = "<group>"; };
+		CDCACF521948F23500FC1070 /* Falas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Falas.plist; sourceTree = "<group>"; };
 		CDE817F11933C790003516E7 /* DQJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJogador.h; sourceTree = "<group>"; };
 		CDE817F21933C790003516E7 /* DQJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJogador.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				232316701947BDC50002FB1D /* Fala.xml */,
+				CDCACF521948F23500FC1070 /* Falas.plist */,
 			);
 			name = "Arquvos XML";
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCACF531948F23500FC1070 /* Falas.plist in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,

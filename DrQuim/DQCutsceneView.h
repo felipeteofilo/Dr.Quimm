@@ -12,17 +12,17 @@
 
 @interface DQCutsceneView : NSObject
 
-//Armazena as falas da cutScene
-@property NSMutableArray *arrayDeFalas;
 
-//Armazena as cenas da cutScene
-@property NSMutableArray *arrayDeCenas;
+{
+    //Armazena as cutscenes do jogo
+    NSMutableArray * cutscenes;
+}
+
+
 
 //Atribui um numero chamado PARTE para organizar as cenas
 @property int parte;
 
-//Init com PARTE que representa a ordem das cutScenes
--(id)initComParte: (int)parte_;
 
 //Metodo para armazenar as cenas
 -(void)armazenaCenas;

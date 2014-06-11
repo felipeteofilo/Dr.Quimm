@@ -10,12 +10,12 @@
 
 @implementation DQCutsceneView
 
--(id)initComParte: (int)parte_
+-(id)init
 {
-    self = [super init];
-    if(self)
-    {
-        self.parte = parte_;
+    if (self = [super init]) {
+        
+        
+        
     }
     return self;
 }
