@@ -12,7 +12,8 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        self.jogador = [[DQJogador alloc]initWithImageNamed:@"Standing"];
+        
+        self.jogador = [DQJogador sharedJogador];
         
         self.physicsWorld.gravity=CGVectorMake(0, -3);
         
@@ -32,22 +33,26 @@
         [self addChild:chao];
         [self addChild:self.jogador];
         
+        
+        
     }
     return self;
+}
+
+-(void)didMoveToView:(SKView *)view{
+    self.gestoPulo = [[DQGestoPulo alloc]init];
+    
+    [view addGestureRecognizer:self.gestoPulo];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
     UITouch *posicao = [touches anyObject];
-    if (touches.count > 1) {
-        [self.jogador pular];
-    }
-   
     
     if ([posicao locationInView:self.view].x > self.view.frame.size.height/2 ) {
         
-       [self.jogador andarParaDirecao:@"D"];
+        [self.jogador andarParaDirecao:@"D"];
     }else{
         [self.jogador andarParaDirecao:@"E"];
     }
@@ -55,8 +60,8 @@
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    [self.jogador removeActionForKey:@"andar"];
-    [self.jogador removeActionForKey:@"animandoAndando"];
+    [self.jogador removeAllActions];
+    
     
 }
 -(void)didBeginContact:(SKPhysicsContact *)contact{
@@ -80,8 +85,10 @@
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
-            [self.jogador setEstaNoChao:true];
-            
+            [self.jogador setPodePular:0];
+            if ([self.jogador hasActions]) {
+                [self.jogador animarAndando];
+            }
         }
     }
     

@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
+#import "DQGestoPulo.h"
 
 
 
@@ -18,5 +19,6 @@ static const UInt32 ChaoCategoria =0x1 << 2;
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
+@property DQGestoPulo *gestoPulo;
 
 @end

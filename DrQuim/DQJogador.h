@@ -15,6 +15,8 @@
     NSMutableArray *framesPulando;
 }
 
+
+
 //variável int - Define a vida do jogador
 @property int vida;
 
@@ -27,7 +29,7 @@
 //variável int - Define o respeito do jogador
 @property int respeito;
 
-@property BOOL estaNoChao;
+@property int podePular;
 
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
@@ -38,5 +40,12 @@
 
 //Método de retorno VOID - Faz o personagem interagir
 -(void)interagir;
+
+//Singleton do jogador
++(id)sharedJogador;
+
+-(void)animarAndando;
+-(void)animarPular;
+-(void)animarParado;
 
 @end

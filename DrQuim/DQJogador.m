@@ -15,7 +15,7 @@
         [self setSize:CGSizeMake(50, 100)];
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.size];
         [self setPosition:CGPointMake(40, 180)];
-        self.physicsBody.dynamic=NO;
+        
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
         self.physicsBody.allowsRotation = NO;
@@ -49,6 +49,17 @@
     
 }
 
++(id)sharedJogador
+{
+    static DQJogador *jogador = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        jogador = [[self alloc]initWithImageNamed:@"Standing"];
+    });
+    return jogador;
+}
+
 
 
 //metodo com retorno void - faz o jogador andar
@@ -62,37 +73,53 @@
     //se a direcao for para direita
     if ([direcao isEqual:@"D"]) {
         
-        movimentar =[SKAction moveByX:50 y:0 duration:1.0];
+        movimentar =[SKAction moveByX:70 y:0 duration:1.0];
         self.xScale = fabs(self.xScale)*1;
     }else{
-        movimentar =[SKAction moveByX:-50 y:0 duration:1.0];
+        movimentar =[SKAction moveByX:-70 y:0 duration:1.0];
         self.xScale = fabs(self.xScale)* -1;
     }
-    [self removeActionForKey:@"animandoPulando"];
+    if (![self hasActions]) {
+        [self removeActionForKey:@"animandoPulo"];
+        [self animarAndando];
+    }
+    
+    //anda para direcao
+    [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+}
+
+-(void)animarAndando{
     [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
                                                                    timePerFrame:0.1f
                                                                          resize:NO
                                                                         restore:YES]] withKey:@"animandoAndando"];
-    
-    //anda para direcao
-    [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
-    
 }
 -(void)pular{
-    
-    self.physicsBody.dynamic = YES;
-    self.physicsBody.velocity = CGVectorMake(0, 0);
-    [self.physicsBody applyImpulse:CGVectorMake(0, 25)];
-    self.estaNoChao = false;
-    [self removeActionForKey:@"animandoPulando"];
-    [self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.2f
+    if (self.podePular < 1) {
+        
+        
+        self.physicsBody.dynamic = YES;
+        self.physicsBody.velocity = CGVectorMake(0, 0);
+        [self.physicsBody applyImpulse:CGVectorMake(0, 35)];
+        self.podePular += 1;
+        
+        [self removeActionForKey:@"animandoAndando"];
+        
+        [self animarPular];
+    }
+}
+-(void)animarPular{
+    [self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f
                                            resize:NO
                                           restore:YES] withKey:@"animandoPulo"];
-    
 }
+
+
+
 -(void)interagir{
     
 }
+
 
 
 @end
