@@ -10,6 +10,8 @@
 
 @interface DQJogador : SKSpriteNode
 
+
+//Arrays que guardam os frames das animacoes do jogador
 {
     NSMutableArray *framesAndando;
     NSMutableArray *framesPulando;
@@ -45,8 +47,13 @@
 //Singleton do jogador
 +(id)sharedJogador;
 
+//Metodo para animar o jogador andando
 -(void)animarAndando;
+
+//Metodo para animar o jogador pulando
 -(void)animarPular;
+
+//Metodo para animar o jogador parado
 -(void)animarParado;
 
 @end

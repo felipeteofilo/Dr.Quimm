@@ -10,7 +10,7 @@
 
 @interface DQGestoPulo : UISwipeGestureRecognizer 
 
-
+//Metodo para inicializar o metodo
 -(id)init;
 
 

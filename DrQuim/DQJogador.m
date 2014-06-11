@@ -10,8 +10,11 @@
 
 @implementation DQJogador
 
+//funcao para iniciar e alocar tudo que for necessario para o player
 -(instancetype)initWithImageNamed:(NSString *)name{
     if(self = [super initWithImageNamed:name]){
+        
+        //Inicia o jogador com o phisics Body e o tamanho
         [self setSize:CGSizeMake(50, 100)];
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.size];
         [self setPosition:CGPointMake(40, 180)];
@@ -22,15 +25,22 @@
         self.physicsBody.density = 0.6f;
         self.physicsBody.restitution = 0;
         
+        
+        //le as pastas atlas de animacoes
         SKTextureAtlas *pastaFramesAndando= [SKTextureAtlas atlasNamed:@"Andando"];
         SKTextureAtlas *pastaFramesPulando= [SKTextureAtlas atlasNamed:@"Pulando"];
         SKTextureAtlas *pastaFramesParado= [SKTextureAtlas atlasNamed:@"Parado"];
         
+        
+        //inicia os arrays com os frames das animacoes
         framesAndando = [[NSMutableArray alloc]init];
         framesPulando = [[NSMutableArray alloc]init];
         framesParado = [[NSMutableArray alloc]init];
         
-        int numImagens = pastaFramesAndando.textureNames.count;
+        
+        
+        //adiciona as texturas no array de frames
+        NSInteger numImagens = pastaFramesAndando.textureNames.count;
         for (int i=1; i <= numImagens; i++) {
             NSString *textureName = [NSString stringWithFormat:@"Running%d", i];
             SKTexture *temp = [pastaFramesAndando textureNamed:textureName];
@@ -51,15 +61,21 @@
             [framesParado addObject:temp];
         }
         
+        
+        //apos ler tudo anima o jogador
         [self animarParado];
         
         
     }
     
+    
+    //retorna o jogador
     return self;
     
 }
 
+
+//Singleton do jogador
 +(id)sharedJogador
 {
     static DQJogador *jogador = nil;
@@ -71,7 +87,44 @@
     return jogador;
 }
 
+//funcao para animar o jogador andando
+-(void)animarAndando{
+    [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
+                                                                   timePerFrame:0.1f
+                                                                         resize:NO
+                                                                        restore:YES]] withKey:@"animandoAndando"];
+}
+//anima ele parado
+-(void)animarParado{
+    [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
+                                                                   timePerFrame:0.1f
+                                                                         resize:NO
+                                                                        restore:YES]]];
+}
+//funcao para animar jogador pulando
+-(void)animarPular{
+    [self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f
+                                           resize:NO
+                                          restore:YES] withKey:@"animandoPulo"];
+}
 
+//funcao da acao de pulo do jogador
+-(void)pular{
+    
+    //verifica se ele esta no ar, se ja estiver nao pula
+    if (self.podePular < 1) {
+        
+        // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
+        self.physicsBody.dynamic = YES;
+        self.physicsBody.velocity = CGVectorMake(0, 0);
+        [self.physicsBody applyImpulse:CGVectorMake(0, 35)];
+        self.podePular += 1;
+        
+        
+        // anima ele pulando
+        [self animarPular];
+    }
+}
 
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
@@ -90,53 +143,27 @@
         movimentar =[SKAction moveByX:-70 y:0 duration:1.0];
         self.xScale = fabs(self.xScale)* -1;
     }
+    
+    //verifica se nao esta animando o pulo e anima o jogador andando
     if (![self actionForKey:@"animandoPulo"]) {
         [self animarAndando];
     }
-   
+    
     
     
     //anda para direcao
     [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
 }
 
--(void)animarAndando{
-    [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
-                                                                   timePerFrame:0.1f
-                                                                         resize:NO
-                                                                        restore:YES]] withKey:@"animandoAndando"];
-}
--(void)pular{
-    if (self.podePular < 1) {
-        
-        
-        self.physicsBody.dynamic = YES;
-        self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 35)];
-        self.podePular += 1;
-        
-        [self removeActionForKey:@"animandoAndando"];
-        
-        [self animarPular];
-    }
-}
--(void)animarPular{
-    [self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f
-                                           resize:NO
-                                          restore:YES] withKey:@"animandoPulo"];
-}
 
 
 
+//funcao a fazer para ele interagir com pessoas e elementos do cenario
 -(void)interagir{
     
 }
--(void)animarParado{
-    [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
-                                                                   timePerFrame:0.1f
-                                                                         resize:NO
-                                                                        restore:YES]]];
-}
+
+
 
 
 @end

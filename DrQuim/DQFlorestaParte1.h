@@ -11,7 +11,7 @@
 #import "DQGestoPulo.h"
 
 
-
+//define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 1;
 static const UInt32 ChaoCategoria =0x1 << 2;
 
@@ -19,6 +19,8 @@ static const UInt32 ChaoCategoria =0x1 << 2;
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
+
+//Varial do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
 @property DQGestoPulo *gestoPulo;
 
 @end
