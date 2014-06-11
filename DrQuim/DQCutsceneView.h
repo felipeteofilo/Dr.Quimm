@@ -24,4 +24,10 @@
 //Init com PARTE que representa a ordem das cutScenes
 -(id)initComParte: (int)parte_;
 
+//Metodo para armazenar as cenas
+-(void)armazenaCenas;
+
+//Metodo para armazenar as falas
+-(void)armazenaFalas;
+
 @end
