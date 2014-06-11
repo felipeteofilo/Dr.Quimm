@@ -90,10 +90,11 @@
         movimentar =[SKAction moveByX:-70 y:0 duration:1.0];
         self.xScale = fabs(self.xScale)* -1;
     }
-    if (![self hasActions]) {
-        [self removeActionForKey:@"animandoPulo"];
+    if (![self actionForKey:@"animandoPulo"]) {
         [self animarAndando];
     }
+   
+    
     
     //anda para direcao
     [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];

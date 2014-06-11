@@ -60,7 +60,8 @@
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    [self.jogador removeAllActions];
+    [self.jogador removeActionForKey:@"andar"];
+    [self.jogador removeActionForKey:@"animandoAndando"];
     
     
 }
@@ -86,6 +87,9 @@
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
             [self.jogador setPodePular:0];
+            if ([self.jogador actionForKey:@"andar"]) {
+                [self.jogador animarAndando];
+            }
             
             
             

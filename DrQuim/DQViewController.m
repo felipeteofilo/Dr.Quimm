@@ -11,9 +11,11 @@
 
 @implementation DQViewController
 
-- (void)viewWillLayoutSubviews
+
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillLayoutSubviews];
+    [super viewDidAppear:animated];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
@@ -35,8 +37,13 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskLandscape;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    } else {
+        return UIInterfaceOrientationMaskAll;
+    }
 }
+
 
 - (void)didReceiveMemoryWarning
 {
