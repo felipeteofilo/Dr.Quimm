@@ -24,9 +24,11 @@
         
         SKTextureAtlas *pastaFramesAndando= [SKTextureAtlas atlasNamed:@"Andando"];
         SKTextureAtlas *pastaFramesPulando= [SKTextureAtlas atlasNamed:@"Pulando"];
+        SKTextureAtlas *pastaFramesParado= [SKTextureAtlas atlasNamed:@"Parado"];
         
         framesAndando = [[NSMutableArray alloc]init];
         framesPulando = [[NSMutableArray alloc]init];
+        framesParado = [[NSMutableArray alloc]init];
         
         int numImagens = pastaFramesAndando.textureNames.count;
         for (int i=1; i <= numImagens; i++) {
@@ -41,6 +43,15 @@
             SKTexture *temp = [pastaFramesPulando textureNamed:textureName];
             [framesPulando addObject:temp];
         }
+        
+        numImagens = pastaFramesParado.textureNames.count;
+        for (int i=1; i <= numImagens; i++) {
+            NSString *textureName = [NSString stringWithFormat:@"Standing%d", i];
+            SKTexture *temp = [pastaFramesParado textureNamed:textureName];
+            [framesParado addObject:temp];
+        }
+        
+        [self animarParado];
         
         
     }
@@ -119,7 +130,12 @@
 -(void)interagir{
     
 }
-
+-(void)animarParado{
+    [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
+                                                                   timePerFrame:0.1f
+                                                                         resize:NO
+                                                                        restore:YES]]];
+}
 
 
 @end

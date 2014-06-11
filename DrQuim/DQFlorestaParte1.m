@@ -86,9 +86,9 @@
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
             [self.jogador setPodePular:0];
-            if ([self.jogador hasActions]) {
-                [self.jogador animarAndando];
-            }
+            
+            
+            
         }
     }
     

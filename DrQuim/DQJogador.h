@@ -13,6 +13,7 @@
 {
     NSMutableArray *framesAndando;
     NSMutableArray *framesPulando;
+    NSMutableArray *framesParado;
 }
 
 
