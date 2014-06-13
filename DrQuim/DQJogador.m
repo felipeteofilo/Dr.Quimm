@@ -10,13 +10,24 @@
 
 @implementation DQJogador
 
+//Leonardo 13/06/2014- Alterado a função de inicialização do node para que carregue o sprite na propriedade spriteNode
 //funcao para iniciar e alocar tudo que for necessario para o player
--(instancetype)initWithImageNamed:(NSString *)name{
-    if(self = [super initWithImageNamed:name]){
+//-(instancetype)initWithImageNamed:(NSString *)name{
+
+-(id)initJogadorSprite: (NSString*)name{
+    //if(self = [super initWithImageNamed:name]){
+    if(self = [super init]){
         
+        //Leonardo 13/06/2014 - Inicia o sprite
+        self.spriteNode=[SKSpriteNode spriteNodeWithImageNamed:name];
+        
+        //Leonardo 13/06/2014 - Alterado para usar a propriedade spriteNode
         //Inicia o jogador com o phisics Body e o tamanho
-        [self setSize:CGSizeMake(50, 100)];
-        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.size];
+        //[self setSize:CGSizeMake(50, 100)];
+        //self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.size];
+        
+        [self.spriteNode setSize:CGSizeMake(50, 100)];
+        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
         [self setPosition:CGPointMake(40, 180)];
         
         self.physicsBody.usesPreciseCollisionDetection=YES;
