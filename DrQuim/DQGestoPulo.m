@@ -33,10 +33,12 @@
     // Pega o singleton do jogador e o faz pular
     [[DQJogador sharedJogador] pular];
     
-    
+    //Criado método na classe jogador
     //remove as acoes de andar e animandoAndar
-    [[DQJogador sharedJogador]  removeActionForKey:@"andar"];
-    [[DQJogador sharedJogador]removeActionForKey:@"animandoAndando"];
+    //[[DQJogador sharedJogador]  removeActionForKey:@"andar"];
+    //[[DQJogador sharedJogador]removeActionForKey:@"animandoAndando"];
+    
+    [[DQJogador sharedJogador]pararAndar];
 }
 
 

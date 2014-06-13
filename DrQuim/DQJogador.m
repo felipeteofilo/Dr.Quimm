@@ -10,7 +10,7 @@
 
 @implementation DQJogador
 
-//Leonardo 13/06/2014- Alterado a função de inicialização do node para que carregue o sprite na propriedade spriteNode
+//Leonardo 13/06/2014 - Alterado a função de inicialização do node para que carregue o sprite na propriedade spriteNode
 //funcao para iniciar e alocar tudo que for necessario para o player
 //-(instancetype)initWithImageNamed:(NSString *)name{
 
@@ -27,6 +27,8 @@
         //self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.size];
         
         [self.spriteNode setSize:CGSizeMake(50, 100)];
+        
+        
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
         [self setPosition:CGPointMake(40, 280)];
         
@@ -73,11 +75,8 @@
             [framesParado addObject:temp];
         }
         
-        
         //apos ler tudo anima o jogador
-        [self animarParado];
-        
-        
+        [self animarParado];        
     }
     
     
@@ -96,28 +95,42 @@
     dispatch_once(&onceToken, ^{
         jogador = [[self alloc]initJogadorSprite:@"Standing"];
     });
+    
     return jogador;
 }
 
 //funcao para animar o jogador andando
 -(void)animarAndando{
-    [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    /*[self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
+                                                                   timePerFrame:0.1f
+                                                                         resize:NO
+                                                                        restore:YES]] withKey:@"animandoAndando"];*/
+    
+    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
                                                                    timePerFrame:0.1f
                                                                          resize:NO
                                                                         restore:YES]] withKey:@"animandoAndando"];
 }
 //anima ele parado
 -(void)animarParado{
-    [self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
+    
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    /*[self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
+                                                                   timePerFrame:0.1f
+                                                                         resize:NO
+                                                                        restore:YES]]];*/
+    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
                                                                    timePerFrame:0.1f
                                                                          resize:NO
                                                                         restore:YES]]];
 }
 //funcao para animar jogador pulando
 -(void)animarPular{
-    [self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f
-                                           resize:NO
-                                          restore:YES] withKey:@"animandoPulo"];
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    //[self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
 //funcao da acao de pulo do jogador
@@ -141,8 +154,6 @@
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
     
-    
-    
     //variavel SKAction- define a direcao do movimento
     SKAction *movimentar =[[SKAction alloc]init];
     
@@ -150,14 +161,35 @@
     if ([direcao isEqual:@"D"]) {
         
         movimentar =[SKAction moveByX:70 y:0 duration:1.0];
-        self.xScale = fabs(self.xScale)*1;
+        
+        //[self.physicsBody applyImpulse:CGVectorMake(10, 0)];
+        //[self.physicsBody setVelocity:CGVectorMake(50, 0)];
+
+        //self.physicsBody.velocity = CGVectorMake(0, 0);
+        //[self.physicsBody applyImpulse:CGVectorMake(35, 0)];
+        
+        
+        if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
+            [self.physicsBody setVelocity:CGVectorMake(10, -10)];
+        }
+        
+        //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+        //self.xScale = fabs(self.xScale)*1;
+        self.spriteNode.xScale = fabs(self.spriteNode.xScale)*1;
     }else{
         movimentar =[SKAction moveByX:-70 y:0 duration:1.0];
-        self.xScale = fabs(self.xScale)* -1;
+        
+        //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+        //self.xScale = fabs(self.xScale)* -1;
+        
+        self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
+
     }
     
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     //verifica se nao esta animando o pulo e anima o jogador andando
-    if (![self actionForKey:@"animandoPulo"]) {
+    //if (![self actionForKey:@"animandoPulo"]) {
+    if (![self.spriteNode actionForKey:@"animandoPulo"]) {
         [self animarAndando];
     }
     
@@ -167,6 +199,13 @@
     [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
 }
 
+//Método para parar de andar
+-(void)pararAndar{
+    
+    //remove as acoes de andar e animarAndando
+    [self removeActionForKey:@"andar"];
+    [self.spriteNode removeActionForKey:@"animandoAndando"];
+}
 
 
 

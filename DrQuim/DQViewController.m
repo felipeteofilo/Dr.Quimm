@@ -22,6 +22,8 @@
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
+    skView.showsPhysics=YES;
+    
     // Create and configure the scene.
     DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
     floresta.scaleMode = SKSceneScaleModeAspectFill;

@@ -37,6 +37,7 @@
 
 @property int podePular;
 
+
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;
 
@@ -60,5 +61,9 @@
 
 //Metodo para animar o jogador parado
 -(void)animarParado;
+
+//Método para parar de andar
+-(void)pararAndar;
+
 
 @end

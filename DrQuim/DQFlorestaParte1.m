@@ -44,6 +44,40 @@
         chao.physicsBody.usesPreciseCollisionDetection=YES;
         chao.physicsBody.dynamic=NO;
         
+        chao.hidden =YES;
+        
+//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
+//        [sprite setAnchorPoint:CGPointMake(0, 0)];
+//        [sprite setPosition:CGPointMake(0, 0)];
+//        offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
+//        offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
+//        
+//        path = CGPathCreateMutable();
+//        
+//        CGPathMoveToPoint(path, NULL, 0 - offsetX, 128 - offsetY);
+//        CGPathAddLineToPoint(path, NULL, 606 - offsetX, 162 - offsetY);
+//        CGPathAddLineToPoint(path, NULL, 613 - offsetX, 300 - offsetY);
+//        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 303 - offsetY);
+//        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 0 - offsetY);
+//        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
+//        
+//        CGPathCloseSubpath(path);
+//        
+//        sprite.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+//        
+//        sprite.physicsBody.categoryBitMask=ChaoCategoria;
+//        sprite.physicsBody.usesPreciseCollisionDetection=YES;
+//        sprite.physicsBody.dynamic=NO;
+//        
+//        [sprite setAnchorPoint:CGPointMake(0, 0)];
+//        [sprite setPosition:CGPointMake(0, 0)];
+        
+        
+        SKSpriteNode *chaoReal =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
+        
+        [chaoReal setAnchorPoint:CGPointMake(0, 0)];
+        [chaoReal setPosition:CGPointMake(0, 0)];
+        
         //seta as categorias de colisao do jogador
         self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
         self.jogador.physicsBody.contactTestBitMask = ChaoCategoria;
@@ -54,9 +88,9 @@
         
         //adiuciona o jogador e o chao na cena
         [self addChild:chao];
+        //[self addChild:sprite];
+        [self addChild:chaoReal];
         [self addChild:self.jogador];
-        
-        
         
     }
     return self;
@@ -86,6 +120,7 @@
         [self.jogador andarParaDirecao:@"E"];
     }
     
+    
 }
 
 //metodo chamado assim que um toque e finalizado
@@ -93,8 +128,10 @@
     
     
     //remove as acoes de andar e animarAndando
-    [self.jogador removeActionForKey:@"andar"];
-    [self.jogador removeActionForKey:@"animandoAndando"];
+    //[self.jogador removeActionForKey:@"andar"];
+    //[self.jogador removeActionForKey:@"animandoAndando"];
+    
+    [self.jogador pararAndar];
     
     
 }
@@ -123,7 +160,8 @@
             
             //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
             [self.jogador setPodePular:0];
-            if ([self.jogador actionForKey:@"andar"]) {
+            
+            if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
             }
             
