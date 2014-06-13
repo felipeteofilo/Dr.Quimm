@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		232316711947BDC50002FB1D /* Fala.xml in Resources */ = {isa = PBXBuildFile; fileRef = 232316701947BDC50002FB1D /* Fala.xml */; };
 		23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF31946302A00479AFE /* Aterrissagem.atlas */; };
 		23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF5194636C800479AFE /* Cutscene01.atlas */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
@@ -79,7 +78,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		232316701947BDC50002FB1D /* Fala.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Fala.xml; sourceTree = "<group>"; };
 		23477FF31946302A00479AFE /* Aterrissagem.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aterrissagem.atlas; sourceTree = "<group>"; };
 		23477FF5194636C800479AFE /* Cutscene01.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Cutscene01.atlas; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 		2323166F1947BCAB0002FB1D /* Arquvos XML */ = {
 			isa = PBXGroup;
 			children = (
-				232316701947BDC50002FB1D /* Fala.xml */,
 				CDCACF521948F23500FC1070 /* Falas.plist */,
 			);
 			name = "Arquvos XML";
@@ -467,7 +464,6 @@
 				23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
 				CD2FE1A4194B3C0B006E3AC1 /* parte1.png in Resources */,
-				232316711947BDC50002FB1D /* Fala.xml in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
 				CD2FE1B5194B3C0B006E3AC1 /* parte12.png in Resources */,
 				CD2FE1BA194B3C0B006E3AC1 /* parte4.png in Resources */,
