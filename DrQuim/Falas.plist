@@ -27,7 +27,7 @@
 			<key>Sujeito</key>
 			<string>Piloto :</string>
 			<key>Texto</key>
-			<string>Uau! Um dos maiores cientistas do mundo está no meu helicóptero... Preciso falar algo...</string>
+			<string>Uau! Um dos maiores cientistas do mundo está no meu helicóptero... Preciso dizer algo...</string>
 			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
@@ -57,7 +57,7 @@
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
-			<string>Que legal! onde o senhor conseguiu?</string>
+			<string>Que legal! Onde o senhor conseguiu?</string>
 			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
@@ -147,7 +147,7 @@
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
-			<string>Amostras... legal! De que?</string>
+			<string>Amostras... Legal! De que?</string>
 			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
@@ -187,7 +187,7 @@
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
-			<string>Radioativo?</string>
+			<string>RADIOATIVO?!</string>
 			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
