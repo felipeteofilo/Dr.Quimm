@@ -21,15 +21,28 @@
         //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
         self.physicsWorld.gravity=CGVectorMake(0, -3);
         
-        SKSpriteNode *chao=[SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(self.size.width*2, 10)];
+
+        SKSpriteNode *chao =[SKSpriteNode spriteNodeWithImageNamed:@"parte1C"];
+        [chao setAnchorPoint:CGPointMake(0, 0)];
+        [chao setPosition:CGPointMake(0,0)];
+        CGFloat offsetX = chao.frame.size.width * chao.anchorPoint.x;
+        CGFloat offsetY = chao.frame.size.height * chao.anchorPoint.y;
+        CGMutablePathRef path = CGPathCreateMutable();
         
-        [chao setPosition:CGPointMake(10,0)];
-        chao.physicsBody =[SKPhysicsBody bodyWithRectangleOfSize:chao.size];
-        chao.physicsBody.affectedByGravity=YES;
-        chao.physicsBody.collisionBitMask=ChaoCategoria;
+        CGPathMoveToPoint(path, NULL, 0 - offsetX, 224 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 373 - offsetX, 187 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 376 - offsetX, 141 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 932 - offsetX, 121 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 127 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 0 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 2 - offsetX, 0 - offsetY);
+        
+        CGPathCloseSubpath(path);
+
+        chao.physicsBody =[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        chao.physicsBody.categoryBitMask=ChaoCategoria;
         chao.physicsBody.usesPreciseCollisionDetection=YES;
         chao.physicsBody.dynamic=NO;
-        
         
         //seta as categorias de colisao do jogador
         self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
