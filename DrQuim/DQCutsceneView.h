@@ -12,22 +12,20 @@
 
 @interface DQCutsceneView : NSObject
 
-
-{
-    //Armazena as cutscenes do jogo
-    NSMutableArray * cutscenes;
-}
-
-
+//Armazena as cutscenes do jogo de acordo com a parte passada
+@property NSArray *arrayCutscenes;
 
 //Atribui um numero chamado PARTE para organizar as cenas
 @property int parte;
 
+//Cria uma string que contem o caminho (path) do arquivo plist de falas
+@property NSString *plistFalaPath;
 
-//Metodo para armazenar as cenas
--(void)armazenaCenas;
+//Cria um NSDictionary com o conteudo da pList.
+@property NSArray *arrayDeFalas;
 
-//Metodo para armazenar as falas
--(void)armazenaFalas;
+//Inicia com uma parte
+-(id)initComParte: (int)parte_;
+
 
 @end

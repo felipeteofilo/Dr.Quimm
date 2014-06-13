@@ -5,31 +5,25 @@
 	<array>
 		<dict>
 			<key>Sujeito</key>
-			<string></string>
+			<string>Sujeito1</string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
-			<string></string>
+			<string>Texto1</string>
 			<key>Fundo</key>
 			<string>cena1</string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
-			<string></string>
+			<string>Sujeito2</string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
-			<string></string>
+			<string>Texto2</string>
 			<key>Fundo</key>
 			<string>cena2</string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
-			<string>Piloto :</string>
+			<string>Piloto</string>
 			<key>Texto</key>
 			<string>Uau! Um dos maiores cientistas do mundo está no meu helicóptero... Preciso dizer algo...</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena3</string>
 		</dict>
@@ -38,8 +32,6 @@
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>B-bonito o jaleco do senhor.</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena4</string>
 		</dict>
@@ -48,8 +40,6 @@
 			<string>Cientista</string>
 			<key>Texto</key>
 			<string>É algodão egípcio </string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena5</string>
 		</dict>
@@ -58,8 +48,6 @@
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>Que legal! Onde o senhor conseguiu?</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena6</string>
 		</dict>
@@ -68,8 +56,6 @@
 			<string>Cientista</string>
 			<key>Texto</key>
 			<string>Egito</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena7</string>
 		</dict>
@@ -77,8 +63,6 @@
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
 			<string>cena8</string>
@@ -88,8 +72,6 @@
 			<string></string>
 			<key>Texto</key>
 			<string></string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena9</string>
 		</dict>
@@ -98,8 +80,6 @@
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>Mas porque alguém como o senhor está indo para uma ilha como aquela? Meu primo, ele é marinheiro, ele disse que uma vez viu monstros naquela ilha.</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena10</string>
 		</dict>
@@ -107,8 +87,6 @@
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
 			<string>cena11</string>
@@ -118,8 +96,6 @@
 			<string>Cientista</string>
 			<key>Texto</key>
 			<string>Tenho um trabalho a fazer.</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena12</string>
 		</dict>
@@ -128,8 +104,6 @@
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>Entendo... que trabalho é esse?</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena13</string>
 		</dict>
@@ -138,8 +112,6 @@
 			<string>Cientista</string>
 			<key>Texto</key>
 			<string>Coleta de amostras</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena14</string>
 		</dict>
@@ -148,8 +120,6 @@
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>Amostras... Legal! De que?</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena15</string>
 		</dict>
@@ -158,8 +128,6 @@
 			<string>Cientista</string>
 			<key>Texto</key>
 			<string>Material radioativo.</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena16</string>
 		</dict>
@@ -167,8 +135,6 @@
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
 			<string>cena17</string>
@@ -178,8 +144,6 @@
 			<string></string>
 			<key>Texto</key>
 			<string></string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena18</string>
 		</dict>
@@ -188,8 +152,6 @@
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>RADIOATIVO?!</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena19</string>
 		</dict>
@@ -197,8 +159,6 @@
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
 			<string>cena20</string>
@@ -208,8 +168,6 @@
 			<string>Cientista</string>
 			<key>Texto</key>
 			<string>Pela barbas de Darwin! O que foi aquilo? </string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena21</string>
 		</dict>
@@ -218,8 +176,6 @@
 			<string>Piloto </string>
 			<key>Texto</key>
 			<string>Precisamos sair daqui.</string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena22</string>
 		</dict>
@@ -227,8 +183,6 @@
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
 			<string>cena23</string>
@@ -238,8 +192,6 @@
 			<string></string>
 			<key>Texto</key>
 			<string></string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena24</string>
 		</dict>
@@ -248,8 +200,6 @@
 			<string></string>
 			<key>Texto</key>
 			<string></string>
-			<key>Foto</key>
-			<string></string>
 			<key>Fundo</key>
 			<string>cena25</string>
 		</dict>
@@ -257,8 +207,6 @@
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
-			<string></string>
-			<key>Foto</key>
 			<string></string>
 			<key>Fundo</key>
 			<string>cena26</string>
