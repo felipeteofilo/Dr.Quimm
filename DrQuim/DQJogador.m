@@ -28,7 +28,7 @@
         
         [self.spriteNode setSize:CGSizeMake(50, 100)];
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
-        [self setPosition:CGPointMake(40, 180)];
+        [self setPosition:CGPointMake(40, 280)];
         
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
@@ -36,6 +36,7 @@
         self.physicsBody.density = 0.6f;
         self.physicsBody.restitution = 0;
         
+        [self addChild:self.spriteNode];
         
         //le as pastas atlas de animacoes
         SKTextureAtlas *pastaFramesAndando= [SKTextureAtlas atlasNamed:@"Andando"];
@@ -93,7 +94,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        jogador = [[self alloc]initWithImageNamed:@"Standing"];
+        jogador = [[self alloc]initJogadorSprite:@"Standing"];
     });
     return jogador;
 }
