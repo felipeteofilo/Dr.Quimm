@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import "DQCutsceneView.h"
+#import "DQCutsceneControle.h"
 
-@implementation DQCutsceneView
+@implementation DQCutsceneControle
 
 -(id)initComParte:(int)parte_
 {
@@ -33,7 +33,7 @@
     //Aloca o arrayCutScene - Ele irá guardar os dicionarios da parte passada por parâmetro
     self.arrayCutscenes = [[NSArray alloc]init];
     self.arrayCutscenes = [self.arrayDeFalasPLists objectAtIndex:(self.parte-1)];
-    NSLog(@"%i", [self.arrayCutscenes count]);
+    NSLog(@"%lu", [self.arrayCutscenes count]);
     
     //Aloca os arrays de FALA e CENA
     self.arrayFalas = [[NSMutableArray alloc]init];

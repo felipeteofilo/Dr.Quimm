@@ -5,17 +5,17 @@
 	<array>
 		<dict>
 			<key>Sujeito</key>
-			<string>Sujeito1</string>
+			<string></string>
 			<key>Texto</key>
-			<string>Texto1</string>
+			<string></string>
 			<key>Fundo</key>
 			<string>cena1</string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
-			<string>Sujeito2</string>
+			<string></string>
 			<key>Texto</key>
-			<string>Texto2</string>
+			<string></string>
 			<key>Fundo</key>
 			<string>cena2</string>
 		</dict>

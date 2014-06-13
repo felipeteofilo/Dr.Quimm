@@ -14,6 +14,8 @@
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        DQCutsceneControle *teste = [[DQCutsceneControle alloc]initComParte:1];
+        
         
         //Inicia o jogador pelo singleton
         self.jogador = [DQJogador sharedJogador];

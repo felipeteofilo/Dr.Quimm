@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
 #import "DQGestoPulo.h"
+#import "DQCutsceneControle.h"
 
 
 //define as categorias de colisao

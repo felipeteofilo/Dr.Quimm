@@ -10,7 +10,7 @@
 #import "DQCena.h"
 #import "DQFala.h"
 
-@interface DQCutsceneView : NSObject
+@interface DQCutsceneControle : NSObject
 
 //Armazena as cutscenes do jogo de acordo com a parte passada
 @property NSArray *arrayCutscenes;
@@ -32,8 +32,5 @@
 
 //Inicia com uma parte
 -(id)initComParte: (int)parte_;
-
--(void)iniciaFalas;
-
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "DQViewController.h"
-
+#import "DQHistoriaParte1.h"
 
 @implementation DQViewController
 
@@ -25,7 +25,7 @@
     skView.showsPhysics=YES;
     
     // Create and configure the scene.
-    DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
+    DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
