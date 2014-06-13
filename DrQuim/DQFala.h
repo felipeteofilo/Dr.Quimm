@@ -12,13 +12,9 @@
 
 @property NSString *sujeito;
 @property NSString *texto;
-@property NSString *nomeFoto;
 
 //init com SUJEITO que fala e TEXTO do que fala
 -(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_;
-
-//init com SUJEITO que fala, TEXTO do que fala e NOME DA FOTO de quem fala
--(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_ NomeFoto:(NSString *)nomeFoto_;
 
 //EXCLUSIVAMENTE PARA TESTES!
 //Método de retorno void - Mostra as falas dos personagens

@@ -15,6 +15,12 @@
 //Armazena as cutscenes do jogo de acordo com a parte passada
 @property NSArray *arrayCutscenes;
 
+//Armazena as falas do jogo de acordo com a parte passada
+@property NSMutableArray *arrayFalas;
+
+//Armazena as cenas do jogo de acordo com a parte passada
+@property NSMutableArray *arrayCenas;
+
 //Atribui um numero chamado PARTE para organizar as cenas
 @property int parte;
 
@@ -22,10 +28,12 @@
 @property NSString *plistFalaPath;
 
 //Cria um NSDictionary com o conteudo da pList.
-@property NSArray *arrayDeFalas;
+@property NSArray *arrayDeFalasPLists;
 
 //Inicia com uma parte
 -(id)initComParte: (int)parte_;
+
+-(void)iniciaFalas;
 
 
 @end

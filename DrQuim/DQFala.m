@@ -18,20 +18,6 @@
     {
         self.sujeito = sujeito_;
         self.texto = texto_;
-        self.nomeFoto = nil;
-    }
-    return self;
-}
-
-//init com SUJEITO que fala, TEXTO do que fala e NOME DA FOTO de quem fala
--(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_ NomeFoto:(NSString *)nomeFoto_
-{
-    self = [super init];
-    if(self)
-    {
-        self.sujeito = sujeito_;
-        self.texto = texto_;
-        self.nomeFoto = nomeFoto_;
     }
     return self;
 }

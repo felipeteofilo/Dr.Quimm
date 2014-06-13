@@ -17,7 +17,7 @@
         //Cria uma string que contem o caminho (path) do arquivo plist de falas
         self.plistFalaPath = [[NSBundle mainBundle] pathForResource:@"Falas" ofType:@"plist"];
         //Cria um NSDictionary com o conteudo da pList.
-        self.arrayDeFalas = [[NSArray alloc]initWithContentsOfFile:self.plistFalaPath];
+        self.arrayDeFalasPLists = [[NSArray alloc]initWithContentsOfFile:self.plistFalaPath];
         
         //define a parte
         self.parte = parte_;
@@ -30,34 +30,43 @@
 
 -(void)iniciaFalas
 {
+    //Aloca o arrayCutScene - Ele irá guardar os dicionarios da parte passada por parâmetro
     self.arrayCutscenes = [[NSArray alloc]init];
+    self.arrayCutscenes = [self.arrayDeFalasPLists objectAtIndex:(self.parte-1)];
+    NSLog(@"%i", [self.arrayCutscenes count]);
     
-    //sendo a parte 1, deve começar com o objeto 0: um array de contém dicionarios
-    self.arrayCutscenes = [self.arrayDeFalas objectAtIndex:(self.parte-1)];
+    //Aloca os arrays de FALA e CENA
+    self.arrayFalas = [[NSMutableArray alloc]init];
+    self.arrayCenas = [[NSMutableArray alloc]init];
     
     //Instanciando as falas e cenas
     for(int i = 0; i < [self.arrayCutscenes count]; i++){
+        //NSStrings temporárias
         NSString *sujeitoTemporario = [NSString stringWithFormat:@"%@", [[self.arrayCutscenes objectAtIndex:i] objectForKey:@"Sujeito"]];
         NSString *textoTemporario = [NSString stringWithFormat:@"%@", [[self.arrayCutscenes objectAtIndex:i] objectForKey:@"Texto"]];
-        NSString *fotoTemporaria = [NSString stringWithFormat:@"%@", [[self.arrayCutscenes objectAtIndex:i] objectForKey:@"Texto"]];
+        NSString *fundoTemporario = [NSString stringWithFormat:@"%@", [[self.arrayCutscenes objectAtIndex:i] objectForKey:@"Fundo"]];
         
-        //FALA
-        //instancia de fala que será, posteriormente, colocada no array definitivo de falas
+        //FALA e CENA - Instancias
+        //objeto de fala que será, posteriormente, colocada no array definitivo de falas.
         DQFala *falaTemporaria;
+        //objeto de cena que será, posteriormente, colocada no array definitivo de cenas.
+        DQCena *cenaTemporaria;
         
-        //teste
-        NSLog(@"Fala - %i: Sujeito: %@, Texto: %@\n, Foto:", i, sujeitoTemporario, textoTemporario);
+        //FALA e CENA - Conteúdo
+        //inicia o objeto temporário de fala com as informações adquiridas
+        falaTemporaria = [[DQFala alloc]initComSujeito:sujeitoTemporario Texto:textoTemporario];
+        //inicia o objeto temporário de cena com as informações adquiridas
+        cenaTemporaria = [[DQCena alloc]initComNomeDaImagem:fundoTemporario];
         
-        
-        //verifica qual construtor deve usar (Sujeito e Texto) ou (Sujeito, Texto e NomeDaFoto)
-        if([[[self.arrayCutscenes objectAtIndex:i]objectForKey:@"Foto"] isEqual: @""]){
-            falaTemporaria = [[DQFala alloc]initComSujeito:sujeitoTemporario Texto:textoTemporario];
-        }
+        //FALA e CENA - Adiciona as temporárias
+        [self.arrayFalas addObject:falaTemporaria];
+        [self.arrayCenas addObject:cenaTemporaria];
     }
     
-    //init com SUJEITO que fala e TEXTO do que fala
-    
-    //init com SUJEITO que fala, TEXTO do que fala e NOME DA FOTO de quem fala
+    //TESTE PARA VER SE FUNCIONOU
+    for(int i = 0; i < [self.arrayFalas count]; i++){
+        NSLog(@"%i - Sujeito:%@ |Fala:%@ |Fundo:%@ ", i, [[self.arrayFalas objectAtIndex:i] sujeito], [[self.arrayFalas objectAtIndex:i] texto], [[self.arrayCenas objectAtIndex:i] nomeDaImagem]);
+    }
     
 }
 
