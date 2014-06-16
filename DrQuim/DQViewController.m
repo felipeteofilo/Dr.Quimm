@@ -22,7 +22,7 @@
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
-    skView.showsPhysics=YES;
+    //skView.showsPhysics=YES;
     
     // Create and configure the scene.
     DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
