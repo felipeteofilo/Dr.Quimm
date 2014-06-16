@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQCutsceneControle.h"
+#import "DQFlorestaParte1.h"
 
 @interface DQHistoriaParte1 : SKScene
 
@@ -20,11 +21,18 @@
 
 -(id)initWithSize:(CGSize)size;
 
+//Método usado para desenhar os dados na tela (apaga os nós anteriores e insere os novos)
+-(void)atualizaTela;
+
+//Métodos usados para mostrar os diferentes nós que estão compondo a cena
 -(void)mostrarFundoAtual;
 -(void)mostrarCaixaTexto;
--(void)mostrarFalaAtual;
+-(void)mostrarFalaAtual:(NSString *)texto;
 
+//Método usado para trocar uma cena para outra
 -(void)trocarCena;
+
+//Método usado no final
 -(void)fimDasCenas;
 
 @end

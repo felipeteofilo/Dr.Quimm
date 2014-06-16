@@ -22,10 +22,4 @@
     return self;
 }
 
-//Método de retorno VOID que mostra a fala na tela
--(void)desenhaNaTela
-{
-    
-}
-
 @end

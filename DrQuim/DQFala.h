@@ -16,8 +16,4 @@
 //init com SUJEITO que fala e TEXTO do que fala
 -(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_;
 
-//EXCLUSIVAMENTE PARA TESTES!
-//Método de retorno void - Mostra as falas dos personagens
--(void)desenhaNaTela;
-
 @end

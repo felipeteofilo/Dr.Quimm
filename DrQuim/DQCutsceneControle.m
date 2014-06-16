@@ -33,7 +33,7 @@
     //Aloca o arrayCutScene - Ele irá guardar os dicionarios da parte passada por parâmetro
     self.arrayCutscenes = [[NSArray alloc]init];
     self.arrayCutscenes = [self.arrayDeFalasPLists objectAtIndex:(self.parte-1)];
-    NSLog(@"%lu", [self.arrayCutscenes count]);
+    NSLog(@"%lu", (unsigned long)[self.arrayCutscenes count]);
     
     //Aloca os arrays de FALA e CENA
     self.arrayFalas = [[NSMutableArray alloc]init];
