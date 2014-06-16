@@ -142,7 +142,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 35)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 70)];
         self.podePular += 1;
         
         

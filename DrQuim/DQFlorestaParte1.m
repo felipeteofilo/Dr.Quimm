@@ -8,14 +8,20 @@
 
 #import "DQFlorestaParte1.h"
 
+#define cameraEdge 150
+
 @implementation DQFlorestaParte1
 
 
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        DQCutsceneControle *teste = [[DQCutsceneControle alloc]initComParte:1];
+        //DQCutsceneControle *teste = [[DQCutsceneControle alloc]initComParte:1];
         
+       // self.anchorPoint = CGPointMake(0.5, 0.5);
+        
+        SKNode *mundo = [SKNode node];
+        mundo.name = @"mundo";
         
         //Inicia o jogador pelo singleton
         self.jogador = [DQJogador sharedJogador];
@@ -48,36 +54,34 @@
         
         chao.hidden =YES;
         
-//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
-//        [sprite setAnchorPoint:CGPointMake(0, 0)];
-//        [sprite setPosition:CGPointMake(0, 0)];
-//        offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
-//        offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
-//        
-//        path = CGPathCreateMutable();
-//        
-//        CGPathMoveToPoint(path, NULL, 0 - offsetX, 128 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 606 - offsetX, 162 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 613 - offsetX, 300 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 303 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 0 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
-//        
-//        CGPathCloseSubpath(path);
-//        
-//        sprite.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-//        
-//        sprite.physicsBody.categoryBitMask=ChaoCategoria;
-//        sprite.physicsBody.usesPreciseCollisionDetection=YES;
-//        sprite.physicsBody.dynamic=NO;
-//        
-//        [sprite setAnchorPoint:CGPointMake(0, 0)];
-//        [sprite setPosition:CGPointMake(0, 0)];
+        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
+        [sprite setAnchorPoint:CGPointMake(0, 0)];
+        [sprite setPosition:CGPointMake(1024, 0)];
+        offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
+        offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
         
+        path = CGPathCreateMutable();
+        
+        CGPathMoveToPoint(path, NULL, 0 - offsetX, 128 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 606 - offsetX, 162 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 613 - offsetX, 300 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 303 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 0 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
+        
+        CGPathCloseSubpath(path);
+        
+        sprite.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        
+        sprite.physicsBody.categoryBitMask=ChaoCategoria;
+        sprite.physicsBody.usesPreciseCollisionDetection=YES;
+        sprite.physicsBody.dynamic=NO;
+        
+       
         
         SKSpriteNode *chaoReal =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
         
-        [chaoReal setAnchorPoint:CGPointMake(0, 0)];
+       [chaoReal setAnchorPoint:CGPointMake(0, 0)];
         [chaoReal setPosition:CGPointMake(0, 0)];
         
         //seta as categorias de colisao do jogador
@@ -89,14 +93,55 @@
         [self.physicsWorld setContactDelegate:self];
         
         //adiuciona o jogador e o chao na cena
-        [self addChild:chao];
-        //[self addChild:sprite];
-        [self addChild:chaoReal];
-        [self addChild:self.jogador];
+        [mundo addChild:chao];
+        [mundo addChild:sprite];
+        [mundo addChild:chaoReal];
+        
+        
+        
+        [self addChild:mundo];
+        
+
+        [mundo addChild:self.jogador];
         
     }
     return self;
 }
+
+- (void)didSimulatePhysics
+{
+  // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
+    
+    //[self centerOnNode: [self childNodeWithName: @"//camera"]];
+    //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
+    
+    
+    
+    
+        CGPoint heroPosition = self.jogador.position;
+        CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
+        
+        //NSLog(@"%f", heroPosition.x);
+        
+        CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
+        
+        if(xCoordinate < cameraEdge && heroPosition.x > 0)
+        {
+            worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge;
+            
+        }
+        
+        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2000)
+        {
+            worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
+           
+        }
+        
+        [self childNodeWithName: @"//mundo"].position= worldPosition;
+    
+   
+}
+
 
 
 //metodo que e chamado assim que e criada a cena
