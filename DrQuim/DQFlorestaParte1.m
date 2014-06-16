@@ -23,62 +23,24 @@
         //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
         self.physicsWorld.gravity=CGVectorMake(0, -3);
         
-
-        SKSpriteNode *chao =[SKSpriteNode spriteNodeWithImageNamed:@"parte1C"];
-        [chao setAnchorPoint:CGPointMake(0, 0)];
-        [chao setPosition:CGPointMake(0,0)];
-        CGFloat offsetX = chao.frame.size.width * chao.anchorPoint.x;
-        CGFloat offsetY = chao.frame.size.height * chao.anchorPoint.y;
-        CGMutablePathRef path = CGPathCreateMutable();
         
-        CGPathMoveToPoint(path, NULL, 0 - offsetX, 224 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 373 - offsetX, 187 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 376 - offsetX, 141 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 932 - offsetX, 121 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 127 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 0 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 2 - offsetX, 0 - offsetY);
+        // LEONARDO 16/06/2014 - Movido criação do corpo Físico para método especifico =]
         
-        CGPathCloseSubpath(path);
-
-        chao.physicsBody =[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        SKNode *chao=[[SKNode alloc]init];
+        
+        chao.physicsBody=[self criaCorpoFísicoParte:3];
+        
         chao.physicsBody.categoryBitMask=ChaoCategoria;
         chao.physicsBody.usesPreciseCollisionDetection=YES;
         chao.physicsBody.dynamic=NO;
+        chao.position=CGPointMake(0, 0);
         
         chao.hidden =YES;
+  
+        SKSpriteNode *background =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
         
-//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
-//        [sprite setAnchorPoint:CGPointMake(0, 0)];
-//        [sprite setPosition:CGPointMake(0, 0)];
-//        offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
-//        offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
-//        
-//        path = CGPathCreateMutable();
-//        
-//        CGPathMoveToPoint(path, NULL, 0 - offsetX, 128 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 606 - offsetX, 162 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 613 - offsetX, 300 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 303 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 0 - offsetY);
-//        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
-//        
-//        CGPathCloseSubpath(path);
-//        
-//        sprite.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-//        
-//        sprite.physicsBody.categoryBitMask=ChaoCategoria;
-//        sprite.physicsBody.usesPreciseCollisionDetection=YES;
-//        sprite.physicsBody.dynamic=NO;
-//        
-//        [sprite setAnchorPoint:CGPointMake(0, 0)];
-//        [sprite setPosition:CGPointMake(0, 0)];
-        
-        
-        SKSpriteNode *chaoReal =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
-        
-        [chaoReal setAnchorPoint:CGPointMake(0, 0)];
-        [chaoReal setPosition:CGPointMake(0, 0)];
+        [background setAnchorPoint:CGPointMake(0, 0)];
+        [background setPosition:CGPointMake(0, 0)];
         
         //seta as categorias de colisao do jogador
         self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
@@ -88,16 +50,82 @@
         //Seta que a classe que ira delegar o contato sera essa mesma
         [self.physicsWorld setContactDelegate:self];
         
-        //adiuciona o jogador e o chao na cena
+        //adiciona corpo físico personalizado
         [self addChild:chao];
-        //[self addChild:sprite];
-        [self addChild:chaoReal];
+
+        //Adiciona o backgroud e o node do jogador
+        [self addChild:background];
         [self addChild:self.jogador];
         
     }
     return self;
 }
 
+-(SKPhysicsBody*)criaCorpoFísicoParte: (int)parte {
+
+    NSMutableArray *arrayPosicoes=[NSMutableArray array];
+    
+    
+    //De acordo com a parte do background ele cria um array de CGPoints com as coordenadas
+    switch (parte){
+            case 1:
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 224)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(373, 187)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(376, 141)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(932, 121)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 127)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
+            
+            break;
+            
+        case 2:
+            
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 127)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(606, 162)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(614, 300)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 302)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
+            
+        case 3:
+            
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 302)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(35,304)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(41, 191)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(602, 201)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(613, 66)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(679, 53)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 53)]];
+            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
+            break;
+    }
+    
+    //Cria o path de acordo com os pontos configurados
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    //Pega as coordenadas do ponto inicial do path para facilitar leitura
+    CGPoint primeiroPonto=[[arrayPosicoes firstObject]CGPointValue];
+    
+    //Posiciona o path no ponto inicial do array
+    CGPathMoveToPoint(path, NULL,primeiroPonto.x, primeiroPonto.y);
+    
+    for (NSValue *pontoMapa in arrayPosicoes){
+        
+        //Para cada ponto do array eu crio uma linha que será usada no corpo físico
+        CGPathAddLineToPoint(path, NULL,[pontoMapa CGPointValue].x,[pontoMapa CGPointValue].y);
+    }
+    
+    //Fecho o path
+    CGPathCloseSubpath(path);
+    
+    //Crio o corpo físico e devolvo ele p quem chamou
+    SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+    
+    
+    return corpoFisicoRetorno;
+}
 
 //metodo que e chamado assim que e criada a cena
 -(void)didMoveToView:(SKView *)view{
@@ -128,14 +156,11 @@
 //metodo chamado assim que um toque e finalizado
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    
     //remove as acoes de andar e animarAndando
     //[self.jogador removeActionForKey:@"andar"];
     //[self.jogador removeActionForKey:@"animandoAndando"];
     
     [self.jogador pararAndar];
-    
-    
 }
 
 //metodo do delegate de contato que e chamado assim que comeca o contato
