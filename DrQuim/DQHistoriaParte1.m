@@ -101,6 +101,47 @@
     [self addChild:self.fala];
 }
 
+-(NSArray *)separarTextoEmFrasesPassandoTexto: (NSString *)texto eComprimentoFrase:(int)comprimentoFrase
+{
+    //corta o texto passado em palavras e as armazena em um NSArray
+    NSArray *arrayDePalavras = [texto componentsSeparatedByString:@" "];
+    
+    //cria um NSMutableArray para armazenar as frases
+    NSMutableArray *arrayComFrases = [[NSMutableArray alloc]init];
+    
+    //Armazena a palavra atual
+    NSString *palavra = @"";
+    
+    //variáveis para controle de frases e palavras
+    int contadorFrase = 0;
+    int contadorPalavras = 0;
+    
+//    
+//    //SEPARA TEXTO EM FRASES
+//    do
+//    {
+//        //define a palavra com a palavra atual
+//        palavra = [arrayDePalavras objectAtIndex:contadorPalavras];
+//        
+//        //Se o tamanho da frase atual + tamanho da palavra atual ultrapassar o numero limite de comprimentoFrase...
+//        if([[arrayComFrases objectAtIndex:contadorFrase] length] + [palavra length] + 1 > comprimentoFrase){
+//            //adiciona a palavra na próxima frase
+//
+//            
+//            contadorFrase ++;
+//        } else{
+//            
+//        }
+//        
+//    }while (contadorPalavras < [arrayDePalavras ]) {
+//        <#statements#>
+//    }
+    
+    
+    //retorna o array com as frases
+    return arrayComFrases;
+}
+
 -(void)trocarCena
 {
     if (self.cenaAtual == [self.cutSceneControle.arrayCenas count]-1) {
