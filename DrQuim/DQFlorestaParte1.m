@@ -18,7 +18,7 @@
     if (self = [super initWithSize:size]) {
         //DQCutsceneControle *teste = [[DQCutsceneControle alloc]initComParte:1];
         
-       // self.anchorPoint = CGPointMake(0.5, 0.5);
+       
         
         SKNode *mundo = [SKNode node];
         mundo.name = @"mundo";
@@ -56,7 +56,7 @@
         
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
         [sprite setAnchorPoint:CGPointMake(0, 0)];
-        [sprite setPosition:CGPointMake(1024, 0)];
+        [sprite setPosition:CGPointMake(self.frame.size.width, 0)];
         offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
         offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
         
@@ -84,6 +84,12 @@
        [chaoReal setAnchorPoint:CGPointMake(0, 0)];
         [chaoReal setPosition:CGPointMake(0, 0)];
         
+        SKSpriteNode *chaoReal2 =[SKSpriteNode spriteNodeWithImageNamed:@"parte2"];
+        
+        [chaoReal2 setAnchorPoint:CGPointMake(0, 0)];
+        [chaoReal2 setPosition:CGPointMake(self.frame.size.width, 0)];
+        
+        
         //seta as categorias de colisao do jogador
         self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
         self.jogador.physicsBody.contactTestBitMask = ChaoCategoria;
@@ -96,6 +102,7 @@
         [mundo addChild:chao];
         [mundo addChild:sprite];
         [mundo addChild:chaoReal];
+        [mundo addChild:chaoReal2];
         
         
         
@@ -121,17 +128,17 @@
         CGPoint heroPosition = self.jogador.position;
         CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
         
-        //NSLog(@"%f", heroPosition.x);
+        NSLog(@"%f", heroPosition.x);
         
         CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
         
-        if(xCoordinate < cameraEdge && heroPosition.x > 0)
+        if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
         {
-            worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge;
+            worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge   ;
             
         }
         
-        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2000)
+        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 1898)
         {
             worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
            
