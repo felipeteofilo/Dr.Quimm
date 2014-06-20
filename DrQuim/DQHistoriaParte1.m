@@ -41,10 +41,15 @@
         textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
     }
     
+    //NSArray que irá conter o textoFormatado cortado em frases
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
+    
     //remove nós que não devem aparecer a tela
     [self.fundo removeFromParent];
     [self.caixaDeFala removeFromParent];
-    [self.fala removeFromParent];
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
+    }
     
     //Adiciona o novo fundo
     [self mostrarFundoAtual];
@@ -52,7 +57,7 @@
     //Adiciona o sprite da CAIXA DE TEXTO e a FALA - SE tiver texto para colocar
     if(temTexto){
         [self mostrarCaixaTexto];
-        [self mostrarFalaAtual:textoFormatado];
+        [self mostrarFalaAtual:frases];
     }
 }
 
@@ -82,64 +87,67 @@
     }
 }
 
--(void)mostrarFalaAtual:(NSString *)texto
+-(void)mostrarFalaAtual:(NSArray *)frases
 {
-    //Inicia o node
-    self.fala = [[SKLabelNode alloc]init];
-    [self.fala setColor:[UIColor whiteColor]];
+    //Inicia o array de falas que conterá os nodes
+    self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
     
-    //adiciona o texto passado
-    [self.fala setText:[NSString stringWithFormat:@"%@", texto]];
+    //Variaveis que contém as coordenadas das primeira fala e o espaço entre elas
+    CGFloat posicaoX = self.caixaDeFala.frame.origin.x + 20;
+    CGFloat posicaoY = self.caixaDeFala.frame.origin.y + 150;
+    CGFloat distancia = 40;
     
-    //define o alinhamento do texto
-    [self.fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    //cria um NSArray de irá armazenar as falas
+    for(int i = 0; i < [frases count]; i++){
+        //cria a fala com cor, posição, alinhamento e texto
+        SKLabelNode *fala = [[SKLabelNode alloc] init];
+        [fala setColor:[UIColor whiteColor]];
+        [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+        [fala setPosition:CGPointMake(posicaoX, posicaoY - (distancia * i))];
+        [fala setText:[frases objectAtIndex:i]];
+        
+        //adiciona ao array
+        [self.arrayDefalasEmFrases addObject:fala];
+    }
     
-    //define a posicao
-    [self.fala setPosition:CGPointMake(self.caixaDeFala.frame.origin.x + 20, self.caixaDeFala.frame.size.height - 60)];
-    
-    //adiciona como filha
-    [self addChild:self.fala];
+    //Adicona as falas na tela
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        NSLog(@"%@", [[self.arrayDefalasEmFrases objectAtIndex:i]text]);
+        [self addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
+    }
 }
 
 -(NSArray *)separarTextoEmFrasesPassandoTexto: (NSString *)texto eComprimentoFrase:(int)comprimentoFrase
 {
-    //corta o texto passado em palavras e as armazena em um NSArray
     NSArray *arrayDePalavras = [texto componentsSeparatedByString:@" "];
+    NSMutableArray *arrayDeFrases = [[NSMutableArray alloc]init];
     
-    //cria um NSMutableArray para armazenar as frases
-    NSMutableArray *arrayComFrases = [[NSMutableArray alloc]init];
+    NSString *palavraAtual = @"";
+    NSString *fraseAtual = @"";
     
-    //Armazena a palavra atual
-    NSString *palavra = @"";
+    //Laço passando por todas as palavras
+    for(int i = 0; i < [arrayDePalavras count]; i++){
+        
+        //armazena a palavra da vez
+        palavraAtual = [arrayDePalavras objectAtIndex:i];
+
+        //Se o tamanho da palavra atual + tamanho da frase atual + 1 for maior que o comprimento passado
+        if([palavraAtual length] + [fraseAtual length] + 1 > comprimentoFrase){
+            //passa a fraseAtual para o array de frases e zera a fraseAtual
+            [arrayDeFrases addObject:fraseAtual];
+            fraseAtual = @"";
+            
+            //adiciona a palavra na nova frase
+            fraseAtual = palavraAtual;
+        } else{
+            fraseAtual = [NSString stringWithFormat:@"%@ %@", fraseAtual, palavraAtual];
+        }
+    }
     
-    //variáveis para controle de frases e palavras
-    int contadorFrase = 0;
-    int contadorPalavras = 0;
-    
-//    
-//    //SEPARA TEXTO EM FRASES
-//    do
-//    {
-//        //define a palavra com a palavra atual
-//        palavra = [arrayDePalavras objectAtIndex:contadorPalavras];
-//        
-//        //Se o tamanho da frase atual + tamanho da palavra atual ultrapassar o numero limite de comprimentoFrase...
-//        if([[arrayComFrases objectAtIndex:contadorFrase] length] + [palavra length] + 1 > comprimentoFrase){
-//            //adiciona a palavra na próxima frase
-//
-//            
-//            contadorFrase ++;
-//        } else{
-//            
-//        }
-//        
-//    }while (contadorPalavras < [arrayDePalavras ]) {
-//        <#statements#>
-//    }
-    
+    [arrayDeFrases addObject:fraseAtual];
     
     //retorna o array com as frases
-    return arrayComFrases;
+    return arrayDeFrases;
 }
 
 -(void)trocarCena
@@ -161,7 +169,9 @@
     //remove nós que não devem aparecer a tela
     [self.fundo removeFromParent];
     [self.caixaDeFala removeFromParent];
-    [self.fala removeFromParent];
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
+    }
     
     //MUDAR DE CENA
     NSLog(@"E acabou!");
