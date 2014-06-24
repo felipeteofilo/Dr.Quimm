@@ -30,11 +30,14 @@
         self.physicsWorld.gravity=CGVectorMake(0, -3);
         
 
-        SKSpriteNode *chao =[SKSpriteNode spriteNodeWithImageNamed:@"parte1C"];
-        [chao setAnchorPoint:CGPointMake(0, 0)];
-        [chao setPosition:CGPointMake(0,0)];
-        CGFloat offsetX = chao.frame.size.width * chao.anchorPoint.x;
-        CGFloat offsetY = chao.frame.size.height * chao.anchorPoint.y;
+        SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:@"parte1C"];
+        
+        
+        
+        [primeiraParte setAnchorPoint:CGPointMake(0, 0)];
+        [primeiraParte setPosition:CGPointMake(0,0)];
+        CGFloat offsetX = primeiraParte.frame.size.width * primeiraParte.anchorPoint.x;
+        CGFloat offsetY = primeiraParte.frame.size.height * primeiraParte.anchorPoint.y;
         CGMutablePathRef path = CGPathCreateMutable();
         
         CGPathMoveToPoint(path, NULL, 0 - offsetX, 224 - offsetY);
@@ -47,18 +50,18 @@
         
         CGPathCloseSubpath(path);
 
-        chao.physicsBody =[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-        chao.physicsBody.categoryBitMask=ChaoCategoria;
-        chao.physicsBody.usesPreciseCollisionDetection=YES;
-        chao.physicsBody.dynamic=NO;
+        primeiraParte.physicsBody =[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
+        primeiraParte.physicsBody.usesPreciseCollisionDetection=YES;
+        primeiraParte.physicsBody.dynamic=NO;
         
-        chao.hidden =YES;
+        primeiraParte.hidden =YES;
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
-        [sprite setAnchorPoint:CGPointMake(0, 0)];
-        [sprite setPosition:CGPointMake(self.frame.size.width, 0)];
-        offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
-        offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
+        SKSpriteNode *segundaParte = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
+        [segundaParte setAnchorPoint:CGPointMake(0, 0)];
+        [segundaParte setPosition:CGPointMake(self.frame.size.width, 0)];
+        offsetX = segundaParte.frame.size.width * segundaParte.anchorPoint.x;
+        offsetY = segundaParte.frame.size.height * segundaParte.anchorPoint.y;
         
         path = CGPathCreateMutable();
         
@@ -71,23 +74,58 @@
         
         CGPathCloseSubpath(path);
         
-        sprite.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        segundaParte.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
         
-        sprite.physicsBody.categoryBitMask=ChaoCategoria;
-        sprite.physicsBody.usesPreciseCollisionDetection=YES;
-        sprite.physicsBody.dynamic=NO;
+        segundaParte.physicsBody.categoryBitMask=ChaoCategoria;
+        segundaParte.physicsBody.usesPreciseCollisionDetection=YES;
+        segundaParte.physicsBody.dynamic=NO;
+        segundaParte.hidden =YES;
+        
+        SKSpriteNode *terceiraParte = [SKSpriteNode spriteNodeWithImageNamed:@"parte3C"];
+        [terceiraParte setAnchorPoint:CGPointMake(0, 0)];
+        [terceiraParte setPosition:CGPointMake(self.frame.size.width*2, 0)];
+        
+         offsetX = terceiraParte.frame.size.width * terceiraParte.anchorPoint.x;
+         offsetY = terceiraParte.frame.size.height * terceiraParte.anchorPoint.y;
+        
+        path = CGPathCreateMutable();
+        
+        CGPathMoveToPoint(path, NULL, 2 - offsetX, 303 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 38 - offsetX, 302 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 42 - offsetX, 192 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 602 - offsetX, 201 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 612 - offsetX, 63 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 688 - offsetX, 52 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 54 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 1 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 1 - offsetX, 0 - offsetY);
+        
+        CGPathCloseSubpath(path);
+        
+        terceiraParte.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        
+        terceiraParte.physicsBody.categoryBitMask=ChaoCategoria;
+        terceiraParte.physicsBody.usesPreciseCollisionDetection=YES;
+        terceiraParte.physicsBody.dynamic=NO;
+        terceiraParte.hidden =YES;
         
        
         
         SKSpriteNode *chaoReal =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
         
-       [chaoReal setAnchorPoint:CGPointMake(0, 0)];
+        [chaoReal setAnchorPoint:CGPointMake(0, 0)];
         [chaoReal setPosition:CGPointMake(0, 0)];
         
         SKSpriteNode *chaoReal2 =[SKSpriteNode spriteNodeWithImageNamed:@"parte2"];
         
         [chaoReal2 setAnchorPoint:CGPointMake(0, 0)];
         [chaoReal2 setPosition:CGPointMake(self.frame.size.width, 0)];
+        
+        SKSpriteNode *chaoReal3 =[SKSpriteNode spriteNodeWithImageNamed:@"parte3"];
+        
+        [chaoReal3 setAnchorPoint:CGPointMake(0, 0)];
+        [chaoReal3 setPosition:CGPointMake(self.frame.size.width*2, 0)];
+        
         
         
         //seta as categorias de colisao do jogador
@@ -99,10 +137,13 @@
         [self.physicsWorld setContactDelegate:self];
         
         //adiuciona o jogador e o chao na cena
-        [mundo addChild:chao];
-        [mundo addChild:sprite];
+        [mundo addChild:primeiraParte];
+        [mundo addChild:segundaParte];
+        [mundo addChild:terceiraParte];
+        
         [mundo addChild:chaoReal];
         [mundo addChild:chaoReal2];
+        [mundo addChild:chaoReal3];
         
         
         
@@ -138,7 +179,7 @@
             
         }
         
-        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 1898)
+        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2922)
         {
             worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
            
