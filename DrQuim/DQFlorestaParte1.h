@@ -21,7 +21,9 @@ static const UInt32 ChaoCategoria =0x1 << 2;
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
 
-//Varial do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
+//Variavel do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
 @property DQGestoPulo *gestoPulo;
+
+//Variavel que será usada oara
 
 @end

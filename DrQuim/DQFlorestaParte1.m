@@ -7,6 +7,7 @@
 //
 
 #import "DQFlorestaParte1.h"
+#import "DQControleCorpoFisico.h"
 
 @implementation DQFlorestaParte1
 
@@ -28,7 +29,7 @@
         
         SKNode *chao=[[SKNode alloc]init];
         
-        chao.physicsBody=[self criaCorpoFísicoParte:3];
+        chao.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase:1];
         
         chao.physicsBody.categoryBitMask=ChaoCategoria;
         chao.physicsBody.usesPreciseCollisionDetection=YES;
@@ -59,72 +60,6 @@
         
     }
     return self;
-}
-
--(SKPhysicsBody*)criaCorpoFísicoParte: (int)parte {
-
-    NSMutableArray *arrayPosicoes=[NSMutableArray array];
-    
-    
-    //De acordo com a parte do background ele cria um array de CGPoints com as coordenadas
-    switch (parte){
-            case 1:
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 224)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(373, 187)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(376, 141)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(932, 121)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 127)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            
-            break;
-            
-        case 2:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 127)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(606, 162)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(614, 300)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 302)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-        case 3:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 302)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(35,304)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(41, 191)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(602, 201)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(613, 66)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(679, 53)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 53)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            break;
-    }
-    
-    //Cria o path de acordo com os pontos configurados
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    //Pega as coordenadas do ponto inicial do path para facilitar leitura
-    CGPoint primeiroPonto=[[arrayPosicoes firstObject]CGPointValue];
-    
-    //Posiciona o path no ponto inicial do array
-    CGPathMoveToPoint(path, NULL,primeiroPonto.x, primeiroPonto.y);
-    
-    for (NSValue *pontoMapa in arrayPosicoes){
-        
-        //Para cada ponto do array eu crio uma linha que será usada no corpo físico
-        CGPathAddLineToPoint(path, NULL,[pontoMapa CGPointValue].x,[pontoMapa CGPointValue].y);
-    }
-    
-    //Fecho o path
-    CGPathCloseSubpath(path);
-    
-    //Crio o corpo físico e devolvo ele p quem chamou
-    SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-    
-    
-    return corpoFisicoRetorno;
 }
 
 //metodo que e chamado assim que e criada a cena
