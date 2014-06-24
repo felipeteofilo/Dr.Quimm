@@ -158,34 +158,27 @@
 
 - (void)didSimulatePhysics
 {
-  // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
     
-    //[self centerOnNode: [self childNodeWithName: @"//camera"]];
-    //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
+    CGPoint heroPosition = self.jogador.position;
+    CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
     
+    NSLog(@"%f",heroPosition.x);
     
+    CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
     
+    if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
+    {
+        worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge   ;
+        
+    }
     
-        CGPoint heroPosition = self.jogador.position;
-        CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
+    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2922)
+    {
+        worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
         
-        NSLog(@"%f", heroPosition.x);
-        
-        CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
-        
-        if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
-        {
-            worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge   ;
-            
-        }
-        
-        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2922)
-        {
-            worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
-           
-        }
-        
-        [self childNodeWithName: @"//mundo"].position= worldPosition;
+    }
+    
+    [self childNodeWithName: @"//mundo"].position= worldPosition;
     
    
 }

@@ -130,7 +130,7 @@
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     //[self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
     
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.33f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
 //funcao da acao de pulo do jogador

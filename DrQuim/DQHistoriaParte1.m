@@ -87,6 +87,29 @@
     }
 }
 
+
+//funcao que retorna a caixa de texto para ser mostrada dentro do jogo
+-(SKSpriteNode*)mostrarCaixaTextoNoJogo{
+    SKSpriteNode *caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(self.frame.size.width * 0.8, self.frame.size.height * 0.25f)];
+    caixaDeFala.alpha = 0.6f;
+    
+    caixaDeFala.anchorPoint = CGPointMake(0, 0);
+    
+    [caixaDeFala setPosition:CGPointMake(self.frame.size.width * 0.1f, self.frame.size.height * 0.1f)];
+    
+    return caixaDeFala;
+}
+
+
+//funcao a fazer de mostrar as falas dentro do jogo
+//-(void)mostrarFalaNoJogo Scene:(SKScene*)cena{
+//    
+//    
+//    
+//    
+//    
+//}
+
 -(void)mostrarFalaAtual:(NSArray *)frases
 {
     //Inicia o array de falas que conterá os nodes
