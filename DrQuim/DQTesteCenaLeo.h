@@ -7,7 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQFala.h"
 
 @interface DQTesteCenaLeo : SKScene
+
+@property DQFala *falaTeste;
 
 @end

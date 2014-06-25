@@ -7,21 +7,30 @@
 //
 
 #import "DQViewController.h"
-
+#import "DQHistoriaParte1.h"
 
 @implementation DQViewController
 
-- (void)viewWillLayoutSubviews
+
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillLayoutSubviews];
+    [super viewDidAppear:animated];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
+    skView.showsPhysics=YES;
+    
     // Create and configure the scene.
-    DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
+
+    DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
+    
+    //DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
+    //DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
+    
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
@@ -35,8 +44,13 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskLandscape;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    } else {
+        return UIInterfaceOrientationMaskAll;
+    }
 }
+
 
 - (void)didReceiveMemoryWarning
 {
