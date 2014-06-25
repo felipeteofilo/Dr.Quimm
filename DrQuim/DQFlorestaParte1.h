@@ -46,7 +46,7 @@ static NSString* nomeMundo=@"mundo";
 @property int nPartesCena;
 
 //Variavel que será usada para controlar quanto tempo se passou desde o ultimo update
-@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
-@property (nonatomic) NSTimeInterval tempoDesdeUltimoUpdate;
+//@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
+//@property (nonatomic) NSTimeInterval tempoDesdeUltimoUpdate;
 
 @end

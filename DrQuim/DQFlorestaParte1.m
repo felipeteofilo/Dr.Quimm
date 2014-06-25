@@ -32,12 +32,17 @@
         //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
         self.physicsWorld.gravity=CGVectorMake(0, -3);
 
-        SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:@"parte1C"];
-        
-        
+        SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
         
         [primeiraParte setAnchorPoint:CGPointMake(0, 0)];
         [primeiraParte setPosition:CGPointMake(0,0)];
+        
+        primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
+        primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
+        primeiraParte.physicsBody.usesPreciseCollisionDetection=YES;
+        primeiraParte.physicsBody.dynamic=NO;
+        
+        /*
         CGFloat offsetX = primeiraParte.frame.size.width * primeiraParte.anchorPoint.x;
         CGFloat offsetY = primeiraParte.frame.size.height * primeiraParte.anchorPoint.y;
         CGMutablePathRef path = CGPathCreateMutable();
@@ -110,7 +115,6 @@
         terceiraParte.physicsBody.usesPreciseCollisionDetection=YES;
         terceiraParte.physicsBody.dynamic=NO;
         terceiraParte.hidden =YES;
-        
        
         
         SKSpriteNode *chaoReal =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
@@ -127,13 +131,12 @@
         
         [chaoReal3 setAnchorPoint:CGPointMake(0, 0)];
         [chaoReal3 setPosition:CGPointMake(self.frame.size.width*2, 0)];
+        */
         
-        
-        
+
         //seta as categorias de colisao do jogador
         self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
         self.jogador.physicsBody.contactTestBitMask = ChaoCategoria;
-        
         
         //Seta que a classe que ira delegar o contato sera essa mesma
         [self.physicsWorld setContactDelegate:self];
@@ -143,7 +146,6 @@
         [primeiraParte setName:backgroundAtual];
         
         //Leonardo -25/06/2014 - Alterado a forma como se manipula o mundo
-        //adiciona o jogador e o chao na cena
         /*[mundo addChild:primeiraParte];
         [mundo addChild:segundaParte];
         [mundo addChild:terceiraParte];
@@ -152,19 +154,22 @@
         [mundo addChild:chaoReal3];
         [self addChild:mundo];
          
-        [mundo addChild:self.jogador];*/
-        
-        
-        [self.mundo addChild:primeiraParte];
+        [mundo addChild:self.jogador];
+    
         //[self.mundo addChild:segundaParte];
         //[self.mundo addChild:terceiraParte];
         
-        [self.mundo addChild:chaoReal];
+        //LEONARDO - 25/06/2014 - Alterado a forma de criar as proximas partes da tela
+        //[self.mundo addChild:chaoReal];
         //[self.mundo addChild:chaoReal2];
-        //[self.mundo addChild:chaoReal3];
+        [self.mundo addChild:chaoReal3];
+        */
 
+        //Adiciona a primeira parte da tela e o jogador no mundo
+        [self.mundo addChild:primeiraParte];
         [self.mundo addChild:self.jogador];
         
+        //Adiciona o mundo na scena
         [self addChild:self.mundo];
         
         self.posicaoXJogador=self.jogador.position.x;
@@ -183,52 +188,50 @@
 
 - (void)didSimulatePhysics
 {
-  // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
+    // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
     
     //[self centerOnNode: [self childNodeWithName: @"//camera"]];
     //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
     
+    CGPoint heroPosition = self.jogador.position;
     
+    //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
+    //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
     
+    CGPoint worldPosition=self.mundo.position;
+    CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
     
-        CGPoint heroPosition = self.jogador.position;
-    
-        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
+    if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
+    {
+        worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge   ;
         
-        CGPoint worldPosition=self.mundo.position;
+    }
     
-        CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
+    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2922)
+    {
+        worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
         
-        if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
-        {
-            worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge   ;
-            
-        }
-        
-        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2922)
-        {
-            worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
-           
-        }
+    }
     
-        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //[self childNodeWithName: @"//mundo"].position= worldPosition;
-        self.mundo.position=worldPosition;
+    //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
+    //[self childNodeWithName: @"//mundo"].position= worldPosition;
+    self.mundo.position = worldPosition;
     
-    
-        //Atualiza a posicao em X do jogador
-        self.posicaoXJogador=self.jogador.position.x;
-    
-        //Chama a manipulacao da posicao em x do jogador
+    //IF usado para controlar quando passa de uma parte da tela para outra
+    if (self.posicaoXJogador >= (CGRectGetMaxX(self.frame)-2) && (self.posicaoXJogador <= (CGRectGetMaxX(self.frame)+2))){
         [self manipulaPartesBackground];
-    
-        if (self.tempoDesdeUltimoUpdate > 1) {
-            // se sepassou mais de 1 segundo
         
-            //NSLog(@"%f",self.tempoDesdeUltimoUpdate);
-            [self manipulaPartesBackground];
+    }else{
+        //Atualiza a posicao em X do jogador
+        self.posicaoXJogador = self.jogador.position.x - CGRectGetMaxX(self.frame);
+        
+        if (self.posicaoXJogador < 0) {
+            self.posicaoXJogador=self.jogador.position.x;
         }
+    }
+
+    NSLog(@"posicao x do jogador %f",self.posicaoXJogador);
+    
 }
 
 
@@ -256,20 +259,15 @@
         [self.jogador andarParaDirecao:@"E"];
     }
     
-    
 }
 
 //metodo chamado assim que um toque e finalizado
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    
     //remove as acoes de andar e animarAndando
     //[self.jogador removeActionForKey:@"andar"];
     //[self.jogador removeActionForKey:@"animandoAndando"];
     
     [self.jogador pararAndar];
-    
-    
 }
 
 //metodo do delegate de contato que e chamado assim que comeca o contato
@@ -300,28 +298,12 @@
             if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
             }
-            
-            
-            
         }
     }
     
 }
 
 -(void)update:(NSTimeInterval)currentTime{
-
-    //Guardar variação do timer
-    //CFTimeInterval tempoDesdeUltimoUpdate= currentTime - self.intervaloUltimoUpdate;
-    self.tempoDesdeUltimoUpdate = currentTime - self.intervaloUltimoUpdate;
-
-    //
-    
-    if (self.tempoDesdeUltimoUpdate > 1) {
-        // se sepassou mais de 1 segundo
-        self.intervaloUltimoUpdate = currentTime;
-        
-        //NSLog(@"%f",self.tempoDesdeUltimoUpdate);
-    }
     
     [self criarParteFase];
 }
@@ -337,10 +319,17 @@
             
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual + 1 <= self.nPartesCena) {
-                //NSString *nomeImagemBack=[NSString stringWithFormat:@"<#string#>"]
+                NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual+1];
+                
                 // Alterar para skspritenode
-                SKNode *background=[SKNode node];
+                SKSpriteNode *background=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
             
+                //Atualiza o anchorpoint
+                background.anchorPoint=CGPointMake(0, 0);
+                
+                //Deixa o background no fundo da tela
+                [background setZPosition:-100.0];
+                
                 //se tiver Cria o skspritenode com o fundo da prox parte e corpo fisico
                 
                 //posiciona após a cena
@@ -367,11 +356,17 @@
             
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual -1 > 1) {
-                //NSString *nomeImagemBack=[NSString stringWithFormat:@"<#string#>"]
-                // Alterar para skspritenode
-                SKNode *background=[SKNode node];
                 
-                //se tiver Cria o skspritenode com o fundo da prox parte e corpo fisico
+                NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual-1];
+                
+                // Alterar para skspritenode
+                SKSpriteNode *background=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
+                
+                //Atualiza o anchorpoint
+                background.anchorPoint=CGPointMake(0, 0);
+                
+                //Deixa o background no fundo da tela
+                [background setZPosition:-100.0];
                 
                 //posiciona após a cena
                 //Corpo fisico
@@ -388,15 +383,13 @@
                 [self.mundo addChild:background];
                 
             }
-            
         }
     }
 }
 
 -(void)manipulaPartesBackground{
     
-    //Se a posicao em x do jogador for maior que a largura de um frame
-    if (self.posicaoXJogador > CGRectGetMaxX(self.frame)) {
+    if (!self.posicaoXJogador == 0) {
         //Atualiza a posicao do jogador para 0, pq agora ele esta em uma nova parte
         self.posicaoXJogador = 0;
         
@@ -405,9 +398,10 @@
         
         //Atualiza em que parte ele está
         self.parteFaseAtual ++;
+        
+        //Atualiza o tamanho em x das telas até agora
+        self.ultimoXParteFase=self.ultimoXParteFase + CGRectGetMaxX(self.frame);
     }
 }
-
-
 
 @end
