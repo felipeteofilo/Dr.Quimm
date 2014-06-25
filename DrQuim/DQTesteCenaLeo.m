@@ -10,4 +10,13 @@
 
 @implementation DQTesteCenaLeo
 
+-(id)initWithSize:(CGSize)size {
+    self = [super initWithSize:size];
+    if (self) {        
+        
+        [self addChild:self.falaTeste];
+    }
+    return self;
+}
+
 @end

@@ -8,11 +8,20 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface DQJogador : SKSpriteNode
+@interface DQJogador : SKNode
 
+
+//Arrays que guardam os frames das animacoes do jogador
 {
     NSMutableArray *framesAndando;
+    NSMutableArray *framesPulando;
+    NSMutableArray *framesParado;
 }
+
+
+
+//Propriedade que armazenará os sprites e animações
+@property SKSpriteNode *spriteNode;
 
 //variável int - Define a vida do jogador
 @property int vida;
@@ -26,8 +35,11 @@
 //variável int - Define o respeito do jogador
 @property int respeito;
 
-@property BOOL estaNoChao;
-    
+@property int podePular;
+
+
+//Função de inicialização
+-(id)initJogadorSprite: (NSString*)name;
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
 -(void)andarParaDirecao:(NSString*)direcao;
@@ -37,5 +49,21 @@
 
 //Método de retorno VOID - Faz o personagem interagir
 -(void)interagir;
+
+//Singleton do jogador
++(id)sharedJogador;
+
+//Metodo para animar o jogador andando
+-(void)animarAndando;
+
+//Metodo para animar o jogador pulando
+-(void)animarPular;
+
+//Metodo para animar o jogador parado
+-(void)animarParado;
+
+//Método para parar de andar
+-(void)pararAndar;
+
 
 @end
