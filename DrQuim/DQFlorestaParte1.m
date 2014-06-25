@@ -9,7 +9,7 @@
 #import "DQFlorestaParte1.h"
 #import "DQControleCorpoFisico.h"
 
-#define cameraEdge 150
+#define cameraEdge 512
 
 @implementation DQFlorestaParte1
 
@@ -18,7 +18,6 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         //DQCutsceneControle *teste = [[DQCutsceneControle alloc]initComParte:1];
-        
         
         //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
         //SKNode *mundo = [SKNode node];
@@ -42,105 +41,14 @@
         primeiraParte.physicsBody.usesPreciseCollisionDetection=YES;
         primeiraParte.physicsBody.dynamic=NO;
         
-        /*
-        CGFloat offsetX = primeiraParte.frame.size.width * primeiraParte.anchorPoint.x;
-        CGFloat offsetY = primeiraParte.frame.size.height * primeiraParte.anchorPoint.y;
-        CGMutablePathRef path = CGPathCreateMutable();
-        
-        CGPathMoveToPoint(path, NULL, 0 - offsetX, 224 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 373 - offsetX, 187 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 376 - offsetX, 141 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 932 - offsetX, 121 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 127 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 0 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 2 - offsetX, 0 - offsetY);
-        
-        CGPathCloseSubpath(path);
 
-        primeiraParte.physicsBody =[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-        primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
-        primeiraParte.physicsBody.usesPreciseCollisionDetection=YES;
-        primeiraParte.physicsBody.dynamic=NO;
         
-        primeiraParte.hidden =YES;
-        
-        SKSpriteNode *segundaParte = [SKSpriteNode spriteNodeWithImageNamed:@"parte2C"];
-        [segundaParte setAnchorPoint:CGPointMake(0, 0)];
-        [segundaParte setPosition:CGPointMake(self.frame.size.width, 0)];
-        offsetX = segundaParte.frame.size.width * segundaParte.anchorPoint.x;
-        offsetY = segundaParte.frame.size.height * segundaParte.anchorPoint.y;
-        
-        path = CGPathCreateMutable();
-        
-        CGPathMoveToPoint(path, NULL, 0 - offsetX, 128 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 606 - offsetX, 162 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 613 - offsetX, 300 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 303 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 0 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
-        
-        CGPathCloseSubpath(path);
-        
-        segundaParte.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-        
-        segundaParte.physicsBody.categoryBitMask=ChaoCategoria;
-        segundaParte.physicsBody.usesPreciseCollisionDetection=YES;
-        segundaParte.physicsBody.dynamic=NO;
-        segundaParte.hidden =YES;
-        
-        SKSpriteNode *terceiraParte = [SKSpriteNode spriteNodeWithImageNamed:@"parte3C"];
-        [terceiraParte setAnchorPoint:CGPointMake(0, 0)];
-        [terceiraParte setPosition:CGPointMake(self.frame.size.width*2, 0)];
-        
-         offsetX = terceiraParte.frame.size.width * terceiraParte.anchorPoint.x;
-         offsetY = terceiraParte.frame.size.height * terceiraParte.anchorPoint.y;
-        
-        path = CGPathCreateMutable();
-        
-        CGPathMoveToPoint(path, NULL, 2 - offsetX, 303 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 38 - offsetX, 302 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 42 - offsetX, 192 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 602 - offsetX, 201 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 612 - offsetX, 63 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 688 - offsetX, 52 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1023 - offsetX, 54 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1022 - offsetX, 1 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 1 - offsetX, 0 - offsetY);
-        
-        CGPathCloseSubpath(path);
-        
-        terceiraParte.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-        
-        terceiraParte.physicsBody.categoryBitMask=ChaoCategoria;
-        terceiraParte.physicsBody.usesPreciseCollisionDetection=YES;
-        terceiraParte.physicsBody.dynamic=NO;
-        terceiraParte.hidden =YES;
-       
-        
-        SKSpriteNode *chaoReal =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
-        
-        [chaoReal setAnchorPoint:CGPointMake(0, 0)];
-        [chaoReal setPosition:CGPointMake(0, 0)];
-        
-        SKSpriteNode *chaoReal2 =[SKSpriteNode spriteNodeWithImageNamed:@"parte2"];
-        
-        [chaoReal2 setAnchorPoint:CGPointMake(0, 0)];
-        [chaoReal2 setPosition:CGPointMake(self.frame.size.width, 0)];
-        
-        SKSpriteNode *chaoReal3 =[SKSpriteNode spriteNodeWithImageNamed:@"parte3"];
-        
-        [chaoReal3 setAnchorPoint:CGPointMake(0, 0)];
-        [chaoReal3 setPosition:CGPointMake(self.frame.size.width*2, 0)];
-        */
-        
-
         //seta as categorias de colisao do jogador
         self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
         self.jogador.physicsBody.contactTestBitMask = ChaoCategoria;
         
         //Seta que a classe que ira delegar o contato sera essa mesma
         [self.physicsWorld setContactDelegate:self];
-        
         
         //Adicionado nome no skNode que será o chao
         [primeiraParte setName:backgroundAtual];
@@ -179,40 +87,38 @@
         //Provisório
         self.nPartesCena=14;
         
-        
-        
-        
     }
     return self;
 }
 
 - (void)didSimulatePhysics
 {
+    CGPoint heroPosition = self.jogador.position;
+ 
+    //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
+    CGPoint worldPosition = self.mundo.position;
+    
+    CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
     // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
     
     //[self centerOnNode: [self childNodeWithName: @"//camera"]];
     //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
     
-    CGPoint heroPosition = self.jogador.position;
     
     //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
     //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
-    
-    CGPoint worldPosition=self.mundo.position;
-    CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
-    
-    if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
+    if(xCoordinate <= cameraEdge && heroPosition.x >= 512)
     {
-        worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge   ;
+        worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge;
         
     }
-    
-    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2922)
+    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2560)
     {
         worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
         
     }
     
+
     //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
     //[self childNodeWithName: @"//mundo"].position= worldPosition;
     self.mundo.position = worldPosition;
@@ -231,7 +137,6 @@
     }
 
     NSLog(@"posicao x do jogador %f",self.posicaoXJogador);
-    
 }
 
 

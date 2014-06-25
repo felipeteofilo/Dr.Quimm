@@ -25,8 +25,12 @@
     skView.showsPhysics=YES;
     
     // Create and configure the scene.
+
+    DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
+    
+    //DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
     //DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
-    DQFlorestaParte1 *floresta=[DQFlorestaParte1 sceneWithSize:skView.bounds.size];
+    
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.

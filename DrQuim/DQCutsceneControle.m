@@ -10,7 +10,7 @@
 
 @implementation DQCutsceneControle
 
--(id)initComParte:(int)parte_
+-(id)initComParte:(int)parte_ Fase :(int)fase
 {
     self = [super init];
     if (self) {
@@ -19,8 +19,12 @@
         //Cria um NSDictionary com o conteudo da pList.
         self.arrayDeFalasPLists = [[NSArray alloc]initWithContentsOfFile:self.plistFalaPath];
         
+        NSString *urlFalasDoJogo = [[NSBundle mainBundle] pathForResource:@"FalasDoJogo" ofType:@"plist"];
+        
+        self.arrayFalasDentroDoJogo = [[NSArray alloc]initWithContentsOfFile:urlFalasDoJogo];
         //define a parte
         self.parte = parte_;
+        self.faseAtual = fase;
         
         //inicia a parte dependendo do numero passado como parte
         [self iniciaFalas];
@@ -33,7 +37,14 @@
     //Aloca o arrayCutScene - Ele irá guardar os dicionarios da parte passada por parâmetro
     self.arrayCutscenes = [[NSArray alloc]init];
     self.arrayCutscenes = [self.arrayDeFalasPLists objectAtIndex:(self.parte-1)];
-    NSLog(@"%lu", (unsigned long)[self.arrayCutscenes count]);
+    
+    
+    //Aloca o NSMutableDictionary - Ele ira armazenar as falas da fase Atual
+    self.falasDoJogo = [[NSMutableDictionary alloc]init];
+    self.falasDoJogo = [[self.arrayFalasDentroDoJogo objectAtIndex:(self.faseAtual-1)]objectForKey:@"Falas"];
+    
+    
+    
     
     //Aloca os arrays de FALA e CENA
     self.arrayFalas = [[NSMutableArray alloc]init];
@@ -62,12 +73,6 @@
         [self.arrayFalas addObject:falaTemporaria];
         [self.arrayCenas addObject:cenaTemporaria];
     }
-    
-    //TESTE PARA VER SE FUNCIONOU
-    for(int i = 0; i < [self.arrayFalas count]; i++){
-        NSLog(@"%i - Sujeito:%@ |Fala:%@ |Fundo:%@ ", i, [[self.arrayFalas objectAtIndex:i] sujeito], [[self.arrayFalas objectAtIndex:i] texto], [[self.arrayCenas objectAtIndex:i] nomeDaImagem]);
-    }
-    
 }
 
 

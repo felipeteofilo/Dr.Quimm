@@ -26,12 +26,15 @@
         //[self setSize:CGSizeMake(50, 100)];
         //self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.size];
         
-        [self.spriteNode setSize:CGSizeMake(50, 100)];
+        [self.spriteNode setSize:CGSizeMake(90, 160)];
         
         
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
+
+        [self setPosition:CGPointMake(150, 280)];
+
         //[self setPosition:CGPointMake(40, 280)];
-        [self setPosition:CGPointMake(40, 380)];
+        //[self setPosition:CGPointMake(40, 380)];
         
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
@@ -131,7 +134,7 @@
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     //[self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
     
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.33f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
 //funcao da acao de pulo do jogador
@@ -143,7 +146,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 35)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 140)];
         self.podePular += 1;
         
         
@@ -161,7 +164,7 @@
     //se a direcao for para direita
     if ([direcao isEqual:@"D"]) {
         
-        movimentar =[SKAction moveByX:70 y:0 duration:1.0];
+        movimentar =[SKAction moveByX:90 y:0 duration:1.0];
         
         //[self.physicsBody applyImpulse:CGVectorMake(10, 0)];
         //[self.physicsBody setVelocity:CGVectorMake(50, 0)];
@@ -178,7 +181,7 @@
         //self.xScale = fabs(self.xScale)*1;
         self.spriteNode.xScale = fabs(self.spriteNode.xScale)*1;
     }else{
-        movimentar =[SKAction moveByX:-70 y:0 duration:1.0];
+        movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
         
         //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
         //self.xScale = fabs(self.xScale)* -1;

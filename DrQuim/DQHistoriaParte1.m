@@ -16,7 +16,8 @@
     self = [super initWithSize:size];
     if (self) {
         self.cenaAtual = 0;
-        self.cutSceneControle = [[DQCutsceneControle alloc]initComParte:1];
+        self.cutSceneControle = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
+        self.falaAtual = 1;
         
         [self atualizaTela];
     }
@@ -41,10 +42,15 @@
         textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
     }
     
+    //NSArray que irá conter o textoFormatado cortado em frases
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
+    
     //remove nós que não devem aparecer a tela
     [self.fundo removeFromParent];
     [self.caixaDeFala removeFromParent];
-    [self.fala removeFromParent];
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
+    }
     
     //Adiciona o novo fundo
     [self mostrarFundoAtual];
@@ -52,7 +58,7 @@
     //Adiciona o sprite da CAIXA DE TEXTO e a FALA - SE tiver texto para colocar
     if(temTexto){
         [self mostrarCaixaTexto];
-        [self mostrarFalaAtual:textoFormatado];
+        [self mostrarFalaAtual:frases];
     }
 }
 
@@ -82,23 +88,110 @@
     }
 }
 
--(void)mostrarFalaAtual:(NSString *)texto
+
+//funcao que retorna a caixa de texto para ser mostrada dentro do jogo
+-(SKSpriteNode*)mostrarCaixaTextoNoJogo{
+    SKSpriteNode *caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(self.frame.size.width * 0.8, self.frame.size.height * 0.25f)];
+    caixaDeFala.alpha = 0.6f;
+    
+    caixaDeFala.anchorPoint = CGPointMake(0, 0);
+    
+    [caixaDeFala setPosition:CGPointMake(self.frame.size.width * 0.1f, self.frame.size.height * 0.1f)];
+    
+    return caixaDeFala;
+}
+
+
+///funcao a fazer de mostrar as falas dentro do jogo
+-(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key{
+    
+    if (self.falasAtuais == nil) {
+        self.falasAtuais = [[NSArray alloc]init];
+        self.falasAtuais = [[self.cutSceneControle falasDoJogo]objectForKey:key];
+    }
+    
+    
+    
+    
+    
+    //NSStrings temporarias para armazenar o sujeito e fala atual
+    NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:(self.falaAtual-1)]objectForKey:@"Sujeito"];
+    NSString *textoTemporario = [[self.falasAtuais objectAtIndex:(self.falaAtual-1)]objectForKey:@"Texto"];
+   
+    NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
+    
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
+    
+    self.caixaDeFala = [self mostrarCaixaTextoNoJogo];
+    
+    [self mostrarFalaAtual:frases];
+    
+    [cena addChild:self.caixaDeFala];
+    
+    
+}
+
+-(void)mostrarFalaAtual:(NSArray *)frases
 {
-    //Inicia o node
-    self.fala = [[SKLabelNode alloc]init];
-    [self.fala setColor:[UIColor whiteColor]];
+    //Inicia o array de falas que conterá os nodes
+    self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
     
-    //adiciona o texto passado
-    [self.fala setText:[NSString stringWithFormat:@"%@", texto]];
+    //Variaveis que contém as coordenadas das primeira fala e o espaço entre elas
+    CGFloat posicaoX = self.caixaDeFala.frame.origin.x - 60 ;
+    CGFloat posicaoY = self.caixaDeFala.frame.origin.y + 150;
+    CGFloat distancia = 40;
     
-    //define o alinhamento do texto
-    [self.fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    //cria um NSArray de irá armazenar as falas
+    for(int i = 0; i < [frases count]; i++){
+        //cria a fala com cor, posição, alinhamento e texto
+        SKLabelNode *fala = [[SKLabelNode alloc] init];
+        [fala setColor:[UIColor whiteColor]];
+        [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+        [fala setPosition:CGPointMake(posicaoX, posicaoY - (distancia * i))];
+        [fala setText:[frases objectAtIndex:i]];
+        
+        //adiciona ao array
+        [self.arrayDefalasEmFrases addObject:fala];
+    }
     
-    //define a posicao
-    [self.fala setPosition:CGPointMake(self.caixaDeFala.frame.origin.x + 20, self.caixaDeFala.frame.size.height - 60)];
+    //Adicona as falas na tela
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        NSLog(@"%@", [[self.arrayDefalasEmFrases objectAtIndex:i]text]);
+        [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
+    }
+}
+
+-(NSArray *)separarTextoEmFrasesPassandoTexto: (NSString *)texto eComprimentoFrase:(int)comprimentoFrase
+{
+    NSArray *arrayDePalavras = [texto componentsSeparatedByString:@" "];
+    NSMutableArray *arrayDeFrases = [[NSMutableArray alloc]init];
     
-    //adiciona como filha
-    [self addChild:self.fala];
+    NSString *palavraAtual = @"";
+    NSString *fraseAtual = @"";
+    
+    //Laço passando por todas as palavras
+    for(int i = 0; i < [arrayDePalavras count]; i++){
+        
+        //armazena a palavra da vez
+        palavraAtual = [arrayDePalavras objectAtIndex:i];
+
+        //Se o tamanho da palavra atual + tamanho da frase atual + 1 for maior que o comprimento passado
+        if([palavraAtual length] + [fraseAtual length] + 1 > comprimentoFrase){
+            //passa a fraseAtual para o array de frases e zera a fraseAtual
+            [arrayDeFrases addObject:fraseAtual];
+            fraseAtual = @"";
+            
+            //adiciona a palavra na nova frase
+            fraseAtual = palavraAtual;
+        } else{
+            fraseAtual = [NSString stringWithFormat:@"%@ %@", fraseAtual, palavraAtual];
+        }
+    }
+    
+    [arrayDeFrases addObject:fraseAtual];
+    
+    //retorna o array com as frases
+    return arrayDeFrases;
 }
 
 -(void)trocarCena
@@ -120,7 +213,9 @@
     //remove nós que não devem aparecer a tela
     [self.fundo removeFromParent];
     [self.caixaDeFala removeFromParent];
-    [self.fala removeFromParent];
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
+    }
     
     //MUDAR DE CENA
     NSLog(@"E acabou!");

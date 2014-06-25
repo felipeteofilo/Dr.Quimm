@@ -17,17 +17,21 @@
 
 @property SKSpriteNode *fundo;
 @property SKSpriteNode *caixaDeFala;
-@property SKLabelNode *fala;
+@property NSMutableArray *arrayDefalasEmFrases;
+@property NSArray *falasAtuais;
+@property int falaAtual;
 
--(id)initWithSize:(CGSize)size;
 
 //Método usado para desenhar os dados na tela (apaga os nós anteriores e insere os novos)
 -(void)atualizaTela;
 
+//Método usado para separar um texto passado em frases que caibam no quadrado separado a elas.
+-(NSArray *)separarTextoEmFrasesPassandoTexto: (NSString *)texto eComprimentoFrase:(int)comprimentoFrase;
+
 //Métodos usados para mostrar os diferentes nós que estão compondo a cena
 -(void)mostrarFundoAtual;
 -(void)mostrarCaixaTexto;
--(void)mostrarFalaAtual:(NSString *)texto;
+-(void)mostrarFalaAtual:(NSArray *)frases;
 
 //Método usado para trocar uma cena para outra
 -(void)trocarCena;
