@@ -30,7 +30,11 @@
         
         
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
+
         [self setPosition:CGPointMake(150, 280)];
+
+        //[self setPosition:CGPointMake(40, 280)];
+        //[self setPosition:CGPointMake(40, 380)];
         
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
