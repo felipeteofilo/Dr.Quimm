@@ -34,8 +34,9 @@
     return self;
 }
 
--(void)iniciarCutscene :(SKScene*)cena {
+-(void)iniciarCutscene :(SKScene*)cena Seletor:(SEL)seletor{
     self.cutscene = cena;
+    self.iniciarGameplay = seletor;
     [self atualizaTela];
 }
 
@@ -266,7 +267,9 @@
     for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
         [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
     }
-    
+    if ([self.cutscene respondsToSelector:self.iniciarGameplay]) {
+        [self.cutscene performSelector:self.iniciarGameplay];
+    }
     
     
     //MUDAR DE CENA

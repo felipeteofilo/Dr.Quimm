@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DQCena.h"
 #import "DQFala.h"
-#import "DQHistoriaParte1.h"
+#import <SpriteKit/SpriteKit.h>
 
 @interface DQCutsceneControle : NSObject
 
@@ -17,6 +17,8 @@
 @property int cenaAtual;
 
 @property SKScene *cutscene;
+
+@property SEL iniciarGameplay;
 
 
 @property SKSpriteNode *fundo;
@@ -61,6 +63,9 @@
 
 
 //Metodo que inicia uma cutscene
--(void)iniciarCutscene :(SKScene*)cena ;
+-(void)iniciarCutscene :(SKScene*)cena Seletor:(SEL)seletor;
+
+//Metodo para trocar de Cutscene
+-(void)trocarCena;
 
 @end
