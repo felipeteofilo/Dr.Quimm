@@ -9,8 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "DQCena.h"
 #import "DQFala.h"
+#import "DQHistoriaParte1.h"
 
 @interface DQCutsceneControle : NSObject
+
+
+@property int cenaAtual;
+
+@property SKScene *cutscene;
+
+
+@property SKSpriteNode *fundo;
+@property SKSpriteNode *caixaDeFala;
+@property NSMutableArray *arrayDefalasEmFrases;
+@property NSArray *falasAtuais;
+@property int falaAtual;
+
 
 //Armazena as cutscenes do jogo de acordo com a parte passada
 @property NSArray *arrayCutscenes;
@@ -44,5 +58,9 @@
 
 //Inicia as falas adicionando-as, dependendo da parte, no arrayFalas e no arrayCenas;
 -(void)iniciaFalas;
+
+
+//Metodo que inicia uma cutscene
+-(void)iniciarCutscene :(SKScene*)cena ;
 
 @end
