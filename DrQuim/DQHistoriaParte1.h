@@ -19,8 +19,6 @@
 @property SKSpriteNode *caixaDeFala;
 @property NSMutableArray *arrayDefalasEmFrases;
 
--(id)initWithSize:(CGSize)size;
-
 //Método usado para desenhar os dados na tela (apaga os nós anteriores e insere os novos)
 -(void)atualizaTela;
 

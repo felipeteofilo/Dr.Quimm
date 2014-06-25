@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
+#import <Foundation/Foundation.h>
 
-@interface DQFala : SKSpriteNode
+@interface DQFala : NSObject
 
 @property NSString *sujeito;
 @property NSString *texto;

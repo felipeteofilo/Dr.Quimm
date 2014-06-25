@@ -33,4 +33,7 @@
 //Inicia com uma parte
 -(id)initComParte: (int)parte_;
 
+//Inicia as falas adicionando-as, dependendo da parte, no arrayFalas e no arrayCenas;
+-(void)iniciaFalas;
+
 @end
