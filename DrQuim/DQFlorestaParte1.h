@@ -21,9 +21,16 @@ static const UInt32 ChaoCategoria =0x1 << 2;
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
 
-//Variavel do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
+//Varial do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
 @property DQGestoPulo *gestoPulo;
 
-//Variavel que será usada oara
+//Variavel que será usada para controlar a posicao em X do jogador- em relação ao tamanho da skScene
+@property float posicaoXJogador;
 
+//Variavel que será usada para controlar em que parte da cena o jogador está
+@property int parteFaseAtual;
+
+
+//Variavel que será usada para controlar quanto tempo se passou desde o ultimo update
+@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
 @end
