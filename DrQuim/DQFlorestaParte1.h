@@ -31,7 +31,7 @@ static NSString* nomeMundo=@"mundo";
 @property DQGestoPulo *gestoPulo;
 
 //Variavel que será usada para controlar a posicao em X do jogador- em relação ao tamanho da skScene
-@property float posicaoXJogador;
+//@property float posicaoXJogador;
 
 //Variavel que controlará a ultima posicao de X de uma parte da fase
 @property float ultimoXParteFase;

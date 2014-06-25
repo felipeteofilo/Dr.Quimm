@@ -80,7 +80,7 @@
         //Adiciona o mundo na scena
         [self addChild:self.mundo];
         
-        self.posicaoXJogador=self.jogador.position.x;
+        //self.posicaoXJogador=self.jogador.position.x;
         self.parteFaseAtual=1;
         self.ultimoXParteFase=0;
         
@@ -124,19 +124,25 @@
     self.mundo.position = worldPosition;
     
     //IF usado para controlar quando passa de uma parte da tela para outra
-    if (self.posicaoXJogador >= (CGRectGetMaxX(self.frame)-2) && (self.posicaoXJogador <= (CGRectGetMaxX(self.frame)+2))){
-        [self manipulaPartesBackground];
+//    if (self.posicaoXJogador >= (CGRectGetMaxX(self.frame)-2) && (self.posicaoXJogador <= (CGRectGetMaxX(self.frame)+2))){
+//        [self manipulaPartesBackground];
         
-    }else{
+//    }else{
         //Atualiza a posicao em X do jogador
-        self.posicaoXJogador = self.jogador.position.x - CGRectGetMaxX(self.frame);
+//        self.posicaoXJogador = self.jogador.position.x - CGRectGetMaxX(self.frame);
         
-        if (self.posicaoXJogador < 0) {
-            self.posicaoXJogador=self.jogador.position.x;
-        }
-    }
+//        if (self.posicaoXJogador < 0) {
+//            self.posicaoXJogador=self.jogador.position.x;
+//        }
+//    }
 
-    NSLog(@"posicao x do jogador %f",self.posicaoXJogador);
+    if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual)) {
+        self.parteFaseAtual ++;
+    }else if((self.jogador.position.x - (CGRectGetMaxX(self.frame)*self.parteFaseAtual))< 0 ){
+        self.parteFaseAtual --;
+    }
+        
+    NSLog(@"posicao x do jogador %f",self.jogador.position.x);
 }
 
 
@@ -217,7 +223,8 @@
 -(void)criarParteFase{
 
     //se for maior que a metade do tamanho de uma skScene ele irá criar um skNode com o physicsbody da prox parte do cenario
-    if (self.posicaoXJogador > CGRectGetMidX(self.frame)){
+    //if (self.posicaoXJogador > CGRectGetMidX(self.frame)){
+    if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual)/2) {
         
         //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
         if (![self.mundo childNodeWithName:proxBackground]) {
@@ -244,9 +251,9 @@
                 //nome do node
                 [background setName:proxBackground];
                 
-                
                 //posicao do node
-                background.position=CGPointMake(self.ultimoXParteFase+CGRectGetMaxX(self.frame), 0);
+                //background.position=CGPointMake(self.ultimoXParteFase+CGRectGetMaxX(self.frame), 0);
+                background.position=CGPointMake(CGRectGetMaxX(self.frame) * self.parteFaseAtual, 0);
                 
                 //add back no mundo
                 [self.mundo addChild:background];
@@ -254,7 +261,8 @@
 
         }
         
-    }else if (self.posicaoXJogador < CGRectGetMidX(self.frame)){
+    //}else if (self.posicaoXJogador < CGRectGetMidX(self.frame)){
+    }else if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual)/2){
         
         //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
         if (![self.mundo childNodeWithName:backgroundAnt]) {
@@ -293,7 +301,7 @@
 }
 
 -(void)manipulaPartesBackground{
-    
+/*
     if (!self.posicaoXJogador == 0) {
         //Atualiza a posicao do jogador para 0, pq agora ele esta em uma nova parte
         self.posicaoXJogador = 0;
@@ -305,8 +313,9 @@
         self.parteFaseAtual ++;
         
         //Atualiza o tamanho em x das telas até agora
-        self.ultimoXParteFase=self.ultimoXParteFase + CGRectGetMaxX(self.frame);
+        self.ultimoXParteFase = self.ultimoXParteFase + CGRectGetMaxX(self.frame);
     }
+ */
 }
 
 @end
