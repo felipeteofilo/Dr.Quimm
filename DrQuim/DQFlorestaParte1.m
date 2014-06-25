@@ -135,9 +135,15 @@
 //            self.posicaoXJogador=self.jogador.position.x;
 //        }
 //    }
-
+    
+    NSLog(@"parte atual %i",self.parteFaseAtual);
+    NSLog(@"tamanho da tela %f",(CGRectGetMaxX(self.frame)*self.parteFaseAtual));
+    
     if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual)) {
-        self.parteFaseAtual ++;
+        if (!self.parteFaseAtual -1 > self.nPartesCena ) {
+            self.parteFaseAtual ++;
+        }
+        
     }else if((self.jogador.position.x - (CGRectGetMaxX(self.frame)*self.parteFaseAtual))< 0 ){
         self.parteFaseAtual --;
     }
@@ -240,7 +246,7 @@
                 background.anchorPoint=CGPointMake(0, 0);
                 
                 //Deixa o background no fundo da tela
-                [background setZPosition:-100.0];
+                [background setZPosition: -100.0];
                 
                 //se tiver Cria o skspritenode com o fundo da prox parte e corpo fisico
                 
@@ -279,7 +285,7 @@
                 background.anchorPoint=CGPointMake(0, 0);
                 
                 //Deixa o background no fundo da tela
-                [background setZPosition:-100.0];
+                [background setZPosition: -100.0];
                 
                 //posiciona após a cena
                 //Corpo fisico
