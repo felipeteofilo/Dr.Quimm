@@ -16,7 +16,8 @@
     self = [super initWithSize:size];
     if (self) {
         self.cenaAtual = 0;
-        self.cutSceneControle = [[DQCutsceneControle alloc]initComParte:1];
+        self.cutSceneControle = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
+        self.falaAtual = 1;
         
         [self atualizaTela];
     }
@@ -101,14 +102,34 @@
 }
 
 
-//funcao a fazer de mostrar as falas dentro do jogo
-//-(void)mostrarFalaNoJogo Scene:(SKScene*)cena{
-//    
-//    
-//    
-//    
-//    
-//}
+///funcao a fazer de mostrar as falas dentro do jogo
+-(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key{
+    
+    if (self.falasAtuais == nil) {
+        self.falasAtuais = [[NSArray alloc]init];
+        self.falasAtuais = [[self.cutSceneControle falasDoJogo]objectForKey:key];
+    }
+    
+    
+    
+    
+    
+    //NSStrings temporarias para armazenar o sujeito e fala atual
+    NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:(self.falaAtual-1)]objectForKey:@"Sujeito"];
+    NSString *textoTemporario = [[self.falasAtuais objectAtIndex:(self.falaAtual-1)]objectForKey:@"Texto"];
+   
+    NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
+    
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
+    
+    self.caixaDeFala = [self mostrarCaixaTextoNoJogo];
+    
+    [self mostrarFalaAtual:frases];
+    
+    [cena addChild:self.caixaDeFala];
+    
+    
+}
 
 -(void)mostrarFalaAtual:(NSArray *)frases
 {
@@ -116,7 +137,7 @@
     self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
     
     //Variaveis que contém as coordenadas das primeira fala e o espaço entre elas
-    CGFloat posicaoX = self.caixaDeFala.frame.origin.x + 20;
+    CGFloat posicaoX = self.caixaDeFala.frame.origin.x - 60 ;
     CGFloat posicaoY = self.caixaDeFala.frame.origin.y + 150;
     CGFloat distancia = 40;
     
@@ -136,7 +157,7 @@
     //Adicona as falas na tela
     for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
         NSLog(@"%@", [[self.arrayDefalasEmFrases objectAtIndex:i]text]);
-        [self addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
+        [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
     }
 }
 

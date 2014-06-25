@@ -8,7 +8,7 @@
 
 #import "DQFlorestaParte1.h"
 
-#define cameraEdge 150
+#define cameraEdge 512
 
 @implementation DQFlorestaParte1
 
@@ -166,13 +166,13 @@
     
     CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
     
-    if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
+    if(xCoordinate <= cameraEdge && heroPosition.x >= 512)
     {
         worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge   ;
         
     }
     
-    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2922)
+    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2560)
     {
         worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
         

@@ -18,6 +18,9 @@
 @property SKSpriteNode *fundo;
 @property SKSpriteNode *caixaDeFala;
 @property NSMutableArray *arrayDefalasEmFrases;
+@property NSArray *falasAtuais;
+@property int falaAtual;
+
 
 //Método usado para desenhar os dados na tela (apaga os nós anteriores e insere os novos)
 -(void)atualizaTela;
