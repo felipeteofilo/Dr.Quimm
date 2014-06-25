@@ -15,9 +15,6 @@
 
 
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self trocarCena];
-}
+
 
 @end

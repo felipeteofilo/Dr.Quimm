@@ -112,7 +112,7 @@
         worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge;
         
     }
-    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2560)
+    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < (self.nPartesCena *1024) -512)
     {
         worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
         

@@ -13,7 +13,7 @@
 @interface DQHistoriaParte1 : SKScene
 
 
-@property DQCutsceneControle *cutSceneControle;
+
 
 
 @end
