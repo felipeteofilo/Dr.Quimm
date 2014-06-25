@@ -33,7 +33,7 @@
     NSString *textoFormatado;
     
     //BOOL que indica de tem texto na cutscene ou não
-    BOOL *temTexto = NO;
+    BOOL temTexto = NO;
     
     //Se existir uma fala, formata a fala
     if(![sujeitoTemporario isEqualToString:@""]){

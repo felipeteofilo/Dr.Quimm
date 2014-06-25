@@ -7,6 +7,7 @@
 //
 
 #import "DQFlorestaParte1.h"
+#import "DQControleCorpoFisico.h"
 
 #define cameraEdge 150
 
@@ -18,19 +19,18 @@
     if (self = [super initWithSize:size]) {
         //DQCutsceneControle *teste = [[DQCutsceneControle alloc]initComParte:1];
         
-       
         
-        SKNode *mundo = [SKNode node];
-        mundo.name = @"mundo";
+        //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
+        //SKNode *mundo = [SKNode node];
+        //mundo.name = @"mundo";
+        self.mundo =[SKNode node];
+        [self.mundo setName:nomeMundo];
         
         //Inicia o jogador pelo singleton
         self.jogador = [DQJogador sharedJogador];
         
         //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
         self.physicsWorld.gravity=CGVectorMake(0, -3);
-        
-        //Configura o timer para 0
-        self.intervaloUltimoUpdate=0;
 
         SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:@"parte1C"];
         
@@ -138,24 +138,44 @@
         //Seta que a classe que ira delegar o contato sera essa mesma
         [self.physicsWorld setContactDelegate:self];
         
-        //adiuciona o jogador e o chao na cena
-        [mundo addChild:primeiraParte];
+        
+        //Adicionado nome no skNode que será o chao
+        [primeiraParte setName:backgroundAtual];
+        
+        //Leonardo -25/06/2014 - Alterado a forma como se manipula o mundo
+        //adiciona o jogador e o chao na cena
+        /*[mundo addChild:primeiraParte];
         [mundo addChild:segundaParte];
         [mundo addChild:terceiraParte];
-        
         [mundo addChild:chaoReal];
         [mundo addChild:chaoReal2];
         [mundo addChild:chaoReal3];
-        
-        
-        
         [self addChild:mundo];
+         
+        [mundo addChild:self.jogador];*/
         
+        
+        [self.mundo addChild:primeiraParte];
+        //[self.mundo addChild:segundaParte];
+        //[self.mundo addChild:terceiraParte];
+        
+        [self.mundo addChild:chaoReal];
+        //[self.mundo addChild:chaoReal2];
+        //[self.mundo addChild:chaoReal3];
 
-        [mundo addChild:self.jogador];
-        self.posicaoXJogador=self.jogador.position.x;
+        [self.mundo addChild:self.jogador];
         
-        NSLog(@"posicao x jogador %f",self.posicaoXJogador);
+        [self addChild:self.mundo];
+        
+        self.posicaoXJogador=self.jogador.position.x;
+        self.parteFaseAtual=1;
+        self.ultimoXParteFase=0;
+        
+        //Provisório
+        self.nPartesCena=14;
+        
+        
+        
         
     }
     return self;
@@ -172,10 +192,12 @@
     
     
         CGPoint heroPosition = self.jogador.position;
-        CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
+    
+        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
+        //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
         
-        //NSLog(@"%f", heroPosition.x);
-        
+        CGPoint worldPosition=self.mundo.position;
+    
         CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
         
         if(xCoordinate <= cameraEdge && heroPosition.x >= 150)
@@ -189,10 +211,24 @@
             worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
            
         }
-        
-        [self childNodeWithName: @"//mundo"].position= worldPosition;
     
-   
+        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
+        //[self childNodeWithName: @"//mundo"].position= worldPosition;
+        self.mundo.position=worldPosition;
+    
+    
+        //Atualiza a posicao em X do jogador
+        self.posicaoXJogador=self.jogador.position.x;
+    
+        //Chama a manipulacao da posicao em x do jogador
+        [self manipulaPartesBackground];
+    
+        if (self.tempoDesdeUltimoUpdate > 1) {
+            // se sepassou mais de 1 segundo
+        
+            //NSLog(@"%f",self.tempoDesdeUltimoUpdate);
+            [self manipulaPartesBackground];
+        }
 }
 
 
@@ -273,56 +309,104 @@
 }
 
 -(void)update:(NSTimeInterval)currentTime{
-    
-    //Guardar variação do timer
-    CFTimeInterval tempoDesdeUltimoUpdate=currentTime -self.intervaloUltimoUpdate;
 
-    self.intervaloUltimoUpdate=currentTime;
+    //Guardar variação do timer
+    //CFTimeInterval tempoDesdeUltimoUpdate= currentTime - self.intervaloUltimoUpdate;
+    self.tempoDesdeUltimoUpdate = currentTime - self.intervaloUltimoUpdate;
+
+    //
     
-    if (tempoDesdeUltimoUpdate > 0.5) {
-        // se sepassou mais de um segundo
-        tempoDesdeUltimoUpdate =1.0/60.0;
+    if (self.tempoDesdeUltimoUpdate > 1) {
+        // se sepassou mais de 1 segundo
         self.intervaloUltimoUpdate = currentTime;
         
-        NSLog(@"%f",tempoDesdeUltimoUpdate);
+        //NSLog(@"%f",self.tempoDesdeUltimoUpdate);
     }
     
-    //[self updateWithTimeSinceLastUpdate:tempoDesdeUltimoUpdate];
-    
-    //FAZER UMA VERIFICAÇÃO TIMER PARA NÃO FICAR CRIANDO DIRETO - em x tempo chama o método
-    //A cada update ele vai fazer a verificação da variavel posicaoXJogador
-        //[self criarParteFase];
-    
+    [self criarParteFase];
 }
 
-//método chamado no update para trabalhar com a variação de tempo no jogo
-- (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)tempoDesdeUltimoUpdate{
-    NSLog(@"%f",tempoDesdeUltimoUpdate);
-}
 
 -(void)criarParteFase{
 
     //se for maior que a metade do tamanho de uma skScene ele irá criar um skNode com o physicsbody da prox parte do cenario
     if (self.posicaoXJogador > CGRectGetMidX(self.frame)){
-        //verifica se ja tem um node com o nome @proxParte
         
-
-            //Se não //verifica se tem parte a ser criada
+        //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
+        if (![self.mundo childNodeWithName:proxBackground]) {
+            
+            //Verifica se tem parte a ser criada
+            if (self.parteFaseAtual + 1 <= self.nPartesCena) {
+                //NSString *nomeImagemBack=[NSString stringWithFormat:@"<#string#>"]
+                // Alterar para skspritenode
+                SKNode *background=[SKNode node];
+            
                 //se tiver Cria o skspritenode com o fundo da prox parte e corpo fisico
+                
+                //posiciona após a cena
+                //Corpo fisico
+                background.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
+                
+                //nome do node
+                [background setName:proxBackground];
+                
+                
+                //posicao do node
+                background.position=CGPointMake(self.ultimoXParteFase+CGRectGetMaxX(self.frame), 0);
+                
+                //add back no mundo
+                [self.mundo addChild:background];
+            }
+
+        }
         
-            //posiciona após a cena
     }else if (self.posicaoXJogador < CGRectGetMidX(self.frame)){
-        //verifica se ja tem um node com o nome @parteAnterior
         
-        
-        //Se não tiver Cria o skspritenode com o fundo da parteAnterior e corpo fisico
-        
-        //posiciona após a cena
+        //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
+        if (![self.mundo childNodeWithName:backgroundAnt]) {
+            
+            //Verifica se tem parte a ser criada
+            if (self.parteFaseAtual -1 > 1) {
+                //NSString *nomeImagemBack=[NSString stringWithFormat:@"<#string#>"]
+                // Alterar para skspritenode
+                SKNode *background=[SKNode node];
+                
+                //se tiver Cria o skspritenode com o fundo da prox parte e corpo fisico
+                
+                //posiciona após a cena
+                //Corpo fisico
+                background.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
+                
+                //nome do node
+                [background setName:backgroundAnt];
+                
+                
+                //posicao do node
+                background.position=CGPointMake(self.ultimoXParteFase - CGRectGetMinX(self.frame), 0);
+                
+                //Add back no mundo
+                [self.mundo addChild:background];
+                
+            }
+            
+        }
     }
-    
-    
 }
 
+-(void)manipulaPartesBackground{
+    
+    //Se a posicao em x do jogador for maior que a largura de um frame
+    if (self.posicaoXJogador > CGRectGetMaxX(self.frame)) {
+        //Atualiza a posicao do jogador para 0, pq agora ele esta em uma nova parte
+        self.posicaoXJogador = 0;
+        
+        //Atualiza oque era chamado de proxBackground para background
+        [[self.mundo childNodeWithName:proxBackground]setName:backgroundAtual];
+        
+        //Atualiza em que parte ele está
+        self.parteFaseAtual ++;
+    }
+}
 
 
 

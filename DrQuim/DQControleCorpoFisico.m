@@ -36,6 +36,7 @@
             [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(614, 300)]];
             [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 302)]];
             [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
+            break;
             
         case 3:
             
