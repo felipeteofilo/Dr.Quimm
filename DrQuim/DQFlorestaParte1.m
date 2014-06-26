@@ -51,7 +51,9 @@
     primeiraParte.physicsBody.usesPreciseCollisionDetection=YES;
     primeiraParte.physicsBody.dynamic=NO;
     
-    
+    //Leonardo - inicializa o jogador
+    //Inicia o jogador pelo singleton
+    self.jogador = [DQJogador sharedJogador];
     
     //seta as categorias de colisao do jogador
     self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
