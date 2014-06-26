@@ -108,6 +108,13 @@
         
         CGPoint heroPosition = self.jogador.position;
         
+        if (heroPosition.x == 560) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+            self.cutsceneEstaRodando = YES;
+            
+        }
+        
+        
         //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
         CGPoint worldPosition = self.mundo.position;
         
@@ -176,7 +183,7 @@
     if (!self.cutsceneEstaRodando) {
         [self.jogador pararAndar];
     }
-    else
+    else 
         [self.controleCutscenes trocarCena];
     
    

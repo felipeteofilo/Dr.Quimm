@@ -67,5 +67,7 @@
 
 //Metodo para trocar de Cutscene
 -(void)trocarCena;
+//Metodo para mostrar falas In Game
+-(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key;
 
 @end

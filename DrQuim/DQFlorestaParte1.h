@@ -28,8 +28,10 @@ static NSString* mundo=@"mundo";
 
 @property DQCutsceneControle *controleCutscenes;
 
-//Seletor para iniciar fase
+//Varial Booleana para saber se esta rodando alguma cutscene
 @property BOOL cutsceneEstaRodando;
+
+
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
