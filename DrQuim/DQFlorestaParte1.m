@@ -20,11 +20,12 @@
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
 
-        //self.cutsceneEstaRodando = YES;
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
 
-        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
         
-        [self iniciarFase];
+        //[self iniciarFase];
     }
     return self;
 }
@@ -185,7 +186,7 @@
             [self.jogador andarParaDirecao:@"E"];
         }
     }
-    else{
+    else if(self.estaFalando){
         if ([self.controleCutscenes trocarFala]) {
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
             

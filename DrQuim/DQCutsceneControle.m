@@ -153,9 +153,8 @@
     //Inicia o array de falas que conterá os nodes
     self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
     
-    //Variaveis que contém as coordenadas das primeira fala e o espaço entre elas
-    CGFloat posicaoX = self.caixaDeFala.frame.origin.x - 60 ;
-    CGFloat posicaoY = self.caixaDeFala.frame.origin.y + 150;
+    //Variavel que contém o espaço entre as falas
+    
     CGFloat distancia = 40;
     
     //cria um NSArray de irá armazenar as falas
@@ -164,7 +163,7 @@
         SKLabelNode *fala = [[SKLabelNode alloc] init];
         [fala setColor:[UIColor whiteColor]];
         [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-        [fala setPosition:CGPointMake(posicaoX, posicaoY - (distancia * i))];
+        [fala setPosition:CGPointMake(60, 150 - (distancia * i))];
         [fala setText:[frases objectAtIndex:i]];
         
         //adiciona ao array
@@ -211,7 +210,7 @@
    
     caixaDeFala.anchorPoint = CGPointMake(0, 0);
     
-    [caixaDeFala setPosition:CGPointMake(cena.frame.size.width * 0.1f, self.cutscene.frame.size.height * 0.1f)];
+    [caixaDeFala setPosition:CGPointMake(cena.frame.size.width * 0.1f, cena.frame.size.height *0.7 )];
     
     return caixaDeFala;
 }
@@ -252,6 +251,7 @@
 
 -(BOOL)trocarFala{
     if (self.falaAtual < self.falasAtuais.count) {
+        [self.caixaDeFala removeFromParent];
         return true;
     }
     else{
