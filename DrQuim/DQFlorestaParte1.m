@@ -12,7 +12,9 @@
 #define cameraEdge 512
 
 @implementation DQFlorestaParte1
-
+{
+    SKNode *nodeAnterior;
+}
 
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
@@ -20,9 +22,12 @@
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
 
-        self.cutsceneEstaRodando = YES;
+        //ALTERACAO PARA TESTE
+//        self.cutsceneEstaRodando = YES;
+//
+//        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
 
-        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        [self iniciarFase];
         
     }
     return self;
@@ -65,26 +70,6 @@
     //Adicionado nome no skNode que será o chao
     [primeiraParte setName:backgroundAtual];
     
-    //Leonardo -25/06/2014 - Alterado a forma como se manipula o mundo
-    /*[mundo addChild:primeiraParte];
-     [mundo addChild:segundaParte];
-     [mundo addChild:terceiraParte];
-     [mundo addChild:chaoReal];
-     [mundo addChild:chaoReal2];
-     [mundo addChild:chaoReal3];
-     [self addChild:mundo];
-     
-     [mundo addChild:self.jogador];
-     
-     //[self.mundo addChild:segundaParte];
-     //[self.mundo addChild:terceiraParte];
-     
-     //LEONARDO - 25/06/2014 - Alterado a forma de criar as proximas partes da tela
-     //[self.mundo addChild:chaoReal];
-     //[self.mundo addChild:chaoReal2];
-     [self.mundo addChild:chaoReal3];
-     */
-    
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:primeiraParte];
     [self.mundo addChild:self.jogador];
@@ -117,16 +102,7 @@
         
         //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
         CGPoint worldPosition = self.mundo.position;
-        
         CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
-        // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
-        
-        //[self centerOnNode: [self childNodeWithName: @"//camera"]];
-        //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
-        
-        
-        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
         
         if(xCoordinate <= cameraEdge && heroPosition.x >= 512)
         {
@@ -140,7 +116,6 @@
         }
         
         //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //[self childNodeWithName: @"//mundo"].position= worldPosition;
         self.mundo.position = worldPosition;
         
         //Chama método para controlar em que parte da fase esta
@@ -228,6 +203,19 @@
 }
 
 
+-(void)testarNomes{
+    
+    for (SKNode *node in [self.mundo children]) {
+        if ([node.name isEqualToString:backgroundEliminar]) {
+            if (node != nodeAnterior) {
+                NSLog(@"mais um node elliminar");
+            }
+        }
+    }
+    
+}
+
+
 -(void)criarParteFase{
     
     //Cria um skNode com o background para facilitar na nossa leitura do codigo
@@ -274,9 +262,8 @@
         
         //Verifica se a posicao X do jogador é menor que a posicao X do back + 1/2 de um frame de SkScene
         //}else if (self.jogador.position.x < (CGRectGetMaxX(self.frame)*self.parteFaseAtual)/2){
-    }//else
-    
-    if (self.jogador.position.x < (nodeBackground.position.x + CGRectGetMidX(self.frame))){
+    }else{
+    //if (self.jogador.position.x < (nodeBackground.position.x + CGRectGetMidX(self.frame))){
         
         //NSLog(@"metade da tela * partedaFase / 2: %f",(CGRectGetMaxX(self.frame)*self.parteFaseAtual)/2);
         //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
@@ -320,7 +307,7 @@
 
 -(void)controlaParteFase{
     
-    if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual +5 )) {
+    if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual )) {
         if (self.parteFaseAtual + 1 <= self.nPartesCena ) {
             self.parteFaseAtual ++;
             
@@ -337,7 +324,7 @@
         }
         
         //Verifica se a possicao X atual do jogador é menor que o X do background atual (o menos 10 é para dar uma tolerancia)
-    }else if (self.jogador.position.x < [self.mundo childNodeWithName:backgroundAtual].position.x -5  ){
+    }else if (self.jogador.position.x < [self.mundo childNodeWithName:backgroundAtual].position.x){
         if (self.parteFaseAtual -1 >=1 ) {
             self.parteFaseAtual --;
             
@@ -355,6 +342,6 @@
     }
     
     //Elimina os nodes marcados para eliminar
-    //[[self.mundo childNodeWithName:backgroundEliminar]removeFromParent];
+    [[self.mundo childNodeWithName:backgroundEliminar]removeFromParent];
 }
 @end
