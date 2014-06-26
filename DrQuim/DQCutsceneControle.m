@@ -34,8 +34,9 @@
     return self;
 }
 
--(void)iniciarCutscene :(SKScene*)cena {
+-(void)iniciarCutscene :(SKScene*)cena Seletor:(SEL)seletor{
     self.cutscene = cena;
+    self.iniciarGameplay = seletor;
     [self atualizaTela];
 }
 
@@ -245,6 +246,15 @@
     
     
 }
+
+-(BOOL)trocarFala{
+    if (self.falaAtual < self.falasAtuais.count) {
+        return true;
+    }
+    else
+        return false;
+}
+
 -(void)trocarCena
 {
     if (self.cenaAtual == [self.arrayCenas count]-1) {
@@ -266,7 +276,9 @@
     for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
         [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
     }
-    
+    if ([self.cutscene respondsToSelector:self.iniciarGameplay]) {
+        [self.cutscene performSelector:self.iniciarGameplay];
+    }
     
     
     //MUDAR DE CENA

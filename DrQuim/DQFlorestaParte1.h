@@ -25,6 +25,14 @@ static NSString* mundo=@"mundo";
 
 @interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
 
+
+@property DQCutsceneControle *controleCutscenes;
+
+//Varial Booleana para saber se esta rodando alguma cutscene
+@property BOOL cutsceneEstaRodando;
+
+
+
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
 
@@ -45,6 +53,9 @@ static NSString* mundo=@"mundo";
 
 //Variavel que controlará o N max de partes da Cena - Provisório
 @property int nPartesCena;
+
+//metodo para iniciar a fase
+-(void)iniciarFase;
 
 //Variavel que será usada para controlar quanto tempo se passou desde o ultimo update
 //@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
