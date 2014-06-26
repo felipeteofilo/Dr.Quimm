@@ -20,7 +20,8 @@ static const UInt32 ChaoCategoria =0x1 << 2;
 static NSString* backgroundAtual=@"backgroundAtualCena";
 static NSString* proxBackground=@"proxBackgroundCena";
 static NSString* backgroundAnt=@"backgroundAntCena";
-static NSString* nomeMundo=@"mundo";
+static NSString* backgroundEliminar=@"backEliminar";
+static NSString* mundo=@"mundo";
 
 @interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
 
@@ -37,7 +38,7 @@ static NSString* nomeMundo=@"mundo";
 @property DQGestoPulo *gestoPulo;
 
 //Variavel que será usada para controlar a posicao em X do jogador- em relação ao tamanho da skScene
-@property float posicaoXJogador;
+//@property float posicaoXJogador;
 
 //Variavel que controlará a ultima posicao de X de uma parte da fase
 @property float ultimoXParteFase;
