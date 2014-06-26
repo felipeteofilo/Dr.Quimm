@@ -246,6 +246,15 @@
     
     
 }
+
+-(BOOL)trocarFala{
+    if (self.falaAtual < self.falasAtuais.count) {
+        return true;
+    }
+    else
+        return false;
+}
+
 -(void)trocarCena
 {
     if (self.cenaAtual == [self.arrayCenas count]-1) {
