@@ -20,7 +20,8 @@ static const UInt32 ChaoCategoria =0x1 << 2;
 static NSString* backgroundAtual=@"backgroundAtualCena";
 static NSString* proxBackground=@"proxBackgroundCena";
 static NSString* backgroundAnt=@"backgroundAntCena";
-static NSString* nomeMundo=@"mundo";
+static NSString* backgroundEliminar=@"backEliminar";
+static NSString* mundo=@"mundo";
 
 @interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
 
