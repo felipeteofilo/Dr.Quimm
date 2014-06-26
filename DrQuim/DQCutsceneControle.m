@@ -205,13 +205,13 @@
 }
 
 //funcao que retorna a caixa de texto para ser mostrada dentro do jogo
--(SKSpriteNode*)mostrarCaixaTextoNoJogo{
-    SKSpriteNode *caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(self.cutscene.frame.size.width * 0.8, self.cutscene.frame.size.height * 0.25f)];
+-(SKSpriteNode*)mostrarCaixaTextoNoJogo :(SKScene*)cena{
+    SKSpriteNode *caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(cena.frame.size.width * 0.8, cena.frame.size.height * 0.25f)];
     caixaDeFala.alpha = 0.6f;
-    
+   
     caixaDeFala.anchorPoint = CGPointMake(0, 0);
     
-    [caixaDeFala setPosition:CGPointMake(self.cutscene.frame.size.width * 0.1f, self.cutscene.frame.size.height * 0.1f)];
+    [caixaDeFala setPosition:CGPointMake(cena.frame.size.width * 0.1f, self.cutscene.frame.size.height * 0.1f)];
     
     return caixaDeFala;
 }
@@ -225,7 +225,7 @@
     }
     
     
-    
+    [self.caixaDeFala removeAllChildren];
     
     
     //NSStrings temporarias para armazenar o sujeito e fala atual
@@ -236,11 +236,14 @@
     
     NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
     
-    self.caixaDeFala = [self mostrarCaixaTextoNoJogo];
+    self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
+    
+    
     
     [self mostrarFalaAtual:frases];
     
     [cena addChild:self.caixaDeFala];
+    
     
     self.falaAtual ++;
     
@@ -251,8 +254,12 @@
     if (self.falaAtual < self.falasAtuais.count) {
         return true;
     }
-    else
+    else{
+        self.falasAtuais = nil;
+        [self.caixaDeFala removeAllChildren];
+        [self.caixaDeFala removeFromParent];
         return false;
+    }
 }
 
 -(void)trocarCena

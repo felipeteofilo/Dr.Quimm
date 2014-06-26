@@ -70,4 +70,7 @@
 //Metodo para mostrar falas In Game
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key;
 
+//Metodo que retorna se pode trocar a fala ou nao
+-(BOOL)trocarFala;
+
 @end
