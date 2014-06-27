@@ -8,10 +8,7 @@
 
 #import "DQViewController.h"
 
-
 @implementation DQViewController
-
-
 
 - (void)viewDidAppear:(BOOL)animated
 {

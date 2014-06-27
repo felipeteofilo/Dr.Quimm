@@ -12,14 +12,16 @@
 #define cameraEdge 512
 
 @implementation DQFlorestaParte1
-
+{
+    SKSpriteNode *plataforma;
+    SKSpriteNode *plataformaExtra;
+}
 
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
-
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
 
@@ -35,8 +37,6 @@
     self.cutsceneEstaRodando = NO;
     
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
-    //SKNode *mundo = [SKNode node];
-    //mundo.name = @"mundo";
     self.mundo =[SKNode node];
     [self.mundo setName:mundo];
     [self.mundo setZPosition:-100];
@@ -65,28 +65,8 @@
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
     
-    //Adicionado nome no skNode que será o chao
-    [primeiraParte setName:backgroundAtual];
-    
-    //Leonardo -25/06/2014 - Alterado a forma como se manipula o mundo
-    /*[mundo addChild:primeiraParte];
-     [mundo addChild:segundaParte];
-     [mundo addChild:terceiraParte];
-     [mundo addChild:chaoReal];
-     [mundo addChild:chaoReal2];
-     [mundo addChild:chaoReal3];
-     [self addChild:mundo];
-     
-     [mundo addChild:self.jogador];
-     
-     //[self.mundo addChild:segundaParte];
-     //[self.mundo addChild:terceiraParte];
-     
-     //LEONARDO - 25/06/2014 - Alterado a forma de criar as proximas partes da tela
-     //[self.mundo addChild:chaoReal];
-     //[self.mundo addChild:chaoReal2];
-     [self.mundo addChild:chaoReal3];
-     */
+    //Att propriedade
+    self.backgroundAtual=primeiraParte;
     
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:primeiraParte];
@@ -95,9 +75,7 @@
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
     
-    //self.posicaoXJogador=self.jogador.position.x;
     self.parteFaseAtual=1;
-    self.ultimoXParteFase=0;
     
     //Provisório
     self.nPartesCena=14;
@@ -116,16 +94,7 @@
         
         //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
         CGPoint worldPosition = self.mundo.position;
-        
         CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
-        // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
-        
-        //[self centerOnNode: [self childNodeWithName: @"//camera"]];
-        //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
-        
-        
-        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
         
         if(xCoordinate <= cameraEdge && heroPosition.x >= 512)
         {
@@ -139,7 +108,6 @@
         }
         
         //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //[self childNodeWithName: @"//mundo"].position= worldPosition;
         self.mundo.position = worldPosition;
         
         //Chama método para controlar em que parte da fase esta
@@ -210,9 +178,9 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!self.cutsceneEstaRodando) {
         [self.jogador pararAndar];
-    }
-    else if(!self.estaFalando)
+    }else if(!self.estaFalando){
         [self.controleCutscenes trocarCena];
+    }
 }
 
 //metodo do delegate de contato que e chamado assim que comeca o contato
@@ -249,138 +217,192 @@
 }
 
 -(void)update:(NSTimeInterval)currentTime{
-    
     [self criarParteFase];
 }
 
-
 -(void)criarParteFase{
     
-    //Cria um skNode com o background para facilitar na nossa leitura do codigo
-    SKNode *nodeBackground=[self.mundo childNodeWithName:backgroundAtual];
-    
-    //se for maior que a metade do tamanho de uma skScene ele irá criar um skNode com o physicsbody da prox parte do cenario
-    //if (self.posicaoXJogador > CGRectGetMidX(self.frame)){
-    if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual)/2) {
+    if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
         
-        //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
-        if (![self.mundo childNodeWithName:proxBackground]) {
+        //Verifica se ja tem um backgroundFuturo criado
+        if (!self.backgroundFuturo) {
             
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual + 1 <= self.nPartesCena) {
                 NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual+1];
                 
                 // Alterar para skspritenode
-                SKSpriteNode *background=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
+                SKSpriteNode *backgroundFuturo=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
                 
                 //Atualiza o anchorpoint
-                background.anchorPoint=CGPointMake(0, 0);
+                backgroundFuturo.anchorPoint=CGPointMake(0, 0);
                 
                 //Deixa o background no fundo da tela
-                [background setZPosition: -100.0];
-                
-                //se tiver Cria o skspritenode com o fundo da prox parte e corpo fisico
+                [backgroundFuturo setZPosition: -100.0];
                 
                 //posiciona após a cena
+                backgroundFuturo.position = CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
+            
                 //Corpo fisico
-                background.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
+                backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
                 
-                //nome do node
-                [background setName:proxBackground];
+                //Atualiza a propriedade e add no mundo
+                self.backgroundFuturo = backgroundFuturo;
                 
-                //posicao do node
-                //background.position=CGPointMake(self.ultimoXParteFase+CGRectGetMaxX(self.frame), 0);
-                background.position=CGPointMake(CGRectGetMaxX(self.frame) * self.parteFaseAtual, 0);
+                //Cria um spriteNode com cor e a plataforma
+                plataforma=[[SKSpriteNode alloc]init];
                 
-                //add back no mundo
-                [self.mundo addChild:background];
+                SKPhysicsBody *physicsBodyPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual+1];
+            
+                plataformaExtra=[[SKSpriteNode alloc]init];
+
+                //Corpo fisico plataforma Extra
+                SKPhysicsBody *physicsBodyPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual + 1];
+                
+                if (physicsBodyPlataforma) {
+                    plataforma.physicsBody=physicsBodyPlataforma;
+                    //plataforma.position=[DQControleCorpoFisico origemPlataforma:self.parteFaseAtual+1];
+                    [plataforma setAnchorPoint:CGPointMake(0, 0)];
+                    
+                    //Adiciona a plataforma no backFuturo para que fique com a posicao em relacao a ele
+                    
+                    [self.backgroundFuturo addChild:plataforma];
+
+                }
+                
+                if (physicsBodyPlataformaExtra) {
+                    plataformaExtra.physicsBody=physicsBodyPlataformaExtra;
+                    
+                    [plataformaExtra setAnchorPoint:CGPointMake(0, 0)];
+                    plataformaExtra.position=CGPointMake(0, -70);
+                    
+                    [self.backgroundFuturo addChild:plataformaExtra];
+                }
+                
+                [self.mundo addChild:self.backgroundFuturo];
+                
             }
-            
         }
-        
-        //Verifica se a posicao X do jogador é menor que a posicao X do back + 1/2 de um frame de SkScene
-        //}else if (self.jogador.position.x < (CGRectGetMaxX(self.frame)*self.parteFaseAtual)/2){
-    }//else
+    }
     
-    if (self.jogador.position.x < (nodeBackground.position.x + CGRectGetMidX(self.frame))){
+    if (self.jogador.position.x < (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
         
-        //NSLog(@"metade da tela * partedaFase / 2: %f",(CGRectGetMaxX(self.frame)*self.parteFaseAtual)/2);
-        //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
-        if (![self.mundo childNodeWithName:backgroundAnt]) {
-            
+        //Verifica se ja tem um backgroundAnterior criado
+        if (!self.backgroundAnterior) {
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual -1 > 0) {
                 
                 NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual-1];
                 
                 // Alterar para skspritenode
-                SKSpriteNode *background=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
+                SKSpriteNode *backgroundAnterior=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
                 
                 //Atualiza o anchorpoint
-                background.anchorPoint=CGPointMake(0, 0);
+                backgroundAnterior.anchorPoint=CGPointMake(0, 0);
                 
                 //Deixa o background no fundo da tela
-                [background setZPosition: -100.0];
+                [backgroundAnterior setZPosition: -100.0];
                 
-                //posiciona após a cena
+                //posiciona antes a cena
+                backgroundAnterior.position = CGPointMake(self.backgroundAtual.position.x - CGRectGetMaxX(self.frame), 0);
+                
                 //Corpo fisico
-                background.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
-                
-                //nome do node
-                [background setName:backgroundAnt];
-                
-                
-                //posicao do node
-                background.position=CGPointMake(self.ultimoXParteFase - CGRectGetMinX(self.frame), 0);
+                backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
                 
                 //Add back no mundo
-                [self.mundo addChild:background];
+                //[self.mundo addChild:background];
+                
+                //Atualiza a propriedade e add no mundo
+                self.backgroundAnterior= backgroundAnterior;
+                
+                //Cria um spriteNode com cor e a plataforma
+                plataforma=[[SKSpriteNode alloc]init];
+                
+                //plataformaExtra
+                plataformaExtra=[[SKSpriteNode alloc]init];
+                
+                //Corpo fisico plat padrao
+                SKPhysicsBody *physicsBodyPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual - 1];
+                
+                //Corpo fisico plataforma Extra
+                SKPhysicsBody *physicsBodyPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual - 1];
+                
+                if (physicsBodyPlataforma) {
+                    plataforma.physicsBody=physicsBodyPlataforma;
+                    //plataforma.position=[DQControleCorpoFisico origemPlataforma:self.parteFaseAtual+1];
+                    [plataforma setAnchorPoint:CGPointMake(0, 0)];
+                    
+                    //Adiciona a plataforma no backFuturo para que fique com a posicao em relacao a ele
+                    
+                    [self.backgroundAnterior addChild:plataforma];
+                    
+                }
+                
+                if (physicsBodyPlataformaExtra) {
+                    plataformaExtra.physicsBody=physicsBodyPlataformaExtra;
+                    
+                    [plataformaExtra setAnchorPoint:CGPointMake(0, 0)];
+                    plataformaExtra.position=CGPointMake(0, -70);
+                    
+                    [self.backgroundAnterior addChild:plataformaExtra];
+                }
+
+                [self.mundo addChild:self.backgroundAnterior];
                 
             }
         }
     }
-    
-    NSLog(@"posicao X do jogador %f",self.jogador.position.x);
-    NSLog(@"X do back + metade de uma tela: %f",nodeBackground.position.x + CGRectGetMidX(self.frame));
 }
 
 -(void)controlaParteFase{
-    
-    if (self.jogador.position.x > (CGRectGetMaxX(self.frame)*self.parteFaseAtual +5 )) {
+
+    //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
+    if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMaxX(self.frame))){
         if (self.parteFaseAtual + 1 <= self.nPartesCena ) {
             self.parteFaseAtual ++;
             
-            //Se ja tiver um backAnterior marca como backEliminar
-            if ([self.mundo childNodeWithName:backgroundAnt]) {
-                [[self.mundo childNodeWithName:backgroundAnt]setName:backgroundEliminar];
+            //Se ja tem um backAnterior elimina ele
+            if (self.backgroundAnterior) {
+                [self.backgroundAnterior removeFromParent];
+                self.backgroundAnterior=nil;
             }
             
-            //Transforma o backgroundAtual no anterior
-            [[self.mundo childNodeWithName:backgroundAtual]setName:backgroundAnt];
+            //Transforma o backAnterior em backAtual
+            self.backgroundAnterior=self.backgroundAtual;
             
-            //Atualiza oque era chamado de proxBackground para background
-            [[self.mundo childNodeWithName:proxBackground]setName:backgroundAtual];
+            //Transforma o back Atual em backFuturo
+            self.backgroundAtual=self.backgroundFuturo;
+            
+            //Transforma o backgroundAtual em nulo, para criar com a imagem e corpo fisico correto
+            self.backgroundFuturo=nil;
         }
         
-        //Verifica se a possicao X atual do jogador é menor que o X do background atual (o menos 10 é para dar uma tolerancia)
-    }else if (self.jogador.position.x < [self.mundo childNodeWithName:backgroundAtual].position.x -5  ){
+    }
+    
+    //Verifica se o X do jogador é menor que o X da parte + a largura de uma tela
+    if (self.jogador.position.x < self.backgroundAtual.position.x){
         if (self.parteFaseAtual -1 >=1 ) {
             self.parteFaseAtual --;
             
-            //Se ja tiver um proxBack marca como backEliminar
-            if ([self.mundo childNodeWithName:proxBackground]) {
-                [[self.mundo childNodeWithName:proxBackground]setName:backgroundEliminar];
+            
+            //Se ja tiver um backFuturo elimina ele
+            if (self.backgroundFuturo) {
+                [self.backgroundFuturo removeFromParent];
+                self.backgroundFuturo = nil;
             }
             
-            //Transforma o backgroundAtual em proxBack
-            [[self.mundo childNodeWithName:backgroundAtual]setName:proxBackground];
+            //Transforma o backgroundAtual em backgroundFuturo
+            self.backgroundFuturo = self.backgroundAtual;
+
+            //Transforma o backgroundAnterior em backgroundAtual
+            self.backgroundAtual = self.backgroundAnterior;
             
-            //Atualiza oque era chamado de proxBackground para background
-            [[self.mundo childNodeWithName:backgroundAnt]setName:backgroundAtual];
+            //Transforma o backgroundAtual em nulo, para criar com a imagem e corpo fisico correto
+            self.backgroundAnterior=nil;
         }
     }
-    
-    //Elimina os nodes marcados para eliminar
-    //[[self.mundo childNodeWithName:backgroundEliminar]removeFromParent];
 }
+
+
+
 @end
