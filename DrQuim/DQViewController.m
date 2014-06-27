@@ -10,8 +10,6 @@
 
 @implementation DQViewController
 
-
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

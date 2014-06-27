@@ -22,14 +22,12 @@
     if (self = [super initWithSize:size]) {
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
+
+        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
         
-        //ALTERACAO PARA TESTE
-        //        self.cutsceneEstaRodando = YES;
-        //
-        //        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
-        
-        [self iniciarFase];
-        
+        //[self iniciarFase];
     }
     return self;
 }
@@ -41,6 +39,7 @@
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
     [self.mundo setName:mundo];
+    [self.mundo setZPosition:-100];
     
     //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
     self.physicsWorld.gravity=CGVectorMake(0, -3);
@@ -90,11 +89,7 @@
         
         CGPoint heroPosition = self.jogador.position;
         
-        if (heroPosition.x == 560) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
-            self.cutsceneEstaRodando = YES;
-            
-        }
+        
         
         
         //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
@@ -117,6 +112,23 @@
         
         //Chama método para controlar em que parte da fase esta
         [self controlaParteFase];
+        
+        if (heroPosition.x > 2470 && heroPosition.x < 2475 ) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+            self.cutsceneEstaRodando = YES;
+            self.estaFalando = YES;
+            [self.jogador pararAndar];
+            if ([self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
+                heroPosition.x += 5;
+            }
+            else
+                heroPosition.x -=5;
+            
+            self.jogador.position= heroPosition;
+            
+           
+            
+        }
         
     }
 }
@@ -147,18 +159,28 @@
             [self.jogador andarParaDirecao:@"E"];
         }
     }
+    else if(self.estaFalando){
+        if ([self.controleCutscenes trocarFala]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            
+        }
+        else{
+            self.estaFalando =NO;
+            self.cutsceneEstaRodando = NO;
+        }
+    }
     
 }
+
+
 
 //metodo chamado assim que um toque e finalizado
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!self.cutsceneEstaRodando) {
         [self.jogador pararAndar];
-    }
-    else
+    }else if(!self.estaFalando){
         [self.controleCutscenes trocarCena];
-    
-    
+    }
 }
 
 //metodo do delegate de contato que e chamado assim que comeca o contato

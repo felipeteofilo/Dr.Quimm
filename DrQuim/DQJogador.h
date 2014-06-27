@@ -37,6 +37,8 @@
 
 @property int podePular;
 
+@property NSString *andandoParaDirecao;
+
 
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;

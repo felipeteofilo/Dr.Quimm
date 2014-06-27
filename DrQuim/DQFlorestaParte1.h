@@ -28,6 +28,8 @@ static NSString* mundo=@"mundo";
 //Varial Booleana para saber se esta rodando alguma cutscene
 @property BOOL cutsceneEstaRodando;
 
+@property BOOL estaFalando;
+
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
 

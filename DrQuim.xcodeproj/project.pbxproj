@@ -64,7 +64,6 @@
 		CD2FE1BD194B3C0B006E3AC1 /* parte7.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2FE1A1194B3C0B006E3AC1 /* parte7.png */; };
 		CD2FE1BE194B3C0B006E3AC1 /* parte8.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2FE1A2194B3C0B006E3AC1 /* parte8.png */; };
 		CD2FE1BF194B3C0B006E3AC1 /* parte9.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2FE1A3194B3C0B006E3AC1 /* parte9.png */; };
-		CDB3FA4B194BA6100099CF6C /* DQHistoriaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3FA4A194BA6100099CF6C /* DQHistoriaParte1.m */; };
 		CDCACF531948F23500FC1070 /* Falas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDCACF521948F23500FC1070 /* Falas.plist */; };
 		CDE817F31933C790003516E7 /* DQJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE817F21933C790003516E7 /* DQJogador.m */; };
 /* End PBXBuildFile section */
@@ -148,8 +147,6 @@
 		CD2FE1A1194B3C0B006E3AC1 /* parte7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parte7.png; sourceTree = "<group>"; };
 		CD2FE1A2194B3C0B006E3AC1 /* parte8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parte8.png; sourceTree = "<group>"; };
 		CD2FE1A3194B3C0B006E3AC1 /* parte9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parte9.png; sourceTree = "<group>"; };
-		CDB3FA49194BA6100099CF6C /* DQHistoriaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHistoriaParte1.h; sourceTree = "<group>"; };
-		CDB3FA4A194BA6100099CF6C /* DQHistoriaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHistoriaParte1.m; sourceTree = "<group>"; };
 		CDCACF521948F23500FC1070 /* Falas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Falas.plist; sourceTree = "<group>"; };
 		CDE817F11933C790003516E7 /* DQJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJogador.h; sourceTree = "<group>"; };
 		CDE817F21933C790003516E7 /* DQJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJogador.m; sourceTree = "<group>"; };
@@ -373,8 +370,6 @@
 				752FB1D11935146300DB4328 /* DQFlorestaParte1.m */,
 				947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */,
 				947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */,
-				CDB3FA49194BA6100099CF6C /* DQHistoriaParte1.h */,
-				CDB3FA4A194BA6100099CF6C /* DQHistoriaParte1.m */,
 			);
 			name = "SKScenes Parte1";
 			sourceTree = "<group>";
@@ -524,7 +519,6 @@
 				75319AD01948C79B006EECE1 /* DQGestoPulo.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
-				CDB3FA4B194BA6100099CF6C /* DQHistoriaParte1.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
