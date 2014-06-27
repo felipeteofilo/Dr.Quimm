@@ -13,7 +13,8 @@
 
 @implementation DQFlorestaParte1
 {
-
+    SKSpriteNode *plataforma;
+    SKSpriteNode *plataformaExtra;
 }
 
 //Metodo que inicia a cena
@@ -64,9 +65,6 @@
     
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
-    
-    //Adicionado nome no skNode que será o chao
-    [primeiraParte setName:backgroundAtual];
     
     //Att propriedade
     self.backgroundAtual=primeiraParte;
@@ -226,14 +224,41 @@
                 //Corpo fisico
                 backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
                 
-                //nome do node
-                [backgroundFuturo setName:proxBackground];
-            
-                
                 //Atualiza a propriedade e add no mundo
                 self.backgroundFuturo = backgroundFuturo;
                 
+                //Cria um spriteNode com cor e a plataforma
+                plataforma=[[SKSpriteNode alloc]init];
+                
+                SKPhysicsBody *physicsBodyPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual+1];
+            
+                plataformaExtra=[[SKSpriteNode alloc]init];
+
+                //Corpo fisico plataforma Extra
+                SKPhysicsBody *physicsBodyPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual + 1];
+                
+                if (physicsBodyPlataforma) {
+                    plataforma.physicsBody=physicsBodyPlataforma;
+                    //plataforma.position=[DQControleCorpoFisico origemPlataforma:self.parteFaseAtual+1];
+                    [plataforma setAnchorPoint:CGPointMake(0, 0)];
+                    
+                    //Adiciona a plataforma no backFuturo para que fique com a posicao em relacao a ele
+                    
+                    [self.backgroundFuturo addChild:plataforma];
+
+                }
+                
+                if (physicsBodyPlataformaExtra) {
+                    plataformaExtra.physicsBody=physicsBodyPlataformaExtra;
+                    
+                    [plataformaExtra setAnchorPoint:CGPointMake(0, 0)];
+                    plataformaExtra.position=CGPointMake(0, -70);
+                    
+                    [self.backgroundFuturo addChild:plataformaExtra];
+                }
+                
                 [self.mundo addChild:self.backgroundFuturo];
+                
             }
         }
     }
@@ -262,15 +287,44 @@
                 //Corpo fisico
                 backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
                 
-                //nome do node
-                [backgroundAnterior setName:backgroundAnt];
-                
                 //Add back no mundo
                 //[self.mundo addChild:background];
                 
                 //Atualiza a propriedade e add no mundo
                 self.backgroundAnterior= backgroundAnterior;
                 
+                //Cria um spriteNode com cor e a plataforma
+                plataforma=[[SKSpriteNode alloc]init];
+                
+                //plataformaExtra
+                plataformaExtra=[[SKSpriteNode alloc]init];
+                
+                //Corpo fisico plat padrao
+                SKPhysicsBody *physicsBodyPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual - 1];
+                
+                //Corpo fisico plataforma Extra
+                SKPhysicsBody *physicsBodyPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual - 1];
+                
+                if (physicsBodyPlataforma) {
+                    plataforma.physicsBody=physicsBodyPlataforma;
+                    //plataforma.position=[DQControleCorpoFisico origemPlataforma:self.parteFaseAtual+1];
+                    [plataforma setAnchorPoint:CGPointMake(0, 0)];
+                    
+                    //Adiciona a plataforma no backFuturo para que fique com a posicao em relacao a ele
+                    
+                    [self.backgroundAnterior addChild:plataforma];
+                    
+                }
+                
+                if (physicsBodyPlataformaExtra) {
+                    plataformaExtra.physicsBody=physicsBodyPlataformaExtra;
+                    
+                    [plataformaExtra setAnchorPoint:CGPointMake(0, 0)];
+                    plataformaExtra.position=CGPointMake(0, -70);
+                    
+                    [self.backgroundAnterior addChild:plataformaExtra];
+                }
+
                 [self.mundo addChild:self.backgroundAnterior];
                 
             }
@@ -326,4 +380,7 @@
         }
     }
 }
+
+
+
 @end

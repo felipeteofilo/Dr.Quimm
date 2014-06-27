@@ -7,7 +7,6 @@
 //
 
 #import "DQViewController.h"
-#import "DQHistoriaParte1.h"
 
 @implementation DQViewController
 
