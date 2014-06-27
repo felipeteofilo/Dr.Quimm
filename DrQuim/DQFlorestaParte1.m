@@ -145,12 +145,17 @@
         //Chama método para controlar em que parte da fase esta
         [self controlaParteFase];
         
-        if (heroPosition.x > 500 && heroPosition.x < 505 ) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+        if (heroPosition.x > 2470 && heroPosition.x < 2475 ) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
             self.cutsceneEstaRodando = YES;
             self.estaFalando = YES;
             [self.jogador pararAndar];
-            heroPosition.x = 506;
+            if ([self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
+                heroPosition.x += 5;
+            }
+            else
+                heroPosition.x -=5;
+            
             self.jogador.position= heroPosition;
             
            

@@ -256,6 +256,7 @@
     }
     else{
         self.falasAtuais = nil;
+        self.falaAtual = 0;
         [self.caixaDeFala removeAllChildren];
         [self.caixaDeFala removeFromParent];
         return false;

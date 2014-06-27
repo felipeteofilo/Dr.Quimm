@@ -164,6 +164,7 @@
     //se a direcao for para direita
     if ([direcao isEqual:@"D"]) {
         
+        self.andandoParaDirecao = @"D";
         movimentar =[SKAction moveByX:90 y:0 duration:1.0];
         
         //[self.physicsBody applyImpulse:CGVectorMake(10, 0)];
@@ -181,6 +182,8 @@
         //self.xScale = fabs(self.xScale)*1;
         self.spriteNode.xScale = fabs(self.spriteNode.xScale)*1;
     }else{
+        
+        self.andandoParaDirecao = @"E";
         movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
         
         //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
