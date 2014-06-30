@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF31946302A00479AFE /* Aterrissagem.atlas */; };
-		23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF5194636C800479AFE /* Cutscene01.atlas */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
+		2380E9001960E19F00AC821C /* Cutscene01.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2380E8FF1960E19F00AC821C /* Cutscene01.atlas */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
@@ -34,7 +34,6 @@
 		94080EC71933BA2A0024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
-		9433F5D91937B4BB00E55E73 /* personagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9433F5D81937B4BB00E55E73 /* personagem.png */; };
 		947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */; };
 		CD2FE1A4194B3C0B006E3AC1 /* parte1C.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2FE187194B3C0B006E3AC1 /* parte1C.png */; };
 		CD2FE1A5194B3C0B006E3AC1 /* parte10C.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2FE188194B3C0B006E3AC1 /* parte10C.png */; };
@@ -80,9 +79,9 @@
 
 /* Begin PBXFileReference section */
 		23477FF31946302A00479AFE /* Aterrissagem.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aterrissagem.atlas; sourceTree = "<group>"; };
-		23477FF5194636C800479AFE /* Cutscene01.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Cutscene01.atlas; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
+		2380E8FF1960E19F00AC821C /* Cutscene01.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Cutscene01.atlas; sourceTree = "<group>"; };
 		23A6DE9919477F1500982F9D /* DQCena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCena.h; sourceTree = "<group>"; };
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23A6DE9C194781E200982F9D /* DQCutsceneControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControle.h; sourceTree = "<group>"; };
@@ -116,7 +115,6 @@
 		94080ECC1933BA2A0024FB94 /* DrQuimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrQuimTests-Info.plist"; sourceTree = "<group>"; };
 		94080ECE1933BA2A0024FB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
-		9433F5D81937B4BB00E55E73 /* personagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personagem.png; sourceTree = "<group>"; };
 		947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleCorpoFisico.h; sourceTree = "<group>"; };
 		947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleCorpoFisico.m; sourceTree = "<group>"; };
 		CD2FE187194B3C0B006E3AC1 /* parte1C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parte1C.png; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 		9433F5D71937B4BB00E55E73 /* Personagens */ = {
 			isa = PBXGroup;
 			children = (
-				9433F5D81937B4BB00E55E73 /* personagem.png */,
 				755E335E194626DA00C0C029 /* Standing.png */,
 			);
 			path = Personagens;
@@ -293,10 +290,10 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				2380E8FF1960E19F00AC821C /* Cutscene01.atlas */,
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
 				75319AD11948C8DE006EECE1 /* Parado.atlas */,
 				755E3364194639BD00C0C029 /* Pulando.atlas */,
-				23477FF5194636C800479AFE /* Cutscene01.atlas */,
 				23477FF31946302A00479AFE /* Aterrissagem.atlas */,
 				755E335C194626A300C0C029 /* Andando.atlas */,
 				9433F5D71937B4BB00E55E73 /* Personagens */,
@@ -472,8 +469,8 @@
 				CD2FE1BB194B3C0B006E3AC1 /* parte5.png in Resources */,
 				CD2FE1B8194B3C0B006E3AC1 /* parte2.png in Resources */,
 				CD2FE1AA194B3C0B006E3AC1 /* parte2C.png in Resources */,
-				23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */,
 				CD2FE1AD194B3C0B006E3AC1 /* parte5C.png in Resources */,
+				2380E9001960E19F00AC821C /* Cutscene01.atlas in Resources */,
 				755FA40E195A06D80052DC1E /* FalasDoJogo.plist in Resources */,
 				CD2FE1A5194B3C0B006E3AC1 /* parte10C.png in Resources */,
 				23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */,
@@ -485,7 +482,6 @@
 				CD2FE1B2194B3C0B006E3AC1 /* parte1.png in Resources */,
 				CD2FE1A7194B3C0B006E3AC1 /* parte12C.png in Resources */,
 				CD2FE1B6194B3C0B006E3AC1 /* parte13.png in Resources */,
-				9433F5D91937B4BB00E55E73 /* personagem.png in Resources */,
 				CD2FE1AC194B3C0B006E3AC1 /* parte4C.png in Resources */,
 				CD2FE1BE194B3C0B006E3AC1 /* parte8.png in Resources */,
 				CD2FE1BC194B3C0B006E3AC1 /* parte6.png in Resources */,
