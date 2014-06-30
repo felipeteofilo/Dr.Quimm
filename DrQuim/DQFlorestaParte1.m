@@ -68,26 +68,6 @@
     //Adicionado nome no skNode que será o chao
     [primeiraParte setName:backgroundAtual];
     
-    //Leonardo -25/06/2014 - Alterado a forma como se manipula o mundo
-    /*[mundo addChild:primeiraParte];
-     [mundo addChild:segundaParte];
-     [mundo addChild:terceiraParte];
-     [mundo addChild:chaoReal];
-     [mundo addChild:chaoReal2];
-     [mundo addChild:chaoReal3];
-     [self addChild:mundo];
-     
-     [mundo addChild:self.jogador];
-     
-     //[self.mundo addChild:segundaParte];
-     //[self.mundo addChild:terceiraParte];
-     
-     //LEONARDO - 25/06/2014 - Alterado a forma de criar as proximas partes da tela
-     //[self.mundo addChild:chaoReal];
-     //[self.mundo addChild:chaoReal2];
-     [self.mundo addChild:chaoReal3];
-     */
-    
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:primeiraParte];
     [self.mundo addChild:self.jogador];
@@ -108,24 +88,12 @@
     
     if (!self.cutsceneEstaRodando) {
         
-        
         CGPoint heroPosition = self.jogador.position;
-        
-        
-        
         
         //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
         CGPoint worldPosition = self.mundo.position;
         
         CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
-        // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
-        
-        //[self centerOnNode: [self childNodeWithName: @"//camera"]];
-        //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
-        
-        
-        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
         
         if(xCoordinate <= cameraEdge && heroPosition.x >= 512)
         {
@@ -138,8 +106,6 @@
             
         }
         
-        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        //[self childNodeWithName: @"//mundo"].position= worldPosition;
         self.mundo.position = worldPosition;
         
         //Chama método para controlar em que parte da fase esta

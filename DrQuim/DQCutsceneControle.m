@@ -291,10 +291,6 @@
     
     //MUDAR DE CENA
     NSLog(@"E acabou!");
-//    
-//    SKScene *cenaNova = [[DQFlorestaParte1 alloc]initWithSize:self.cutscene.frame.size];
-//    SKTransition *transicao = [SKTransition crossFadeWithDuration:0.5f];
-//    [self.cutscene.view presentScene:cenaNova transition:transicao];
 }
 
 
