@@ -21,10 +21,10 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
+        //self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = NO;
+        //self.cutsceneEstaRodando = YES;
+        //self.estaFalando = NO;
         /*
         [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
          */
@@ -52,7 +52,9 @@
     [primeiraParte setAnchorPoint:CGPointMake(0, 0)];
     [primeiraParte setPosition:CGPointMake(0,0)];
     
-    primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
+    //primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
+    primeiraParte.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:1 daFase:1];
+    
     primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
     primeiraParte.physicsBody.usesPreciseCollisionDetection = YES;
     primeiraParte.physicsBody.dynamic = NO;
@@ -276,7 +278,8 @@
                 backgroundFuturo.position = CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
             
                 //Corpo fisico
-                backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
+                //backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
+                backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual+1 daFase:1];
                 
                 //Atualiza a propriedade e add no mundo
                 self.backgroundFuturo = backgroundFuturo;
@@ -336,7 +339,8 @@
                 backgroundAnterior.position = CGPointMake(self.backgroundAtual.position.x - CGRectGetMaxX(self.frame), 0);
                 
                 //Corpo fisico
-                backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
+                //backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
+                backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual-1 daFase:1];
                 
                 //Atualiza a propriedade e add no mundo
                 self.backgroundAnterior= backgroundAnterior;

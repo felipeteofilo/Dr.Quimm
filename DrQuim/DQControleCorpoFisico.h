@@ -10,7 +10,8 @@
 
 @interface DQControleCorpoFisico : SKNode
 
-+(SKPhysicsBody*)criaCorpoFísicoBase: (int)parte;
+//+(SKPhysicsBody*)criaCorpoFísicoBase: (int)parte;
++(SKPhysicsBody*)criaCorpoFisicoChaoParte: (int)_parte daFase:(int)_fase;
 +(SKPhysicsBody*)adicionaPlataformaParte :(int)parte;
 +(SKPhysicsBody*)criaPlataformaExtra:(int)parteCena;
 @end

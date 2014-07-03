@@ -10,215 +10,51 @@
 
 @implementation DQControleCorpoFisico
 
-+(SKPhysicsBody*)criaCorpoFísicoBase: (int)parte {
++(SKPhysicsBody*)criaCorpoFisicoChaoParte: (int)_parte daFase:(int)_fase{
     
-    NSMutableArray *arrayPosicoes=[NSMutableArray array];
+    NSString *pathArquivoPlist=[[NSBundle mainBundle]pathForResource:@"ConfigFase" ofType:@"plist"];
     
-    //NAO DA PARA SALVAR UM CGPOINT NO PLIST, POREM DA PARA SALVAR COMO STRING USANDO O FORMATO {X,Y} E AO LER USAR O METODO CGPoint pontoTeste =CGPointFromString(@"{X,Y}");
+    /*
+     - Acessa o arquivo plist,
+        - acessa o dicinário com as configurações da fase na posicao do array ROOT, usando o parametro _fase como ref.
+            - do dicionário acessado pega o array com as partes
+     */
+    NSArray *configParteFase=[[[NSArray arrayWithContentsOfFile:pathArquivoPlist]objectAtIndex:_fase-1]objectForKey:@"Partes"];
     
-    //De acordo com a parte do background ele cria um array de CGPoints com as coordenadas
-    switch (parte){
-        case 1:
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 224)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(373, 187)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(376, 141)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(932, 121)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 127)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-
-            break;
-            
-        case 2:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 127)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(606, 162)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(614, 300)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 302)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            break;
-            
-        case 3:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 302)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(35,304)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(41, 191)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(602, 201)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(613, 66)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(679, 53)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 53)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            break;
-            
-        case 4:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 54)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 51)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-        case 5:
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 51)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(179,50)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(241, 231)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 238)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-            case 6:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 238)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(509,241)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(519, 186)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 185)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-
-        case 7:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 185)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(536,185)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(538, 54)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 56)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
+    //Usando o array acessado anteriormente, pega o array com os cgpoints da KEY CorpoFisicoChao
+    NSArray *posicoesAdd=[[configParteFase objectAtIndex:_parte-1]objectForKey:@"CorpoFisicoChao"];
+    
+    if ([posicoesAdd count]==0) {
+        return nil;
+    }else{
         
-        case 8:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 56)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(74, 55)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(596, 84)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(568, 315)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(544, 470)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(131, 462)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(112, 502)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 505)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 535)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(136, 542)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(170, 498)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(541, 514)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(834, 512)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(966, 368)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(972, 369)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(973, 362)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 361)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-        case 9:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 363)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(405, 361)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(511, 412)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 389)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-        case 10:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 389)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(173, 358)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(410, 361)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(612, 270)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(979, 160)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 155)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-        case 11:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 156)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(177, 133)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(293, 140)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(441, 119)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(694, 126)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 104)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-        case 12:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 104)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(33, 101)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(962, 87)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 89)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 93)]];
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-        case 13:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 110)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(12, 245)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(716, 240)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(762, 289)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 276)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-            
-        case 14:
-            
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 256)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(364, 233)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(689, 230)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 231)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-            
-            break;
-        default:
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 10)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023,10)]];
-            [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
-    }
-    
-    //Cria o path de acordo com os pontos configurados
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    //Pega as coordenadas do ponto inicial do path para facilitar leitura
-    CGPoint primeiroPonto=[[arrayPosicoes firstObject]CGPointValue];
-    
-    //Posiciona o path no ponto inicial do array
-    CGPathMoveToPoint(path, NULL,primeiroPonto.x, primeiroPonto.y);
-    
-    for (NSValue *pontoMapa in arrayPosicoes){
+        //Cria o path de acordo com os pontos configurados
+        CGMutablePathRef path = CGPathCreateMutable();
         
-        //Para cada ponto do array eu crio uma linha que será usada no corpo físico
-        CGPathAddLineToPoint(path, NULL,[pontoMapa CGPointValue].x,[pontoMapa CGPointValue].y);
+        //Pega as coordenadas do ponto inicial do path para facilitar leitura
+        //CGPoint primeiroPonto=[[posicoesAdd firstObject]CGPointValue];
+        CGPoint primeiroPonto=CGPointFromString([posicoesAdd firstObject]);
+        
+        //Posiciona o path no ponto inicial do array
+        CGPathMoveToPoint(path, NULL,primeiroPonto.x, primeiroPonto.y);
+        
+        for (NSString *stringPonto in posicoesAdd){
+            
+            CGPoint pontoRef=CGPointFromString(stringPonto);
+            
+            //Para cada ponto do array eu crio uma linha que será usada no corpo físico
+            CGPathAddLineToPoint(path, NULL,pontoRef.x,pontoRef.y);
+        }
+        
+        //Fecha o path
+        CGPathCloseSubpath(path);
+        
+        //Cria o corpo físico e devolvo ele p quem chamou
+        SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        
+        
+        return corpoFisicoRetorno;
     }
-    
-    //Fecha o path
-    CGPathCloseSubpath(path);
-    
-    //Cria o corpo físico e devolvo ele p quem chamou
-    SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-    
-    
-    return corpoFisicoRetorno;
 }
 
 +(SKPhysicsBody*)adicionaPlataformaParte :(int)parte{
