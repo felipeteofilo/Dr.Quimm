@@ -17,24 +17,15 @@
     NSMutableArray *framesPulando;
     NSMutableArray *framesParado;
 }
-
-
-
 //Propriedade que armazenará os sprites e animações
 @property SKSpriteNode *spriteNode;
 
-//variável int - Define a vida do jogador
+//variável int - Define VIDA / FOME / SEDE / RESPEITO ====
 @property int vida;
-
-//variável int - Define a fome do jogador
 @property int fome;
-
-//variável int - Define a sede do jogador
 @property int sede;
-
-//variável int - Define o respeito do jogador
 @property int respeito;
-
+//========================================================
 @property int podePular;
 
 @property NSString *andandoParaDirecao;
