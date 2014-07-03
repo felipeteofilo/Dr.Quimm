@@ -130,7 +130,7 @@
         [self mostrarFalaAtual:frases];
     }
     
-    //Adicionar o "Clique para continuar"
+    //Adicionar o "Toque para continuar"
     [self mostrarInstrucao];
 }
 
@@ -138,7 +138,7 @@
 {
     self.instrucao = [[SKLabelNode alloc]init];
     [self.instrucao setText:@"[Toque para continuar]"];
-    [self.instrucao setFontColor:[UIColor lightGrayColor]];
+    [self.instrucao setFontColor:[UIColor yellowColor]];
     [self.instrucao setFontSize:25.0f];
     [self.instrucao setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     [self.instrucao setPosition:CGPointMake(self.cutscene.frame.size.width * 0.65f , 0+20)];
@@ -213,11 +213,9 @@
     
     //Adicona as falas na tela
     for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
-        
         [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
     }
 }
-
 
 //Mostra o fundo em uma cutscene
 -(void)mostrarFundoAtual
