@@ -97,7 +97,7 @@
     }
 }
 
-//Método para controle da posição da campera
+//Método para controle da posição da campera  == BASE ==
 -(void)posicionaCamera{
     CGPoint posicaoJogador = self.jogador.position;
     
@@ -137,8 +137,6 @@
         
         self.jogador.position= posicaoJogador;
         
-        
-        
     }
 }
 
@@ -151,7 +149,7 @@
     [view addGestureRecognizer:self.gestoPulo];
 }
 
-//metodo que e chamado assim que um toque é iniciado na cena
+//metodo que e chamado assim que um toque é iniciado na cena == BASE ==
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!self.cutsceneEstaRodando) {
         
@@ -188,7 +186,7 @@
     }
 }
 
-//metodo do delegate de contato que e chamado assim que comeca o contato
+//metodo do delegate de contato que e chamado assim que comeca o contato == BASE ==
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
     // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
@@ -227,7 +225,7 @@
     [self criarParteFase];
 }
 
-//Cria a parte da fase
+//Cria a parte da fase == BASE ==
 -(void)criarParteFase{
     
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
@@ -355,7 +353,7 @@
     }
 }
 
-//controla as partes da fase
+//controla as partes da fase == BASE ==
 -(void)controlaParteFase{
 
     //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
