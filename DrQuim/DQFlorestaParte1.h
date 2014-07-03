@@ -21,13 +21,10 @@ static NSString* mundo=@"mundo";
 
 @interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
 
-
 @property DQCutsceneControle *controleCutscenes;
 
-
-//Varial Booleana para saber se esta rodando alguma cutscene
+//Variavel Booleana para saber se esta rodando alguma cutscene
 @property BOOL cutsceneEstaRodando;
-
 @property BOOL estaFalando;
 
 //Variável DQJogador - Define o jogador
@@ -42,13 +39,12 @@ static NSString* mundo=@"mundo";
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode* mundo;
 
-//Variavel que controlará o N max de partes da Cena - Provisório
-@property int nPartesCena;
-
 @property SKSpriteNode *backgroundAnterior;
 @property SKSpriteNode *backgroundAtual;
 @property SKSpriteNode *backgroundFuturo;
 
+//Variavel que controlará o N max de partes da Cena - Provisório
+@property int nPartesCena;
 
 //metodo para iniciar a fase
 -(void)iniciarFase;

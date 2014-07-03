@@ -9,7 +9,7 @@
 #import "DQFlorestaParte1.h"
 #import "DQControleCorpoFisico.h"
 
-#define cameraEdge 512
+#define bordaCamera 512
 
 @implementation DQFlorestaParte1
 {
@@ -26,8 +26,6 @@
         self.estaFalando = NO;
 
         [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
-        
-        //[self iniciarFase];
     }
     return self;
 }
@@ -85,54 +83,58 @@
 {
     
     if (!self.cutsceneEstaRodando) {
-        
-        
-        CGPoint heroPosition = self.jogador.position;
-        
-        
-        
-        
-        //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
-        CGPoint worldPosition = self.mundo.position;
-        CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
-        
-        if(xCoordinate <= cameraEdge && heroPosition.x >= 512)
-        {
-            worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge;
-            
-        }
-        else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < (self.nPartesCena *1024) -512)
-        {
-            worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
-            
-        }
-        
-        //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-        self.mundo.position = worldPosition;
-        
+        //Chama método para posicionar camera
+        [self posicionaCamera];
+
         //Chama método para controlar em que parte da fase esta
         [self controlaParteFase];
-        
-        if (heroPosition.x > 2470 && heroPosition.x < 2475 ) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
-            self.cutsceneEstaRodando = YES;
-            self.estaFalando = YES;
-            [self.jogador pararAndar];
-            if ([self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
-                heroPosition.x += 5;
-            }
-            else
-                heroPosition.x -=5;
-            
-            self.jogador.position= heroPosition;
-            
-           
-            
-        }
-        
     }
 }
 
+//Método para controle da posição da campera
+-(void)posicionaCamera{
+    CGPoint posicaoJogador = self.jogador.position;
+    
+    //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
+    CGPoint posicaoMundo = self.mundo.position;
+    
+    
+    CGFloat coordenadaX = posicaoMundo.x + posicaoJogador.x ;
+    
+    if(coordenadaX <= bordaCamera && posicaoJogador.x >= bordaCamera)
+    {
+        posicaoMundo.x = posicaoMundo.x - coordenadaX  + bordaCamera;
+        
+    }
+    else if(coordenadaX > (self.frame.size.width - bordaCamera) && posicaoJogador.x < (self.nPartesCena *1024) -512)
+    {
+        posicaoMundo.x = posicaoMundo.x + (self.frame.size.width - coordenadaX) - bordaCamera;
+        
+    }
+    
+    //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
+    self.mundo.position = posicaoMundo;
+
+    if (posicaoJogador.x > 2470 && posicaoJogador.x < 2475 ) {
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+        
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = YES;
+        
+        [self.jogador pararAndar];
+        
+        if ([self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
+            posicaoJogador.x += 5;
+        }
+        else
+            posicaoJogador.x -=5;
+        
+        self.jogador.position= posicaoJogador;
+        
+        
+        
+    }
+}
 
 //metodo que e chamado assim que e criada a cena
 -(void)didMoveToView:(SKView *)view{
@@ -261,10 +263,7 @@
                 
                 if (physicsBodyPlataforma) {
                     plataforma.physicsBody=physicsBodyPlataforma;
-                    //plataforma.position=[DQControleCorpoFisico origemPlataforma:self.parteFaseAtual+1];
                     [plataforma setAnchorPoint:CGPointMake(0, 0)];
-                    
-                    //Adiciona a plataforma no backFuturo para que fique com a posicao em relacao a ele
                     
                     [self.backgroundFuturo addChild:plataforma];
 
@@ -309,9 +308,6 @@
                 //Corpo fisico
                 backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
                 
-                //Add back no mundo
-                //[self.mundo addChild:background];
-                
                 //Atualiza a propriedade e add no mundo
                 self.backgroundAnterior= backgroundAnterior;
                 
@@ -322,24 +318,23 @@
                 plataformaExtra=[[SKSpriteNode alloc]init];
                 
                 //Corpo fisico plat padrao
-                SKPhysicsBody *physicsBodyPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual - 1];
+                SKPhysicsBody *corpoFisicoPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual - 1];
                 
                 //Corpo fisico plataforma Extra
-                SKPhysicsBody *physicsBodyPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual - 1];
+                SKPhysicsBody *corpoFisicoPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual - 1];
                 
-                if (physicsBodyPlataforma) {
-                    plataforma.physicsBody=physicsBodyPlataforma;
+                if (corpoFisicoPlataforma) {
+                    plataforma.physicsBody=corpoFisicoPlataforma;
                     //plataforma.position=[DQControleCorpoFisico origemPlataforma:self.parteFaseAtual+1];
                     [plataforma setAnchorPoint:CGPointMake(0, 0)];
                     
                     //Adiciona a plataforma no backFuturo para que fique com a posicao em relacao a ele
-                    
                     [self.backgroundAnterior addChild:plataforma];
                     
                 }
                 
-                if (physicsBodyPlataformaExtra) {
-                    plataformaExtra.physicsBody=physicsBodyPlataformaExtra;
+                if (corpoFisicoPlataformaExtra) {
+                    plataformaExtra.physicsBody=corpoFisicoPlataformaExtra;
                     
                     [plataformaExtra setAnchorPoint:CGPointMake(0, 0)];
                     plataformaExtra.position=CGPointMake(0, -70);
