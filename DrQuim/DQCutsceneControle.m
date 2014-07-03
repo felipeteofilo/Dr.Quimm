@@ -137,7 +137,7 @@
 -(void)mostrarInstrucao
 {
     self.instrucao = [[SKLabelNode alloc]init];
-    [self.instrucao setText:@"[Clique para continuar]"];
+    [self.instrucao setText:@"[Toque para continuar]"];
     [self.instrucao setFontColor:[UIColor lightGrayColor]];
     [self.instrucao setFontSize:25.0f];
     [self.instrucao setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
@@ -213,7 +213,7 @@
     
     //Adicona as falas na tela
     for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
-        NSLog(@"%@", [[self.arrayDefalasEmFrases objectAtIndex:i]text]);
+        
         [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
     }
 }
