@@ -14,6 +14,7 @@
     
     NSMutableArray *arrayPosicoes=[NSMutableArray array];
     
+    //NAO DA PARA SALVAR UM CGPOINT NO PLIST, POREM DA PARA SALVAR COMO STRING USANDO O FORMATO {X,Y} E AO LER USAR O METODO CGPoint pontoTeste =CGPointFromString(@"{X,Y}");
     
     //De acordo com a parte do background ele cria um array de CGPoints com as coordenadas
     switch (parte){
@@ -25,7 +26,7 @@
             [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 127)]];
             [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(1023, 0)]];
             [arrayPosicoes addObject:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
-            
+
             break;
             
         case 2:
