@@ -5,6 +5,68 @@
 	<dict>
 		<key>Falas</key>
 		<dict>
+			<key>FalasRadiacao</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Já disse para não ir por aí!</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Você não me ouviu? Vá por outro lugar!</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Qual o seu problema? aí é perigoso!</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Se você quiser se matar, faça isso sozinho! Pegue outro caminho!</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+			</array>
+			<key>FalasAgua</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Que foi? Quer molhar a gente?</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Você tem problemas? olha o rio aí!</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Sou muito velho para nadar</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+			</array>
 			<key>RadiacaoAlfa</key>
 			<array>
 				<dict>
@@ -102,13 +164,12 @@
 					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>Em outras palavras, não vá por alí!</string>
+					<string>Em outras palavras, vamos pegar um outro caminho</string>
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
-	<string></string>
 </array>
 </plist>

@@ -25,10 +25,10 @@
         
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
-
+        /*
         [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
-         
-        //[self iniciarFase];
+         */
+        [self iniciarFase];
     }
     return self;
 }
@@ -54,8 +54,8 @@
     
     primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
     primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
-    primeiraParte.physicsBody.usesPreciseCollisionDetection=YES;
-    primeiraParte.physicsBody.dynamic=NO;
+    primeiraParte.physicsBody.usesPreciseCollisionDetection = YES;
+    primeiraParte.physicsBody.dynamic = NO;
     
     //Leonardo - inicializa o jogador
     //Inicia o jogador pelo singleton
@@ -82,6 +82,10 @@
     
     //Provisório
     self.nPartesCena=14;
+    
+    //inicia as variaveis booleanas para falas
+    self.falouRadiacaoAlpha = NO;
+    self.falouRadiacaoBeta = NO;
 }
 
 //Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera
@@ -118,34 +122,8 @@
         
     }
     
-    //PARTE EM QUE SE VERIFICA A POSICAO E ASSIM DESCOBRE SE ESTÁ NA HORA DE MOSTRAR UMA FALA
-    //Radiação alpha: CGRectMake(3255, 615, 100, 100);
-    //Radiação Beta: CGRectMake(5775, 455, 100, 100);
-    //Segunta Cutscene: CGRectMake(7910, 1270, 200, 20);
-    //avisoAgua1: entre 5995 e 6000
-    //avisoAgua2:
-    
     //posição em que está atualmente
     self.mundo.position = posicaoMundo;
-
-    
-    //
-    if (posicaoJogador.x > 2470 && posicaoJogador.x < 2475 ) {
-        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
-        
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = YES;
-        
-        [self.jogador pararAndar];
-        
-        if ([self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
-            posicaoJogador.x += 5;
-        }else{
-            posicaoJogador.x -= 5;
-        }
-        
-        self.jogador.position= posicaoJogador;
-    }
 }
 
 //metodo que e chamado assim que e criada a cena
@@ -227,10 +205,50 @@
     
 }
 
-
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
+    [self executaFalasDoJogo];
+     NSLog(@"posx: %0.0f, posy: %0.0f", self.jogador.position.x, self.jogador.position.x);
+}
+
+//FALTANDO AS FALAS DA AGUA - PRECISA PEGAR COORDENADA CERTINHA
+//FALTANDO AS FALAS DA RADIACAOREPETIDA - PRECISA PEGAR COORDENADA CERTINHA
+-(void)executaFalasDoJogo
+{
+    //cria os pontos de menssagem
+    CGPoint pontoAlpha;
+    CGPoint pontoBeta;
+    
+    //inicia-os com suas coordenadas
+    //-> alpha
+    //pontoAlpha = CGPointMake(3290, 0); //coordenada correta
+    pontoAlpha = CGPointMake(350, 0); //coordenada teste
+    //-> beta
+    //pontoBeta = CGPointMake(5815, 0); //coordenada correta
+    pontoBeta = CGPointMake(500, 0); //coordenada teste
+    
+    //verifica contato
+    //-> alpha
+    if( (self.jogador.position.x > pontoAlpha.x && self.jogador.position.y > pontoAlpha.y) && !self.falouRadiacaoAlpha){
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+        
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = YES;
+        
+        [self.jogador pararAndar];
+        self.falouRadiacaoAlpha = YES;
+    }
+    //-> beta
+    if( (self.jogador.position.x > pontoBeta.x && self.jogador.position.y > pontoBeta.y) && !self.falouRadiacaoBeta){
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+        
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = YES;
+        
+        [self.jogador pararAndar];
+        self.falouRadiacaoBeta = YES;
+    }
 }
 
 //Cria a parte da fase == BASE ==
