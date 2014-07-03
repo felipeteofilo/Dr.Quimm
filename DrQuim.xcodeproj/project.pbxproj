@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF31946302A00479AFE /* Aterrissagem.atlas */; };
 		23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23477FF5194636C800479AFE /* Cutscene01.atlas */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
@@ -78,7 +77,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		23477FF31946302A00479AFE /* Aterrissagem.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aterrissagem.atlas; sourceTree = "<group>"; };
 		23477FF5194636C800479AFE /* Cutscene01.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Cutscene01.atlas; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
@@ -229,6 +227,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
 				C57D7C2A1964E3A100EF94C9 /* Controladores */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
@@ -239,7 +238,6 @@
 				CDE817F21933C790003516E7 /* DQJogador.m */,
 				94080EB51933BA290024FB94 /* DQViewController.h */,
 				94080EB61933BA290024FB94 /* DQViewController.m */,
-				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				94080EBD1933BA290024FB94 /* Images.xcassets */,
 				94080EB21933BA290024FB94 /* Main.storyboard */,
 				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
@@ -293,7 +291,6 @@
 				75319AD11948C8DE006EECE1 /* Parado.atlas */,
 				755E3364194639BD00C0C029 /* Pulando.atlas */,
 				23477FF5194636C800479AFE /* Cutscene01.atlas */,
-				23477FF31946302A00479AFE /* Aterrissagem.atlas */,
 				755E335C194626A300C0C029 /* Andando.atlas */,
 				9433F5D71937B4BB00E55E73 /* Personagens */,
 			);
@@ -481,7 +478,6 @@
 				CD2FE1AD194B3C0B006E3AC1 /* parte5C.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasDoJogo.plist in Resources */,
 				CD2FE1A5194B3C0B006E3AC1 /* parte10C.png in Resources */,
-				23477FF41946302A00479AFE /* Aterrissagem.atlas in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
 				CD2FE1A4194B3C0B006E3AC1 /* parte1C.png in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
