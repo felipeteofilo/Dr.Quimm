@@ -13,18 +13,28 @@
 
 @interface DQCutsceneControle : NSObject
 
-
+//Propriedade que define a cena atual
 @property int cenaAtual;
 
+//SkScene atual do jogo
 @property SKScene *cutscene;
 
+//Seletor para iniciar o gameplay da fase
 @property SEL iniciarGameplay;
 
-
+//SKSpritenode que representa o fundo em uma cutscene
 @property SKSpriteNode *fundo;
+
+//SKSpritenode da caixa de fala que ira conter as falas
 @property SKSpriteNode *caixaDeFala;
+
+//NSArray que armazena as falas em frases
 @property NSMutableArray *arrayDefalasEmFrases;
+
+//NSarray que armazena as falas atuais
 @property NSArray *falasAtuais;
+
+//Propriedade que define a fala atual
 @property int falaAtual;
 
 
@@ -52,7 +62,7 @@
 //Cria uma string que contem o caminho (path) do arquivo plist de falas
 @property NSString *plistFalaPath;
 
-//Cria um NSDictionary com o conteudo da pList.
+//Cria um NSArray com o conteudo da pList.
 @property NSArray *arrayDeFalasPLists;
 
 //Inicia com uma parte

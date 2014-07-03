@@ -10,19 +10,26 @@
 
 @implementation DQCutsceneControle
 
+
+//Metodo para iniciar a classe Cutscene
 -(id)initComParte:(int)parte_ Fase :(int)fase
 {
     self = [super init];
     if (self) {
+        
         //Cria uma string que contem o caminho (path) do arquivo plist de falas
         self.plistFalaPath = [[NSBundle mainBundle] pathForResource:@"Falas" ofType:@"plist"];
-        //Cria um NSDictionary com o conteudo da pList.
+        //Cria um NSArray com o conteudo da pList.
         self.arrayDeFalasPLists = [[NSArray alloc]initWithContentsOfFile:self.plistFalaPath];
         
-        NSString *urlFalasDoJogo = [[NSBundle mainBundle] pathForResource:@"FalasDoJogo" ofType:@"plist"];
         
+        //Cria uma string com o caminho do arquivo plist de Falas In Game
+        NSString *urlFalasDoJogo = [[NSBundle mainBundle] pathForResource:@"FalasDoJogo" ofType:@"plist"];
+        //Cria um NSArray com as Falas In Game
         self.arrayFalasDentroDoJogo = [[NSArray alloc]initWithContentsOfFile:urlFalasDoJogo];
-        //define a parte
+        
+        
+        //define a parte, fase atual, e cena.
         self.parte = parte_;
         self.faseAtual = fase;
         self.cenaAtual = 0;
@@ -34,12 +41,17 @@
     return self;
 }
 
+
+//Metodo para iniciar uma cutscene
 -(void)iniciarCutscene :(SKScene*)cena Seletor:(SEL)seletor{
+    //seta a SKscene que ela ira controlar , o seletor para iniciar a fase e comeca a exibir a cutscene
     self.cutscene = cena;
     self.iniciarGameplay = seletor;
     [self atualizaTela];
 }
 
+
+//Metodo para iniciar as falas
 -(void)iniciaFalas
 {
     //Aloca o arrayCutScene - Ele irá guardar os dicionarios da parte passada por parâmetro
@@ -82,6 +94,9 @@
         [self.arrayCenas addObject:cenaTemporaria];
     }
 }
+
+
+//Metodo para atualizar a tela em uma cutscene
 -(void)atualizaTela
 {
     //NSStrings temporarias para armazenar o sujeito e fala atual
@@ -116,6 +131,8 @@
     }
 }
 
+
+//Metodo para separar o texto em frases
 -(NSArray *)separarTextoEmFrasesPassandoTexto: (NSString *)texto eComprimentoFrase:(int)comprimentoFrase
 {
     NSArray *arrayDePalavras = [texto componentsSeparatedByString:@" "];
@@ -148,6 +165,8 @@
     //retorna o array com as frases
     return arrayDeFrases;
 }
+
+//Mostra a falas
 -(void)mostrarFalaAtual:(NSArray *)frases
 {
     //Inicia o array de falas que conterá os nodes
@@ -177,8 +196,11 @@
     }
 }
 
+
+//Mostra o fundo em uma cutscene
 -(void)mostrarFundoAtual
 {
+    //cria o fundo de acordo com o arquivo da pList de cutscenes
     self.fundo = [SKSpriteNode spriteNodeWithImageNamed:[[self.arrayCenas objectAtIndex:self.cenaAtual] nomeDaImagem]];
     
     [self.fundo setAnchorPoint:CGPointMake(0, 0)];
@@ -186,6 +208,8 @@
     [self.cutscene addChild:self.fundo];
 }
 
+
+//Mostrar caixa texto em uma cutscene
 -(void)mostrarCaixaTexto
 {
     self.caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(self.cutscene.frame.size.width * 0.8, self.cutscene.frame.size.height * 0.25f)];
@@ -205,6 +229,8 @@
 
 //funcao que retorna a caixa de texto para ser mostrada dentro do jogo
 -(SKSpriteNode*)mostrarCaixaTextoNoJogo :(SKScene*)cena{
+    
+    //Cria a caixa de texto localizada na parte superior
     SKSpriteNode *caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(cena.frame.size.width * 0.8, cena.frame.size.height * 0.25f)];
     caixaDeFala.alpha = 0.6f;
    
@@ -218,6 +244,8 @@
 ///funcao a fazer de mostrar as falas dentro do jogo
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key{
     
+    
+    //Verifica se ha alguma fala em andamento, se nao lemos uma pela key passada
     if (self.falasAtuais == nil) {
         self.falasAtuais = [[NSArray alloc]init];
         self.falasAtuais = [self.falasDoJogo objectForKey:key];
@@ -231,24 +259,33 @@
     NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Sujeito"];
     NSString *textoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Texto"];
     
+    
+    //Formata o texto lido do Arquivo Plist
     NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
     
+    
+    //Separa o texto em frases
     NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
     
+    
+    //Cria a caixa de texto
     self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
     
     
-    
+    //Mostra as falas
     [self mostrarFalaAtual:frases];
+    
+    //Adiciona a caixa de fala no jogo
     
     [cena addChild:self.caixaDeFala];
     
-    
+    //pula para a proxima fala
     self.falaAtual ++;
     
     
 }
 
+//Trocar fala dentro do jogo
 -(BOOL)trocarFala{
     if (self.falaAtual < self.falasAtuais.count) {
         [self.caixaDeFala removeFromParent];
@@ -263,6 +300,8 @@
     }
 }
 
+//Troca cena da cutscene
+
 -(void)trocarCena
 {
     if (self.cenaAtual == [self.arrayCenas count]-1) {
@@ -276,6 +315,8 @@
         [self atualizaTela];
     }
 }
+
+//Se for fim da cutscene inicia a fase
 -(void)fimDasCenas
 {
     //remove nós que não devem aparecer a tela
@@ -287,14 +328,6 @@
     if ([self.cutscene respondsToSelector:self.iniciarGameplay]) {
         [self.cutscene performSelector:self.iniciarGameplay];
     }
-    
-    
-    //MUDAR DE CENA
-    NSLog(@"E acabou!");
-//    
-//    SKScene *cenaNova = [[DQFlorestaParte1 alloc]initWithSize:self.cutscene.frame.size];
-//    SKTransition *transicao = [SKTransition crossFadeWithDuration:0.5f];
-//    [self.cutscene.view presentScene:cenaNova transition:transicao];
 }
 
 
