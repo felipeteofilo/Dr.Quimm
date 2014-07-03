@@ -210,10 +210,10 @@
         CGPathAddLineToPoint(path, NULL,[pontoMapa CGPointValue].x,[pontoMapa CGPointValue].y);
     }
     
-    //Fecho o path
+    //Fecha o path
     CGPathCloseSubpath(path);
     
-    //Crio o corpo físico e devolvo ele p quem chamou
+    //Cria o corpo físico e devolvo ele p quem chamou
     SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:path];
     
     
@@ -307,46 +307,6 @@
         
         return corpoFisicoRetorno;
     }
-}
-
-+(CGPoint)origemPlataforma :(int)parte{
-    
-    CGPoint origem;
-    
-    //De acordo com a parte do background ele cria um array de CGPoints com as coordenadas
-    switch (parte){
-        case 3:
-            //origem=CGPointMake(665, 303);
-            origem=CGPointMake(0, 0);
-            
-            break;
-            
-        case 4:
-            //origem=CGPointMake(0, 411);
-            origem=CGPointMake(0, 0);
-            
-            break;
-            
-        case 5:
-            origem=CGPointMake(0, 344);
-            
-            break;
-            
-        case 7:
-            origem=CGPointMake(504, 297);
-            
-            break;
-            
-        case 8:
-            origem=CGPointMake(141, 653);
-            
-            break;
-            
-            default:
-            origem=CGPointZero;
-    }
-    
-    return origem;
 }
 
 +(SKPhysicsBody*)criaPlataformaExtra:(int)parteCena{

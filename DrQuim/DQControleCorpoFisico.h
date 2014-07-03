@@ -12,6 +12,5 @@
 
 +(SKPhysicsBody*)criaCorpoFísicoBase: (int)parte;
 +(SKPhysicsBody*)adicionaPlataformaParte :(int)parte;
-+(CGPoint)origemPlataforma :(int)parte;
 +(SKPhysicsBody*)criaPlataformaExtra:(int)parteCena;
 @end
