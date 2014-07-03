@@ -30,6 +30,8 @@
     return self;
 }
 
+
+//Metodo para iniciar fase
 -(void)iniciarFase{
     
     self.cutsceneEstaRodando = NO;
@@ -79,6 +81,7 @@
     self.nPartesCena=14;
 }
 
+//Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera
 - (void)didSimulatePhysics
 {
     
@@ -145,7 +148,6 @@
     [view addGestureRecognizer:self.gestoPulo];
 }
 
-
 //metodo que e chamado assim que um toque é iniciado na cena
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!self.cutsceneEstaRodando) {
@@ -173,8 +175,6 @@
     }
     
 }
-
-
 
 //metodo chamado assim que um toque e finalizado
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -218,10 +218,13 @@
     
 }
 
+
+//Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
 }
 
+//Cria a parte da fase
 -(void)criarParteFase{
     
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
@@ -349,6 +352,7 @@
     }
 }
 
+//controla as partes da fase
 -(void)controlaParteFase{
 
     //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
