@@ -33,6 +33,7 @@
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
 		947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */; };
+		C575FF411965DDC500719817 /* ConfigFase.plist in Resources */ = {isa = PBXBuildFile; fileRef = C575FF401965DDC500719817 /* ConfigFase.plist */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
 		CD2FE1A4194B3C0B006E3AC1 /* parte1C.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2FE187194B3C0B006E3AC1 /* parte1C.png */; };
 		CD2FE1A5194B3C0B006E3AC1 /* parte10C.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2FE188194B3C0B006E3AC1 /* parte10C.png */; };
@@ -114,6 +115,7 @@
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
 		947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleCorpoFisico.h; sourceTree = "<group>"; };
 		947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleCorpoFisico.m; sourceTree = "<group>"; };
+		C575FF401965DDC500719817 /* ConfigFase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigFase.plist; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
 		CD2FE187194B3C0B006E3AC1 /* parte1C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parte1C.png; sourceTree = "<group>"; };
 		CD2FE188194B3C0B006E3AC1 /* parte10C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parte10C.png; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				755FA40D195A06D80052DC1E /* FalasDoJogo.plist */,
 				CDCACF521948F23500FC1070 /* Falas.plist */,
+				C575FF401965DDC500719817 /* ConfigFase.plist */,
 			);
 			name = "Arquvos XML";
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				CD2FE1B8194B3C0B006E3AC1 /* parte2.png in Resources */,
 				CD2FE1AA194B3C0B006E3AC1 /* parte2C.png in Resources */,
 				23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */,
+				C575FF411965DDC500719817 /* ConfigFase.plist in Resources */,
 				CD2FE1AD194B3C0B006E3AC1 /* parte5C.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasDoJogo.plist in Resources */,
 				CD2FE1A5194B3C0B006E3AC1 /* parte10C.png in Resources */,
