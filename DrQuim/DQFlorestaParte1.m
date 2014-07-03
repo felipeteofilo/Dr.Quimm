@@ -118,9 +118,18 @@
         
     }
     
-    //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
+    //PARTE EM QUE SE VERIFICA A POSICAO E ASSIM DESCOBRE SE ESTÁ NA HORA DE MOSTRAR UMA FALA
+    //Radiação alpha: CGRectMake(3255, 615, 100, 100);
+    //Radiação Beta: CGRectMake(5775, 455, 100, 100);
+    //Segunta Cutscene: CGRectMake(7910, 1270, 200, 20);
+    //avisoAgua1: entre 5995 e 6000
+    //avisoAgua2:
+    
+    //posição em que está atualmente
     self.mundo.position = posicaoMundo;
 
+    
+    //
     if (posicaoJogador.x > 2470 && posicaoJogador.x < 2475 ) {
         [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
         
@@ -131,12 +140,11 @@
         
         if ([self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
             posicaoJogador.x += 5;
-        }
-        else
+        }else{
             posicaoJogador.x -= 5;
+        }
         
         self.jogador.position= posicaoJogador;
-        
     }
 }
 

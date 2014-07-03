@@ -5,41 +5,6 @@
 	<dict>
 		<key>Falas</key>
 		<dict>
-			<key>RadiacaoBeta</key>
-			<array>
-				<dict>
-					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Mais radiação alfa?</string>
-					<key>Imagem</key>
-					<string>piloto</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Cientista</string>
-					<key>Texto</key>
-					<string>Não, agora é Beta. Muito mais perigosa. Menos sendo menos energética que a alfa, ele tem um poder de penetração muito maior.</string>
-					<key>Imagem</key>
-					<string>cientista</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Em outras palavras... Ela queima mais?</string>
-					<key>Imagem</key>
-					<string>piloto</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Cientista</string>
-					<key>Texto</key>
-					<string>Em outras palavras, não vá por alí!</string>
-					<key>Imagem</key>
-					<string>cientista</string>
-				</dict>
-			</array>
 			<key>RadiacaoAlfa</key>
 			<array>
 				<dict>
@@ -103,6 +68,41 @@
 					<string>Cientista</string>
 					<key>Texto</key>
 					<string>Só não vá por alí!</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+			</array>
+			<key>RadiacaoBeta</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto</string>
+					<key>Texto</key>
+					<string>Mais radiação alfa?</string>
+					<key>Imagem</key>
+					<string>piloto</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Não, agora é Beta. Muito mais perigosa. Menos sendo menos energética que a alfa, ele tem um poder de penetração muito maior.</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto</string>
+					<key>Texto</key>
+					<string>Em outras palavras... Ela queima mais?</string>
+					<key>Imagem</key>
+					<string>piloto</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Em outras palavras, não vá por alí!</string>
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>
