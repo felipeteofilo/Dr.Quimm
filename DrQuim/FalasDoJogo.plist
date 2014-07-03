@@ -54,7 +54,7 @@
 					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>Pare! O equipamento detectou radiação alí.</string>
+					<string>Pare! O equipamento detectou radiação alí em cima!</string>
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>
@@ -70,7 +70,7 @@
 					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>É, alguns anos atrás, fizeram alguns testes atômicos nessa região. Está dizendo aqui que é do tipo Alfa, melhor termos cuidado.</string>
+					<string>Sim. Alguns anos atrás, fizeram alguns testes atômicos nessa região. Está dizendo aqui que é do tipo Alfa, melhor termos cuidado.</string>
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>

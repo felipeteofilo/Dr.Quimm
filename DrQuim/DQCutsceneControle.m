@@ -129,6 +129,29 @@
         [self mostrarCaixaTexto];
         [self mostrarFalaAtual:frases];
     }
+    
+    //Adicionar o "Clique para continuar"
+    [self mostrarInstrucao];
+}
+
+-(void)mostrarInstrucao
+{
+    self.instrucao = [[SKLabelNode alloc]init];
+    [self.instrucao setText:@"[Clique para continuar]"];
+    [self.instrucao setFontColor:[UIColor lightGrayColor]];
+    [self.instrucao setFontSize:25.0f];
+    [self.instrucao setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    [self.instrucao setPosition:CGPointMake(self.cutscene.frame.size.width * 0.65f , 0+20)];
+    
+    [self.cutscene addChild:self.instrucao];
+    
+    //Ação para ficar piscando
+    SKAction *fadeIn = [SKAction fadeInWithDuration:1.0f];
+    SKAction *fadeOut = [SKAction fadeOutWithDuration:1.0f];
+    SKAction *piscar = [SKAction sequence:@[fadeIn, fadeOut]];
+    
+    //Fica repetindo a ação
+    [self.instrucao runAction:[SKAction repeatActionForever:piscar] withKey:@"textoPiscando"];
 }
 
 
@@ -173,7 +196,6 @@
     self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
     
     //Variavel que contém o espaço entre as falas
-    
     CGFloat distancia = 40;
     
     //cria um NSArray de irá armazenar as falas
@@ -301,7 +323,6 @@
 }
 
 //Troca cena da cutscene
-
 -(void)trocarCena
 {
     if (self.cenaAtual == [self.arrayCenas count]-1) {
@@ -322,6 +343,7 @@
     //remove nós que não devem aparecer a tela
     [self.fundo removeFromParent];
     [self.caixaDeFala removeFromParent];
+    [self.instrucao removeFromParent];
     for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
         [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
     }

@@ -227,9 +227,10 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
-				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
+				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				C57D7C2A1964E3A100EF94C9 /* Controladores */,
+				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
 				94080EB01933BA290024FB94 /* DQAppDelegate.m */,
 				75319ACE1948C79B006EECE1 /* DQGestoPulo.h */,
@@ -240,7 +241,6 @@
 				94080EB61933BA290024FB94 /* DQViewController.m */,
 				94080EBD1933BA290024FB94 /* Images.xcassets */,
 				94080EB21933BA290024FB94 /* Main.storyboard */,
-				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
 				94080EA71933BA290024FB94 /* Supporting Files */,
 			);
 			path = DrQuim;

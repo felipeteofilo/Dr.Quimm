@@ -28,6 +28,9 @@
 //SKSpritenode da caixa de fala que ira conter as falas
 @property SKSpriteNode *caixaDeFala;
 
+//SKLabelNode da instrução (Clique para continuar)
+@property SKLabelNode *instrucao;
+
 //NSArray que armazena as falas em frases
 @property NSMutableArray *arrayDefalasEmFrases;
 
@@ -65,6 +68,7 @@
 //Cria um NSArray com o conteudo da pList.
 @property NSArray *arrayDeFalasPLists;
 
+
 //Inicia com uma parte
 -(id)initComParte:(int)parte_ Fase:(int)fase;
 
@@ -77,6 +81,7 @@
 
 //Metodo para trocar de Cutscene
 -(void)trocarCena;
+
 //Metodo para mostrar falas In Game
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key;
 
