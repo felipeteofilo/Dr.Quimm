@@ -211,7 +211,6 @@
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
     [self executaFalasDoJogo];
-     NSLog(@"posx: %0.0f, posy: %0.0f", self.jogador.position.x, self.jogador.position.x);
 }
 
 //FALTANDO AS FALAS DA AGUA - PRECISA PEGAR COORDENADA CERTINHA
