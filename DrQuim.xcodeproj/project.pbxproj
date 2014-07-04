@@ -13,6 +13,7 @@
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
 		23B0E4A819662AFE006CD78A /* piloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B0E4A619662AFE006CD78A /* piloto.png */; };
 		23B0E4A919662AFE006CD78A /* cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B0E4A719662AFE006CD78A /* cientista.png */; };
+		23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFADBC1966E4FB00691C04 /* setinhas.png */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
 		75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75319AD11948C8DE006EECE1 /* Parado.atlas */; };
 		755E335D194626A300C0C029 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 755E335C194626A300C0C029 /* Andando.atlas */; };
@@ -88,6 +89,7 @@
 		23A6DE9D194781E200982F9D /* DQCutsceneControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControle.m; sourceTree = "<group>"; };
 		23B0E4A619662AFE006CD78A /* piloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piloto.png; sourceTree = "<group>"; };
 		23B0E4A719662AFE006CD78A /* cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cientista.png; sourceTree = "<group>"; };
+		23BFADBC1966E4FB00691C04 /* setinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setinhas.png; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
 		75319AD11948C8DE006EECE1 /* Parado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Parado.atlas; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				23BFADBC1966E4FB00691C04 /* setinhas.png */,
 				23B0E4A519662AE9006CD78A /* RostoPersonagens */,
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
 				75319AD11948C8DE006EECE1 /* Parado.atlas */,
@@ -490,6 +493,7 @@
 				23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */,
 				C575FF411965DDC500719817 /* ConfigFase.plist in Resources */,
 				23B0E4A919662AFE006CD78A /* cientista.png in Resources */,
+				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
 				CD2FE1AD194B3C0B006E3AC1 /* parte5C.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasDoJogo.plist in Resources */,
 				CD2FE1A5194B3C0B006E3AC1 /* parte10C.png in Resources */,

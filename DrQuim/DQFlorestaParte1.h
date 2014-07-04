@@ -33,6 +33,12 @@ static NSString* mundo = @"mundo";
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
 
+//SKSpriteNode da setinha que auxilia o jogador a entender para onde ele precisa andar
+@property SKSpriteNode *setinhas;
+
+//CGPoint que guarda onde a pessoa pressionou e assim descobrir se o personagem vai para a direita ou esquerda
+@property CGPoint pontoDeToqueAndar;
+
 //Variavel que será usada para controlar em que parte da cena o jogador está
 @property int parteFaseAtual;
 

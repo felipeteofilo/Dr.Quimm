@@ -130,44 +130,27 @@
 
 //metodo que e chamado assim que um toque é iniciado na cena == BASE ==
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    //Se não está falando e nem em cutscene...
     if (!self.cutsceneEstaRodando) {
-        
-        
-//        //verifica em qual parte da tela o toque foi feito e faz o personagem andar de acordo com essa informacao
-//        UITouch *posicao = [touches anyObject];
-//        
-//        if ([posicao locationInView:self.view].x > self.view.frame.size.height/2 ) {
-//            
-//            [self.jogador andarParaDirecao:@"D"];
-//        }else{
-//            [self.jogador andarParaDirecao:@"E"];
-//        }
-//    }
-//    else if(self.estaFalando){
-//        if ([self.controleCutscenes trocarFala]) {
-//            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
-//            
-//        }
-//        else{
-//            self.estaFalando = NO;
-//            self.cutsceneEstaRodando = NO;
-//        }
-//    }
-        
         //Verifica em qual lado da tela o jogador está tocando
         UITouch *posicao = [touches anyObject];
         
         //Se estiver na direita
         if([posicao locationInView:self.view].x > self.frame.size.height/2){
             //ANDAR
-            //marca o local em que tocou
+            //marca o local em que tocou e desenha as setinhas
+            self.pontoDeToqueAndar = [posicao locationInView:self.view];
             
             //mostra as setinhas
+            self.setinhas = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+            [self.setinhas setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
             
+            [self addChild:self.setinhas];
         }
         
         //Se estiver na esquerda
-        else{
+        else if([posicao locationInView:self.view].x < self.frame.size.height/2){
             //PULAR
             // Pega o singleton do jogador e o faz pular
             [[DQJogador sharedJogador] pular];
@@ -176,11 +159,32 @@
         }
     }
     
+    //Se estiver falando em jogo...
+    else if(self.estaFalando){
+        if ([self.controleCutscenes trocarFala]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            
+        }
+        else{
+            self.estaFalando = NO;
+            self.cutsceneEstaRodando = NO;
+        }
+    }
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    UITouch *posicao = [touches anyObject];
     
+    //se moveu para a direita, anda para a direita - D
+    if([posicao locationInView:self.view].x > self.pontoDeToqueAndar.x){
+        [self.jogador andarParaDirecao:@"D"];
+    }
+    
+    //senão, move para a esquerda - E
+    else{
+        [self.jogador andarParaDirecao:@"E"];
+    }
 }
 
 //metodo chamado assim que um toque e finalizado
@@ -190,6 +194,9 @@
     }else if(!self.estaFalando){
         [self.controleCutscenes trocarCena];
     }
+    
+    //tirar imagem da setinha da tela
+    [self.setinhas removeFromParent];
 }
 
 //metodo do delegate de contato que e chamado assim que comeca o contato == BASE ==
