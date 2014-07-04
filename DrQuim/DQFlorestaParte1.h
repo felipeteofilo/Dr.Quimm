@@ -8,7 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
-#import "DQGestoPulo.h"
 #import "DQCutsceneControle.h"
 
 
@@ -33,9 +32,6 @@ static NSString* mundo = @"mundo";
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
-
-//Varial do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
-@property DQGestoPulo *gestoPulo;
 
 //Variavel que será usada para controlar em que parte da cena o jogador está
 @property int parteFaseAtual;

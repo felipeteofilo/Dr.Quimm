@@ -14,7 +14,6 @@
 		23B0E4A819662AFE006CD78A /* piloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B0E4A619662AFE006CD78A /* piloto.png */; };
 		23B0E4A919662AFE006CD78A /* cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B0E4A719662AFE006CD78A /* cientista.png */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
-		75319AD01948C79B006EECE1 /* DQGestoPulo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75319ACF1948C79B006EECE1 /* DQGestoPulo.m */; };
 		75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75319AD11948C8DE006EECE1 /* Parado.atlas */; };
 		755E335D194626A300C0C029 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 755E335C194626A300C0C029 /* Andando.atlas */; };
 		755E3365194639BD00C0C029 /* Pulando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 755E3364194639BD00C0C029 /* Pulando.atlas */; };
@@ -91,8 +90,6 @@
 		23B0E4A719662AFE006CD78A /* cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cientista.png; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
-		75319ACE1948C79B006EECE1 /* DQGestoPulo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQGestoPulo.h; sourceTree = "<group>"; };
-		75319ACF1948C79B006EECE1 /* DQGestoPulo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQGestoPulo.m; sourceTree = "<group>"; };
 		75319AD11948C8DE006EECE1 /* Parado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Parado.atlas; sourceTree = "<group>"; };
 		755E335C194626A300C0C029 /* Andando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Andando.atlas; sourceTree = "<group>"; };
 		755E3364194639BD00C0C029 /* Pulando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Pulando.atlas; sourceTree = "<group>"; };
@@ -249,8 +246,6 @@
 				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
 				94080EB01933BA290024FB94 /* DQAppDelegate.m */,
-				75319ACE1948C79B006EECE1 /* DQGestoPulo.h */,
-				75319ACF1948C79B006EECE1 /* DQGestoPulo.m */,
 				CDE817F11933C790003516E7 /* DQJogador.h */,
 				CDE817F21933C790003516E7 /* DQJogador.m */,
 				94080EB51933BA290024FB94 /* DQViewController.h */,
@@ -536,7 +531,6 @@
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
-				75319AD01948C79B006EECE1 /* DQGestoPulo.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,

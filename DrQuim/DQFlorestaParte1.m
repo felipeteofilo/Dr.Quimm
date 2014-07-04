@@ -128,40 +128,58 @@
     self.mundo.position = posicaoMundo;
 }
 
-//metodo que e chamado assim que e criada a cena
--(void)didMoveToView:(SKView *)view{
-    
-    // cria o gesto do pulo e adiciona na cena
-    self.gestoPulo = [[DQGestoPulo alloc]init];
-    
-    [view addGestureRecognizer:self.gestoPulo];
-}
-
 //metodo que e chamado assim que um toque é iniciado na cena == BASE ==
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!self.cutsceneEstaRodando) {
         
         
-        //verifica em qual parte da tela o toque foi feito e faz o personagem andar de acordo com essa informacao
+//        //verifica em qual parte da tela o toque foi feito e faz o personagem andar de acordo com essa informacao
+//        UITouch *posicao = [touches anyObject];
+//        
+//        if ([posicao locationInView:self.view].x > self.view.frame.size.height/2 ) {
+//            
+//            [self.jogador andarParaDirecao:@"D"];
+//        }else{
+//            [self.jogador andarParaDirecao:@"E"];
+//        }
+//    }
+//    else if(self.estaFalando){
+//        if ([self.controleCutscenes trocarFala]) {
+//            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+//            
+//        }
+//        else{
+//            self.estaFalando = NO;
+//            self.cutsceneEstaRodando = NO;
+//        }
+//    }
+        
+        //Verifica em qual lado da tela o jogador está tocando
         UITouch *posicao = [touches anyObject];
         
-        if ([posicao locationInView:self.view].x > self.view.frame.size.height/2 ) {
+        //Se estiver na direita
+        if([posicao locationInView:self.view].x > self.frame.size.height/2){
+            //ANDAR
+            //marca o local em que tocou
             
-            [self.jogador andarParaDirecao:@"D"];
-        }else{
-            [self.jogador andarParaDirecao:@"E"];
-        }
-    }
-    else if(self.estaFalando){
-        if ([self.controleCutscenes trocarFala]) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            //mostra as setinhas
             
         }
+        
+        //Se estiver na esquerda
         else{
-            self.estaFalando = NO;
-            self.cutsceneEstaRodando = NO;
+            //PULAR
+            // Pega o singleton do jogador e o faz pular
+            [[DQJogador sharedJogador] pular];
+            //Termina as animacoes do jogador andando
+            [[DQJogador sharedJogador] pararAndar];
         }
     }
+    
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     
 }
 
