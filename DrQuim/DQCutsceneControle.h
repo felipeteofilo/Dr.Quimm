@@ -31,6 +31,9 @@
 //SKLabelNode da instrução (Clique para continuar)
 @property SKLabelNode *instrucao;
 
+//SKSpritenode do rosto de quem fala
+@property SKSpriteNode *rosto;
+
 //NSArray que armazena as falas em frases
 @property NSMutableArray *arrayDefalasEmFrases;
 
@@ -39,7 +42,6 @@
 
 //Propriedade que define a fala atual
 @property int falaAtual;
-
 
 //Armazena as cutscenes do jogo de acordo com a parte passada
 @property NSArray *arrayCutscenes;

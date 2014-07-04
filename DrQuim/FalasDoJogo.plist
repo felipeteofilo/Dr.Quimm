@@ -105,7 +105,7 @@
 					<key>Sujeito</key>
 					<string>Piloto</string>
 					<key>Texto</key>
-					<string>Tem mais de um tipo de radiação?</string>
+					<string>Existe mais de um tipo de radiação?</string>
 					<key>Imagem</key>
 					<string>piloto</string>
 				</dict>
@@ -113,7 +113,7 @@
 					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>Sim, Alfa, Beta e Gama... A que está alí é só do tipo alfa. Mesmo ela não tendo muito poder de penetração ela é muito energética e pode causar queimaduras.</string>
+					<string>Sim. Alfa, Beta e Gama. A que está alí é do tipo alfa que, mesmo sem muito poder de penetração é muito energética e pode causar queimaduras.</string>
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>

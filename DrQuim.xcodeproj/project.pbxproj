@@ -11,6 +11,8 @@
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
+		23B0E4A819662AFE006CD78A /* piloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B0E4A619662AFE006CD78A /* piloto.png */; };
+		23B0E4A919662AFE006CD78A /* cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B0E4A719662AFE006CD78A /* cientista.png */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
 		75319AD01948C79B006EECE1 /* DQGestoPulo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75319ACF1948C79B006EECE1 /* DQGestoPulo.m */; };
 		75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75319AD11948C8DE006EECE1 /* Parado.atlas */; };
@@ -85,6 +87,8 @@
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23A6DE9C194781E200982F9D /* DQCutsceneControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControle.h; sourceTree = "<group>"; };
 		23A6DE9D194781E200982F9D /* DQCutsceneControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControle.m; sourceTree = "<group>"; };
+		23B0E4A619662AFE006CD78A /* piloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piloto.png; sourceTree = "<group>"; };
+		23B0E4A719662AFE006CD78A /* cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cientista.png; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
 		75319ACE1948C79B006EECE1 /* DQGestoPulo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQGestoPulo.h; sourceTree = "<group>"; };
@@ -196,6 +200,15 @@
 			name = "Falas e Cutscenes";
 			sourceTree = "<group>";
 		};
+		23B0E4A519662AE9006CD78A /* RostoPersonagens */ = {
+			isa = PBXGroup;
+			children = (
+				23B0E4A619662AFE006CD78A /* piloto.png */,
+				23B0E4A719662AFE006CD78A /* cientista.png */,
+			);
+			name = RostoPersonagens;
+			sourceTree = "<group>";
+		};
 		94080E921933BA290024FB94 = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				23B0E4A519662AE9006CD78A /* RostoPersonagens */,
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
 				75319AD11948C8DE006EECE1 /* Parado.atlas */,
 				755E3364194639BD00C0C029 /* Pulando.atlas */,
@@ -463,6 +477,7 @@
 				CD2FE1AF194B3C0B006E3AC1 /* parte7C.png in Resources */,
 				CD2FE1AB194B3C0B006E3AC1 /* parte3C.png in Resources */,
 				CDCACF531948F23500FC1070 /* Falas.plist in Resources */,
+				23B0E4A819662AFE006CD78A /* piloto.png in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				CD2FE1A8194B3C0B006E3AC1 /* parte13C.png in Resources */,
@@ -479,6 +494,7 @@
 				CD2FE1AA194B3C0B006E3AC1 /* parte2C.png in Resources */,
 				23477FF6194636C800479AFE /* Cutscene01.atlas in Resources */,
 				C575FF411965DDC500719817 /* ConfigFase.plist in Resources */,
+				23B0E4A919662AFE006CD78A /* cientista.png in Resources */,
 				CD2FE1AD194B3C0B006E3AC1 /* parte5C.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasDoJogo.plist in Resources */,
 				CD2FE1A5194B3C0B006E3AC1 /* parte10C.png in Resources */,

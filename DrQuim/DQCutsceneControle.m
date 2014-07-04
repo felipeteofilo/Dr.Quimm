@@ -63,9 +63,6 @@
     self.falasDoJogo = [[NSMutableDictionary alloc]init];
     self.falasDoJogo = [[self.arrayFalasDentroDoJogo objectAtIndex:(self.faseAtual-1)]objectForKey:@"Falas"];
     
-    
-    
-    
     //Aloca os arrays de FALA e CENA
     self.arrayFalas = [[NSMutableArray alloc]init];
     self.arrayCenas = [[NSMutableArray alloc]init];
@@ -154,7 +151,6 @@
     [self.instrucao runAction:[SKAction repeatActionForever:piscar] withKey:@"textoPiscando"];
 }
 
-
 //Metodo para separar o texto em frases
 -(NSArray *)separarTextoEmFrasesPassandoTexto: (NSString *)texto eComprimentoFrase:(int)comprimentoFrase
 {
@@ -217,6 +213,34 @@
     }
 }
 
+//Mostra a falas do jogo
+-(void)mostrarFalaAtualNoJogo:(NSArray *)frases
+{
+    //Inicia o array de falas que conterá os nodes
+    self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
+    
+    //Variavel que contém o espaço entre as falas
+    CGFloat distancia = 40;
+    
+    //cria um NSArray de irá armazenar as falas
+    for(int i = 0; i < [frases count]; i++){
+        //cria a fala com cor, posição, alinhamento e texto
+        SKLabelNode *fala = [[SKLabelNode alloc] init];
+        [fala setColor:[UIColor whiteColor]];
+        [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+        [fala setPosition:CGPointMake(180, 150 - (distancia * i))];
+        [fala setText:[frases objectAtIndex:i]];
+        
+        //adiciona ao array
+        [self.arrayDefalasEmFrases addObject:fala];
+    }
+    
+    //Adicona as falas na tela
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
+    }
+}
+
 //Mostra o fundo em uma cutscene
 -(void)mostrarFundoAtual
 {
@@ -233,6 +257,7 @@
 -(void)mostrarCaixaTexto
 {
     self.caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(self.cutscene.frame.size.width * 0.8, self.cutscene.frame.size.height * 0.25f)];
+    NSLog(@"%0.0f", self.cutscene.frame.size.height * 0.25f);
     self.caixaDeFala.alpha = 0.6f;
     
     //define a "âncora" do sprite para o canto inferior esquerdo
@@ -253,56 +278,56 @@
     //Cria a caixa de texto localizada na parte superior
     SKSpriteNode *caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(cena.frame.size.width * 0.8, cena.frame.size.height * 0.25f)];
     caixaDeFala.alpha = 0.6f;
-   
     caixaDeFala.anchorPoint = CGPointMake(0, 0);
-    
-    [caixaDeFala setPosition:CGPointMake(cena.frame.size.width * 0.1f, cena.frame.size.height *0.7 )];
+    [caixaDeFala setPosition:CGPointMake(cena.frame.size.width * 0.1f, cena.frame.size.height *0.7)];
     
     return caixaDeFala;
 }
 
-///funcao a fazer de mostrar as falas dentro do jogo
+//Método para mostrar o rosto do sujeito
+-(void)mostraRostoDeQuemFala: (NSString *)imagem naCena: cena
+{
+    self.rosto = [[SKSpriteNode alloc] initWithImageNamed:imagem];
+    [self.rosto setSize:CGSizeMake(150, 150)];
+    [self.rosto setAnchorPoint:CGPointMake(0, 0)];
+    [self.rosto setPosition:CGPointMake(20, 20)];
+    [self.caixaDeFala addChild:self.rosto];
+}
+
+///Metodo a fazer de mostrar as falas dentro do jogo
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key{
-    
-    
     //Verifica se ha alguma fala em andamento, se nao lemos uma pela key passada
     if (self.falasAtuais == nil) {
         self.falasAtuais = [[NSArray alloc]init];
         self.falasAtuais = [self.falasDoJogo objectForKey:key];
     }
-    
-    
+
     [self.caixaDeFala removeAllChildren];
-    
     
     //NSStrings temporarias para armazenar o sujeito e fala atual
     NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Sujeito"];
     NSString *textoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Texto"];
     
-    
     //Formata o texto lido do Arquivo Plist
     NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
     
-    
     //Separa o texto em frases
-    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
-    
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:40];
     
     //Cria a caixa de texto
     self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
     
-    
     //Mostra as falas
-    [self mostrarFalaAtual:frases];
+    [self mostrarFalaAtualNoJogo:frases];
     
     //Adiciona a caixa de fala no jogo
-    
     [cena addChild:self.caixaDeFala];
     
-    //pula para a proxima fala
+    //Adiciona uma imagem com a carinha de quem está falando
+    [self mostraRostoDeQuemFala:[[self.falasAtuais objectAtIndex:self.falaAtual] objectForKey:@"Imagem"] naCena:cena];
+    
+    //Pula para a proxima fala
     self.falaAtual ++;
-    
-    
 }
 
 //Trocar fala dentro do jogo
@@ -316,6 +341,7 @@
         self.falaAtual = 0;
         [self.caixaDeFala removeAllChildren];
         [self.caixaDeFala removeFromParent];
+        //[self.rosto removeFromParent];
         return false;
     }
 }
