@@ -143,8 +143,8 @@
     [self.cutscene addChild:self.instrucao];
     
     //Ação para ficar piscando
-    SKAction *fadeIn = [SKAction fadeInWithDuration:1.0f];
-    SKAction *fadeOut = [SKAction fadeOutWithDuration:1.0f];
+    SKAction *fadeIn = [SKAction fadeInWithDuration:0.8f];
+    SKAction *fadeOut = [SKAction fadeOutWithDuration:0.8f];
     SKAction *piscar = [SKAction sequence:@[fadeIn, fadeOut]];
     
     //Fica repetindo a ação
