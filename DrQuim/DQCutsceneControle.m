@@ -200,7 +200,7 @@
         SKLabelNode *fala = [[SKLabelNode alloc] init];
         [fala setColor:[UIColor whiteColor]];
         [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-        [fala setPosition:CGPointMake(60, 150 - (distancia * i))];
+        [fala setPosition:CGPointMake(40, 150 - (distancia * i))];
         [fala setText:[frases objectAtIndex:i]];
         
         //adiciona ao array
@@ -228,7 +228,7 @@
         SKLabelNode *fala = [[SKLabelNode alloc] init];
         [fala setColor:[UIColor whiteColor]];
         [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-        [fala setPosition:CGPointMake(180, 150 - (distancia * i))];
+        [fala setPosition:CGPointMake(190, 150 - (distancia * i))];
         [fala setText:[frases objectAtIndex:i]];
         
         //adiciona ao array
