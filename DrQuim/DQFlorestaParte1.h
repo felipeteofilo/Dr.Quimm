@@ -42,6 +42,9 @@ static NSString* mundo = @"mundo";
 //Variavel que será usada para controlar em que parte da cena o jogador está
 @property int parteFaseAtual;
 
+//@Variavel que guardará a fase atual
+@property int faseAtual;
+
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode* mundo;
 

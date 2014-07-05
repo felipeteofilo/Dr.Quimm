@@ -12,10 +12,6 @@
 #define bordaCamera 512
 
 @implementation DQFlorestaParte1
-{
-    SKSpriteNode *plataforma;
-    SKSpriteNode *plataformaExtra;
-}
 
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
@@ -39,6 +35,11 @@
     
     self.cutsceneEstaRodando = NO;
     
+    //PROVISÓrio
+    self.parteFaseAtual=1;
+    self.faseAtual=1;
+    self.nPartesCena=14;
+    
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
     [self.mundo setName:mundo];
@@ -47,13 +48,14 @@
     //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
     self.physicsWorld.gravity=CGVectorMake(0, -3);
     
-    SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
+    SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual]];
+                                  
     
     [primeiraParte setAnchorPoint:CGPointMake(0, 0)];
     [primeiraParte setPosition:CGPointMake(0,0)];
     
     //primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
-    primeiraParte.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:1 daFase:1];
+    primeiraParte.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual daFase:self.faseAtual];
     
     primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
     primeiraParte.physicsBody.usesPreciseCollisionDetection = YES;
@@ -79,11 +81,6 @@
     
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
-    
-    self.parteFaseAtual=1;
-    
-    //Provisório
-    self.nPartesCena=14;
     
     //inicia as variaveis booleanas para falas
     self.falouRadiacaoAlpha = NO;
@@ -287,7 +284,7 @@
             
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual + 1 <= self.nPartesCena) {
-                NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual+1];
+                NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual+1];
                 
                 // Alterar para skspritenode
                 SKSpriteNode *backgroundFuturo=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
@@ -303,12 +300,13 @@
             
                 //Corpo fisico
                 //backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
-                backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual+1 daFase:1];
+                backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual+1 daFase:self.faseAtual];
                 
                 //Atualiza a propriedade e add no mundo
                 self.backgroundFuturo = backgroundFuturo;
                 
                 //Cria um spriteNode com cor e a plataforma
+                /*
                 plataforma=[[SKSpriteNode alloc]init];
                 
                 SKPhysicsBody *physicsBodyPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual+1];
@@ -334,9 +332,16 @@
                     
                     [self.backgroundFuturo addChild:plataformaExtra];
                 }
+                */
+                
+                
+                 
+                SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
+                
+                [self adicionarPlataforma:plataforma noNode:self.backgroundFuturo];
+                
                 
                 [self.mundo addChild:self.backgroundFuturo];
-                
             }
         }
     }
@@ -348,7 +353,7 @@
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual -1 > 0) {
                 
-                NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual-1];
+                NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual-1];
                 
                 // Alterar para skspritenode
                 SKSpriteNode *backgroundAnterior=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
@@ -364,42 +369,17 @@
                 
                 //Corpo fisico
                 //backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
-                backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual-1 daFase:1];
+                backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual-1 daFase:self.faseAtual];
                 
                 //Atualiza a propriedade e add no mundo
                 self.backgroundAnterior= backgroundAnterior;
                 
-                //Cria um spriteNode com cor e a plataforma
-                plataforma=[[SKSpriteNode alloc]init];
+                //Adiciona plataformas
                 
-                //plataformaExtra
-                plataformaExtra=[[SKSpriteNode alloc]init];
+                SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
                 
-                //Corpo fisico plat padrao
-                SKPhysicsBody *corpoFisicoPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual - 1];
-                
-                //Corpo fisico plataforma Extra
-                SKPhysicsBody *corpoFisicoPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual - 1];
-                
-                if (corpoFisicoPlataforma) {
-                    plataforma.physicsBody=corpoFisicoPlataforma;
-                    //plataforma.position=[DQControleCorpoFisico origemPlataforma:self.parteFaseAtual+1];
-                    [plataforma setAnchorPoint:CGPointMake(0, 0)];
-                    
-                    //Adiciona a plataforma no backFuturo para que fique com a posicao em relacao a ele
-                    [self.backgroundAnterior addChild:plataforma];
-                    
-                }
-                
-                if (corpoFisicoPlataformaExtra) {
-                    plataformaExtra.physicsBody=corpoFisicoPlataformaExtra;
-                    
-                    [plataformaExtra setAnchorPoint:CGPointMake(0, 0)];
-                    plataformaExtra.position=CGPointMake(0, -70);
-                    
-                    [self.backgroundAnterior addChild:plataformaExtra];
-                }
-
+                [self adicionarPlataforma:plataforma noNode:self.backgroundAnterior];
+            
                 [self.mundo addChild:self.backgroundAnterior];
                 
             }
@@ -457,6 +437,10 @@
     }
 }
 
-
-
+-(void)adicionarPlataforma:(SKNode*)plataformaAdd noNode:(SKNode*)nodeAddPlataforma{
+    
+    if (plataformaAdd) {
+        [nodeAddPlataforma addChild:plataformaAdd];
+    }
+}
 @end
