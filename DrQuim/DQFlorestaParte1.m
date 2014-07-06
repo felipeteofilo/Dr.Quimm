@@ -9,7 +9,10 @@
 #import "DQFlorestaParte1.h"
 #import "DQControleCorpoFisico.h"
 
-#define bordaCamera 512
+#define bordaCameraX 512
+#define bordaCameraY 384
+
+
 
 @implementation DQFlorestaParte1
 
@@ -113,18 +116,35 @@
     CGPoint posicaoMundo = self.mundo.position;
     
     CGFloat coordenadaX = posicaoMundo.x + posicaoJogador.x;
+    CGFloat coordenadaY = posicaoMundo.y + posicaoJogador.y;
     
-    if(coordenadaX <= bordaCamera && posicaoJogador.x >= bordaCamera)
+    
+    NSLog(@"%.2f",coordenadaY);
+    
+    if(coordenadaX <= bordaCameraX && posicaoJogador.x >= bordaCameraX)
     {
-        posicaoMundo.x = posicaoMundo.x - coordenadaX  + bordaCamera;
+        posicaoMundo.x = posicaoMundo.x - coordenadaX  + bordaCameraX;
         
     }
-    else if(coordenadaX > (self.frame.size.width - bordaCamera) && posicaoJogador.x < (self.nPartesCena *1024) -bordaCamera)
+    if(coordenadaY <= bordaCameraY && posicaoJogador.y >= bordaCameraY)
     {
-        posicaoMundo.x = posicaoMundo.x + (self.frame.size.width - coordenadaX) - bordaCamera;
+        posicaoMundo.y = posicaoMundo.y - coordenadaY  + bordaCameraY;
         
     }
     
+    
+    if(coordenadaX > (self.frame.size.width - bordaCameraX) && posicaoJogador.x < (self.nPartesCena *1024) -bordaCameraX)
+    {
+        posicaoMundo.x = posicaoMundo.x + (self.frame.size.width - coordenadaX) - bordaCameraX;
+        
+    }
+    if(coordenadaY > (self.frame.size.height - bordaCameraY) && posicaoJogador.y < 1536 - bordaCameraY)
+    {
+        posicaoMundo.y = posicaoMundo.y + (self.frame.size.height - coordenadaY) - bordaCameraY;
+        
+    }
+    
+
     //posição em que está atualmente
     self.mundo.position = posicaoMundo;
 }
@@ -133,7 +153,7 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     //Se não está falando e nem em cutscene...
-    if (!self.cutsceneEstaRodando) {
+    if (!self.cutsceneEstaRodando && !self.estaFalando) {
         //Verifica em qual lado da tela o jogador está tocando
         UITouch *posicao = [touches anyObject];
         
@@ -156,7 +176,7 @@
             // Pega o singleton do jogador e o faz pular
             [[DQJogador sharedJogador] pular];
             //Termina as animacoes do jogador andando
-            [[DQJogador sharedJogador] pararAndar];
+            //[[DQJogador sharedJogador] pararAndar];
         }
     }
     
@@ -176,15 +196,16 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *posicao = [touches anyObject];
-    
-    //se moveu para a direita, anda para a direita - D
-    if([posicao locationInView:self.view].x > self.pontoDeToqueAndar.x){
-        [self.jogador andarParaDirecao:@"D"];
-    }
-    
-    //senão, move para a esquerda - E
-    else{
-        [self.jogador andarParaDirecao:@"E"];
+    if (!self.cutsceneEstaRodando && !self.estaFalando) {
+        //se moveu para a direita, anda para a direita - D
+        if([posicao locationInView:self.view].x > self.pontoDeToqueAndar.x){
+            [self.jogador andarParaDirecao:@"D"];
+        }
+        
+        //senão, move para a esquerda - E
+        else{
+            [self.jogador andarParaDirecao:@"E"];
+        }
     }
 }
 
