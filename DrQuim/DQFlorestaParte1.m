@@ -89,13 +89,7 @@
     [self.mundo addChild:primeiraParte];
     [self.mundo addChild:self.jogador];
     
-    SKSpriteNode * iconeTeste = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
-    iconeTeste.size = CGSizeMake(50, 50);
-    [iconeTeste setAnchorPoint:CGPointMake(0,0 )];
-    [iconeTeste setPosition:CGPointMake(500, 560)];
-    [iconeTeste setName:@"IconeFala"];
     
-    [self.mundo addChild:iconeTeste];
     
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
@@ -172,12 +166,19 @@
         CGPoint positionInScene = [posicao locationInNode:self];
         SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:positionInScene];
         
-        if ([[touchedNode name] isEqualToString:@"IconeFala"]) {
+        if ([[touchedNode name] isEqualToString:@"RadiacaoAlfa"]) {
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
             
             self.cutsceneEstaRodando = YES;
             self.estaFalando = YES;
         }
+        else if ([[touchedNode name] isEqualToString:@"RadiacaoBeta"]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+            
+            self.cutsceneEstaRodando = YES;
+            self.estaFalando = YES;
+        }
+
         else{
             
             //Se estiver na direita
@@ -210,6 +211,7 @@
             
         }
         else{
+            
             self.estaFalando = NO;
             self.cutsceneEstaRodando = NO;
         }
@@ -287,7 +289,7 @@
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    //[self executaFalasDoJogo];
+    [self executaFalasDoJogo];
 }
 
 //FALTANDO AS FALAS DA AGUA - PRECISA PEGAR COORDENADA CERTINHA
@@ -301,10 +303,10 @@
     //inicia-os com suas coordenadas
     //-> alpha
     //pontoAlpha = CGPointMake(3290, 0); //coordenada correta
-    pontoAlpha = CGPointMake(350, 0); //coordenada teste
+    pontoAlpha = CGPointMake(350, 500); //coordenada teste
     //-> beta
     //pontoBeta = CGPointMake(5815, 0); //coordenada correta
-    pontoBeta = CGPointMake(500, 0); //coordenada teste
+    pontoBeta = CGPointMake(500, 500); //coordenada teste
     
     //verifica contato
     //-> alpha
@@ -320,6 +322,14 @@
             
             [self.jogador pararAndar];
             self.falouRadiacaoAlpha = YES;
+            SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
+            iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
+            [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0,0 )];
+            [iconeRadiacaoAlpha setPosition:pontoAlpha];
+            
+            [iconeRadiacaoAlpha setName:@"RadiacaoAlfa"];
+            [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
+            
         }
     }
     //-> beta
@@ -335,6 +345,14 @@
             
             [self.jogador pararAndar];
             self.falouRadiacaoBeta = YES;
+            
+            SKSpriteNode * iconeRadiacaoBeta = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
+            iconeRadiacaoBeta.size = CGSizeMake(50, 50);
+            [iconeRadiacaoBeta setAnchorPoint:CGPointMake(0,0 )];
+            [iconeRadiacaoBeta setPosition:pontoBeta];
+            
+            [iconeRadiacaoBeta setName:@"RadiacaoBeta"];
+            [self.mundo insertChild:iconeRadiacaoBeta atIndex:0];
         }
     }
 }
