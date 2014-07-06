@@ -163,24 +163,24 @@
         //Verifica em qual lado da tela o jogador está tocando
         UITouch *posicao = [touches anyObject];
         
-        CGPoint positionInScene = [posicao locationInNode:self];
-        SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:positionInScene];
+//        CGPoint positionInScene = [posicao locationInNode:self];
+//        SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:positionInScene];
         
-        if ([[touchedNode name] isEqualToString:@"RadiacaoAlfa"]) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
-            
-            self.cutsceneEstaRodando = YES;
-            self.estaFalando = YES;
-        }
-        else if ([[touchedNode name] isEqualToString:@"RadiacaoBeta"]) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
-            
-            self.cutsceneEstaRodando = YES;
-            self.estaFalando = YES;
-        }
+//        if ([[touchedNode name] isEqualToString:@"RadiacaoAlfa"]) {
+//            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+//            
+//            self.cutsceneEstaRodando = YES;
+//            self.estaFalando = YES;
+//        }
+//        else if ([[touchedNode name] isEqualToString:@"RadiacaoBeta"]) {
+//            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+//            
+//            self.cutsceneEstaRodando = YES;
+//            self.estaFalando = YES;
+//        }
 
-        else{
-            
+//        else{
+        
             //Se estiver na direita
             if([posicao locationInView:self.view].x > self.frame.size.height/2){
                 //ANDAR
@@ -202,7 +202,7 @@
                 
             }
         }
-    }
+//    }
     
     //Se estiver falando em jogo...
     else if(self.estaFalando){
@@ -222,29 +222,36 @@
 {
     UITouch *posicao = [touches anyObject];
     
-    //Verifica se nao esta rodando cutscene ou falando
-    if (!self.cutsceneEstaRodando && !self.estaFalando) {
-        //se moveu para a direita, anda para a direita - D
-        if([posicao locationInView:self.view].x > self.pontoDeToqueAndar.x){
-            if (![self.jogador actionForKey:@"andar"] ) {
-                [self.jogador andarParaDirecao:@"D"];
+    //Anda corretamente apenas e for do lado direito da tela
+    if([posicao locationInView:self.view].x > self.frame.size.height/2){
+        //Verifica se não está rodando cutscene ou falando
+        if (!self.cutsceneEstaRodando && !self.estaFalando) {
+            
+            //se moveu para a direita, anda para a direita - D
+            if([posicao locationInView:self.view].x > self.pontoDeToqueAndar.x){
+                if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
+                    [self.jogador andarParaDirecao:@"D"];
+                }
             }
             
-        }
-        
-        //senão, move para a esquerda - E
-        else{
-            if (![self.jogador actionForKey:@"andar"] ) {
-                [self.jogador andarParaDirecao:@"E"];
+            //senão, move para a esquerda - E
+            else{
+                if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
+                    [self.jogador andarParaDirecao:@"E"];
+                }
             }
         }
     }
+    
 }
 
 //metodo chamado assim que um toque e finalizado
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!self.cutsceneEstaRodando) {
+        //faz parar de andar, colocando a direção como nula
+        [self.jogador setAndandoParaDirecao:@" "];
         [self.jogador pararAndar];
+        
     }else if(!self.estaFalando){
         [self.controleCutscenes trocarCena];
     }
@@ -289,7 +296,7 @@
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    [self executaFalasDoJogo];
+    //[self executaFalasDoJogo];
 }
 
 //FALTANDO AS FALAS DA AGUA - PRECISA PEGAR COORDENADA CERTINHA
