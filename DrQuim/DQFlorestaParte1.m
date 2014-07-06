@@ -69,6 +69,8 @@
     primeiraParte.physicsBody.usesPreciseCollisionDetection = YES;
     primeiraParte.physicsBody.dynamic = NO;
     
+    
+    
     //Leonardo - inicializa o jogador
     //Inicia o jogador pelo singleton
     self.jogador = [DQJogador sharedJogador];
@@ -86,6 +88,14 @@
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:primeiraParte];
     [self.mundo addChild:self.jogador];
+    
+    SKSpriteNode * iconeTeste = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
+    iconeTeste.size = CGSizeMake(50, 50);
+    [iconeTeste setAnchorPoint:CGPointMake(0,0 )];
+    [iconeTeste setPosition:CGPointMake(500, 560)];
+    [iconeTeste setName:@"IconeFala"];
+    
+    [self.mundo addChild:iconeTeste];
     
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
@@ -115,12 +125,14 @@
     //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
     CGPoint posicaoMundo = self.mundo.position;
     
+    //Pega as coordenadas do jogador em relacao ao mundo
     CGFloat coordenadaX = posicaoMundo.x + posicaoJogador.x;
     CGFloat coordenadaY = posicaoMundo.y + posicaoJogador.y;
     
     
-    NSLog(@"%.2f",coordenadaY);
+   
     
+    //Verifica se as coordenadas do jogador em relacao ao mundo e sua real posicao o posicionando sempre ao centro da tela
     if(coordenadaX <= bordaCameraX && posicaoJogador.x >= bordaCameraX)
     {
         posicaoMundo.x = posicaoMundo.x - coordenadaX  + bordaCameraX;
@@ -132,7 +144,7 @@
         
     }
     
-    
+    //Verifica se as coordenadas do jogador em relacao ao mundo nao ultrpassam os limites impostos e o posiciona corretamente, lembrando sempre que o mundo que e reposicionado.
     if(coordenadaX > (self.frame.size.width - bordaCameraX) && posicaoJogador.x < (self.nPartesCena *1024) -bordaCameraX)
     {
         posicaoMundo.x = posicaoMundo.x + (self.frame.size.width - coordenadaX) - bordaCameraX;
@@ -145,7 +157,7 @@
     }
     
 
-    //posição em que está atualmente
+    //seta a nova posicao do mundo
     self.mundo.position = posicaoMundo;
 }
 
@@ -157,26 +169,37 @@
         //Verifica em qual lado da tela o jogador está tocando
         UITouch *posicao = [touches anyObject];
         
-        //Se estiver na direita
-        if([posicao locationInView:self.view].x > self.frame.size.height/2){
-            //ANDAR
-            //marca o local em que tocou e desenha as setinhas
-            self.pontoDeToqueAndar = [posicao locationInView:self.view];
-            
-            //mostra as setinhas
-            self.setinhas = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
-            [self.setinhas setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
-            
-            [self addChild:self.setinhas];
-        }
+        CGPoint positionInScene = [posicao locationInNode:self];
+        SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:positionInScene];
         
-        //Se estiver na esquerda
-        else if([posicao locationInView:self.view].x < self.frame.size.height/2){
-            //PULAR
-            // Pega o singleton do jogador e o faz pular
-            [[DQJogador sharedJogador] pular];
-            //Termina as animacoes do jogador andando
-            //[[DQJogador sharedJogador] pararAndar];
+        if ([[touchedNode name] isEqualToString:@"IconeFala"]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+            
+            self.cutsceneEstaRodando = YES;
+            self.estaFalando = YES;
+        }
+        else{
+            
+            //Se estiver na direita
+            if([posicao locationInView:self.view].x > self.frame.size.height/2){
+                //ANDAR
+                //marca o local em que tocou e desenha as setinhas
+                self.pontoDeToqueAndar = [posicao locationInView:self.view];
+                
+                //mostra as setinhas
+                self.setinhas = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+                [self.setinhas setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
+                
+                [self addChild:self.setinhas];
+            }
+            
+            //Se estiver na esquerda
+            else if([posicao locationInView:self.view].x < self.frame.size.height/2){
+                //PULAR
+                // Pega o singleton do jogador e o faz pular
+                [[DQJogador sharedJogador] pular];
+                
+            }
         }
     }
     
@@ -196,6 +219,8 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *posicao = [touches anyObject];
+    
+    //Verifica se nao esta rodando cutscene ou falando
     if (!self.cutsceneEstaRodando && !self.estaFalando) {
         //se moveu para a direita, anda para a direita - D
         if([posicao locationInView:self.view].x > self.pontoDeToqueAndar.x){
@@ -283,24 +308,34 @@
     
     //verifica contato
     //-> alpha
-    if( (self.jogador.position.x > pontoAlpha.x && self.jogador.position.y > pontoAlpha.y) && !self.falouRadiacaoAlpha){
-        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+    if (self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x +10) {
         
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = YES;
+        [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
         
-        [self.jogador pararAndar];
-        self.falouRadiacaoAlpha = YES;
+        if( (self.jogador.position.x > pontoAlpha.x && self.jogador.position.y > pontoAlpha.y) && !self.falouRadiacaoAlpha){
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+            
+            self.cutsceneEstaRodando = YES;
+            self.estaFalando = YES;
+            
+            [self.jogador pararAndar];
+            self.falouRadiacaoAlpha = YES;
+        }
     }
     //-> beta
-    if( (self.jogador.position.x > pontoBeta.x && self.jogador.position.y > pontoBeta.y) && !self.falouRadiacaoBeta){
-        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+    if (self.jogador.position.x > pontoBeta.x - 50 && self.jogador.position.x < pontoBeta.x  +10) {
         
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = YES;
+        [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
         
-        [self.jogador pararAndar];
-        self.falouRadiacaoBeta = YES;
+        if( (self.jogador.position.x > pontoBeta.x && self.jogador.position.y > pontoBeta.y) && !self.falouRadiacaoBeta){
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+            
+            self.cutsceneEstaRodando = YES;
+            self.estaFalando = YES;
+            
+            [self.jogador pararAndar];
+            self.falouRadiacaoBeta = YES;
+        }
     }
 }
 
