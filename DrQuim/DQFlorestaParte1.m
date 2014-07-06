@@ -57,6 +57,11 @@
     //primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
     primeiraParte.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual daFase:self.faseAtual];
     
+    //Adiciona plataforma caso tenha
+    SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
+    
+    [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
+    
     primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
     primeiraParte.physicsBody.usesPreciseCollisionDetection = YES;
     primeiraParte.physicsBody.dynamic = NO;
@@ -107,15 +112,14 @@
     //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
     CGPoint posicaoMundo = self.mundo.position;
     
-    
-    CGFloat coordenadaX = posicaoMundo.x + posicaoJogador.x ;
+    CGFloat coordenadaX = posicaoMundo.x + posicaoJogador.x;
     
     if(coordenadaX <= bordaCamera && posicaoJogador.x >= bordaCamera)
     {
         posicaoMundo.x = posicaoMundo.x - coordenadaX  + bordaCamera;
         
     }
-    else if(coordenadaX > (self.frame.size.width - bordaCamera) && posicaoJogador.x < (self.nPartesCena *1024) -512)
+    else if(coordenadaX > (self.frame.size.width - bordaCamera) && posicaoJogador.x < (self.nPartesCena *1024) -bordaCamera)
     {
         posicaoMundo.x = posicaoMundo.x + (self.frame.size.width - coordenadaX) - bordaCamera;
         
@@ -304,37 +308,6 @@
                 
                 //Atualiza a propriedade e add no mundo
                 self.backgroundFuturo = backgroundFuturo;
-                
-                //Cria um spriteNode com cor e a plataforma
-                /*
-                plataforma=[[SKSpriteNode alloc]init];
-                
-                SKPhysicsBody *physicsBodyPlataforma=[DQControleCorpoFisico adicionaPlataformaParte:self.parteFaseAtual+1];
-            
-                plataformaExtra=[[SKSpriteNode alloc]init];
-
-                //Corpo fisico plataforma Extra
-                SKPhysicsBody *physicsBodyPlataformaExtra=[DQControleCorpoFisico criaPlataformaExtra:self.parteFaseAtual + 1];
-                
-                if (physicsBodyPlataforma) {
-                    plataforma.physicsBody=physicsBodyPlataforma;
-                    [plataforma setAnchorPoint:CGPointMake(0, 0)];
-                    
-                    [self.backgroundFuturo addChild:plataforma];
-
-                }
-                
-                if (physicsBodyPlataformaExtra) {
-                    plataformaExtra.physicsBody=physicsBodyPlataformaExtra;
-                    
-                    [plataformaExtra setAnchorPoint:CGPointMake(0, 0)];
-                    plataformaExtra.position=CGPointMake(0, -70);
-                    
-                    [self.backgroundFuturo addChild:plataformaExtra];
-                }
-                */
-                
-                
                  
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
                 

@@ -10,5 +10,14 @@
 
 @implementation DQPlataforma
 
-
+-(id)init{
+    if ([super init]) {
+        
+        [self setName:@"Plataforma"];
+        [self.physicsBody setContactTestBitMask:0x0];
+        [self.physicsBody setCollisionBitMask:0x0];
+        
+    }
+    return self;
+}
 @end
