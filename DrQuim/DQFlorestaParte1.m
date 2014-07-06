@@ -54,17 +54,12 @@
     SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual]];
                                   
     
+    
+    
     [primeiraParte setAnchorPoint:CGPointMake(0, 0)];
     [primeiraParte setPosition:CGPointMake(0,0)];
     
-    //primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
     primeiraParte.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual daFase:self.faseAtual];
-    
-    //Adiciona plataforma caso tenha
-    SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
-    
-    [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
-    
     primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
     primeiraParte.physicsBody.usesPreciseCollisionDetection = YES;
     primeiraParte.physicsBody.dynamic = NO;
@@ -78,15 +73,18 @@
     //seta as categorias de colisao do jogador
     self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
     self.jogador.physicsBody.contactTestBitMask = ChaoCategoria;
+    self.jogador.physicsBody.collisionBitMask=ChaoCategoria;
     
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
+    
+    
     
     //Att propriedade
     self.backgroundAtual=primeiraParte;
     
     //Adiciona a primeira parte da tela e o jogador no mundo
-    [self.mundo addChild:primeiraParte];
+    [self.mundo addChild:self.backgroundAtual];
     [self.mundo addChild:self.jogador];
     
     
@@ -94,9 +92,20 @@
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
     
+
     //inicia as variaveis booleanas para falas
     self.falouRadiacaoAlpha = NO;
     self.falouRadiacaoBeta = NO;
+    
+
+    
+    self.falouRadiacaoAlpha=YES;
+    self.falouRadiacaoBeta=YES;
+    
+    //Adiciona plataforma caso tenha
+    SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
+    
+    [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
 }
 
 //Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera
@@ -418,6 +427,8 @@
                 
                 
                 [self.mundo addChild:self.backgroundFuturo];
+                
+                NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
             }
         }
     }
@@ -514,8 +525,21 @@
 }
 
 -(void)adicionarPlataforma:(SKNode*)plataformaAdd noNode:(SKNode*)nodeAddPlataforma{
-    
+ 
     if (plataformaAdd) {
+        
+        int I=0;
+        
+        for (DQPlataforma *plataforma in [plataformaAdd children]) {
+           /*
+            [plataforma setName:@"plataforma"];
+            [plataforma.physicsBody setCategoryBitMask:PlataformaCategoria];
+            [plataforma.physicsBody setCollisionBitMask:0];
+            */
+            I++;
+        }
+        NSLog(@"N plataformas %i",I);
+        
         [nodeAddPlataforma addChild:plataformaAdd];
     }
 }

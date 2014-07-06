@@ -57,13 +57,17 @@
     
     NSArray *configParteFase=[DQConfiguracaoFase configParte:_parte daFase:_fase];
     
-    SKSpriteNode *nodeRetorno=[SKSpriteNode spriteNodeWithColor:nil size:_rectTela.size];
+    SKSpriteNode *nodeRetorno;
     
     if (!configParteFase) {
         return nil;
     }else{
         
         NSArray *plataformasConfig=[[configParteFase objectAtIndex:_parte-1]objectForKey:@"Plataformas"];
+        
+        if ([plataformasConfig count]!=0) {
+            nodeRetorno=[SKSpriteNode spriteNodeWithColor:nil size:_rectTela.size];
+        }
         
         //Cada obj no array plataformas é uma plataforma - Faz um for percorrendo as plataformas para pegar os pontos
         for (int i=0; i<[plataformasConfig count]; i++) {
@@ -75,7 +79,13 @@
             DQPlataforma *plataforma=[[DQPlataforma alloc]init];
             [plataforma setPhysicsBody:corpoFisicoPlataforma];
             
+            [plataforma.physicsBody setCollisionBitMask:0];
+            
+            NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
+            
             [nodeRetorno addChild:plataforma];
+            
+            NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
         }
         
         
