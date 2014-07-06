@@ -163,23 +163,25 @@
         //Verifica em qual lado da tela o jogador está tocando
         UITouch *posicao = [touches anyObject];
         
-//        CGPoint positionInScene = [posicao locationInNode:self];
-//        SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:positionInScene];
         
-//        if ([[touchedNode name] isEqualToString:@"RadiacaoAlfa"]) {
-//            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
-//            
-//            self.cutsceneEstaRodando = YES;
-//            self.estaFalando = YES;
-//        }
-//        else if ([[touchedNode name] isEqualToString:@"RadiacaoBeta"]) {
-//            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
-//            
-//            self.cutsceneEstaRodando = YES;
-//            self.estaFalando = YES;
-//        }
+        //Jeito porco irei arrumar
+        CGPoint posicaoDoToque = [posicao locationInNode:self];
+        SKSpriteNode *nodeTocado = (SKSpriteNode *)[self nodeAtPoint:posicaoDoToque];
+        
+        if ([[nodeTocado name] isEqualToString:@"RadiacaoAlfa"]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+            
+            self.cutsceneEstaRodando = YES;
+            self.estaFalando = YES;
+        }
+        else if ([[nodeTocado name] isEqualToString:@"RadiacaoBeta"]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+            
+            self.cutsceneEstaRodando = YES;
+            self.estaFalando = YES;
+        }
 
-//        else{
+        else{
         
             //Se estiver na direita
             if([posicao locationInView:self.view].x > self.frame.size.height/2){
@@ -202,7 +204,7 @@
                 
             }
         }
-//    }
+    }
     
     //Se estiver falando em jogo...
     else if(self.estaFalando){
@@ -296,7 +298,7 @@
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    //[self executaFalasDoJogo];
+    [self executaFalasDoJogo];
 }
 
 //FALTANDO AS FALAS DA AGUA - PRECISA PEGAR COORDENADA CERTINHA
@@ -317,10 +319,16 @@
     
     //verifica contato
     //-> alpha
+    //Se o jogador estiver perto da radiacao comeca a apitar
     if (self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x +10) {
         
-        [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
+        //Se ja ouver algum apito aguarda para tocar outro
+        if (![self hasActions]) {
+            [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
+
+        }
         
+        //se o jogador chegar ao local da fala comeca a fala
         if( (self.jogador.position.x > pontoAlpha.x && self.jogador.position.y > pontoAlpha.y) && !self.falouRadiacaoAlpha){
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
             
@@ -329,21 +337,27 @@
             
             [self.jogador pararAndar];
             self.falouRadiacaoAlpha = YES;
+            
+            //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
             SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
             iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
             [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0,0 )];
             [iconeRadiacaoAlpha setPosition:pontoAlpha];
-            
             [iconeRadiacaoAlpha setName:@"RadiacaoAlfa"];
+            [self.jogador setZPosition:1];
             [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
             
         }
     }
     //-> beta
     if (self.jogador.position.x > pontoBeta.x - 50 && self.jogador.position.x < pontoBeta.x  +10) {
+       
         
-        [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
-        
+        //Se ja ouver algum apito aguarda para tocar outro
+        if (![self hasActions]) {
+            [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
+        }
+            
         if( (self.jogador.position.x > pontoBeta.x && self.jogador.position.y > pontoBeta.y) && !self.falouRadiacaoBeta){
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
             
@@ -353,12 +367,15 @@
             [self.jogador pararAndar];
             self.falouRadiacaoBeta = YES;
             
+            
+            //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
             SKSpriteNode * iconeRadiacaoBeta = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
             iconeRadiacaoBeta.size = CGSizeMake(50, 50);
             [iconeRadiacaoBeta setAnchorPoint:CGPointMake(0,0 )];
             [iconeRadiacaoBeta setPosition:pontoBeta];
             
             [iconeRadiacaoBeta setName:@"RadiacaoBeta"];
+            [self.jogador setZPosition:1];
             [self.mundo insertChild:iconeRadiacaoBeta atIndex:0];
         }
     }
