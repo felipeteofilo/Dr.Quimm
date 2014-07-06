@@ -199,12 +199,17 @@
     if (!self.cutsceneEstaRodando && !self.estaFalando) {
         //se moveu para a direita, anda para a direita - D
         if([posicao locationInView:self.view].x > self.pontoDeToqueAndar.x){
-            [self.jogador andarParaDirecao:@"D"];
+            if (![self.jogador actionForKey:@"andar"] ) {
+                [self.jogador andarParaDirecao:@"D"];
+            }
+            
         }
         
         //senão, move para a esquerda - E
         else{
-            [self.jogador andarParaDirecao:@"E"];
+            if (![self.jogador actionForKey:@"andar"] ) {
+                [self.jogador andarParaDirecao:@"E"];
+            }
         }
     }
 }
@@ -257,7 +262,7 @@
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    [self executaFalasDoJogo];
+    //[self executaFalasDoJogo];
 }
 
 //FALTANDO AS FALAS DA AGUA - PRECISA PEGAR COORDENADA CERTINHA
