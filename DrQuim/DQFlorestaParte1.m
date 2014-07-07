@@ -310,14 +310,23 @@
     //cria os pontos de menssagem
     CGPoint pontoAlpha;
     CGPoint pontoBeta;
+    CGPoint pontoSegundaCutscene;
+    CGPoint pontoAlertaAlpha;
+    CGPoint pontoAlertaBeta;
     
     //inicia-os com suas coordenadas
     //-> alpha
     pontoAlpha = CGPointMake(3290, 1000);
     //-> beta
     pontoBeta = CGPointMake(5798, 1170);
+    //-> segundaCutscene
+    pontoSegundaCutscene = CGPointMake(7640, 330);
+    //-> aletra alpha
+    pontoAlertaAlpha = CGPointMake(3510, 1130);
+    //-> alerta beta
+    pontoAlertaBeta = CGPointMake(6000, 1255);
     
-    //verifica contato
+    //verifica contato - juliaFez
     //-> alpha
     //Se o jogador estiver perto da radiacao comeca a apitar
     if (self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x +10) {
@@ -338,9 +347,9 @@
             self.falouRadiacaoAlpha = YES;
             
             //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
-            SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
+            SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"icone_cientista"];
             iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
-            [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0,0 )];
+            [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0, 0)];
             [iconeRadiacaoAlpha setPosition:pontoAlpha];
             [iconeRadiacaoAlpha setName:@"RadiacaoAlfa"];
             [self.jogador setZPosition:1];
@@ -367,9 +376,9 @@
             self.falouRadiacaoBeta = YES;
             
             //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
-            SKSpriteNode * iconeRadiacaoBeta = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
+            SKSpriteNode * iconeRadiacaoBeta = [[ SKSpriteNode alloc]initWithImageNamed:@"icone_cientista"];
             iconeRadiacaoBeta.size = CGSizeMake(50, 50);
-            [iconeRadiacaoBeta setAnchorPoint:CGPointMake(0,0 )];
+            [iconeRadiacaoBeta setAnchorPoint:CGPointMake(0, 0)];
             [iconeRadiacaoBeta setPosition:pontoBeta];
             
             [iconeRadiacaoBeta setName:@"RadiacaoBeta"];
@@ -377,6 +386,22 @@
             [self.mundo insertChild:iconeRadiacaoBeta atIndex:0];
         }
     }
+    
+    //-> segundaCutscene
+    //se o jogador chegar ao local da fala, comeca a fala
+    if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
+            //FAZER! - IR PARA A SEGUNDA CUTSCENE!
+            NSLog(@"FAZER IR PARA A SEGUNDA CUTSCENE");
+            [self.jogador pararAndar];
+        }
+    
+    //-> alerta alpha
+    //FAZER - PARA IMPEDIR QUE O JOGADOR VÁ ONDE TEM RADIAÇÃO
+        //pegar falas, fazer aleatoriedade e mostrar na tela
+    
+    //-> alerta beta
+    //FAZER - PARA IMPEDIR QUE O JOGADOR VÁ ONDE TEM RADIAÇÃO
+        //pegar falas, fazer aleatoriedade e mostrar na tela
 }
 
 //Cria a parte da fase == BASE ==

@@ -40,33 +40,6 @@
 					<string>cientista</string>
 				</dict>
 			</array>
-			<key>FalasAgua</key>
-			<array>
-				<dict>
-					<key>Sujeito</key>
-					<string>Cientista</string>
-					<key>Texto</key>
-					<string>Que foi? Quer molhar a gente?</string>
-					<key>Imagem</key>
-					<string>cientista</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Cientista</string>
-					<key>Texto</key>
-					<string>Você tem problemas? olha o rio aí!</string>
-					<key>Imagem</key>
-					<string>cientista</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Cientista</string>
-					<key>Texto</key>
-					<string>Sou muito velho para nadar</string>
-					<key>Imagem</key>
-					<string>cientista</string>
-				</dict>
-			</array>
 			<key>RadiacaoAlfa</key>
 			<array>
 				<dict>
