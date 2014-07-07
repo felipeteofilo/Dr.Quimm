@@ -50,34 +50,27 @@
     self.physicsWorld.gravity=CGVectorMake(0, -3);
     
     SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual]];
-                                  
-    
-    
     
     [primeiraParte setAnchorPoint:CGPointMake(0, 0)];
     [primeiraParte setPosition:CGPointMake(0,0)];
     
     primeiraParte.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual daFase:self.faseAtual];
-    primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
-    primeiraParte.physicsBody.usesPreciseCollisionDetection = YES;
+    
+    //chama metodo de configuracao de categoria
+    [self chaoCategoria:primeiraParte];
+
     primeiraParte.physicsBody.dynamic = NO;
-    
-    
     
     //Leonardo - inicializa o jogador
     //Inicia o jogador pelo singleton
     self.jogador = [DQJogador sharedJogador];
     
     //seta as categorias de colisao do jogador
-    self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
-    self.jogador.physicsBody.contactTestBitMask = ChaoCategoria;
-    self.jogador.physicsBody.collisionBitMask=ChaoCategoria;
+    [self jogadorCategoria:self.jogador];
     
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
-    
-    
-    
+
     //Att propriedade
     self.backgroundAtual = primeiraParte;
     
@@ -98,6 +91,8 @@
     SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
     
     [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
+    
+    [self plataformaCategoria:plataforma];
 }
 
 //Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera
@@ -292,6 +287,21 @@
                 [self.jogador animarAndando];
             }
         }
+        
+        if ([secondBody.node.name isEqualToString:@"Plataforma"]){
+            
+            float yPlataforma =[[secondBody.node.userData objectForKey:@"maiorY"]floatValue];
+            
+            //Verifica se jogador esta abaixo da plataforma que colidiu
+            if (firstBody.node.position.y < yPlataforma ) {
+                [self plataformaCategoria:secondBody.node];
+                
+            }else if((firstBody.velocity.dy < 0) && (firstBody.node.position.y > yPlataforma )){
+                [self chaoCategoria:secondBody.node];
+                
+                [firstBody applyImpulse:CGVectorMake(0, 20.0f)];
+            }
+        }
     }
     
 }
@@ -432,6 +442,9 @@
                 //backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
                 backgroundFuturo.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual+1 daFase:self.faseAtual];
                 
+                //Configura a categoria do chao do prox Back
+                [self chaoCategoria:backgroundFuturo];
+                
                 //Atualiza a propriedade e add no mundo
                 self.backgroundFuturo = backgroundFuturo;
                  
@@ -471,6 +484,9 @@
                 //Corpo fisico
                 //backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
                 backgroundAnterior.physicsBody=[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual-1 daFase:self.faseAtual];
+                
+                //Configura a categoria do chao do back anterior
+                [self chaoCategoria:backgroundAnterior];
                 
                 //Atualiza a propriedade e add no mundo
                 self.backgroundAnterior= backgroundAnterior;
@@ -539,22 +555,40 @@
 }
 
 -(void)adicionarPlataforma:(SKNode*)plataformaAdd noNode:(SKNode*)nodeAddPlataforma{
- 
+    
     if (plataformaAdd) {
         
-        int I=0;
-        
         for (DQPlataforma *plataforma in [plataformaAdd children]) {
-           /*
-            [plataforma setName:@"plataforma"];
-            [plataforma.physicsBody setCategoryBitMask:PlataformaCategoria];
-            [plataforma.physicsBody setCollisionBitMask:0];
-            */
-            I++;
+            [self plataformaCategoria:plataforma];
         }
-        //NSLog(@"N plataformas %i",I);
         
         [nodeAddPlataforma addChild:plataformaAdd];
     }
 }
+
+-(void)chaoCategoria:(SKNode*)node{
+    //Chao Categoria
+    node.physicsBody.categoryBitMask=ChaoCategoria;
+    node.physicsBody.collisionBitMask=JogadorCategoria;
+    node.physicsBody.contactTestBitMask=JogadorCategoria;
+    node.physicsBody.usesPreciseCollisionDetection=YES;
+}
+
+-(void)jogadorCategoria:(SKNode*)node{
+    //Chao Categoria
+    node.physicsBody.categoryBitMask=JogadorCategoria;
+    node.physicsBody.collisionBitMask=ChaoCategoria;
+    node.physicsBody.contactTestBitMask=PlataformaCategoria;
+    node.physicsBody.usesPreciseCollisionDetection=YES;
+}
+
+
+-(void)plataformaCategoria:(SKNode*)node{
+    //Chao Categoria
+    node.physicsBody.categoryBitMask=PlataformaCategoria;
+    node.physicsBody.collisionBitMask=0;
+    node.physicsBody.contactTestBitMask=JogadorCategoria;
+    node.physicsBody.usesPreciseCollisionDetection=YES;
+}
+
 @end

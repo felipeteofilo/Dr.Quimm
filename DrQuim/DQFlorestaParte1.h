@@ -9,11 +9,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
 #import "DQCutsceneControle.h"
-
+#import "DQPlataforma.h"
 
 //define as categorias de colisao
-static const UInt32 JogadorCategoria = 0x1 << 1;
-static const UInt32 ChaoCategoria = 0x1 << 2;
+static const UInt32 JogadorCategoria = 0x1 << 0;
+static const UInt32 ChaoCategoria = 0x1 << 1;
+static const UInt32 PlataformaCategoria = 0x1 << 2;
 
 //Define o nome dos skNodes
 static NSString* mundo = @"mundo";
