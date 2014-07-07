@@ -36,10 +36,12 @@
     
     self.cutsceneEstaRodando = NO;
     
-    //PROVISÓrio
+    //PROVISÓrio ============ ===============
     self.parteFaseAtual=1;
     self.faseAtual=1;
-    self.nPartesCena=14;
+    // ============ ============ ============
+    self.nPartesCena=[DQConfiguracaoFase nPartesFase:self.faseAtual];
+    
     
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
@@ -454,7 +456,6 @@
                 
                 [self.mundo addChild:self.backgroundFuturo];
                 
-                //NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
             }
         }
     }

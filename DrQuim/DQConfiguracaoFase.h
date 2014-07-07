@@ -10,6 +10,12 @@
 
 @interface DQConfiguracaoFase : NSObject
 
-+(NSArray*)configParte: (int)_parte daFase:(int)_fase;
 
++(int)parteIniciarFase:(int)_fase;
++(int)nPartesFase:(int)_fase;
+
++(NSString*)coberturaBackgroundParte:(int)_parte daFase:(int)_fase;
+
++(NSArray*)configParteFase:(int)_fase;
++(NSDictionary*)configParteFase:(int)_fase parte:(int)_parte;
 @end

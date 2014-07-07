@@ -11,7 +11,7 @@
 @implementation DQConfiguracaoFase
 
 
-+(NSArray*)configParte: (int)_parte daFase:(int)_fase{
++(NSArray*)configParteFase:(int)_fase{
     /*
      - Acessa o arquivo plist,
      - acessa o dicinário com as configurações da fase na posicao do array ROOT, usando o parametro _fase como ref.
@@ -34,5 +34,39 @@
     
     
     return configParteFase;
+}
+
++(int)nPartesFase:(int)_fase{
+    
+    //Array criado para facilitar leitura do colega programador
+    NSArray *partesFase=[DQConfiguracaoFase configParteFase:_fase];
+    
+    if (!partesFase) {
+        return 0;
+    }else{
+        return (int)[partesFase count];
+    }
+}
+
+//+(int)parteIniciar;
+
++(NSString*)coberturaBackgroundParte:(int)_parte daFase:(int)_fase{
+    NSDictionary *configParte=[DQConfiguracaoFase configParteFase:_fase parte:_parte];
+    
+    if (!configParte) {
+        return @"";
+    }else{
+        return [configParte objectForKey:@"CoberturaFundo"];
+    }
+}
+
++(NSDictionary*)configParteFase:(int)_fase parte:(int)_parte{
+    NSDictionary *parteEspecifica=[[DQConfiguracaoFase configParteFase:_fase]objectAtIndex:_parte-1];
+    
+    if (!parteEspecifica) {
+        return nil;
+    }else{
+        return parteEspecifica;
+    }
 }
 @end

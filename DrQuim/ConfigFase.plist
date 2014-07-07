@@ -6,6 +6,8 @@
 		<key>Partes</key>
 		<array>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -19,6 +21,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -44,6 +48,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -98,6 +104,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string>Fase1_Parte4_Coberta.png</string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -126,6 +134,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -146,6 +156,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array/>
 				<key>Plataformas</key>
@@ -195,6 +207,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{78, 0}</string>
@@ -233,6 +247,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -253,6 +269,8 @@
 		<key>Partes</key>
 		<array>
 			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<array/>

@@ -14,7 +14,7 @@
 
 +(SKPhysicsBody*)criaCorpoFisicoChaoParte: (int)_parte daFase:(int)_fase{
     
-    NSArray *configParteFase=[DQConfiguracaoFase configParte:_parte daFase:_fase];
+    NSArray *configParteFase=[DQConfiguracaoFase configParteFase:_fase];
     
     //Usando o array acessado anteriormente, pega o array com os cgpoints da KEY CorpoFisicoChao
     NSArray *posicoesAdd=[[configParteFase objectAtIndex:_parte-1]objectForKey:@"CorpoFisicoChao"];
@@ -55,7 +55,7 @@
 
 +(SKSpriteNode*)criarPlataformaParte: (int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela{
     
-    NSArray *configParteFase=[DQConfiguracaoFase configParte:_parte daFase:_fase];
+    NSArray *configParteFase=[DQConfiguracaoFase configParteFase:_fase];
     
     SKSpriteNode *nodeRetorno;
     
