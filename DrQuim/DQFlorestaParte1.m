@@ -340,7 +340,7 @@
     //verifica contato
     //-> alpha
     //Se o jogador estiver perto da radiacao comeca a apitar
-    if (self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x +10) {
+    if ((self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x + 940) && self.jogador.position.y > pontoAlpha.y - 10 ) {
         
         //Se ja houver algum apito aguarda para tocar outro
         if (![self hasActions]) {
@@ -369,7 +369,7 @@
     }
 
     //-> beta
-    if (self.jogador.position.x > pontoBeta.x - 50 && self.jogador.position.x < pontoBeta.x  +10 && self.jogador.position.y > pontoBeta.y - 20) {
+    if (self.jogador.position.x > pontoBeta.x - 50 && self.jogador.position.x < pontoBeta.x + 940 && self.jogador.position.y > pontoBeta.y-10) {
        
         //Se ja houver algum apito aguarda para tocar outro
         if (![self hasActions]) {
