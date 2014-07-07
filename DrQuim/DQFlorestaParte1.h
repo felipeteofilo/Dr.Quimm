@@ -30,6 +30,8 @@ static NSString* mundo = @"mundo";
 //Variaveis booleanas para definir se fá foi ou não dito as falas in-game que são ditas apenas uma vez
 @property BOOL falouRadiacaoAlpha;
 @property BOOL falouRadiacaoBeta;
+@property BOOL falouAtencaoAlpha;
+@property BOOL falouAtencaoBeta;
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;

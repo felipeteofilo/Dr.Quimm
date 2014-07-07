@@ -296,71 +296,25 @@
 
 ///Metodo a fazer de mostrar as falas dentro do jogo
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key{
-    
-    //se a key passada for aleatórias, faz a fala ser aleatoria
-    if([key isEqualToString:@"Aleatorias"]){
-        [self criarFalaAleatoria:cena KeyDaFala:key];
-    }
-    
-    //senão, apenas executa as falas planejadas
-    else{
         
-        //Verifica se existe alguma fala em andamento, se não, lemos uma pela key passada
-        if (self.falasAtuais == nil) {
-            self.falasAtuais = [[NSArray alloc]init];
-            self.falasAtuais = [self.falasDoJogo objectForKey:key];
-        }
-
-        [self.caixaDeFala removeAllChildren];
-    
-        //NSStrings temporarias para armazenar o sujeito e fala atual
-        NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Sujeito"];
-        NSString *textoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Texto"];
-    
-        //Formata o texto lido do Arquivo Plist
-        NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
-    
-        //Separa o texto em frases
-        NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:40];
-    
-        //Cria a caixa de texto
-        self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
-    
-        //Mostra as falas
-        [self mostrarFalaAtualNoJogo:frases];
-    
-        //Adiciona a caixa de fala no jogo
-        [cena addChild:self.caixaDeFala];
-    
-        //Adiciona uma imagem com a carinha de quem está falando
-        [self mostraRostoDeQuemFala:[[self.falasAtuais objectAtIndex:self.falaAtual] objectForKey:@"Imagem"] naCena:cena];
-    
-        //Pula para a proxima fala
-        self.falaAtual ++;
-    }
-}
-
--(void)criarFalaAleatoria:(SKScene*)cena KeyDaFala:(NSString*)key{
     //Verifica se existe alguma fala em andamento, se não, lemos uma pela key passada
     if (self.falasAtuais == nil) {
         self.falasAtuais = [[NSArray alloc]init];
         self.falasAtuais = [self.falasDoJogo objectForKey:key];
     }
-    
-    //cria numero aleatorio entre a quantidade de frases dentro da key aleatorio
-    int numeroAleatorio = arc4random() % ([self.falasAtuais count]);
-    
-    
+
+    [self.caixaDeFala removeAllChildren];
+
     //NSStrings temporarias para armazenar o sujeito e fala atual
-    NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:numeroAleatorio]objectForKey:@"Sujeito"];
-    NSString *textoTemporario = [[self.falasAtuais objectAtIndex:numeroAleatorio]objectForKey:@"Texto"];
-    
+    NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Sujeito"];
+    NSString *textoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Texto"];
+
     //Formata o texto lido do Arquivo Plist
     NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
     
     //Separa o texto em frases
     NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:40];
-    
+
     //Cria a caixa de texto
     self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
     
@@ -373,8 +327,9 @@
     //Adiciona uma imagem com a carinha de quem está falando
     [self mostraRostoDeQuemFala:[[self.falasAtuais objectAtIndex:self.falaAtual] objectForKey:@"Imagem"] naCena:cena];
     
-    //Acaba
-    [self fimDasCenas];
+    //Pula para a proxima fala
+    self.falaAtual ++;
+
 }
 
 //Trocar fala dentro do jogo

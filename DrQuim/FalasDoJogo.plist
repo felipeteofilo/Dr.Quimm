@@ -5,7 +5,7 @@
 	<dict>
 		<key>Falas</key>
 		<dict>
-			<key>Aleatorias</key>
+			<key>Aleatoria1</key>
 			<array>
 				<dict>
 					<key>Sujeito</key>
@@ -15,6 +15,9 @@
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>
+			</array>
+			<key>Aleatoria2</key>
+			<array>
 				<dict>
 					<key>Sujeito</key>
 					<string>Cientista</string>
@@ -23,14 +26,20 @@
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>
+			</array>
+			<key>Aleatoria3</key>
+			<array>
 				<dict>
 					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>Qual o seu problema? aí é perigoso!</string>
+					<string>Qual o seu problema? Aí é perigoso!</string>
 					<key>Imagem</key>
 					<string>cientista</string>
 				</dict>
+			</array>
+			<key>Aleatoria4</key>
+			<array>
 				<dict>
 					<key>Sujeito</key>
 					<string>Cientista</string>

@@ -88,6 +88,8 @@
     //inicia as variaveis booleanas para falas
     self.falouRadiacaoAlpha = NO;
     self.falouRadiacaoBeta = NO;
+    self.falouAtencaoAlpha = NO;
+    self.falouAtencaoBeta = NO;
     
     //Adiciona plataforma caso tenha
     SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
@@ -148,7 +150,6 @@
         
     }
     
-
     //seta a nova posicao do mundo
     self.mundo.position = posicaoMundo;
 }
@@ -334,7 +335,7 @@
     //-> aletra alpha
     pontoAlertaAlpha = CGPointMake(3520, 1130);
     //-> alerta beta
-    pontoAlertaBeta = CGPointMake(6000, 1255);
+    pontoAlertaBeta = CGPointMake(5990, 1255);
     
     //verifica contato
     //-> alpha
@@ -347,8 +348,8 @@
         }
         
         //se o jogador chegar ao local da fala, comeca a fala
-        if((self.jogador.position.x >= pontoAlpha.x && self.jogador.position.y >= pontoAlpha.y) && !self.falouRadiacaoAlpha){
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+        if((self.jogador.position.x >= pontoAlpha.x && self.jogador.position.y >= pontoAlpha.y) && (self.jogador.position.x <= pontoAlpha.x+20 && self.jogador.position.y <= pontoAlpha.y+20) && !self.falouRadiacaoAlpha){
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"Aleatoria1"];
             
             self.cutsceneEstaRodando = YES;
             self.estaFalando = YES;
@@ -376,7 +377,7 @@
         }
         
         //se o jogador chegar ao local da fala, comeca a fala
-        if( (self.jogador.position.x > pontoBeta.x && self.jogador.position.y > pontoBeta.y) && !self.falouRadiacaoBeta){
+        if( (self.jogador.position.x > pontoBeta.x && self.jogador.position.y > pontoBeta.y) && (self.jogador.position.x < pontoBeta.x + 20 && self.jogador.position.y < pontoBeta.y + 20) && !self.falouRadiacaoBeta){
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
             
             self.cutsceneEstaRodando = YES;
@@ -406,26 +407,60 @@
     }
     
     //-> alerta alpha
-    //FAZER - PARA IMPEDIR QUE O JOGADOR VÁ ONDE TEM RADIAÇÃO
-        //pegar falas, fazer aleatoriedade e mostrar na tela
-    if(self.jogador.position.x > pontoAlertaAlpha.x && self.jogador.position.y > pontoAlertaAlpha.y){
-        //roda a fala
-        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"Aleatorias"];
+    if((self.jogador.position.x > pontoAlertaAlpha.x && self.jogador.position.y > pontoAlertaAlpha.y) && (self.jogador.position.x < pontoAlertaAlpha.x+100 && self.jogador.position.y < pontoAlertaAlpha.y+100) && !self.falouAtencaoAlpha){
+        [self.jogador andarParaDirecao:@"E"];
+        [self.jogador runAction:[SKAction moveToX:self.jogador.position.x-10 duration:0.5] withKey:@"saindoDePerto"];
         
-        //define booleanos
+        //Sorteia 1 número para que a fala seja aleatória
+        int numeroAleatorio = arc4random() % 3; //de 0 a 3
+        numeroAleatorio++;
+        
+        //Formata a String para que fique com o nome da fala
+        NSString *keyDaFala = [NSString stringWithFormat:@"Aleatoria%i", numeroAleatorio];
+        NSLog(@"%@", keyDaFala);
+        
+        //inicia a fala
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
+        
         self.cutsceneEstaRodando = YES;
         self.estaFalando = YES;
+        self.falouAtencaoAlpha = YES;
         
-        //faz parar de andar
         [self.jogador pararAndar];
-        
-        //faz andar para a esquerda, afastando-se do lugar
-        [self.jogador runAction:[SKAction moveToX:self.jogador.position.x - 20 duration:1.0f]];
+    }
+    
+    
+    //faz a fala de alerta ficar disponível novamente
+    if(self.jogador.position.x <= pontoAlertaAlpha.x - 8){
+        self.falouAtencaoAlpha = NO;
     }
     
     //-> alerta beta
-    //FAZER - PARA IMPEDIR QUE O JOGADOR VÁ ONDE TEM RADIAÇÃO
-        //pegar falas, fazer aleatoriedade e mostrar na tela
+    if((self.jogador.position.x > pontoAlertaBeta.x && self.jogador.position.y > pontoAlertaBeta.y) && (self.jogador.position.x < pontoAlertaBeta.x+100 && self.jogador.position.y < pontoAlertaBeta.y+100) && !self.falouAtencaoBeta){
+        [self.jogador andarParaDirecao:@"E"];
+        [self.jogador runAction:[SKAction moveToX:self.jogador.position.x-10 duration:0.5] withKey:@"saindoDePerto"];
+        
+        //Sorteia 1 número para que a fala seja aleatória
+        int numeroAleatorio = arc4random() % 3; //de 0 a 3
+        numeroAleatorio++;
+        
+        //Formata a String para que fique com o nome da fala
+        NSString *keyDaFala = [NSString stringWithFormat:@"Aleatoria%i", numeroAleatorio];
+        NSLog(@"%@", keyDaFala);
+        
+        //inicia a fala
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
+        
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = YES;
+        self.falouAtencaoBeta = YES;
+        
+        [self.jogador pararAndar];
+    }
+
+    if(self.jogador.position.x <= pontoAlertaBeta.x - 8){
+        self.falouAtencaoBeta = NO;
+    }
 }
 
 //Cria a parte da fase == BASE ==
@@ -511,7 +546,6 @@
                 [self adicionarPlataforma:plataforma noNode:self.backgroundAnterior];
             
                 [self.mundo addChild:self.backgroundAnterior];
-                
             }
         }
     }
