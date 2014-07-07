@@ -314,8 +314,7 @@
     [self executaFalasDoJogo];
 }
 
-//FALTANDO AS FALAS DA AGUA - PRECISA PEGAR COORDENADA CERTINHA
-//FALTANDO AS FALAS DA RADIACAOREPETIDA - PRECISA PEGAR COORDENADA CERTINHA
+
 -(void)executaFalasDoJogo
 {
     //cria os pontos de menssagem
@@ -333,7 +332,7 @@
     //-> segundaCutscene
     pontoSegundaCutscene = CGPointMake(7640, 330);
     //-> aletra alpha
-    pontoAlertaAlpha = CGPointMake(3510, 1130);
+    pontoAlertaAlpha = CGPointMake(3520, 1130);
     //-> alerta beta
     pontoAlertaBeta = CGPointMake(6000, 1255);
     
@@ -401,14 +400,28 @@
     //-> segundaCutscene
     //se o jogador chegar ao local da fala, comeca a fala
     if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
-            //FAZER! - IR PARA A SEGUNDA CUTSCENE!
-            NSLog(@"FAZER IR PARA A SEGUNDA CUTSCENE");
-            [self.jogador pararAndar];
-        }
+        //FAZER! - IR PARA A SEGUNDA CUTSCENE!
+        NSLog(@"FAZER IR PARA A SEGUNDA CUTSCENE");
+        [self.jogador pararAndar];
+    }
     
     //-> alerta alpha
     //FAZER - PARA IMPEDIR QUE O JOGADOR VÁ ONDE TEM RADIAÇÃO
         //pegar falas, fazer aleatoriedade e mostrar na tela
+    if(self.jogador.position.x > pontoAlertaAlpha.x && self.jogador.position.y > pontoAlertaAlpha.y){
+        //roda a fala
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"Aleatorias"];
+        
+        //define booleanos
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = YES;
+        
+        //faz parar de andar
+        [self.jogador pararAndar];
+        
+        //faz andar para a esquerda, afastando-se do lugar
+        [self.jogador runAction:[SKAction moveToX:self.jogador.position.x - 20 duration:1.0f]];
+    }
     
     //-> alerta beta
     //FAZER - PARA IMPEDIR QUE O JOGADOR VÁ ONDE TEM RADIAÇÃO
