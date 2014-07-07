@@ -401,9 +401,14 @@
     //-> segundaCutscene
     //se o jogador chegar ao local da fala, comeca a fala
     if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
-        //FAZER! - IR PARA A SEGUNDA CUTSCENE!
-        NSLog(@"FAZER IR PARA A SEGUNDA CUTSCENE");
+        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:2 Fase:1];
+        
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
         [self.jogador pararAndar];
+        
+        [self.controleCutscenes iniciarCutscene:self Seletor:nil];
+        
     }
     
     //-> alerta alpha
