@@ -20,11 +20,13 @@
         self.spriteNode=[SKSpriteNode spriteNodeWithImageNamed:name];
         
         [self.spriteNode setSize:CGSizeMake(90, 160)];
-        
+    
         
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
 
-        [self setPosition:CGPointMake(250, 600)];
+        //juliaFez - mudei a posição para relizar teste
+        [self setPosition:CGPointMake(5500, 1600)];
+        //[self setPosition:CGPointMake(250, 600)];
 
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;

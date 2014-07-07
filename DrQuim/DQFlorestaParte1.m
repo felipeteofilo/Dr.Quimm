@@ -12,8 +12,6 @@
 #define bordaCameraX 512
 #define bordaCameraY 384
 
-
-
 @implementation DQFlorestaParte1
 
 //Metodo que inicia a cena
@@ -81,26 +79,20 @@
     
     
     //Att propriedade
-    self.backgroundAtual=primeiraParte;
+    self.backgroundAtual = primeiraParte;
     
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:self.backgroundAtual];
     [self.mundo addChild:self.jogador];
     
-    
-    
+
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
     
 
-    //inicia as variaveis booleanas para falas
+    //inicia as variaveis booleanas para falas - juliaFez
     self.falouRadiacaoAlpha = NO;
     self.falouRadiacaoBeta = NO;
-    
-
-    
-    self.falouRadiacaoAlpha=YES;
-    self.falouRadiacaoBeta=YES;
     
     //Adiciona plataforma caso tenha
     SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
@@ -307,6 +299,7 @@
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
+    NSLog(@"X: %0.0f| Y: %0.0f", self.jogador.position.x, self.jogador.position.y);
     [self executaFalasDoJogo];
 }
 
@@ -320,25 +313,22 @@
     
     //inicia-os com suas coordenadas
     //-> alpha
-    //pontoAlpha = CGPointMake(3290, 0); //coordenada correta
-    pontoAlpha = CGPointMake(350, 500); //coordenada teste
+    pontoAlpha = CGPointMake(3290, 1000);
     //-> beta
-    //pontoBeta = CGPointMake(5815, 0); //coordenada correta
-    pontoBeta = CGPointMake(500, 500); //coordenada teste
+    pontoBeta = CGPointMake(5798, 1170);
     
     //verifica contato
     //-> alpha
     //Se o jogador estiver perto da radiacao comeca a apitar
     if (self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x +10) {
         
-        //Se ja ouver algum apito aguarda para tocar outro
+        //Se ja houver algum apito aguarda para tocar outro
         if (![self hasActions]) {
             [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
-
         }
         
-        //se o jogador chegar ao local da fala comeca a fala
-        if( (self.jogador.position.x > pontoAlpha.x && self.jogador.position.y > pontoAlpha.y) && !self.falouRadiacaoAlpha){
+        //se o jogador chegar ao local da fala, comeca a fala
+        if((self.jogador.position.x >= pontoAlpha.x && self.jogador.position.y >= pontoAlpha.y) && !self.falouRadiacaoAlpha){
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
             
             self.cutsceneEstaRodando = YES;
@@ -355,18 +345,18 @@
             [iconeRadiacaoAlpha setName:@"RadiacaoAlfa"];
             [self.jogador setZPosition:1];
             [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
-            
         }
     }
+
     //-> beta
-    if (self.jogador.position.x > pontoBeta.x - 50 && self.jogador.position.x < pontoBeta.x  +10) {
+    if (self.jogador.position.x > pontoBeta.x - 50 && self.jogador.position.x < pontoBeta.x  +10 && self.jogador.position.y > pontoBeta.y - 20) {
        
-        
-        //Se ja ouver algum apito aguarda para tocar outro
+        //Se ja houver algum apito aguarda para tocar outro
         if (![self hasActions]) {
             [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
         }
-            
+        
+        //se o jogador chegar ao local da fala, comeca a fala
         if( (self.jogador.position.x > pontoBeta.x && self.jogador.position.y > pontoBeta.y) && !self.falouRadiacaoBeta){
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
             
@@ -375,7 +365,6 @@
             
             [self.jogador pararAndar];
             self.falouRadiacaoBeta = YES;
-            
             
             //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
             SKSpriteNode * iconeRadiacaoBeta = [[ SKSpriteNode alloc]initWithImageNamed:@"Jogador"];
@@ -428,7 +417,7 @@
                 
                 [self.mundo addChild:self.backgroundFuturo];
                 
-                NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
+                //NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
             }
         }
     }
@@ -538,7 +527,7 @@
             */
             I++;
         }
-        NSLog(@"N plataformas %i",I);
+        //NSLog(@"N plataformas %i",I);
         
         [nodeAddPlataforma addChild:plataformaAdd];
     }
