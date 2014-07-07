@@ -290,16 +290,15 @@
         
         if ([secondBody.node.name isEqualToString:@"Plataforma"]){
             
-            float yPlataforma =[[secondBody.node.userData objectForKey:@"maiorY"]floatValue];
+            //Adiciona + 20 de tolerancia
+            float yPlataforma =[[secondBody.node.userData objectForKey:@"maiorY"]floatValue] + 20.0f;
             
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
                 [self plataformaCategoria:secondBody.node];
                 
-            }else if((firstBody.velocity.dy < 0) && (firstBody.node.position.y > yPlataforma )){
+            }else if((firstBody.velocity.dy <= 0) && (firstBody.node.position.y > yPlataforma )){
                 [self chaoCategoria:secondBody.node];
-                
-                [firstBody applyImpulse:CGVectorMake(0, 20.0f)];
             }
         }
     }

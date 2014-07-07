@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface DQPlataforma : SKNode
+@interface DQPlataforma : SKSpriteNode
 
 -(id)initComY:(float)_maiorY;
 @end

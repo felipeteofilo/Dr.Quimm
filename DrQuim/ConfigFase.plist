@@ -152,45 +152,45 @@
 				<array>
 					<array>
 						<string>{908, 177}</string>
-						<string>{911, 232}</string>
+						<string>{908, 232}</string>
 						<string>{1023, 232}</string>
-						<string>{1023, 175}</string>
+						<string>{1023, 177}</string>
 					</array>
 					<array>
 						<string>{584, 582}</string>
-						<string>{586, 634}</string>
-						<string>{1023, 636}</string>
-						<string>{1023, 580}</string>
+						<string>{584, 634}</string>
+						<string>{1023, 634}</string>
+						<string>{1023, 582}</string>
 					</array>
 					<array>
 						<string>{70, 733}</string>
-						<string>{75, 773}</string>
-						<string>{323, 774}</string>
-						<string>{330, 735}</string>
+						<string>{70, 773}</string>
+						<string>{323, 773}</string>
+						<string>{330, 733}</string>
 					</array>
 					<array>
-						<string>{464, 811}</string>
-						<string>{568, 848}</string>
-						<string>{764, 858}</string>
-						<string>{769, 812}</string>
+						<string>{434, 811}</string>
+						<string>{438, 848}</string>
+						<string>{769, 848}</string>
+						<string>{769, 811}</string>
 					</array>
 					<array>
 						<string>{235, 923}</string>
-						<string>{232, 969}</string>
-						<string>{476, 966}</string>
-						<string>{492, 920}</string>
+						<string>{235, 969}</string>
+						<string>{492, 969}</string>
+						<string>{492, 923}</string>
 					</array>
 					<array>
-						<string>{540, 1040}</string>
-						<string>{536, 1090}</string>
+						<string>{530, 1040}</string>
+						<string>{530, 1090}</string>
 						<string>{720, 1089}</string>
 						<string>{723, 1039}</string>
 					</array>
 					<array>
-						<string>{822, 1134}</string>
-						<string>{824, 1174}</string>
+						<string>{815, 1134}</string>
+						<string>{815, 1182}</string>
 						<string>{1023, 1182}</string>
-						<string>{1023, 1131}</string>
+						<string>{1023, 1134}</string>
 					</array>
 				</array>
 			</dict>
