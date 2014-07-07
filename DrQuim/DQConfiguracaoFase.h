@@ -11,4 +11,5 @@
 @interface DQConfiguracaoFase : NSObject
 
 +(NSArray*)configParte: (int)_parte daFase:(int)_fase;
+
 @end

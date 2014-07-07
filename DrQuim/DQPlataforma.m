@@ -10,10 +10,14 @@
 
 @implementation DQPlataforma
 
--(id)init{
+-(id)initComY:(float)_maiorY{
     if ([super init]) {
+        self.name=@"Plataforma";
         
+        //Dicionario será usado para analisar o Y do node ao ter o contato com ele
+        NSMutableDictionary *dicionarioDadosNode=[NSMutableDictionary dictionaryWithObject:[NSNumber numberWithFloat:_maiorY] forKey:@"maiorY"];
         
+        [self setUserData:dicionarioDadosNode];
     }
     return self;
 }

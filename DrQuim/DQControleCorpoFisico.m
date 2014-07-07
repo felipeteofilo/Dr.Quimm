@@ -13,7 +13,7 @@
 
 
 +(SKPhysicsBody*)criaCorpoFisicoChaoParte: (int)_parte daFase:(int)_fase{
-
+    
     NSArray *configParteFase=[DQConfiguracaoFase configParte:_parte daFase:_fase];
     
     //Usando o array acessado anteriormente, pega o array com os cgpoints da KEY CorpoFisicoChao
@@ -22,9 +22,9 @@
     if ([posicoesAdd count]==0) {
         return nil;
     }else{
-
+        
         SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:[self geraPathDeArray:posicoesAdd]];
-
+        
         return corpoFisicoRetorno;
     }
 }
@@ -73,26 +73,19 @@
         for (int i=0; i<[plataformasConfig count]; i++) {
             //A key plataforma é um array com Array de posicoes, que é passado para criar o physicsBody da plataforma
             
-            SKPhysicsBody *corpoFisicoPlataforma=[SKPhysicsBody bodyWithEdgeLoopFromPath:[self geraPathDeArray:[plataformasConfig objectAtIndex:i]]];
-            
-            //Cria uma plataforma que futuramente será personalizada
-            DQPlataforma *plataforma=[[DQPlataforma alloc]init];
+            CGPathRef pathConfgigurado=[self geraPathDeArray:[plataformasConfig objectAtIndex:i]];
+            SKPhysicsBody *corpoFisicoPlataforma=[SKPhysicsBody bodyWithEdgeLoopFromPath:pathConfgigurado];
+        
+            DQPlataforma *plataforma=[[DQPlataforma alloc]initComY:CGRectGetMaxY(CGPathGetBoundingBox(pathConfgigurado))];
             [plataforma setPhysicsBody:corpoFisicoPlataforma];
-            
-            [plataforma.physicsBody setCollisionBitMask:0];
-            
-            NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
             
             [nodeRetorno addChild:plataforma];
             
-            NSLog(@"%u", plataforma.physicsBody.collisionBitMask);
         }
         
         
         return nodeRetorno;
     }
 }
-
-
 
 @end

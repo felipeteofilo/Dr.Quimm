@@ -10,4 +10,5 @@
 
 @interface DQPlataforma : SKNode
 
+-(id)initComY:(float)_maiorY;
 @end
