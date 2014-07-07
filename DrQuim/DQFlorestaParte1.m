@@ -85,7 +85,7 @@
     [self addChild:self.mundo];
     
 
-    //inicia as variaveis booleanas para falas - juliaFez
+    //inicia as variaveis booleanas para falas
     self.falouRadiacaoAlpha = NO;
     self.falouRadiacaoBeta = NO;
     
@@ -337,7 +337,7 @@
     //-> alerta beta
     pontoAlertaBeta = CGPointMake(6000, 1255);
     
-    //verifica contato - juliaFez
+    //verifica contato
     //-> alpha
     //Se o jogador estiver perto da radiacao comeca a apitar
     if (self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x +10) {

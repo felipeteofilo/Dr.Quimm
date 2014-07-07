@@ -24,9 +24,9 @@
         
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
 
-        //juliaFez - mudei a posição para relizar teste
-        //[self setPosition:CGPointMake(250, 600)]; //PARA TESTAR DO INÍCIO - fase1
-        [self setPosition:CGPointMake(2850, 1200)]; //PARA TESTAR - PRIMEIRA FALA - fase1
+        //Posições para realização de testes
+        [self setPosition:CGPointMake(250, 600)]; //PARA TESTAR DO INÍCIO - fase1
+        //[self setPosition:CGPointMake(2850, 1200)]; //PARA TESTAR - PRIMEIRA FALA - fase1
         //[self setPosition:CGPointMake(5500, 1600)]; //PARA TESTAR - SEGUNDA FALA - fase1
         //[self setPosition:CGPointMake(6550, 1600)]; //PARA TESTAR - CUTSCENE - fase1
 
