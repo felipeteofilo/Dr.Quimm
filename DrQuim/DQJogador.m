@@ -20,15 +20,14 @@
         self.spriteNode=[SKSpriteNode spriteNodeWithImageNamed:name];
         
         [self.spriteNode setSize:CGSizeMake(90, 160)];
-    
-        
+
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
 
         //Posições para realização de testes
-        //[self setPosition:CGPointMake(250, 600)]; //PARA TESTAR DO INÍCIO - fase1
+        [self setPosition:CGPointMake(250, 600)]; //PARA TESTAR DO INÍCIO - fase1
         //[self setPosition:CGPointMake(2850, 1200)]; //PARA TESTAR - PRIMEIRA FALA - fase1
         //[self setPosition:CGPointMake(5500, 1600)]; //PARA TESTAR - SEGUNDA FALA - fase1
-        [self setPosition:CGPointMake(6550, 1600)]; //PARA TESTAR - CUTSCENE - fase1
+        //[self setPosition:CGPointMake(6550, 1600)]; //PARA TESTAR - CUTSCENE - fase1
 
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
@@ -49,8 +48,7 @@
         framesPulando = [[NSMutableArray alloc]init];
         framesParado = [[NSMutableArray alloc]init];
         
-        
-        
+    
         //adiciona as texturas no array de frames
         NSInteger numImagens = pastaFramesAndando.textureNames.count;
         for (int i=1; i <= numImagens; i++) {

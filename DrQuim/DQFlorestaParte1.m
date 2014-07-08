@@ -349,7 +349,7 @@
         
         //se o jogador chegar ao local da fala, comeca a fala
         if((self.jogador.position.x >= pontoAlpha.x && self.jogador.position.y >= pontoAlpha.y) && (self.jogador.position.x <= pontoAlpha.x+20 && self.jogador.position.y <= pontoAlpha.y+20) && !self.falouRadiacaoAlpha){
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"Aleatoria1"];
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
             
             self.cutsceneEstaRodando = YES;
             self.estaFalando = YES;
