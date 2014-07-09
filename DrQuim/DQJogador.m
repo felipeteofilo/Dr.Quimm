@@ -11,31 +11,24 @@
 @implementation DQJogador
 
 //Leonardo 13/06/2014 - Alterado a função de inicialização do node para que carregue o sprite na propriedade spriteNode
-//funcao para iniciar e alocar tudo que for necessario para o player
-//-(instancetype)initWithImageNamed:(NSString *)name{
-
+//Funcao para iniciar e alocar tudo que for necessario para o player
 -(id)initJogadorSprite: (NSString*)name{
-    //if(self = [super initWithImageNamed:name]){
+
     if(self = [super init]){
         
         //Leonardo 13/06/2014 - Inicia o sprite
         self.spriteNode=[SKSpriteNode spriteNodeWithImageNamed:name];
         
-        //Leonardo 13/06/2014 - Alterado para usar a propriedade spriteNode
-        //Inicia o jogador com o phisics Body e o tamanho
-        //[self setSize:CGSizeMake(50, 100)];
-        //self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.size];
-        
         [self.spriteNode setSize:CGSizeMake(90, 160)];
-        
-        
+
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
 
-        [self setPosition:CGPointMake(150, 280)];
+        //Posições para realização de testes
+        [self setPosition:CGPointMake(250, 600)]; //PARA TESTAR DO INÍCIO - fase1
+        //[self setPosition:CGPointMake(2850, 1200)]; //PARA TESTAR - PRIMEIRA FALA - fase1
+        //[self setPosition:CGPointMake(5500, 1600)]; //PARA TESTAR - SEGUNDA FALA - fase1
+        //[self setPosition:CGPointMake(6550, 1600)]; //PARA TESTAR - CUTSCENE - fase1
 
-        //[self setPosition:CGPointMake(40, 280)];
-        //[self setPosition:CGPointMake(40, 380)];
-        
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
         self.physicsBody.allowsRotation = NO;
@@ -55,26 +48,25 @@
         framesPulando = [[NSMutableArray alloc]init];
         framesParado = [[NSMutableArray alloc]init];
         
-        
-        
+    
         //adiciona as texturas no array de frames
         NSInteger numImagens = pastaFramesAndando.textureNames.count;
         for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Running%d", i];
+            NSString *textureName = [NSString stringWithFormat:@"Andando%d", i];
             SKTexture *temp = [pastaFramesAndando textureNamed:textureName];
             [framesAndando addObject:temp];
         }
         
         numImagens = pastaFramesPulando.textureNames.count;
         for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Jumping%d", i];
+            NSString *textureName = [NSString stringWithFormat:@"Pulando%d", i];
             SKTexture *temp = [pastaFramesPulando textureNamed:textureName];
             [framesPulando addObject:temp];
         }
         
         numImagens = pastaFramesParado.textureNames.count;
         for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Standing%d", i];
+            NSString *textureName = [NSString stringWithFormat:@"Parado%d", i];
             SKTexture *temp = [pastaFramesParado textureNamed:textureName];
             [framesParado addObject:temp];
         }
@@ -82,11 +74,9 @@
         //apos ler tudo anima o jogador
         [self animarParado];        
     }
-    
-    
+
     //retorna o jogador
     return self;
-    
 }
 
 
@@ -97,7 +87,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        jogador = [[self alloc]initJogadorSprite:@"Standing"];
+        jogador = [[self alloc]initJogadorSprite:@"Jogador"];
     });
     
     return jogador;
@@ -106,11 +96,6 @@
 //funcao para animar o jogador andando
 -(void)animarAndando{
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    /*[self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
-                                                                   timePerFrame:0.1f
-                                                                         resize:NO
-                                                                        restore:YES]] withKey:@"animandoAndando"];*/
-    
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
                                                                    timePerFrame:0.1f
                                                                          resize:NO
@@ -120,10 +105,6 @@
 -(void)animarParado{
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    /*[self runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
-                                                                   timePerFrame:0.1f
-                                                                         resize:NO
-                                                                        restore:YES]]];*/
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
                                                                    timePerFrame:0.1f
                                                                          resize:NO
@@ -132,8 +113,6 @@
 //funcao para animar jogador pulando
 -(void)animarPular{
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    //[self runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.25f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
-    
     [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.33f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
@@ -167,19 +146,11 @@
         self.andandoParaDirecao = @"D";
         movimentar =[SKAction moveByX:90 y:0 duration:1.0];
         
-        //[self.physicsBody applyImpulse:CGVectorMake(10, 0)];
-        //[self.physicsBody setVelocity:CGVectorMake(50, 0)];
-
-        //self.physicsBody.velocity = CGVectorMake(0, 0);
-        //[self.physicsBody applyImpulse:CGVectorMake(35, 0)];
-        
-        
         if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
             [self.physicsBody setVelocity:CGVectorMake(10, -10)];
         }
         
         //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-        //self.xScale = fabs(self.xScale)*1;
         self.spriteNode.xScale = fabs(self.spriteNode.xScale)*1;
     }else{
         
@@ -187,20 +158,15 @@
         movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
         
         //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-        //self.xScale = fabs(self.xScale)* -1;
-        
         self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
 
     }
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     //verifica se nao esta animando o pulo e anima o jogador andando
-    //if (![self actionForKey:@"animandoPulo"]) {
     if (![self.spriteNode actionForKey:@"animandoPulo"]) {
         [self animarAndando];
     }
-    
-    
     
     //anda para direcao
     [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
@@ -213,8 +179,6 @@
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
 }
-
-
 
 //funcao a fazer para ele interagir com pessoas e elementos do cenario
 -(void)interagir{

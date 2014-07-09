@@ -8,48 +8,52 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
-#import "DQGestoPulo.h"
 #import "DQCutsceneControle.h"
-
+#import "DQPlataforma.h"
 
 //define as categorias de colisao
-static const UInt32 JogadorCategoria = 0x1 << 1;
-static const UInt32 ChaoCategoria =0x1 << 2;
+static const UInt32 JogadorCategoria = 0x1 << 0;
+static const UInt32 ChaoCategoria = 0x1 << 1;
+static const UInt32 PlataformaCategoria = 0x1 << 2;
 
-//Define o nome dos skNodes de background
-static NSString* backgroundAtual=@"backgroundAtualCena";
-static NSString* proxBackground=@"proxBackgroundCena";
-static NSString* backgroundAnt=@"backgroundAntCena";
-static NSString* backgroundEliminar=@"backEliminar";
-static NSString* mundo=@"mundo";
+//Define o nome dos skNodes
+static NSString* mundo = @"mundo";
 
 @interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
 
-
 @property DQCutsceneControle *controleCutscenes;
 
-//Varial Booleana para saber se esta rodando alguma cutscene
+//Variavel Booleana para saber se esta rodando alguma cutscene
 @property BOOL cutsceneEstaRodando;
-
 @property BOOL estaFalando;
+
+//Variaveis booleanas para definir se fá foi ou não dito as falas in-game que são ditas apenas uma vez
+@property BOOL falouRadiacaoAlpha;
+@property BOOL falouRadiacaoBeta;
+@property BOOL falouAtencaoAlpha;
+@property BOOL falouAtencaoBeta;
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
 
-//Varial do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
-@property DQGestoPulo *gestoPulo;
+//SKSpriteNode da setinha que auxilia o jogador a entender para onde ele precisa andar
+@property SKSpriteNode *setinhas;
 
-//Variavel que será usada para controlar a posicao em X do jogador- em relação ao tamanho da skScene
-//@property float posicaoXJogador;
-
-//Variavel que controlará a ultima posicao de X de uma parte da fase
-@property float ultimoXParteFase;
+//CGPoint que guarda onde a pessoa pressionou e assim descobrir se o personagem vai para a direita ou esquerda
+@property CGPoint pontoDeToqueAndar;
 
 //Variavel que será usada para controlar em que parte da cena o jogador está
 @property int parteFaseAtual;
 
+//@Variavel que guardará a fase atual
+@property int faseAtual;
+
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode* mundo;
+
+@property SKSpriteNode *backgroundAnterior;
+@property SKSpriteNode *backgroundAtual;
+@property SKSpriteNode *backgroundFuturo;
 
 //Variavel que controlará o N max de partes da Cena - Provisório
 @property int nPartesCena;
@@ -57,8 +61,5 @@ static NSString* mundo=@"mundo";
 //metodo para iniciar a fase
 -(void)iniciarFase;
 
-//Variavel que será usada para controlar quanto tempo se passou desde o ultimo update
-//@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
-//@property (nonatomic) NSTimeInterval tempoDesdeUltimoUpdate;
 
 @end
