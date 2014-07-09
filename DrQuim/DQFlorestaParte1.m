@@ -311,7 +311,6 @@
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    NSLog(@"X: %0.0f| Y: %0.0f", self.jogador.position.x, self.jogador.position.y);
     [self executaFalasDoJogo];
 }
 
@@ -422,7 +421,6 @@
         
         //Formata a String para que fique com o nome da fala
         NSString *keyDaFala = [NSString stringWithFormat:@"Aleatoria%i", numeroAleatorio];
-        NSLog(@"%@", keyDaFala);
         
         //inicia a fala
         [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
@@ -451,7 +449,6 @@
         
         //Formata a String para que fique com o nome da fala
         NSString *keyDaFala = [NSString stringWithFormat:@"Aleatoria%i", numeroAleatorio];
-        NSLog(@"%@", keyDaFala);
         
         //inicia a fala
         [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
