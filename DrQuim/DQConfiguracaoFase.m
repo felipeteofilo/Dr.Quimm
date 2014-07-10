@@ -10,28 +10,29 @@
 
 @implementation DQConfiguracaoFase
 
-
-+(NSArray*)configParteFase:(int)_fase{
++(NSArray*)arquivoPlist{
     /*
      - Acessa o arquivo plist,
      - acessa o dicinário com as configurações da fase na posicao do array ROOT, usando o parametro _fase como ref.
      - do dicionário acessado pega o array com as partes
      */
-    
     NSString *pathArquivoPlist=[[NSBundle mainBundle]pathForResource:@"ConfigFase" ofType:@"plist"];
     
     //Verifica se tem fase configurada
     if ([[NSArray arrayWithContentsOfFile:pathArquivoPlist]count]==0) {
         return nil;
+    }else{
+        return [NSArray arrayWithContentsOfFile:pathArquivoPlist];
     }
-    
+}
++(NSArray*)configParteFase:(int)_fase{
+
     //Verifica se a fase procurada esta dentro do limites do array
-    if ((_fase-1 < 0) || (_fase-1 > [[NSArray arrayWithContentsOfFile:pathArquivoPlist]count] )) {
+    if ((_fase-1 < 0) || (_fase-1 > [[self arquivoPlist]count] )) {
         return nil;
     }
     
-    NSArray *configParteFase=[[[NSArray arrayWithContentsOfFile:pathArquivoPlist]objectAtIndex:_fase-1]objectForKey:@"Partes"];
-    
+    NSArray *configParteFase=[[[self arquivoPlist]objectAtIndex:_fase-1]objectForKey:@"Partes"];
     
     return configParteFase;
 }
@@ -47,8 +48,6 @@
         return (int)[partesFase count];
     }
 }
-
-//+(int)parteIniciar;
 
 +(NSString*)coberturaBackgroundParte:(int)_parte daFase:(int)_fase{
     NSDictionary *configParte=[DQConfiguracaoFase configParteFase:_fase parte:_parte];
@@ -69,4 +68,11 @@
         return parteEspecifica;
     }
 }
+
++(CGPoint)posicaoInicialJogadorFase:(int)_fase{
+    CGPoint pontoRetorno=CGPointFromString([[[self arquivoPlist]objectAtIndex:_fase-1]objectForKey:@"PosInicialJogador"]);
+    
+    return pontoRetorno;
+}
+
 @end

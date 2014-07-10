@@ -18,13 +18,13 @@
     if (self) {
         
         //Cria uma string que contem o caminho (path) do arquivo plist de falas
-        self.plistFalaPath = [[NSBundle mainBundle] pathForResource:@"Falas" ofType:@"plist"];
+        self.plistFalaPath = [[NSBundle mainBundle] pathForResource:@"FalasCutScene" ofType:@"plist"];
         //Cria um NSArray com o conteudo da pList.
         self.arrayDeFalasPLists = [[NSArray alloc]initWithContentsOfFile:self.plistFalaPath];
         
         
         //Cria uma string com o caminho do arquivo plist de Falas In Game
-        NSString *urlFalasDoJogo = [[NSBundle mainBundle] pathForResource:@"FalasDoJogo" ofType:@"plist"];
+        NSString *urlFalasDoJogo = [[NSBundle mainBundle] pathForResource:@"FalasNoJogo" ofType:@"plist"];
         //Cria um NSArray com as Falas In Game
         self.arrayFalasDentroDoJogo = [[NSArray alloc]initWithContentsOfFile:urlFalasDoJogo];
         
