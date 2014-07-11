@@ -7,10 +7,6 @@
 //
 
 #import "DQFlorestaParte1.h"
-#import "DQControleCorpoFisico.h"
-
-#define bordaCameraX 512
-#define bordaCameraY 384
 
 @implementation DQFlorestaParte1
 
@@ -18,42 +14,40 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-//        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
-//        
-//        self.cutsceneEstaRodando = YES;
-//        self.estaFalando = NO;
-//        
-//        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
-//        
-
-        [super iniciarFase];
+        
+        //self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
+        
+        //self.cutsceneEstaRodando = YES;
+        //self.estaFalando = NO;
+        
+        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        
+        [self iniciarFase];
     }
     return self;
 }
 
-
+-(void)iniciarFase{
+    [super iniciarFase];
+    
+    self.cutsceneEstaRodando=NO;
+    self.estaFalando=NO;
+    
+}
 //Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera //===OK===
 - (void)didSimulatePhysics
 {
-    [super didSimulatePhysics];
-    
     if (!self.cutsceneEstaRodando) {
-        //Chama método para posicionar camera
-   //     [self posicionaCamera];
-
-        //Chama método para controlar em que parte da fase esta
-   //     [self controlarTranscicaoPartesFase];
+        [super didSimulatePhysics];
     }
 }
 
-
-//===OK===
-//metodo que e chamado assim que um toque é iniciado na cena == BASE ==
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
+    
     
     //Se não está falando e nem em cutscene...
     if (!self.cutsceneEstaRodando && !self.estaFalando) {
+        
         //Verifica em qual lado da tela o jogador está tocando
         UITouch *posicao = [touches anyObject];
         
@@ -73,6 +67,8 @@
             
             self.cutsceneEstaRodando = YES;
             self.estaFalando = YES;
+        }else{
+            [super touchesBegan:touches withEvent:event];
         }
     }
     
@@ -248,4 +244,13 @@
     }
 }
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
+    
+    if((self.cutsceneEstaRodando) && (!self.estaFalando)){
+        [self.controleCutscenes trocarCena];
+    }else{
+        
+    }
+}
 @end

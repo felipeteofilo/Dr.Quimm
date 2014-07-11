@@ -30,12 +30,10 @@ static const UInt32 PlataformaCategoria = 0x1 << 2;
 @property SKSpriteNode *backgroundAtual;
 @property SKSpriteNode *backgroundFuturo;
 
-
 //Informações da Fase
 @property int faseAtual;
 @property int parteFaseAtual;
 @property int nPartesFase;
-
 
 //SKSpriteNode da setinha que auxilia o jogador a entender para onde ele precisa andar
 @property SKSpriteNode *direcional;

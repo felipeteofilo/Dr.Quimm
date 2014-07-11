@@ -50,7 +50,6 @@
     [self atualizaTela];
 }
 
-
 //Metodo para iniciar as falas
 -(void)iniciaFalas
 {
@@ -257,7 +256,7 @@
 -(void)mostrarCaixaTexto
 {
     self.caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(self.cutscene.frame.size.width * 0.8, self.cutscene.frame.size.height * 0.25f)];
-    NSLog(@"%0.0f", self.cutscene.frame.size.height * 0.25f);
+//    NSLog(@"%0.0f", self.cutscene.frame.size.height * 0.25f);
     self.caixaDeFala.alpha = 0.6f;
     
     //define a "âncora" do sprite para o canto inferior esquerdo

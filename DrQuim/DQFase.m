@@ -405,16 +405,9 @@
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
-        //self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
-        
-//        self.cutsceneEstaRodando = YES;
-  //      self.estaFalando = NO;
-        
-        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
         [self configuracoesFase:1];
         
-        [self iniciarFase];
+        //[self iniciarFase];
     }
     return self;
 }
