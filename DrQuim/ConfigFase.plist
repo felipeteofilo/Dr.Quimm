@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>PosInicialJogador</key>
+		<string>{250, 600}</string>
 		<key>Partes</key>
 		<array>
 			<dict>
@@ -266,6 +268,8 @@
 		<array/>
 	</dict>
 	<dict>
+		<key>PosInicialJogador</key>
+		<string>{250, 600}</string>
 		<key>Partes</key>
 		<array>
 			<dict>

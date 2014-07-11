@@ -18,13 +18,13 @@
     if (self) {
         
         //Cria uma string que contem o caminho (path) do arquivo plist de falas
-        self.plistFalaPath = [[NSBundle mainBundle] pathForResource:@"Falas" ofType:@"plist"];
+        self.plistFalaPath = [[NSBundle mainBundle] pathForResource:@"FalasCutScene" ofType:@"plist"];
         //Cria um NSArray com o conteudo da pList.
         self.arrayDeFalasPLists = [[NSArray alloc]initWithContentsOfFile:self.plistFalaPath];
         
         
         //Cria uma string com o caminho do arquivo plist de Falas In Game
-        NSString *urlFalasDoJogo = [[NSBundle mainBundle] pathForResource:@"FalasDoJogo" ofType:@"plist"];
+        NSString *urlFalasDoJogo = [[NSBundle mainBundle] pathForResource:@"FalasNoJogo" ofType:@"plist"];
         //Cria um NSArray com as Falas In Game
         self.arrayFalasDentroDoJogo = [[NSArray alloc]initWithContentsOfFile:urlFalasDoJogo];
         
@@ -49,7 +49,6 @@
     self.iniciarGameplay = seletor;
     [self atualizaTela];
 }
-
 
 //Metodo para iniciar as falas
 -(void)iniciaFalas
@@ -257,7 +256,7 @@
 -(void)mostrarCaixaTexto
 {
     self.caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(self.cutscene.frame.size.width * 0.8, self.cutscene.frame.size.height * 0.25f)];
-    NSLog(@"%0.0f", self.cutscene.frame.size.height * 0.25f);
+//    NSLog(@"%0.0f", self.cutscene.frame.size.height * 0.25f);
     self.caixaDeFala.alpha = 0.6f;
     
     //define a "âncora" do sprite para o canto inferior esquerdo
