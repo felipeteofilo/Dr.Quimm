@@ -10,12 +10,10 @@
 
 @interface DQConfiguracaoFase : NSObject
 
-
-+(int)parteIniciarFase:(int)_fase;
 +(int)nPartesFase:(int)_fase;
-
 +(NSString*)coberturaBackgroundParte:(int)_parte daFase:(int)_fase;
-
 +(NSArray*)configParteFase:(int)_fase;
 +(NSDictionary*)configParteFase:(int)_fase parte:(int)_parte;
++(NSArray*)arquivoPlist;
++(CGPoint)posicaoInicialJogadorFase:(int)_fase;
 @end

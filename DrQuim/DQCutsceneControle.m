@@ -207,7 +207,7 @@
 -(SKSpriteNode*)mostrarCaixaTextoNoJogo :(SKScene*)cena{
     SKSpriteNode *caixaDeFala = [[SKSpriteNode alloc]initWithColor:[UIColor blackColor] size:CGSizeMake(cena.frame.size.width * 0.8, cena.frame.size.height * 0.25f)];
     caixaDeFala.alpha = 0.6f;
-   
+    
     caixaDeFala.anchorPoint = CGPointMake(0, 0);
     
     [caixaDeFala setPosition:CGPointMake(cena.frame.size.width * 0.1f, cena.frame.size.height *0.7 )];

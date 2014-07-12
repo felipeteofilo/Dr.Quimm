@@ -19,10 +19,10 @@
     if (self = [super initWithSize:size]) {
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
-
+        
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
-
+        
         [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
         
         //[self iniciarFase];
@@ -124,7 +124,7 @@
             
             self.jogador.position= heroPosition;
             
-           
+            
             
         }
         
