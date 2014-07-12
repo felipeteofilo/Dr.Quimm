@@ -20,7 +20,7 @@
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
         
-        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        [self configuracoesFase:1];
         
         [self iniciarFase];
     }

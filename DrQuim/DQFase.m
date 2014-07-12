@@ -405,7 +405,7 @@
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        [self configuracoesFase:1];
+        //[self configuracoesFase:1];
         
         //[self iniciarFase];
     }

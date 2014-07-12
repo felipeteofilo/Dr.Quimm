@@ -277,7 +277,69 @@
 				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
-					<array/>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 173}</string>
+					<string>{1024, 130}</string>
+				</array>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
+				<key>CorpoFisicoChao</key>
+				<array>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 173}</string>
+					<string>{1024, 130}</string>
+				</array>
+				<key>Plataformas</key>
+				<array>
+					<array>
+						<string>{675, 976}</string>
+						<string>{675, 1019}</string>
+						<string>{1024, 1019}</string>
+						<string>{1024, 976}</string>
+					</array>
+				</array>
+			</dict>
+			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
+				<key>CorpoFisicoChao</key>
+				<array>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 173}</string>
+					<string>{1024, 130}</string>
+				</array>
+				<key>Plataformas</key>
+				<array>
+					<array>
+						<string>{0, 972}</string>
+						<string>{0, 1016}</string>
+						<string>{165, 1016}</string>
+						<string>{165, 972}</string>
+					</array>
+					<array>
+						<string>{149, 795}</string>
+						<string>{149, 847}</string>
+						<string>{910, 847}</string>
+						<string>{910, 795}</string>
+					</array>
+				</array>
+			</dict>
+			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
+				<key>CorpoFisicoChao</key>
+				<array>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 173}</string>
+					<string>{1024, 130}</string>
 				</array>
 				<key>Plataformas</key>
 				<array/>
