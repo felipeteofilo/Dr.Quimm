@@ -50,6 +50,13 @@
     [self atualizaTela];
 }
 
+//metodo para mudar de cutscene
+-(void)mudarParte{
+    self.parte+=1;
+    self.cenaAtual = 0;
+    [self iniciaFalas];
+}
+
 //Metodo para iniciar as falas
 -(void)iniciaFalas
 {
@@ -368,6 +375,7 @@
     [self.fundo removeFromParent];
     [self.caixaDeFala removeFromParent];
     [self.instrucao removeFromParent];
+    
     for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
         [[self.arrayDefalasEmFrases objectAtIndex:i] removeFromParent];
     }

@@ -356,7 +356,7 @@
     
     CGPoint pontoInicial=[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual];
 
-    [self.jogador setPosition:pontoInicial];
+   [self.jogador setPosition:pontoInicial];
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");

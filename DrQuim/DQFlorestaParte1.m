@@ -88,9 +88,13 @@
 
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase ==OK==
 -(void)update:(NSTimeInterval)currentTime{
-    [super update:currentTime];
-    
-    [self executaFalasDoJogo];
+    if (!self.cutsceneEstaRodando) {
+        
+        
+        [super update:currentTime];
+        
+        [self executaFalasDoJogo];
+    }
 }
 
 
@@ -176,18 +180,6 @@
         }
     }
     
-    //-> segundaCutscene
-    //se o jogador chegar ao local da fala, comeca a fala
-    if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
-        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:2 Fase:1];
-        
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = NO;
-        [self.jogador pararAndar];
-        
-        [self.controleCutscenes iniciarCutscene:self Seletor:nil];
-        
-    }
     
     //-> alerta alpha
     if((self.jogador.position.x > pontoAlertaAlpha.x && self.jogador.position.y > pontoAlertaAlpha.y) && (self.jogador.position.x < pontoAlertaAlpha.x+100 && self.jogador.position.y < pontoAlertaAlpha.y+100) && !self.falouAtencaoAlpha){
@@ -241,6 +233,18 @@
 
     if(self.jogador.position.x <= pontoAlertaBeta.x - 8){
         self.falouAtencaoBeta = NO;
+    }
+    
+    //-> segundaCutscene
+    //se o jogador chegar ao local da fala, comeca a fala
+    if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
+        [self.controleCutscenes mudarParte];
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
+        [self.jogador pararAndar];
+        
+        [self.controleCutscenes iniciarCutscene:self Seletor:nil];
+        
     }
 }
 
