@@ -44,4 +44,6 @@ static const UInt32 PlataformaCategoria = 0x1 << 2;
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(void)configuracoesFase:(int)faseAtual;
+-(void)criarParteFase;
+-(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
 @end

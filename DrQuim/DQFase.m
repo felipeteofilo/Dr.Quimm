@@ -124,11 +124,10 @@
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
 
-//TODO:Fazer metodo funcionar
--(void)configurarBackground:(SKSpriteNode*)backConfigurar daParte:(int)parte naPosX:(float)posX{
-    NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual + 1];
+-(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao{
+    NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,parte];
     
-    backConfigurar=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
+    SKSpriteNode *backConfigurar=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
     
     //Atualiza o anchorpoint
     [backConfigurar setAnchorPoint:CGPointMake(0, 0)];
@@ -137,14 +136,15 @@
     [backConfigurar setZPosition: -100.0];
     
     //posiciona após a cena
-    [backConfigurar setPosition:CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0)];
+    [backConfigurar setPosition:posicao];
     
     //Corpo fisico
-    [backConfigurar setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual+1 daFase:self.faseAtual]];
+    [backConfigurar setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:parte daFase:self.faseAtual]];
     
     //Configura a categoria do chao do prox Back
     [self chaoCategoria:backConfigurar];
     
+    return backConfigurar;
 }
 
 -(void)criarParteFase{
@@ -157,6 +157,7 @@
             if (self.parteFaseAtual + 1 <= self.nPartesFase) {
                 
                 //Criado NsString para facilitar Leitura ;]
+                /*
                 NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual + 1];
                 
                 self.backgroundFuturo=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
@@ -175,10 +176,13 @@
                 
                 //Configura a categoria do chao do prox Back
                 [self chaoCategoria:self.backgroundFuturo];
+                */
+                
+                CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
+                self.backgroundFuturo=[self configurarBackgroundParte:self.parteFaseAtual+1 naPos:posicaoAdd];
                 
                 //Cria Corpo Fisico para plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
-                
                 
                 [self adicionarPlataforma:plataforma noNode:self.backgroundFuturo];
                 [self.mundo addChild:self.backgroundFuturo];
@@ -192,7 +196,7 @@
         if (!self.backgroundAnterior) {
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual -1 > 0) {
-                
+                /*
                 NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual-1];
                 
                 self.backgroundAnterior=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
@@ -211,6 +215,10 @@
                 
                 //Configura a categoria do chao do back anterior
                 [self chaoCategoria:self.backgroundAnterior];
+                */
+                
+                CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x -CGRectGetMaxX(self.frame), 0);
+                self.backgroundAnterior =[self configurarBackgroundParte:self.parteFaseAtual-1 naPos:posicaoAdd];
                 
                 //Adiciona plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
@@ -223,9 +231,9 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
     
     UITouch *toque=[touches anyObject];
-    
     CGPoint posicaoToque=[toque locationInView:self.view];
     
     //Se estiver na direita
@@ -250,6 +258,8 @@
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesMoved:touches withEvent:event];
+    
     UITouch *toque = [touches anyObject];
     CGPoint posicaoToque=[toque locationInNode:self];
     
@@ -272,6 +282,7 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
     
     //faz parar de andar, colocando a direção como nula
     [self.jogador setAndandoParaDirecao:@" "];
@@ -344,6 +355,8 @@
     
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
+    
+    //Cerca o mundo para nao deixar o player cair
 }
 
 -(void)criaJogador{

@@ -40,8 +40,12 @@
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
 		947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */; };
 		C54B79B31971CC3D00366512 /* DQVila.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79B21971CC3D00366512 /* DQVila.m */; };
+		C54B79C119722CC900366512 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79BD19722CC900366512 /* Fase2_Parte1.png */; };
+		C54B79C219722CC900366512 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79BE19722CC900366512 /* Fase2_Parte2.png */; };
+		C54B79C319722CC900366512 /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79BF19722CC900366512 /* Fase2_Parte3.png */; };
+		C54B79C419722CC900366512 /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79C019722CC900366512 /* Fase2_Parte4.png */; };
+		C54B79C71972440400366512 /* DQEscalavel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79C61972440400366512 /* DQEscalavel.m */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
-		C56A9D85196E602D00DD2347 /* DQCutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D84196E602D00DD2347 /* DQCutScene.m */; };
 		C575FF411965DDC500719817 /* ConfigFase.plist in Resources */ = {isa = PBXBuildFile; fileRef = C575FF401965DDC500719817 /* ConfigFase.plist */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
 		C591815D1967738D00AFD8B5 /* cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = C591815B1967738D00AFD8B5 /* cientista.png */; };
@@ -117,10 +121,14 @@
 		947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleCorpoFisico.m; sourceTree = "<group>"; };
 		C54B79B11971CC3D00366512 /* DQVila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQVila.h; sourceTree = "<group>"; };
 		C54B79B21971CC3D00366512 /* DQVila.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVila.m; sourceTree = "<group>"; };
+		C54B79BD19722CC900366512 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte1.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte1.png; sourceTree = SOURCE_ROOT; };
+		C54B79BE19722CC900366512 /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte2.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte2.png; sourceTree = SOURCE_ROOT; };
+		C54B79BF19722CC900366512 /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte3.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte3.png; sourceTree = SOURCE_ROOT; };
+		C54B79C019722CC900366512 /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte4.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte4.png; sourceTree = SOURCE_ROOT; };
+		C54B79C51972440400366512 /* DQEscalavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQEscalavel.h; sourceTree = "<group>"; };
+		C54B79C61972440400366512 /* DQEscalavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQEscalavel.m; sourceTree = "<group>"; };
 		C56A9D80196E252C00DD2347 /* DQFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFase.h; sourceTree = "<group>"; };
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
-		C56A9D83196E602D00DD2347 /* DQCutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutScene.h; sourceTree = "<group>"; };
-		C56A9D84196E602D00DD2347 /* DQCutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutScene.m; sourceTree = "<group>"; };
 		C575FF401965DDC500719817 /* ConfigFase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigFase.plist; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
 		C591815B1967738D00AFD8B5 /* cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cientista.png; path = Personagens/cientista.png; sourceTree = "<group>"; };
@@ -185,8 +193,6 @@
 				23477FF919463E7500479AFE /* DQFala.m */,
 				23A6DE9919477F1500982F9D /* DQCena.h */,
 				23A6DE9A19477F1500982F9D /* DQCena.m */,
-				C56A9D83196E602D00DD2347 /* DQCutScene.h */,
-				C56A9D84196E602D00DD2347 /* DQCutScene.m */,
 			);
 			name = "Falas e Cutscenes";
 			sourceTree = "<group>";
@@ -251,6 +257,8 @@
 				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
 				C591815F1967756700AFD8B5 /* DQPlataforma.h */,
 				C59181601967756700AFD8B5 /* DQPlataforma.m */,
+				C54B79C51972440400366512 /* DQEscalavel.h */,
+				C54B79C61972440400366512 /* DQEscalavel.m */,
 				23A538E7196C6E9E00821BAF /* DQnpc.h */,
 				23A538E8196C6E9E00821BAF /* DQnpc.m */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
@@ -323,6 +331,17 @@
 			path = Imagens;
 			sourceTree = "<group>";
 		};
+		C54B79B41971E01E00366512 /* Fase02 */ = {
+			isa = PBXGroup;
+			children = (
+				C54B79BD19722CC900366512 /* Fase2_Parte1.png */,
+				C54B79BE19722CC900366512 /* Fase2_Parte2.png */,
+				C54B79BF19722CC900366512 /* Fase2_Parte3.png */,
+				C54B79C019722CC900366512 /* Fase2_Parte4.png */,
+			);
+			path = Fase02;
+			sourceTree = "<group>";
+		};
 		C57D7C2A1964E3A100EF94C9 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2FE185194B3BFD006E3AC1 /* Fase01 */,
+				C54B79B41971E01E00366512 /* Fase02 */,
 			);
 			name = Fases;
 			sourceTree = "<group>";
@@ -472,6 +492,7 @@
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */,
+				C54B79C419722CC900366512 /* Fase2_Parte4.png in Resources */,
 				CDCACF531948F23500FC1070 /* FalasCutScene.plist in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
@@ -480,6 +501,7 @@
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
+				C54B79C319722CC900366512 /* Fase2_Parte3.png in Resources */,
 				C5D2A69D196A535800F3B7C4 /* Fase1_Parte2.png in Resources */,
 				755E3365194639BD00C0C029 /* Pulando.atlas in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
@@ -492,8 +514,10 @@
 				C5D2A69E196A535800F3B7C4 /* Fase1_Parte3.png in Resources */,
 				C5D2A6A0196A535800F3B7C4 /* Fase1_Parte4.png in Resources */,
 				C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */,
+				C54B79C219722CC900366512 /* Fase2_Parte2.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasNoJogo.plist in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,
+				C54B79C119722CC900366512 /* Fase2_Parte1.png in Resources */,
 				C591815E1967738D00AFD8B5 /* piloto.png in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
@@ -521,13 +545,13 @@
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
-				C56A9D85196E602D00DD2347 /* DQCutScene.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
+				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
 			);

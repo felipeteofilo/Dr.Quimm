@@ -16,4 +16,6 @@
 +(NSDictionary*)configParteFase:(int)_fase parte:(int)_parte;
 +(NSArray*)arquivoPlist;
 +(CGPoint)posicaoInicialJogadorFase:(int)_fase;
++(NSArray*)configNPCFase:(int)fase;
++(NSArray*)escalavelFase:(int)fase Parte:(int)parte;
 @end

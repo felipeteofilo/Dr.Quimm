@@ -75,4 +75,29 @@
     return pontoRetorno;
 }
 
++(NSDictionary*)configFase:(int)fase{
+    
+    if ((fase -1 <0 )|| (fase -1 >[[self arquivoPlist]count])) {
+        return nil;
+    }else{
+        return [[self arquivoPlist]objectAtIndex:fase-1];
+    }
+}
+
++(NSArray*)configNPCFase:(int)fase{
+    
+    NSArray *retorno=[[self configFase:fase]objectForKey:@"NPC"];
+    
+    if (!retorno) {
+        return nil;
+    }else{
+        return retorno;
+    }
+}
+
++(NSArray*)escalavelFase:(int)fase Parte:(int)parte{
+    NSArray *arrayEscalaceis=[[DQConfiguracaoFase configParteFase:fase parte:parte]objectForKey:@"Escalaveis"];
+    
+    return arrayEscalaceis;
+}
 @end

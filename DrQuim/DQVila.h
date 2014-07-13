@@ -7,7 +7,11 @@
 //
 
 #import "DQFase.h"
+#import "DQEscalavel.h"
 
 @interface DQVila : DQFase
 
+@property NSMutableArray *escalacel;
+
+@property BOOL addNPC;
 @end
