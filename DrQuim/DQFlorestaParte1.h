@@ -30,4 +30,9 @@
 @property BOOL falouAtencaoAlpha;
 @property BOOL falouAtencaoBeta;
 
+
+//Array com pontos de radiacao e Key de Falas na ordem
+@property NSArray *pontosRadiacao;
+@property NSArray *keyFalaPontoRadiacao;
+@property NSMutableArray *boolFalouRadiacao;
 @end

@@ -21,9 +21,9 @@
         
         [self setAnchorPoint:CGPointMake(0, 0)];
         
-        //[self.spriteNode setAnchorPoint:CGPointMake(0, 0)];
         [self.spriteNode setSize:CGSizeMake(90, 160)];
         
+        [self.spriteNode setZPosition:10.0f];
         //Deixar o corpo fisico mais prox ao sprite
         self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.spriteNode.size.width, self.spriteNode.size.height-12)];
 

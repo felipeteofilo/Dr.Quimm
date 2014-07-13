@@ -30,6 +30,8 @@
 -(void)iniciarFase{
     [super iniciarFase];
     
+    [self definirPontosRadiacao];
+    
     self.cutsceneEstaRodando=NO;
     self.estaFalando=NO;
     
@@ -90,9 +92,44 @@
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     
-    [self executaFalasDoJogo];
+//    [self executaFalasDoJogo];
+    [self procurarRadiacao];
 }
 
+-(void)definirPontosRadiacao{
+    
+    //->Alpha
+    NSValue *pontoAlpha =[NSValue valueWithCGPoint:CGPointMake(500, 550)];
+    //-> Beta
+    NSValue *pontoBeta =[NSValue valueWithCGPoint: CGPointMake(700, 550)];
+    self.pontosRadiacao=[NSMutableArray arrayWithObjects:pontoAlpha,pontoBeta,nil];
+    
+    //Key pontos radiacao
+    self.keyFalaPontoRadiacao=[NSArray arrayWithObjects:@"RadiacaoAlfa",@"RadiacaoBeta", nil];
+    
+    self.boolFalouRadiacao=[NSMutableArray arrayWithObjects:[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],nil];
+}
+
+-(void)apitarRadiacao{
+    if (![self actionForKey:@"apitar"]) {
+        SKAction *apitar=[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES];
+        SKAction *parar=[SKAction removeFromParent];
+        
+        
+        [self runAction:[SKAction sequence:@[apitar,parar]]withKey:@"apitar"];
+    }
+}
+-(void)adicionaIconeRadiacao:(NSString*)nomeRadiacao naPosicao:(CGPoint)posicao{
+
+    //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
+    SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"icone_cientista"];
+    iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
+    [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0, 0)];
+    [iconeRadiacaoAlpha setPosition:posicao];
+    [iconeRadiacaoAlpha setName:nomeRadiacao];
+
+    [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
+}
 
 -(void)executaFalasDoJogo
 {
@@ -121,12 +158,16 @@
     if ((self.jogador.position.x > pontoAlpha.x - 50  && self.jogador.position.x < pontoAlpha.x + 940) && self.jogador.position.y > pontoAlpha.y - 10 ) {
         
         //Se ja houver algum apito aguarda para tocar outro
+        /*
         if (![self hasActions]) {
             [self runAction:[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES]];
         }
+        */
+        [self apitarRadiacao];
         
         //se o jogador chegar ao local da fala, comeca a fala
         if((self.jogador.position.x >= pontoAlpha.x && self.jogador.position.y >= pontoAlpha.y) && (self.jogador.position.x <= pontoAlpha.x+20 && self.jogador.position.y <= pontoAlpha.y+20) && !self.falouRadiacaoAlpha){
+            
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
             
             self.cutsceneEstaRodando = YES;
@@ -135,14 +176,7 @@
             [self.jogador pararAndar];
             self.falouRadiacaoAlpha = YES;
             
-            //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
-            SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"icone_cientista"];
-            iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
-            [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0, 0)];
-            [iconeRadiacaoAlpha setPosition:pontoAlpha];
-            [iconeRadiacaoAlpha setName:@"RadiacaoAlfa"];
-            [self.jogador setZPosition:1];
-            [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
+            [self adicionaIconeRadiacao:@"RadiacaoAlfa" naPosicao:pontoAlpha];
         }
     }
 
@@ -164,15 +198,7 @@
             [self.jogador pararAndar];
             self.falouRadiacaoBeta = YES;
             
-            //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
-            SKSpriteNode * iconeRadiacaoBeta = [[ SKSpriteNode alloc]initWithImageNamed:@"icone_cientista"];
-            iconeRadiacaoBeta.size = CGSizeMake(50, 50);
-            [iconeRadiacaoBeta setAnchorPoint:CGPointMake(0, 0)];
-            [iconeRadiacaoBeta setPosition:pontoBeta];
-            
-            [iconeRadiacaoBeta setName:@"RadiacaoBeta"];
-            [self.jogador setZPosition:1];
-            [self.mundo insertChild:iconeRadiacaoBeta atIndex:0];
+            [self adicionaIconeRadiacao:@"RadiacaoBeta" naPosicao:pontoBeta];
         }
     }
     
@@ -251,6 +277,38 @@
         [self.controleCutscenes trocarCena];
     }else{
         
+    }
+}
+
+-(void)procurarRadiacao{
+    //Para cada posicao configurada no array de radiacao eu vou verificar se o jogador esta em uma area especifica
+    for (int i=0; i< [self.pontosRadiacao count]; i++) {
+        CGPoint pontoAnalisar=[[self.pontosRadiacao objectAtIndex:i]CGPointValue];
+        
+        //Começar a apitar
+        if ((self.jogador.position.x > pontoAnalisar.x - 50  && self.jogador.position.x < pontoAnalisar.x + 940) && self.jogador.position.y > pontoAnalisar.y - 10 ){
+            
+            [self apitarRadiacao];
+            
+            //Fala
+            if((self.jogador.position.x >= pontoAnalisar.x && self.jogador.position.y >= pontoAnalisar.y) && (self.jogador.position.x <= pontoAnalisar.x+20 && self.jogador.position.y <= pontoAnalisar.y+20) && ![[self.boolFalouRadiacao objectAtIndex:i]boolValue]){
+                
+                NSString *keyFalaRadiacao=[self.keyFalaPontoRadiacao objectAtIndex:i];
+                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyFalaRadiacao];
+                
+                self.cutsceneEstaRodando = YES;
+                self.estaFalando = YES;
+                
+                [self.boolFalouRadiacao removeObjectAtIndex:i];
+                
+                NSNumber *falouRadiacao=[NSNumber numberWithBool:YES];
+                [self.boolFalouRadiacao insertObject:falouRadiacao atIndex:i];
+                
+                [self.jogador pararAndar];
+                
+                return;
+            }
+        }
     }
 }
 @end
