@@ -156,28 +156,6 @@
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual + 1 <= self.nPartesFase) {
                 
-                //Criado NsString para facilitar Leitura ;]
-                /*
-                NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual + 1];
-                
-                self.backgroundFuturo=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
-                
-                //Atualiza o anchorpoint
-                [self.backgroundFuturo setAnchorPoint:CGPointMake(0, 0)];
-                
-                //Deixa o background no fundo da tela
-                [self.backgroundFuturo setZPosition: -100.0];
-                
-                //posiciona após a cena
-                [self.backgroundFuturo setPosition:CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0)];
-                
-                //Corpo fisico
-                [self.backgroundFuturo setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual+1 daFase:self.faseAtual]];
-                
-                //Configura a categoria do chao do prox Back
-                [self chaoCategoria:self.backgroundFuturo];
-                */
-                
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
                 self.backgroundFuturo=[self configurarBackgroundParte:self.parteFaseAtual+1 naPos:posicaoAdd];
                 
@@ -196,27 +174,6 @@
         if (!self.backgroundAnterior) {
             //Verifica se tem parte a ser criada
             if (self.parteFaseAtual -1 > 0) {
-                /*
-                NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual-1];
-                
-                self.backgroundAnterior=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
-                
-                //Atualiza o anchorpoint
-                [self.backgroundAnterior setAnchorPoint:CGPointMake(0, 0)];
-                
-                //Deixa o background no fundo da tela
-                [self.backgroundAnterior setZPosition: -100.0];
-                
-                //posiciona antes a cena
-                [self.backgroundAnterior setPosition:CGPointMake(self.backgroundAtual.position.x - CGRectGetMaxX(self.frame), 0)];
-                
-                //Corpo fisico
-                [self.backgroundAnterior setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual-1 daFase:self.faseAtual]];
-                
-                //Configura a categoria do chao do back anterior
-                [self chaoCategoria:self.backgroundAnterior];
-                */
-                
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x -CGRectGetMaxX(self.frame), 0);
                 self.backgroundAnterior =[self configurarBackgroundParte:self.parteFaseAtual-1 naPos:posicaoAdd];
                 

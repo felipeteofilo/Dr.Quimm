@@ -35,4 +35,5 @@
 @property NSArray *pontosRadiacao;
 @property NSArray *keyFalaPontoRadiacao;
 @property NSMutableArray *boolFalouRadiacao;
+
 @end
