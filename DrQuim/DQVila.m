@@ -27,39 +27,57 @@
 
 -(void)iniciarFase{
     [super iniciarFase];
-    
     [self adicionaNPC];
 }
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
-    
     [self.hudFase atualizarHud];
 }
 
 -(void)adicionaNPC{
-    NSArray *NPCsConfigurados=[DQConfiguracaoFase configNPCFase:self.faseAtual];
+    NSArray *NPCsConfigurados = [DQConfiguracaoFase configNPCFase:self.faseAtual];
     
     for (NSDictionary *NPC in NPCsConfigurados) {
-        NSString *nomeNPC=[NPC objectForKey:@"Nome"];
-        CGPoint posNPC=CGPointFromString([NPC objectForKey:@"PosicaoNPC"]);
+        //armazena nome e posicao do NPC dependendo do que foi configurado.
+        NSString *nomeNPC = [NPC objectForKey:@"Nome"];
+        CGPoint posicaoNPC = CGPointFromString([NPC objectForKey:@"PosicaoNPC"]);
         
-        SKSpriteNode *sprite=[self criaNPC:nomeNPC naPosicao:posNPC];
-        [self.mundo addChild:sprite];
+        //instancia o NPC dependendo de seu nome
+        if([nomeNPC isEqualToString:@"Mãe de todos"]){
+            //Inicia o node com o NOME
+            self.maeDeTodos = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.maeDeTodos criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.maeDeTodos.spriteNode];
+        }
+        else if([nomeNPC isEqualToString:@"Caçador"]){
+            //Inicia o node com o NOME
+            self.cacador = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.cacador criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.cacador.spriteNode];
+        }
+        else if ([nomeNPC isEqualToString:@"Curandeiro"]){
+            //Inicia o node com o NOME
+            self.curandeiro = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.curandeiro criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.curandeiro.spriteNode];
+        }
+        else if ([nomeNPC isEqualToString:@"Chefe"]){
+            //Inicia o node com o NOME
+            self.chefe = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.chefe criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.chefe.spriteNode];
+        }
     }
-
 }
 
--(SKSpriteNode*)criaNPC:(NSString*)_nome naPosicao:(CGPoint)_pos{
-    
-    SKSpriteNode *spriteRetorno=[SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(100, 100)];
-
-    [spriteRetorno setAnchorPoint:CGPointMake(0, 0)];
-    [spriteRetorno setName:_nome];
-    [spriteRetorno setPosition:_pos];
-    [spriteRetorno setZPosition:0];
-    
-    return spriteRetorno;
-}
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];

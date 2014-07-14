@@ -25,4 +25,8 @@
 //Método que faz com que o NPC diga suas falas
 -(void)interagir;
 
+//Método que cria o SpriteNode do SKNode em questão
+-(void)criarSpriteNodeComNome:(NSString*)nome naPosicao:(CGPoint)posicao;
+
+
 @end
