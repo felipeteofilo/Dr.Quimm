@@ -11,10 +11,10 @@
 		23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQnpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
-		23B28D9419742F0000EBB5B0 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D9019742F0000EBB5B0 /* Fase2_Parte1.png */; };
-		23B28D9519742F0000EBB5B0 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D9119742F0000EBB5B0 /* Fase2_Parte2.png */; };
-		23B28D9619742F0000EBB5B0 /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D9219742F0000EBB5B0 /* Fase2_Parte3.png */; };
-		23B28D9719742F0000EBB5B0 /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D9319742F0000EBB5B0 /* Fase2_Parte4.png */; };
+		23B28D8419742D5200EBB5B0 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8019742D5200EBB5B0 /* Fase2_Parte1.png */; };
+		23B28D8519742D5200EBB5B0 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8119742D5200EBB5B0 /* Fase2_Parte2.png */; };
+		23B28D8619742D5200EBB5B0 /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8219742D5200EBB5B0 /* Fase2_Parte3.png */; };
+		23B28D8719742D5200EBB5B0 /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8319742D5200EBB5B0 /* Fase2_Parte4.png */; };
 		23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA495196A1B6600AD5F0C /* cutscene1.atlas */; };
 		23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA496196A1B6600AD5F0C /* cutscene2.atlas */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
@@ -89,10 +89,10 @@
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23A6DE9C194781E200982F9D /* DQCutsceneControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControle.h; sourceTree = "<group>"; };
 		23A6DE9D194781E200982F9D /* DQCutsceneControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControle.m; sourceTree = "<group>"; };
-		23B28D9019742F0000EBB5B0 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte1.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte1.png; sourceTree = SOURCE_ROOT; };
-		23B28D9119742F0000EBB5B0 /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte2.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte2.png; sourceTree = SOURCE_ROOT; };
-		23B28D9219742F0000EBB5B0 /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte3.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte3.png; sourceTree = SOURCE_ROOT; };
-		23B28D9319742F0000EBB5B0 /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte4.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte4.png; sourceTree = SOURCE_ROOT; };
+		23B28D8019742D5200EBB5B0 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte1.png; path = "../../../../Vila_tarde [www/Fase2_Parte1.png"; sourceTree = "<group>"; };
+		23B28D8119742D5200EBB5B0 /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte2.png; path = "../../../../Vila_tarde [www/Fase2_Parte2.png"; sourceTree = "<group>"; };
+		23B28D8219742D5200EBB5B0 /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte3.png; path = "../../../../Vila_tarde [www/Fase2_Parte3.png"; sourceTree = "<group>"; };
+		23B28D8319742D5200EBB5B0 /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte4.png; path = "../../../../Vila_tarde [www/Fase2_Parte4.png"; sourceTree = "<group>"; };
 		23BFA495196A1B6600AD5F0C /* cutscene1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene1.atlas; path = ../cutscene1.atlas; sourceTree = "<group>"; };
 		23BFA496196A1B6600AD5F0C /* cutscene2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene2.atlas; path = ../cutscene2.atlas; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -267,6 +267,8 @@
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
 				C57D7C2A1964E3A100EF94C9 /* Controladores */,
 				C511252E1973868D00CECCAD /* ObjetosJogo */,
+				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
+				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
 				94080EB01933BA290024FB94 /* DQAppDelegate.m */,
 				CDE817F11933C790003516E7 /* DQJogador.h */,
@@ -277,10 +279,8 @@
 				C51125891973AB4E00CECCAD /* DQBarraStatus.m */,
 				C511258C1973AB4E00CECCAD /* DQHud.h */,
 				C511258D1973AB4E00CECCAD /* DQHud.m */,
-				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				94080EBD1933BA290024FB94 /* Images.xcassets */,
 				94080EB21933BA290024FB94 /* Main.storyboard */,
-				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
 				94080EA71933BA290024FB94 /* Supporting Files */,
 			);
 			path = DrQuim;
@@ -359,10 +359,10 @@
 		C54B79B41971E01E00366512 /* Fase02 */ = {
 			isa = PBXGroup;
 			children = (
-				23B28D9019742F0000EBB5B0 /* Fase2_Parte1.png */,
-				23B28D9119742F0000EBB5B0 /* Fase2_Parte2.png */,
-				23B28D9219742F0000EBB5B0 /* Fase2_Parte3.png */,
-				23B28D9319742F0000EBB5B0 /* Fase2_Parte4.png */,
+				23B28D8019742D5200EBB5B0 /* Fase2_Parte1.png */,
+				23B28D8119742D5200EBB5B0 /* Fase2_Parte2.png */,
+				23B28D8219742D5200EBB5B0 /* Fase2_Parte3.png */,
+				23B28D8319742D5200EBB5B0 /* Fase2_Parte4.png */,
 			);
 			path = Fase02;
 			sourceTree = "<group>";
@@ -503,16 +503,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
-				23B28D9619742F0000EBB5B0 /* Fase2_Parte3.png in Resources */,
-				23B28D9719742F0000EBB5B0 /* Fase2_Parte4.png in Resources */,
+				23B28D8519742D5200EBB5B0 /* Fase2_Parte2.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */,
 				CDCACF531948F23500FC1070 /* FalasCutScene.plist in Resources */,
-				23B28D9519742F0000EBB5B0 /* Fase2_Parte2.png in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */,
+				23B28D8419742D5200EBB5B0 /* Fase2_Parte1.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
@@ -526,12 +525,13 @@
 				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
 				C5D2A69C196A535800F3B7C4 /* Fase1_Parte1.png in Resources */,
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
-				23B28D9419742F0000EBB5B0 /* Fase2_Parte1.png in Resources */,
 				C5D2A69E196A535800F3B7C4 /* Fase1_Parte3.png in Resources */,
 				C5D2A6A0196A535800F3B7C4 /* Fase1_Parte4.png in Resources */,
 				C51125941973B00B00CECCAD /* NPCS.atlas in Resources */,
+				23B28D8619742D5200EBB5B0 /* Fase2_Parte3.png in Resources */,
 				C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasNoJogo.plist in Resources */,
+				23B28D8719742D5200EBB5B0 /* Fase2_Parte4.png in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,
 				C591815E1967738D00AFD8B5 /* piloto.png in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
