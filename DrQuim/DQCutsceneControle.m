@@ -10,9 +10,8 @@
 
 @implementation DQCutsceneControle
 
-
 //Metodo para iniciar a classe Cutscene
--(id)initComParte:(int)parte_ Fase :(int)fase
+-(id)initComParte:(int)parte Fase :(int)fase
 {
     self = [super init];
     if (self) {
@@ -30,7 +29,7 @@
         
         
         //define a parte, fase atual, e cena.
-        self.parte = parte_;
+        self.parte = parte;
         self.faseAtual = fase;
         self.cenaAtual = 0;
         self.falaAtual = 0;
@@ -62,11 +61,11 @@
     self.falasDoJogo = [[NSMutableDictionary alloc]init];
     self.falasDoJogo = [[self.arrayFalasDentroDoJogo objectAtIndex:(self.faseAtual-1)]objectForKey:@"Falas"];
     
-    //Aloca os arrays de FALA e CENA
+    //Aloca os arrays de FALA e CENA - PARA CUTSCENE
     self.arrayFalas = [[NSMutableArray alloc]init];
     self.arrayCenas = [[NSMutableArray alloc]init];
     
-    //Instanciando as falas e cenas
+    //Instanciando as falas e cenas - PARA CUTSCENE
     for(int i = 0; i < [self.arrayCutscenes count]; i++){
         //NSStrings temporárias
         NSString *sujeitoTemporario = [NSString stringWithFormat:@"%@", [[self.arrayCutscenes objectAtIndex:i] objectForKey:@"Sujeito"]];

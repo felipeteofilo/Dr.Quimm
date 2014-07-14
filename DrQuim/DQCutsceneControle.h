@@ -71,7 +71,7 @@
 @property NSArray *arrayDeFalasPLists;
 
 //Inicia com uma parte
--(id)initComParte:(int)parte_ Fase:(int)fase;
+-(id)initComParte:(int)parte Fase:(int)fase;
 
 //Inicia as falas adicionando-as, dependendo da parte, no arrayFalas e no arrayCenas;
 -(void)iniciaFalas;

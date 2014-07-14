@@ -10,10 +10,14 @@
 #import "DQEscalavel.h"
 #import "DQBarraStatus.h"
 #import "DQnpc.h"
+#import "DQCutsceneControle.h"
 
 @interface DQVila : DQFase
 
 @property NSMutableArray *escalacel;
+
+//DQCutsceneControle para controlar as cutscenes e as falas.
+@property DQCutsceneControle * cutsceneControle;
 
 //NPCs dessa fase
 @property DQnpc *maeDeTodos; //Mãe de todos
@@ -21,5 +25,7 @@
 @property DQnpc *curandeiro; //Curandeiro
 @property DQnpc *chefe;      //Chefe
 
-@property BOOL addNPC;
+
+
+
 @end
