@@ -14,7 +14,7 @@
     if (self=[super initWithSize:size]) {
         [self configuracoesFase:2];
         
-        self.hudFase = [[DQHud alloc]initHud];
+        self.hudFase = [[DQHudController alloc]initHud];
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
         
         //Inicia com a fase 2
