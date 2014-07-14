@@ -43,6 +43,7 @@
 		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
 		C51125901973AB4E00CECCAD /* DQHud.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258D1973AB4E00CECCAD /* DQHud.m */; };
 		C51125921973AB6000CECCAD /* FundoHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = C51125911973AB6000CECCAD /* FundoHUD.png */; };
+		C51125941973B00B00CECCAD /* NPCS.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C51125931973B00B00CECCAD /* NPCS.atlas */; };
 		C54B79B31971CC3D00366512 /* DQVila.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79B21971CC3D00366512 /* DQVila.m */; };
 		C54B79C119722CC900366512 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79BD19722CC900366512 /* Fase2_Parte1.png */; };
 		C54B79C219722CC900366512 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79BE19722CC900366512 /* Fase2_Parte2.png */; };
@@ -130,6 +131,7 @@
 		C511258C1973AB4E00CECCAD /* DQHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHud.h; sourceTree = "<group>"; };
 		C511258D1973AB4E00CECCAD /* DQHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHud.m; sourceTree = "<group>"; };
 		C51125911973AB6000CECCAD /* FundoHUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FundoHUD.png; sourceTree = "<group>"; };
+		C51125931973B00B00CECCAD /* NPCS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NPCS.atlas; sourceTree = "<group>"; };
 		C54B79B11971CC3D00366512 /* DQVila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQVila.h; sourceTree = "<group>"; };
 		C54B79B21971CC3D00366512 /* DQVila.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVila.m; sourceTree = "<group>"; };
 		C54B79BD19722CC900366512 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte1.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte1.png; sourceTree = SOURCE_ROOT; };
@@ -318,6 +320,7 @@
 		9433F5D71937B4BB00E55E73 /* Personagens */ = {
 			isa = PBXGroup;
 			children = (
+				C51125931973B00B00CECCAD /* NPCS.atlas */,
 				23BFA4AB196A3CE100AD5F0C /* IconesPersonagens */,
 				23B0E4A519662AE9006CD78A /* RostoPersonagens */,
 				C57D7C2B1964E99000EF94C9 /* Jogador.png */,
@@ -540,6 +543,7 @@
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
 				C5D2A69E196A535800F3B7C4 /* Fase1_Parte3.png in Resources */,
 				C5D2A6A0196A535800F3B7C4 /* Fase1_Parte4.png in Resources */,
+				C51125941973B00B00CECCAD /* NPCS.atlas in Resources */,
 				C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */,
 				C54B79C219722CC900366512 /* Fase2_Parte2.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasNoJogo.plist in Resources */,
