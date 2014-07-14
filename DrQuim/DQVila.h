@@ -9,17 +9,10 @@
 #import "DQFase.h"
 #import "DQEscalavel.h"
 #import "DQBarraStatus.h"
-#import "DQnpc.h"
 
 @interface DQVila : DQFase
 
 @property NSMutableArray *escalacel;
-
-//NPCs dessa fase
-@property DQnpc *maeDeTodos; //Mãe de todos
-@property DQnpc *cacador;    //Caçador
-@property DQnpc *curandeiro; //Curandeiro
-@property DQnpc *chefe;      //Chefe
 
 @property BOOL addNPC;
 @end
