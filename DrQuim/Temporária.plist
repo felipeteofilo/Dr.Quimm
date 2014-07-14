@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Parte2</key>
+        <dict>
+            <key>MaeDeTodos</key>
+            <dict>
+                <key>SemMissao</key>
+                <dict>
+                    <key>Respeito0</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 0]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito10</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 10]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito20</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 20]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito30</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 30]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito40</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 40]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito50</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 50]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito60</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 60]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito70</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 70]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito80</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 80]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito90</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 90]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>Respeito100</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 100]]></string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                </dict>
+                <key>Missao01</key>
+                <dict>
+                    <key>inicio</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string>Jovem, preciso que você pegue o resto da caça com o Caçador, afinal todos precisamos jantar.</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Fala</key>
+                            <string>Pode deixar comigo, massa! Como eu encontro ele?</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string>Você poderá encontrá-lo no extremo leste da vila, ele é quem cuida do armazem de armas e armadilhas</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Fala</key>
+                            <string>É pra já!</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                    </array>
+                    <key>inicioRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de todos</string>
+                            <key>Fala</key>
+                            <string>Estou esperando. Fale com o Caçador e peça o restante da caça.</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Fala</key>
+                            <string>É pra já!</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                    </array>
+                    <key>falouCacador</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>Então, e o que eu te pedi, filho?</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Bem, ele falou que eu precisava provar que você que você tinha me mandado e não me entregou nada</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>Entendo, isso deve ser porque ele não confia em você. Eu devia ter desconfiado que ele não iria te entregar tão facilmente. Aqui na aldeia nós prezamos muito pelo respeito e confiança, sabe?</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>Suas ações podem afetar de forma positiva ou negativa o nosso respeito por você. O seu nivel de respeito determina como os outros irão te tratar e se te ajuudaremos ou não.</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>Já sei como fazer ele confiar em você, Fale com o chefe da vila e peça para ele um vidro de "água mágica". Se der isso ao aldeão, ele irá te dar o que eu pedi.</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>ah! Quase me esqueci! Entregue isso ao chefe, como prova de que eu é que te mandei.</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>falouCacadorRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>falouCacadorItem</key>
+                    <dict>
+                        <key>Receber</key>
+                        <string>Docinho</string>
+                    </dict>
+                    <key>temCaça</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>Ufa! aí está você! já estava começando a ficar preocupada</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Finalmente consegui convencer o Caçador a me entregar a caçada</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Mãe de Todos</string>
+                            <key>Texto</key>
+                            <string>Que ótima notícia! Venha, tenho algo para você...</string>
+                            <key>Imagem</key>
+                            <string>maeDeTodos</string>
+                        </dict>
+                    </array>
+                    <key>falouCacadorItem</key>
+                    <dict>
+                        <key>Receber</key>
+                        <string>comida</string>
+                        <key>Receber</key>
+                        <string>arma</string>
+                    </dict>
+                </dict>
+            </dict>
+            <key>Cacador</key>
+            <dict>
+                <key>SemMissao</key>
+                <dict>
+                    <key>Respeito0</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 0]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito10</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 10]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito20</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 20]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito30</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 30]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito40</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 40]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito50</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 50]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito60</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 60]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito70</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 70]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito80</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 80]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito90</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 90]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>Respeito100</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 100]]></string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                </dict>
+                <key>Missao01</key>
+                <dict>
+                    <key>Inicio</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>...</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>InicioRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>...</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>FalouMae</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>hmm... Oi, A Mãe de todos me mandou pegar o resto da caça.</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>...</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Ela me disse que precisa para fazer o jantar</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>Se foi ela mesmo que te mandou, volte e fale para ela que só vou entregar quando você me provar que não está mentindo para mim!</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Mas... mas...</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                    </array>
+                    <key>FalouMaeRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>Já disse que não vou te dar nada até que me prove que foi ela mesma quem te mandou aqui!</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Mas... mas...</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                    </array>
+                    <key>temPocao</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>A mãe de todos pediu para te entregar isso</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>ok, acho que foi realmente a mãe de todos que te mandou aqui... Só ela sabia que eu precisava disso, não quis falar com o Chefe para ele não me achar fraco, mas me machuquei um pouco na última caça...</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>Mas eu não preciso explicar nada para você! Pegue a caça e vá embora! E agradeça a Mãe por mim!</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>temPocaoRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Caçador</string>
+                            <key>Texto</key>
+                            <string>Leve logo a caça para a mãe! Estou ficando com fome.</string>
+                            <key>Imagem</key>
+                            <string>cacador</string>
+                        </dict>
+                    </array>
+                    <key>temPocaoItem</key>
+                    <dict>
+                        <key>Receber</key>
+                        <string>animalCaçado</string>
+                    </dict>
+                </dict>
+            </dict>
+            <key>Chefe</key>
+            <dict>
+                <key>SemMissao</key>
+                <dict>
+                    <key>Respeito0</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 0]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito10</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 10]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito20</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 20]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito30</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 30]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito40</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 40]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito50</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 50]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito60</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 60]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito70</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 70]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito80</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 80]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito90</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 90]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>Respeito100</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 100]]></string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                </dict>
+                <key>Missao01</key>
+                <dict>
+                    <key>Inicio</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Olá, obrigado por nos deixar ficar na vila.</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Comporte-se e prove que é merecedor da minha boa vontade.</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>InicioRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Ai... minha barriga está com aquela queimação mais uma vez.</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>falouCacador</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Oi, a Mãe de todos me pediu para te entregar esse docinho e pegar com você uma garrafa de água mágica</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Sei, sei... Sim, para ter esse docinho só pode ter sido ela. Mas não entendo porque ela te pediria isso. A água mágica é uma poção que faz com que você recupere a sua saúde.</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Geralmente, só os guerreiros que se aventuram nas florestas precisam disso, pois se eles se ferirem a ponto de perder toda a saúde, eles ficam inconscientes e ficam lá até que um dos nossos o encontre e o traga para ser tratado</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Essa poção pode ser usada para recuperar um pouco da sua saúde enquanto se aventura na floresta.</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Mas antes de te entregar a poção, eu quero que você fale com o curandeiro. Diga a ele que a minha queimação na barriga começou novamente.</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>hmm.. ok.</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                    </array>
+                    <key>falouCacadorRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Vá logo falar com o curandeiro. Essa queimação só está piorando.</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>falouCacadorItem</key>
+                    <dict>
+                        <key>Entregar</key>
+                        <string>Docinho</string>
+                    </dict>
+                    <key>TemRemedio</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>ah! Finamente você voltou. Aqui está a poção que a mãe te pediu. Vou tomar logo esses remedios que você trouxe! Não aguento mais!</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>TemRemedioRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Chefe</string>
+                            <key>Texto</key>
+                            <string>Ufa... Bem melhor!</string>
+                            <key>Imagem</key>
+                            <string>chefe</string>
+                        </dict>
+                    </array>
+                    <key>TemRemedioItem</key>
+                    <dict>
+                        <key>Entregar</key>
+                        <string>Remedio</string>
+                        <key>Receber</key>
+                        <string>AguaMagica</string>
+                    </dict>
+                </dict>
+            </dict>
+            <key>Curandeiro</key>
+            <dict>
+                <key>SemMissao</key>
+                <dict>
+                    <key>Respeito0</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 0]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito10</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 10]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito20</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 20]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito30</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 30]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito40</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 40]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito50</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 50]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito60</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 60]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito70</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 70]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito80</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 80]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito90</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 90]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>Respeito100</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Fala</key>
+                            <string><![CDATA[<FAZER>Fala quando o respeito é 100]]></string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                </dict>
+                <key>Missao01</key>
+                <dict>
+                    <key>Inicio</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Como está indo o Dr.Quimm?</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>Eu coloquei ele para dormir. Vai ficar melhor quando acordar.</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>InicioRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>Você parece cansado, devia dormir um pouco.</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>falouChefe</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Nossa! Estou exausto...</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>O que?</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Desculpe... É que estão me fazndo andar para cima e para baixo e eu ainda trouxe o Doutor até aqui nas costas.</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>ah... Agora entendi, e você deve estar com fome ou sede também, não?</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Na verdade os dois, tem alguma coisa aí para comer e beber?</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>Tenho um pouco de sopa e água que posso te dar. Olha, enquanto você estiver andando por aí vai começar a sentir fome e sede e se não se alimentar vai começar a perder saúde.</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>Para evitar isso, sempre pegue comida e bebida com a Mãe antes de sair por aí.</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Piloto</string>
+                            <key>Texto</key>
+                            <string>Entendi. Quase esqueci! o Chefe está pedindo algo para a queimação...</string>
+                            <key>Imagem</key>
+                            <string>piloto</string>
+                        </dict>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>Acabei de fazer o remedio dele. Diga a ele para beber e a queimação irá passar.</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>falouChefeRepetido</key>
+                    <array>
+                        <dict>
+                            <key>Sujeito</key>
+                            <string>Curandeiro</string>
+                            <key>Texto</key>
+                            <string>Ande logo! O chefe precisa dos remédios</string>
+                            <key>Imagem</key>
+                            <string>curandeiro</string>
+                        </dict>
+                    </array>
+                    <key>falouChefeItens</key>
+                    <dict>
+                        <key>Receber</key>
+                        <string>Remedio</string>
+                    </dict>
+                </dict>
+            </dict>
+        </dict>
+    </dict>
+</plist>

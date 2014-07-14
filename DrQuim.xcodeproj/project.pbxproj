@@ -15,6 +15,7 @@
 		23B28DB6197444DB00EBB5B0 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */; };
 		23B28DB7197444DB00EBB5B0 /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */; };
 		23B28DB8197444DB00EBB5B0 /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */; };
+		23B28DBA19744F3B00EBB5B0 /* Temporária.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB919744F3B00EBB5B0 /* Temporária.plist */; };
 		23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA495196A1B6600AD5F0C /* cutscene1.atlas */; };
 		23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA496196A1B6600AD5F0C /* cutscene2.atlas */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
@@ -93,6 +94,7 @@
 		23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
 		23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
 		23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
+		23B28DB919744F3B00EBB5B0 /* Temporária.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Temporária.plist"; sourceTree = "<group>"; };
 		23BFA495196A1B6600AD5F0C /* cutscene1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene1.atlas; path = ../cutscene1.atlas; sourceTree = "<group>"; };
 		23BFA496196A1B6600AD5F0C /* cutscene2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene2.atlas; path = ../cutscene2.atlas; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				755FA40D195A06D80052DC1E /* FalasNoJogo.plist */,
 				CDCACF521948F23500FC1070 /* FalasCutScene.plist */,
 				C575FF401965DDC500719817 /* ConfigFase.plist */,
+				23B28DB919744F3B00EBB5B0 /* Temporária.plist */,
 			);
 			name = "Arquvos XML";
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
+				23B28DBA19744F3B00EBB5B0 /* Temporária.plist in Resources */,
 				23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */,
 				23B28DB5197444DB00EBB5B0 /* Fase2_Parte1.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
