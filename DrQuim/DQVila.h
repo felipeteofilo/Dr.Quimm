@@ -17,7 +17,11 @@
 @property NSMutableArray *escalacel;
 
 //DQCutsceneControle para controlar as cutscenes e as falas.
-@property DQCutsceneControle * cutsceneControle;
+@property DQCutsceneControle *controleCutscenes;
+
+//Booleanos para controle da DQCutsceneControle
+@property BOOL cutsceneEstaRodando;
+@property BOOL estaFalando;
 
 //NPCs dessa fase
 @property DQnpc *maeDeTodos; //Mãe de todos

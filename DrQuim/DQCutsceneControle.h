@@ -70,6 +70,8 @@
 //Cria um NSArray com o conteudo da pList.
 @property NSArray *arrayDeFalasPLists;
 
+@property NSDictionary *dicionarioDeFalasNPC;
+
 //Inicia com uma parte
 -(id)initComParte:(int)parte Fase:(int)fase;
 

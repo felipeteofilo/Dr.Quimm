@@ -17,8 +17,12 @@
         self.hudFase = [[DQHud alloc]initHud];
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
         
+        //Inicia com a fase 2
+        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:2];
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
+        
         [self iniciarFase];
-
         [self addChild:self.hudFase];
     }
     
@@ -29,6 +33,8 @@
     [super iniciarFase];
     [self adicionaNPC];
 }
+
+
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     [self.hudFase atualizarHud];
@@ -93,21 +99,20 @@
     if (nodeTocado.name!=nil) {
         if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"]) {
             
-            //Chama a 
+            //TESTE
             NSLog(@"tocou no NPC: %@", nodeTocado.name);
+            
+            //Chama o método de interação passando o nó tocado
             [self interagirComNPC:nodeTocado];
         }
     }
     
-    //[self interagirNPC:nodeTocado];
-    
-    
-    
+    //Ao parar o toque, para também de escalar
     [self.jogador pararEscalar];
 }
 
 -(void)interagirComNPC:(SKNode*)npc{
-
+    
 }
 
 -(void)criarParteFase{
