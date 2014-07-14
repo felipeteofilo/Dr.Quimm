@@ -96,6 +96,7 @@
         for (DQPlataforma *plataforma in [plataformaAdd children]) {
             [self plataformaCategoria:plataforma];
         }
+        
         [nodeAddPlataforma addChild:plataformaAdd];
     }
 }
@@ -161,6 +162,7 @@
                 
                 //Cria Corpo Fisico para plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
+                [plataforma setName:NomeNodePlataformas];
                 
                 [self adicionarPlataforma:plataforma noNode:self.backgroundFuturo];
                 [self.mundo addChild:self.backgroundFuturo];
@@ -179,6 +181,7 @@
                 
                 //Adiciona plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
+                [plataforma setName:NomeNodePlataformas];
                 
                 [self adicionarPlataforma:plataforma noNode:self.backgroundAnterior];
                 [self.mundo addChild:self.backgroundAnterior];
@@ -265,7 +268,6 @@
         secondBody = contact.bodyA;
     }
     
-    
     // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
@@ -278,10 +280,10 @@
             }
         }
         
-        if ([secondBody.node.name isEqualToString:@"Plataforma"]){
+        if ([secondBody.node.name isEqualToString:nomePlataforma]){
             
-            //Adiciona + 20 de tolerancia
-            float yPlataforma =[[secondBody.node.userData objectForKey:@"maiorY"]floatValue] + 20.0f;
+            //Adiciona + 50 de tolerancia
+            float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 30.0f;
             
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
@@ -304,6 +306,9 @@
     
     //Chama método para controlar em que parte da fase esta
     [self controlarTranscicaoPartesFase];
+    
+    //Desativa plataformas
+    [self desativaPlataformas];
 }
 
 -(void)configuraFisicaMundo{
@@ -313,7 +318,6 @@
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
     
-    //Cerca o mundo para nao deixar o player cair
 }
 
 -(void)criaJogador{
@@ -375,10 +379,26 @@
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        //[self configuracoesFase:1];
-        
-        //[self iniciarFase];
+
     }
     return self;
+}
+
+-(void)desativaPlataformas{
+    //Se tiver um node com plataformas
+    if ([self.backgroundAtual childNodeWithName:NomeNodePlataformas]) {
+        
+        //Para cada node plataforma no Node que contem as plataformas verificar
+        for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {
+            
+            
+            if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > self.jogador.position.y) {
+                //Evita ficar chamando toda hora
+                if (!(plataforma.physicsBody.categoryBitMask & PlataformaCategoria)!=0) {
+                    [self plataformaCategoria:plataforma];
+                }
+            }
+        }
+    }
 }
 @end

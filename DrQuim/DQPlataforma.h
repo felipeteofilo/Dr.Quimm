@@ -8,6 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+//#define nomePlataforma @"Plataforma"
+
+static NSString* nomePlataforma = @"Plataforma";
+static NSString* nomeMaiorY = @"maiorY";
+
 @interface DQPlataforma : SKSpriteNode
 
 -(id)initComY:(float)_maiorY;

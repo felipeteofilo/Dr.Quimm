@@ -12,11 +12,11 @@
 
 -(id)initComY:(float)_maiorY{
     if ([super init]) {
-        self.name=@"Plataforma";
+        self.name=nomePlataforma;
         
         self.anchorPoint=CGPointMake(0, 1);
         //Dicionario será usado para analisar o Y do node ao ter o contato com ele
-        NSMutableDictionary *dicionarioDadosNode=[NSMutableDictionary dictionaryWithObject:[NSNumber numberWithFloat:_maiorY] forKey:@"maiorY"];
+        NSMutableDictionary *dicionarioDadosNode=[NSMutableDictionary dictionaryWithObject:[NSNumber numberWithFloat:_maiorY] forKey:nomeMaiorY];
         
         [self setUserData:dicionarioDadosNode];
     }
