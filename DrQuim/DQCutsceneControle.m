@@ -330,7 +330,8 @@
 
 }
 ///Metodo a fazer de mostrar as falas dentro do jogo
--(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito{
+-(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito
+{
     
     //inicia o dicionario de acordo com o dicionario passado
     self.dicionarioDeFalasNPC = [[NSDictionary alloc]initWithDictionary:dicionario];

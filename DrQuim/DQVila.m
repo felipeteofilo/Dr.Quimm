@@ -95,15 +95,36 @@
     //Guarda o node em que tocou
     SKNode *nodeTocado = [self.mundo nodeAtPoint:posicaoToque];
     
+    //METODO UM POUCO(BASTANTE) BURRO >.<
     //Se o node em que tocou for da classe DQNPC, faz o npc interagir - PENSAR EM FORMA MAIS INTELIGENTE
-    if (nodeTocado.name!=nil) {
+    if (nodeTocado.name != nil) {
         if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"]) {
-            
             //TESTE
             NSLog(@"tocou no NPC: %@", nodeTocado.name);
             
-            //Chama o método de interação passando o nó tocado
-            [self interagirComNPC:nodeTocado];
+            //Se foi a Mãe
+            if([nodeTocado.name isEqualToString:@"Maedetodos"]){
+                 //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.maeDeTodos];
+            }
+            
+            //Se foi o Curandeiro
+            else if([nodeTocado.name isEqualToString:@"Curandeiro"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.curandeiro];
+            }
+            
+            //Se foi o Caçador
+            else if([nodeTocado.name isEqualToString:@"Cacador"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.cacador];
+            }
+            
+            //Se foi o Chefe
+            else if([nodeTocado.name isEqualToString:@"Chefe"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.chefe];
+            }
         }
     }
     
@@ -111,8 +132,9 @@
     [self.jogador pararEscalar];
 }
 
--(void)interagirComNPC:(SKNode*)npc{
-    
+//FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
+-(void)interagirComNPC:(DQnpc*)npc{
+    [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
 }
 
 -(void)criarParteFase{

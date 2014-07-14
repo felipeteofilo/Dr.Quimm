@@ -74,9 +74,12 @@
         
         
         //USADO COMO TESTE
-        self.fome=10;
-        self.sede=40;
-        self.vida=100;
+        self.fome = 10;
+        self.sede = 40;
+        self.vida = 100;
+        
+        //Mais um teste:
+        self.respeito = 0;
     }
 
     //retorna o jogador
