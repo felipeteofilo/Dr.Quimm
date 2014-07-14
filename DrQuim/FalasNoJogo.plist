@@ -153,5 +153,21 @@
 			</array>
 		</dict>
 	</dict>
+	<dict>
+		<key>Falas</key>
+		<dict>
+			<key>Aleatoria1</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Já disse para não ir por aí!</string>
+					<key>Imagem</key>
+					<string>cientista</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 </array>
 </plist>
