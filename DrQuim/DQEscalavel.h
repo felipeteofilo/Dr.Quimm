@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+static NSString* nomeEscalavel=@"Escalavel";
+
 @interface DQEscalavel : SKSpriteNode
 
 -(id)initEscalavelComPontoInicial:(CGPoint)pInicial ePontoFinal:(CGPoint)pFinal eLargura:(float)largura;

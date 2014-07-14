@@ -15,6 +15,12 @@
         [self configuracoesFase:2];
         
         [self iniciarFase];
+        
+        DQBarraStatus *barraFome=[[DQBarraStatus alloc]init];
+        
+        barraFome.position=CGPointMake(20, 200);
+        
+        [self.mundo addChild:barraFome];
     }
     
     return self;
@@ -90,6 +96,8 @@
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
                     
                     [self.backgroundFuturo addChild:escada];
+                    
+                    NSLog(@"Posicao Escada X:%f Y:%f",escada.position.x,escada.position.y);
                 }
             }
         }
@@ -119,10 +127,11 @@
     UITouch *toque=[touches anyObject];
     CGPoint posToque=[toque locationInNode:self.backgroundAtual];
     
-    SKNode *nodeTocado=[self nodeAtPoint:posToque];
-    NSLog(@"nome nodeTocado: %@ posX: %f |Y:%f",nodeTocado.name,posToque.x,posToque.y);
-    
-    if ([nodeTocado.name isEqualToString:@"Escalavel"]) {
+    //Pega o node de escada na posicao do toque
+    SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToque];
+
+//TODO: Melhorar método de escalada
+    if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
         //Verifica se o Y é maior ou menor
         
         if (posToque.y > (self.jogador.position.y+20.0)) {

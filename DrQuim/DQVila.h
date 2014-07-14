@@ -8,6 +8,7 @@
 
 #import "DQFase.h"
 #import "DQEscalavel.h"
+#import "DQBarraStatus.h"
 
 @interface DQVila : DQFase
 
