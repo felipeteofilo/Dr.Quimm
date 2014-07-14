@@ -118,7 +118,7 @@
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
 -(void)escadaCategoria :(SKNode*)node{
-    node.physicsBody.categoryBitMask=PlataformaCategoria;
+    node.physicsBody.categoryBitMask=EscadaCategoria;
     node.physicsBody.collisionBitMask=0;
     node.physicsBody.contactTestBitMask=JogadorCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
