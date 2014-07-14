@@ -24,8 +24,9 @@
 
 -(void)criarSpriteNodeComNome:(NSString*)nome naPosicao:(CGPoint)posicao{
     
-    //Inicia o sprite node TEMPORÁRIO
-    self.spriteNode = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(100, 100)];
+    //Inicia o sprite node com o nome da imagem
+    self.spriteNode = [SKSpriteNode spriteNodeWithImageNamed:nome];
+    [self.spriteNode setSize:CGSizeMake(180, 200)];
     
     //Configura o SpriteNode
     [self.spriteNode setAnchorPoint:CGPointMake(0, 0)];

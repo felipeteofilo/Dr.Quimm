@@ -387,13 +387,13 @@
 		CD2FE184194B3BEE006E3AC1 /* Fases */ = {
 			isa = PBXGroup;
 			children = (
-				CD2FE185194B3BFD006E3AC1 /* Fase01 */,
+				CD2FE185194B3BFD006E3AC1 /* Fase2 */,
 				23B28DB0197444DB00EBB5B0 /* Fase2 */,
 			);
 			name = Fases;
 			sourceTree = "<group>";
 		};
-		CD2FE185194B3BFD006E3AC1 /* Fase01 */ = {
+		CD2FE185194B3BFD006E3AC1 /* Fase2 */ = {
 			isa = PBXGroup;
 			children = (
 				C5D2A693196A535800F3B7C4 /* Fase1_Parte1.png */,
@@ -406,7 +406,7 @@
 				C5D2A69A196A535800F3B7C4 /* Fase1_Parte7.png */,
 				C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */,
 			);
-			name = Fase01;
+			name = Fase2;
 			sourceTree = "<group>";
 		};
 		CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */ = {

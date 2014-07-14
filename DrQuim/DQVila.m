@@ -43,7 +43,7 @@
         CGPoint posicaoNPC = CGPointFromString([NPC objectForKey:@"PosicaoNPC"]);
         
         //instancia o NPC dependendo de seu nome
-        if([nomeNPC isEqualToString:@"Mãe de todos"]){
+        if([nomeNPC isEqualToString:@"Maedetodos"]){
             //Inicia o node com o NOME
             self.maeDeTodos = [[DQnpc alloc] initComNome:nomeNPC];
             
@@ -51,7 +51,7 @@
             [self.maeDeTodos criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
             [self.mundo addChild:self.maeDeTodos.spriteNode];
         }
-        else if([nomeNPC isEqualToString:@"Caçador"]){
+        else if([nomeNPC isEqualToString:@"Cacador"]){
             //Inicia o node com o NOME
             self.cacador = [[DQnpc alloc] initComNome:nomeNPC];
             
