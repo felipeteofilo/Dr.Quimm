@@ -11,10 +11,10 @@
 		23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQnpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
-		23B28D8419742D5200EBB5B0 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8019742D5200EBB5B0 /* Fase2_Parte1.png */; };
-		23B28D8519742D5200EBB5B0 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8119742D5200EBB5B0 /* Fase2_Parte2.png */; };
-		23B28D8619742D5200EBB5B0 /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8219742D5200EBB5B0 /* Fase2_Parte3.png */; };
-		23B28D8719742D5200EBB5B0 /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28D8319742D5200EBB5B0 /* Fase2_Parte4.png */; };
+		23B28DB5197444DB00EBB5B0 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB1197444DB00EBB5B0 /* Fase2_Parte1.png */; };
+		23B28DB6197444DB00EBB5B0 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */; };
+		23B28DB7197444DB00EBB5B0 /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */; };
+		23B28DB8197444DB00EBB5B0 /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */; };
 		23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA495196A1B6600AD5F0C /* cutscene1.atlas */; };
 		23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA496196A1B6600AD5F0C /* cutscene2.atlas */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
@@ -89,10 +89,10 @@
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23A6DE9C194781E200982F9D /* DQCutsceneControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControle.h; sourceTree = "<group>"; };
 		23A6DE9D194781E200982F9D /* DQCutsceneControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControle.m; sourceTree = "<group>"; };
-		23B28D8019742D5200EBB5B0 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte1.png; path = "../../../../Vila_tarde [www/Fase2_Parte1.png"; sourceTree = "<group>"; };
-		23B28D8119742D5200EBB5B0 /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte2.png; path = "../../../../Vila_tarde [www/Fase2_Parte2.png"; sourceTree = "<group>"; };
-		23B28D8219742D5200EBB5B0 /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte3.png; path = "../../../../Vila_tarde [www/Fase2_Parte3.png"; sourceTree = "<group>"; };
-		23B28D8319742D5200EBB5B0 /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte4.png; path = "../../../../Vila_tarde [www/Fase2_Parte4.png"; sourceTree = "<group>"; };
+		23B28DB1197444DB00EBB5B0 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte1.png; sourceTree = "<group>"; };
+		23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
+		23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
+		23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
 		23BFA495196A1B6600AD5F0C /* cutscene1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene1.atlas; path = ../cutscene1.atlas; sourceTree = "<group>"; };
 		23BFA496196A1B6600AD5F0C /* cutscene2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene2.atlas; path = ../cutscene2.atlas; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -218,6 +218,17 @@
 			);
 			name = RostoPersonagens;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		23B28DB0197444DB00EBB5B0 /* Fase2 */ = {
+			isa = PBXGroup;
+			children = (
+				23B28DB1197444DB00EBB5B0 /* Fase2_Parte1.png */,
+				23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */,
+				23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */,
+				23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */,
+			);
+			path = Fase2;
 			sourceTree = "<group>";
 		};
 		23BFA4AB196A3CE100AD5F0C /* IconesPersonagens */ = {
@@ -356,17 +367,6 @@
 			name = ObjetosJogo;
 			sourceTree = "<group>";
 		};
-		C54B79B41971E01E00366512 /* Fase02 */ = {
-			isa = PBXGroup;
-			children = (
-				23B28D8019742D5200EBB5B0 /* Fase2_Parte1.png */,
-				23B28D8119742D5200EBB5B0 /* Fase2_Parte2.png */,
-				23B28D8219742D5200EBB5B0 /* Fase2_Parte3.png */,
-				23B28D8319742D5200EBB5B0 /* Fase2_Parte4.png */,
-			);
-			path = Fase02;
-			sourceTree = "<group>";
-		};
 		C57D7C2A1964E3A100EF94C9 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,7 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2FE185194B3BFD006E3AC1 /* Fase01 */,
-				C54B79B41971E01E00366512 /* Fase02 */,
+				23B28DB0197444DB00EBB5B0 /* Fase2 */,
 			);
 			name = Fases;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
-				23B28D8519742D5200EBB5B0 /* Fase2_Parte2.png in Resources */,
+				23B28DB6197444DB00EBB5B0 /* Fase2_Parte2.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */,
 				CDCACF531948F23500FC1070 /* FalasCutScene.plist in Resources */,
@@ -511,7 +511,7 @@
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */,
-				23B28D8419742D5200EBB5B0 /* Fase2_Parte1.png in Resources */,
+				23B28DB5197444DB00EBB5B0 /* Fase2_Parte1.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
@@ -528,10 +528,10 @@
 				C5D2A69E196A535800F3B7C4 /* Fase1_Parte3.png in Resources */,
 				C5D2A6A0196A535800F3B7C4 /* Fase1_Parte4.png in Resources */,
 				C51125941973B00B00CECCAD /* NPCS.atlas in Resources */,
-				23B28D8619742D5200EBB5B0 /* Fase2_Parte3.png in Resources */,
+				23B28DB7197444DB00EBB5B0 /* Fase2_Parte3.png in Resources */,
 				C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasNoJogo.plist in Resources */,
-				23B28D8719742D5200EBB5B0 /* Fase2_Parte4.png in Resources */,
+				23B28DB8197444DB00EBB5B0 /* Fase2_Parte4.png in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,
 				C591815E1967738D00AFD8B5 /* piloto.png in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
