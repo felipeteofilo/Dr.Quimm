@@ -93,6 +93,7 @@
 }
 
 -(void)interagirNPC:(SKNode*)npc{
+    //Se for de fato um NPC...
     if (npc.name!=nil) {
         NSLog(@"Tocou no NPC: %@",npc.name);
     }
