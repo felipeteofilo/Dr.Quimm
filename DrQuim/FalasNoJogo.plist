@@ -165,8 +165,8 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
-							<string>Fala quando o respeito é 0</string>
+							<key>Texto</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
 						</dict>

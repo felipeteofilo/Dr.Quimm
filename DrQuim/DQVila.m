@@ -134,7 +134,13 @@
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
+    //chamar as falas do Personagem
     [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
+    
+    //definições importantes:
+    self.cutsceneEstaRodando = YES;
+    self.estaFalando = YES;
+    [self.jogador pararAndar];
 }
 
 -(void)criarParteFase{
@@ -201,6 +207,19 @@
             [self.jogador escalarParaDirecao:@"B"];
         }
         
+    }
+    
+    //Se estiver falando em jogo...
+    else if(self.estaFalando){
+        if ([self.controleCutscenes trocarFala]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            
+        }
+        else{
+            
+            self.estaFalando = NO;
+            self.cutsceneEstaRodando = NO;
+        }
     }
 }
 @end
