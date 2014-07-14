@@ -14,7 +14,7 @@
     if (self=[super initWithSize:size]) {
         [self configuracoesFase:2];
         
-        self.hudFase =[[DQHud alloc]initHud];
+        self.hudFase = [[DQHud alloc]initHud];
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
         
         [self iniciarFase];
@@ -82,21 +82,32 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
-    UITouch *toque=[touches anyObject];
-    CGPoint posToque=[toque locationInNode:self.mundo];
+    //armazena o toque e a posição dele
+    UITouch *toque = [touches anyObject];
+    CGPoint posicaoToque = [toque locationInNode:self.mundo];
     
-    SKNode *nodeTocado=[self.mundo nodeAtPoint:posToque];
+    //Guarda o node em que tocou
+    SKNode *nodeTocado = [self.mundo nodeAtPoint:posicaoToque];
     
-    [self interagirNPC:nodeTocado];
+    //Se o node em que tocou for da classe DQNPC, faz o npc interagir - PENSAR EM FORMA MAIS INTELIGENTE
+    if (nodeTocado.name!=nil) {
+        if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"]) {
+            
+            //Chama a 
+            NSLog(@"tocou no NPC: %@", nodeTocado.name);
+            [self interagirComNPC:nodeTocado];
+        }
+    }
+    
+    //[self interagirNPC:nodeTocado];
+    
+    
     
     [self.jogador pararEscalar];
 }
 
--(void)interagirNPC:(SKNode*)npc{
-    //Se for de fato um NPC...
-    if (npc.name!=nil) {
-        NSLog(@"Tocou no NPC: %@",npc.name);
-    }
+-(void)interagirComNPC:(SKNode*)npc{
+
 }
 
 -(void)criarParteFase{
