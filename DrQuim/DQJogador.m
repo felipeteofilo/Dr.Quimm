@@ -70,7 +70,13 @@
         }
         
         //apos ler tudo anima o jogador
-        [self animarParado];        
+        [self animarParado];
+        
+        
+        //USADO COMO TESTE
+        self.fome=10;
+        self.sede=40;
+        self.vida=100;
     }
 
     //retorna o jogador

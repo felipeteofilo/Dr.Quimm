@@ -14,13 +14,12 @@
     if (self=[super initWithSize:size]) {
         [self configuracoesFase:2];
         
+        self.hudFase =[[DQHud alloc]initHud];
+        [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
+        
         [self iniciarFase];
-        
-        DQBarraStatus *barraFome=[[DQBarraStatus alloc]init];
-        
-        barraFome.position=CGPointMake(20, 200);
-        
-        [self.mundo addChild:barraFome];
+
+        [self addChild:self.hudFase];
     }
     
     return self;
@@ -33,6 +32,8 @@
 }
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
+    
+    [self.hudFase atualizarHud];
 }
 
 -(void)adicionaNPC{

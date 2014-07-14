@@ -39,6 +39,10 @@
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
 		947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */; };
+		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
+		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
+		C51125901973AB4E00CECCAD /* DQHud.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258D1973AB4E00CECCAD /* DQHud.m */; };
+		C51125921973AB6000CECCAD /* FundoHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = C51125911973AB6000CECCAD /* FundoHUD.png */; };
 		C54B79B31971CC3D00366512 /* DQVila.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79B21971CC3D00366512 /* DQVila.m */; };
 		C54B79C119722CC900366512 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79BD19722CC900366512 /* Fase2_Parte1.png */; };
 		C54B79C219722CC900366512 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C54B79BE19722CC900366512 /* Fase2_Parte2.png */; };
@@ -119,6 +123,13 @@
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
 		947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleCorpoFisico.h; sourceTree = "<group>"; };
 		947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleCorpoFisico.m; sourceTree = "<group>"; };
+		C51125881973AB4E00CECCAD /* DQBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBarraStatus.h; sourceTree = "<group>"; };
+		C51125891973AB4E00CECCAD /* DQBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBarraStatus.m; sourceTree = "<group>"; };
+		C511258A1973AB4E00CECCAD /* DQHudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHudController.h; sourceTree = "<group>"; };
+		C511258B1973AB4E00CECCAD /* DQHudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHudController.m; sourceTree = "<group>"; };
+		C511258C1973AB4E00CECCAD /* DQHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHud.h; sourceTree = "<group>"; };
+		C511258D1973AB4E00CECCAD /* DQHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHud.m; sourceTree = "<group>"; };
+		C51125911973AB6000CECCAD /* FundoHUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FundoHUD.png; sourceTree = "<group>"; };
 		C54B79B11971CC3D00366512 /* DQVila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQVila.h; sourceTree = "<group>"; };
 		C54B79B21971CC3D00366512 /* DQVila.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVila.m; sourceTree = "<group>"; };
 		C54B79BD19722CC900366512 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase2_Parte1.png; path = DrQuim/Imagens/MapaFundo/Fase2/Fase2_Parte1.png; sourceTree = SOURCE_ROOT; };
@@ -260,6 +271,10 @@
 				CDE817F21933C790003516E7 /* DQJogador.m */,
 				23A538E7196C6E9E00821BAF /* DQnpc.h */,
 				23A538E8196C6E9E00821BAF /* DQnpc.m */,
+				C51125881973AB4E00CECCAD /* DQBarraStatus.h */,
+				C51125891973AB4E00CECCAD /* DQBarraStatus.m */,
+				C511258C1973AB4E00CECCAD /* DQHud.h */,
+				C511258D1973AB4E00CECCAD /* DQHud.m */,
 				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				94080EBD1933BA290024FB94 /* Images.xcassets */,
 				94080EB21933BA290024FB94 /* Main.storyboard */,
@@ -315,6 +330,7 @@
 			children = (
 				23BFA4A9196A3CC700AD5F0C /* icon.png */,
 				23BFADBC1966E4FB00691C04 /* setinhas.png */,
+				C51125911973AB6000CECCAD /* FundoHUD.png */,
 				23BFA495196A1B6600AD5F0C /* cutscene1.atlas */,
 				23BFA496196A1B6600AD5F0C /* cutscene2.atlas */,
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
@@ -351,6 +367,8 @@
 		C57D7C2A1964E3A100EF94C9 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				C511258A1973AB4E00CECCAD /* DQHudController.h */,
+				C511258B1973AB4E00CECCAD /* DQHudController.m */,
 				94080EB51933BA290024FB94 /* DQViewController.h */,
 				94080EB61933BA290024FB94 /* DQViewController.m */,
 				23A6DE9C194781E200982F9D /* DQCutsceneControle.h */,
@@ -507,6 +525,7 @@
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
+				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
 				C54B79C319722CC900366512 /* Fase2_Parte3.png in Resources */,
@@ -547,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C51125901973AB4E00CECCAD /* DQHud.m in Sources */,
 				23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */,
 				23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
@@ -558,9 +578,11 @@
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
+				C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
 				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
+				C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
