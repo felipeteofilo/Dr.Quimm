@@ -22,7 +22,7 @@
         //Representaçao visual
         [self setColor:[UIColor purpleColor]];
         
-        [self setName:@"Escalavel"];
+        [self setName:nomeEscalavel];
     }
     return self;
 }
