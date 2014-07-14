@@ -12,11 +12,14 @@
 #import "DQPlataforma.h"
 #import "DQControleCorpoFisico.h"
 #import "DQConfiguracaoFase.h"
+#import "DQHud.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
 static const UInt32 ChaoCategoria = 0x1 << 1;
 static const UInt32 PlataformaCategoria = 0x1 << 2;
+
+static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
 @interface DQFase : SKScene <SKPhysicsContactDelegate>
 
@@ -43,4 +46,10 @@ static const UInt32 PlataformaCategoria = 0x1 << 2;
 
 //metodo para iniciar a fase
 -(void)iniciarFase;
+-(void)configuracoesFase:(int)faseAtual;
+-(void)criarParteFase;
+-(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
+
+//HUD com informações
+@property DQHud *hudFase;
 @end

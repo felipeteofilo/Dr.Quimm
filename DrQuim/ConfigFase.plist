@@ -269,7 +269,34 @@
 	</dict>
 	<dict>
 		<key>PosInicialJogador</key>
-		<string>{250, 600}</string>
+		<string>{10, 200}</string>
+		<key>NPC</key>
+		<array>
+			<dict>
+				<key>PosicaoNPC</key>
+				<string>{1180, 155}</string>
+				<key>Nome</key>
+				<string>Maedetodos</string>
+			</dict>
+			<dict>
+				<key>PosicaoNPC</key>
+				<string>{3480, 155}</string>
+				<key>Nome</key>
+				<string>Cacador</string>
+			</dict>
+			<dict>
+				<key>PosicaoNPC</key>
+				<string>{1800,1005}</string>
+				<key>Nome</key>
+				<string>Curandeiro</string>
+			</dict>
+			<dict>
+				<key>PosicaoNPC</key>
+				<string>{2700, 835}</string>
+				<key>Nome</key>
+				<string>Chefe</string>
+			</dict>
+		</array>
 		<key>Partes</key>
 		<array>
 			<dict>
@@ -277,7 +304,83 @@
 				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
-					<array/>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 170}</string>
+					<string>{1024, 130}</string>
+				</array>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Escalaveis</key>
+				<array>
+					<array>
+						<string>{870, 170}</string>
+						<string>{872, 1018}</string>
+					</array>
+				</array>
+				<key>CoberturaFundo</key>
+				<string></string>
+				<key>CorpoFisicoChao</key>
+				<array>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 170}</string>
+					<string>{1024, 130}</string>
+				</array>
+				<key>Plataformas</key>
+				<array>
+					<array>
+						<string>{675, 976}</string>
+						<string>{675, 1019}</string>
+						<string>{1024, 1019}</string>
+						<string>{1024, 976}</string>
+					</array>
+				</array>
+			</dict>
+			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
+				<key>CorpoFisicoChao</key>
+				<array>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 170}</string>
+					<string>{1024, 130}</string>
+				</array>
+				<key>Plataformas</key>
+				<array>
+					<array>
+						<string>{0, 972}</string>
+						<string>{0, 1016}</string>
+						<string>{165, 1016}</string>
+						<string>{165, 972}</string>
+					</array>
+					<array>
+						<string>{149, 795}</string>
+						<string>{149, 847}</string>
+						<string>{910, 847}</string>
+						<string>{910, 795}</string>
+					</array>
+				</array>
+				<key>Escalaveis</key>
+				<array>
+					<array>
+						<string>{658, 166}</string>
+						<string>{658, 848}</string>
+					</array>
+				</array>
+			</dict>
+			<dict>
+				<key>CoberturaFundo</key>
+				<string></string>
+				<key>CorpoFisicoChao</key>
+				<array>
+					<string>{0, 130}</string>
+					<string>{0, 170}</string>
+					<string>{1024, 170}</string>
+					<string>{1024, 130}</string>
 				</array>
 				<key>Plataformas</key>
 				<array/>

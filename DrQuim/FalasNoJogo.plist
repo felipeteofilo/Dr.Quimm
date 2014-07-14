@@ -153,5 +153,518 @@
 			</array>
 		</dict>
 	</dict>
+	<dict>
+		<key>Falas</key>
+		<dict>
+			<key>MaeDeTodos</key>
+			<dict>
+				<key>SemMissao</key>
+				<dict>
+					<key>Respeito0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito10</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito20</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito30</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito40</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito50</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito60</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito70</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito80</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito90</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+					<key>Respeito100</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<key>Imagem</key>
+							<string>maeDeTodos</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>Cacador</key>
+			<dict>
+				<key>SemMissao</key>
+				<dict>
+					<key>Respeito0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito10</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito20</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito30</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito40</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito50</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito60</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito70</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito80</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito90</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+					<key>Respeito100</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<key>Imagem</key>
+							<string>cacador</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>Chefe</key>
+			<dict>
+				<key>SemMissao</key>
+				<dict>
+					<key>Respeito0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito10</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito20</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito30</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito40</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito50</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito60</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito70</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito80</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito90</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+					<key>Respeito100</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<key>Imagem</key>
+							<string>chefe</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>Curandeiro</key>
+			<dict>
+				<key>SemMissao</key>
+				<dict>
+					<key>Respeito0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito10</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito20</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito30</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito40</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito50</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito60</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito70</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito80</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito90</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+					<key>Respeito100</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Fala</key>
+							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
 </array>
 </plist>

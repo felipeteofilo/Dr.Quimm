@@ -19,15 +19,13 @@
         //Leonardo 13/06/2014 - Inicia o sprite
         self.spriteNode=[SKSpriteNode spriteNodeWithImageNamed:name];
         
+        [self setAnchorPoint:CGPointMake(0, 0)];
+        
         [self.spriteNode setSize:CGSizeMake(90, 160)];
-
-        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:self.spriteNode.size];
-
-        //Posições para realização de testes
-        //[self setPosition:CGPointMake(250, 600)]; //PARA TESTAR DO INÍCIO - fase1
-        //[self setPosition:CGPointMake(2850, 1200)]; //PARA TESTAR - PRIMEIRA FALA - fase1
-        //[self setPosition:CGPointMake(5500, 1600)]; //PARA TESTAR - SEGUNDA FALA - fase1
-        //[self setPosition:CGPointMake(6550, 1600)]; //PARA TESTAR - CUTSCENE - fase1
+        
+        [self.spriteNode setZPosition:10.0f];
+        //Deixar o corpo fisico mais prox ao sprite
+        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.spriteNode.size.width, self.spriteNode.size.height-12)];
 
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
@@ -72,7 +70,13 @@
         }
         
         //apos ler tudo anima o jogador
-        [self animarParado];        
+        [self animarParado];
+        
+        
+        //USADO COMO TESTE
+        self.fome=10;
+        self.sede=40;
+        self.vida=100;
     }
 
     //retorna o jogador
@@ -178,6 +182,30 @@
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
+}
+
+-(void)escalarParaDirecao:(NSString*)direcao{
+    
+    SKAction *escalar=[[SKAction alloc]init];
+    
+    //Desliga a gravidade para o Node
+    self.physicsBody.dynamic=NO;
+    
+    if ([direcao isEqualToString:@"C"]) {
+        //Sobe
+        
+        escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
+        
+    }else if([direcao isEqualToString:@"B"]){
+        //Desce
+        escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
+    }
+    
+    [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
+}
+
+-(void)pararEscalar{
+    [self removeActionForKey:@"escalar"];
 }
 
 //funcao a fazer para ele interagir com pessoas e elementos do cenario

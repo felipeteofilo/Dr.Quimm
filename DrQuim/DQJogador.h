@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface DQJogador : SKNode
+@interface DQJogador : SKSpriteNode
 
 
 //Arrays que guardam os frames das animacoes do jogador
@@ -58,5 +58,6 @@
 //Método para parar de andar
 -(void)pararAndar;
 
-
+-(void)escalarParaDirecao:(NSString*)direcao;
+-(void)pararEscalar;
 @end

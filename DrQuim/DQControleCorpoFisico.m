@@ -53,11 +53,11 @@
     return path;
 }
 
-+(SKSpriteNode*)criarPlataformaParte: (int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela{
++(SKNode*)criarPlataformaParte: (int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela{
     
     NSArray *configParteFase=[DQConfiguracaoFase configParteFase:_fase];
     
-    SKSpriteNode *nodeRetorno;
+    SKNode *nodeRetorno;
     
     if (!configParteFase) {
         return nil;

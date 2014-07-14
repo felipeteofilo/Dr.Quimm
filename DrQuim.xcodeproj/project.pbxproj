@@ -11,6 +11,11 @@
 		23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQnpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
+		23B28DB5197444DB00EBB5B0 /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB1197444DB00EBB5B0 /* Fase2_Parte1.png */; };
+		23B28DB6197444DB00EBB5B0 /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */; };
+		23B28DB7197444DB00EBB5B0 /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */; };
+		23B28DB8197444DB00EBB5B0 /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */; };
+		23B28DBA19744F3B00EBB5B0 /* Temporária.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB919744F3B00EBB5B0 /* Temporária.plist */; };
 		23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA495196A1B6600AD5F0C /* cutscene1.atlas */; };
 		23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA496196A1B6600AD5F0C /* cutscene2.atlas */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
@@ -39,8 +44,14 @@
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
 		947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */; };
+		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
+		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
+		C51125901973AB4E00CECCAD /* DQHud.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258D1973AB4E00CECCAD /* DQHud.m */; };
+		C51125921973AB6000CECCAD /* FundoHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = C51125911973AB6000CECCAD /* FundoHUD.png */; };
+		C51125941973B00B00CECCAD /* NPCS.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C51125931973B00B00CECCAD /* NPCS.atlas */; };
+		C54B79B31971CC3D00366512 /* DQVila.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79B21971CC3D00366512 /* DQVila.m */; };
+		C54B79C71972440400366512 /* DQEscalavel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79C61972440400366512 /* DQEscalavel.m */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
-		C56A9D85196E602D00DD2347 /* DQCutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D84196E602D00DD2347 /* DQCutScene.m */; };
 		C575FF411965DDC500719817 /* ConfigFase.plist in Resources */ = {isa = PBXBuildFile; fileRef = C575FF401965DDC500719817 /* ConfigFase.plist */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
 		C591815D1967738D00AFD8B5 /* cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = C591815B1967738D00AFD8B5 /* cientista.png */; };
@@ -79,6 +90,11 @@
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23A6DE9C194781E200982F9D /* DQCutsceneControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControle.h; sourceTree = "<group>"; };
 		23A6DE9D194781E200982F9D /* DQCutsceneControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControle.m; sourceTree = "<group>"; };
+		23B28DB1197444DB00EBB5B0 /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte1.png; sourceTree = "<group>"; };
+		23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
+		23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
+		23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
+		23B28DB919744F3B00EBB5B0 /* Temporária.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Temporária.plist"; sourceTree = "<group>"; };
 		23BFA495196A1B6600AD5F0C /* cutscene1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene1.atlas; path = ../cutscene1.atlas; sourceTree = "<group>"; };
 		23BFA496196A1B6600AD5F0C /* cutscene2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = cutscene2.atlas; path = ../cutscene2.atlas; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -114,10 +130,20 @@
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
 		947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleCorpoFisico.h; sourceTree = "<group>"; };
 		947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleCorpoFisico.m; sourceTree = "<group>"; };
+		C51125881973AB4E00CECCAD /* DQBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBarraStatus.h; sourceTree = "<group>"; };
+		C51125891973AB4E00CECCAD /* DQBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBarraStatus.m; sourceTree = "<group>"; };
+		C511258A1973AB4E00CECCAD /* DQHudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHudController.h; sourceTree = "<group>"; };
+		C511258B1973AB4E00CECCAD /* DQHudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHudController.m; sourceTree = "<group>"; };
+		C511258C1973AB4E00CECCAD /* DQHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHud.h; sourceTree = "<group>"; };
+		C511258D1973AB4E00CECCAD /* DQHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHud.m; sourceTree = "<group>"; };
+		C51125911973AB6000CECCAD /* FundoHUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FundoHUD.png; sourceTree = "<group>"; };
+		C51125931973B00B00CECCAD /* NPCS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NPCS.atlas; sourceTree = "<group>"; };
+		C54B79B11971CC3D00366512 /* DQVila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQVila.h; sourceTree = "<group>"; };
+		C54B79B21971CC3D00366512 /* DQVila.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVila.m; sourceTree = "<group>"; };
+		C54B79C51972440400366512 /* DQEscalavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQEscalavel.h; sourceTree = "<group>"; };
+		C54B79C61972440400366512 /* DQEscalavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQEscalavel.m; sourceTree = "<group>"; };
 		C56A9D80196E252C00DD2347 /* DQFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFase.h; sourceTree = "<group>"; };
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
-		C56A9D83196E602D00DD2347 /* DQCutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutScene.h; sourceTree = "<group>"; };
-		C56A9D84196E602D00DD2347 /* DQCutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutScene.m; sourceTree = "<group>"; };
 		C575FF401965DDC500719817 /* ConfigFase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigFase.plist; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
 		C591815B1967738D00AFD8B5 /* cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cientista.png; path = Personagens/cientista.png; sourceTree = "<group>"; };
@@ -126,15 +152,15 @@
 		C59181601967756700AFD8B5 /* DQPlataforma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQPlataforma.m; sourceTree = "<group>"; };
 		C5B174091968C77800143B8D /* DQConfiguracaoFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQConfiguracaoFase.h; sourceTree = "<group>"; };
 		C5B1740A1968C77800143B8D /* DQConfiguracaoFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQConfiguracaoFase.m; sourceTree = "<group>"; };
-		C5D2A693196A535800F3B7C4 /* Fase1_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte1.png; path = Fase1/Fase1_Parte1.png; sourceTree = "<group>"; };
-		C5D2A694196A535800F3B7C4 /* Fase1_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte2.png; path = Fase1/Fase1_Parte2.png; sourceTree = "<group>"; };
-		C5D2A695196A535800F3B7C4 /* Fase1_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte3.png; path = Fase1/Fase1_Parte3.png; sourceTree = "<group>"; };
-		C5D2A696196A535800F3B7C4 /* Fase1_Parte4_Coberta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte4_Coberta.png; path = Fase1/Fase1_Parte4_Coberta.png; sourceTree = "<group>"; };
-		C5D2A697196A535800F3B7C4 /* Fase1_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte4.png; path = Fase1/Fase1_Parte4.png; sourceTree = "<group>"; };
-		C5D2A698196A535800F3B7C4 /* Fase1_Parte5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte5.png; path = Fase1/Fase1_Parte5.png; sourceTree = "<group>"; };
-		C5D2A699196A535800F3B7C4 /* Fase1_Parte6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte6.png; path = Fase1/Fase1_Parte6.png; sourceTree = "<group>"; };
-		C5D2A69A196A535800F3B7C4 /* Fase1_Parte7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte7.png; path = Fase1/Fase1_Parte7.png; sourceTree = "<group>"; };
-		C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte8.png; path = Fase1/Fase1_Parte8.png; sourceTree = "<group>"; };
+		C5D2A693196A535800F3B7C4 /* Fase1_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte1.png; path = MapaFundo/Fase1/Fase1_Parte1.png; sourceTree = "<group>"; };
+		C5D2A694196A535800F3B7C4 /* Fase1_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte2.png; path = MapaFundo/Fase1/Fase1_Parte2.png; sourceTree = "<group>"; };
+		C5D2A695196A535800F3B7C4 /* Fase1_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte3.png; path = MapaFundo/Fase1/Fase1_Parte3.png; sourceTree = "<group>"; };
+		C5D2A696196A535800F3B7C4 /* Fase1_Parte4_Coberta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte4_Coberta.png; path = MapaFundo/Fase1/Fase1_Parte4_Coberta.png; sourceTree = "<group>"; };
+		C5D2A697196A535800F3B7C4 /* Fase1_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte4.png; path = MapaFundo/Fase1/Fase1_Parte4.png; sourceTree = "<group>"; };
+		C5D2A698196A535800F3B7C4 /* Fase1_Parte5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte5.png; path = MapaFundo/Fase1/Fase1_Parte5.png; sourceTree = "<group>"; };
+		C5D2A699196A535800F3B7C4 /* Fase1_Parte6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte6.png; path = MapaFundo/Fase1/Fase1_Parte6.png; sourceTree = "<group>"; };
+		C5D2A69A196A535800F3B7C4 /* Fase1_Parte7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte7.png; path = MapaFundo/Fase1/Fase1_Parte7.png; sourceTree = "<group>"; };
+		C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte8.png; path = MapaFundo/Fase1/Fase1_Parte8.png; sourceTree = "<group>"; };
 		CDCACF521948F23500FC1070 /* FalasCutScene.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FalasCutScene.plist; sourceTree = "<group>"; };
 		CDE817F11933C790003516E7 /* DQJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJogador.h; sourceTree = "<group>"; };
 		CDE817F21933C790003516E7 /* DQJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJogador.m; sourceTree = "<group>"; };
@@ -171,6 +197,7 @@
 				755FA40D195A06D80052DC1E /* FalasNoJogo.plist */,
 				CDCACF521948F23500FC1070 /* FalasCutScene.plist */,
 				C575FF401965DDC500719817 /* ConfigFase.plist */,
+				23B28DB919744F3B00EBB5B0 /* Temporária.plist */,
 			);
 			name = "Arquvos XML";
 			sourceTree = "<group>";
@@ -182,8 +209,6 @@
 				23477FF919463E7500479AFE /* DQFala.m */,
 				23A6DE9919477F1500982F9D /* DQCena.h */,
 				23A6DE9A19477F1500982F9D /* DQCena.m */,
-				C56A9D83196E602D00DD2347 /* DQCutScene.h */,
-				C56A9D84196E602D00DD2347 /* DQCutScene.m */,
 			);
 			name = "Falas e Cutscenes";
 			sourceTree = "<group>";
@@ -196,6 +221,17 @@
 			);
 			name = RostoPersonagens;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		23B28DB0197444DB00EBB5B0 /* Fase2 */ = {
+			isa = PBXGroup;
+			children = (
+				23B28DB1197444DB00EBB5B0 /* Fase2_Parte1.png */,
+				23B28DB2197444DB00EBB5B0 /* Fase2_Parte2.png */,
+				23B28DB3197444DB00EBB5B0 /* Fase2_Parte3.png */,
+				23B28DB4197444DB00EBB5B0 /* Fase2_Parte4.png */,
+			);
+			path = Fase2;
 			sourceTree = "<group>";
 		};
 		23BFA4AB196A3CE100AD5F0C /* IconesPersonagens */ = {
@@ -243,19 +279,20 @@
 			isa = PBXGroup;
 			children = (
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
-				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				C57D7C2A1964E3A100EF94C9 /* Controladores */,
+				C511252E1973868D00CECCAD /* ObjetosJogo */,
+				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */,
-				C591815F1967756700AFD8B5 /* DQPlataforma.h */,
-				C59181601967756700AFD8B5 /* DQPlataforma.m */,
-				23A538E7196C6E9E00821BAF /* DQnpc.h */,
-				23A538E8196C6E9E00821BAF /* DQnpc.m */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
 				94080EB01933BA290024FB94 /* DQAppDelegate.m */,
 				CDE817F11933C790003516E7 /* DQJogador.h */,
 				CDE817F21933C790003516E7 /* DQJogador.m */,
-				94080EB51933BA290024FB94 /* DQViewController.h */,
-				94080EB61933BA290024FB94 /* DQViewController.m */,
+				23A538E7196C6E9E00821BAF /* DQnpc.h */,
+				23A538E8196C6E9E00821BAF /* DQnpc.m */,
+				C51125881973AB4E00CECCAD /* DQBarraStatus.h */,
+				C51125891973AB4E00CECCAD /* DQBarraStatus.m */,
+				C511258C1973AB4E00CECCAD /* DQHud.h */,
+				C511258D1973AB4E00CECCAD /* DQHud.m */,
 				94080EBD1933BA290024FB94 /* Images.xcassets */,
 				94080EB21933BA290024FB94 /* Main.storyboard */,
 				94080EA71933BA290024FB94 /* Supporting Files */,
@@ -297,6 +334,7 @@
 		9433F5D71937B4BB00E55E73 /* Personagens */ = {
 			isa = PBXGroup;
 			children = (
+				C51125931973B00B00CECCAD /* NPCS.atlas */,
 				23BFA4AB196A3CE100AD5F0C /* IconesPersonagens */,
 				23B0E4A519662AE9006CD78A /* RostoPersonagens */,
 				C57D7C2B1964E99000EF94C9 /* Jogador.png */,
@@ -309,6 +347,7 @@
 			children = (
 				23BFA4A9196A3CC700AD5F0C /* icon.png */,
 				23BFADBC1966E4FB00691C04 /* setinhas.png */,
+				C51125911973AB6000CECCAD /* FundoHUD.png */,
 				23BFA495196A1B6600AD5F0C /* cutscene1.atlas */,
 				23BFA496196A1B6600AD5F0C /* cutscene2.atlas */,
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
@@ -320,9 +359,24 @@
 			path = Imagens;
 			sourceTree = "<group>";
 		};
+		C511252E1973868D00CECCAD /* ObjetosJogo */ = {
+			isa = PBXGroup;
+			children = (
+				C54B79C51972440400366512 /* DQEscalavel.h */,
+				C54B79C61972440400366512 /* DQEscalavel.m */,
+				C591815F1967756700AFD8B5 /* DQPlataforma.h */,
+				C59181601967756700AFD8B5 /* DQPlataforma.m */,
+			);
+			name = ObjetosJogo;
+			sourceTree = "<group>";
+		};
 		C57D7C2A1964E3A100EF94C9 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				C511258A1973AB4E00CECCAD /* DQHudController.h */,
+				C511258B1973AB4E00CECCAD /* DQHudController.m */,
+				94080EB51933BA290024FB94 /* DQViewController.h */,
+				94080EB61933BA290024FB94 /* DQViewController.m */,
 				23A6DE9C194781E200982F9D /* DQCutsceneControle.h */,
 				23A6DE9D194781E200982F9D /* DQCutsceneControle.m */,
 				947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */,
@@ -336,28 +390,13 @@
 		CD2FE184194B3BEE006E3AC1 /* Fases */ = {
 			isa = PBXGroup;
 			children = (
-				CD2FE185194B3BFD006E3AC1 /* Fase01 */,
+				CD2FE185194B3BFD006E3AC1 /* Fase2 */,
+				23B28DB0197444DB00EBB5B0 /* Fase2 */,
 			);
 			name = Fases;
 			sourceTree = "<group>";
 		};
-		CD2FE185194B3BFD006E3AC1 /* Fase01 */ = {
-			isa = PBXGroup;
-			children = (
-				CD2FE186194B3C0B006E3AC1 /* MapaColisao */,
-				CD2FE195194B3C0B006E3AC1 /* MapaFundo */,
-			);
-			name = Fase01;
-			sourceTree = "<group>";
-		};
-		CD2FE186194B3C0B006E3AC1 /* MapaColisao */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MapaColisao;
-			sourceTree = "<group>";
-		};
-		CD2FE195194B3C0B006E3AC1 /* MapaFundo */ = {
+		CD2FE185194B3BFD006E3AC1 /* Fase2 */ = {
 			isa = PBXGroup;
 			children = (
 				C5D2A693196A535800F3B7C4 /* Fase1_Parte1.png */,
@@ -370,7 +409,7 @@
 				C5D2A69A196A535800F3B7C4 /* Fase1_Parte7.png */,
 				C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */,
 			);
-			path = MapaFundo;
+			name = Fase2;
 			sourceTree = "<group>";
 		};
 		CDB3FA4C194BA61D0099CF6C /* SKScenes Parte1 */ = {
@@ -380,6 +419,8 @@
 				752FB1D11935146300DB4328 /* DQFlorestaParte1.m */,
 				C56A9D80196E252C00DD2347 /* DQFase.h */,
 				C56A9D81196E252C00DD2347 /* DQFase.m */,
+				C54B79B11971CC3D00366512 /* DQVila.h */,
+				C54B79B21971CC3D00366512 /* DQVila.m */,
 			);
 			name = "SKScenes Parte1";
 			sourceTree = "<group>";
@@ -465,14 +506,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
+				23B28DB6197444DB00EBB5B0 /* Fase2_Parte2.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				23BFA497196A1B6600AD5F0C /* cutscene1.atlas in Resources */,
 				CDCACF531948F23500FC1070 /* FalasCutScene.plist in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
+				23B28DBA19744F3B00EBB5B0 /* Temporária.plist in Resources */,
 				23BFA498196A1B6600AD5F0C /* cutscene2.atlas in Resources */,
+				23B28DB5197444DB00EBB5B0 /* Fase2_Parte1.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
+				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
 				C5D2A69D196A535800F3B7C4 /* Fase1_Parte2.png in Resources */,
@@ -486,8 +531,11 @@
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
 				C5D2A69E196A535800F3B7C4 /* Fase1_Parte3.png in Resources */,
 				C5D2A6A0196A535800F3B7C4 /* Fase1_Parte4.png in Resources */,
+				C51125941973B00B00CECCAD /* NPCS.atlas in Resources */,
+				23B28DB7197444DB00EBB5B0 /* Fase2_Parte3.png in Resources */,
 				C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasNoJogo.plist in Resources */,
+				23B28DB8197444DB00EBB5B0 /* Fase2_Parte4.png in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,
 				C591815E1967738D00AFD8B5 /* piloto.png in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
@@ -510,19 +558,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C51125901973AB4E00CECCAD /* DQHud.m in Sources */,
 				23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */,
 				23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
-				C56A9D85196E602D00DD2347 /* DQCutScene.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
+				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
+				C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
+				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
+				C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
