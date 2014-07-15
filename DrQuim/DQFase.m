@@ -114,11 +114,11 @@
     node.physicsBody.categoryBitMask=JogadorCategoria;
     node.physicsBody.collisionBitMask=ChaoCategoria;
     node.physicsBody.contactTestBitMask= PlataformaCategoria;
-    node.physicsBody.contactTestBitMask= EscadaCategoria;
+    //node.physicsBody.contactTestBitMask= EscadaCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
 -(void)escadaCategoria :(SKNode*)node{
-    node.physicsBody.categoryBitMask=EscadaCategoria;
+    //node.physicsBody.categoryBitMask=EscadaCategoria;
     node.physicsBody.collisionBitMask=0;
     node.physicsBody.contactTestBitMask=JogadorCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
@@ -302,11 +302,11 @@
             }
         }
         NSLog(@"%@",secondBody.node.name);
-        if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-            NSLog(@"foi");
-            [self.jogador setPodeEscalar:YES];
-            
-        }
+//        if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
+//            NSLog(@"foi");
+//            [self.jogador setPodeEscalar:YES];
+//            
+//        }
     }
 }
 
