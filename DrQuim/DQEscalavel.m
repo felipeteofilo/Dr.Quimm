@@ -19,6 +19,8 @@
         //o ponto final servirá para determinar até onde o objeto irá
         [self setSize:CGSizeMake(largura, pFinal.y - pInicial.y)];
         
+       //[self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(largura, pFinal.y - pInicial.y)]];
+        
         //Representaçao visual
         [self setColor:[UIColor purpleColor]];
         

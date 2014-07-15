@@ -92,4 +92,7 @@
 //Metodo que retorna se pode trocar a fala ou nao
 -(BOOL)trocarFala;
 
+//Metodo para mudar de cutscene
+-(void)mudarParte;
+
 @end
