@@ -154,6 +154,26 @@
     return backConfigurar;
 }
 
+-(SKSpriteNode*) configurarCorberturaBackgroundParte:(int)_parte{
+    NSString *nomeImagemCobertura=[DQConfiguracaoFase coberturaBackgroundParte:_parte daFase:self.faseAtual ];
+    
+    if ([nomeImagemCobertura length]==0) {
+        return nil;
+    }else{
+        SKSpriteNode *nodeCoberturaBackground=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemCobertura];
+        
+        [nodeCoberturaBackground setName:NomeNodeCobertura];
+        
+        [nodeCoberturaBackground setAnchorPoint:CGPointMake(0, 0)];
+        [nodeCoberturaBackground setPosition:CGPointMake(0, 0)];
+        [nodeCoberturaBackground setZPosition:100];
+        
+        return nodeCoberturaBackground;
+    }
+    
+    
+}
+
 -(void)criarParteFase{
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
         
@@ -166,6 +186,13 @@
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
                 self.backgroundFuturo=[self configurarBackgroundParte:self.parteFaseAtual+1 naPos:posicaoAdd];
                 
+                
+                //Configura Cobertura para Background (criar efeito caverna)
+                SKSpriteNode *coberturaBackground=[self configurarCorberturaBackgroundParte:self.parteFaseAtual+1];
+                
+                if (coberturaBackground) {
+                    [self.backgroundFuturo addChild:coberturaBackground];
+                }
                 //Cria Corpo Fisico para plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
                 [plataforma setName:NomeNodePlataformas];
@@ -184,6 +211,15 @@
             if (self.parteFaseAtual -1 > 0) {
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x -CGRectGetMaxX(self.frame), 0);
                 self.backgroundAnterior =[self configurarBackgroundParte:self.parteFaseAtual-1 naPos:posicaoAdd];
+                
+                
+                //Cobertura backgroung (efeito caverna)
+                //Configura Cobertura para Background (criar efeito caverna)
+                SKSpriteNode *coberturaBackground=[self configurarCorberturaBackgroundParte:self.parteFaseAtual-1];
+                
+                if (coberturaBackground) {
+                    [self.backgroundAnterior  addChild:coberturaBackground];
+                }
                 
                 //Adiciona plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
@@ -218,7 +254,7 @@
     //Se estiver na esquerda
     else if(posicaoToque.x < CGRectGetMidX(self.frame)){
         //PULAR
-
+        
         [self.jogador pular];
     }
 }
@@ -302,11 +338,11 @@
             }
         }
         NSLog(@"%@",secondBody.node.name);
-//        if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-//            NSLog(@"foi");
-//            [self.jogador setPodeEscalar:YES];
-//            
-//        }
+        //        if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
+        //            NSLog(@"foi");
+        //            [self.jogador setPodeEscalar:YES];
+        //
+        //        }
     }
 }
 
@@ -343,8 +379,8 @@
     [self jogadorCategoria:self.jogador];
     
     CGPoint pontoInicial=[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual];
-
-   [self.jogador setPosition:pontoInicial];
+    
+    [self.jogador setPosition:pontoInicial];
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");
@@ -360,7 +396,7 @@
 }
 
 -(void)iniciarFase{
-
+    
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
     [self.mundo setZPosition:-100];
@@ -393,7 +429,7 @@
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-
+        
     }
     return self;
 }

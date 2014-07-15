@@ -21,6 +21,7 @@ static const UInt32 ChaoCategoria = 0x1 << 1;
 static const UInt32 PlataformaCategoria = 0x1 << 2;
 
 static NSString* NomeNodePlataformas= @"NodeComPlataformas";
+static NSString* NomeNodeCobertura=@"CoberturaBackground";
 
 @interface DQFase : SKScene <SKPhysicsContactDelegate>
 

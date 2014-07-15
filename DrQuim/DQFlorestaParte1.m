@@ -142,12 +142,10 @@
     
     [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
 }
-
 -(void)afastaJogadorRadiacao{
     [self.jogador andarParaDirecao:@"E"];
     [self.jogador runAction:[SKAction moveToX:self.jogador.position.x-10 duration:0.5] withKey:@"saindoDePerto"];
 }
-
 -(void)falarAlertaRadiacao{
     //cria os pontos de menssagem
     CGPoint pontoAlertaAlpha;
