@@ -12,6 +12,7 @@
 #import "DQPlataforma.h"
 #import "DQControleCorpoFisico.h"
 #import "DQConfiguracaoFase.h"
+#import "DQHudController.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -48,4 +49,7 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 -(void)configuracoesFase:(int)faseAtual;
 -(void)criarParteFase;
 -(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
+
+//HUD com informações
+@property DQHudController *hudFase;
 @end

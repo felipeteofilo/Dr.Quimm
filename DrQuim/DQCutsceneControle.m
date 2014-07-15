@@ -10,9 +10,8 @@
 
 @implementation DQCutsceneControle
 
-
 //Metodo para iniciar a classe Cutscene
--(id)initComParte:(int)parte_ Fase :(int)fase
+-(id)initComParte:(int)parte Fase :(int)fase
 {
     self = [super init];
     if (self) {
@@ -30,7 +29,7 @@
         
         
         //define a parte, fase atual, e cena.
-        self.parte = parte_;
+        self.parte = parte;
         self.faseAtual = fase;
         self.cenaAtual = 0;
         self.falaAtual = 0;
@@ -62,11 +61,11 @@
     self.falasDoJogo = [[NSMutableDictionary alloc]init];
     self.falasDoJogo = [[self.arrayFalasDentroDoJogo objectAtIndex:(self.faseAtual-1)]objectForKey:@"Falas"];
     
-    //Aloca os arrays de FALA e CENA
+    //Aloca os arrays de FALA e CENA - PARA CUTSCENE
     self.arrayFalas = [[NSMutableArray alloc]init];
     self.arrayCenas = [[NSMutableArray alloc]init];
     
-    //Instanciando as falas e cenas
+    //Instanciando as falas e cenas - PARA CUTSCENE
     for(int i = 0; i < [self.arrayCutscenes count]; i++){
         //NSStrings temporárias
         NSString *sujeitoTemporario = [NSString stringWithFormat:@"%@", [[self.arrayCutscenes objectAtIndex:i] objectForKey:@"Sujeito"]];
@@ -293,7 +292,7 @@
     [self.caixaDeFala addChild:self.rosto];
 }
 
-///Metodo a fazer de mostrar as falas dentro do jogo
+//Metodo a fazer de mostrar as falas dentro do jogo
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key{
         
     //Verifica se existe alguma fala em andamento, se não, lemos uma pela key passada
@@ -330,6 +329,56 @@
     self.falaAtual ++;
 
 }
+///Metodo a fazer de mostrar as falas dentro do jogo
+-(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito
+{
+    
+    //inicia o dicionario de acordo com o dicionario passado
+    self.dicionarioDeFalasNPC = [[NSDictionary alloc]initWithDictionary:dicionario];
+
+    //???
+    [self.caixaDeFala removeAllChildren];
+    
+    //O array de Falas atuais dependerá do respeito passado - Verifica se existe alguma fala em andamento
+    if (self.falasAtuais == nil) {
+        
+        //inicia o array
+        self.falasAtuais = [[NSArray alloc]init];
+        
+        //inicia o NSString que dirá a key
+        NSString *keyDoRespeito = [NSString stringWithFormat:@"Respeito%i", respeito];
+        
+        //define o array de falas atuais de acordo com o respeito
+        self.falasAtuais = [self.dicionarioDeFalasNPC objectForKey:keyDoRespeito];
+    }
+
+    //NSStrings temporarias para armazenar o sujeito e fala atual
+    NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Sujeito"];
+    NSString *textoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Texto"];
+    
+    //Formata o texto lido do Arquivo Plist
+    NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
+    
+    //Separa o texto em frases
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:40];
+    
+    //Cria a caixa de texto
+    self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
+    
+    //Mostra as falas
+    [self mostrarFalaAtualNoJogo:frases];
+    
+    //Adiciona a caixa de fala no jogo
+    [cena addChild:self.caixaDeFala];
+    
+    //Adiciona uma imagem com a carinha de quem está falando
+    [self mostraRostoDeQuemFala:[[self.falasAtuais objectAtIndex:self.falaAtual] objectForKey:@"Imagem"] naCena:cena];
+    
+    //Pula para a proxima fala
+    self.falaAtual ++;
+    
+}
+
 
 //Trocar fala dentro do jogo
 -(BOOL)trocarFala{

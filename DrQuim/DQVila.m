@@ -14,13 +14,16 @@
     if (self=[super initWithSize:size]) {
         [self configuracoesFase:2];
         
+        self.hudFase = [[DQHudController alloc]initHud];
+        [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
+        
+        //Inicia com a fase 2
+        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:2];
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
+        
         [self iniciarFase];
-        
-        DQBarraStatus *barraFome=[[DQBarraStatus alloc]init];
-        
-        barraFome.position=CGPointMake(20, 200);
-        
-        [self.mundo addChild:barraFome];
+        [self addChild:self.hudFase];
     }
     
     return self;
@@ -28,55 +31,116 @@
 
 -(void)iniciarFase{
     [super iniciarFase];
-    
     [self adicionaNPC];
 }
+
+
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
+    [self.hudFase atualizarHud];
 }
 
 -(void)adicionaNPC{
-    NSArray *NPCsConfigurados=[DQConfiguracaoFase configNPCFase:self.faseAtual];
+    NSArray *NPCsConfigurados = [DQConfiguracaoFase configNPCFase:self.faseAtual];
     
     for (NSDictionary *NPC in NPCsConfigurados) {
-        NSString *nomeNPC=[NPC objectForKey:@"Nome"];
-        CGPoint posNPC=CGPointFromString([NPC objectForKey:@"PosicaoNPC"]);
+        //armazena nome e posicao do NPC dependendo do que foi configurado.
+        NSString *nomeNPC = [NPC objectForKey:@"Nome"];
+        CGPoint posicaoNPC = CGPointFromString([NPC objectForKey:@"PosicaoNPC"]);
         
-        SKSpriteNode *sprite=[self criaNPC:nomeNPC naPosicao:posNPC];
-        [self.mundo addChild:sprite];
+        //instancia o NPC dependendo de seu nome
+        if([nomeNPC isEqualToString:@"Maedetodos"]){
+            //Inicia o node com o NOME
+            self.maeDeTodos = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.maeDeTodos criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.maeDeTodos.spriteNode];
+        }
+        else if([nomeNPC isEqualToString:@"Cacador"]){
+            //Inicia o node com o NOME
+            self.cacador = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.cacador criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.cacador.spriteNode];
+        }
+        else if ([nomeNPC isEqualToString:@"Curandeiro"]){
+            //Inicia o node com o NOME
+            self.curandeiro = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.curandeiro criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.curandeiro.spriteNode];
+        }
+        else if ([nomeNPC isEqualToString:@"Chefe"]){
+            //Inicia o node com o NOME
+            self.chefe = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.chefe criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.chefe.spriteNode];
+        }
     }
-
 }
 
--(SKSpriteNode*)criaNPC:(NSString*)_nome naPosicao:(CGPoint)_pos{
-    
-    SKSpriteNode *spriteRetorno=[SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(100, 100)];
-
-    [spriteRetorno setAnchorPoint:CGPointMake(0, 0)];
-    [spriteRetorno setName:_nome];
-    [spriteRetorno setPosition:_pos];
-    [spriteRetorno setZPosition:0];
-    
-    return spriteRetorno;
-}
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
-    UITouch *toque=[touches anyObject];
-    CGPoint posToque=[toque locationInNode:self.mundo];
+    //armazena o toque e a posição dele
+    UITouch *toque = [touches anyObject];
+    CGPoint posicaoToque = [toque locationInNode:self.mundo];
     
-    SKNode *nodeTocado=[self.mundo nodeAtPoint:posToque];
+    //Guarda o node em que tocou
+    SKNode *nodeTocado = [self.mundo nodeAtPoint:posicaoToque];
     
-    [self interagirNPC:nodeTocado];
+    //METODO UM POUCO(BASTANTE) BURRO >.<
+    //Se o node em que tocou for da classe DQNPC, faz o npc interagir - PENSAR EM FORMA MAIS INTELIGENTE
+    if (nodeTocado.name != nil) {
+        if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"]) {
+            //TESTE
+            NSLog(@"tocou no NPC: %@", nodeTocado.name);
+            
+            //Se foi a Mãe
+            if([nodeTocado.name isEqualToString:@"Maedetodos"]){
+                 //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.maeDeTodos];
+            }
+            
+            //Se foi o Curandeiro
+            else if([nodeTocado.name isEqualToString:@"Curandeiro"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.curandeiro];
+            }
+            
+            //Se foi o Caçador
+            else if([nodeTocado.name isEqualToString:@"Cacador"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.cacador];
+            }
+            
+            //Se foi o Chefe
+            else if([nodeTocado.name isEqualToString:@"Chefe"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.chefe];
+            }
+        }
+    }
     
+    //Ao parar o toque, para também de escalar
     [self.jogador pararEscalar];
 }
 
--(void)interagirNPC:(SKNode*)npc{
-    if (npc.name!=nil) {
-        NSLog(@"Tocou no NPC: %@",npc.name);
-    }
+//FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
+-(void)interagirComNPC:(DQnpc*)npc{
+    //chamar as falas do Personagem
+    [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
+    
+    //definições importantes:
+    self.cutsceneEstaRodando = YES;
+    self.estaFalando = YES;
+    [self.jogador pararAndar];
 }
 
 -(void)criarParteFase{
@@ -143,6 +207,19 @@
             [self.jogador escalarParaDirecao:@"B"];
         }
         
+    }
+    
+    //Se estiver falando em jogo...
+    else if(self.estaFalando){
+        if ([self.controleCutscenes trocarFala]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            
+        }
+        else{
+            
+            self.estaFalando = NO;
+            self.cutsceneEstaRodando = NO;
+        }
     }
 }
 @end

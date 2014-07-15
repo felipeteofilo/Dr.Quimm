@@ -274,25 +274,25 @@
 		<array>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{1180, 170}</string>
+				<string>{1180, 155}</string>
 				<key>Nome</key>
-				<string>Mãe</string>
+				<string>Maedetodos</string>
 			</dict>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{3480, 170}</string>
+				<string>{3480, 155}</string>
 				<key>Nome</key>
-				<string>Caçador</string>
+				<string>Cacador</string>
 			</dict>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{1800,1000}</string>
+				<string>{1800,1005}</string>
 				<key>Nome</key>
 				<string>Curandeiro</string>
 			</dict>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{2700, 847}</string>
+				<string>{2700, 835}</string>
 				<key>Nome</key>
 				<string>Chefe</string>
 			</dict>
