@@ -16,7 +16,6 @@
     if(self){
         self.nome = nome;
         
-<<<<<<< HEAD
         //CONFIGURA O DICIONARIO DE FALAS DEPENDENDO DO NOME ATRIBUÍDO A ELE.
             //Armazena a url do arquivo "FalasNoJogo.plist"
         NSString *url = [[NSBundle mainBundle]pathForResource:@"FalasNoJogo" ofType:@"plist"];
@@ -32,10 +31,6 @@
             self.dicionarioDeFalasSemMissao = [[NSDictionary alloc]initWithDictionary:[self.dicionarioDeFalas objectForKey:@"SemMissao"]];
             //missão01
             self.dicionarioDeFalasMissao01 = [[NSDictionary alloc]initWithDictionary:[self.dicionarioDeFalas objectForKey:@"Missao01"]];
-=======
-        //Configura o dicionarioDeFalas dependendo do nome atribuído a ele
-    
->>>>>>> FETCH_HEAD
     }
     return self;
 }
@@ -53,11 +48,7 @@
     [self.spriteNode setZPosition:0];
 }
 
-<<<<<<< HEAD
 -(void)interagirSemMissao: (int)respeito;
-=======
--(void)interagir
->>>>>>> FETCH_HEAD
 {
     //Verifica se está em alguma missão
         //Se sim -> Verifica a parte e o que deve dizer ou dar

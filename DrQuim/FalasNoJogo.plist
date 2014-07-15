@@ -156,11 +156,7 @@
 	<dict>
 		<key>Falas</key>
 		<dict>
-<<<<<<< HEAD
 			<key>Maedetodos</key>
-=======
-			<key>MaeDeTodos</key>
->>>>>>> FETCH_HEAD
 			<dict>
 				<key>SemMissao</key>
 				<dict>
@@ -169,11 +165,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -184,11 +176,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -199,11 +187,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -214,11 +198,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -229,11 +209,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -244,11 +220,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -259,11 +231,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -274,11 +242,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -289,11 +253,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -304,11 +264,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -319,22 +275,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
 						</dict>
 					</array>
 				</dict>
-<<<<<<< HEAD
 				<key>Missao01</key>
 				<dict/>
-=======
->>>>>>> FETCH_HEAD
 			</dict>
 			<key>Cacador</key>
 			<dict>
@@ -345,11 +294,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -360,11 +305,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -375,11 +316,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -390,11 +327,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -405,11 +338,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -420,11 +349,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -435,11 +360,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -450,11 +371,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -465,11 +382,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -480,11 +393,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -495,22 +404,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>cacador</string>
 						</dict>
 					</array>
 				</dict>
-<<<<<<< HEAD
 				<key>Missao01</key>
 				<dict/>
-=======
->>>>>>> FETCH_HEAD
 			</dict>
 			<key>Chefe</key>
 			<dict>
@@ -521,11 +423,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -536,11 +434,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -551,11 +445,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -566,11 +456,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -581,11 +467,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -596,11 +478,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -611,11 +489,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -626,11 +500,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -641,11 +511,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -656,11 +522,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -671,22 +533,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>chefe</string>
 						</dict>
 					</array>
 				</dict>
-<<<<<<< HEAD
 				<key>Missao01</key>
 				<dict/>
-=======
->>>>>>> FETCH_HEAD
 			</dict>
 			<key>Curandeiro</key>
 			<dict>
@@ -697,11 +552,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -712,11 +563,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -727,11 +574,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -742,11 +585,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -757,11 +596,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -772,11 +607,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -787,11 +618,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -802,11 +629,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -817,11 +640,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -832,11 +651,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -847,22 +662,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-<<<<<<< HEAD
 							<key>Texto</key>
-=======
-							<key>Fala</key>
->>>>>>> FETCH_HEAD
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
 						</dict>
 					</array>
 				</dict>
-<<<<<<< HEAD
 				<key>Missao01</key>
 				<dict/>
-=======
->>>>>>> FETCH_HEAD
 			</dict>
 		</dict>
 	</dict>

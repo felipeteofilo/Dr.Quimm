@@ -10,7 +10,6 @@
 
 @implementation DQHudController
 
-<<<<<<< HEAD
 -(id)initHud{
     if (self=[super initWithImageNamed:@"FundoHUD.png"]) {
         //Inicializa HUD
@@ -47,15 +46,5 @@
 -(void)atualizarHud{
     //quebrado o método pois podemos ter mais informações na HUD
     [self atualizarBarraStatus];
-=======
-+(float)valorFome{
-    return [[DQJogador sharedJogador] fome];
-}
-+(float)valorSede{
-    return [[DQJogador sharedJogador] sede];
-}
-+(float)valorVida{
-    return [[DQJogador sharedJogador] vida];
->>>>>>> FETCH_HEAD
 }
 @end

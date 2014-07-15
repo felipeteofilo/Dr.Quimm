@@ -19,8 +19,6 @@
         NSMutableDictionary *dicionarioDadosNode=[NSMutableDictionary dictionaryWithObject:[NSNumber numberWithFloat:_maiorY] forKey:nomeMaiorY];
         
         [self setUserData:dicionarioDadosNode];
-        
-        
     }
     return self;
 }

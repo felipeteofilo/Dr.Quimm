@@ -14,7 +14,6 @@
     if (self=[super initWithSize:size]) {
         [self configuracoesFase:2];
         
-<<<<<<< HEAD
         self.hudFase = [[DQHudController alloc]initHud];
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
         
@@ -24,13 +23,6 @@
         self.estaFalando = NO;
         
         [self iniciarFase];
-=======
-        self.hudFase = [[DQHud alloc]initHud];
-        [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
-        
-        [self iniciarFase];
-
->>>>>>> FETCH_HEAD
         [self addChild:self.hudFase];
     }
     
@@ -99,7 +91,6 @@
     //armazena o toque e a posição dele
     UITouch *toque = [touches anyObject];
     CGPoint posicaoToque = [toque locationInNode:self.mundo];
-<<<<<<< HEAD
     
     //Guarda o node em que tocou
     SKNode *nodeTocado = [self.mundo nodeAtPoint:posicaoToque];
@@ -136,31 +127,11 @@
             }
         }
     }
-=======
-    
-    //Guarda o node em que tocou
-    SKNode *nodeTocado = [self.mundo nodeAtPoint:posicaoToque];
-    
-    //Se o node em que tocou for da classe DQNPC, faz o npc interagir - PENSAR EM FORMA MAIS INTELIGENTE
-    if (nodeTocado.name!=nil) {
-        if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"]) {
-            
-            //Chama a 
-            NSLog(@"tocou no NPC: %@", nodeTocado.name);
-            [self interagirComNPC:nodeTocado];
-        }
-    }
-    
-    //[self interagirNPC:nodeTocado];
-    
-    
->>>>>>> FETCH_HEAD
     
     //Ao parar o toque, para também de escalar
     [self.jogador pararEscalar];
 }
 
-<<<<<<< HEAD
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
     //chamar as falas do Personagem
@@ -170,10 +141,6 @@
     self.cutsceneEstaRodando = YES;
     self.estaFalando = YES;
     [self.jogador pararAndar];
-=======
--(void)interagirComNPC:(SKNode*)npc{
-
->>>>>>> FETCH_HEAD
 }
 
 -(void)criarParteFase{
@@ -192,11 +159,9 @@
                     
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
                     
-                    [super escadaCategoria:escada];
-                    
                     [self.backgroundFuturo addChild:escada];
                     
-                   // NSLog(@"Posicao Escada X:%f Y:%f",escada.position.x,escada.position.y);
+                    NSLog(@"Posicao Escada X:%f Y:%f",escada.position.x,escada.position.y);
                 }
             }
         }
@@ -207,15 +172,11 @@
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual -1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
-                    
                     //Cada posicao no array de escalaceis tem apenas 2 posicoes (POnto inicial e ponto Final do escalavel)
-                    
                     CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
                     CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
                     
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
-                    
-                    [super escadaCategoria:escada];
                     
                     [self.backgroundFuturo addChild:escada];
                 }
@@ -234,7 +195,7 @@
     SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToque];
 
 //TODO: Melhorar método de escalada
-    if ([nodeTocado.name isEqualToString:nomeEscalavel] && nodeTocado.position.x < self.jogador.position.x && self.jogador.position.x + self.jogador.size.width > nodeTocado.position.x + nodeTocado.frame.size.width) {
+    if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
         //Verifica se o Y é maior ou menor
         
         if (posToque.y > (self.jogador.position.y+20.0)) {

@@ -8,7 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
-<<<<<<< HEAD
 #import "DQBarraStatus.h"
 
 @interface DQHudController : SKSpriteNode
@@ -20,13 +19,4 @@
 -(id)initHud;
 -(void)atualizarHud;
 -(void)atualizarBarraStatus;
-=======
-
-@interface DQHudController : SKCropNode
-
-+(float)valorFome;
-+(float)valorSede;
-+(float)valorVida;
-
->>>>>>> FETCH_HEAD
 @end

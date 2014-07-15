@@ -39,15 +39,12 @@
         SKTextureAtlas *pastaFramesAndando= [SKTextureAtlas atlasNamed:@"Andando"];
         SKTextureAtlas *pastaFramesPulando= [SKTextureAtlas atlasNamed:@"Pulando"];
         SKTextureAtlas *pastaFramesParado= [SKTextureAtlas atlasNamed:@"Parado"];
-        SKTextureAtlas *pastaFramesEscalando = [SKTextureAtlas atlasNamed:@"Escalando"];
-        
         
         
         //inicia os arrays com os frames das animacoes
         framesAndando = [[NSMutableArray alloc]init];
         framesPulando = [[NSMutableArray alloc]init];
         framesParado = [[NSMutableArray alloc]init];
-        framesEScalando = [[NSMutableArray alloc]init];
         
     
         //adiciona as texturas no array de frames
@@ -72,34 +69,17 @@
             [framesParado addObject:temp];
         }
         
-        numImagens = pastaFramesEscalando.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"escalando%d", i];
-            SKTexture *temp = [pastaFramesEscalando textureNamed:textureName];
-            [framesEScalando addObject:temp];
-        }
-
-        //seta que nao pode escalar no comeco
-        self.podeEscalar = NO;
-        
-        
         //apos ler tudo anima o jogador
         [self animarParado];
         
         
         //USADO COMO TESTE
-<<<<<<< HEAD
         self.fome = 10;
         self.sede = 40;
         self.vida = 100;
         
         //Mais um teste:
         self.respeito = 0;
-=======
-        self.fome=10;
-        self.sede=40;
-        self.vida=100;
->>>>>>> FETCH_HEAD
     }
 
     //retorna o jogador
@@ -133,7 +113,7 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
-                                                                   timePerFrame:0.5f
+                                                                   timePerFrame:0.1f
                                                                          resize:NO
                                                                         restore:YES]]];
 }
@@ -143,16 +123,6 @@
     [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.33f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
-
-//funcao para animar jogador escalando
--(void)animarEscalada{
-    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesEScalando
-                                                                              timePerFrame:0.2f
-                                                                                    resize:NO
-                                                                                   restore:YES]] withKey:@"animandoEscalada"];
-
-}
 //funcao da acao de pulo do jogador
 -(void)pular{
     
@@ -218,32 +188,26 @@
 }
 
 -(void)escalarParaDirecao:(NSString*)direcao{
-   
-        
-        
-        SKAction *escalar=[[SKAction alloc]init];
-        
-        //Desliga a gravidade para o Node
-        self.physicsBody.dynamic=NO;
-        
-        if ([direcao isEqualToString:@"C"]) {
-            //Sobe
-            
-            escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
-            
-            
-        }else if([direcao isEqualToString:@"B"]){
-            //Desce
-            escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
-            
-        }
-        [self animarEscalada];
-        [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
     
+    SKAction *escalar=[[SKAction alloc]init];
+    
+    //Desliga a gravidade para o Node
+    self.physicsBody.dynamic=NO;
+    
+    if ([direcao isEqualToString:@"C"]) {
+        //Sobe
+        
+        escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
+        
+    }else if([direcao isEqualToString:@"B"]){
+        //Desce
+        escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
+    }
+    
+    [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
 }
 
 -(void)pararEscalar{
-    [self.spriteNode removeActionForKey:@"animandoEscalada"];
     [self removeActionForKey:@"escalar"];
 }
 

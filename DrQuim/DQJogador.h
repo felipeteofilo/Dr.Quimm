@@ -16,7 +16,6 @@
     NSMutableArray *framesAndando;
     NSMutableArray *framesPulando;
     NSMutableArray *framesParado;
-    NSMutableArray *framesEScalando;
 }
 //Propriedade que armazenará os sprites e animações
 @property SKSpriteNode *spriteNode;
@@ -28,7 +27,6 @@
 @property int respeito;
 //========================================================
 @property int podePular;
-@property BOOL podeEscalar;
 
 @property NSString *andandoParaDirecao;
 
