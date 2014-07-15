@@ -116,53 +116,87 @@
     [tutorialCorrer setPosition:CGPointMake(self.frame.origin.x + self.frame.size.width/2, 0)];
     
     //Arrumando coisas para ação do tutorial de pular
-        //Pega imagens
+    //Pega imagens
     SKTextureAtlas *atlasPular = [SKTextureAtlas atlasNamed:@"tutorialPular"];
     SKTexture *AP1 = [atlasPular textureNamed:@"tutorialPular001.png"];
     SKTexture *AP2 = [atlasPular textureNamed:@"tutorialPular002.png"];
     SKTexture *AP3 = [atlasPular textureNamed:@"tutorialPular003.png"];
     SKTexture *AP4 = [atlasPular textureNamed:@"tutorialPular004.png"];
-        //Adiciona num array
-    NSArray *arrayTutorialPular = @[AP1, AP2, AP3, AP4];
-        //Cria a ação
-    SKAction *acaoTutorialPular = [SKAction animateWithTextures:arrayTutorialPular timePerFrame:0.4f];
-    
-    //Arrumando coisas para ação do tutorial de correr
-    //Pega imagens
-    SKTextureAtlas *atlasCorrer = [SKTextureAtlas atlasNamed:@"tutorialCorrer"];
-    SKTexture *AC1 = [atlasCorrer textureNamed:@"tutorialCorrer001.png"];
-    SKTexture *AC2 = [atlasCorrer textureNamed:@"tutorialCorrer002.png"];
-    SKTexture *AC3 = [atlasCorrer textureNamed:@"tutorialCorrer003.png"];
-    SKTexture *AC4 = [atlasCorrer textureNamed:@"tutorialCorrer004.png"];
-    SKTexture *AC5 = [atlasCorrer textureNamed:@"tutorialCorrer005.png"];
-    SKTexture *AC6 = [atlasCorrer textureNamed:@"tutorialCorrer006.png"];
-    SKTexture *AC7 = [atlasCorrer textureNamed:@"tutorialCorrer007.png"];
-    SKTexture *AC8 = [atlasCorrer textureNamed:@"tutorialCorrer008.png"];
-    SKTexture *AC9 = [atlasCorrer textureNamed:@"tutorialCorrer009.png"];
-    SKTexture *AC10 = [atlasCorrer textureNamed:@"tutorialCorrer010.png"];
-    SKTexture *AC11 = [atlasCorrer textureNamed:@"tutorialCorrer011.png"];
-    SKTexture *AC12 = [atlasCorrer textureNamed:@"tutorialCorrer012.png"];
-    SKTexture *AC13 = [atlasCorrer textureNamed:@"tutorialCorrer013.png"];
     //Adiciona num array
-    NSArray *arrayTutorialCorrer = @[AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10, AC11, AC12, AC13];
+    NSArray *arrayTutorialPular = @[AP1, AP2, AP3, AP4];
     //Cria a ação
-    SKAction *acaoTutorialCorrer = [SKAction animateWithTextures:arrayTutorialCorrer timePerFrame:0.35f];
+    SKAction *acaoTutorialPular = [SKAction animateWithTextures:arrayTutorialPular timePerFrame:0.3f];
     
-
+    //Arrumando coisas para ação do tutorial de correr - Direita
+    //Pega imagens
+    SKTextureAtlas *atlasCorrerD = [SKTextureAtlas atlasNamed:@"tutorialCorrerDireita"];
+    SKTexture *ACD1 = [atlasCorrerD textureNamed:@"tutorialCorrerD001.png"];
+    SKTexture *ACD2 = [atlasCorrerD textureNamed:@"tutorialCorrerD002.png"];
+    SKTexture *ACD3 = [atlasCorrerD textureNamed:@"tutorialCorrerD003.png"];
+    SKTexture *ACD4 = [atlasCorrerD textureNamed:@"tutorialCorrerD004.png"];
+    SKTexture *ACD5 = [atlasCorrerD textureNamed:@"tutorialCorrerD005.png"];
+    SKTexture *ACD6 = [atlasCorrerD textureNamed:@"tutorialCorrerD006.png"];
+    SKTexture *ACD7 = [atlasCorrerD textureNamed:@"tutorialCorrerD007.png"];
+    SKTexture *ACD8 = [atlasCorrerD textureNamed:@"tutorialCorrerD008.png"];
+    //Adiciona num array
+    NSArray *arrayTutorialCorrerD = @[ACD1, ACD2, ACD3, ACD4, ACD5, ACD6, ACD7, ACD8];
+    //Cria a ação
+    SKAction *acaoTutorialCorrerD = [SKAction animateWithTextures:arrayTutorialCorrerD timePerFrame:0.5f];
+    
+    //Arrumando coisas para ação do tutorial de correr - Esquerda
+    //Pega imagens
+    SKTextureAtlas *atlasCorrerE = [SKTextureAtlas atlasNamed:@"tutorialCorrerEsquerda"];
+    SKTexture *ACE1 = [atlasCorrerE textureNamed:@"tutorialCorrerE001.png"];
+    SKTexture *ACE2 = [atlasCorrerE textureNamed:@"tutorialCorrerE002.png"];
+    SKTexture *ACE3 = [atlasCorrerE textureNamed:@"tutorialCorrerE003.png"];
+    SKTexture *ACE4 = [atlasCorrerE textureNamed:@"tutorialCorrerE004.png"];
+    SKTexture *ACE5 = [atlasCorrerE textureNamed:@"tutorialCorrerE005.png"];
+    SKTexture *ACE6 = [atlasCorrerE textureNamed:@"tutorialCorrerE006.png"];
+    SKTexture *ACE7 = [atlasCorrerE textureNamed:@"tutorialCorrerE007.png"];
+    //Adiciona num array
+    NSArray *arrayTutorialCorrerE = @[ACE1, ACE2, ACE3, ACE4, ACE5, ACE6, ACE7];
+    //Cria a ação
+    SKAction *acaoTutorialCorrerE = [SKAction animateWithTextures:arrayTutorialCorrerE timePerFrame:0.5f];
+    
+    
     //Fazendo o tutorial de pular
     [self addChild:tutorialPular];
     [tutorialPular runAction:acaoTutorialPular completion:^{
         [self.jogador pular];
         [tutorialPular removeFromParent];
         
-        //Fazendo tutorial de correr
-        [self addChild:tutorialCorrer];
-        [tutorialCorrer runAction:acaoTutorialCorrer completion:^{
-            [tutorialCorrer removeFromParent];
+        //espera um pouco
+        [self runAction:[SKAction waitForDuration:0.5f] completion:^{
+            
+            //Fazendo o tutorial de correr para a Direita
+            [self addChild:tutorialCorrer];
+            [tutorialCorrer runAction:acaoTutorialCorrerE completion:^{
+                [self.jogador andarParaDirecao:@"E"];
+                [tutorialCorrer removeFromParent];
+                
+                //espera um pouco
+                [self runAction:[SKAction waitForDuration:1] completion:^{
+                    [self.jogador pararAndar];
+                    
+                    //Fazendo o tutorial de correr para a Esquerda
+                    [self addChild:tutorialCorrer];
+                    [tutorialCorrer runAction:acaoTutorialCorrerD completion:^{
+                        [self.jogador andarParaDirecao:@"D"];
+                        [tutorialCorrer removeFromParent];
+                        
+                        //espera um pouco
+                        [self runAction:[SKAction waitForDuration:1] completion:^{
+                            [self.jogador pararAndar];
+                        }];
+                    }];
+                }];
+            }];
         }];
     }];
     
     self.mostrouTutorial = YES;
+    self.executandoTutorial = NO;
+    
 }
 
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase ==OK==
