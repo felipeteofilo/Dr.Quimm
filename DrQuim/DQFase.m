@@ -170,7 +170,10 @@
         
         return nodeCoberturaBackground;
     }
-    
+}
+
+//Será usado para dar fadeOut, na cobertura do background
+-(void)esconderCobertura{
     
 }
 
@@ -337,12 +340,13 @@
                 [self chaoCategoria:secondBody.node];
             }
         }
+
         NSLog(@"%@",secondBody.node.name);
-        //        if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-        //            NSLog(@"foi");
-        //            [self.jogador setPodeEscalar:YES];
-        //
-        //        }
+                if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
+                    NSLog(@"foi");
+                    [self.jogador setPodeEscalar:YES];
+        
+                }
     }
 }
 
