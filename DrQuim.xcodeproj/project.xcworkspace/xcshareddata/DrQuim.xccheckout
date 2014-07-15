@@ -5,23 +5,27 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4CABB5E3-6FF9-4E51-83A0-4BBB2E23EEAE</string>
+	<string>0C534678-D6BD-4785-8C55-EBB1DC215858</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DrQuim</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</key>
+		<string>https://github.com/felipeteofilo/Dr.Quimm.git</string>
 		<key>78A154C0-F396-444F-877F-DBCFB3907EA7</key>
 		<string>https://bitbucket.org/sousaleonardo/appfinal-dr-quimm.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DrQuim/DrQuim.xcodeproj/project.xcworkspace</string>
+	<string>Dr.Quimm/DrQuim.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</key>
+		<string>../..</string>
 		<key>78A154C0-F396-444F-877F-DBCFB3907EA7</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/sousaleonardo/appfinal-dr-quimm.git</string>
+	<string>https://github.com/felipeteofilo/Dr.Quimm.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -35,6 +39,14 @@
 			<string>78A154C0-F396-444F-877F-DBCFB3907EA7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AppFinal</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Dr.Quimm</string>
 		</dict>
 	</array>
 </dict>

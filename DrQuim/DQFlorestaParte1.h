@@ -7,16 +7,33 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQFase.h"
 #import "DQJogador.h"
+#import "DQCutsceneControle.h"
+#import "DQPlataforma.h"
+
+//Define o nome dos skNodes
+//static NSString* mundo = @"mundo";
+
+@interface DQFlorestaParte1 : DQFase <SKPhysicsContactDelegate>
+
+//
+@property DQCutsceneControle *controleCutscenes;
+
+//Variavel Booleana para saber se esta rodando alguma cutscene
+@property BOOL cutsceneEstaRodando;
+@property BOOL estaFalando;
+
+//Variaveis booleanas para definir se fá foi ou não dito as falas in-game que são ditas apenas uma vez
+@property BOOL falouRadiacaoAlpha;
+@property BOOL falouRadiacaoBeta;
+@property BOOL falouAtencaoAlpha;
+@property BOOL falouAtencaoBeta;
 
 
-
-static const UInt32 JogadorCategoria = 0x1 << 1;
-static const UInt32 ChaoCategoria =0x1 << 2;
-
-@interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
-
-//Variável DQJogador - Define o jogador
-@property DQJogador *jogador;
+//Array com pontos de radiacao e Key de Falas na ordem
+@property NSArray *pontosRadiacao;
+@property NSArray *keyFalaPontoRadiacao;
+@property NSMutableArray *boolFalouRadiacao;
 
 @end
