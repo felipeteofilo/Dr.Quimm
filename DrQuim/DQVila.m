@@ -14,11 +14,15 @@
     if (self=[super initWithSize:size]) {
         [self configuracoesFase:2];
         
-        self.hudFase = [[DQHud alloc]initHud];
+        self.hudFase = [[DQHudController alloc]initHud];
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
         
+        //Inicia com a fase 2
+        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:2];
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
+        
         [self iniciarFase];
-
         [self addChild:self.hudFase];
     }
     
@@ -29,6 +33,8 @@
     [super iniciarFase];
     [self adicionaNPC];
 }
+
+
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     [self.hudFase atualizarHud];
@@ -89,25 +95,52 @@
     //Guarda o node em que tocou
     SKNode *nodeTocado = [self.mundo nodeAtPoint:posicaoToque];
     
+    //METODO UM POUCO(BASTANTE) BURRO >.<
     //Se o node em que tocou for da classe DQNPC, faz o npc interagir - PENSAR EM FORMA MAIS INTELIGENTE
-    if (nodeTocado.name!=nil) {
+    if (nodeTocado.name != nil) {
         if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"]) {
-            
-            //Chama a 
+            //TESTE
             NSLog(@"tocou no NPC: %@", nodeTocado.name);
-            [self interagirComNPC:nodeTocado];
+            
+            //Se foi a Mãe
+            if([nodeTocado.name isEqualToString:@"Maedetodos"]){
+                 //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.maeDeTodos];
+            }
+            
+            //Se foi o Curandeiro
+            else if([nodeTocado.name isEqualToString:@"Curandeiro"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.curandeiro];
+            }
+            
+            //Se foi o Caçador
+            else if([nodeTocado.name isEqualToString:@"Cacador"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.cacador];
+            }
+            
+            //Se foi o Chefe
+            else if([nodeTocado.name isEqualToString:@"Chefe"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.chefe];
+            }
         }
     }
     
-    //[self interagirNPC:nodeTocado];
-    
-    
-    
+    //Ao parar o toque, para também de escalar
     [self.jogador pararEscalar];
 }
 
--(void)interagirComNPC:(SKNode*)npc{
-
+//FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
+-(void)interagirComNPC:(DQnpc*)npc{
+    //chamar as falas do Personagem
+    [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
+    
+    //definições importantes:
+    self.cutsceneEstaRodando = YES;
+    self.estaFalando = YES;
+    [self.jogador pararAndar];
 }
 
 -(void)criarParteFase{
@@ -180,6 +213,19 @@
             [self.jogador escalarParaDirecao:@"B"];
         }
         
+    }
+    
+    //Se estiver falando em jogo...
+    else if(self.estaFalando){
+        if ([self.controleCutscenes trocarFala]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            
+        }
+        else{
+            
+            self.estaFalando = NO;
+            self.cutsceneEstaRodando = NO;
+        }
     }
 }
 @end

@@ -70,8 +70,10 @@
 //Cria um NSArray com o conteudo da pList.
 @property NSArray *arrayDeFalasPLists;
 
+@property NSDictionary *dicionarioDeFalasNPC;
+
 //Inicia com uma parte
--(id)initComParte:(int)parte_ Fase:(int)fase;
+-(id)initComParte:(int)parte Fase:(int)fase;
 
 //Inicia as falas adicionando-as, dependendo da parte, no arrayFalas e no arrayCenas;
 -(void)iniciaFalas;
@@ -84,6 +86,8 @@
 
 //Metodo para mostrar falas In Game
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key;
+
+-(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito;
 
 //Metodo que retorna se pode trocar a fala ou nao
 -(BOOL)trocarFala;

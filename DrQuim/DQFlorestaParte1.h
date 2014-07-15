@@ -17,7 +17,7 @@
 
 @interface DQFlorestaParte1 : DQFase <SKPhysicsContactDelegate>
 
-//
+//DQCutsceneControle para controlar as cutscenes e as falas.
 @property DQCutsceneControle *controleCutscenes;
 
 //Variavel Booleana para saber se esta rodando alguma cutscene

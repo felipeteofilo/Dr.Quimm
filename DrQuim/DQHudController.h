@@ -8,11 +8,15 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
+#import "DQBarraStatus.h"
 
-@interface DQHudController : SKCropNode
+@interface DQHudController : SKSpriteNode
 
-+(float)valorFome;
-+(float)valorSede;
-+(float)valorVida;
+@property DQBarraStatus *barraVida;
+@property DQBarraStatus *barraSede;
+@property DQBarraStatus *barraFome;
 
+-(id)initHud;
+-(void)atualizarHud;
+-(void)atualizarBarraStatus;
 @end

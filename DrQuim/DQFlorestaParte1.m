@@ -128,7 +128,6 @@
         SKAction *apitar=[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES];
         SKAction *parar=[SKAction removeFromParent];
         
-        
         [self runAction:[SKAction sequence:@[apitar,parar]]withKey:@"apitar"];
     }
 }

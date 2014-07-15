@@ -13,7 +13,7 @@
 #import "DQEscalavel.h"
 #import "DQControleCorpoFisico.h"
 #import "DQConfiguracaoFase.h"
-#import "DQHud.h"
+#import "DQHudController.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -57,5 +57,5 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //Metodo para colocar a categoria da escada
 -(void)escadaCategoria :(SKNode*)node;
 //HUD com informações
-@property DQHud *hudFase;
+@property DQHudController *hudFase;
 @end

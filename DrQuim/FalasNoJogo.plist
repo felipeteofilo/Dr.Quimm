@@ -156,7 +156,7 @@
 	<dict>
 		<key>Falas</key>
 		<dict>
-			<key>MaeDeTodos</key>
+			<key>Maedetodos</key>
 			<dict>
 				<key>SemMissao</key>
 				<dict>
@@ -165,7 +165,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -176,7 +176,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -187,7 +187,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -198,7 +198,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -209,7 +209,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -220,7 +220,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -231,7 +231,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -242,7 +242,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -253,7 +253,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -264,7 +264,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
@@ -275,13 +275,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>maeDeTodos</string>
 						</dict>
 					</array>
 				</dict>
+				<key>Missao01</key>
+				<dict/>
 			</dict>
 			<key>Cacador</key>
 			<dict>
@@ -292,7 +294,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -303,7 +305,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -314,7 +316,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -325,7 +327,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -336,7 +338,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -347,7 +349,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -358,7 +360,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -369,7 +371,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -380,7 +382,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -391,7 +393,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>cacador</string>
@@ -402,13 +404,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Caçador</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>cacador</string>
 						</dict>
 					</array>
 				</dict>
+				<key>Missao01</key>
+				<dict/>
 			</dict>
 			<key>Chefe</key>
 			<dict>
@@ -419,7 +423,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -430,7 +434,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -441,7 +445,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -452,7 +456,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -463,7 +467,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -474,7 +478,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -485,7 +489,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -496,7 +500,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -507,7 +511,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -518,7 +522,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>chefe</string>
@@ -529,13 +533,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Chefe</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>chefe</string>
 						</dict>
 					</array>
 				</dict>
+				<key>Missao01</key>
+				<dict/>
 			</dict>
 			<key>Curandeiro</key>
 			<dict>
@@ -546,7 +552,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -557,7 +563,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -568,7 +574,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -579,7 +585,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -590,7 +596,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -601,7 +607,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -612,7 +618,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -623,7 +629,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -634,7 +640,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -645,7 +651,7 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
@@ -656,13 +662,15 @@
 						<dict>
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
-							<key>Fala</key>
+							<key>Texto</key>
 							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
 						</dict>
 					</array>
 				</dict>
+				<key>Missao01</key>
+				<dict/>
 			</dict>
 		</dict>
 	</dict>
