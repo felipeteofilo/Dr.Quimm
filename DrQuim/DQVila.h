@@ -9,10 +9,37 @@
 #import "DQFase.h"
 #import "DQEscalavel.h"
 #import "DQBarraStatus.h"
+#import "DQnpc.h"
+<<<<<<< HEAD
+#import "DQCutsceneControle.h"
+=======
+>>>>>>> FETCH_HEAD
 
 @interface DQVila : DQFase
 
 @property NSMutableArray *escalacel;
 
+<<<<<<< HEAD
+//DQCutsceneControle para controlar as cutscenes e as falas.
+@property DQCutsceneControle *controleCutscenes;
+
+//Booleanos para controle da DQCutsceneControle
+@property BOOL cutsceneEstaRodando;
+@property BOOL estaFalando;
+
+=======
+>>>>>>> FETCH_HEAD
+//NPCs dessa fase
+@property DQnpc *maeDeTodos; //Mãe de todos
+@property DQnpc *cacador;    //Caçador
+@property DQnpc *curandeiro; //Curandeiro
+@property DQnpc *chefe;      //Chefe
+
+<<<<<<< HEAD
+
+
+
+=======
 @property BOOL addNPC;
+>>>>>>> FETCH_HEAD
 @end
