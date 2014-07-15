@@ -149,7 +149,7 @@
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
         if (self.parteFaseAtual +1 <= self.nPartesFase ) {
             
-            if (![self.backgroundFuturo childNodeWithName:@"Escalavel"]) {
+            if (![self.backgroundFuturo childNodeWithName:nomeEscalavel]) {
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual +1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
@@ -160,15 +160,13 @@
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
                     
                     [self.backgroundFuturo addChild:escada];
-                    
-                    NSLog(@"Posicao Escada X:%f Y:%f",escada.position.x,escada.position.y);
                 }
             }
         }
     }else{
         if (self.parteFaseAtual -1 > 0) {
             
-            if (![self.backgroundFuturo childNodeWithName:@"Escalavel"]) {
+            if (![self.backgroundFuturo childNodeWithName:nomeEscalavel]) {
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual -1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {

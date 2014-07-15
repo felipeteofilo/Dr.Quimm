@@ -10,6 +10,7 @@
 
 #import "DQJogador.h"
 #import "DQPlataforma.h"
+#import "DQEscalavel.h"
 #import "DQControleCorpoFisico.h"
 #import "DQConfiguracaoFase.h"
 #import "DQHudController.h"
