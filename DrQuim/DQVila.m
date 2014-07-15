@@ -30,6 +30,7 @@
 }
 
 -(void)iniciarFase{
+    
     [super iniciarFase];
     [self adicionaNPC];
 }
@@ -134,6 +135,9 @@
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
+    //Esconde a HUD
+    [self.hudFase esconderHud];
+    
     //chamar as falas do Personagem
     [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
     
@@ -225,6 +229,9 @@
             
             self.estaFalando = NO;
             self.cutsceneEstaRodando = NO;
+            
+            //Mostra HUD
+            [self.hudFase mostrarHud];
         }
     }
 }

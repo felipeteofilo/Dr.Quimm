@@ -19,4 +19,6 @@
 -(id)initHud;
 -(void)atualizarHud;
 -(void)atualizarBarraStatus;
+-(void)esconderHud;
+-(void)mostrarHud;
 @end
