@@ -141,7 +141,7 @@
     //Adiciona num array
     NSArray *arrayTutorialCorrerD = @[ACD1, ACD2, ACD3, ACD4, ACD5, ACD6, ACD7, ACD8];
     //Cria a ação
-    SKAction *acaoTutorialCorrerD = [SKAction animateWithTextures:arrayTutorialCorrerD timePerFrame:0.5f];
+    SKAction *acaoTutorialCorrerD = [SKAction animateWithTextures:arrayTutorialCorrerD timePerFrame:0.25f];
     
     //Arrumando coisas para ação do tutorial de correr - Esquerda
     //Pega imagens
@@ -156,7 +156,7 @@
     //Adiciona num array
     NSArray *arrayTutorialCorrerE = @[ACE1, ACE2, ACE3, ACE4, ACE5, ACE6, ACE7];
     //Cria a ação
-    SKAction *acaoTutorialCorrerE = [SKAction animateWithTextures:arrayTutorialCorrerE timePerFrame:0.5f];
+    SKAction *acaoTutorialCorrerE = [SKAction animateWithTextures:arrayTutorialCorrerE timePerFrame:0.25f];
     
     
     //Fazendo o tutorial de pular
