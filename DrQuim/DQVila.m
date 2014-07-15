@@ -159,9 +159,11 @@
                     
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
                     
+                    [super escadaCategoria:escada];
+                    
                     [self.backgroundFuturo addChild:escada];
                     
-                    NSLog(@"Posicao Escada X:%f Y:%f",escada.position.x,escada.position.y);
+                   // NSLog(@"Posicao Escada X:%f Y:%f",escada.position.x,escada.position.y);
                 }
             }
         }
@@ -172,11 +174,15 @@
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual -1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
+                    
                     //Cada posicao no array de escalaceis tem apenas 2 posicoes (POnto inicial e ponto Final do escalavel)
+                    
                     CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
                     CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
                     
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
+                    
+                    [super escadaCategoria:escada];
                     
                     [self.backgroundFuturo addChild:escada];
                 }
@@ -195,7 +201,7 @@
     SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToque];
 
 //TODO: Melhorar método de escalada
-    if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
+    if ([nodeTocado.name isEqualToString:nomeEscalavel] && nodeTocado.position.x < self.jogador.position.x && self.jogador.position.x + self.jogador.size.width > nodeTocado.position.x + nodeTocado.frame.size.width) {
         //Verifica se o Y é maior ou menor
         
         if (posToque.y > (self.jogador.position.y+20.0)) {

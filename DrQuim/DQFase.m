@@ -113,10 +113,16 @@
     //Chao Categoria
     node.physicsBody.categoryBitMask=JogadorCategoria;
     node.physicsBody.collisionBitMask=ChaoCategoria;
-    node.physicsBody.contactTestBitMask=PlataformaCategoria;
+    node.physicsBody.contactTestBitMask= PlataformaCategoria;
+    node.physicsBody.contactTestBitMask= EscadaCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
-
+-(void)escadaCategoria :(SKNode*)node{
+    node.physicsBody.categoryBitMask=EscadaCategoria;
+    node.physicsBody.collisionBitMask=0;
+    node.physicsBody.contactTestBitMask=JogadorCategoria;
+    node.physicsBody.usesPreciseCollisionDetection=YES;
+}
 -(void)plataformaCategoria:(SKNode*)node{
     //Chao Categoria
     node.physicsBody.categoryBitMask=PlataformaCategoria;
@@ -275,6 +281,8 @@
             //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
             [self.jogador setPodePular:0];
             
+            [self.jogador setPodeEscalar:NO];
+            
             if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
             }
@@ -292,6 +300,12 @@
             }else if((firstBody.velocity.dy <= 0) && (firstBody.node.position.y > yPlataforma )){
                 [self chaoCategoria:secondBody.node];
             }
+        }
+        NSLog(@"%@",secondBody.node.name);
+        if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
+            NSLog(@"foi");
+            [self.jogador setPodeEscalar:YES];
+            
         }
     }
 }
@@ -330,7 +344,7 @@
     
     CGPoint pontoInicial=[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual];
 
-    [self.jogador setPosition:pontoInicial];
+   [self.jogador setPosition:pontoInicial];
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");

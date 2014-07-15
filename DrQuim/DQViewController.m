@@ -22,7 +22,7 @@
     
     // Create and configure the scene.
     //DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
-    DQVila *floresta=[DQVila sceneWithSize:skView.bounds.size];
+   DQVila *floresta=[DQVila sceneWithSize:skView.bounds.size];
 
     
     floresta.scaleMode = SKSceneScaleModeAspectFill;
