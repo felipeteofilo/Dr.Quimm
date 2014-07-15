@@ -209,7 +209,7 @@
 }
 
 -(void)escalarParaDirecao:(NSString*)direcao{
-    if (self.podeEscalar) {
+   
         
         
         SKAction *escalar=[[SKAction alloc]init];
@@ -230,7 +230,7 @@
         }
         [self animarEscalada];
         [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
-    }
+    
 }
 
 -(void)pararEscalar{
