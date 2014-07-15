@@ -174,7 +174,15 @@
 
 //Será usado para dar fadeOut, na cobertura do background
 -(void)esconderCobertura{
+    SKNode *nodeCobertura=[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
     
+    if (nodeCobertura) {
+        NSLog(@"Posicao Node Cobertura em relacao ao Node BG Atual X: %f Y:%f",nodeCobertura.position.x,nodeCobertura.position.y);
+        
+        CGPoint posCorberturaMundo=[self.mundo convertPoint:nodeCobertura.position fromNode:self.backgroundAtual];
+        
+        NSLog(@"Posicao Node Cobertura em relacao ao Node Mundo X: %f Y:%f",posCorberturaMundo.x,posCorberturaMundo.y);
+    }
 }
 
 -(void)criarParteFase{
@@ -295,6 +303,9 @@
     
     //tirar imagem da setinha da tela
     [self.direcional removeFromParent];
+    
+    //TESTES
+    
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
