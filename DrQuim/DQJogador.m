@@ -113,7 +113,7 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
-                                                                   timePerFrame:0.1f
+                                                                   timePerFrame:0.9f
                                                                          resize:NO
                                                                         restore:YES]]];
 }
