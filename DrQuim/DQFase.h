@@ -10,7 +10,6 @@
 
 #import "DQJogador.h"
 #import "DQPlataforma.h"
-#import "DQEscalavel.h"
 #import "DQControleCorpoFisico.h"
 #import "DQConfiguracaoFase.h"
 #import "DQHudController.h"
@@ -19,8 +18,6 @@
 static const UInt32 JogadorCategoria = 0x1 << 0;
 static const UInt32 ChaoCategoria = 0x1 << 1;
 static const UInt32 PlataformaCategoria = 0x1 << 2;
-static const UInt32 EscadaCategoria = 0x1 << 3;
-
 
 static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
@@ -53,9 +50,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 -(void)criarParteFase;
 -(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
 
-
-//Metodo para colocar a categoria da escada
--(void)escadaCategoria :(SKNode*)node;
 //HUD com informações
 @property DQHudController *hudFase;
 @end
