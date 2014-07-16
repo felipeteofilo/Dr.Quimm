@@ -56,7 +56,6 @@
 		C591815E1967738D00AFD8B5 /* piloto.png in Resources */ = {isa = PBXBuildFile; fileRef = C591815C1967738D00AFD8B5 /* piloto.png */; };
 		C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */ = {isa = PBXBuildFile; fileRef = C59181601967756700AFD8B5 /* DQPlataforma.m */; };
 		C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1740A1968C77800143B8D /* DQConfiguracaoFase.m */; };
-		C5B7FBD91975F24100C2CAFC /* tutorialCorrer.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5B7FBD71975F24100C2CAFC /* tutorialCorrer.atlas */; };
 		C5B7FBDA1975F24100C2CAFC /* tutorialPular.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5B7FBD81975F24100C2CAFC /* tutorialPular.atlas */; };
 		C5B7FBDD1975FF5B00C2CAFC /* DQCoberturaBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B7FBDC1975FF5B00C2CAFC /* DQCoberturaBackground.m */; };
 		C5D2A69C196A535800F3B7C4 /* Fase1_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D2A693196A535800F3B7C4 /* Fase1_Parte1.png */; };
@@ -154,7 +153,6 @@
 		C59181601967756700AFD8B5 /* DQPlataforma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQPlataforma.m; sourceTree = "<group>"; };
 		C5B174091968C77800143B8D /* DQConfiguracaoFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQConfiguracaoFase.h; sourceTree = "<group>"; };
 		C5B1740A1968C77800143B8D /* DQConfiguracaoFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQConfiguracaoFase.m; sourceTree = "<group>"; };
-		C5B7FBD71975F24100C2CAFC /* tutorialCorrer.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrer.atlas; sourceTree = "<group>"; };
 		C5B7FBD81975F24100C2CAFC /* tutorialPular.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialPular.atlas; sourceTree = "<group>"; };
 		C5B7FBDB1975FF5B00C2CAFC /* DQCoberturaBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoberturaBackground.h; sourceTree = "<group>"; };
 		C5B7FBDC1975FF5B00C2CAFC /* DQCoberturaBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoberturaBackground.m; sourceTree = "<group>"; };
@@ -344,7 +342,6 @@
 			children = (
 				23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */,
 				23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */,
-				C5B7FBD71975F24100C2CAFC /* tutorialCorrer.atlas */,
 				C5B7FBD81975F24100C2CAFC /* tutorialPular.atlas */,
 				23BFA4A9196A3CC700AD5F0C /* icon.png */,
 				23BFADBC1966E4FB00691C04 /* setinhas.png */,
@@ -525,7 +522,6 @@
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				CDCACF531948F23500FC1070 /* FalasCutScene.plist in Resources */,
-				C5B7FBD91975F24100C2CAFC /* tutorialCorrer.atlas in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
