@@ -130,7 +130,10 @@
     }
     
     //Ao parar o toque, para também de escalar
-    [self.jogador pararEscalar];
+    if ([self.jogador actionForKey:@"escalar"]) {
+        [self.jogador pausarEscalada];
+    }
+    
 }
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
@@ -163,9 +166,11 @@
                     
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
                     
+                    [super escadaCategoria:escada];
+                    
                     [self.backgroundFuturo addChild:escada];
                     
-                    NSLog(@"Posicao Escada X:%f Y:%f",escada.position.x,escada.position.y);
+                    
                 }
             }
         }
@@ -181,6 +186,8 @@
                     CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
                     
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
+                    
+                    [super escadaCategoria:escada];
                     
                     [self.backgroundFuturo addChild:escada];
                 }

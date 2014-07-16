@@ -62,4 +62,5 @@
 
 -(void)escalarParaDirecao:(NSString*)direcao;
 -(void)pararEscalar;
+-(void)pausarEscalada;
 @end

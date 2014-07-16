@@ -12,14 +12,19 @@
 
 -(id)initEscalavelComPontoInicial:(CGPoint)pInicial ePontoFinal:(CGPoint)pFinal eLargura:(float)largura{
     if (self=[super init]) {
-        
-        [self setAnchorPoint:CGPointMake(0, 0)];
-        [self setPosition:pInicial];
-        
         //o ponto final servirá para determinar até onde o objeto irá
+        [self setPosition:pInicial];
+        [self setAnchorPoint:CGPointMake(0, 0)];
+        
         [self setSize:CGSizeMake(largura, pFinal.y - pInicial.y)];
         
-       //[self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(largura, pFinal.y - pInicial.y)]];
+        [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:self.size center:CGPointMake(0, 0.0)]];
+        
+        
+        
+        self.physicsBody.affectedByGravity = NO;
+        
+        
         
         //Representaçao visual
         [self setColor:[UIColor purpleColor]];

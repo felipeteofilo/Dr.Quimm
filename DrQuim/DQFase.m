@@ -258,6 +258,33 @@
     [self.direcional removeFromParent];
 }
 
+-(void)didEndContact:(SKPhysicsContact *)contact{
+    
+    // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+    {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    }
+    else
+    {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
+        
+        [self.jogador pararEscalar];
+        
+    }
+
+    
+}
+
+
+
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
     // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
@@ -281,7 +308,7 @@
             //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
             [self.jogador setPodePular:0];
             
-            [self.jogador setPodeEscalar:NO];
+            [self.jogador pararEscalar];
             
             if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
@@ -293,6 +320,8 @@
             //Adiciona + 50 de tolerancia
             float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 30.0f;
             
+            
+            
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
                 [self plataformaCategoria:secondBody.node];
@@ -301,9 +330,9 @@
                 [self chaoCategoria:secondBody.node];
             }
         }
-        NSLog(@"%@",secondBody.node.name);
+        
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-            NSLog(@"foi");
+            
             [self.jogador setPodeEscalar:YES];
             
         }
