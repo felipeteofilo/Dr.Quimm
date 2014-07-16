@@ -39,8 +39,6 @@
     self.mostrouTutorial = NO;
     self.executandoTutorial = NO;
     
-    [self adicionaIconeRadiacao:@"RadiacaoAlfa" naPosicao:self.jogador.position];
-    
 }
 //Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera //===OK===
 - (void)didSimulatePhysics
