@@ -826,6 +826,151 @@ sorri sutilmente</string>
 				<key>Missao01</key>
 				<dict/>
 			</dict>
+			<key>DrQuimm</key>
+			<dict>
+				<key>SemMissao</key>
+				<dict>
+					<key>Respeito0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Pilto</string>
+							<key>Texto</key>
+							<string>Dr. Quimm não diz nada, mas parece estar revoltado por estar na situação que está... Melhor deixá-lo quieto por um tempo.</string>
+							<key>Imagem</key>
+							<string>piloto</string>
+						</dict>
+					</array>
+					<key>Respeito10</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Primeiro o helicóptero, depois me larga no chão, e agora isso! Se ao menos eu estivesse com meus aparatos, me prepararia um analgésico!</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito20</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Ah, é você, moleque. Sabe, até que estou começando a gostar deste lugar! Quem sabe depois disto eu seja melhor reconhecido pelo que faço...</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito30</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Não importa o quanto eu o estude, nunca vou compreender como aquele tal chefe conseguiu crescer até o tamanho que é! Pelo amor de Marie Curie...</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito40</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>O Dr. está cantarolando para sí enquanto realiza seus experimentos, Parece estar se divertindo...</string>
+							<key>Imagem</key>
+							<string>piloto</string>
+						</dict>
+					</array>
+					<key>Respeito50</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Ora, bom dia, garoto! Estou ocupado agora, volte mais tarde, por favor.</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito60</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Heh, vejo que este velho gosta de você! Você deve ouvir bem as palavras dele, ele é muito sábio!</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito70</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Contanto que eu não seja perturbado, sinto que posso viver por aqui pra sempre! Tantas coisas a descobrir, tantas soluções a experimentar!</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito80</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Meus recentes experimentos me levaram á conclusão de que não haverá conclusão para meus futuros experimentos... Pelo menos não no espaço amostral presente.</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito90</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Com a graça de Bohr, descobri depois de muitos experimentos, o remédio perfeito para a dor nas costas! Ele consiste basicamente em sentar com as costas bem apoiadas, e com o bumbum todo...</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>O que? Esperava um elixir mágico?</string>
+							<key>Imagem</key>
+							<string>cientista</string>
+						</dict>
+					</array>
+					<key>Respeito100</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>A possibilidade de deixar esta ilha é interessante, mas ao mesmo tempo... Meu coração me pede pra ficar, caso contrário sofrerei da liberação de uma quantidade exacerbada de cortisol!</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Oh, céus, as decisões...</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+					</array>
+				</dict>
+				<key>Missao01</key>
+				<dict/>
+			</dict>
 		</dict>
 	</dict>
 </array>
