@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
+		2352DD901977204E0037D2E2 /* rostoCacador.png in Resources */ = {isa = PBXBuildFile; fileRef = 2352DD891977204E0037D2E2 /* rostoCacador.png */; };
+		2352DD911977204E0037D2E2 /* rostoChefeRanzinza.png in Resources */ = {isa = PBXBuildFile; fileRef = 2352DD8A1977204E0037D2E2 /* rostoChefeRanzinza.png */; };
+		2352DD921977204E0037D2E2 /* rostoChefeSimpatico.png in Resources */ = {isa = PBXBuildFile; fileRef = 2352DD8B1977204E0037D2E2 /* rostoChefeSimpatico.png */; };
+		2352DD931977204E0037D2E2 /* rostoCientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 2352DD8C1977204E0037D2E2 /* rostoCientista.png */; };
+		2352DD941977204E0037D2E2 /* rostoCurandeiro.png in Resources */ = {isa = PBXBuildFile; fileRef = 2352DD8D1977204E0037D2E2 /* rostoCurandeiro.png */; };
+		2352DD951977204E0037D2E2 /* rostoMaedetodos.png in Resources */ = {isa = PBXBuildFile; fileRef = 2352DD8E1977204E0037D2E2 /* rostoMaedetodos.png */; };
+		2352DD961977204E0037D2E2 /* rostoPiloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 2352DD8F1977204E0037D2E2 /* rostoPiloto.png */; };
 		23622C0A1975F4CB00D83532 /* tutorialCorrerDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */; };
 		23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */; };
 		23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQnpc.m */; };
@@ -88,6 +95,13 @@
 /* Begin PBXFileReference section */
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
+		2352DD891977204E0037D2E2 /* rostoCacador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoCacador.png; path = rostos/rostoCacador.png; sourceTree = "<group>"; };
+		2352DD8A1977204E0037D2E2 /* rostoChefeRanzinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoChefeRanzinza.png; path = rostos/rostoChefeRanzinza.png; sourceTree = "<group>"; };
+		2352DD8B1977204E0037D2E2 /* rostoChefeSimpatico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoChefeSimpatico.png; path = rostos/rostoChefeSimpatico.png; sourceTree = "<group>"; };
+		2352DD8C1977204E0037D2E2 /* rostoCientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoCientista.png; path = rostos/rostoCientista.png; sourceTree = "<group>"; };
+		2352DD8D1977204E0037D2E2 /* rostoCurandeiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoCurandeiro.png; path = rostos/rostoCurandeiro.png; sourceTree = "<group>"; };
+		2352DD8E1977204E0037D2E2 /* rostoMaedetodos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoMaedetodos.png; path = rostos/rostoMaedetodos.png; sourceTree = "<group>"; };
+		2352DD8F1977204E0037D2E2 /* rostoPiloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoPiloto.png; path = rostos/rostoPiloto.png; sourceTree = "<group>"; };
 		23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerDireita.atlas; sourceTree = "<group>"; };
 		23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerEsquerda.atlas; sourceTree = "<group>"; };
 		23A538E7196C6E9E00821BAF /* DQnpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQnpc.h; sourceTree = "<group>"; };
@@ -224,6 +238,13 @@
 		23B0E4A519662AE9006CD78A /* RostoPersonagens */ = {
 			isa = PBXGroup;
 			children = (
+				2352DD891977204E0037D2E2 /* rostoCacador.png */,
+				2352DD8A1977204E0037D2E2 /* rostoChefeRanzinza.png */,
+				2352DD8B1977204E0037D2E2 /* rostoChefeSimpatico.png */,
+				2352DD8C1977204E0037D2E2 /* rostoCientista.png */,
+				2352DD8D1977204E0037D2E2 /* rostoCurandeiro.png */,
+				2352DD8E1977204E0037D2E2 /* rostoMaedetodos.png */,
+				2352DD8F1977204E0037D2E2 /* rostoPiloto.png */,
 				C591815B1967738D00AFD8B5 /* cientista.png */,
 				C591815C1967738D00AFD8B5 /* piloto.png */,
 			);
@@ -523,10 +544,12 @@
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				CDCACF531948F23500FC1070 /* FalasCutScene.plist in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
+				2352DD921977204E0037D2E2 /* rostoChefeSimpatico.png in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				23B28DBA19744F3B00EBB5B0 /* Temporária.plist in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
+				2352DD911977204E0037D2E2 /* rostoChefeRanzinza.png in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
@@ -545,18 +568,23 @@
 				C5D2A69C196A535800F3B7C4 /* Fase1_Parte1.png in Resources */,
 				23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */,
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
+				2352DD951977204E0037D2E2 /* rostoMaedetodos.png in Resources */,
 				C5D2A69E196A535800F3B7C4 /* Fase1_Parte3.png in Resources */,
 				3C26D9071974B499002FEC9A /* cutscene1.atlas in Resources */,
 				C5D2A6A0196A535800F3B7C4 /* Fase1_Parte4.png in Resources */,
 				C51125941973B00B00CECCAD /* NPCS.atlas in Resources */,
 				C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasNoJogo.plist in Resources */,
+				2352DD931977204E0037D2E2 /* rostoCientista.png in Resources */,
 				3C26D9091974B4A2002FEC9A /* cutscene2.atlas in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,
 				C591815E1967738D00AFD8B5 /* piloto.png in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
 				C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */,
+				2352DD941977204E0037D2E2 /* rostoCurandeiro.png in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
+				2352DD961977204E0037D2E2 /* rostoPiloto.png in Resources */,
+				2352DD901977204E0037D2E2 /* rostoCacador.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
