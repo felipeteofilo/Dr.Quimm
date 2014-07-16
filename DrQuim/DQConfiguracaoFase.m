@@ -49,11 +49,11 @@
     }
 }
 
-+(NSString*)coberturaBackgroundParte:(int)_parte daFase:(int)_fase{
++(NSDictionary*)coberturaBackgroundParte:(int)_parte daFase:(int)_fase{
     NSDictionary *configParte=[DQConfiguracaoFase configParteFase:_fase parte:_parte];
     
     if (!configParte) {
-        return @"";
+        return nil;
     }else{
         return [configParte objectForKey:@"CoberturaFundo"];
     }

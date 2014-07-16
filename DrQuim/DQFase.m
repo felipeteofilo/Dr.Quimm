@@ -154,36 +154,9 @@
     return backConfigurar;
 }
 
--(SKSpriteNode*) configurarCorberturaBackgroundParte:(int)_parte{
-    NSString *nomeImagemCobertura=[DQConfiguracaoFase coberturaBackgroundParte:_parte daFase:self.faseAtual ];
-    
-    if ([nomeImagemCobertura length]==0) {
-        return nil;
-    }else{
-        SKSpriteNode *nodeCoberturaBackground=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemCobertura];
-        
-        [nodeCoberturaBackground setName:NomeNodeCobertura];
-        
-        [nodeCoberturaBackground setAnchorPoint:CGPointMake(0, 0)];
-        [nodeCoberturaBackground setPosition:CGPointMake(0, 0)];
-        [nodeCoberturaBackground setZPosition:100];
-        
-        return nodeCoberturaBackground;
-    }
-}
 
-//Será usado para dar fadeOut, na cobertura do background
--(void)esconderCobertura{
-    SKNode *nodeCobertura=[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
-    
-    if (nodeCobertura) {
-        NSLog(@"Posicao Node Cobertura em relacao ao Node BG Atual X: %f Y:%f",nodeCobertura.position.x,nodeCobertura.position.y);
-        
-        CGPoint posCorberturaMundo=[self.mundo convertPoint:nodeCobertura.position fromNode:self.backgroundAtual];
-        
-        NSLog(@"Posicao Node Cobertura em relacao ao Node Mundo X: %f Y:%f",posCorberturaMundo.x,posCorberturaMundo.y);
-    }
-}
+
+
 
 -(void)criarParteFase{
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
@@ -199,11 +172,12 @@
                 
                 
                 //Configura Cobertura para Background (criar efeito caverna)
-                SKSpriteNode *coberturaBackground=[self configurarCorberturaBackgroundParte:self.parteFaseAtual+1];
+                DQCoberturaBackground *coberturaBackground=[[DQCoberturaBackground alloc]initCoberturaParte:self.parteFaseAtual+1 daFase:self.faseAtual];
                 
                 if (coberturaBackground) {
                     [self.backgroundFuturo addChild:coberturaBackground];
                 }
+                
                 //Cria Corpo Fisico para plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
                 [plataforma setName:NomeNodePlataformas];
@@ -226,7 +200,7 @@
                 
                 //Cobertura backgroung (efeito caverna)
                 //Configura Cobertura para Background (criar efeito caverna)
-                SKSpriteNode *coberturaBackground=[self configurarCorberturaBackgroundParte:self.parteFaseAtual-1];
+                DQCoberturaBackground *coberturaBackground=[[DQCoberturaBackground alloc]initCoberturaParte:self.parteFaseAtual-1 daFase:self.faseAtual];
                 
                 if (coberturaBackground) {
                     [self.backgroundAnterior  addChild:coberturaBackground];
@@ -294,6 +268,17 @@
     }
 }
 
+-(void)verificaCoberturaBackground{
+    DQCoberturaBackground *cobetura=(DQCoberturaBackground*)[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
+    
+    if ([cobetura.name isEqualToString:NomeNodeCobertura]) {
+        //Converte a posicao do jogador para o sistema de coordenadas do no que tem a cobertura
+        CGPoint posJogadorConvertida=[self.mundo convertPoint:self.jogador.position toNode:self.backgroundAtual];
+        
+        [cobetura manipulaCobertura:posJogadorConvertida];
+    }
+}
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
@@ -303,9 +288,6 @@
     
     //tirar imagem da setinha da tela
     [self.direcional removeFromParent];
-    
-    //TESTES
-    
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
@@ -363,6 +345,8 @@
 
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
+    
+    [self verificaCoberturaBackground];
 }
 
 - (void)didSimulatePhysics{
@@ -382,6 +366,9 @@
     
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
+    
+    //Cria um corpo fisico ao redor da tela para nao deixar o jogador cair pela lateral
+    [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
     
 }
 

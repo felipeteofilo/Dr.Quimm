@@ -9,7 +9,14 @@
 		<array>
 			<dict>
 				<key>CoberturaFundo</key>
-				<string></string>
+				<dict>
+					<key>NomeImagem</key>
+					<string></string>
+					<key>PosInicial</key>
+					<string></string>
+					<key>PosFinal</key>
+					<string></string>
+				</dict>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -23,8 +30,6 @@
 				<array/>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -50,8 +55,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -107,7 +110,14 @@
 			</dict>
 			<dict>
 				<key>CoberturaFundo</key>
-				<string>Fase1_Parte4_Coberta.png</string>
+				<dict>
+					<key>NomeImagem</key>
+					<string>Fase1_Parte4_Coberta.png</string>
+					<key>PosInicial</key>
+					<string>{10, 0}</string>
+					<key>PosFinal</key>
+					<string>{1023, 357}</string>
+				</dict>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -136,8 +146,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -151,17 +159,22 @@
 					<string>{534, 603}</string>
 					<string>{534, 708}</string>
 					<string>{534, 708}</string>
-					<string>{990, 711}</string>
-					<string>{990, 0}</string>
+					<string>{1024, 711}</string>
+					<string>{1024, 0}</string>
 				</array>
 				<key>Plataformas</key>
 				<array/>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
-				<array/>
+				<array>
+					<string>{0, 0}</string>
+					<string>{0, 60}</string>
+					<string>{802, 68}</string>
+					<string>{825, 980}</string>
+					<string>{1024, 133}</string>
+					<string>{1024, 0}</string>
+				</array>
 				<key>Plataformas</key>
 				<array>
 					<array>
@@ -209,12 +222,10 @@
 				</array>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
-					<string>{78, 0}</string>
-					<string>{78, 133}</string>
+					<string>{0, 0}</string>
+					<string>{0, 133}</string>
 					<string>{842, 136}</string>
 					<string>{842, 191}</string>
 					<string>{1023, 193}</string>
@@ -249,8 +260,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -300,8 +309,6 @@
 		<key>Partes</key>
 		<array>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 130}</string>
@@ -309,6 +316,15 @@
 					<string>{1024, 170}</string>
 					<string>{1024, 130}</string>
 				</array>
+				<key>CoberturaFundo</key>
+				<dict>
+					<key>NomeImagem</key>
+					<string></string>
+					<key>PosInicial</key>
+					<string>{0, 0}</string>
+					<key>PosFinal</key>
+					<string>{1023, 357}</string>
+				</dict>
 				<key>Plataformas</key>
 				<array/>
 			</dict>
@@ -320,8 +336,6 @@
 						<string>{872, 1018}</string>
 					</array>
 				</array>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 130}</string>
@@ -340,8 +354,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 130}</string>
@@ -373,8 +385,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>CoberturaFundo</key>
-				<string></string>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 130}</string>

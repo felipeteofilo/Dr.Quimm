@@ -372,7 +372,7 @@
                 [self.jogador pararAndar];
                 
                 //Adiciona o Icone
-                [self adicionaIconeRadiacao:[self.keyFalaPontoRadiacao objectAtIndex:i] naPosicao:pontoAnalisar];
+                [self adicionaIconeRadiacao:[self.keyFalaPontoRadiacao objectAtIndex:i] naPosicao:CGPointMake(pontoAnalisar.x, pontoAnalisar.y + 80.0)];
                 
             }
         }
