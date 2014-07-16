@@ -136,9 +136,9 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
-                                                                   timePerFrame:0.5f
-                                                                         resize:NO
-                                                                        restore:YES]]];
+                                                                              timePerFrame:0.9f
+                                                                                    resize:NO
+                                                                                   restore:YES]]];
 }
 //funcao para animar jogador pulando
 -(void)animarPular{

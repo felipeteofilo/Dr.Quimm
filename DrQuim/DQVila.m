@@ -30,7 +30,6 @@
 }
 
 -(void)iniciarFase{
-    
     [super iniciarFase];
     [self adicionaNPC];
 }
@@ -105,7 +104,7 @@
             
             //Se foi a Mãe
             if([nodeTocado.name isEqualToString:@"Maedetodos"]){
-                 //Chama o método de interação passando o NPC tocado
+                //Chama o método de interação passando o NPC tocado
                 [self interagirComNPC:self.maeDeTodos];
             }
             
@@ -138,9 +137,6 @@
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
-    //Esconde a HUD
-    [self.hudFase esconderHud];
-    
     //chamar as falas do Personagem
     [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
     
@@ -156,7 +152,7 @@
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
         if (self.parteFaseAtual +1 <= self.nPartesFase ) {
             
-            if (![self.backgroundFuturo childNodeWithName:@"Escalavel"]) {
+            if (![self.backgroundFuturo childNodeWithName:nomeEscalavel]) {
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual +1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
@@ -177,7 +173,7 @@
     }else{
         if (self.parteFaseAtual -1 > 0) {
             
-            if (![self.backgroundFuturo childNodeWithName:@"Escalavel"]) {
+            if (![self.backgroundFuturo childNodeWithName:nomeEscalavel]) {
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual -1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
@@ -204,8 +200,8 @@
     
     //Pega o node de escada na posicao do toque
     SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToque];
-
-//TODO: Melhorar método de escalada
+    
+    //TODO: Melhorar método de escalada
     if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
         //Verifica se o Y é maior ou menor
         
@@ -230,9 +226,6 @@
             
             self.estaFalando = NO;
             self.cutsceneEstaRodando = NO;
-            
-            //Mostra HUD
-            [self.hudFase mostrarHud];
         }
     }
 }

@@ -47,12 +47,4 @@
     //quebrado o método pois podemos ter mais informações na HUD
     [self atualizarBarraStatus];
 }
-
--(void)esconderHud{
-    self.hidden=YES;
-}
-
--(void)mostrarHud{
-    self.hidden=NO;
-}
 @end

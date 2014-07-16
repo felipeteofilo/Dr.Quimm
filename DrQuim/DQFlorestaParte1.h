@@ -30,6 +30,9 @@
 @property BOOL falouAtencaoAlpha;
 @property BOOL falouAtencaoBeta;
 
+//Variavel Booleana para definir se já passou o tutorial
+@property BOOL mostrouTutorial;
+@property BOOL executandoTutorial;
 
 //Array com pontos de radiacao e Key de Falas na ordem
 @property NSArray *pontosRadiacao;

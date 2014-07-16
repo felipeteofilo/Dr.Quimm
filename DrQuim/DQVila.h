@@ -7,7 +7,6 @@
 //
 
 #import "DQFase.h"
-#import "DQEscalavel.h"
 #import "DQBarraStatus.h"
 #import "DQnpc.h"
 #import "DQCutsceneControle.h"
@@ -28,8 +27,5 @@
 @property DQnpc *cacador;    //Caçador
 @property DQnpc *curandeiro; //Curandeiro
 @property DQnpc *chefe;      //Chefe
-
-
-
 
 @end
