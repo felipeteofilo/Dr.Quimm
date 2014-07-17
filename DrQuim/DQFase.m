@@ -114,7 +114,7 @@
     node.physicsBody.categoryBitMask=JogadorCategoria;
     node.physicsBody.collisionBitMask=ChaoCategoria;
     node.physicsBody.contactTestBitMask= PlataformaCategoria;
-    node.physicsBody.contactTestBitMask= EscadaCategoria;
+    //node.physicsBody.contactTestBitMask= EscadaCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
 -(void)escadaCategoria :(SKNode*)node{
@@ -154,6 +154,10 @@
     return backConfigurar;
 }
 
+
+
+
+
 -(void)criarParteFase{
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
         
@@ -165,6 +169,14 @@
                 
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
                 self.backgroundFuturo=[self configurarBackgroundParte:self.parteFaseAtual+1 naPos:posicaoAdd];
+                
+                
+                //Configura Cobertura para Background (criar efeito caverna)
+                DQCoberturaBackground *coberturaBackground=[[DQCoberturaBackground alloc]initCoberturaParte:self.parteFaseAtual+1 daFase:self.faseAtual];
+                
+                if (coberturaBackground) {
+                    [self.backgroundFuturo addChild:coberturaBackground];
+                }
                 
                 //Cria Corpo Fisico para plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
@@ -184,6 +196,15 @@
             if (self.parteFaseAtual -1 > 0) {
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x -CGRectGetMaxX(self.frame), 0);
                 self.backgroundAnterior =[self configurarBackgroundParte:self.parteFaseAtual-1 naPos:posicaoAdd];
+                
+                
+                //Cobertura backgroung (efeito caverna)
+                //Configura Cobertura para Background (criar efeito caverna)
+                DQCoberturaBackground *coberturaBackground=[[DQCoberturaBackground alloc]initCoberturaParte:self.parteFaseAtual-1 daFase:self.faseAtual];
+                
+                if (coberturaBackground) {
+                    [self.backgroundAnterior  addChild:coberturaBackground];
+                }
                 
                 //Adiciona plataformas
                 SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
@@ -218,7 +239,7 @@
     //Se estiver na esquerda
     else if(posicaoToque.x < CGRectGetMidX(self.frame)){
         //PULAR
-
+        
         [self.jogador pular];
     }
 }
@@ -247,6 +268,17 @@
     }
 }
 
+-(void)verificaCoberturaBackground{
+    DQCoberturaBackground *cobetura=(DQCoberturaBackground*)[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
+    
+    if ([cobetura.name isEqualToString:NomeNodeCobertura]) {
+        //Converte a posicao do jogador para o sistema de coordenadas do no que tem a cobertura
+        CGPoint posJogadorConvertida=[self.mundo convertPoint:self.jogador.position toNode:self.backgroundAtual];
+        
+        [cobetura manipulaCobertura:posJogadorConvertida];
+    }
+}
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
@@ -257,6 +289,75 @@
     //tirar imagem da setinha da tela
     [self.direcional removeFromParent];
 }
+
+
+//Metodo chamado ao final de alguma colisao
+-(void)didEndContact:(SKPhysicsContact *)contact{
+    
+    // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+    {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    }
+    else
+    {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    //se parou de colidir com a escada
+    if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
+        //se esta acima da escada faz ela subir um pouco para o jogador poder descer depois
+        if (firstBody.node.position.y > secondBody.node.position.y + secondBody.node.frame.size.height ) {
+            [self.backgroundAtual enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAcima:escada];
+            }];
+            
+            [self.backgroundFuturo enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAcima:escada];
+            }];
+            [self.backgroundAnterior enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAcima:escada];
+            }];
+            
+        }
+        //e se estiver abaixo faz ela descer para o jogador subir depois
+        else if (firstBody.node.position.y < secondBody.node.position.y + firstBody.node.frame.size.height){
+            
+            [self.backgroundAtual enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAbaixo:escada];
+            }];;
+            [self.backgroundFuturo enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAbaixo:escada];
+            }];;
+            [self.backgroundAnterior enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAbaixo:escada];
+            }];;
+        }
+        //para a escalada do jogador
+        [self.jogador pararEscalar];
+        
+    }
+
+    
+}
+//desce a escada
+-(void)estaAcima :(SKNode*)corpoEscada{
+    
+    [corpoEscada runAction:[SKAction moveByX:0.0f y:150.0f duration:0.3]];
+    
+}
+
+//sobe a escada
+-(void)estaAbaixo :(SKNode*)corpoEscada{
+    
+    [corpoEscada runAction:[SKAction moveByX:0.0f y:-150.0f duration:0.3]];
+    
+}
+
+
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
@@ -280,9 +381,6 @@
             
             //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
             [self.jogador setPodePular:0];
-            
-            [self.jogador setPodeEscalar:NO];
-            
             if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
             }
@@ -293,6 +391,8 @@
             //Adiciona + 50 de tolerancia
             float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 30.0f;
             
+            
+            
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
                 [self plataformaCategoria:secondBody.node];
@@ -301,17 +401,21 @@
                 [self chaoCategoria:secondBody.node];
             }
         }
-        NSLog(@"%@",secondBody.node.name);
+
+        //se colidir com a escada
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-            NSLog(@"foi");
+            //seta que o jogador pode subir ou descer
             [self.jogador setPodeEscalar:YES];
             
         }
+
     }
 }
 
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
+    
+    [self verificaCoberturaBackground];
 }
 
 - (void)didSimulatePhysics{
@@ -332,6 +436,9 @@
     //Seta que a classe que ira delegar o contato sera essa mesma
     [self.physicsWorld setContactDelegate:self];
     
+    //Cria um corpo fisico ao redor da tela para nao deixar o jogador cair pela lateral
+    [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
+    
 }
 
 -(void)criaJogador{
@@ -343,8 +450,8 @@
     [self jogadorCategoria:self.jogador];
     
     CGPoint pontoInicial=[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual];
-
-   [self.jogador setPosition:pontoInicial];
+    
+    [self.jogador setPosition:pontoInicial];
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");
@@ -360,7 +467,7 @@
 }
 
 -(void)iniciarFase{
-
+    
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
     [self.mundo setZPosition:-100];
@@ -393,7 +500,7 @@
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-
+        
     }
     return self;
 }

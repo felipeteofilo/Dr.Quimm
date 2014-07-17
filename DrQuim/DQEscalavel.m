@@ -12,21 +12,35 @@
 
 -(id)initEscalavelComPontoInicial:(CGPoint)pInicial ePontoFinal:(CGPoint)pFinal eLargura:(float)largura{
     if (self=[super init]) {
-        
-        [self setAnchorPoint:CGPointMake(0, 0)];
-        [self setPosition:pInicial];
-        
         //o ponto final servirá para determinar até onde o objeto irá
-        [self setSize:CGSizeMake(largura, pFinal.y - pInicial.y)];
+        [self setPosition:CGPointMake(pInicial.x, pInicial.y)];
+        [self setAnchorPoint:CGPointMake(0, 0)];
         
-       //[self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(largura, pFinal.y - pInicial.y)]];
+        [self setSize:CGSizeMake(largura , pFinal.y - pInicial.y)];
         
-        //Representaçao visual
-        [self setColor:[UIColor purpleColor]];
         
+        //seta o corpo fisico dele de acordo com o anchorpoint da escada
+        [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:[self pathForRectangleOfSize:self.size withAnchorPoint:self.anchorPoint]]];
+        
+        
+        //faz ela nao ser afetada pela gravidade
+        self.physicsBody.affectedByGravity = NO;
+        
+        //seta o nome da escada
         [self setName:nomeEscalavel];
     }
     return self;
 }
+
+//metodo para centralizar o physics body na textura dele
+- (CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor {
+    CGPathRef path = CGPathCreateWithRect( CGRectMake(-size.width * anchor.x, -size.height * anchor.y,
+                                                      size.width,   size.height), nil);
+    return path;
+}
+
+
+
+
 
 @end
