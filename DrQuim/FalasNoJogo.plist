@@ -13,7 +13,7 @@
 					<key>Texto</key>
 					<string>Já disse para não ir por aí!</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 			</array>
 			<key>Aleatoria2</key>
@@ -24,7 +24,7 @@
 					<key>Texto</key>
 					<string>Você não me ouviu? Vá por outro lugar!</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 			</array>
 			<key>Aleatoria3</key>
@@ -35,7 +35,7 @@
 					<key>Texto</key>
 					<string>Qual o seu problema? Aí é perigoso!</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 			</array>
 			<key>Aleatoria4</key>
@@ -46,7 +46,7 @@
 					<key>Texto</key>
 					<string>Se você quiser se matar, faça isso sozinho! Pegue outro caminho!</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 			</array>
 			<key>RadiacaoAlfa</key>
@@ -57,7 +57,7 @@
 					<key>Texto</key>
 					<string>O que foi isso?</string>
 					<key>Imagem</key>
-					<string>piloto</string>
+					<string>rostoPiloto</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -65,7 +65,7 @@
 					<key>Texto</key>
 					<string>Pare! O equipamento detectou radiação alí em cima!</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -73,7 +73,7 @@
 					<key>Texto</key>
 					<string>Radiação?</string>
 					<key>Imagem</key>
-					<string>piloto</string>
+					<string>rostoPiloto</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -81,7 +81,7 @@
 					<key>Texto</key>
 					<string>Sim. Alguns anos atrás, fizeram alguns testes atômicos nessa região. Está dizendo aqui que é do tipo Alfa, melhor termos cuidado.</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -89,7 +89,7 @@
 					<key>Texto</key>
 					<string>Existe mais de um tipo de radiação?</string>
 					<key>Imagem</key>
-					<string>piloto</string>
+					<string>rostoPiloto</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -97,7 +97,7 @@
 					<key>Texto</key>
 					<string>Sim. Alfa, Beta e Gama. A que está alí é do tipo alfa que, mesmo sem muito poder de penetração é muito energética e pode causar queimaduras.</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -105,7 +105,7 @@
 					<key>Texto</key>
 					<string>Poder de o que?</string>
 					<key>Imagem</key>
-					<string>piloto</string>
+					<string>rostoPiloto</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -113,7 +113,7 @@
 					<key>Texto</key>
 					<string>Só não vá por alí!</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 			</array>
 			<key>RadiacaoBeta</key>
@@ -124,7 +124,7 @@
 					<key>Texto</key>
 					<string>Mais radiação alfa?</string>
 					<key>Imagem</key>
-					<string>piloto</string>
+					<string>rostoPiloto</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -132,7 +132,7 @@
 					<key>Texto</key>
 					<string>Não, agora é Beta. Muito mais perigosa. Menos sendo menos energética que a alfa, ele tem um poder de penetração muito maior.</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -140,7 +140,7 @@
 					<key>Texto</key>
 					<string>Em outras palavras... Ela queima mais?</string>
 					<key>Imagem</key>
-					<string>piloto</string>
+					<string>rostoPiloto</string>
 				</dict>
 				<dict>
 					<key>Sujeito</key>
@@ -148,7 +148,7 @@
 					<key>Texto</key>
 					<string>Em outras palavras, vamos pegar um outro caminho</string>
 					<key>Imagem</key>
-					<string>cientista</string>
+					<string>rostoCientista</string>
 				</dict>
 			</array>
 		</dict>
@@ -166,9 +166,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<string>Sem desculpas, você vai dormir sem jantar hoje! Mas antes de ir toma esse lanchinho...</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito10</key>
@@ -177,9 +177,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<string>Se você continuar se comportando assim, ficará de castigo… E sem sobremesa!</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito20</key>
@@ -188,9 +188,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<string>Você esta se comportando mal ein, mocinho!</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito30</key>
@@ -199,9 +199,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<string>Se você não fosse tão fofinho eu estaria muito brava com você...</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito40</key>
@@ -210,9 +210,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<string>Por que você, não esta comendo seus legumes menino?</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito50</key>
@@ -221,9 +221,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<string>Vai querer repetir o almoço?</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito60</key>
@@ -232,9 +232,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<string>Você está tão magrinho, que dá dó! Vou dobrar a sua comida.</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito70</key>
@@ -243,9 +243,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<string>Olha só você está se comportando bem, só falta comer todos os legumes agora!</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito80</key>
@@ -254,9 +254,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<string>Olha só o que eu tenho aqui… batata doce! Toma. *__*</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito90</key>
@@ -265,9 +265,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<string>Como é mesmo que se faz, aquela tal de lasanha que você disse gostar tanto?</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 					<key>Respeito100</key>
@@ -276,9 +276,9 @@
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<string>Estou, tão orgulhosa de você meu filho! Vem cá mamãe fez um bolo para você...</string>
 							<key>Imagem</key>
-							<string>maeDeTodos</string>
+							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
 				</dict>
@@ -295,9 +295,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<string>O que foi? Vai encarar?</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito10</key>
@@ -306,9 +306,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<string>O que você quer, cara de bunda?</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito20</key>
@@ -317,9 +317,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<string>Hoje posso te oferecer uma arma, mais ja adianto, vai custar tudo o que você tem.</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito30</key>
@@ -328,9 +328,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<string>Talvez eu faça um desconto para você, pensando bem acho que não.</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito40</key>
@@ -339,9 +339,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<string>Hoje está um bom dia, mas a sua companhia ainda o estraga.</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito50</key>
@@ -350,9 +350,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<string>Desembucha! O que você quer?</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito60</key>
@@ -361,9 +361,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<string>Posso te dar algumas coisas hoje... Mas não fique convencido!</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito70</key>
@@ -372,9 +372,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<string>Como está indo hoje? as armas que te vendi estão te servindo bem?</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito80</key>
@@ -383,9 +383,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<string>Inventei algumas armadilhas, acho que você vai achar interessante</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito90</key>
@@ -394,9 +394,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<string>Preciso aprender a fazer aquilo que você faz com os liquidos esquisitos.</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Respeito100</key>
@@ -405,9 +405,9 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<string>Hoje você me ensina a fazer aquelas coisas que soltam fumaça?</string>
 							<key>Imagem</key>
-							<string>cacador</string>
+							<string>rostoCacador</string>
 						</dict>
 					</array>
 				</dict>
@@ -422,121 +422,251 @@
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string></string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<string>*O chefe (ou os chefes?) parece ocupado discutindo consigo mesmo.*</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 					<key>Respeito10</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string></string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<string>*O chefe para por um breve instante sua conversa consigo mesmo para te olhar, mas logo volta aos seus afazeres*</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 					<key>Respeito20</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string>Chefe - Cabeça ranzinza</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<string>Hmm, é verdade, nunca tinha reparado nisso.</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string></string>
+							<key>Texto</key>
+							<string>*Você tem a sensação de que o assunto é você.*
+*Você tem a sensação de que o assunto é você.*</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 					<key>Respeito30</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string></string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<string>*O chefe te olha de cima abaixo, e sua cabeça menos ranzinza ri* </string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça simpática</string>
+							<key>Texto</key>
+							<string>Oras! Vá caçar, pequenino! Volte quando conseguir carregar uma girafa ou um elefante! Igual a nós quando bebê!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça ranzinza</string>
+							<key>Texto</key>
+							<string>Meh. Mal consegue carregar o chapéu esquisito, esse aí.</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
 						</dict>
 					</array>
 					<key>Respeito40</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string>Chefe - Cabeça simpática</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<string>Olá pequeno! Como sempre, branco como um ovo!</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça ranzinza</string>
+							<key>Texto</key>
+							<string>Argh! Desça já da árvore e não venha aqui de novo!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
 						</dict>
 					</array>
 					<key>Respeito50</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string>Chefe - Cabeça simpática</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<string>Saudações, amigo da aldeia.</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça ranzinza</string>
+							<key>Texto</key>
+							<string>Estamos ocupado! Suma daqui com essa cara feia!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
 						</dict>
 					</array>
 					<key>Respeito60</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string></string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<string>*O chefe cochicha consigo mesmo e olha para você, mas depois finge que não te viu.*</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 					<key>Respeito70</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string>Chefe - Cabeça ranzinza</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<string>Grr...</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça simpática</string>
+							<key>Texto</key>
+							<string>Vamos! Você prometeu!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça ranzinza</string>
+							<key>Texto</key>
+							<string>Tá, tá.. Saudações, aldeão branco.</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
 						</dict>
 					</array>
 					<key>Respeito80</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string>Chefe - Cabeça simpática</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<string>Aldeão branco! Que agradável surpresa. Estávamos aqui conversando sob-</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça ranzinza</string>
+							<key>Texto</key>
+							<string>-Sobre nada da sua conta! Hmpf!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
 						</dict>
 					</array>
 					<key>Respeito90</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string>Chefe - Cabeça ranzinza</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<string>Saudações, aldeão branco.</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça simpática</string>
+							<key>Texto</key>
+							<string>Saudações! Sempre bom ver essa sua cara branca e magrela.</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string></string>
+							<key>Texto</key>
+							<string>Ele solta uma forte risada, enquanto a outra face
+sorri sutilmente</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 					<key>Respeito100</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Chefe</string>
+							<string>Chefe - Cabeça simpática</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<string>Saudações, herói branco!</string>
 							<key>Imagem</key>
-							<string>chefe</string>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça simpática</string>
+							<key>Texto</key>
+							<string>Espero que esteja hoje no jantar! É sempre bom quando podemos conversar!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça ranzinza</string>
+							<key>Texto</key>
+							<string>É sim, ainda mais quando você traz comida pra eu.</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça simpática</string>
+							<key>Texto</key>
+							<string>Eu quis dizer só a companhia mesmo...</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça ranzinza</string>
+							<key>Texto</key>
+							<string>Vai negar agora? A barriga é de nós dois!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça simpática</string>
+							<key>Texto</key>
+							<string>Tá bem, vai, você tem razão.</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string></string>
+							<key>Texto</key>
+							<string>*E tornam a conversar, contentemente, um com o outro*</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 				</dict>
@@ -551,11 +681,11 @@
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Curandeiro</string>
+							<string>Pilto</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 0</string>
+							<string>O velho senhor parece ocupado cuidando do Dr.Quimm, melhor não perturbá-lo agora</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 					<key>Respeito10</key>
@@ -564,9 +694,9 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 10</string>
+							<string>Alma jovem sinto... Que ainda precisa se mostrar digno de ser um morador da floresta</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito20</key>
@@ -575,9 +705,9 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 20</string>
+							<string>Olá, alma jovem... nada mais que um broto, numa floresta de salgueiros.</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito30</key>
@@ -586,9 +716,9 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 30</string>
+							<string>O crescer vem de dentro! Respeite o que te rodeia, e o que te rodeia te respeitará. Dê tempo ás coisas...</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito40</key>
@@ -597,9 +727,9 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 40</string>
+							<string>Vejo que meu povo começa a te confiar... Isso ser bom ou ruim? Não cabe a mim medir...</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito50</key>
@@ -608,9 +738,9 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 50</string>
+							<string>Saudações, Aldeão Branco... O que lhe traz a mim? Estou um pouco ocupado agora...</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito60</key>
@@ -619,9 +749,9 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 60</string>
+							<string>Sempre bom sentir a presença da sua calorosa alma... hmmm... Ou será que era só o chulé mesmo? Hmm...</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito70</key>
@@ -630,9 +760,25 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 70</string>
+							<string>Querido Aldeão Branco! Venha, dê um abraço neste velho... Tome cuidado em suas caçadas! A mãe natureza é bondosa conosco, mas ao mesmo tempo feroz... Sinta-a, e repeite-a!</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string></string>
+							<key>Texto</key>
+							<string>*você o abraça e sente as cascas de suas costas. Lembram a textura de uma velha árvore*</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Tome cuidado em suas caçadas! A mãe natureza é bondosa conosco, mas ao mesmo tempo feroz... Sinta-a, e repeite-a!</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito80</key>
@@ -641,9 +787,9 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 80</string>
+							<string>Como vão estas jovens pernas? Enquanto elas o conseguirem levar, não há vento contrário que o pare!</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito90</key>
@@ -652,9 +798,17 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 90</string>
+							<string>Um homem não vive só de comidas e bebidas, meu jovem! Um dia você será como eu... </string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoCurandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>e contemplar a imensidão do cobertor cintilante em cima de nós vai te alimentar mais do que qualquer banquete... Guarde estas palavras!</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
 					<key>Respeito100</key>
@@ -663,7 +817,152 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
-							<string>&lt;FAZER&gt;Fala quando o respeito é 100</string>
+							<string>Seja bem-vindo á minha casa, Herói branco, como sempre.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+				</dict>
+				<key>Missao01</key>
+				<dict/>
+			</dict>
+			<key>DrQuimm</key>
+			<dict>
+				<key>SemMissao</key>
+				<dict>
+					<key>Respeito0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Pilto</string>
+							<key>Texto</key>
+							<string>Dr. Quimm não diz nada, mas parece estar revoltado por estar na situação que está... Melhor deixá-lo quieto por um tempo.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Respeito10</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Primeiro o helicóptero, depois me larga no chão, e agora isso! Se ao menos eu estivesse com meus aparatos, me prepararia um analgésico!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito20</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Ah, é você, moleque. Sabe, até que estou começando a gostar deste lugar! Quem sabe depois disto eu seja melhor reconhecido pelo que faço...</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito30</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Não importa o quanto eu o estude, nunca vou compreender como aquele tal chefe conseguiu crescer até o tamanho que é! Pelo amor de Marie Curie...</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito40</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>O Dr. está cantarolando para sí enquanto realiza seus experimentos, Parece estar se divertindo...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Respeito50</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Ora, bom dia, garoto! Estou ocupado agora, volte mais tarde, por favor.</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito60</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Heh, vejo que este velho gosta de você! Você deve ouvir bem as palavras dele, ele é muito sábio!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito70</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Contanto que eu não seja perturbado, sinto que posso viver por aqui pra sempre! Tantas coisas a descobrir, tantas soluções a experimentar!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito80</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Meus recentes experimentos me levaram á conclusão de que não haverá conclusão para meus futuros experimentos... Pelo menos não no espaço amostral presente.</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito90</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>Com a graça de Bohr, descobri depois de muitos experimentos, o remédio perfeito para a dor nas costas! Ele consiste basicamente em sentar com as costas bem apoiadas, e com o bumbum todo...</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Dr.Quimm</string>
+							<key>Texto</key>
+							<string>O que? Esperava um elixir mágico?</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Respeito100</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>A possibilidade de deixar esta ilha é interessante, mas ao mesmo tempo... Meu coração me pede pra ficar, caso contrário sofrerei da liberação de uma quantidade exacerbada de cortisol!</string>
+							<key>Imagem</key>
+							<string>curandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Oh, céus, as decisões...</string>
 							<key>Imagem</key>
 							<string>curandeiro</string>
 						</dict>

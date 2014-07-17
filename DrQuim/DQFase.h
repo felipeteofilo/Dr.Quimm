@@ -14,6 +14,7 @@
 #import "DQControleCorpoFisico.h"
 #import "DQConfiguracaoFase.h"
 #import "DQHudController.h"
+#import "DQCoberturaBackground.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -22,7 +23,6 @@ static const UInt32 PlataformaCategoria = 0x1 << 2;
 static const UInt32 EscadaCategoria = 0x1 << 3;
 
 static NSString* NomeNodePlataformas= @"NodeComPlataformas";
-static NSString* NomeNodeCobertura=@"CoberturaBackground";
 
 @interface DQFase : SKScene <SKPhysicsContactDelegate>
 
