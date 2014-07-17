@@ -316,8 +316,8 @@
 				<key>Escalaveis</key>
 				<array>
 					<array>
-						<string>{870, 170}</string>
-						<string>{872, 1018}</string>
+						<string>{883, 170}</string>
+						<string>{884, 1018}</string>
 					</array>
 				</array>
 				<key>CoberturaFundo</key>
@@ -367,8 +367,8 @@
 				<key>Escalaveis</key>
 				<array>
 					<array>
-						<string>{658, 166}</string>
-						<string>{658, 848}</string>
+						<string>{665, 166}</string>
+						<string>{665, 848}</string>
 					</array>
 				</array>
 			</dict>

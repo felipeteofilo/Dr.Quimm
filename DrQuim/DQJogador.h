@@ -60,7 +60,12 @@
 //Método para parar de andar
 -(void)pararAndar;
 
+//funcao para fazer o jogador escalar
 -(void)escalarParaDirecao:(NSString*)direcao;
+
+//funcao para parar a escalada do jogador
 -(void)pararEscalar;
+
+//funcao para dar uma pausa na escalada do jogador
 -(void)pausarEscalada;
 @end

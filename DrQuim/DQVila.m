@@ -128,7 +128,7 @@
         }
     }
     
-    //Ao parar o toque, para também de escalar
+    //Ao parar o toque, pausa sua escalada se ainda estiver escalando
     if ([self.jogador actionForKey:@"escalar"]) {
         [self.jogador pausarEscalada];
     }
@@ -160,6 +160,7 @@
                     CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
                     CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
                     
+                    //cria a escada e seta o corpo fisico dela
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
                     
                     [super escadaCategoria:escada];
@@ -173,7 +174,7 @@
     }else{
         if (self.parteFaseAtual -1 > 0) {
             
-            if (![self.backgroundFuturo childNodeWithName:nomeEscalavel]) {
+            if (![self.backgroundAnterior childNodeWithName:nomeEscalavel]) {
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual -1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
@@ -181,11 +182,12 @@
                     CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
                     CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
                     
+                    //cria a escada e seta o corpo fisico dela
                     DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
                     
                     [super escadaCategoria:escada];
                     
-                    [self.backgroundFuturo addChild:escada];
+                    [self.backgroundAnterior addChild:escada];
                 }
             }
         }
@@ -201,7 +203,7 @@
     //Pega o node de escada na posicao do toque
     SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToque];
     
-    //TODO: Melhorar método de escalada
+    //verifica para onde o jogador deve escalar 
     if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
         //Verifica se o Y é maior ou menor
         

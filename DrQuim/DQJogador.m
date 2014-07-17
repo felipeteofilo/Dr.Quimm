@@ -214,7 +214,9 @@
     [self.spriteNode removeActionForKey:@"animandoAndando"];
 }
 
+//funcao para fazer o jogador escalar
 -(void)escalarParaDirecao:(NSString*)direcao{
+    //se puder escalar
     if (self.podeEscalar) {
         
         
@@ -222,7 +224,7 @@
         
         //Desliga a gravidade para o Node
         self.physicsBody.dynamic=NO;
-        
+        // verifica para qual direcao sera a escalada
         if ([direcao isEqualToString:@"C"]) {
             //Sobe
             
@@ -232,13 +234,14 @@
             //Desce
             escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
         }
-        
+        //anima o jogador escalando
         [self animarEscalando];
-        
+        // move o jogador
         [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
     }
 }
 
+//funcao para parar a escalada do jogador
 -(void)pararEscalar{
     self.podeEscalar = NO;
     if (![self.physicsBody isDynamic]) {
@@ -247,6 +250,8 @@
     [self.spriteNode removeActionForKey:@"animandoEscalada"];
     [self removeActionForKey:@"escalar"];
 }
+
+//funcao para dar uma pausa na escalada do jogador
 -(void)pausarEscalada{
     [[self.spriteNode actionForKey:@"animandoEscalada"]setSpeed:0];
     [self removeActionForKey:@"escalar"];

@@ -118,7 +118,7 @@
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
 -(void)escadaCategoria :(SKNode*)node{
-    //node.physicsBody.categoryBitMask=EscadaCategoria;
+    node.physicsBody.categoryBitMask=EscadaCategoria;
     node.physicsBody.collisionBitMask=0;
     node.physicsBody.contactTestBitMask=JogadorCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
@@ -308,6 +308,8 @@
     
 }
 
+
+//Metodo chamado ao final de alguma colisao
 -(void)didEndContact:(SKPhysicsContact *)contact{
     
     // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
@@ -323,13 +325,53 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    
+    //se parou de colidir com a escada
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-        
+        //se esta acima da escada faz ela subir um pouco para o jogador poder descer depois
+        if (firstBody.node.position.y > secondBody.node.position.y + secondBody.node.frame.size.height ) {
+            [self.backgroundAtual enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAcima:escada];
+            }];
+            
+            [self.backgroundFuturo enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAcima:escada];
+            }];
+            [self.backgroundAnterior enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAcima:escada];
+            }];
+            
+        }
+        //e se estiver abaixo faz ela descer para o jogador subir depois
+        else if (firstBody.node.position.y < secondBody.node.position.y + firstBody.node.frame.size.height){
+            
+            [self.backgroundAtual enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAbaixo:escada];
+            }];;
+            [self.backgroundFuturo enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAbaixo:escada];
+            }];;
+            [self.backgroundAnterior enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
+                [self estaAbaixo:escada];
+            }];;
+        }
+        //para a escalada do jogador
         [self.jogador pararEscalar];
         
     }
 
+    
+}
+//desce a escada
+-(void)estaAcima :(SKNode*)corpoEscada{
+    
+    [corpoEscada runAction:[SKAction moveByX:0.0f y:150.0f duration:0.3]];
+    
+}
+
+//sobe a escada
+-(void)estaAbaixo :(SKNode*)corpoEscada{
+    
+    [corpoEscada runAction:[SKAction moveByX:0.0f y:-150.0f duration:0.3]];
     
 }
 
@@ -357,9 +399,6 @@
             
             //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
             [self.jogador setPodePular:0];
-            
-            [self.jogador pararEscalar];
-            
             if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
             }
@@ -381,9 +420,9 @@
             }
         }
 
-        
+        //se colidir com a escada
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-            
+            //seta que o jogador pode subir ou descer
             [self.jogador setPodeEscalar:YES];
             
         }
