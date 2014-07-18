@@ -87,6 +87,7 @@
             
             //Inicia o spriteNode daquele node com o NOME e POSICAO
             [self.quimm criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.quimm.spriteNode setSize:CGSizeMake(100, 150)];
             [self.mundo addChild:self.quimm.spriteNode];
         }
     }
