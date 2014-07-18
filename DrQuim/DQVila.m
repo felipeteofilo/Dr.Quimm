@@ -81,6 +81,14 @@
             [self.chefe criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
             [self.mundo addChild:self.chefe.spriteNode];
         }
+        else if([nomeNPC isEqualToString:@"Quimm"]){
+            //Inicia o node com o NOME
+            self.drQuimm = [[DQnpc alloc] initComNome:nomeNPC];
+            
+            //Inicia o spriteNode daquele node com o NOME e POSICAO
+            [self.drQuimm criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.drQuimm.spriteNode];
+        }
     }
 }
 
@@ -124,6 +132,12 @@
             else if([nodeTocado.name isEqualToString:@"Chefe"]){
                 //Chama o método de interação passando o NPC tocado
                 [self interagirComNPC:self.chefe];
+            }
+            
+            //Se foi o Dr.Quimm
+            else if([nodeTocado.name isEqualToString:@"Quimm"]){
+                //Chama o método de interação passando o NPC tocado
+                [self interagirComNPC:self.drQuimm];
             }
         }
     }
