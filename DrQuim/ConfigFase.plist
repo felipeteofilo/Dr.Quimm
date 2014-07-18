@@ -278,7 +278,7 @@
 	</dict>
 	<dict>
 		<key>PosInicialJogador</key>
-		<string>{1900, 1050}</string>
+		<string>{10, 200}</string>
 		<key>NPC</key>
 		<array>
 			<dict>
