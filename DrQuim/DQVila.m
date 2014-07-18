@@ -83,11 +83,11 @@
         }
         else if([nomeNPC isEqualToString:@"Quimm"]){
             //Inicia o node com o NOME
-            self.drQuimm = [[DQnpc alloc] initComNome:nomeNPC];
+            self.quimm = [[DQnpc alloc] initComNome:nomeNPC];
             
             //Inicia o spriteNode daquele node com o NOME e POSICAO
-            [self.drQuimm criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
-            [self.mundo addChild:self.drQuimm.spriteNode];
+            [self.quimm criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
+            [self.mundo addChild:self.quimm.spriteNode];
         }
     }
 }
@@ -106,7 +106,7 @@
     //METODO UM POUCO(BASTANTE) BURRO >.<
     //Se o node em que tocou for da classe DQNPC, faz o npc interagir - PENSAR EM FORMA MAIS INTELIGENTE
     if (nodeTocado.name != nil) {
-        if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"]) {
+        if ([nodeTocado.name isEqualToString:@"Maedetodos"] || [nodeTocado.name isEqualToString:@"Curandeiro"] || [nodeTocado.name isEqualToString:@"Cacador"] || [nodeTocado.name isEqualToString:@"Chefe"] || [nodeTocado.name isEqualToString:@"Quimm"]) {
             //TESTE
             NSLog(@"tocou no NPC: %@", nodeTocado.name);
             
@@ -137,7 +137,7 @@
             //Se foi o Dr.Quimm
             else if([nodeTocado.name isEqualToString:@"Quimm"]){
                 //Chama o método de interação passando o NPC tocado
-                [self interagirComNPC:self.drQuimm];
+                [self interagirComNPC:self.quimm];
             }
         }
     }

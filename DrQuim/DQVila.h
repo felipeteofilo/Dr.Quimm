@@ -27,6 +27,6 @@
 @property DQnpc *cacador;    //Caçador
 @property DQnpc *curandeiro; //Curandeiro
 @property DQnpc *chefe;      //Chefe
-@property DQnpc *drQuimm;    //Dr.Quimm
+@property DQnpc *quimm;      //Dr.Quimm
 
 @end
