@@ -13,6 +13,7 @@
 		234683EF1979E309007E54EA /* carne.png in Resources */ = {isa = PBXBuildFile; fileRef = 234683EB1979E309007E54EA /* carne.png */; };
 		234683F01979E309007E54EA /* remedio.png in Resources */ = {isa = PBXBuildFile; fileRef = 234683EC1979E309007E54EA /* remedio.png */; };
 		234683F11979E309007E54EA /* sopaRevitalizadora.png in Resources */ = {isa = PBXBuildFile; fileRef = 234683ED1979E309007E54EA /* sopaRevitalizadora.png */; };
+		234683F41979E801007E54EA /* Missoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 234683F31979E801007E54EA /* Missoes.plist */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23622C0A1975F4CB00D83532 /* tutorialCorrerDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */; };
 		23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */; };
@@ -98,6 +99,7 @@
 		234683EB1979E309007E54EA /* carne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carne.png; sourceTree = "<group>"; };
 		234683EC1979E309007E54EA /* remedio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remedio.png; sourceTree = "<group>"; };
 		234683ED1979E309007E54EA /* sopaRevitalizadora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sopaRevitalizadora.png; sourceTree = "<group>"; };
+		234683F31979E801007E54EA /* Missoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Missoes.plist; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerDireita.atlas; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				755FA40D195A06D80052DC1E /* FalasNoJogo.plist */,
 				234683E41979DF39007E54EA /* Itens.plist */,
+				234683F31979E801007E54EA /* Missoes.plist */,
 				CDCACF521948F23500FC1070 /* FalasCutScene.plist */,
 				C575FF401965DDC500719817 /* ConfigFase.plist */,
 				23B28DB919744F3B00EBB5B0 /* Temporária.plist */,
@@ -577,6 +580,7 @@
 				23BFA4AE196A3D0F00AD5F0C /* icone_piloto.png in Resources */,
 				C575FF411965DDC500719817 /* ConfigFase.plist in Resources */,
 				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
+				234683F41979E801007E54EA /* Missoes.plist in Resources */,
 				C5D2A69C196A535800F3B7C4 /* Fase1_Parte1.png in Resources */,
 				234683EE1979E309007E54EA /* lanca.png in Resources */,
 				234683F01979E309007E54EA /* remedio.png in Resources */,

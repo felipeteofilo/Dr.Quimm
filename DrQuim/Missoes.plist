@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>nome</key>
+		<string>Ajudando a mãe de todos</string>
+		<key>descricao</key>
+		<string>Pegue a caça de hoje com o caçador e dê á mãe de todos</string>
+		<key>recompensa</key>
+		<string>Lança de caça</string>
+		<key>respeito</key>
+		<string>10</string>
+	</dict>
+</array>
+</plist>
