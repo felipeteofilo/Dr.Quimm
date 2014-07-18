@@ -307,55 +307,18 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
+    
+    
     //se parou de colidir com a escada
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-        //se esta acima da escada faz ela subir um pouco para o jogador poder descer depois
-        if (firstBody.node.position.y > secondBody.node.position.y + secondBody.node.frame.size.height ) {
-            [self.backgroundAtual enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
-                [self estaAcima:escada];
-            }];
-            
-            [self.backgroundFuturo enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
-                [self estaAcima:escada];
-            }];
-            [self.backgroundAnterior enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
-                [self estaAcima:escada];
-            }];
-            
-        }
-        //e se estiver abaixo faz ela descer para o jogador subir depois
-        else if (firstBody.node.position.y < secondBody.node.position.y + firstBody.node.frame.size.height){
-            
-            [self.backgroundAtual enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
-                [self estaAbaixo:escada];
-            }];;
-            [self.backgroundFuturo enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
-                [self estaAbaixo:escada];
-            }];;
-            [self.backgroundAnterior enumerateChildNodesWithName:nomeEscalavel usingBlock:^(SKNode *escada, BOOL *parar) {
-                [self estaAbaixo:escada];
-            }];;
-        }
-        //para a escalada do jogador
+        //faz o jogador parar de escalar
         [self.jogador pararEscalar];
         
     }
 
     
 }
-//desce a escada
--(void)estaAcima :(SKNode*)corpoEscada{
-    
-    [corpoEscada runAction:[SKAction moveByX:0.0f y:150.0f duration:0.3]];
-    
-}
 
-//sobe a escada
--(void)estaAbaixo :(SKNode*)corpoEscada{
-    
-    [corpoEscada runAction:[SKAction moveByX:0.0f y:-150.0f duration:0.3]];
-    
-}
 
 
 
