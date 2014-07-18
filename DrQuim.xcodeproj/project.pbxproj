@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		23463FA61979A1C300B7ACE3 /* NPCS.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23463FA51979A1C300B7ACE3 /* NPCS.atlas */; };
 		234683E51979DF39007E54EA /* Itens.plist in Resources */ = {isa = PBXBuildFile; fileRef = 234683E41979DF39007E54EA /* Itens.plist */; };
+		234683EE1979E309007E54EA /* lanca.png in Resources */ = {isa = PBXBuildFile; fileRef = 234683EA1979E309007E54EA /* lanca.png */; };
+		234683EF1979E309007E54EA /* carne.png in Resources */ = {isa = PBXBuildFile; fileRef = 234683EB1979E309007E54EA /* carne.png */; };
+		234683F01979E309007E54EA /* remedio.png in Resources */ = {isa = PBXBuildFile; fileRef = 234683EC1979E309007E54EA /* remedio.png */; };
+		234683F11979E309007E54EA /* sopaRevitalizadora.png in Resources */ = {isa = PBXBuildFile; fileRef = 234683ED1979E309007E54EA /* sopaRevitalizadora.png */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23622C0A1975F4CB00D83532 /* tutorialCorrerDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */; };
 		23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */; };
@@ -90,6 +94,10 @@
 /* Begin PBXFileReference section */
 		23463FA51979A1C300B7ACE3 /* NPCS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NPCS.atlas; sourceTree = "<group>"; };
 		234683E41979DF39007E54EA /* Itens.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Itens.plist; sourceTree = "<group>"; };
+		234683EA1979E309007E54EA /* lanca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanca.png; sourceTree = "<group>"; };
+		234683EB1979E309007E54EA /* carne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carne.png; sourceTree = "<group>"; };
+		234683EC1979E309007E54EA /* remedio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remedio.png; sourceTree = "<group>"; };
+		234683ED1979E309007E54EA /* sopaRevitalizadora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sopaRevitalizadora.png; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerDireita.atlas; sourceTree = "<group>"; };
@@ -213,6 +221,25 @@
 				23B28DB919744F3B00EBB5B0 /* Temporária.plist */,
 			);
 			name = "Arquvos XML";
+			sourceTree = "<group>";
+		};
+		234683E61979E1B5007E54EA /* Itens */ = {
+			isa = PBXGroup;
+			children = (
+				234683F21979E350007E54EA /* armas */,
+				234683EB1979E309007E54EA /* carne.png */,
+				234683EC1979E309007E54EA /* remedio.png */,
+				234683ED1979E309007E54EA /* sopaRevitalizadora.png */,
+			);
+			name = Itens;
+			sourceTree = "<group>";
+		};
+		234683F21979E350007E54EA /* armas */ = {
+			isa = PBXGroup;
+			children = (
+				234683EA1979E309007E54EA /* lanca.png */,
+			);
+			name = armas;
 			sourceTree = "<group>";
 		};
 		23477FF719463E0E00479AFE /* Falas e Cutscenes */ = {
@@ -347,6 +374,7 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				234683E61979E1B5007E54EA /* Itens */,
 				23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */,
 				23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */,
 				C5B7FBD81975F24100C2CAFC /* tutorialPular.atlas */,
@@ -550,6 +578,8 @@
 				C575FF411965DDC500719817 /* ConfigFase.plist in Resources */,
 				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
 				C5D2A69C196A535800F3B7C4 /* Fase1_Parte1.png in Resources */,
+				234683EE1979E309007E54EA /* lanca.png in Resources */,
+				234683F01979E309007E54EA /* remedio.png in Resources */,
 				23463FA61979A1C300B7ACE3 /* NPCS.atlas in Resources */,
 				23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */,
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
@@ -559,6 +589,8 @@
 				C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */,
 				755FA40E195A06D80052DC1E /* FalasNoJogo.plist in Resources */,
 				3C26D9091974B4A2002FEC9A /* cutscene2.atlas in Resources */,
+				234683EF1979E309007E54EA /* carne.png in Resources */,
+				234683F11979E309007E54EA /* sopaRevitalizadora.png in Resources */,
 				C5B7FBDF19762A1A00C2CAFC /* BalaoAlerta.png in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,
 				C591815E1967738D00AFD8B5 /* piloto.png in Resources */,
