@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23463FA61979A1C300B7ACE3 /* NPCS.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23463FA51979A1C300B7ACE3 /* NPCS.atlas */; };
+		234683E51979DF39007E54EA /* Itens.plist in Resources */ = {isa = PBXBuildFile; fileRef = 234683E41979DF39007E54EA /* Itens.plist */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23622C0A1975F4CB00D83532 /* tutorialCorrerDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */; };
 		23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		23463FA51979A1C300B7ACE3 /* NPCS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NPCS.atlas; sourceTree = "<group>"; };
+		234683E41979DF39007E54EA /* Itens.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Itens.plist; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerDireita.atlas; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				755FA40D195A06D80052DC1E /* FalasNoJogo.plist */,
+				234683E41979DF39007E54EA /* Itens.plist */,
 				CDCACF521948F23500FC1070 /* FalasCutScene.plist */,
 				C575FF401965DDC500719817 /* ConfigFase.plist */,
 				23B28DB919744F3B00EBB5B0 /* Temporária.plist */,
@@ -538,6 +541,7 @@
 				C5D2A69D196A535800F3B7C4 /* Fase1_Parte2.png in Resources */,
 				3C26D9051974B487002FEC9A /* Escalando.atlas in Resources */,
 				C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */,
+				234683E51979DF39007E54EA /* Itens.plist in Resources */,
 				755E3365194639BD00C0C029 /* Pulando.atlas in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
 				23BFA4AF196A3D0F00AD5F0C /* icone_cientista.png in Resources */,
