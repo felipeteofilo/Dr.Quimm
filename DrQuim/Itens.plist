@@ -45,6 +45,15 @@
 			<key>imagem</key>
 			<string>carne</string>
 		</dict>
+		<key>Docinho</key>
+		<dict>
+			<key>nome</key>
+			<string>Docinho</string>
+			<key>descricao</key>
+			<string>Docinho feito com açúcar e clara de ovos</string>
+			<key>imagem</key>
+			<string>carne</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
