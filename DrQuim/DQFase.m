@@ -308,7 +308,6 @@
         secondBody = contact.bodyA;
     }
     
-    
     //se parou de colidir com a escada
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
         //faz o jogador parar de escalar
@@ -344,6 +343,7 @@
             
             //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
             [self.jogador setPodePular:0];
+            [self.jogador setEstaNoChao:YES];
             if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
             }
@@ -379,6 +379,7 @@
     [self criarParteFase];
     
     [self verificaCoberturaBackground];
+    
 }
 
 - (void)didSimulatePhysics{
@@ -390,6 +391,9 @@
     
     //Desativa plataformas
     [self desativaPlataformas];
+    if (!self.jogador.estaNoChao && ![self.jogador.spriteNode actionForKey:@"animandoPulo"] && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"] && ![self.jogador.spriteNode actionForKey:@"animandoEscalada"] && ![self.jogador.spriteNode actionForKey:@"animandoAndando"]  ) {
+        [self.jogador animarCaindo];
+    }
 }
 
 -(void)configuraFisicaMundo{
@@ -409,12 +413,15 @@
     //Inicia o jogador pelo singleton
     self.jogador = [DQJogador sharedJogador];
     
+    [self.jogador iniciarAnimacoes:[DQConfiguracaoFase animacoesJogadorFase:self.faseAtual]];
     //seta as categorias de colisao do jogador
     [self jogadorCategoria:self.jogador];
     
     CGPoint pontoInicial=[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual];
     
     [self.jogador setPosition:pontoInicial];
+    
+    
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");

@@ -22,7 +22,7 @@
         //seta o corpo fisico dele de acordo com o anchorpoint da escada
         [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:[self pathForRectangleOfSize:self.size withAnchorPoint:self.anchorPoint]]];
         
-        
+        self.physicsBody.usesPreciseCollisionDetection = YES;
         //faz ela nao ser afetada pela gravidade
         self.physicsBody.affectedByGravity = NO;
         

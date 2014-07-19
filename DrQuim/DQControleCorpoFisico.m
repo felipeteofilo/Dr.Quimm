@@ -24,7 +24,7 @@
     }else{
         
         SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:[self geraPathDeArray:posicoesAdd]];
-        
+        corpoFisicoRetorno.usesPreciseCollisionDetection = YES;
         return corpoFisicoRetorno;
     }
 }
@@ -75,6 +75,8 @@
             
             CGPathRef pathConfgigurado=[self geraPathDeArray:[plataformasConfig objectAtIndex:i]];
             SKPhysicsBody *corpoFisicoPlataforma=[SKPhysicsBody bodyWithEdgeLoopFromPath:pathConfgigurado];
+            
+            corpoFisicoPlataforma.usesPreciseCollisionDetection = YES;
         
             DQPlataforma *plataforma=[[DQPlataforma alloc]initComY:CGRectGetMaxY(CGPathGetBoundingBox(pathConfgigurado))];
             [plataforma setPhysicsBody:corpoFisicoPlataforma];
