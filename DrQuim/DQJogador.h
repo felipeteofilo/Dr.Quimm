@@ -67,6 +67,9 @@
 //funcao para animar jogador caindo
 -(void)animarCaindo;
 
+//funcao para animar o jogador derrapando
+-(void)animarDerrapando;
+
 //Método para parar de andar
 -(void)pararAndar;
 
@@ -78,4 +81,7 @@
 
 //funcao para dar uma pausa na escalada do jogador
 -(void)pausarEscalada;
+
+//Funcao para parar de derrapar
+-(void)pararDerrapar;
 @end

@@ -307,6 +307,15 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
+    if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
+        if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
+            
+            //se o jogador  parar  de colidir com o chao setamos que ele nao esta no chao
+            [self.jogador setEstaNoChao:NO];
+            
+        }
+    }
+
     
     //se parou de colidir com a escada
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
@@ -391,8 +400,30 @@
     
     //Desativa plataformas
     [self desativaPlataformas];
-    if (!self.jogador.estaNoChao && ![self.jogador.spriteNode actionForKey:@"animandoPulo"] && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"] && ![self.jogador.spriteNode actionForKey:@"animandoEscalada"] && ![self.jogador.spriteNode actionForKey:@"animandoAndando"]  ) {
+    
+    //Faz algumas verificacoes para animar o jogador
+    [self verificarAnimacaoCaindo];
+    [self verificarAnimacaoDerrapagem];
+   
+}
+
+//funcao para vefrificar se pode animar jogador caindo de altas distancias
+-(void)verificarAnimacaoCaindo{
+    //se esta caindo de uma distancia muito grande anima ele caindo
+    if ( !self.jogador.estaNoChao && self.jogador.physicsBody.velocity.dy < -535 && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"]) {
         [self.jogador animarCaindo];
+    }
+}
+
+//funcao para verificar se pode animar jogador derrapando
+-(void)verificarAnimacaoDerrapagem{
+    //se jogador esta derrapando anima ele derrapando
+    if ( self.jogador.estaNoChao && (self.jogador.physicsBody.velocity.dx < -10 || self.jogador.physicsBody.velocity.dx > 10) && ![self.jogador.spriteNode actionForKey:@"animandoAndando"] && ![self.jogador.spriteNode actionForKey:@"animandoDerrapando"]) {
+        [self.jogador animarDerrapando];
+    }
+    //se nao retira a animacao
+    if ([self.jogador.spriteNode actionForKey:@"animandoDerrapando"] && self.jogador.physicsBody.velocity.dx == 0 ) {
+        [self.jogador pararDerrapar];
     }
 }
 
