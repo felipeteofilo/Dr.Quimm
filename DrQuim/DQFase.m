@@ -377,7 +377,6 @@
 
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    
     [self verificaCoberturaBackground];
     
 }

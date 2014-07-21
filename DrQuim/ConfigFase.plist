@@ -186,7 +186,7 @@
 					<string>{0, 0}</string>
 					<string>{0, 60}</string>
 					<string>{802, 68}</string>
-					<string>{825, 980}</string>
+					<string>{825, 133}</string>
 					<string>{1024, 133}</string>
 					<string>{1024, 0}</string>
 				</array>
@@ -334,6 +334,12 @@
 				<string>{2700, 835}</string>
 				<key>Nome</key>
 				<string>Chefe</string>
+			</dict>
+			<dict>
+				<key>PosicaoNPC</key>
+				<string>{2000, 995}</string>
+				<key>Nome</key>
+				<string>Quimm</string>
 			</dict>
 		</array>
 		<key>Partes</key>
