@@ -19,7 +19,7 @@
 		<string>Carne</string>
 		<key>descricao</key>
 		<string>Caçada mais cedo. Necessária para preparar o jantar</string>
-		<key>categora</key>
+		<key>categoria</key>
 		<string>Item de Missão</string>
 		<key>imagem</key>
 		<string>carne</string>
@@ -30,7 +30,7 @@
 		<string>Água mágica</string>
 		<key>descricao</key>
 		<string>Água retirada de um poço sagrado. Não se sabe o motivo, mas ajuda a curar os ferimentos</string>
-		<key>categora</key>
+		<key>categoria</key>
 		<string>Item de Missão</string>
 		<key>imagem</key>
 		<string>aguaMagica</string>
@@ -41,7 +41,7 @@
 		<string>Remédio para queimação</string>
 		<key>descricao</key>
 		<string>Remédio feito pelo curandeiro especialmente para o chefe</string>
-		<key>categora</key>
+		<key>categoria</key>
 		<string>Item de Missão</string>
 		<key>imagem</key>
 		<string>remedio</string>
@@ -52,7 +52,7 @@
 		<string>Docinho</string>
 		<key>descricao</key>
 		<string>Docinho feito com açúcar e clara de ovos. Apenas a Mãe de todos sabe a receita</string>
-		<key>categora</key>
+		<key>categoria</key>
 		<string>Item de Missão</string>
 		<key>imagem</key>
 		<string>docinho</string>
