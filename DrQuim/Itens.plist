@@ -27,30 +27,30 @@
 			<key>imagem</key>
 			<string>carne</string>
 		</dict>
-		<key>SopaRevitalizadora</key>
+		<key>AguaMagica</key>
 		<dict>
 			<key>nome</key>
-			<string>Sopa revitalizadora</string>
+			<string>Água mágica</string>
 			<key>descricao</key>
-			<string>Sopa com atributos curativos, ajuda a aliviar a dor.</string>
+			<string>Água retirada de um poço sagrado. Não se sabe o motivo, mas ajuda a curar os ferimentos</string>
 			<key>imagem</key>
-			<string>carne</string>
+			<string>aguaMagica</string>
 		</dict>
 		<key>Remedio</key>
 		<dict>
 			<key>nome</key>
-			<string>Remedio para queimação</string>
+			<string>Remédio para queimação</string>
 			<key>descricao</key>
-			<string>Repedio feito pelo curandeiro especialmente para o chefe</string>
+			<string>Remédio feito pelo curandeiro especialmente para o chefe</string>
 			<key>imagem</key>
-			<string>carne</string>
+			<string>remedio</string>
 		</dict>
 		<key>Docinho</key>
 		<dict>
 			<key>nome</key>
 			<string>Docinho</string>
 			<key>descricao</key>
-			<string>Docinho feito com açúcar e clara de ovos</string>
+			<string>Docinho feito com açúcar e clara de ovos. Apenas a Mãe de todos sabe a receita</string>
 			<key>imagem</key>
 			<string>docinho</string>
 		</dict>
