@@ -91,9 +91,11 @@
         self.fome = 10;
         self.sede = 40;
         self.vida = 100;
-        
-        //Mais um teste:
         self.respeito = 0;
+        
+        //Inicia a instância da classe itensJogador
+        self.itens = [[DQItensJogador alloc] init];
+        
     }
 
     //retorna o jogador
@@ -113,6 +115,7 @@
     
     return jogador;
 }
+
 
 //funcao para animar o jogador andando
 -(void)animarAndando{
