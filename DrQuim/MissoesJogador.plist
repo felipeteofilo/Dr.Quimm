@@ -3,8 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Missao00</key>
-	<string>0</string>
+	<dict>
+		<key>Atual</key>
+		<true/>
+		<key>Partes</key>
+		<integer>1</integer>
+		<key>ParteAtual</key>
+		<integer>0</integer>
+	</dict>
 	<key>Missao01</key>
-	<string>0</string>
+	<dict>
+		<key>Atual</key>
+		<false/>
+		<key>Partes</key>
+		<integer>8</integer>
+		<key>ParteAtual</key>
+		<integer>0</integer>
+	</dict>
 </dict>
 </plist>

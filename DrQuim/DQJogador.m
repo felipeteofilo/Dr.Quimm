@@ -96,6 +96,9 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         
+        //Inicia a instância da classe missoesJogador
+        self.missoes = [[DQMissoesJogador alloc] init];
+        
     }
 
     //retorna o jogador
