@@ -11,9 +11,18 @@
 @interface DQItensJogador : NSObject
 
 //NSDictionary que armazena quanto de cada item disponível o jogador tem
-@property NSDictionary *dicionarioDeItensQuantidade;
+@property NSMutableDictionary *dicionarioDeItensQuantidade;
 
 //NSDictionary que armazena a categoria (Arma/Consumível/Missão), nome, descriçao e imagem do item
-@property NSDictionary *dicionarioDeItensDescricao;
+@property NSMutableDictionary *dicionarioDeItensDescricao;
+
+//Método que adiciona 1 item ao jogador
+-(void)receberItem: (NSString *)item quantidade:(int)quantidade;
+
+//Método que tira 1 item do jogador
+-(void)entregarItem: (NSString *)item quantidade:(int)quantidade;
+
+//Método que armazena os itens em um NSArray e mostra suas caracteristicas
+-(void)mostrarItens;
 
 @end
