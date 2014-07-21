@@ -20,7 +20,6 @@
 		23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQnpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
-		23B28DBA19744F3B00EBB5B0 /* Temporária.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23B28DB919744F3B00EBB5B0 /* Temporária.plist */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
 		23BFA4AE196A3D0F00AD5F0C /* icone_piloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4AC196A3D0F00AD5F0C /* icone_piloto.png */; };
 		23BFA4AF196A3D0F00AD5F0C /* icone_cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4AD196A3D0F00AD5F0C /* icone_cientista.png */; };
@@ -111,7 +110,6 @@
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23A6DE9C194781E200982F9D /* DQCutsceneControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControle.h; sourceTree = "<group>"; };
 		23A6DE9D194781E200982F9D /* DQCutsceneControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControle.m; sourceTree = "<group>"; };
-		23B28DB919744F3B00EBB5B0 /* Temporária.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Temporária.plist"; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		23BFA4AC196A3D0F00AD5F0C /* icone_piloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_piloto.png; sourceTree = "<group>"; };
 		23BFA4AD196A3D0F00AD5F0C /* icone_cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_cientista.png; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				234683F31979E801007E54EA /* Missoes.plist */,
 				CDCACF521948F23500FC1070 /* FalasCutScene.plist */,
 				C575FF401965DDC500719817 /* ConfigFase.plist */,
-				23B28DB919744F3B00EBB5B0 /* Temporária.plist */,
 			);
 			name = "Arquvos XML";
 			sourceTree = "<group>";
@@ -565,7 +562,6 @@
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
-				23B28DBA19744F3B00EBB5B0 /* Temporária.plist in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
