@@ -3,14 +3,143 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>nome</key>
-		<string>Ajudando a mãe de todos</string>
-		<key>descricao</key>
-		<string>Pegue a caça de hoje com o caçador e entregue á mãe de todos</string>
-		<key>recompensa</key>
-		<string>Lança de caça</string>
-		<key>respeito</key>
-		<string>10</string>
+		<key>Nome</key>
+		<string>Missão 01 - Ajudando a mãe de todos</string>
+		<key>Recompensa</key>
+		<string>Lança</string>
+		<key>Respeito</key>
+		<integer>10</integer>
+		<key>Partes</key>
+		<array>
+			<dict>
+				<key>Descricao</key>
+				<string>Fale com a mãe de todos, ela tem um favor a pedir.</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com a Mãe de todos</string>
+				<key>Item Recebido</key>
+				<string>nenhum</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Vá até o jogador e peça a carne que ele caçou hoje.</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Caçador</string>
+				<key>Item Recebido</key>
+				<string>nenhum</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>O Caçador quer uma prova de que foi a mãe quem o mandou pegar a carne. Como convencê-lo?</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com a Mãe de todos</string>
+				<key>Item Recebido</key>
+				<string>Docinho</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>A mãe de todos tem uma ideia para provar ao Caçador que foi ela quem o mandou, mas você precisa falar com o Chefe primeiro</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Chefe e entregar o docinho</string>
+				<key>Item Recebido</key>
+				<string>nenhum</string>
+				<key>Item Entregue</key>
+				<string>Docinho</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>O chefe irá te ajudar, mas primeiro, você deve pegar o remédio dele com o curandeiro.</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Curandeiro e pegar o remédio do Chefe</string>
+				<key>Item Recebido</key>
+				<string>Remedio</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>100</integer>
+				<key>Sede</key>
+				<integer>100</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Agora que tem o remédio, você deve entregá-lo ao chefe da vila.</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Chefe e entregar o remédio</string>
+				<key>Item Recebido</key>
+				<string>AguaMagica</string>
+				<key>Item Entregue</key>
+				<string>Remedio</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Agora que finalmente conseguiu a água mágica, você tem como provar ao caçador que foi a mãe de todos que lhe enviou</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Caçador e entregar a água mágica</string>
+				<key>Item Recebido</key>
+				<string>Carne</string>
+				<key>Item Entregue</key>
+				<string>AguaMagica</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Enfim, a caça de hoje! Entregue para mãe de todos e elá poderá fazer o jantar</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com a Mãe de todos e entregar a carne</string>
+				<key>Item Recebido</key>
+				<string>Lança</string>
+				<key>Item Entregue</key>
+				<string>Carne</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>10</integer>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

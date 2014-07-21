@@ -217,9 +217,9 @@
 			isa = PBXGroup;
 			children = (
 				755FA40D195A06D80052DC1E /* FalasNoJogo.plist */,
+				CDCACF521948F23500FC1070 /* FalasCutScene.plist */,
 				234683E41979DF39007E54EA /* Itens.plist */,
 				234683F31979E801007E54EA /* Missoes.plist */,
-				CDCACF521948F23500FC1070 /* FalasCutScene.plist */,
 				C575FF401965DDC500719817 /* ConfigFase.plist */,
 			);
 			name = "Arquvos XML";
