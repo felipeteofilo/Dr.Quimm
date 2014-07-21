@@ -17,12 +17,17 @@
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23622C0A1975F4CB00D83532 /* tutorialCorrerDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */; };
 		23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */; };
+		23785973197D68CE00241C99 /* rostoCacador.png in Resources */ = {isa = PBXBuildFile; fileRef = 2378596C197D68CE00241C99 /* rostoCacador.png */; };
+		23785974197D68CE00241C99 /* rostoChefeRanzinza.png in Resources */ = {isa = PBXBuildFile; fileRef = 2378596D197D68CE00241C99 /* rostoChefeRanzinza.png */; };
+		23785975197D68CE00241C99 /* rostoChefeSimpatico.png in Resources */ = {isa = PBXBuildFile; fileRef = 2378596E197D68CE00241C99 /* rostoChefeSimpatico.png */; };
+		23785976197D68CE00241C99 /* rostoCientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 2378596F197D68CE00241C99 /* rostoCientista.png */; };
+		23785977197D68CE00241C99 /* rostoCurandeiro.png in Resources */ = {isa = PBXBuildFile; fileRef = 23785970197D68CE00241C99 /* rostoCurandeiro.png */; };
+		23785978197D68CE00241C99 /* rostoMaedetodos.png in Resources */ = {isa = PBXBuildFile; fileRef = 23785971197D68CE00241C99 /* rostoMaedetodos.png */; };
+		23785979197D68CE00241C99 /* rostoPiloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 23785972197D68CE00241C99 /* rostoPiloto.png */; };
 		23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQnpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9D194781E200982F9D /* DQCutsceneControle.m */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
-		23BFA4AE196A3D0F00AD5F0C /* icone_piloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4AC196A3D0F00AD5F0C /* icone_piloto.png */; };
-		23BFA4AF196A3D0F00AD5F0C /* icone_cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4AD196A3D0F00AD5F0C /* icone_cientista.png */; };
 		23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFADBC1966E4FB00691C04 /* setinhas.png */; };
 		23ECFE50197C8120001FA6FA /* docinho.png in Resources */ = {isa = PBXBuildFile; fileRef = 23ECFE4F197C8120001FA6FA /* docinho.png */; };
 		3C26D9051974B487002FEC9A /* Escalando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C26D9041974B487002FEC9A /* Escalando.atlas */; };
@@ -59,8 +64,6 @@
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
 		C575FF411965DDC500719817 /* ConfigFase.plist in Resources */ = {isa = PBXBuildFile; fileRef = C575FF401965DDC500719817 /* ConfigFase.plist */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
-		C591815D1967738D00AFD8B5 /* cientista.png in Resources */ = {isa = PBXBuildFile; fileRef = C591815B1967738D00AFD8B5 /* cientista.png */; };
-		C591815E1967738D00AFD8B5 /* piloto.png in Resources */ = {isa = PBXBuildFile; fileRef = C591815C1967738D00AFD8B5 /* piloto.png */; };
 		C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */ = {isa = PBXBuildFile; fileRef = C59181601967756700AFD8B5 /* DQPlataforma.m */; };
 		C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1740A1968C77800143B8D /* DQConfiguracaoFase.m */; };
 		C5B7FBDA1975F24100C2CAFC /* tutorialPular.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5B7FBD81975F24100C2CAFC /* tutorialPular.atlas */; };
@@ -104,6 +107,13 @@
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerDireita.atlas; sourceTree = "<group>"; };
 		23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerEsquerda.atlas; sourceTree = "<group>"; };
+		2378596C197D68CE00241C99 /* rostoCacador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rostoCacador.png; sourceTree = "<group>"; };
+		2378596D197D68CE00241C99 /* rostoChefeRanzinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rostoChefeRanzinza.png; sourceTree = "<group>"; };
+		2378596E197D68CE00241C99 /* rostoChefeSimpatico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rostoChefeSimpatico.png; sourceTree = "<group>"; };
+		2378596F197D68CE00241C99 /* rostoCientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rostoCientista.png; sourceTree = "<group>"; };
+		23785970197D68CE00241C99 /* rostoCurandeiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rostoCurandeiro.png; sourceTree = "<group>"; };
+		23785971197D68CE00241C99 /* rostoMaedetodos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rostoMaedetodos.png; sourceTree = "<group>"; };
+		23785972197D68CE00241C99 /* rostoPiloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rostoPiloto.png; sourceTree = "<group>"; };
 		23A538E7196C6E9E00821BAF /* DQnpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQnpc.h; sourceTree = "<group>"; };
 		23A538E8196C6E9E00821BAF /* DQnpc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQnpc.m; sourceTree = "<group>"; };
 		23A6DE9919477F1500982F9D /* DQCena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCena.h; sourceTree = "<group>"; };
@@ -111,8 +121,6 @@
 		23A6DE9C194781E200982F9D /* DQCutsceneControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControle.h; sourceTree = "<group>"; };
 		23A6DE9D194781E200982F9D /* DQCutsceneControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControle.m; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		23BFA4AC196A3D0F00AD5F0C /* icone_piloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_piloto.png; sourceTree = "<group>"; };
-		23BFA4AD196A3D0F00AD5F0C /* icone_cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_cientista.png; sourceTree = "<group>"; };
 		23BFADBC1966E4FB00691C04 /* setinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setinhas.png; sourceTree = "<group>"; };
 		23ECFE4F197C8120001FA6FA /* docinho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = docinho.png; sourceTree = "<group>"; };
 		3C26D9041974B487002FEC9A /* Escalando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Escalando.atlas; sourceTree = "<group>"; };
@@ -162,8 +170,6 @@
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
 		C575FF401965DDC500719817 /* ConfigFase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigFase.plist; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
-		C591815B1967738D00AFD8B5 /* cientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cientista.png; path = Personagens/cientista.png; sourceTree = "<group>"; };
-		C591815C1967738D00AFD8B5 /* piloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = piloto.png; path = Personagens/piloto.png; sourceTree = "<group>"; };
 		C591815F1967756700AFD8B5 /* DQPlataforma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQPlataforma.h; sourceTree = "<group>"; };
 		C59181601967756700AFD8B5 /* DQPlataforma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQPlataforma.m; sourceTree = "<group>"; };
 		C5B174091968C77800143B8D /* DQConfiguracaoFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQConfiguracaoFase.h; sourceTree = "<group>"; };
@@ -256,24 +262,18 @@
 			name = "Falas e Cutscenes";
 			sourceTree = "<group>";
 		};
-		23B0E4A519662AE9006CD78A /* RostoPersonagens */ = {
+		2378596B197D68CE00241C99 /* rostos */ = {
 			isa = PBXGroup;
 			children = (
-				C591815B1967738D00AFD8B5 /* cientista.png */,
-				C591815C1967738D00AFD8B5 /* piloto.png */,
+				2378596C197D68CE00241C99 /* rostoCacador.png */,
+				2378596D197D68CE00241C99 /* rostoChefeRanzinza.png */,
+				2378596E197D68CE00241C99 /* rostoChefeSimpatico.png */,
+				2378596F197D68CE00241C99 /* rostoCientista.png */,
+				23785970197D68CE00241C99 /* rostoCurandeiro.png */,
+				23785971197D68CE00241C99 /* rostoMaedetodos.png */,
+				23785972197D68CE00241C99 /* rostoPiloto.png */,
 			);
-			name = RostoPersonagens;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		23BFA4AB196A3CE100AD5F0C /* rostoPersonagens */ = {
-			isa = PBXGroup;
-			children = (
-				23BFA4AC196A3D0F00AD5F0C /* icone_piloto.png */,
-				23BFA4AD196A3D0F00AD5F0C /* icone_cientista.png */,
-			);
-			name = rostoPersonagens;
-			path = ..;
+			path = rostos;
 			sourceTree = "<group>";
 		};
 		94080E921933BA290024FB94 = {
@@ -366,9 +366,8 @@
 		9433F5D71937B4BB00E55E73 /* Personagens */ = {
 			isa = PBXGroup;
 			children = (
+				2378596B197D68CE00241C99 /* rostos */,
 				23463FA51979A1C300B7ACE3 /* NPCS.atlas */,
-				23BFA4AB196A3CE100AD5F0C /* rostoPersonagens */,
-				23B0E4A519662AE9006CD78A /* RostoPersonagens */,
 				C57D7C2B1964E99000EF94C9 /* Jogador.png */,
 			);
 			path = Personagens;
@@ -560,11 +559,14 @@
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				CDCACF531948F23500FC1070 /* FalasCutScene.plist in Resources */,
 				755E335D194626A300C0C029 /* Andando.atlas in Resources */,
+				23785975197D68CE00241C99 /* rostoChefeSimpatico.png in Resources */,
+				23785978197D68CE00241C99 /* rostoMaedetodos.png in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
+				23785979197D68CE00241C99 /* rostoPiloto.png in Resources */,
+				23785974197D68CE00241C99 /* rostoChefeRanzinza.png in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
-				C591815D1967738D00AFD8B5 /* cientista.png in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
 				C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */,
 				23622C0A1975F4CB00D83532 /* tutorialCorrerDireita.atlas in Resources */,
@@ -573,10 +575,9 @@
 				C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */,
 				234683E51979DF39007E54EA /* Itens.plist in Resources */,
 				755E3365194639BD00C0C029 /* Pulando.atlas in Resources */,
+				23785976197D68CE00241C99 /* rostoCientista.png in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
-				23BFA4AF196A3D0F00AD5F0C /* icone_cientista.png in Resources */,
 				C5B7FBDA1975F24100C2CAFC /* tutorialPular.atlas in Resources */,
-				23BFA4AE196A3D0F00AD5F0C /* icone_piloto.png in Resources */,
 				C575FF411965DDC500719817 /* ConfigFase.plist in Resources */,
 				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
 				234683F41979E801007E54EA /* Missoes.plist in Resources */,
@@ -594,10 +595,11 @@
 				3C26D9091974B4A2002FEC9A /* cutscene2.atlas in Resources */,
 				234683EF1979E309007E54EA /* carne.png in Resources */,
 				23ECFE50197C8120001FA6FA /* docinho.png in Resources */,
+				23785973197D68CE00241C99 /* rostoCacador.png in Resources */,
 				234683F11979E309007E54EA /* aguaMagica.png in Resources */,
 				C5B7FBDF19762A1A00C2CAFC /* BalaoAlerta.png in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,
-				C591815E1967738D00AFD8B5 /* piloto.png in Resources */,
+				23785977197D68CE00241C99 /* rostoCurandeiro.png in Resources */,
 				75319AD21948C8DE006EECE1 /* Parado.atlas in Resources */,
 				C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
