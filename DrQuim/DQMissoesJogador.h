@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DQItensJogador.h"
 
 @interface DQMissoesJogador : NSObject
 
@@ -16,10 +17,22 @@
 //Dicionario que armazena as informações da plist missoesJogador
 @property NSMutableArray *arrayDeMissoesJogador;
 
+//DQItensJogador para ter acesso aos ítens do jogador
+@property DQItensJogador *itensDoJogador;
+
 //NSString que armazena o índice da missão atual
 @property int missaoAtual;
 
 //int que armazena em qual parte da missão atual o jogador está
 @property int parteDaMissao;
+
+//Método que faz mudar para a missão passada por parâmetro
+-(void)iniciarMissao: (int)missao;
+
+//Método que faz passar a parte da missão quem que está (se for a última parte, chama o método FIMDAMISSAO)
+-(void)passarParteMissao;
+
+//Método que mostra características da missão atual
+-(void)mostrarMissao;
 
 @end

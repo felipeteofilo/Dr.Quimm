@@ -29,12 +29,11 @@
         self.dicionarioDeItensReferencia = [[NSMutableDictionary alloc]initWithContentsOfFile:urlItensReferencia];
         
         
-        //TESTE
-        [self receberItem:@"Docinho" quantidade:2];
-        [self entregarItem:@"Docinho" quantidade:1];
-        
-        //TESTE 2
-        [self mostrarItens];
+//        //TESTE
+//        [self receberItem:@"Docinho" quantidade:2];
+//        [self entregarItem:@"Docinho" quantidade:1];
+//
+//        [self mostrarItens];
     }
     return self;
 }
@@ -82,8 +81,11 @@
         //Pega a imagem
         NSString *imagemTemporaria = [[self.dicionarioDeItensReferencia objectForKey:keyTemporaria] objectForKey:@"imagem"];
         
-        //Mostra
+        //Mostra tudo
         //NSLog(@"Nome: %@| Descrição: %@| Categoria: %@| Quantidade: %i| Imagem: %@", nomeTemporario, descricaoTemporaria, categoriaTemporaria, quantidadeTemporaria, imagemTemporaria);
+        
+        //Mostra nome e quatidade apenas
+        NSLog(@"%@ = %i unidades", nomeTemporario,  quantidadeTemporaria );
     }
 }
 

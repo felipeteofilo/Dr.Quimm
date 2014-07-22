@@ -14,6 +14,8 @@
 {
     self = [super init];
     if(self){
+        //inicia a variavel que terá acesso aos ítens do jogador
+        self.itensDoJogador = [[DQItensJogador alloc]init];
         
         //Popula o dicionario de Missoes do jogador
         //url
@@ -36,46 +38,55 @@
         self.parteDaMissao = 0;
         
 
-        //TESTE
-        //mostra as informações da missão atual
-        [self mostrarMissao];
+//        //TESTE - para ver se passa a missão e mostra as informações
+//        //mostra as informações da missão atual
+//        [self mostrarMissao];
+//        
+//        //muda de missão - Para a missão01: Ajudando a mãe de todos
+//        [self iniciarMissao:1];
+//        [self mostrarMissao];
+//        
+//        //passa de parte - 0 para 1
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        
+//        //passa de parte - 1 para 2
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        
+//        //passa de parte - 2 para 3
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        
+//        //passa de parte - 3 para 4
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        
+//        //passa de parte - 4 para 5
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        
+//        //passa de parte - 5 para 6
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        
+//        //passa de parte - 6 para 7
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        
+//        //tenta passar de parte - 7 para 8 - percebe que acabou e volta para o índice 0 <sem missão>
+//        [self passarParteMissao];
+//        [self mostrarMissao];
+//        //FIM TESTE
         
-        //muda de missão - Para a missão01: Ajudando a mãe de todos
-        [self iniciarMissao:1];
-        [self mostrarMissao];
-        
-        //passa de parte - 0 para 1
-        [self passarParteMissao];
-        [self mostrarMissao];
-        
-        //passa de parte - 1 para 2
-        [self passarParteMissao];
-        [self mostrarMissao];
-        
-        //passa de parte - 2 para 3
-        [self passarParteMissao];
-        [self mostrarMissao];
-        
-        //passa de parte - 3 para 4
-        [self passarParteMissao];
-        [self mostrarMissao];
-        
-        //passa de parte - 4 para 5
-        [self passarParteMissao];
-        [self mostrarMissao];
-        
-        //passa de parte - 5 para 6
-        [self passarParteMissao];
-        [self mostrarMissao];
-        
-        //passa de parte - 6 para 7
-        [self passarParteMissao];
-        [self mostrarMissao];
-        
-        //tenta passar de parte - 7 para 8 - percebe que acabou e volta para o índice 0 <sem missão>
-        [self passarParteMissao];
-        [self mostrarMissao];
-        //FIM TESTE
+//        //TESTE 2 - Para ver se está dando os itens corretamente
+//        [self iniciarMissao:1];
+//        
+//        [self.itensDoJogador mostrarItens];
+//        
+//        self.parteDaMissao = 2;
+//        [self passarParteMissao];//Vai para 3, recebe itens do 2
+//        [self passarParteMissao];//Vai para 4, recebe itens do 3
         
     }
     return self;
@@ -99,15 +110,33 @@
 
 -(void)passarParteMissao
 {
+    
     //Se estiver na última parte da missão, vai para o fim da missão e recebe o que precisa receber
     if(self.parteDaMissao == [[[self.arrayDeMissoesJogador objectAtIndex:self.missaoAtual] objectForKey:@"Partes"] intValue]-1){
         [self fimDaMissao];
     }
-    //senão, só passa de parte
+    //senão, recebe/entrega os itens da parte, e então passa para a próxima
     else{
+        
+        //Quando a parte acaba, o jogador recebe/ entrega os itens descritos
+        NSString *itemRecebido = [[[[self.arrayDeMissoesReferencia objectAtIndex:self.missaoAtual] objectForKey:@"Partes"] objectAtIndex:self.parteDaMissao] objectForKey:@"Item Recebido"];
+        NSString *itemEntregue = [[[[self.arrayDeMissoesReferencia objectAtIndex:self.missaoAtual] objectForKey:@"Partes"] objectAtIndex:self.parteDaMissao] objectForKey:@"Item Entregue"];
+        
+        
+        //Verifica se recebe um ítem - se sim, adiciona
+        if(![itemRecebido isEqualToString:@"nenhum"]){
+            [self.itensDoJogador receberItem:itemRecebido quantidade:1];
+        }
+
+        //Verifica se entrega um ítem - se sim, subtrai
+        if(![itemEntregue isEqualToString:@"nenhum"]){
+            [self.itensDoJogador entregarItem:itemEntregue quantidade:1];
+        }
+        
+        //Passa para a próxima parte
         self.parteDaMissao++;
+        [[self.arrayDeMissoesJogador objectAtIndex:self.missaoAtual] setValue:[NSNumber numberWithInt:self.parteDaMissao] forKey:@"ParteAtual"];
     }
-   
 }
 
 -(void)fimDaMissao
