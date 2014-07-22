@@ -35,69 +35,67 @@
         
         [self addChild:self.spriteNode];
         
-        //le as pastas atlas de animacoes
-        SKTextureAtlas *pastaFramesAndando= [SKTextureAtlas atlasNamed:@"Andando"];
-        SKTextureAtlas *pastaFramesPulando= [SKTextureAtlas atlasNamed:@"Pulando"];
-        SKTextureAtlas *pastaFramesParado= [SKTextureAtlas atlasNamed:@"Parado"];
-        SKTextureAtlas *pastaFramesEscalando= [SKTextureAtlas atlasNamed:@"Escalando"];
-        
-        
-        
-        //inicia os arrays com os frames das animacoes
-        framesAndando = [[NSMutableArray alloc]init];
-        framesPulando = [[NSMutableArray alloc]init];
-        framesParado = [[NSMutableArray alloc]init];
-        framesEScalando = [[NSMutableArray alloc]init];
-        
-    
-        //adiciona as texturas no array de frames
-        NSInteger numImagens = pastaFramesAndando.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Andando%d", i];
-            SKTexture *temp = [pastaFramesAndando textureNamed:textureName];
-            [framesAndando addObject:temp];
-        }
-        
-        numImagens = pastaFramesPulando.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Pulando%d", i];
-            SKTexture *temp = [pastaFramesPulando textureNamed:textureName];
-            [framesPulando addObject:temp];
-        }
-        
-        numImagens = pastaFramesParado.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Parado%d", i];
-            SKTexture *temp = [pastaFramesParado textureNamed:textureName];
-            [framesParado addObject:temp];
-        }
-        
-        numImagens = pastaFramesEscalando.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"escalando%d", i];
-            SKTexture *temp = [pastaFramesEscalando textureNamed:textureName];
-            [framesEScalando addObject:temp];
-        }
+
         
         //Seta que ele ainda nao pode escalar
         self.podeEscalar = NO;
-        
-        
-        //apos ler tudo anima o jogador
-        [self animarParado];
-        
-        
+        self.estaNoChao = YES;
         //USADO COMO TESTE
         self.fome = 10;
         self.sede = 40;
         self.vida = 100;
-        
-        //Mais um teste:
         self.respeito = 0;
+        
+        //Inicia a instância da classe itensJogador
+        self.itens = [[DQItensJogador alloc] init];
+        
     }
 
     //retorna o jogador
     return self;
+}
+
+-(void)iniciarAnimacoes:(NSDictionary*)animacoes{
+       
+    if (![[animacoes objectForKey:@"Andando"]  isEqual:@""]) {
+        framesAndando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Andando"]]];
+
+    }
+    if (![[animacoes objectForKey:@"Pulando"]  isEqual:@""]) {
+        framesPulando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Pulando"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Parado"]  isEqual:@""]) {
+       framesParado = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Parado"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Escalando"]  isEqual:@""]) {
+       framesEscalando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Escalando"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Caindo"]  isEqual:@""]) {
+        framesCaindo = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Caindo"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Derrapando"]  isEqual:@""]) {
+        framesDerrapando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Derrapando"]]];
+        
+    }
+    
+    //apos ler tudo anima o jogador
+    [self animarParado];
+    
+}
+-(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
+    NSInteger numImagens = pastaFrames.textureNames.count;
+    NSMutableArray *frames =[[NSMutableArray alloc]init];
+    for (int i=1; i <= numImagens; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%d", i];
+        SKTexture *temp = [pastaFrames textureNamed:textureName];
+        [frames addObject:temp];
+    }
+    
+    return frames;
 }
 
 
@@ -114,6 +112,7 @@
     return jogador;
 }
 
+
 //funcao para animar o jogador andando
 -(void)animarAndando{
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
@@ -123,10 +122,19 @@
                                                                         restore:YES]] withKey:@"animandoAndando"];
 }
 
+//funcao para animar o jogador derrapando
+-(void)animarDerrapando{
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesDerrapando
+                                                                              timePerFrame:0.1f
+                                                                                    resize:NO
+                                                                                   restore:YES]] withKey:@"animandoDerrapando"];
+}
+
 //funcao para animar o jogador escalando
 -(void)animarEscalando{
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesEScalando
+    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesEscalando
                                                                               timePerFrame:0.1f
                                                                                     resize:NO
                                                                                    restore:YES]] withKey:@"animandoEscalada"];
@@ -144,7 +152,14 @@
 -(void)animarPular{
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.33f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.47f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+}
+
+//funcao para animar jogador caindo
+-(void)animarCaindo{
+    
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesCaindo timePerFrame:0.1f                                           resize:NO restore:YES] withKey:@"animandoCaindo"];
 }
 
 //funcao da acao de pulo do jogador
@@ -158,6 +173,7 @@
         self.physicsBody.velocity = CGVectorMake(0, 0);
         [self.physicsBody applyImpulse:CGVectorMake(0, 140)];
         self.podePular += 1;
+        self.estaNoChao = NO;
         
         
         // anima ele pulando

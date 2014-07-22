@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Lança</key>
+	<dict>
+		<key>nome</key>
+		<string>Lança simples</string>
+		<key>descricao</key>
+		<string>Arma utilizada para caça e proteção</string>
+		<key>categoria</key>
+		<string>Armas</string>
+		<key>imagem</key>
+		<string>lanca</string>
+	</dict>
+	<key>Carne</key>
+	<dict>
+		<key>nome</key>
+		<string>Carne</string>
+		<key>descricao</key>
+		<string>Caçada mais cedo. Necessária para preparar o jantar</string>
+		<key>categoria</key>
+		<string>Item de Missão</string>
+		<key>imagem</key>
+		<string>carne</string>
+	</dict>
+	<key>AguaMagica</key>
+	<dict>
+		<key>nome</key>
+		<string>Água mágica</string>
+		<key>descricao</key>
+		<string>Água retirada de um poço sagrado. Não se sabe o motivo, mas ajuda a curar os ferimentos</string>
+		<key>categoria</key>
+		<string>Item de Missão</string>
+		<key>imagem</key>
+		<string>aguaMagica</string>
+	</dict>
+	<key>Remedio</key>
+	<dict>
+		<key>nome</key>
+		<string>Remédio para queimação</string>
+		<key>descricao</key>
+		<string>Remédio feito pelo curandeiro especialmente para o chefe</string>
+		<key>categoria</key>
+		<string>Item de Missão</string>
+		<key>imagem</key>
+		<string>remedio</string>
+	</dict>
+	<key>Docinho</key>
+	<dict>
+		<key>nome</key>
+		<string>Docinho</string>
+		<key>descricao</key>
+		<string>Docinho feito com açúcar e clara de ovos. Apenas a Mãe de todos sabe a receita</string>
+		<key>categoria</key>
+		<string>Item de Missão</string>
+		<key>imagem</key>
+		<string>docinho</string>
+	</dict>
+</dict>
+</plist>
