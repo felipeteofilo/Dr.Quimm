@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Missao00</key>
+<array>
 	<dict>
+		<key>Nome</key>
+		<string>Missão 00 - Sem Missão</string>
 		<key>Atual</key>
 		<true/>
 		<key>Partes</key>
@@ -11,8 +12,9 @@
 		<key>ParteAtual</key>
 		<integer>0</integer>
 	</dict>
-	<key>Missao01</key>
 	<dict>
+		<key>Nome</key>
+		<string>Missão 01 - Ajudando a mãe de todos</string>
 		<key>Atual</key>
 		<false/>
 		<key>Partes</key>
@@ -20,5 +22,5 @@
 		<key>ParteAtual</key>
 		<integer>0</integer>
 	</dict>
-</dict>
+</array>
 </plist>

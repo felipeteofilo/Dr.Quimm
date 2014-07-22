@@ -83,7 +83,7 @@
         NSString *imagemTemporaria = [[self.dicionarioDeItensReferencia objectForKey:keyTemporaria] objectForKey:@"imagem"];
         
         //Mostra
-        NSLog(@"Nome: %@| Descrição: %@| Categoria: %@| Quantidade: %i| Imagem: %@", nomeTemporario, descricaoTemporaria, categoriaTemporaria, quantidadeTemporaria, imagemTemporaria);
+        //NSLog(@"Nome: %@| Descrição: %@| Categoria: %@| Quantidade: %i| Imagem: %@", nomeTemporario, descricaoTemporaria, categoriaTemporaria, quantidadeTemporaria, imagemTemporaria);
     }
 }
 

@@ -11,13 +11,13 @@
 @interface DQMissoesJogador : NSObject
 
 //Dicionario que armazena as informações da plist missoesReferencia
-@property NSMutableDictionary *dicionarioDeMissoesReferencia;
+@property NSMutableArray *arrayDeMissoesReferencia;
 
 //Dicionario que armazena as informações da plist missoesJogador
-@property NSMutableDictionary *dicionarioDeMissoesJogador;
+@property NSMutableArray *arrayDeMissoesJogador;
 
-//NSString que armazena a key da missão atual
-@property NSString *missaoAtual;
+//NSString que armazena o índice da missão atual
+@property int missaoAtual;
 
 //int que armazena em qual parte da missão atual o jogador está
 @property int parteDaMissao;

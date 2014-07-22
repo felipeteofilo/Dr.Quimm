@@ -4,6 +4,33 @@
 <array>
 	<dict>
 		<key>Nome</key>
+		<string>Missão 00 - Sem Missão</string>
+		<key>Recompensa</key>
+		<string>nenhuma</string>
+		<key>Respeito</key>
+		<integer>0</integer>
+		<key>Partes</key>
+		<array>
+			<dict>
+				<key>Descricao</key>
+				<string>nenhuma</string>
+				<key>Objetivo Atual</key>
+				<string>nenhum</string>
+				<key>Item Recebido</key>
+				<string>nenhum</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Nome</key>
 		<string>Missão 01 - Ajudando a mãe de todos</string>
 		<key>Recompensa</key>
 		<string>Lança</string>
