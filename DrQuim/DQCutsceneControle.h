@@ -84,10 +84,10 @@
 //Metodo para trocar de Cutscene
 -(void)trocarCena;
 
-//Metodo para mostrar falas In Game
+//Metodo para mostrar falas In Game - GAMBIARRA MASTER! (vocês sabiam que em portugal, gambiarra significa "extensão de luz"?)
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key;
-
 -(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito;
+-(void)mostrarFalaNaMissao :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Parte:(NSString *)parte;
 
 //Metodo que retorna se pode trocar a fala ou nao
 -(BOOL)trocarFala;

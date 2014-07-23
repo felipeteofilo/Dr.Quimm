@@ -10,10 +10,14 @@
 #import "DQBarraStatus.h"
 #import "DQnpc.h"
 #import "DQCutsceneControle.h"
+#import "DQMissoesJogador.h"
 
 @interface DQVila : DQFase
 
 @property NSMutableArray *escalacel;
+
+//DQMissoesJogador que guarda as informações de missão
+@property DQMissoesJogador *missao;
 
 //DQCutsceneControle para controlar as cutscenes e as falas.
 @property DQCutsceneControle *controleCutscenes;
@@ -28,8 +32,5 @@
 @property DQnpc *curandeiro; //Curandeiro
 @property DQnpc *chefe;      //Chefe
 @property DQnpc *quimm;      //Dr.Quimm
-
-//Booleanos que dizem quais missões já estão completas e quais ainda não foram feitas
-@property BOOL *missao01Completa;
 
 @end

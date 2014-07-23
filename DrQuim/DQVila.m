@@ -25,8 +25,11 @@
         [self iniciarFase];
         [self addChild:self.hudFase];
         
-        //TEMPORARIO - mudar mais tarde para a plist
-        self.missao01Completa = NO;
+        self.missao = [[DQMissoesJogador alloc]init];
+        
+        //TEMPORÁRIO - inicia ele direto na missão 01
+        [self.missao iniciarMissao:1];
+        NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
     }
     
     return self;
@@ -96,7 +99,6 @@
     }
 }
 
-
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
@@ -155,13 +157,82 @@
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
-    //chamar as falas do Personagem
-    [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
-    
     //definições importantes:
     self.cutsceneEstaRodando = YES;
     self.estaFalando = YES;
     [self.jogador pararAndar];
+    
+
+    //SEM MISSAO
+    if(self.missao.missaoAtual == 0){
+        //chamar as falas do Personagem dependendo do respeito
+        [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
+    }
+    
+    //COM MISSAO
+    //missão 01 - Ajudando a mãe de todos
+    else if(self.missao.missaoAtual == 1){
+        NSString *keyDaParte;
+        
+        //se o NPC em questão ainda não falou com o jogador
+        if(!npc.falou){
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.missao.parteDaMissao];
+            npc.falou = YES;
+            NSLog(@"%@", keyDaParte);
+        }
+        //se o NPC em questão já tiver falado com a
+        else{
+            keyDaParte = [NSString stringWithFormat:@"Parte%iR", self.missao.parteDaMissao];
+            NSLog(@"%@", keyDaParte);
+        }
+        
+        //Mostra a fala dependendo da Key gerada
+        [self.controleCutscenes mostrarFalaNaMissao:self.scene Dicionario:npc.dicionarioDeFalasMissao01 Parte:keyDaParte];
+    }
+    
+    //chama o método que verifica se a missão deve mudar de parte ou não - e se for mudar, faz o que for necessário
+    [self mudarParteMissao];
+}
+
+-(void)mudarParteMissao
+{
+    //se a missão for a Missão01 - Ajudando a mãe de todos
+    if(self.missao.missaoAtual == 1){
+        switch (self.missao.parteDaMissao) {
+            case 0:
+                if(self.maeDeTodos.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 1:
+                if(self.cacador.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 2:
+                if(self.maeDeTodos.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 3:
+                if(self.chefe.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 4:
+                if(self.curandeiro.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 5:
+                if(self.chefe.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 6:
+                if(self.cacador.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 7:
+                if(self.maeDeTodos.falou){ [self.missao passarParteMissao]; }
+                break;
+            default:
+                break;
+        }
+        
+        self.maeDeTodos.falou = NO;
+        self.cacador.falou = NO;
+        self.curandeiro.falou = NO;
+        self.chefe.falou = NO;
+        self.quimm.falou = NO;
+    }
 }
 
 -(void)criarParteFase{
