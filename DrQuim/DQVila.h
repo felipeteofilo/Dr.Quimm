@@ -29,4 +29,7 @@
 @property DQnpc *chefe;      //Chefe
 @property DQnpc *quimm;      //Dr.Quimm
 
+//Booleanos que dizem quais missões já estão completas e quais ainda não foram feitas
+@property BOOL *missao01Completa;
+
 @end
