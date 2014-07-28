@@ -16,6 +16,7 @@
 #import "DQHudController.h"
 #import "DQCoberturaBackground.h"
 #import "DQCutsceneControle.h"
+#import "DQVidaControle.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -33,6 +34,8 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //DQCutsceneControle para controlar as cutscenes e as falas.
 @property DQCutsceneControle *controleCutscenes;
 
+//DQVidaControle para controlar a vida do personagem
+@property DQVidaControle *controladorDaVida;
 
 
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena

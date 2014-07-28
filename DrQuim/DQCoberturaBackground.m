@@ -50,8 +50,8 @@
 //Será usado para dar fadeOut, na cobertura do background
 -(void)manipulaCobertura:(CGPoint)posJogador{
     
-    //Fazer validacao da posicao jogador
-    NSLog(@"PosCobertura X:%f Y:%f",self.position.x,self.position.y);
+//    //Fazer validacao da posicao jogador
+//    NSLog(@"PosCobertura X:%f Y:%f",self.position.x,self.position.y);
     
     //Valida se esta dentro em X e em Y
     if ((posJogador.x >= self.position.x && posJogador.x < self.posFinal.x) && (posJogador.y >= self.position.y)){// && posJogador.y < self.posFinal.y))  {

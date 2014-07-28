@@ -21,6 +21,7 @@
 		3C26D9071974B499002FEC9A /* cutscene1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C26D9061974B499002FEC9A /* cutscene1.atlas */; };
 		3C26D9091974B4A2002FEC9A /* cutscene2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C26D9081974B4A2002FEC9A /* cutscene2.atlas */; };
 		3C3902281986EF050036529E /* cutscene3.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C3902271986EF050036529E /* cutscene3.atlas */; };
+		3C39022B198703C20036529E /* DQVidaControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C39022A198703C20036529E /* DQVidaControle.m */; };
 		3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CA4549A1969C70C00FB62D5 /* beep.mp3 */; };
 		3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CABE62D1977533F0064199A /* DQCoberturaBackground.m */; };
 		3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */; };
@@ -111,6 +112,8 @@
 		3C26D9061974B499002FEC9A /* cutscene1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cutscene1.atlas; sourceTree = "<group>"; };
 		3C26D9081974B4A2002FEC9A /* cutscene2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cutscene2.atlas; sourceTree = "<group>"; };
 		3C3902271986EF050036529E /* cutscene3.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cutscene3.atlas; sourceTree = "<group>"; };
+		3C390229198703C20036529E /* DQVidaControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQVidaControle.h; sourceTree = "<group>"; };
+		3C39022A198703C20036529E /* DQVidaControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVidaControle.m; sourceTree = "<group>"; };
 		3CA4549A1969C70C00FB62D5 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		3CABE62C1977533F0064199A /* DQCoberturaBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoberturaBackground.h; sourceTree = "<group>"; };
 		3CABE62D1977533F0064199A /* DQCoberturaBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoberturaBackground.m; sourceTree = "<group>"; };
@@ -425,6 +428,8 @@
 				947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */,
 				C5B174091968C77800143B8D /* DQConfiguracaoFase.h */,
 				C5B1740A1968C77800143B8D /* DQConfiguracaoFase.m */,
+				3C390229198703C20036529E /* DQVidaControle.h */,
+				3C39022A198703C20036529E /* DQVidaControle.m */,
 			);
 			name = Controladores;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
+				3C39022B198703C20036529E /* DQVidaControle.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */,

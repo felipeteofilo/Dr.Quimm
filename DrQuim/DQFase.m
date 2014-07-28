@@ -405,6 +405,8 @@
     
     [self verificaCoberturaBackground];
     
+    [self.controladorDaVida atualizarSituacaoJogador];
+    
 }
 
 - (void)didSimulatePhysics{
@@ -490,6 +492,8 @@
     self.mundo =[SKNode node];
     
     [self.mundo setZPosition:-100];
+    
+    self.controladorDaVida = [DQVidaControle sharedControleVida];
     
     self.backgroundAtual =[SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual]];
     [self.backgroundAtual setAnchorPoint:CGPointMake(0, 0)];
