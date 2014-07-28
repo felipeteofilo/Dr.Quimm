@@ -19,7 +19,7 @@
 			<string>AndandoDr</string>
 		</dict>
 		<key>PosInicialJogador</key>
-		<string>{400, 600}</string>
+		<string>{7500, 600}</string>
 		<key>Partes</key>
 		<array>
 			<dict>

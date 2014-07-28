@@ -219,7 +219,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    
+    if (!self.cutsceneEstaRodando && !self.estaFalando) {
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
     
@@ -241,6 +241,18 @@
         //PULAR
         
         [self.jogador pular];
+    }
+    }
+    //Se estiver falando em jogo...
+    else if(self.estaFalando){
+        if ([self.controleCutscenes trocarFala]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            
+        }
+        else{
+            self.estaFalando = NO;
+            self.cutsceneEstaRodando = NO;
+        }
     }
 }
 
@@ -281,6 +293,10 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
+    
+    if((self.cutsceneEstaRodando) && (!self.estaFalando)){
+        [self.controleCutscenes trocarCena];
+    }
     
     //faz parar de andar, colocando a direção como nula
     [self.jogador setAndandoParaDirecao:@" "];
@@ -456,7 +472,8 @@
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");
-    }else{
+    }else {
+        [self.jogador removeFromParent];
         [self.mundo addChild:self.jogador];
     }
 }
@@ -471,6 +488,7 @@
     
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
+    
     [self.mundo setZPosition:-100];
     
     self.backgroundAtual =[SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual]];
