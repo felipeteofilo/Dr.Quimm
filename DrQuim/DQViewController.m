@@ -31,6 +31,11 @@
     [skView presentScene:floresta];
 }
 
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (BOOL)shouldAutorotate
 {
     return YES;
