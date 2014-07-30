@@ -405,5 +405,38 @@
 		<key>PontoAlertas</key>
 		<array/>
 	</dict>
+	<dict>
+		<key>PosInicialJogador</key>
+		<string>{10, 200}</string>
+		<key>Partes</key>
+		<array>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+		</array>
+		<key>PontoAlertas</key>
+		<array/>
+	</dict>
 </array>
 </plist>
