@@ -407,9 +407,132 @@
 	</dict>
 	<dict>
 		<key>PosInicialJogador</key>
-		<string>{10, 200}</string>
+		<string>{100, 200}</string>
 		<key>Partes</key>
 		<array>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array>
+					<string>{0, 0}</string>
+					<string>{0, 186}</string>
+					<string>{1003, 186}</string>
+					<string>{1010, 274}</string>
+					<string>{1024, 274}</string>
+					<string>{1024, 0}</string>
+				</array>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Escalaveis</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>CorpoFisicoChao</key>
+				<array/>
+				<key>Plataformas</key>
+				<array/>
+			</dict>
 			<dict>
 				<key>CorpoFisicoChao</key>
 				<array/>

@@ -87,4 +87,9 @@
     }
 }
 
+//FAZER ESCADAS
+-(void)criarParteFase{
+    [super criarParteFase];
+}
+
 @end
