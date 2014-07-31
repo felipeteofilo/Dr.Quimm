@@ -3,21 +3,6 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>Animacoes</key>
-		<dict>
-			<key>Derrapando</key>
-			<string></string>
-			<key>Caindo</key>
-			<string></string>
-			<key>Escalando</key>
-			<string></string>
-			<key>Parado</key>
-			<string>ParadoDr</string>
-			<key>Pulando</key>
-			<string>PulandoDr</string>
-			<key>Andando</key>
-			<string>AndandoDr</string>
-		</dict>
 		<key>PosInicialJogador</key>
 		<string>{400, 600}</string>
 		<key>Partes</key>
@@ -186,7 +171,7 @@
 					<string>{0, 0}</string>
 					<string>{0, 60}</string>
 					<string>{802, 68}</string>
-					<string>{825, 133}</string>
+					<string>{825, 980}</string>
 					<string>{1024, 133}</string>
 					<string>{1024, 0}</string>
 				</array>
@@ -292,21 +277,6 @@
 		<array/>
 	</dict>
 	<dict>
-		<key>Animacoes</key>
-		<dict>
-			<key>Derrapando</key>
-			<string>Derrapando</string>
-			<key>Caindo</key>
-			<string>Caindo</string>
-			<key>Escalando</key>
-			<string>Escalando</string>
-			<key>Parado</key>
-			<string>Parado</string>
-			<key>Pulando</key>
-			<string>Pulando</string>
-			<key>Andando</key>
-			<string>Andando</string>
-		</dict>
 		<key>PosInicialJogador</key>
 		<string>{10, 200}</string>
 		<key>NPC</key>
@@ -335,12 +305,6 @@
 				<key>Nome</key>
 				<string>Chefe</string>
 			</dict>
-			<dict>
-				<key>PosicaoNPC</key>
-				<string>{2000, 995}</string>
-				<key>Nome</key>
-				<string>Quimm</string>
-			</dict>
 		</array>
 		<key>Partes</key>
 		<array>
@@ -368,8 +332,8 @@
 				<key>Escalaveis</key>
 				<array>
 					<array>
-						<string>{883, 170}</string>
-						<string>{884, 1018}</string>
+						<string>{870, 170}</string>
+						<string>{872, 1018}</string>
 					</array>
 				</array>
 				<key>CorpoFisicoChao</key>
@@ -415,8 +379,8 @@
 				<key>Escalaveis</key>
 				<array>
 					<array>
-						<string>{665, 166}</string>
-						<string>{665, 848}</string>
+						<string>{658, 166}</string>
+						<string>{658, 848}</string>
 					</array>
 				</array>
 			</dict>

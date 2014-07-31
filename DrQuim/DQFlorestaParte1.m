@@ -241,19 +241,11 @@
 -(void)adicionaIconeRadiacao:(NSString*)nomeRadiacao naPosicao:(CGPoint)posicao{
     
     //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
-    SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"BalaoAlerta"];
+    SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"icone_cientista"];
     iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
     [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0, 0)];
     [iconeRadiacaoAlpha setPosition:posicao];
     [iconeRadiacaoAlpha setName:nomeRadiacao];
-    
-    [iconeRadiacaoAlpha setScale:0.9];
-    
-    SKAction *fadeOut=[SKAction fadeOutWithDuration:0.3];
-    SKAction *fadeIn=[SKAction fadeInWithDuration:0.3];
-    
-    
-    [iconeRadiacaoAlpha runAction:[SKAction repeatAction:[SKAction sequence:@[fadeOut,fadeIn]] count:5]];
     
     [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
 }

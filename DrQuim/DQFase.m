@@ -118,7 +118,7 @@
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
 -(void)escadaCategoria :(SKNode*)node{
-    node.physicsBody.categoryBitMask=EscadaCategoria;
+    //node.physicsBody.categoryBitMask=EscadaCategoria;
     node.physicsBody.collisionBitMask=0;
     node.physicsBody.contactTestBitMask=JogadorCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
@@ -290,37 +290,6 @@
     [self.direcional removeFromParent];
 }
 
-
-//Metodo chamado ao final de alguma colisao
--(void)didEndContact:(SKPhysicsContact *)contact{
-    
-    // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
-    SKPhysicsBody *firstBody, *secondBody;
-    
-    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
-    {
-        firstBody = contact.bodyA;
-        secondBody = contact.bodyB;
-    }
-    else
-    {
-        firstBody = contact.bodyB;
-        secondBody = contact.bodyA;
-    }
-    
-    //se parou de colidir com a escada
-    if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-        //faz o jogador parar de escalar
-        [self.jogador pararEscalar];
-        
-    }
-
-    
-}
-
-
-
-
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
     // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
@@ -343,7 +312,9 @@
             
             //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
             [self.jogador setPodePular:0];
-            [self.jogador setEstaNoChao:YES];
+            
+            [self.jogador setPodeEscalar:NO];
+            
             if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
                 [self.jogador animarAndando];
             }
@@ -354,8 +325,6 @@
             //Adiciona + 50 de tolerancia
             float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 30.0f;
             
-            
-            
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
                 [self plataformaCategoria:secondBody.node];
@@ -365,20 +334,19 @@
             }
         }
 
-        //se colidir com a escada
-        if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
-            //seta que o jogador pode subir ou descer
-            [self.jogador setPodeEscalar:YES];
-            
-        }
-
+        NSLog(@"%@",secondBody.node.name);
+                if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
+                    NSLog(@"foi");
+                    [self.jogador setPodeEscalar:YES];
+        
+                }
     }
 }
 
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    [self verificaCoberturaBackground];
     
+    [self verificaCoberturaBackground];
 }
 
 - (void)didSimulatePhysics{
@@ -390,9 +358,6 @@
     
     //Desativa plataformas
     [self desativaPlataformas];
-    if (!self.jogador.estaNoChao && ![self.jogador.spriteNode actionForKey:@"animandoPulo"] && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"] && ![self.jogador.spriteNode actionForKey:@"animandoEscalada"] && ![self.jogador.spriteNode actionForKey:@"animandoAndando"]  ) {
-        [self.jogador animarCaindo];
-    }
 }
 
 -(void)configuraFisicaMundo{
@@ -412,15 +377,12 @@
     //Inicia o jogador pelo singleton
     self.jogador = [DQJogador sharedJogador];
     
-    [self.jogador iniciarAnimacoes:[DQConfiguracaoFase animacoesJogadorFase:self.faseAtual]];
     //seta as categorias de colisao do jogador
     [self jogadorCategoria:self.jogador];
     
     CGPoint pontoInicial=[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual];
     
     [self.jogador setPosition:pontoInicial];
-    
-    
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");

@@ -48,5 +48,11 @@
     [self.spriteNode setZPosition:0];
 }
 
+-(void)interagirSemMissao: (int)respeito;
+{
+    //Verifica se está em alguma missão
+        //Se sim -> Verifica a parte e o que deve dizer ou dar
+        //Se não -> verifica o respeito e o que dizer dependendo dele.
+}
 
 @end
