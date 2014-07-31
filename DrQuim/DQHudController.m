@@ -18,6 +18,10 @@
         
         //Inicializa os indicadores
         [self configuraBarras];
+        
+        self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"rostoCientista"];
+        [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame), -10)];
+        [self addChild:self.botaoMenu];
     }
     return self;
 }
@@ -46,5 +50,19 @@
 -(void)atualizarHud{
     //quebrado o método pois podemos ter mais informações na HUD
     [self atualizarBarraStatus];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    CGPoint posToque=[[touches anyObject]locationInNode:self];
+    SKNode *nodeTocado=[self nodeAtPoint:posToque];
+    
+    if ([nodeTocado.name isEqualToString:@"MENU"]) {
+        if (!self.menu) {
+            self.menu=[[DQMenu alloc]initMenu];
+        }
+        [self.menu setPosition:CGPointMake(CGRectGetMidX(self.scene.frame), CGRectGetMidY(self.scene.frame))];
+        
+        [self addChild:self.menu];
+    }
 }
 @end

@@ -25,4 +25,6 @@
 //Método que armazena os itens em um NSArray e mostra suas caracteristicas
 -(void)mostrarItens;
 
+//Retorna um array com todos os itens do jogador
+-(NSArray*)arrayItensJogador;
 @end

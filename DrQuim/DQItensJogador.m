@@ -89,4 +89,10 @@
     }
 }
 
+-(NSArray*)arrayItensJogador{
+    NSArray *arrayRetorno=[[NSArray alloc]initWithArray:[self.dicionarioDeItensJogador allKeys]];
+    
+    return arrayRetorno;
+}
+
 @end
