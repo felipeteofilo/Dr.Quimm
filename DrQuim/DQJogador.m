@@ -35,55 +35,70 @@
         
         [self addChild:self.spriteNode];
         
-        //le as pastas atlas de animacoes
-        SKTextureAtlas *pastaFramesAndando= [SKTextureAtlas atlasNamed:@"Andando"];
-        SKTextureAtlas *pastaFramesPulando= [SKTextureAtlas atlasNamed:@"Pulando"];
-        SKTextureAtlas *pastaFramesParado= [SKTextureAtlas atlasNamed:@"Parado"];
+
         
-        
-        //inicia os arrays com os frames das animacoes
-        framesAndando = [[NSMutableArray alloc]init];
-        framesPulando = [[NSMutableArray alloc]init];
-        framesParado = [[NSMutableArray alloc]init];
-        
-    
-        //adiciona as texturas no array de frames
-        NSInteger numImagens = pastaFramesAndando.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Andando%d", i];
-            SKTexture *temp = [pastaFramesAndando textureNamed:textureName];
-            [framesAndando addObject:temp];
-        }
-        
-        numImagens = pastaFramesPulando.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Pulando%d", i];
-            SKTexture *temp = [pastaFramesPulando textureNamed:textureName];
-            [framesPulando addObject:temp];
-        }
-        
-        numImagens = pastaFramesParado.textureNames.count;
-        for (int i=1; i <= numImagens; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"Parado%d", i];
-            SKTexture *temp = [pastaFramesParado textureNamed:textureName];
-            [framesParado addObject:temp];
-        }
-        
-        //apos ler tudo anima o jogador
-        [self animarParado];
-        
-        
+        //Seta que ele ainda nao pode escalar
+        self.podeEscalar = NO;
+        self.estaNoChao = YES;
         //USADO COMO TESTE
         self.fome = 10;
         self.sede = 40;
         self.vida = 100;
-        
-        //Mais um teste:
         self.respeito = 0;
+        
+        //Inicia a instância da classe itensJogador
+        self.itens = [[DQItensJogador alloc] init];
+        
+        //Inicia a instância da classe missoesJogador
+        self.missoes = [[DQMissoesJogador alloc] init];
+        
     }
 
     //retorna o jogador
     return self;
+}
+
+-(void)iniciarAnimacoes:(NSDictionary*)animacoes{
+       
+    if (![[animacoes objectForKey:@"Andando"]  isEqual:@""]) {
+        framesAndando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Andando"]]];
+
+    }
+    if (![[animacoes objectForKey:@"Pulando"]  isEqual:@""]) {
+        framesPulando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Pulando"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Parado"]  isEqual:@""]) {
+       framesParado = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Parado"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Escalando"]  isEqual:@""]) {
+       framesEscalando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Escalando"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Caindo"]  isEqual:@""]) {
+        framesCaindo = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Caindo"]]];
+        
+    }
+    if (![[animacoes objectForKey:@"Derrapando"]  isEqual:@""]) {
+        framesDerrapando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Derrapando"]]];
+        
+    }
+    
+    //apos ler tudo anima o jogador
+    [self animarParado];
+    
+}
+-(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
+    NSInteger numImagens = pastaFrames.textureNames.count;
+    NSMutableArray *frames =[[NSMutableArray alloc]init];
+    for (int i=1; i <= numImagens; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"%d", i];
+        SKTexture *temp = [pastaFrames textureNamed:textureName];
+        [frames addObject:temp];
+    }
+    
+    return frames;
 }
 
 
@@ -100,6 +115,7 @@
     return jogador;
 }
 
+
 //funcao para animar o jogador andando
 -(void)animarAndando{
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
@@ -108,32 +124,59 @@
                                                                          resize:NO
                                                                         restore:YES]] withKey:@"animandoAndando"];
 }
+
+//funcao para animar o jogador derrapando
+-(void)animarDerrapando{
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesDerrapando
+                                                                              timePerFrame:0.1f
+                                                                                    resize:NO
+                                                                                   restore:YES]] withKey:@"animandoDerrapando"];
+}
+
+//funcao para animar o jogador escalando
+-(void)animarEscalando{
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesEscalando
+                                                                              timePerFrame:0.1f
+                                                                                    resize:NO
+                                                                                   restore:YES]] withKey:@"animandoEscalada"];
+}
 //anima ele parado
 -(void)animarParado{
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
-                                                                   timePerFrame:0.9f
-                                                                         resize:NO
-                                                                        restore:YES]]];
+                                                                              timePerFrame:0.9f
+                                                                                    resize:NO
+                                                                                   restore:YES]]];
 }
 //funcao para animar jogador pulando
 -(void)animarPular{
+    
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.33f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.47f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+}
+
+//funcao para animar jogador caindo
+-(void)animarCaindo{
+    
+    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesCaindo timePerFrame:0.1f                                           resize:NO restore:YES] withKey:@"animandoCaindo"];
 }
 
 //funcao da acao de pulo do jogador
 -(void)pular{
     
     //verifica se ele esta no ar, se ja estiver nao pula
-    if (self.podePular < 1) {
+    if (self.podePular < 1 && ![self.spriteNode actionForKey:@"animandoEscalada"]) {
         
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
         [self.physicsBody applyImpulse:CGVectorMake(0, 140)];
         self.podePular += 1;
+        self.estaNoChao = NO;
         
         
         // anima ele pulando
@@ -143,40 +186,43 @@
 
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
-    
-    //variavel SKAction- define a direcao do movimento
-    SKAction *movimentar =[[SKAction alloc]init];
-    
-    //se a direcao for para direita
-    if ([direcao isEqual:@"D"]) {
+    if (![self.spriteNode actionForKey:@"animandoEscalada"]) {
         
-        self.andandoParaDirecao = @"D";
-        movimentar =[SKAction moveByX:90 y:0 duration:1.0];
         
-        if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
-            [self.physicsBody setVelocity:CGVectorMake(10, -10)];
+        //variavel SKAction- define a direcao do movimento
+        SKAction *movimentar =[[SKAction alloc]init];
+        
+        //se a direcao for para direita
+        if ([direcao isEqual:@"D"]) {
+            
+            self.andandoParaDirecao = @"D";
+            movimentar =[SKAction moveByX:90 y:0 duration:1.0];
+            
+            if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
+                [self.physicsBody setVelocity:CGVectorMake(10, -10)];
+            }
+            
+            //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+            self.spriteNode.xScale = fabs(self.spriteNode.xScale)*1;
+        }else{
+            
+            self.andandoParaDirecao = @"E";
+            movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
+            
+            //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+            self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
+            
         }
         
         //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-        self.spriteNode.xScale = fabs(self.spriteNode.xScale)*1;
-    }else{
+        //verifica se nao esta animando o pulo e anima o jogador andando
+        if (![self.spriteNode actionForKey:@"animandoPulo"]) {
+            [self animarAndando];
+        }
         
-        self.andandoParaDirecao = @"E";
-        movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
-        
-        //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-        self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
-
+        //anda para direcao
+        [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
     }
-    
-    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    //verifica se nao esta animando o pulo e anima o jogador andando
-    if (![self.spriteNode actionForKey:@"animandoPulo"]) {
-        [self animarAndando];
-    }
-    
-    //anda para direcao
-    [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
 }
 
 //Método para parar de andar
@@ -187,27 +233,46 @@
     [self.spriteNode removeActionForKey:@"animandoAndando"];
 }
 
+//funcao para fazer o jogador escalar
 -(void)escalarParaDirecao:(NSString*)direcao{
-    
-    SKAction *escalar=[[SKAction alloc]init];
-    
-    //Desliga a gravidade para o Node
-    self.physicsBody.dynamic=NO;
-    
-    if ([direcao isEqualToString:@"C"]) {
-        //Sobe
+    //se puder escalar
+    if (self.podeEscalar) {
         
-        escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
         
-    }else if([direcao isEqualToString:@"B"]){
-        //Desce
-        escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
+        SKAction *escalar=[[SKAction alloc]init];
+        
+        //Desliga a gravidade para o Node
+        self.physicsBody.dynamic=NO;
+        // verifica para qual direcao sera a escalada
+        if ([direcao isEqualToString:@"C"]) {
+            //Sobe
+            
+            escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
+            
+        }else if([direcao isEqualToString:@"B"]){
+            //Desce
+            escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
+        }
+        //anima o jogador escalando
+        [self animarEscalando];
+        // move o jogador
+        [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
     }
-    
-    [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
 }
 
+//funcao para parar a escalada do jogador
 -(void)pararEscalar{
+    self.podeEscalar = NO;
+    if (![self.physicsBody isDynamic]) {
+        self.physicsBody.dynamic = YES;
+    }
+    [self.spriteNode removeActionForKey:@"animandoEscalada"];
+    [self removeActionForKey:@"escalar"];
+}
+
+//funcao para dar uma pausa na escalada do jogador
+-(void)pausarEscalada{
+    [[self.spriteNode actionForKey:@"animandoEscalada"]setSpeed:0];
     [self removeActionForKey:@"escalar"];
 }
 

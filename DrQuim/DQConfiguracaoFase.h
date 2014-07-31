@@ -18,4 +18,5 @@
 +(CGPoint)posicaoInicialJogadorFase:(int)_fase;
 +(NSArray*)configNPCFase:(int)fase;
 +(NSArray*)escalavelFase:(int)fase Parte:(int)parte;
++(NSDictionary*)animacoesJogadorFase:(int)_fase;
 @end
