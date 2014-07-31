@@ -120,7 +120,7 @@
     //NSArray que irá conter o textoFormatado cortado em frases
     NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
     
-    //remove nós que não devem aparecer a tela
+    //remove nós que não devem aparecer na tela
     [self.cutscene removeAllChildren];
     
     //Adiciona o novo fundo
@@ -190,11 +190,46 @@
     return arrayDeFrases;
 }
 
+-(void)separarFrasesEmLetrasPassandoFrases: (NSArray *)frases
+{
+    //Armazena uma letra em cada índice
+    NSMutableArray *arrayDeLetras;
+    arrayDeLetras = [[NSMutableArray alloc]init];
+    
+    //Armazena os arrays de letras - Cada índice representa uma frase
+    NSMutableArray *arrayDeArrayDeLetras;
+    arrayDeArrayDeLetras = [[NSMutableArray alloc]init];
+    
+    //Passa índice por índice do array FRASES (passado por parâmetro)
+    for (int i = 0; i < [frases count]; i++) {
+        //armazena a frase atual em uma variável temporária
+        NSString *fraseAtual = [frases objectAtIndex:i];
+    
+        //Para cada frase, armazena cada uma das letras no array "LETRAS"
+        for(int j = 0; j < [fraseAtual length]; j++){
+            //armazena a letra atual em uma variável temporária
+            NSString *letraAtual = [NSString stringWithFormat:@"%c", [fraseAtual characterAtIndex:j]];
+            
+            //adiciona a letra ao NSMutable array de letras
+            [arrayDeLetras addObject:letraAtual];
+        }
+        
+        //No fim da frase, adiciona o arrayDeLetras ao arrayDeArrayDeLetras
+        [arrayDeArrayDeLetras addObject:arrayDeLetras];
+        //E reinicia o arrayDeLetras
+        arrayDeLetras = [[NSMutableArray alloc] init];
+    }
+    
+    //return arrayDeArrayDeLetras;
+}
+
 //Mostra a falas
 -(void)mostrarFalaAtual:(NSArray *)frases
 {
     //Inicia o array de falas que conterá os nodes
     self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
+    
+    [self separarFrasesEmLetrasPassandoFrases:frases];
     
     //Variavel que contém o espaço entre as falas
     CGFloat distancia = 40;
@@ -256,7 +291,6 @@
     [self.fundo setSize:self.cutscene.frame.size];
     [self.cutscene addChild:self.fundo];
 }
-
 
 //Mostrar caixa texto em uma cutscene
 -(void)mostrarCaixaTexto
@@ -336,7 +370,6 @@
     self.falaAtual ++;
 
 }
-
 
 ///Metodo a fazer de mostrar as falas dentro da vila
 -(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito
@@ -434,7 +467,6 @@
     //Pula para a proxima fala
     self.falaAtual ++;
 }
-
 
 //Trocar fala dentro do jogo
 -(BOOL)trocarFala{
