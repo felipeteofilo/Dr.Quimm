@@ -407,7 +407,7 @@
 	</dict>
 	<dict>
 		<key>PosInicialJogador</key>
-		<string>{100, 200}</string>
+		<string>{2000, 1000}</string>
 		<key>Partes</key>
 		<array>
 			<dict>
@@ -416,7 +416,6 @@
 					<string>{0, 0}</string>
 					<string>{0, 186}</string>
 					<string>{1003, 186}</string>
-					<string>{1010, 274}</string>
 					<string>{1024, 274}</string>
 					<string>{1024, 0}</string>
 				</array>
@@ -425,9 +424,36 @@
 			</dict>
 			<dict>
 				<key>CorpoFisicoChao</key>
-				<array/>
+				<array>
+					<string>{0, 0}</string>
+					<string>{0, 274}</string>
+					<string>{226, 274}</string>
+					<string>{247, 365}</string>
+					<string>{711, 365}</string>
+					<string>{1024, 113}</string>
+					<string>{1024, 0}</string>
+				</array>
 				<key>Plataformas</key>
-				<array/>
+				<array>
+					<array>
+						<string>{775, 557}</string>
+						<string>{765, 580}</string>
+						<string>{1024, 580}</string>
+						<string>{1024, 557}</string>
+					</array>
+					<array>
+						<string>{725, 800}</string>
+						<string>{700, 844}</string>
+						<string>{1015, 844}</string>
+						<string>{985, 800}</string>
+					</array>
+					<array>
+						<string>{954, 954}</string>
+						<string>{942, 988}</string>
+						<string>{1024, 988}</string>
+						<string>{1024, 954}</string>
+					</array>
+				</array>
 			</dict>
 			<dict>
 				<key>CorpoFisicoChao</key>
