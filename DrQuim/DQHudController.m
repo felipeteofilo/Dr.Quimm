@@ -18,13 +18,6 @@
         
         //Inicializa os indicadores
         [self configuraBarras];
-        
-        self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"rostoCientista"];
-        [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame), -10)];
-//        [self.botaoMenu setZPosition:100];
-        [self.botaoMenu setName:@"MENU"];
-        [self addChild:self.botaoMenu];
-        
         [self setUserInteractionEnabled:YES];
     }
     return self;
@@ -57,24 +50,6 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    CGPoint posToque=[[touches anyObject]locationInNode:self];
-    NSArray *arrayNodes=[self nodesAtPoint:posToque];
-    
-    if ([self childNodeWithName:@"MENU"]) {
-        return;
-    }
-    
-    for (SKSpriteNode *nodeTocado in arrayNodes) {
-        if ([nodeTocado.name isEqualToString:@"MENU"]) {
-            if (!self.menu) {
-                self.menu=[[DQMenu alloc]initMenu];
-                [self.menu setPosition:CGPointMake(500, 500)];
-                [self.menu setZPosition:100];
-            }
-            
-            [self addChild:self.menu];
-            break;
-        }
-    }
+
 }
 @end

@@ -29,7 +29,7 @@
     //Usando cast para permiti manipulacao do dicionario
     NSMutableDictionary *missaoRetorno=[NSMutableDictionary dictionaryWithDictionary:[[self arquivoPlist:[self pathArquivoMissoesReferencia]]objectAtIndex:missao]];
     
-    NSDictionary *detalhesParte=[[missaoRetorno objectForKey:@"Partes"]objectAtIndex:[parteAtual intValue]-1];
+    NSDictionary *detalhesParte=[[missaoRetorno objectForKey:@"Partes"]objectAtIndex:[parteAtual intValue]];
 
     //Deixar apenas a parte atual
     [missaoRetorno removeObjectForKey:@"Partes"];

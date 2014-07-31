@@ -13,7 +13,33 @@
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];
         [self setName:@"Configurações"];
+        [self configuraTitulo];
     }
     return self;
+}
+
+-(void)configuraTitulo{
+    
+    self.titulo=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
+    
+    [self.titulo setText:self.name];
+    [self.titulo setFontSize:90.0f];
+    [self.titulo setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)-self.titulo.frame.size.height-50)];
+    [self.titulo setName:@"Titulo"];
+    
+    [self addChild:self.titulo];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    CGPoint posToque=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posToque];
+    
+    if ([[self nodeAtPoint:posToque].name isEqualToString:self.titulo.name]) {
+        [self esconderMenu];
+    }
+}
+
+-(void)esconderMenu{
+    [self removeFromParent];
 }
 @end

@@ -242,6 +242,29 @@
         
         [self.jogador pular];
     }
+    
+    CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posToqueNode];
+    
+    if ([self childNodeWithName:@"MENU"]) {
+        //return;
+    }
+    
+    for (SKSpriteNode *nodeTocado in arrayNodes) {
+        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
+            if (!self.menu) {
+                self.menu=[[DQMenu alloc]initMenu];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+                
+            }
+            
+            if (![self childNodeWithName:@"MENU"]) {
+                [self addChild:self.menu];
+            }
+            
+            break;
+        }
+    }
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -314,7 +337,7 @@
         [self.jogador pararEscalar];
         
     }
-
+    
     
 }
 
@@ -364,14 +387,14 @@
                 [self chaoCategoria:secondBody.node];
             }
         }
-
+        
         //se colidir com a escada
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
             //seta que o jogador pode subir ou descer
             [self.jogador setPodeEscalar:YES];
             
         }
-
+        
     }
 }
 
@@ -473,7 +496,6 @@
     }
     return self;
 }
-
 -(void)desativaPlataformas{
     //Se tiver um node com plataformas
     if ([self.backgroundAtual childNodeWithName:NomeNodePlataformas]) {
@@ -490,6 +512,15 @@
             }
         }
     }
+}
+
+-(void)configuraBotaoMenu{
+    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"rostoCientista"];
+    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.hudFase.position.y-150)];
+    
+    [self.botaoMenu setName:@"botaoMenu"];
+    [self.botaoMenu setScale:0.7];
+    [self addChild:self.botaoMenu];
 }
 
 @end

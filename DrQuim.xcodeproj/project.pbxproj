@@ -97,6 +97,7 @@
 		C5E1F40A198AD03B00F7A320 /* Receitas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F409198AD03B00F7A320 /* Receitas.plist */; };
 		C5E1F40D198AD0A300F7A320 /* itens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40B198AD0A300F7A320 /* itens.atlas */; };
 		C5E1F40E198AD0A300F7A320 /* Menu.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40C198AD0A300F7A320 /* Menu.atlas */; };
+		C5E1F410198AD8AF00F7A320 /* ConfigMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40F198AD8AF00F7A320 /* ConfigMenu.plist */; };
 		C5EE3A5B1974A9FD008D3D8D /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A571974A9FD008D3D8D /* Fase2_Parte1.png */; };
 		C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */; };
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
@@ -240,6 +241,7 @@
 		C5E1F409198AD03B00F7A320 /* Receitas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Receitas.plist; path = "Arquivos Plist/Receitas.plist"; sourceTree = "<group>"; };
 		C5E1F40B198AD0A300F7A320 /* itens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = itens.atlas; sourceTree = "<group>"; };
 		C5E1F40C198AD0A300F7A320 /* Menu.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Menu.atlas; sourceTree = "<group>"; };
+		C5E1F40F198AD8AF00F7A320 /* ConfigMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ConfigMenu.plist; path = "Arquivos Plist/ConfigMenu.plist"; sourceTree = "<group>"; };
 		C5EE3A571974A9FD008D3D8D /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte1.png; sourceTree = "<group>"; };
 		C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
 		C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		2323166F1947BCAB0002FB1D /* Arquvos XML */ = {
 			isa = PBXGroup;
 			children = (
+				C5E1F40F198AD8AF00F7A320 /* ConfigMenu.plist */,
 				C575FF401965DDC500719817 /* ConfigFase.plist */,
 				C54031C01989FE12003384AB /* FalasNoJogo.plist */,
 				C54031C11989FE12003384AB /* ItensJogador.plist */,
@@ -649,6 +652,7 @@
 				3CAC84271979F63D000FB1A1 /* Caindo.atlas in Resources */,
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
+				C5E1F410198AD8AF00F7A320 /* ConfigMenu.plist in Resources */,
 				C54031BB1989FDB1003384AB /* rostoChefeSimpatico.png in Resources */,
 				C54031C71989FE12003384AB /* ItensReferencia.plist in Resources */,
 				C54031BE1989FDB1003384AB /* rostoMaedetodos.png in Resources */,

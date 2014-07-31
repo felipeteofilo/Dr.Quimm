@@ -29,6 +29,8 @@
         
         //TEMPORÁRIO - inicia ele direto na missão 01
         [self.missao iniciarMissao:1];
+        
+        [self configuraBotaoMenu];
         NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
     }
     

@@ -15,7 +15,6 @@
         [self setUserInteractionEnabled:YES];
     
         [self setName:@"MENU"];
-//        self.seletorPausaSkScene= pausaScene;
         
         [self configuraTitulo];
         [self configuraNavegacao];
@@ -109,8 +108,7 @@
 }
 
 -(void)esconderMenu{
-    //[self removeFromParent];
-    [self.parent performSelector:(self.seletorPausaSkScene)];
+    [self removeFromParent];
 }
 
 -(void)realcarMenu{
