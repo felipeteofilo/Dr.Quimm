@@ -253,6 +253,7 @@
             [letra setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
             [letra setPosition:CGPointMake(40 + (distanciaX * j), 150 - (distanciaY * i))];
             [letra setText:[arrayDeLetrasAtual objectAtIndex:j]];
+            [letra setAlpha:0];
             
             //adiciona no arrayDeLetrasNode
             [arrayDeLetrasNode addObject:letra];
@@ -270,24 +271,7 @@
             [self.caixaDeFala addChild:[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j]];
         }
     }
-    
-//    //cria um NSArray de irá armazenar as falas
-//    for(int i = 0; i < [frases count]; i++){
-//        //cria a fala com cor, posição, alinhamento e texto
-//        SKLabelNode *fala = [[SKLabelNode alloc] init];
-//        [fala setColor:[UIColor whiteColor]];
-//        [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-//        [fala setPosition:CGPointMake(40, 150 - (distancia * i))];
-//        [fala setText:[frases objectAtIndex:i]];
-//        
-//        //adiciona ao array
-//        [self.arrayDefalasEmFrases addObject:fala];
-//    }
-//    
-//    //Adicona as falas na tela
-//    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
-//        [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
-//    }
+
 }
 
 //Mostra a falas do jogo
