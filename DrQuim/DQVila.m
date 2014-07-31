@@ -11,7 +11,7 @@
 @implementation DQVila
 
 -(id)initWithSize:(CGSize)size {
-    if (self = [super initWithSize:size]) {
+    if (self=[super initWithSize:size]) {
         [self configuracoesFase:2];
         
         self.hudFase = [[DQHudController alloc]initHud];
@@ -245,7 +245,7 @@
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual +1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
-                    //Cada posicao no array de escalaveis tem apenas 2 posicoes (Ponto inicial e ponto Final do escalavel)
+                    //Cada posicao no array de escalaceis tem apenas 2 posicoes (POnto inicial e ponto Final do escalavel)
                     CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
                     CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
                     

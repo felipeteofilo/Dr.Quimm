@@ -14,7 +14,7 @@
 
 @interface DQVila : DQFase
 
-@property NSMutableArray *escalavel;
+@property NSMutableArray *escalacel;
 
 //DQMissoesJogador que guarda as informações de missão
 @property DQMissoesJogador *missao;
