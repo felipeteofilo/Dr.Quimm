@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQFlorestaParte1.h"
 #import "DQVila.h"
+#import "DQFlorestaParte2.h"
 
 @interface DQViewController : UIViewController
 
