@@ -22,8 +22,9 @@ static NSString *nomeAntMenu=@"Anterior";
 
 @property SKSpriteNode *opcaoAnterior;
 @property SKSpriteNode *proximaOpcao;
+@property int indexAtual;
 
--(id)initMenuPausaScene:(SEL)pausaScene;
+-(id)initMenu;
 -(void)configuraTitulo;
 
 @end

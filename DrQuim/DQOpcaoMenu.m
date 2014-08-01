@@ -18,15 +18,12 @@
         [titulo setText:self.titulo];
         [titulo setPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)+60)];
         
-        //Nao permitir interacao com o titulo
-        [titulo setUserInteractionEnabled:NO];
-        
         [self addChild:titulo];
     }
     return self;
 }
 
--(void)configuraConteudoMenu{
+-(void)configuraConteudoMenuIndex:(int)index{
     
     switch ([[DQConfigMenu opcoesMenuPrincial] indexOfObject:self.titulo]) {
         case 0:
@@ -48,6 +45,10 @@
         default:
             break;
     }
+    
+    NSMutableDictionary *dicionario=[NSMutableDictionary dictionaryWithObject:[NSNumber numberWithInt:index] forKey:@"index"];
+    
+    [self.conteudo setUserData:dicionario];
 }
 
 -(void)configuraMenuItens{
@@ -60,7 +61,7 @@
 -(void)configuraConteudoReceita:(NSDictionary*)receita index:(int)index{
     self.conteudo=[SKNode node];
     [self.conteudo setUserData:[NSMutableDictionary dictionaryWithDictionary:receita]];
-    [self.conteudo.userData setObject:[NSNumber numberWithInt:index] forKey:@"indexOpcao"];
+    [self.conteudo.userData setObject:[NSNumber numberWithInt:index] forKey:@"index"];
 }
 
 -(void)configuraMenuConfig{
@@ -71,18 +72,16 @@
     self.conteudo=[[DQMenuQuest alloc]initMenu];
 }
 
--(void)configuraConteudoQuest:(NSDictionary*)missao{
+-(void)configuraConteudoQuest:(NSDictionary*)missao  index:(int)index{
     self.conteudo=[SKNode node];
     [self.conteudo setUserData:[NSMutableDictionary dictionaryWithDictionary:missao]];
-    //[self.conteudo.userData setObject:[NSNumber numberWithInt:index] forKey:@"indexOpcao"];
+    [self.conteudo.userData setObject:[NSNumber numberWithInt:index] forKey:@"index"];
 }
 
 -(void)apresentarConteudo{
-    
     [self.parent addChild:self.conteudo];
 }
 -(void)esconderConteudo{
-    [self.conteudo runAction:[SKAction fadeOutWithDuration:0.03]];
     [self.conteudo removeFromParent];
 }
 @end

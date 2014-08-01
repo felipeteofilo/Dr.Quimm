@@ -23,9 +23,9 @@
 
 
 -(id)initOpcaoTitulo:(NSString*)titulo;
--(void)configuraConteudoMenu;
--(void)configuraConteudoQuest:(NSMutableDictionary*)missao;
+-(void)configuraConteudoQuest:(NSMutableDictionary*)missao index:(int)index;
+-(void)configuraConteudoReceita:(NSDictionary*)receita index:(int)index;
+-(void)configuraConteudoMenuIndex:(int)index;
 -(void)apresentarConteudo;
 -(void)esconderConteudo;
--(void)configuraConteudoReceita:(NSDictionary*)receita index:(int)index;
 @end

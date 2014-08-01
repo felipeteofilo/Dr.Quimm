@@ -501,9 +501,7 @@
     if ([self.backgroundAtual childNodeWithName:NomeNodePlataformas]) {
         
         //Para cada node plataforma no Node que contem as plataformas verificar
-        for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {
-            
-            
+        for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {            
             if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > self.jogador.position.y) {
                 //Evita ficar chamando toda hora
                 if (!(plataforma.physicsBody.categoryBitMask & PlataformaCategoria)!=0) {

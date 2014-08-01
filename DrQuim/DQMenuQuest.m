@@ -36,7 +36,9 @@
 -(void)configuraNavegacao{
     
 }
-
+-(void)navegacao{
+    
+}
 -(void)listarMissoesJogador{
     NSMutableArray *missoesJogador=[NSMutableArray arrayWithArray:[DQReferenciaMissaoJogador arquivoPlist:[DQReferenciaMissaoJogador pathArquivoMissoesJogador]]];
     
@@ -59,7 +61,7 @@
         [opcaoMenu setAnchorPoint:CGPointMake(0.5, 0)];
         [opcaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.frame.size.height - ultimoY)];
         
-        [opcaoMenu configuraConteudoQuest:[DQReferenciaMissaoJogador detalharMissaoAtual:i+1]];
+        [opcaoMenu configuraConteudoQuest:[DQReferenciaMissaoJogador detalharMissaoAtual:i+1]index:i];
         
         [opcaoMenu setName:@"Missao"];
         

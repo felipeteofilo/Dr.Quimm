@@ -15,6 +15,7 @@
 @property SKLabelNode *titulo;
 @property NSArray *opcoesMenu;
 @property int nItensLinha;
+@property int indexAtual;
 
 -(id)initMenu;
 -(void)esconderMenu;
