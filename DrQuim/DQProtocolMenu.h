@@ -17,8 +17,6 @@
 @property int nItensLinha;
 
 -(id)initMenu;
--(void)realcarMenu;
--(void)abrirMenu;
 -(void)esconderMenu;
 
 @end

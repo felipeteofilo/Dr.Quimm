@@ -95,9 +95,10 @@
 		C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */; };
 		C5E1F40A198AD03B00F7A320 /* Receitas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F409198AD03B00F7A320 /* Receitas.plist */; };
 		C5E1F40D198AD0A300F7A320 /* itens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40B198AD0A300F7A320 /* itens.atlas */; };
-		C5E1F40E198AD0A300F7A320 /* Menu.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40C198AD0A300F7A320 /* Menu.atlas */; };
 		C5E1F410198AD8AF00F7A320 /* ConfigMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40F198AD8AF00F7A320 /* ConfigMenu.plist */; };
 		C5E1F412198AEAD600F7A320 /* ConfigFase.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F411198AEAD600F7A320 /* ConfigFase.plist */; };
+		C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */; };
+		C5E1F417198B223800F7A320 /* Menu.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F416198B223800F7A320 /* Menu.atlas */; };
 		C5EE3A5B1974A9FD008D3D8D /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A571974A9FD008D3D8D /* Fase2_Parte1.png */; };
 		C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */; };
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
@@ -239,9 +240,11 @@
 		C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte8.png; path = MapaFundo/Fase1/Fase1_Parte8.png; sourceTree = "<group>"; };
 		C5E1F409198AD03B00F7A320 /* Receitas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Receitas.plist; path = "Arquivos Plist/Receitas.plist"; sourceTree = "<group>"; };
 		C5E1F40B198AD0A300F7A320 /* itens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = itens.atlas; sourceTree = "<group>"; };
-		C5E1F40C198AD0A300F7A320 /* Menu.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Menu.atlas; sourceTree = "<group>"; };
 		C5E1F40F198AD8AF00F7A320 /* ConfigMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ConfigMenu.plist; path = "Arquivos Plist/ConfigMenu.plist"; sourceTree = "<group>"; };
 		C5E1F411198AEAD600F7A320 /* ConfigFase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ConfigFase.plist; path = "Arquivos Plist/ConfigFase.plist"; sourceTree = "<group>"; };
+		C5E1F413198AECC800F7A320 /* DQControleUserDefalts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleUserDefalts.h; sourceTree = "<group>"; };
+		C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleUserDefalts.m; sourceTree = "<group>"; };
+		C5E1F416198B223800F7A320 /* Menu.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Menu.atlas; sourceTree = "<group>"; };
 		C5EE3A571974A9FD008D3D8D /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte1.png; sourceTree = "<group>"; };
 		C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
 		C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
@@ -438,19 +441,19 @@
 			isa = PBXGroup;
 			children = (
 				C5E1F40B198AD0A300F7A320 /* itens.atlas */,
-				C5E1F40C198AD0A300F7A320 /* Menu.atlas */,
 				3CAC84201979F630000FB1A1 /* Animacoes */,
 				23622C081975F4CB00D83532 /* tutorialCorrerDireita.atlas */,
 				23622C091975F4CB00D83532 /* tutorialCorrerEsquerda.atlas */,
 				C5B7FBD81975F24100C2CAFC /* tutorialPular.atlas */,
-				23BFA4A9196A3CC700AD5F0C /* icon.png */,
-				23BFADBC1966E4FB00691C04 /* setinhas.png */,
-				C5B7FBDE19762A1A00C2CAFC /* BalaoAlerta.png */,
-				C51125911973AB6000CECCAD /* FundoHUD.png */,
+				C5E1F416198B223800F7A320 /* Menu.atlas */,
 				3C26D9081974B4A2002FEC9A /* cutscene2.atlas */,
 				3C26D9061974B499002FEC9A /* cutscene1.atlas */,
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
 				9433F5D71937B4BB00E55E73 /* Personagens */,
+				C5B7FBDE19762A1A00C2CAFC /* BalaoAlerta.png */,
+				23BFADBC1966E4FB00691C04 /* setinhas.png */,
+				23BFA4A9196A3CC700AD5F0C /* icon.png */,
+				C51125911973AB6000CECCAD /* FundoHUD.png */,
 			);
 			path = Imagens;
 			sourceTree = "<group>";
@@ -505,6 +508,8 @@
 		C57D7C2A1964E3A100EF94C9 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				C5E1F413198AECC800F7A320 /* DQControleUserDefalts.h */,
+				C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */,
 				C54031CE1989FE98003384AB /* DQControleReceita.h */,
 				C54031CF1989FE98003384AB /* DQControleReceita.m */,
 				C54031CA1989FE98003384AB /* DQConfigMenu.h */,
@@ -681,7 +686,6 @@
 				23622C0B1975F4CB00D83532 /* tutorialCorrerEsquerda.atlas in Resources */,
 				C54031C51989FE12003384AB /* FalasNoJogo.plist in Resources */,
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
-				C5E1F40E198AD0A300F7A320 /* Menu.atlas in Resources */,
 				3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */,
 				C5E1F40A198AD03B00F7A320 /* Receitas.plist in Resources */,
 				C5D2A69E196A535800F3B7C4 /* Fase1_Parte3.png in Resources */,
@@ -692,6 +696,7 @@
 				3C26D9091974B4A2002FEC9A /* cutscene2.atlas in Resources */,
 				C5E1F412198AEAD600F7A320 /* ConfigFase.plist in Resources */,
 				C54031C61989FE12003384AB /* ItensJogador.plist in Resources */,
+				C5E1F417198B223800F7A320 /* Menu.atlas in Resources */,
 				C54031C81989FE12003384AB /* MissoesJogador.plist in Resources */,
 				C5B7FBDF19762A1A00C2CAFC /* BalaoAlerta.png in Resources */,
 				C54031B91989FDB1003384AB /* rostoCacador.png in Resources */,
@@ -720,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C57F2A6A1986EE7F00C268BE /* DQMissoesJogador.m in Sources */,
+				C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */,
 				23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */,
 				23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,

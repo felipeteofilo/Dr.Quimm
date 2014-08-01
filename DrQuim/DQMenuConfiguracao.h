@@ -8,14 +8,26 @@
 #import "DQConfigMenu.h"
 #import "DQMenu.h"
 #import "DQProtocolMenu.h"
+#import "DQControleUserDefalts.h"
+#import "DQBarraStatus.h"
 
 @interface DQMenuConfiguracao : SKSpriteNode<DQProtocolMenu>
 
 @property SKLabelNode *titulo;
 @property NSArray *opcoesMenu;
 
+@property SKSpriteNode *estadoSom;
+@property SKSpriteNode *estadoMusica;
+
+@property DQBarraStatus *volumeSom;
+@property DQBarraStatus *volumeMusica;
+
+@property SKSpriteNode *botaoMudoMusica;
+@property SKSpriteNode *botaoMudoSons;
+
+@property SKSpriteNode *fundoVolumeMusica;
+@property SKSpriteNode *fundoVolumeSons;
 
 -(id)initMenu;
 -(void)configuraTitulo;
--(void)configuraOpcoesMenuQuest;
 @end
