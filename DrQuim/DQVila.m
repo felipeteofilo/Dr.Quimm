@@ -25,7 +25,6 @@
         self.estaFalando = NO;
         
         [self iniciarFase];
-        [self addChild:self.hudFase];
         
         self.missao = [[DQMissoesJogador alloc]init];
         
