@@ -120,7 +120,7 @@
     //NSArray que irá conter o textoFormatado cortado em frases
     NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
     
-    //remove nós que não devem aparecer a tela
+    //remove nós que não devem aparecer na tela
     [self.cutscene removeAllChildren];
     
     //Adiciona o novo fundo
@@ -190,11 +190,46 @@
     return arrayDeFrases;
 }
 
+-(void)separarFrasesEmLetrasPassandoFrases: (NSArray *)frases
+{
+    //Armazena uma letra em cada índice
+    NSMutableArray *arrayDeLetras;
+    arrayDeLetras = [[NSMutableArray alloc]init];
+    
+    //Armazena os arrays de letras - Cada índice representa uma frase
+    NSMutableArray *arrayDeArrayDeLetras;
+    arrayDeArrayDeLetras = [[NSMutableArray alloc]init];
+    
+    //Passa índice por índice do array FRASES (passado por parâmetro)
+    for (int i = 0; i < [frases count]; i++) {
+        //armazena a frase atual em uma variável temporária
+        NSString *fraseAtual = [frases objectAtIndex:i];
+    
+        //Para cada frase, armazena cada uma das letras no array "LETRAS"
+        for(int j = 0; j < [fraseAtual length]; j++){
+            //armazena a letra atual em uma variável temporária
+            NSString *letraAtual = [NSString stringWithFormat:@"%c", [fraseAtual characterAtIndex:j]];
+            
+            //adiciona a letra ao NSMutable array de letras
+            [arrayDeLetras addObject:letraAtual];
+        }
+        
+        //No fim da frase, adiciona o arrayDeLetras ao arrayDeArrayDeLetras
+        [arrayDeArrayDeLetras addObject:arrayDeLetras];
+        //E reinicia o arrayDeLetras
+        arrayDeLetras = [[NSMutableArray alloc] init];
+    }
+    
+    //return arrayDeArrayDeLetras;
+}
+
 //Mostra a falas
 -(void)mostrarFalaAtual:(NSArray *)frases
 {
     //Inicia o array de falas que conterá os nodes
     self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
+    
+    [self separarFrasesEmLetrasPassandoFrases:frases];
     
     //Variavel que contém o espaço entre as falas
     CGFloat distancia = 40;
@@ -256,7 +291,6 @@
     [self.fundo setSize:self.cutscene.frame.size];
     [self.cutscene addChild:self.fundo];
 }
-
 
 //Mostrar caixa texto em uma cutscene
 -(void)mostrarCaixaTexto
@@ -336,7 +370,8 @@
     self.falaAtual ++;
 
 }
-///Metodo a fazer de mostrar as falas dentro do jogo
+
+///Metodo a fazer de mostrar as falas dentro da vila
 -(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito
 {
     
@@ -383,9 +418,55 @@
     
     //Pula para a proxima fala
     self.falaAtual ++;
-    
 }
 
+///Metodo a fazer de mostrar as falas dentro da vila - Quando em missão
+-(void)mostrarFalaNaMissao :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Parte:(NSString *)parte
+{
+    //inicia o dicionario de acordo com o dicionario passado
+    self.dicionarioDeFalasNPC = [[NSDictionary alloc]initWithDictionary:dicionario];
+    
+    //???
+    [self.caixaDeFala removeAllChildren];
+    
+    //O array de Falas atuais dependerá do respeito passado - Verifica se existe alguma fala em andamento
+    if (self.falasAtuais == nil) {
+        
+        //inicia o array
+        self.falasAtuais = [[NSArray alloc]init];
+        
+        //inicia o NSString que dirá a key
+        NSString *keyDaParte = parte;
+        
+        //define o array de falas atuais de acordo com o respeito
+        self.falasAtuais = [self.dicionarioDeFalasNPC objectForKey:keyDaParte];
+    }
+    
+    //NSStrings temporarias para armazenar o sujeito e fala atual
+    NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Sujeito"];
+    NSString *textoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Texto"];
+    
+    //Formata o texto lido do Arquivo Plist
+    NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
+    
+    //Separa o texto em frases
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:40];
+    
+    //Cria a caixa de texto
+    self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
+    
+    //Mostra as falas
+    [self mostrarFalaAtualNoJogo:frases];
+    
+    //Adiciona a caixa de fala no jogo
+    [cena addChild:self.caixaDeFala];
+    
+    //Adiciona uma imagem com a carinha de quem está falando
+    [self mostraRostoDeQuemFala:[[self.falasAtuais objectAtIndex:self.falaAtual] objectForKey:@"Imagem"] naCena:cena];
+    
+    //Pula para a proxima fala
+    self.falaAtual ++;
+}
 
 //Trocar fala dentro do jogo
 -(BOOL)trocarFala{

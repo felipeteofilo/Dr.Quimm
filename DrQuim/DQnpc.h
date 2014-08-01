@@ -16,6 +16,9 @@
 //NSString que armazena o nome do NPC
 @property NSString *nome;
 
+//Bool que armazena se o jogador já falou com o NPC na parte especificada
+@property BOOL falou;
+
 //NSDictionary que armazena as falas do NPC atual
 @property NSDictionary *dicionarioDeFalas;
 
@@ -30,6 +33,9 @@
 
 //Método que faz com que o NPC diga suas falas - Baseadas no respeito
 -(void)interagirSemMissao: (int)respeito;
+
+//Método que faz com que o NPC diga suas falas - Baseadas na missão atual e na parte dela
+-(void)interagirComMissao: (int)missao eParte:(int)parte;
 
 //Método que cria o SpriteNode do SKNode em questão
 -(void)criarSpriteNodeComNome:(NSString*)nome naPosicao:(CGPoint)posicao;

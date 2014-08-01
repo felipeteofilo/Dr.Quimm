@@ -242,6 +242,29 @@
         
         [self.jogador pular];
     }
+    
+    CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posToqueNode];
+    
+    if ([self childNodeWithName:@"MENU"]) {
+        //return;
+    }
+    
+    for (SKSpriteNode *nodeTocado in arrayNodes) {
+        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
+            if (!self.menu) {
+                self.menu=[[DQMenu alloc]initMenu];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+                
+            }
+            
+            if (![self childNodeWithName:@"MENU"]) {
+                [self addChild:self.menu];
+            }
+            
+            break;
+        }
+    }
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -312,14 +335,8 @@
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
         //faz o jogador parar de escalar
         [self.jogador pararEscalar];
-        
     }
-
-    
 }
-
-
-
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
@@ -364,14 +381,14 @@
                 [self chaoCategoria:secondBody.node];
             }
         }
-
+        
         //se colidir com a escada
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
             //seta que o jogador pode subir ou descer
             [self.jogador setPodeEscalar:YES];
             
         }
-
+        
     }
 }
 
@@ -473,15 +490,12 @@
     }
     return self;
 }
-
 -(void)desativaPlataformas{
     //Se tiver um node com plataformas
     if ([self.backgroundAtual childNodeWithName:NomeNodePlataformas]) {
         
         //Para cada node plataforma no Node que contem as plataformas verificar
-        for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {
-            
-            
+        for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {            
             if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > self.jogador.position.y) {
                 //Evita ficar chamando toda hora
                 if (!(plataforma.physicsBody.categoryBitMask & PlataformaCategoria)!=0) {
@@ -490,6 +504,15 @@
             }
         }
     }
+}
+
+-(void)configuraBotaoMenu{
+    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
+    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.hudFase.position.y-150)];
+    
+    [self.botaoMenu setName:@"botaoMenu"];
+    //[self.botaoMenu setScale:0.9];
+    [self addChild:self.botaoMenu];
 }
 
 @end

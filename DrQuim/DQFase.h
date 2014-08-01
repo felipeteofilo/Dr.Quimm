@@ -15,6 +15,8 @@
 #import "DQConfiguracaoFase.h"
 #import "DQHudController.h"
 #import "DQCoberturaBackground.h"
+#import "DQMenu.h"
+#import "DQControleUserDefalts.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -47,6 +49,13 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //CGPoint que guarda onde a pessoa pressionou e assim descobrir se o personagem vai para a direita ou esquerda
 @property CGPoint pontoDeToqueAndar;
 
+//Propriedade para o menu
+@property SKSpriteNode *botaoMenu;
+@property DQMenu *menu;
+
+//HUD com informações
+@property DQHudController *hudFase;
+
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(void)configuracoesFase:(int)faseAtual;
@@ -54,8 +63,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 -(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
 
 -(void)escadaCategoria :(SKNode*)node;
+-(void)configuraBotaoMenu;
 
-
-//HUD com informações
-@property DQHudController *hudFase;
 @end

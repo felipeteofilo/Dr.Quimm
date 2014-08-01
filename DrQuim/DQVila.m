@@ -11,7 +11,7 @@
 @implementation DQVila
 
 -(id)initWithSize:(CGSize)size {
-    if (self=[super initWithSize:size]) {
+    if (self = [super initWithSize:size]) {
         [self configuracoesFase:2];
         
         self.hudFase = [[DQHudController alloc]initHud];
@@ -24,6 +24,14 @@
         
         [self iniciarFase];
         [self addChild:self.hudFase];
+        
+        self.missao = [[DQMissoesJogador alloc]init];
+        
+        //TEMPORÁRIO - inicia ele direto na missão 01
+        [self.missao iniciarMissao:1];
+        
+        [self configuraBotaoMenu];
+        NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
     }
     
     return self;
@@ -87,12 +95,11 @@
             
             //Inicia o spriteNode daquele node com o NOME e POSICAO
             [self.quimm criarSpriteNodeComNome:nomeNPC naPosicao:posicaoNPC];
-            [self.quimm.spriteNode setSize:CGSizeMake(100, 150)];
+            [self.quimm.spriteNode setSize:CGSizeMake(70, 100)];
             [self.mundo addChild:self.quimm.spriteNode];
         }
     }
 }
-
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
@@ -152,13 +159,82 @@
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
-    //chamar as falas do Personagem
-    [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
-    
     //definições importantes:
     self.cutsceneEstaRodando = YES;
     self.estaFalando = YES;
     [self.jogador pararAndar];
+    
+
+    //SEM MISSAO
+    if(self.missao.missaoAtual == 0){
+        //chamar as falas do Personagem dependendo do respeito
+        [self.controleCutscenes mostrarFalaNaVila:self.scene Dicionario:npc.dicionarioDeFalasSemMissao Respeito:self.jogador.respeito];
+    }
+    
+    //COM MISSAO
+    //missão 01 - Ajudando a mãe de todos
+    else if(self.missao.missaoAtual == 1){
+        NSString *keyDaParte;
+        
+        //se o NPC em questão ainda não falou com o jogador
+        if(!npc.falou){
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.missao.parteDaMissao];
+            npc.falou = YES;
+            NSLog(@"%@", keyDaParte);
+        }
+        //se o NPC em questão já tiver falado com a
+        else{
+            keyDaParte = [NSString stringWithFormat:@"Parte%iR", self.missao.parteDaMissao];
+            NSLog(@"%@", keyDaParte);
+        }
+        
+        //Mostra a fala dependendo da Key gerada
+        [self.controleCutscenes mostrarFalaNaMissao:self.scene Dicionario:npc.dicionarioDeFalasMissao01 Parte:keyDaParte];
+    }
+    
+    //chama o método que verifica se a missão deve mudar de parte ou não - e se for mudar, faz o que for necessário
+    [self mudarParteMissao];
+}
+
+-(void)mudarParteMissao
+{
+    //se a missão for a Missão01 - Ajudando a mãe de todos
+    if(self.missao.missaoAtual == 1){
+        switch (self.missao.parteDaMissao) {
+            case 0:
+                if(self.maeDeTodos.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 1:
+                if(self.cacador.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 2:
+                if(self.maeDeTodos.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 3:
+                if(self.chefe.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 4:
+                if(self.curandeiro.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 5:
+                if(self.chefe.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 6:
+                if(self.cacador.falou){ [self.missao passarParteMissao]; }
+                break;
+            case 7:
+                if(self.maeDeTodos.falou){ [self.missao passarParteMissao]; }
+                break;
+            default:
+                break;
+        }
+        
+        self.maeDeTodos.falou = NO;
+        self.cacador.falou = NO;
+        self.curandeiro.falou = NO;
+        self.chefe.falou = NO;
+        self.quimm.falou = NO;
+    }
 }
 
 -(void)criarParteFase{
@@ -171,7 +247,7 @@
                 NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual +1];
                 
                 for (int i=0;i<[arrayEscalaveis count];i++) {
-                    //Cada posicao no array de escalaceis tem apenas 2 posicoes (POnto inicial e ponto Final do escalavel)
+                    //Cada posicao no array de escalaveis tem apenas 2 posicoes (Ponto inicial e ponto Final do escalavel)
                     CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
                     CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
                     

@@ -49,6 +49,9 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         
+        //Inicia a instância da classe missoesJogador
+        self.missoes = [[DQMissoesJogador alloc] init];
+        
     }
 
     //retorna o jogador
@@ -89,6 +92,7 @@
 -(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
     NSInteger numImagens = pastaFrames.textureNames.count;
     NSMutableArray *frames =[[NSMutableArray alloc]init];
+    
     for (int i=1; i <= numImagens; i++) {
         NSString *textureName = [NSString stringWithFormat:@"%d", i];
         SKTexture *temp = [pastaFrames textureNamed:textureName];
