@@ -10,6 +10,8 @@
 
 @implementation DQVila
 
+
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:2];
@@ -18,7 +20,7 @@
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
         
         //Inicia com a fase 2
-        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:2];
+        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:3 Fase:2];
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
         
@@ -32,6 +34,9 @@
         
         [self configuraBotaoMenu];
         NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
+
+        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+
     }
     
     return self;
@@ -40,6 +45,8 @@
 -(void)iniciarFase{
     [super iniciarFase];
     [self adicionaNPC];
+    [self addChild:self.hudFase];
+    self.cutsceneEstaRodando = NO;
 }
 
 
@@ -309,17 +316,6 @@
         
     }
     
-    //Se estiver falando em jogo...
-    else if(self.estaFalando){
-        if ([self.controleCutscenes trocarFala]) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
-            
-        }
-        else{
-            
-            self.estaFalando = NO;
-            self.cutsceneEstaRodando = NO;
-        }
-    }
+    
 }
 @end

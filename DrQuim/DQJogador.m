@@ -150,13 +150,14 @@
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
                                                                               timePerFrame:0.9f
                                                                                     resize:NO
-                                                                                   restore:YES]]];
+                                                                                restore:YES]]withKey:@"animandoParado"];
 }
 //funcao para animar jogador pulando
 -(void)animarPular{
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.47f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.37f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
 //funcao para animar jogador caindo
@@ -165,6 +166,9 @@
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     [self.spriteNode runAction:[SKAction animateWithTextures:framesCaindo timePerFrame:0.1f                                           resize:NO restore:YES] withKey:@"animandoCaindo"];
 }
+
+
+
 
 //funcao da acao de pulo do jogador
 -(void)pular{
@@ -259,6 +263,10 @@
         // move o jogador
         [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
     }
+}
+//Funcao para parar de derrapar
+-(void)pararDerrapar{
+    [self.spriteNode removeActionForKey:@"animandoDerrapando"];
 }
 
 //funcao para parar a escalada do jogador
