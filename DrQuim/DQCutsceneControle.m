@@ -253,7 +253,7 @@
             [letra setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
             [letra setPosition:CGPointMake(40 + (distanciaX * j), 150 - (distanciaY * i))];
             [letra setText:[arrayDeLetrasAtual objectAtIndex:j]];
-            [letra setAlpha:0];
+            //[letra setAlpha:0];
             
             //adiciona no arrayDeLetrasNode
             [arrayDeLetrasNode addObject:letra];
@@ -268,11 +268,14 @@
     //ADICIONA AS LETRAS NA TELA
     for(int i = 0; i < [arrayDeArrayDeLetrasNode count]; i++){
         for(int j = 0; j < [[arrayDeArrayDeLetrasNode objectAtIndex:i] count]; j++){
-            [self.caixaDeFala addChild:[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j]];
+            [self.cutscene runAction:[SKAction waitForDuration:2] completion:^{
+                NSLog(@"%@", [[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j] text]);
+                [self.caixaDeFala addChild:[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j]];
+            }];
         }
     }
-
 }
+
 
 //Mostra a falas do jogo
 -(void)mostrarFalaAtualNoJogo:(NSArray *)frases
