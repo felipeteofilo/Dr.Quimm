@@ -219,7 +219,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    if (!self.cutsceneEstaRodando && !self.estaFalando) {
+    
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
     
@@ -242,7 +242,6 @@
         
         [self.jogador pular];
     }
-<<<<<<< HEAD
     
     CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
     NSArray *arrayNodes=[self nodesAtPoint:posToqueNode];
@@ -264,18 +263,6 @@
             }
             
             break;
-=======
-    }
-    //Se estiver falando em jogo...
-    else if(self.estaFalando){
-        if ([self.controleCutscenes trocarFala]) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
-            
-        }
-        else{
-            self.estaFalando = NO;
-            self.cutsceneEstaRodando = NO;
->>>>>>> Desenvolvimento
         }
     }
 }
@@ -318,10 +305,6 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
-    if((self.cutsceneEstaRodando) && (!self.estaFalando)){
-        [self.controleCutscenes trocarCena];
-    }
-    
     //faz parar de andar, colocando a direção como nula
     [self.jogador setAndandoParaDirecao:@" "];
     [self.jogador pararAndar];
@@ -347,15 +330,6 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
-        if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
-            
-            //se o jogador  parar  de colidir com o chao setamos que ele nao esta no chao
-            [self.jogador setEstaNoChao:NO];
-            
-        }
-    }
-
     
     //se parou de colidir com a escada
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
@@ -422,8 +396,6 @@
     [self criarParteFase];
     [self verificaCoberturaBackground];
     
-    [self.controladorDaVida atualizarSituacaoJogador];
-    
 }
 
 - (void)didSimulatePhysics{
@@ -435,30 +407,8 @@
     
     //Desativa plataformas
     [self desativaPlataformas];
-    
-    //Faz algumas verificacoes para animar o jogador
-    [self verificarAnimacaoCaindo];
-    [self verificarAnimacaoDerrapagem];
-   
-}
-
-//funcao para vefrificar se pode animar jogador caindo de altas distancias
--(void)verificarAnimacaoCaindo{
-    //se esta caindo de uma distancia muito grande anima ele caindo
-    if ( !self.jogador.estaNoChao && self.jogador.physicsBody.velocity.dy < -535 && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"]) {
+    if (!self.jogador.estaNoChao && ![self.jogador.spriteNode actionForKey:@"animandoPulo"] && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"] && ![self.jogador.spriteNode actionForKey:@"animandoEscalada"] && ![self.jogador.spriteNode actionForKey:@"animandoAndando"]  ) {
         [self.jogador animarCaindo];
-    }
-}
-
-//funcao para verificar se pode animar jogador derrapando
--(void)verificarAnimacaoDerrapagem{
-    //se jogador esta derrapando anima ele derrapando
-    if ( self.jogador.estaNoChao && (self.jogador.physicsBody.velocity.dx < -10 || self.jogador.physicsBody.velocity.dx > 10) && ![self.jogador.spriteNode actionForKey:@"animandoAndando"] && ![self.jogador.spriteNode actionForKey:@"animandoDerrapando"]) {
-        [self.jogador animarDerrapando];
-    }
-    //se nao retira a animacao
-    if ([self.jogador.spriteNode actionForKey:@"animandoDerrapando"] && self.jogador.physicsBody.velocity.dx == 0 ) {
-        [self.jogador pararDerrapar];
     }
 }
 
@@ -491,8 +441,7 @@
     
     if (!self.mundo) {
         NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");
-    }else {
-        [self.jogador removeFromParent];
+    }else{
         [self.mundo addChild:self.jogador];
     }
 }
@@ -507,10 +456,7 @@
     
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
-    
     [self.mundo setZPosition:-100];
-    
-    self.controladorDaVida = [DQVidaControle sharedControleVida];
     
     self.backgroundAtual =[SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual]];
     [self.backgroundAtual setAnchorPoint:CGPointMake(0, 0)];

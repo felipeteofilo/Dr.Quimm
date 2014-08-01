@@ -8,7 +8,6 @@
 
 #import "DQFlorestaParte1.h"
 
-
 #define RAIOAPITAR 70
 #define RAIOFALAR 20
 
@@ -38,7 +37,7 @@
     self.cutsceneEstaRodando = NO;
     self.estaFalando = NO;
     
-    self.mostrouTutorial = YES;
+    self.mostrouTutorial = NO;
     self.executandoTutorial = NO;
     
 }
@@ -58,7 +57,7 @@
         //Se ainda não mostrou o tutorial, assim que a pessoa clica na tela, ele inicia:
         if(!self.mostrouTutorial){
             if(!self.executandoTutorial){
-               // [self iniciarTutorial];
+                [self iniciarTutorial];
             }
         }
         
@@ -87,7 +86,17 @@
         }
     }
     
-   
+    //Se estiver falando em jogo...
+    else if(self.estaFalando){
+        if ([self.controleCutscenes trocarFala]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+            
+        }
+        else{
+            self.estaFalando = NO;
+            self.cutsceneEstaRodando = NO;
+        }
+    }
 }
 
 -(void)iniciarTutorial
@@ -331,22 +340,18 @@
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
         [self.jogador pararAndar];
-        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(mudarFase)];
+        [self.controleCutscenes iniciarCutscene:self Seletor:nil];
     }
-}
-//funcao para mudar da fase 1 para 2
--(void)mudarFase{
-    DQVila *fase2=[DQVila sceneWithSize:self.view.bounds.size];
-    
-    fase2.scaleMode = SKSceneScaleModeAspectFill;
-    
-    [self.view presentScene:fase2];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
-    
+    if((self.cutsceneEstaRodando) && (!self.estaFalando)){
+        [self.controleCutscenes trocarCena];
+    }else{
+        
+    }
 }
 
 -(void)procurarRadiacao{
