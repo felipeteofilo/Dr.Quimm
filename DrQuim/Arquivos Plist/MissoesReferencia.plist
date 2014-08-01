@@ -168,5 +168,96 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>Nome</key>
+		<string>Missão 02 - Recuperando a maleta</string>
+		<key>Recompensa</key>
+		<string>nenhuma</string>
+		<key>Respeito</key>
+		<integer>0</integer>
+		<key>Partes</key>
+		<array>
+			<dict>
+				<key>Descricao</key>
+				<string>Fale com o Dr. Quimm, ele estava chamando por você.</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Dr. Quimm</string>
+				<key>Item Recebido</key>
+				<string>Contador Geiger</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Peça para Caçador devolver a mala do Dr. Quimm.</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Caçador</string>
+				<key>Item Recebido</key>
+				<string>nenhum</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Pegar o animal descrito pelo Caçador</string>
+				<key>Objetivo Atual</key>
+				<string>Encurralar o animal</string>
+				<key>Item Recebido</key>
+				<string>nenhum</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Pergunte ao Caçador como ele faz para capturar a criatura.</string>
+				<key>Objetivo Atual</key>
+				<string>Falar com o Caçador</string>
+				<key>Item Recebido</key>
+				<string>nenhum</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Pergunte as pessoas da vila se alguém conhece a técnica.</string>
+				<key>Objetivo Atual</key>
+				<string>nenhum</string>
+				<key>Item Recebido</key>
+				<string>Maleta do Dr. Quimm</string>
+				<key>Item Entregue</key>
+				<string>nenhum</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Respeito</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>

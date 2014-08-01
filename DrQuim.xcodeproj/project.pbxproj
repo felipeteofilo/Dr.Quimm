@@ -99,6 +99,7 @@
 		C5E1F412198AEAD600F7A320 /* ConfigFase.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F411198AEAD600F7A320 /* ConfigFase.plist */; };
 		C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */; };
 		C5E1F417198B223800F7A320 /* Menu.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F416198B223800F7A320 /* Menu.atlas */; };
+		C5E1F463198C210300F7A320 /* FalasCutScene.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F462198C210300F7A320 /* FalasCutScene.plist */; };
 		C5EE3A5B1974A9FD008D3D8D /* Fase2_Parte1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A571974A9FD008D3D8D /* Fase2_Parte1.png */; };
 		C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */; };
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
@@ -245,6 +246,7 @@
 		C5E1F413198AECC800F7A320 /* DQControleUserDefalts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleUserDefalts.h; sourceTree = "<group>"; };
 		C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleUserDefalts.m; sourceTree = "<group>"; };
 		C5E1F416198B223800F7A320 /* Menu.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Menu.atlas; sourceTree = "<group>"; };
+		C5E1F462198C210300F7A320 /* FalasCutScene.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FalasCutScene.plist; path = "Arquivos Plist/FalasCutScene.plist"; sourceTree = "<group>"; };
 		C5EE3A571974A9FD008D3D8D /* Fase2_Parte1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte1.png; sourceTree = "<group>"; };
 		C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
 		C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		2323166F1947BCAB0002FB1D /* Arquvos XML */ = {
 			isa = PBXGroup;
 			children = (
+				C5E1F462198C210300F7A320 /* FalasCutScene.plist */,
 				C5E1F411198AEAD600F7A320 /* ConfigFase.plist */,
 				C5E1F40F198AD8AF00F7A320 /* ConfigMenu.plist */,
 				C54031C01989FE12003384AB /* FalasNoJogo.plist */,
@@ -659,6 +662,7 @@
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				C5E1F410198AD8AF00F7A320 /* ConfigMenu.plist in Resources */,
 				C54031BB1989FDB1003384AB /* rostoChefeSimpatico.png in Resources */,
+				C5E1F463198C210300F7A320 /* FalasCutScene.plist in Resources */,
 				C54031C71989FE12003384AB /* ItensReferencia.plist in Resources */,
 				C54031BE1989FDB1003384AB /* rostoMaedetodos.png in Resources */,
 				C54031C91989FE12003384AB /* MissoesReferencia.plist in Resources */,
