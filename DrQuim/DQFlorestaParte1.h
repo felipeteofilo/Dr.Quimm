@@ -11,18 +11,17 @@
 #import "DQJogador.h"
 #import "DQCutsceneControle.h"
 #import "DQPlataforma.h"
+#import "DQVila.h"
+
 
 //Define o nome dos skNodes
 //static NSString* mundo = @"mundo";
 
 @interface DQFlorestaParte1 : DQFase <SKPhysicsContactDelegate>
 
-//DQCutsceneControle para controlar as cutscenes e as falas.
-@property DQCutsceneControle *controleCutscenes;
 
-//Variavel Booleana para saber se esta rodando alguma cutscene
-@property BOOL cutsceneEstaRodando;
-@property BOOL estaFalando;
+
+
 
 //Variaveis booleanas para definir se fá foi ou não dito as falas in-game que são ditas apenas uma vez
 @property BOOL falouRadiacaoAlpha;
