@@ -335,14 +335,8 @@
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
         //faz o jogador parar de escalar
         [self.jogador pararEscalar];
-        
     }
-    
-    
 }
-
-
-
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
@@ -513,11 +507,11 @@
 }
 
 -(void)configuraBotaoMenu{
-    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"rostoCientista"];
+    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
     [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.hudFase.position.y-150)];
     
     [self.botaoMenu setName:@"botaoMenu"];
-    [self.botaoMenu setScale:0.7];
+    //[self.botaoMenu setScale:0.9];
     [self addChild:self.botaoMenu];
 }
 
