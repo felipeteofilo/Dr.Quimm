@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+
 @interface DQJogador : SKSpriteNode
 
 
@@ -36,6 +37,14 @@
 
 @property NSString *andandoParaDirecao;
 
+//Aumentar fome do personagem
+-(void)aumentarFome:(int)aumento;
+
+//Aumentar sede do personagem
+-(void)aumentarSede:(int)aumento;
+
+//Perder Vida
+-(void)perderVida:(int)perda;
 
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;

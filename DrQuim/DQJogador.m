@@ -41,8 +41,8 @@
         self.podeEscalar = NO;
         self.estaNoChao = YES;
         //USADO COMO TESTE
-        self.fome = 10;
-        self.sede = 40;
+        self.fome = 100;
+        self.sede = 100;
         self.vida = 100;
         
         //Mais um teste:
@@ -223,9 +223,28 @@
     }
 }
 
+-(void)aumentarFome:(int)aumento{
+    
+    [self setFome:(self.fome - aumento)];
+    
+}
+-(void)aumentarSede:(int)aumento{
+    
+    [self setSede:(self.sede - aumento)];
+    
+}
+
+-(void)perderVida:(int)perda{
+    
+    [self setVida:(self.vida - perda)];
+    
+}
+
+
 //Método para parar de andar
 -(void)pararAndar{
-    
+    [self aumentarSede:2];
+    [self aumentarFome:1];
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];

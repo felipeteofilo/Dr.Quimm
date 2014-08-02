@@ -37,14 +37,20 @@
         self.inicioContador = CACurrentMediaTime();
         
     }
-    if (CACurrentMediaTime()-self.inicioContador > 30) {
-        
+    if (CACurrentMediaTime()-self.inicioContador > 10) {
+        if (self.jogador.fome > 0) {
+            [self.jogador aumentarFome:1];
+        }
+        if (self.jogador.sede > 0) {
+            [self.jogador aumentarSede:2];
+        }
+        if (self.jogador.vida > 0 && self.jogador.fome <= 0 && self.jogador.sede <= 0) {
+            [self.jogador perderVida:1];
+        }
+        self.inicioContador = CACurrentMediaTime();
     }
 }
 
--(void)aumentarPorcentagemFome:(int)porcentagem{
-    
-    
-}
+
 
 @end
