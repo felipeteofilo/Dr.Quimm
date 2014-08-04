@@ -18,14 +18,12 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    
     skView.showsPhysics=YES;
     
     // Create and configure the scene.
+    DQFlorestaParte1 *floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
+   //DQVila *floresta=[DQVila sceneWithSize:skView.bounds.size];
 
-    //DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
-    
-    DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
     
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     
@@ -51,7 +49,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 @end

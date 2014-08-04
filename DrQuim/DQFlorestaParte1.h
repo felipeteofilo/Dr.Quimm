@@ -7,51 +7,35 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQFase.h"
 #import "DQJogador.h"
-#import "DQGestoPulo.h"
 #import "DQCutsceneControle.h"
+#import "DQPlataforma.h"
+#import "DQVila.h"
 
-
-//define as categorias de colisao
-static const UInt32 JogadorCategoria = 0x1 << 1;
-static const UInt32 ChaoCategoria =0x1 << 2;
 
 //Define o nome dos skNodes
-static NSString* mundo=@"mundo";
+//static NSString* mundo = @"mundo";
 
-@interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
-
-
-@property DQCutsceneControle *controleCutscenes;
+@interface DQFlorestaParte1 : DQFase <SKPhysicsContactDelegate>
 
 
-//Varial Booleana para saber se esta rodando alguma cutscene
-@property BOOL cutsceneEstaRodando;
-
-@property BOOL estaFalando;
-
-//Variável DQJogador - Define o jogador
-@property DQJogador *jogador;
-
-//Varial do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
-@property DQGestoPulo *gestoPulo;
-
-//Variavel que será usada para controlar em que parte da cena o jogador está
-@property int parteFaseAtual;
-
-//Adicionado o node que guarda o mundo para poder manipular ele durante a cena
-@property SKNode* mundo;
-
-//Variavel que controlará o N max de partes da Cena - Provisório
-@property int nPartesCena;
-
-@property SKSpriteNode *backgroundAnterior;
-@property SKSpriteNode *backgroundAtual;
-@property SKSpriteNode *backgroundFuturo;
 
 
-//metodo para iniciar a fase
--(void)iniciarFase;
 
+//Variaveis booleanas para definir se fá foi ou não dito as falas in-game que são ditas apenas uma vez
+@property BOOL falouRadiacaoAlpha;
+@property BOOL falouRadiacaoBeta;
+@property BOOL falouAtencaoAlpha;
+@property BOOL falouAtencaoBeta;
+
+//Variavel Booleana para definir se já passou o tutorial
+@property BOOL mostrouTutorial;
+@property BOOL executandoTutorial;
+
+//Array com pontos de radiacao e Key de Falas na ordem
+@property NSArray *pontosRadiacao;
+@property NSArray *keyFalaPontoRadiacao;
+@property NSMutableArray *boolFalouRadiacao;
 
 @end

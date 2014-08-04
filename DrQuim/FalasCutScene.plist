@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_1</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_2</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Uau! Um dos maiores cientistas do mundo está no meu helicóptero... Preciso dizer algo...</string>
+			<key>Fundo</key>
+			<string>cena1_3</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>B-bonito o jaleco do senhor.</string>
+			<key>Fundo</key>
+			<string>cena1_4</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>É algodão egípcio </string>
+			<key>Fundo</key>
+			<string>cena1_5</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Que legal! Onde o senhor conseguiu?</string>
+			<key>Fundo</key>
+			<string>cena1_6</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Egito</string>
+			<key>Fundo</key>
+			<string>cena1_7</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_8</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_9</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Mas porque alguém como o senhor está indo para uma ilha como aquela? Meu primo, ele é marinheiro, ele disse que uma vez viu monstros naquela ilha.</string>
+			<key>Fundo</key>
+			<string>cena1_10</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_11</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Tenho um trabalho a fazer.</string>
+			<key>Fundo</key>
+			<string>cena1_12</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Entendo... que trabalho é esse?</string>
+			<key>Fundo</key>
+			<string>cena1_13</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Coleta de amostras</string>
+			<key>Fundo</key>
+			<string>cena1_14</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Amostras... Legal! De que?</string>
+			<key>Fundo</key>
+			<string>cena1_15</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Material radioativo.</string>
+			<key>Fundo</key>
+			<string>cena1_16</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_17</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_18</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>RADIOATIVO?!</string>
+			<key>Fundo</key>
+			<string>cena1_19</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_20</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Pela barbas de Darwin! O que foi aquilo? </string>
+			<key>Fundo</key>
+			<string>cena1_21</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto </string>
+			<key>Texto</key>
+			<string>Precisamos sair daqui.</string>
+			<key>Fundo</key>
+			<string>cena1_22</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_23</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_24</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_25</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_26</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_27</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_28</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_29</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_30</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_31</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena1_32</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>O senhor está bem?</string>
+			<key>Fundo</key>
+			<string>cena1_33</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Não! Machuquei a minha perna!</string>
+			<key>Fundo</key>
+			<string>cena1_34</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Venha, eu te ajudo. Precisamos encontrar algum lugar seguro, já está anoitecendo.</string>
+			<key>Fundo</key>
+			<string>cena1_35</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Voltando ao assunto de radiação, faltou encontrarmos apenas uma.</string>
+			<key>Fundo</key>
+			<string>cena2_1</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Pelos bigodes de Becquerel! Você quer encontrar a radiação gama? </string>
+			<key>Fundo</key>
+			<string>cena2_2</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Sim! É só ficarmos longe, né?!</string>
+			<key>Fundo</key>
+			<string>cena2_3</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Diferente das outras, a gama é uma onda eletromagnética, por isso tem alto poder de penetração. Você pretende ter câncer? ser estéril? talvez apenas cair morto?</string>
+			<key>Fundo</key>
+			<string>cena2_4</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Não</string>
+			<key>Fundo</key>
+			<string>cena2_5</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Então, pelo amor de Marie Curie, Não deseje isso novamente</string>
+			<key>Fundo</key>
+			<string>cena2_6</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>cena2_7</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>O que é aquilo?</string>
+			<key>Fundo</key>
+			<string>cena2_8</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>O que? Uma vila? Este lugar deveria estar inabitado!</string>
+			<key>Fundo</key>
+			<string>cena2_9</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Olha, um macaco.</string>
+			<key>Fundo</key>
+			<string>Cena3_1</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Isso é mesmo um macaco? Ei!! eu conheço aquela maleta! Ela é minha! Pela peruca de newton! Se esse ser está com a minha maleta o que mais terá caído por essa ilha?</string>
+			<key>Fundo</key>
+			<string>Cena3_2</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Ele está indo embora! O que está esperando? vá atrás dele! Pegue a minha maleta agora mesmo!</string>
+			<key>Fundo</key>
+			<string>Cena3_3</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string> É pra já!</string>
+			<key>Fundo</key>
+			<string>Cena3_4</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string> Não moleque! Volta aqui!</string>
+			<key>Fundo</key>
+			<string>Cena3_5</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>Vou pegar a maleta, vou me provar prestativo!
+</string>
+			<key>Fundo</key>
+			<string>Cena3_6</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>Cena3_7</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string></string>
+			<key>Texto</key>
+			<string></string>
+			<key>Fundo</key>
+			<string>Cena3_8</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Caçador</string>
+			<key>Texto</key>
+			<string>Há! Quem pega quem agora, cara de traseiro?
+</string>
+			<key>Fundo</key>
+			<string>Cena3_9</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Não disse para você esperar, moleque?
+</string>
+			<key>Fundo</key>
+			<string>Cena3_10</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Caçador</string>
+			<key>Texto</key>
+			<string>Ei! olha só o que a minha rede pegou!</string>
+			<key>Fundo</key>
+			<string>Cena3_11</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Aldeao Desconhecido</string>
+			<key>Texto</key>
+			<string>O meu é melhor, tem pelo branco na cara, mas na cabeça ele não tem!</string>
+			<key>Fundo</key>
+			<string>Cena3_12</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Caçador</string>
+			<key>Texto</key>
+			<string>Mãe de todos. Minha caça de hoje caiu do céu! olhe o que a grande ave nos trouxe.</string>
+			<key>Fundo</key>
+			<string>Cena3_13</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Mãe de Todos</string>
+			<key>Texto</key>
+			<string>Você disse que eles cairam do céu? O que estão fazendo? Se foi mesmo a grande ave que os trouxe eles não devem ser tratados assim!</string>
+			<key>Fundo</key>
+			<string>Cena3_14</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Caçador</string>
+			<key>Texto</key>
+			<string>M-mas...</string>
+			<key>Fundo</key>
+			<string>cena3_15</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Mãe de Todos</string>
+			<key>Texto</key>
+			<string>Solte-os já ou ficarão sem sobremesa!</string>
+			<key>Fundo</key>
+			<string>Cena3_16</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Mãe de Todos</string>
+			<key>Texto</key>
+			<string>Diga, quem são vocês?</string>
+			<key>Fundo</key>
+			<string>Cena3_17</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Prazer, eu sou o Dr.Quimm. Renomado cientista da associação internacional de química. </string>
+			<key>Fundo</key>
+			<string>Cena3_18</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Piloto</string>
+			<key>Texto</key>
+			<string>E eu sou...</string>
+			<key>Fundo</key>
+			<string>Cena3_19</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Cientista</string>
+			<key>Texto</key>
+			<string>Ele é só o piloto que me trouxe aqui e que, por sinal, me derrubou no chão e me deixou sozinho na floresta perigosa.
+</string>
+			<key>Fundo</key>
+			<string>Cena3_20</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Mãe de Todos</string>
+			<key>Texto</key>
+			<string>Vejo que você está com a perna machucada, venha, venha, vamos cuidar deste ferimento.</string>
+			<key>Fundo</key>
+			<string>Cena3_21</string>
+		</dict>
+		<dict>
+			<key>Sujeito</key>
+			<string>Mãe de Todos</string>
+			<key>Texto</key>
+			<string>E você, jovem que machucou o Remonado, tenho um favor a lhe pedir.</string>
+			<key>Fundo</key>
+			<string>Cena3_22</string>
+		</dict>
+	</array>
+</array>
+</plist>

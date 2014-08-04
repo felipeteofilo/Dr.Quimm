@@ -13,20 +13,35 @@
 
 @interface DQCutsceneControle : NSObject
 
-
+//Propriedade que define a cena atual
 @property int cenaAtual;
 
+//SkScene atual do jogo
 @property SKScene *cutscene;
 
+//Seletor para iniciar o gameplay da fase
 @property SEL iniciarGameplay;
 
-
+//SKSpritenode que representa o fundo em uma cutscene
 @property SKSpriteNode *fundo;
-@property SKSpriteNode *caixaDeFala;
-@property NSMutableArray *arrayDefalasEmFrases;
-@property NSArray *falasAtuais;
-@property int falaAtual;
 
+//SKSpritenode da caixa de fala que ira conter as falas
+@property SKSpriteNode *caixaDeFala;
+
+//SKLabelNode da instrução (Clique para continuar)
+@property SKLabelNode *instrucao;
+
+//SKSpritenode do rosto de quem fala
+@property SKSpriteNode *rosto;
+
+//NSArray que armazena as falas em frases
+@property NSMutableArray *arrayDefalasEmFrases;
+
+//NSarray que armazena as falas atuais
+@property NSArray *falasAtuais;
+
+//Propriedade que define a fala atual
+@property int falaAtual;
 
 //Armazena as cutscenes do jogo de acordo com a parte passada
 @property NSArray *arrayCutscenes;
@@ -52,25 +67,32 @@
 //Cria uma string que contem o caminho (path) do arquivo plist de falas
 @property NSString *plistFalaPath;
 
-//Cria um NSDictionary com o conteudo da pList.
+//Cria um NSArray com o conteudo da pList.
 @property NSArray *arrayDeFalasPLists;
 
+@property NSDictionary *dicionarioDeFalasNPC;
+
 //Inicia com uma parte
--(id)initComParte:(int)parte_ Fase:(int)fase;
+-(id)initComParte:(int)parte Fase:(int)fase;
 
 //Inicia as falas adicionando-as, dependendo da parte, no arrayFalas e no arrayCenas;
 -(void)iniciaFalas;
-
 
 //Metodo que inicia uma cutscene
 -(void)iniciarCutscene :(SKScene*)cena Seletor:(SEL)seletor;
 
 //Metodo para trocar de Cutscene
 -(void)trocarCena;
+
 //Metodo para mostrar falas In Game
 -(void)mostrarFalaNoJogo :(SKScene*)cena KeyDaFala:(NSString*)key;
 
+-(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito;
+
 //Metodo que retorna se pode trocar a fala ou nao
 -(BOOL)trocarFala;
+
+//Metodo para mudar de cutscene
+-(void)mudarParte;
 
 @end
