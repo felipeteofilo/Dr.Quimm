@@ -224,6 +224,8 @@
     CGPoint posicaoToque=[toque locationInView:self.view];
     
     if (!self.cutsceneEstaRodando && !self.estaFalando) {
+        
+        
         //Se estiver na direita
         if(posicaoToque.x > CGRectGetMidX(self.frame)){
             //ANDAR
@@ -236,14 +238,13 @@
             
             [self addChild:self.direcional];
         }
-        //Se estiver na esquerda
-        else if(posicaoToque.x < CGRectGetMidX(self.frame)){
-            //PULAR
-            
-            [self.jogador pular];
-        }
     }
-    
+    //Se estiver na esquerda
+    else if(posicaoToque.x < CGRectGetMidX(self.frame)){
+        //PULAR
+        
+        [self.jogador pular];
+    }
     
     CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
     NSArray *arrayNodes=[self nodesAtPoint:posToqueNode];
