@@ -7,306 +7,379 @@
 //
 
 #import "DQFlorestaParte1.h"
-#import "DQControleCorpoFisico.h"
 
-#define cameraEdge 512
+
+#define RAIOAPITAR 70
+#define RAIOFALAR 20
 
 @implementation DQFlorestaParte1
-
 
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        //DQCutsceneControle *teste = [[DQCutsceneControle alloc]initComParte:1];
+        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
-        //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
-        //SKNode *mundo = [SKNode node];
-        //mundo.name = @"mundo";
-        self.mundo =[SKNode node];
-        [self.mundo setName:nomeMundo];
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
         
-        //Inicia o jogador pelo singleton
-        self.jogador = [DQJogador sharedJogador];
+        [self configuracoesFase:1];
+        //[self.controleCutscenes iniciarCutscene:self.scene Seletor:nil];
         
-        //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
-        self.physicsWorld.gravity=CGVectorMake(0, -3);
-
-        SKSpriteNode *primeiraParte =[SKSpriteNode spriteNodeWithImageNamed:@"parte1"];
-        
-        [primeiraParte setAnchorPoint:CGPointMake(0, 0)];
-        [primeiraParte setPosition:CGPointMake(0,0)];
-        
-        primeiraParte.physicsBody =[DQControleCorpoFisico criaCorpoFísicoBase:1];
-        primeiraParte.physicsBody.categoryBitMask=ChaoCategoria;
-        primeiraParte.physicsBody.usesPreciseCollisionDetection=YES;
-        primeiraParte.physicsBody.dynamic=NO;
-        
-
-        
-        //seta as categorias de colisao do jogador
-        self.jogador.physicsBody.categoryBitMask=JogadorCategoria;
-        self.jogador.physicsBody.contactTestBitMask = ChaoCategoria;
-        
-        //Seta que a classe que ira delegar o contato sera essa mesma
-        [self.physicsWorld setContactDelegate:self];
-        
-        //Adicionado nome no skNode que será o chao
-        [primeiraParte setName:backgroundAtual];
-        
-        //Leonardo -25/06/2014 - Alterado a forma como se manipula o mundo
-        /*[mundo addChild:primeiraParte];
-        [mundo addChild:segundaParte];
-        [mundo addChild:terceiraParte];
-        [mundo addChild:chaoReal];
-        [mundo addChild:chaoReal2];
-        [mundo addChild:chaoReal3];
-        [self addChild:mundo];
-         
-        [mundo addChild:self.jogador];
-    
-        //[self.mundo addChild:segundaParte];
-        //[self.mundo addChild:terceiraParte];
-        
-        //LEONARDO - 25/06/2014 - Alterado a forma de criar as proximas partes da tela
-        //[self.mundo addChild:chaoReal];
-        //[self.mundo addChild:chaoReal2];
-        [self.mundo addChild:chaoReal3];
-        */
-
-        //Adiciona a primeira parte da tela e o jogador no mundo
-        [self.mundo addChild:primeiraParte];
-        [self.mundo addChild:self.jogador];
-        
-        //Adiciona o mundo na scena
-        [self addChild:self.mundo];
-        
-        self.posicaoXJogador=self.jogador.position.x;
-        self.parteFaseAtual=1;
-        self.ultimoXParteFase=0;
-        
-        //Provisório
-        self.nPartesCena=14;
-        
+        [self iniciarFase];
     }
     return self;
 }
 
+-(void)iniciarFase{
+    [super iniciarFase];
+    
+    [self definirPontosRadiacao];
+    
+    self.cutsceneEstaRodando = NO;
+    self.estaFalando = NO;
+    
+    self.mostrouTutorial = YES;
+    self.executandoTutorial = NO;
+    
+}
+//Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera //===OK===
 - (void)didSimulatePhysics
 {
-    CGPoint heroPosition = self.jogador.position;
- 
-    //LEONARDO - 25/06/2014 - Foi adicionado propriedade para acessar o mundo
-    CGPoint worldPosition = self.mundo.position;
-    
-    CGFloat xCoordinate = worldPosition.x + heroPosition.x ;
-    // [self childNodeWithName: @"//camera"].position = CGPointMake(self.jogador.position.x, self.jogador.position.y);
-    
-    //[self centerOnNode: [self childNodeWithName: @"//camera"]];
-    //[self childNodeWithName: @"//mundo"].position = CGPointMake(-(self.jogador.position.x-(self.size.width/2)), -(self.jogador.position.y-(self.size.height/2))-200);
-    
-    
-    //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-    //CGPoint worldPosition = [self childNodeWithName: @"//mundo"].position;
-    if(xCoordinate <= cameraEdge && heroPosition.x >= 512)
-    {
-        worldPosition.x = worldPosition.x - xCoordinate  + cameraEdge;
-        
+    if (!self.cutsceneEstaRodando) {
+        [super didSimulatePhysics];
     }
-    else if(xCoordinate > (self.frame.size.width - cameraEdge) && heroPosition.x < 2560)
-    {
-        worldPosition.x = worldPosition.x + (self.frame.size.width - xCoordinate) - cameraEdge;
-        
-    }
-    
-
-    //Leonardo - 25/06/2014 - Alterado para não precisar pesquisar na arvore de nos, pq ja temos acesso direto ao node de mundo
-    //[self childNodeWithName: @"//mundo"].position= worldPosition;
-    self.mundo.position = worldPosition;
-    
-    //IF usado para controlar quando passa de uma parte da tela para outra
-    if (self.posicaoXJogador >= (CGRectGetMaxX(self.frame)-2) && (self.posicaoXJogador <= (CGRectGetMaxX(self.frame)+2))){
-        [self manipulaPartesBackground];
-        
-    }else{
-        //Atualiza a posicao em X do jogador
-        self.posicaoXJogador = self.jogador.position.x - CGRectGetMaxX(self.frame);
-        
-        if (self.posicaoXJogador < 0) {
-            self.posicaoXJogador=self.jogador.position.x;
-        }
-    }
-
-    NSLog(@"posicao x do jogador %f",self.posicaoXJogador);
 }
 
-
-
-//metodo que e chamado assim que e criada a cena
--(void)didMoveToView:(SKView *)view{
-    
-    // cria o gesto do pulo e adiciona na cena
-    self.gestoPulo = [[DQGestoPulo alloc]init];
-    
-    [view addGestureRecognizer:self.gestoPulo];
-}
-
-
-//metodo que e chamado assim que um toque é iniciado na cena
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    //verifica em qual parte da tela o toque foi feito e faz o personagem andar de acordo com essa informacao
-    UITouch *posicao = [touches anyObject];
-    
-    if ([posicao locationInView:self.view].x > self.view.frame.size.height/2 ) {
+    //Se não está falando e nem em cutscene...
+    if (!self.cutsceneEstaRodando && !self.estaFalando) {
         
-        [self.jogador andarParaDirecao:@"D"];
-    }else{
-        [self.jogador andarParaDirecao:@"E"];
+        //Se ainda não mostrou o tutorial, assim que a pessoa clica na tela, ele inicia:
+        if(!self.mostrouTutorial){
+            if(!self.executandoTutorial){
+               // [self iniciarTutorial];
+            }
+        }
+        
+        else{
+            //Verifica em qual lado da tela o jogador está tocando
+            UITouch *posicao = [touches anyObject];
+        
+            //Jeito porco irei arrumar
+            CGPoint posicaoDoToque = [posicao locationInNode:self];
+            SKSpriteNode *nodeTocado = (SKSpriteNode *)[self nodeAtPoint:posicaoDoToque];
+        
+            if ([[nodeTocado name] isEqualToString:@"RadiacaoAlfa"]) {
+                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+            
+                self.cutsceneEstaRodando = YES;
+                self.estaFalando = YES;
+            }
+            else if ([[nodeTocado name] isEqualToString:@"RadiacaoBeta"]) {
+                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+            
+                self.cutsceneEstaRodando = YES;
+                self.estaFalando = YES;
+            }else{
+                [super touchesBegan:touches withEvent:event];
+            }
+        }
     }
     
+   
 }
 
-//metodo chamado assim que um toque e finalizado
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    //remove as acoes de andar e animarAndando
-    //[self.jogador removeActionForKey:@"andar"];
-    //[self.jogador removeActionForKey:@"animandoAndando"];
-    
+-(void)iniciarTutorial
+{
+    self.executandoTutorial = YES;
     [self.jogador pararAndar];
+    
+    //Cria o SpriteNode de tutorial
+    //Pular
+    SKSpriteNode *tutorialPular = [[SKSpriteNode alloc]init];
+    [tutorialPular setSize:CGSizeMake(self.frame.size.width/2, self.frame.size.height)];
+    [tutorialPular setAnchorPoint:CGPointMake(0, 0)];
+    [tutorialPular setPosition:CGPointMake(0, 0)];
+    //Correr
+    SKSpriteNode *tutorialCorrer = [[SKSpriteNode alloc]init];
+    [tutorialCorrer setSize:CGSizeMake(self.frame.size.width/2, self.frame.size.height)];
+    [tutorialCorrer setAnchorPoint:CGPointMake(0, 0)];
+    [tutorialCorrer setPosition:CGPointMake(self.frame.origin.x + self.frame.size.width/2, 0)];
+    
+    //Arrumando coisas para ação do tutorial de pular
+    //Pega imagens
+    SKTextureAtlas *atlasPular = [SKTextureAtlas atlasNamed:@"tutorialPular"];
+    SKTexture *AP1 = [atlasPular textureNamed:@"tutorialPular001.png"];
+    SKTexture *AP2 = [atlasPular textureNamed:@"tutorialPular002.png"];
+    SKTexture *AP3 = [atlasPular textureNamed:@"tutorialPular003.png"];
+    SKTexture *AP4 = [atlasPular textureNamed:@"tutorialPular004.png"];
+    //Adiciona num array
+    NSArray *arrayTutorialPular = @[AP1, AP2, AP3, AP4];
+    //Cria a ação
+    SKAction *acaoTutorialPular = [SKAction animateWithTextures:arrayTutorialPular timePerFrame:0.3f];
+    
+    //Arrumando coisas para ação do tutorial de correr - Direita
+    //Pega imagens
+    SKTextureAtlas *atlasCorrerD = [SKTextureAtlas atlasNamed:@"tutorialCorrerDireita"];
+    SKTexture *ACD1 = [atlasCorrerD textureNamed:@"tutorialCorrerD001.png"];
+    SKTexture *ACD2 = [atlasCorrerD textureNamed:@"tutorialCorrerD002.png"];
+    SKTexture *ACD3 = [atlasCorrerD textureNamed:@"tutorialCorrerD003.png"];
+    SKTexture *ACD4 = [atlasCorrerD textureNamed:@"tutorialCorrerD004.png"];
+    SKTexture *ACD5 = [atlasCorrerD textureNamed:@"tutorialCorrerD005.png"];
+    SKTexture *ACD6 = [atlasCorrerD textureNamed:@"tutorialCorrerD006.png"];
+    SKTexture *ACD7 = [atlasCorrerD textureNamed:@"tutorialCorrerD007.png"];
+    SKTexture *ACD8 = [atlasCorrerD textureNamed:@"tutorialCorrerD008.png"];
+    //Adiciona num array
+    NSArray *arrayTutorialCorrerD = @[ACD1, ACD2, ACD3, ACD4, ACD5, ACD6, ACD7, ACD8];
+    //Cria a ação
+    SKAction *acaoTutorialCorrerD = [SKAction animateWithTextures:arrayTutorialCorrerD timePerFrame:0.25f];
+    
+    //Arrumando coisas para ação do tutorial de correr - Esquerda
+    //Pega imagens
+    SKTextureAtlas *atlasCorrerE = [SKTextureAtlas atlasNamed:@"tutorialCorrerEsquerda"];
+    SKTexture *ACE1 = [atlasCorrerE textureNamed:@"tutorialCorrerE001.png"];
+    SKTexture *ACE2 = [atlasCorrerE textureNamed:@"tutorialCorrerE002.png"];
+    SKTexture *ACE3 = [atlasCorrerE textureNamed:@"tutorialCorrerE003.png"];
+    SKTexture *ACE4 = [atlasCorrerE textureNamed:@"tutorialCorrerE004.png"];
+    SKTexture *ACE5 = [atlasCorrerE textureNamed:@"tutorialCorrerE005.png"];
+    SKTexture *ACE6 = [atlasCorrerE textureNamed:@"tutorialCorrerE006.png"];
+    SKTexture *ACE7 = [atlasCorrerE textureNamed:@"tutorialCorrerE007.png"];
+    //Adiciona num array
+    NSArray *arrayTutorialCorrerE = @[ACE1, ACE2, ACE3, ACE4, ACE5, ACE6, ACE7];
+    //Cria a ação
+    SKAction *acaoTutorialCorrerE = [SKAction animateWithTextures:arrayTutorialCorrerE timePerFrame:0.25f];
+    
+    
+    //Fazendo o tutorial de pular
+    [self addChild:tutorialPular];
+    [tutorialPular runAction:acaoTutorialPular completion:^{
+        [self.jogador pular];
+        [tutorialPular removeFromParent];
+        
+        //espera um pouco
+        [self runAction:[SKAction waitForDuration:0.5f] completion:^{
+            
+            //Fazendo o tutorial de correr para a Direita
+            [self addChild:tutorialCorrer];
+            [tutorialCorrer runAction:acaoTutorialCorrerE completion:^{
+                [self.jogador andarParaDirecao:@"E"];
+                [tutorialCorrer removeFromParent];
+                
+                //espera um pouco
+                [self runAction:[SKAction waitForDuration:1] completion:^{
+                    [self.jogador pararAndar];
+                    
+                    //Fazendo o tutorial de correr para a Esquerda
+                    [self addChild:tutorialCorrer];
+                    [tutorialCorrer runAction:acaoTutorialCorrerD completion:^{
+                        [self.jogador andarParaDirecao:@"D"];
+                        [tutorialCorrer removeFromParent];
+                        
+                        //espera um pouco
+                        [self runAction:[SKAction waitForDuration:1] completion:^{
+                            [self.jogador pararAndar];
+                        }];
+                    }];
+                }];
+            }];
+        }];
+    }];
+    
+    self.mostrouTutorial = YES;
+    self.executandoTutorial = NO;
+    
 }
 
-//metodo do delegate de contato que e chamado assim que comeca o contato
--(void)didBeginContact:(SKPhysicsContact *)contact{
-    
-    // Organiza os corpos de acordo com o valor da categoria. Isto é feito para facilitar a comparação mais em baixo
-    SKPhysicsBody *firstBody, *secondBody;
-    
-    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
-    {
-        firstBody = contact.bodyA;
-        secondBody = contact.bodyB;
-    }
-    else
-    {
-        firstBody = contact.bodyB;
-        secondBody = contact.bodyA;
-    }
-    
-    
-    // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
-    if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
-        if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
-            
-            //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
-            [self.jogador setPodePular:0];
-            
-            if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
-                [self.jogador animarAndando];
-            }
-        }
-    }
-    
-}
-
+//Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase ==OK==
 -(void)update:(NSTimeInterval)currentTime{
-    
-    [self criarParteFase];
+    if (!self.cutsceneEstaRodando) {
+        [super update:currentTime];
+        [self procurarRadiacao];
+        
+        //Fazer o jogador sair de perto
+        [self falarAlertaRadiacao];
+        
+        [self segundaCutScene];
+    }
 }
 
+-(void)definirPontosRadiacao{
+    
+    //->Alpha
+    NSValue *pontoAlpha =[NSValue valueWithCGPoint:CGPointMake(3290, 1000)];
+    //-> Beta
+    NSValue *pontoBeta =[NSValue valueWithCGPoint: CGPointMake(5798, 1170)];
+    self.pontosRadiacao=[NSMutableArray arrayWithObjects:pontoAlpha,pontoBeta,nil];
+    
+    //Key pontos radiacao
+    self.keyFalaPontoRadiacao=[NSArray arrayWithObjects:@"RadiacaoAlfa",@"RadiacaoBeta", nil];
+    
+    self.boolFalouRadiacao=[NSMutableArray array];
+    
+    for (int i=0; i<[self.pontosRadiacao count]; i++) {
+        [self.boolFalouRadiacao insertObject:[NSNumber numberWithBool:NO] atIndex:i];
+    }
+}
 
--(void)criarParteFase{
+-(void)apitarRadiacao{
+    if (![self actionForKey:@"apitar"]) {
+        SKAction *apitar=[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES];
+        SKAction *parar=[SKAction removeFromParent];
+        
+        [self runAction:[SKAction sequence:@[apitar,parar]]withKey:@"apitar"];
+    }
+}
+-(void)adicionaIconeRadiacao:(NSString*)nomeRadiacao naPosicao:(CGPoint)posicao{
+    
+    //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente
+    SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"BalaoAlerta"];
+    iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
+    [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0, 0)];
+    [iconeRadiacaoAlpha setPosition:posicao];
+    [iconeRadiacaoAlpha setName:nomeRadiacao];
+    
+    [iconeRadiacaoAlpha setScale:0.9];
+    
+    SKAction *fadeOut=[SKAction fadeOutWithDuration:0.3];
+    SKAction *fadeIn=[SKAction fadeInWithDuration:0.3];
+    
+    
+    [iconeRadiacaoAlpha runAction:[SKAction repeatAction:[SKAction sequence:@[fadeOut,fadeIn]] count:5]];
+    
+    [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
+}
+-(void)afastaJogadorRadiacao{
+    [self.jogador andarParaDirecao:@"E"];
+    [self.jogador runAction:[SKAction moveToX:self.jogador.position.x-10 duration:0.5] withKey:@"saindoDePerto"];
+}
+-(void)falarAlertaRadiacao{
+    //cria os pontos de menssagem
+    CGPoint pontoAlertaAlpha;
+    CGPoint pontoAlertaBeta;
+    
+    //inicia-os com suas coordenadas
+    //-> aletra alpha
+    pontoAlertaAlpha = CGPointMake(3520, 1130);
+    //-> alerta beta
+    pontoAlertaBeta = CGPointMake(5990, 1255);
+    
+    //-> alerta alpha
+    if((self.jogador.position.x > pontoAlertaAlpha.x && self.jogador.position.y > pontoAlertaAlpha.y) && (self.jogador.position.x < pontoAlertaAlpha.x+100 && self.jogador.position.y < pontoAlertaAlpha.y+100) && !self.falouAtencaoAlpha){
+        
+        [self afastaJogadorRadiacao];
+        //Sorteia 1 número para que a fala seja aleatória
+        int numeroAleatorio = arc4random() % 3; //de 0 a 3
+        numeroAleatorio++;
+        
+        //Formata a String para que fique com o nome da fala
+        NSString *keyDaFala = [NSString stringWithFormat:@"Aleatoria%i", numeroAleatorio];
+        
+        //inicia a fala
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
+        
+        
+        self.estaFalando = YES;
+        self.falouAtencaoAlpha = YES;
+        
+        [self.jogador pararAndar];
+    }
+    
+    
+    //faz a fala de alerta ficar disponível novamente
+    if(self.jogador.position.x <= pontoAlertaAlpha.x - 8){
+        self.falouAtencaoAlpha = NO;
+    }
+    
+    //-> alerta beta
+    if((self.jogador.position.x > pontoAlertaBeta.x && self.jogador.position.y > pontoAlertaBeta.y) && (self.jogador.position.x < pontoAlertaBeta.x+100 && self.jogador.position.y < pontoAlertaBeta.y+100) && !self.falouAtencaoBeta){
+        
+        [self afastaJogadorRadiacao];
+        //Sorteia 1 número para que a fala seja aleatória
+        int numeroAleatorio = arc4random() % 3; //de 0 a 3
+        numeroAleatorio++;
+        
+        //Formata a String para que fique com o nome da fala
+        NSString *keyDaFala = [NSString stringWithFormat:@"Aleatoria%i", numeroAleatorio];
+        
+        //inicia a fala
+        [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
+        
+        
+        self.estaFalando = YES;
+        self.falouAtencaoBeta = YES;
+        
+        [self.jogador pararAndar];
+    }
+    
+    if(self.jogador.position.x <= pontoAlertaBeta.x - 8){
+        self.falouAtencaoBeta = NO;
+    }
+}
 
-    //se for maior que a metade do tamanho de uma skScene ele irá criar um skNode com o physicsbody da prox parte do cenario
-    if (self.posicaoXJogador > CGRectGetMidX(self.frame)){
+-(void)segundaCutScene{
+    CGPoint pontoSegundaCutscene;
+    
+    //-> segundaCutscene
+    pontoSegundaCutscene = CGPointMake(7640, 330);
+    //-> segundaCutscene
+    //se o jogador chegar ao local da fala, comeca a fala
+    
+    if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
         
-        //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
-        if (![self.mundo childNodeWithName:proxBackground]) {
-            
-            //Verifica se tem parte a ser criada
-            if (self.parteFaseAtual + 1 <= self.nPartesCena) {
-                NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual+1];
-                
-                // Alterar para skspritenode
-                SKSpriteNode *background=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
-            
-                //Atualiza o anchorpoint
-                background.anchorPoint=CGPointMake(0, 0);
-                
-                //Deixa o background no fundo da tela
-                [background setZPosition:-100.0];
-                
-                //se tiver Cria o skspritenode com o fundo da prox parte e corpo fisico
-                
-                //posiciona após a cena
-                //Corpo fisico
-                background.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual + 1];
-                
-                //nome do node
-                [background setName:proxBackground];
-                
-                
-                //posicao do node
-                background.position=CGPointMake(self.ultimoXParteFase+CGRectGetMaxX(self.frame), 0);
-                
-                //add back no mundo
-                [self.mundo addChild:background];
-            }
+        [self.controleCutscenes mudarParte];
+        self.cutsceneEstaRodando = YES;
+        self.estaFalando = NO;
+        [self.jogador pararAndar];
+        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(mudarFase)];
+    }
+}
+//funcao para mudar da fase 1 para 2
+-(void)mudarFase{
+    DQVila *fase2=[DQVila sceneWithSize:self.view.bounds.size];
+    
+    fase2.scaleMode = SKSceneScaleModeAspectFill;
+    
+    [self.view presentScene:fase2];
+}
 
-        }
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
+    
+    
+}
+
+-(void)procurarRadiacao{
+    //Para cada posicao configurada no array de radiacao eu vou verificar se o jogador esta em uma area especifica
+    for (int i=0; i< [self.pontosRadiacao count]; i++) {
+        CGPoint pontoAnalisar=[[self.pontosRadiacao objectAtIndex:i]CGPointValue];
         
-    }else if (self.posicaoXJogador < CGRectGetMidX(self.frame)){
-        
-        //verifica se ja tem um node com o nome @proxParte - ESTA USANDO IF NOT
-        if (![self.mundo childNodeWithName:backgroundAnt]) {
+        //Começar a apitar
+        if ((self.jogador.position.x > pontoAnalisar.x - RAIOAPITAR  && self.jogador.position.x < pontoAnalisar.x + RAIOAPITAR) && self.jogador.position.y > pontoAnalisar.y - 10 ){
             
-            //Verifica se tem parte a ser criada
-            if (self.parteFaseAtual -1 > 1) {
+            [self apitarRadiacao];
+            
+            //Fala Radiacao
+            if((self.jogador.position.x >= pontoAnalisar.x && self.jogador.position.y >= pontoAnalisar.y) && (self.jogador.position.x <= pontoAnalisar.x+ RAIOFALAR && self.jogador.position.y <= pontoAnalisar.y+ RAIOFALAR) && ![[self.boolFalouRadiacao objectAtIndex:i]boolValue]){
                 
-                NSString *nomeImagemBack=[NSString stringWithFormat:@"parte%i",self.parteFaseAtual-1];
+                NSString *keyFalaRadiacao=[self.keyFalaPontoRadiacao objectAtIndex:i];
+                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyFalaRadiacao];
                 
-                // Alterar para skspritenode
-                SKSpriteNode *background=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
+               
+                self.estaFalando = YES;
                 
-                //Atualiza o anchorpoint
-                background.anchorPoint=CGPointMake(0, 0);
+                [self.boolFalouRadiacao removeObjectAtIndex:i];
                 
-                //Deixa o background no fundo da tela
-                [background setZPosition:-100.0];
+                NSNumber *falouRadiacao=[NSNumber numberWithBool:YES];
+                [self.boolFalouRadiacao insertObject:falouRadiacao atIndex:i];
                 
-                //posiciona após a cena
-                //Corpo fisico
-                background.physicsBody=[DQControleCorpoFisico criaCorpoFísicoBase: self.parteFaseAtual - 1];
+                [self.jogador pararAndar];
                 
-                //nome do node
-                [background setName:backgroundAnt];
-                
-                
-                //posicao do node
-                background.position=CGPointMake(self.ultimoXParteFase - CGRectGetMinX(self.frame), 0);
-                
-                //Add back no mundo
-                [self.mundo addChild:background];
+                //Adiciona o Icone
+                [self adicionaIconeRadiacao:[self.keyFalaPontoRadiacao objectAtIndex:i] naPosicao:CGPointMake(pontoAnalisar.x, pontoAnalisar.y + 80.0)];
                 
             }
         }
     }
 }
-
--(void)manipulaPartesBackground{
-    
-    if (!self.posicaoXJogador == 0) {
-        //Atualiza a posicao do jogador para 0, pq agora ele esta em uma nova parte
-        self.posicaoXJogador = 0;
-        
-        //Atualiza oque era chamado de proxBackground para background
-        [[self.mundo childNodeWithName:proxBackground]setName:backgroundAtual];
-        
-        //Atualiza em que parte ele está
-        self.parteFaseAtual ++;
-        
-        //Atualiza o tamanho em x das telas até agora
-        self.ultimoXParteFase=self.ultimoXParteFase + CGRectGetMaxX(self.frame);
-    }
-}
-
 @end

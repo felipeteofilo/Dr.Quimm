@@ -7,8 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQItensJogador.h"
+#import "DQMissoesJogador.h"
 
-@interface DQJogador : SKNode
+@interface DQJogador : SKSpriteNode
 
 
 //Arrays que guardam os frames das animacoes do jogador
@@ -16,30 +18,46 @@
     NSMutableArray *framesAndando;
     NSMutableArray *framesPulando;
     NSMutableArray *framesParado;
+    NSMutableArray *framesEscalando;
+    NSMutableArray *framesCaindo;
+    NSMutableArray *framesDerrapando;
+    
 }
-
-
-
 //Propriedade que armazenará os sprites e animações
 @property SKSpriteNode *spriteNode;
 
-//variável int - Define a vida do jogador
+//variável int - Define VIDA / FOME / SEDE / RESPEITO ====
 @property int vida;
-
-//variável int - Define a fome do jogador
 @property int fome;
-
-//variável int - Define a sede do jogador
 @property int sede;
-
-//variável int - Define o respeito do jogador
 @property int respeito;
-
+//========================================================
 @property int podePular;
+@property BOOL podeEscalar;
+@property BOOL estaNoChao;
 
+@property NSString *andandoParaDirecao;
+
+//DQItensJogador que armazena tudo relacionado a itens
+@property DQItensJogador *itens;
+
+//DQMissoesJogador que armazena tudo relacionado a Missões
+@property DQMissoesJogador *missoes;
+
+//Aumentar fome do personagem
+-(void)aumentarFome:(int)aumento;
+
+//Aumentar sede do personagem
+-(void)aumentarSede:(int)aumento;
+
+//Perder Vida
+-(void)perderVida:(int)perda;
 
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;
+
+//Funcao para iniciar os frames das animacoes
+-(void)iniciarAnimacoes:(NSDictionary*)animacoes;
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
 -(void)andarParaDirecao:(NSString*)direcao;
@@ -62,8 +80,24 @@
 //Metodo para animar o jogador parado
 -(void)animarParado;
 
+//funcao para animar jogador caindo
+-(void)animarCaindo;
+
+//funcao para animar o jogador derrapando
+-(void)animarDerrapando;
+
 //Método para parar de andar
 -(void)pararAndar;
 
+//funcao para fazer o jogador escalar
+-(void)escalarParaDirecao:(NSString*)direcao;
 
+//funcao para parar a escalada do jogador
+-(void)pararEscalar;
+
+//funcao para dar uma pausa na escalada do jogador
+-(void)pausarEscalada;
+
+//Funcao para parar de derrapar
+-(void)pararDerrapar;
 @end

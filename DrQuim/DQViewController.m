@@ -7,11 +7,8 @@
 //
 
 #import "DQViewController.h"
-#import "DQHistoriaParte1.h"
 
 @implementation DQViewController
-
-
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -21,20 +18,22 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    
     skView.showsPhysics=YES;
     
     // Create and configure the scene.
-
-    DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
-    
-    //DQFlorestaParte1 * floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
-    //DQHistoriaParte1 * floresta = [DQHistoriaParte1 sceneWithSize:skView.bounds.size];
+    //DQFlorestaParte1 *floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
+    DQVila *floresta=[DQVila sceneWithSize:skView.bounds.size];
+    //DQFlorestaParte2 *floresta = [DQFlorestaParte2 sceneWithSize:skView.bounds.size];
     
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:floresta];
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (BOOL)shouldAutorotate
@@ -55,7 +54,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 @end

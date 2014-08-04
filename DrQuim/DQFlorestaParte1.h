@@ -7,46 +7,35 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQFase.h"
 #import "DQJogador.h"
-#import "DQGestoPulo.h"
 #import "DQCutsceneControle.h"
+#import "DQPlataforma.h"
+#import "DQVila.h"
 
 
-//define as categorias de colisao
-static const UInt32 JogadorCategoria = 0x1 << 1;
-static const UInt32 ChaoCategoria =0x1 << 2;
+//Define o nome dos skNodes
+//static NSString* mundo = @"mundo";
 
-//Define o nome dos skNodes de background
-static NSString* backgroundAtual=@"backgroundAtualCena";
-static NSString* proxBackground=@"proxBackgroundCena";
-static NSString* backgroundAnt=@"backgroundAntCena";
-static NSString* nomeMundo=@"mundo";
+@interface DQFlorestaParte1 : DQFase <SKPhysicsContactDelegate>
 
-@interface DQFlorestaParte1 : SKScene <SKPhysicsContactDelegate>
 
-//Variável DQJogador - Define o jogador
-@property DQJogador *jogador;
 
-//Varial do tipo DQGestoPulo - Define o gesto da acao pulo do jogador
-@property DQGestoPulo *gestoPulo;
 
-//Variavel que será usada para controlar a posicao em X do jogador- em relação ao tamanho da skScene
-@property float posicaoXJogador;
 
-//Variavel que controlará a ultima posicao de X de uma parte da fase
-@property float ultimoXParteFase;
+//Variaveis booleanas para definir se fá foi ou não dito as falas in-game que são ditas apenas uma vez
+@property BOOL falouRadiacaoAlpha;
+@property BOOL falouRadiacaoBeta;
+@property BOOL falouAtencaoAlpha;
+@property BOOL falouAtencaoBeta;
 
-//Variavel que será usada para controlar em que parte da cena o jogador está
-@property int parteFaseAtual;
+//Variavel Booleana para definir se já passou o tutorial
+@property BOOL mostrouTutorial;
+@property BOOL executandoTutorial;
 
-//Adicionado o node que guarda o mundo para poder manipular ele durante a cena
-@property SKNode* mundo;
-
-//Variavel que controlará o N max de partes da Cena - Provisório
-@property int nPartesCena;
-
-//Variavel que será usada para controlar quanto tempo se passou desde o ultimo update
-//@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
-//@property (nonatomic) NSTimeInterval tempoDesdeUltimoUpdate;
+//Array com pontos de radiacao e Key de Falas na ordem
+@property NSArray *pontosRadiacao;
+@property NSArray *keyFalaPontoRadiacao;
+@property NSMutableArray *boolFalouRadiacao;
 
 @end

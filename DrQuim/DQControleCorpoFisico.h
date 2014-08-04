@@ -7,8 +7,12 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQPlataforma.h"
+#import "DQConfiguracaoFase.h"
 
 @interface DQControleCorpoFisico : SKNode
 
-+(SKPhysicsBody*)criaCorpoFísicoBase: (int)parte;
+
++(SKPhysicsBody*)criaCorpoFisicoChaoParte: (int)_parte daFase:(int)_fase;
++(SKNode*)criarPlataformaParte: (int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela;
 @end
