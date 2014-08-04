@@ -23,9 +23,9 @@
         self.estaFalando = NO;
         
         [self configuracoesFase:1];
-        [self.controleCutscenes iniciarCutscene:self.scene Seletor:nil];
+        //[self.controleCutscenes iniciarCutscene:self.scene Seletor:nil];
         
-        //[self iniciarFase];
+        [self iniciarFase];
     }
     return self;
 }

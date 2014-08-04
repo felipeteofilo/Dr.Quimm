@@ -219,23 +219,26 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-
+    
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
     
-    //Se estiver na direita
-    if(posicaoToque.x > CGRectGetMidX(self.frame)){
-        //ANDAR
-        //marca o local em que tocou e desenha as setinhas
-        self.pontoDeToqueAndar = posicaoToque;
+    if (!self.cutsceneEstaRodando && !self.estaFalando) {
         
-        //mostra as setinhas
-        self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
-        [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
         
-        [self addChild:self.direcional];
+        //Se estiver na direita
+        if(posicaoToque.x > CGRectGetMidX(self.frame)){
+            //ANDAR
+            //marca o local em que tocou e desenha as setinhas
+            self.pontoDeToqueAndar = posicaoToque;
+            
+            //mostra as setinhas
+            self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+            [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
+            
+            [self addChild:self.direcional];
+        }
     }
-    
     //Se estiver na esquerda
     else if(posicaoToque.x < CGRectGetMidX(self.frame)){
         //PULAR
@@ -342,7 +345,7 @@
             
         }
     }
-
+    
     
     //se parou de colidir com a escada
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
@@ -426,7 +429,7 @@
     //Faz algumas verificacoes para animar o jogador
     [self verificarAnimacaoCaindo];
     [self verificarAnimacaoDerrapagem];
-   
+    
 }
 
 //funcao para vefrificar se pode animar jogador caindo de altas distancias
@@ -536,7 +539,7 @@
     if ([self.backgroundAtual childNodeWithName:NomeNodePlataformas]) {
         
         //Para cada node plataforma no Node que contem as plataformas verificar
-        for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {            
+        for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {
             if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > self.jogador.position.y) {
                 //Evita ficar chamando toda hora
                 if (!(plataforma.physicsBody.categoryBitMask & PlataformaCategoria)!=0) {

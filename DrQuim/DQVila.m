@@ -34,7 +34,7 @@
         [self configuraBotaoMenu];
         NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
 
-        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
 
     }
     
