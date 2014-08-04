@@ -41,12 +41,17 @@
         self.podeEscalar = NO;
         self.estaNoChao = YES;
         //USADO COMO TESTE
-        self.fome = 100;
-        self.sede = 100;
+        self.fome = 10;
+        self.sede = 40;
         self.vida = 100;
-        
-        //Mais um teste:
         self.respeito = 0;
+        
+        //Inicia a instância da classe itensJogador
+        self.itens = [[DQItensJogador alloc] init];
+        
+        //Inicia a instância da classe missoesJogador
+        self.missoes = [[DQMissoesJogador alloc] init];
+        
     }
 
     //retorna o jogador
@@ -87,6 +92,7 @@
 -(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
     NSInteger numImagens = pastaFrames.textureNames.count;
     NSMutableArray *frames =[[NSMutableArray alloc]init];
+    
     for (int i=1; i <= numImagens; i++) {
         NSString *textureName = [NSString stringWithFormat:@"%d", i];
         SKTexture *temp = [pastaFrames textureNamed:textureName];
@@ -109,6 +115,7 @@
     
     return jogador;
 }
+
 
 //funcao para animar o jogador andando
 -(void)animarAndando{
@@ -240,11 +247,9 @@
     
 }
 
-
 //Método para parar de andar
 -(void)pararAndar{
-    [self aumentarSede:2];
-    [self aumentarFome:1];
+    
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];

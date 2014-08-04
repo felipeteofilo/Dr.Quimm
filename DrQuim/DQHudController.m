@@ -18,6 +18,7 @@
         
         //Inicializa os indicadores
         [self configuraBarras];
+        [self setUserInteractionEnabled:YES];
     }
     return self;
 }
@@ -46,5 +47,9 @@
 -(void)atualizarHud{
     //quebrado o método pois podemos ter mais informações na HUD
     [self atualizarBarraStatus];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+
 }
 @end

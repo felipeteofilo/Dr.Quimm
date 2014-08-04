@@ -219,39 +219,67 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    if (!self.cutsceneEstaRodando && !self.estaFalando) {
+    
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
     
-    //Se estiver na direita
-    if(posicaoToque.x > CGRectGetMidX(self.frame)){
-        //ANDAR
-        //marca o local em que tocou e desenha as setinhas
-        self.pontoDeToqueAndar = posicaoToque;
+    if (!self.cutsceneEstaRodando && !self.estaFalando) {
         
-        //mostra as setinhas
-        self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
-        [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
         
-        [self addChild:self.direcional];
+        //Se estiver na direita
+        if(posicaoToque.x > CGRectGetMidX(self.frame)){
+            //ANDAR
+            //marca o local em que tocou e desenha as setinhas
+            self.pontoDeToqueAndar = posicaoToque;
+            
+            //mostra as setinhas
+            self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+            [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
+            
+            [self addChild:self.direcional];
+        }
+        //Se estiver na esquerda
+        else if(posicaoToque.x < CGRectGetMidX(self.frame)){
+            //PULAR
+            
+            [self.jogador pular];
+        }
+        //Se estiver falando em jogo...
+        else if(self.estaFalando){
+            if ([self.controleCutscenes trocarFala]) {
+                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+                
+            }
+            
+            else{
+                self.estaFalando = NO;
+                self.cutsceneEstaRodando = NO;
+            }
+        }
+        
     }
     
-    //Se estiver na esquerda
-    else if(posicaoToque.x < CGRectGetMidX(self.frame)){
-        //PULAR
-        
-        [self.jogador pular];
+    
+    CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posToqueNode];
+    
+    if ([self childNodeWithName:@"MENU"]) {
+        //return;
     }
-    }
-    //Se estiver falando em jogo...
-    else if(self.estaFalando){
-        if ([self.controleCutscenes trocarFala]) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+    
+    for (SKSpriteNode *nodeTocado in arrayNodes) {
+        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
+            if (!self.menu) {
+                self.menu=[[DQMenu alloc]initMenu];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+                
+            }
             
-        }
-        else{
-            self.estaFalando = NO;
-            self.cutsceneEstaRodando = NO;
+            if (![self childNodeWithName:@"MENU"]) {
+                [self addChild:self.menu];
+            }
+            
+            break;
         }
     }
 }
@@ -331,20 +359,14 @@
             
         }
     }
-
+    
     
     //se parou de colidir com a escada
     if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
         //faz o jogador parar de escalar
         [self.jogador pararEscalar];
-        
     }
-
-    
 }
-
-
-
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
@@ -389,20 +411,19 @@
                 [self chaoCategoria:secondBody.node];
             }
         }
-
+        
         //se colidir com a escada
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
             //seta que o jogador pode subir ou descer
             [self.jogador setPodeEscalar:YES];
             
         }
-
+        
     }
 }
 
 -(void)update:(NSTimeInterval)currentTime{
     [self criarParteFase];
-    
     [self verificaCoberturaBackground];
     
     [self.controladorDaVida atualizarSituacaoJogador];
@@ -422,7 +443,7 @@
     //Faz algumas verificacoes para animar o jogador
     [self verificarAnimacaoCaindo];
     [self verificarAnimacaoDerrapagem];
-   
+    
 }
 
 //funcao para vefrificar se pode animar jogador caindo de altas distancias
@@ -527,15 +548,12 @@
     }
     return self;
 }
-
 -(void)desativaPlataformas{
     //Se tiver um node com plataformas
     if ([self.backgroundAtual childNodeWithName:NomeNodePlataformas]) {
         
         //Para cada node plataforma no Node que contem as plataformas verificar
         for (SKNode *plataforma in [[self.backgroundAtual childNodeWithName:NomeNodePlataformas]children]) {
-            
-            
             if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > self.jogador.position.y) {
                 //Evita ficar chamando toda hora
                 if (!(plataforma.physicsBody.categoryBitMask & PlataformaCategoria)!=0) {
@@ -544,6 +562,15 @@
             }
         }
     }
+}
+
+-(void)configuraBotaoMenu{
+    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
+    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.hudFase.position.y-150)];
+    
+    [self.botaoMenu setName:@"botaoMenu"];
+    //[self.botaoMenu setScale:0.9];
+    [self addChild:self.botaoMenu];
 }
 
 @end
