@@ -7,6 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQItensJogador.h"
+#import "DQMissoesJogador.h"
 
 
 @interface DQJogador : SKSpriteNode
@@ -37,6 +39,7 @@
 
 @property NSString *andandoParaDirecao;
 
+
 //Aumentar fome do personagem
 -(void)aumentarFome:(int)aumento;
 
@@ -45,6 +48,13 @@
 
 //Perder Vida
 -(void)perderVida:(int)perda;
+
+//DQItensJogador que armazena tudo relacionado a itens
+@property DQItensJogador *itens;
+
+//DQMissoesJogador que armazena tudo relacionado a Missões
+@property DQMissoesJogador *missoes;
+
 
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;
