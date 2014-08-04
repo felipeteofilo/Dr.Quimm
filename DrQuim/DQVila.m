@@ -24,7 +24,7 @@
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
         
-        [self iniciarFase];
+        //[self iniciarFase];
         
         self.missao = [[DQMissoesJogador alloc]init];
         
@@ -34,7 +34,7 @@
         [self configuraBotaoMenu];
         NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
 
-        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
 
     }
     
@@ -166,7 +166,7 @@
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
     //definições importantes:
-    self.cutsceneEstaRodando = YES;
+    self.cutsceneEstaRodando = NO;
     self.estaFalando = YES;
     [self.jogador pararAndar];
     

@@ -230,6 +230,23 @@
     }
 }
 
+-(void)aumentarFome:(int)aumento{
+    
+    [self setFome:(self.fome - aumento)];
+    
+}
+-(void)aumentarSede:(int)aumento{
+    
+    [self setSede:(self.sede - aumento)];
+    
+}
+
+-(void)perderVida:(int)perda{
+    
+    [self setVida:(self.vida - perda)];
+    
+}
+
 //Método para parar de andar
 -(void)pararAndar{
     

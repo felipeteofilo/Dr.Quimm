@@ -238,13 +238,27 @@
             
             [self addChild:self.direcional];
         }
-    }
-    //Se estiver na esquerda
-    else if(posicaoToque.x < CGRectGetMidX(self.frame)){
-        //PULAR
+        //Se estiver na esquerda
+        else if(posicaoToque.x < CGRectGetMidX(self.frame)){
+            //PULAR
+            
+            [self.jogador pular];
+        }
+        //Se estiver falando em jogo...
+        else if(self.estaFalando){
+            if ([self.controleCutscenes trocarFala]) {
+                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
+                
+            }
+            
+            else{
+                self.estaFalando = NO;
+                self.cutsceneEstaRodando = NO;
+            }
+        }
         
-        [self.jogador pular];
     }
+    
     
     CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
     NSArray *arrayNodes=[self nodesAtPoint:posToqueNode];
