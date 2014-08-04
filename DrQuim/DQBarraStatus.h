@@ -11,8 +11,6 @@
 @interface DQBarraStatus : SKSpriteNode
 
 -(id)initComRed:(CGFloat)_red Green:(CGFloat)_green Blue:(CGFloat)_blue eLargura:(float)largura;
--(id)initComRed:(CGFloat)_red Green:(CGFloat)_green Blue:(CGFloat)_blue size:(CGSize)size;
-
 -(void)atualizarBarra:(float)valor;
 
 @end

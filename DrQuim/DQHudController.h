@@ -9,15 +9,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQJogador.h"
 #import "DQBarraStatus.h"
-#import "DQMenu.h"
 
 @interface DQHudController : SKSpriteNode
 
 @property DQBarraStatus *barraVida;
 @property DQBarraStatus *barraSede;
 @property DQBarraStatus *barraFome;
-@property SKSpriteNode *botaoMenu;
-@property DQMenu *menu;
 
 -(id)initHud;
 -(void)atualizarHud;

@@ -118,9 +118,9 @@
     }
     
     //NSArray que irá conter o textoFormatado cortado em frases
-    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:37];
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
     
-    //remove nós que não devem aparecer na tela
+    //remove nós que não devem aparecer a tela
     [self.cutscene removeAllChildren];
     
     //Adiciona o novo fundo
@@ -190,92 +190,33 @@
     return arrayDeFrases;
 }
 
--(NSArray *)separarFrasesEmLetrasPassandoFrases: (NSArray *)frases
-{
-    //Armazena uma letra em cada índice
-    NSMutableArray *arrayDeLetras;
-    arrayDeLetras = [[NSMutableArray alloc]init];
-    
-    //Armazena os arrays de letras - Cada índice representa uma frase
-    NSMutableArray *arrayDeArrayDeLetras;
-    arrayDeArrayDeLetras = [[NSMutableArray alloc]init];
-    
-    //Passa índice por índice do array FRASES (passado por parâmetro)
-    for (int i = 0; i < [frases count]; i++) {
-        //armazena a frase atual em uma variável temporária
-        NSString *fraseAtual = [frases objectAtIndex:i];
-    
-        //Para cada frase, armazena cada uma das letras no array "LETRAS"
-        for(int j = 0; j < [fraseAtual length]; j++){
-            //armazena a letra atual em uma variável temporária
-            NSString *letraAtual = [NSString stringWithFormat:@"%c", [fraseAtual characterAtIndex:j]];
-            
-            //adiciona a letra ao NSMutable array de letras
-            [arrayDeLetras addObject:letraAtual];
-        }
-        
-        //No fim da frase, adiciona o arrayDeLetras ao arrayDeArrayDeLetras
-        [arrayDeArrayDeLetras addObject:arrayDeLetras];
-        //E reinicia o arrayDeLetras
-        arrayDeLetras = [[NSMutableArray alloc] init];
-    }
-    
-    return arrayDeArrayDeLetras;
-}
-
 //Mostra a falas
 -(void)mostrarFalaAtual:(NSArray *)frases
 {
     //Inicia o array de falas que conterá os nodes
     self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
     
-    NSArray *arrayDeArrayDeLetras = [[NSArray alloc]initWithArray:[self separarFrasesEmLetrasPassandoFrases:frases]];
-    
     //Variavel que contém o espaço entre as falas
-    CGFloat distanciaY = 40;
-    CGFloat distanciaX = 20;
-
-    //NSMutalbeArrays que irão armazenar as letras em formato de SKLabelNode - FAZENDO BURRICES
-    NSMutableArray *arrayDeLetrasNode = [[NSMutableArray alloc] init];
-    NSMutableArray *arrayDeArrayDeLetrasNode = [[NSMutableArray alloc] init];
+    CGFloat distancia = 40;
     
-    //POPULA O ARRAY DE LETRAS NODE COM NODES DE LETRAS E O ARRAY DE ARRAY DE LETRAS NODE COM OS ARRAY DE NODES DE LETRAS (entendeu?)
-    //Para cada índice no arrayDearrayDeLetras
-    for(int i = 0; i < [arrayDeArrayDeLetras count]; i++){
+    //cria um NSArray de irá armazenar as falas
+    for(int i = 0; i < [frases count]; i++){
+        //cria a fala com cor, posição, alinhamento e texto
+        SKLabelNode *fala = [[SKLabelNode alloc] init];
+        [fala setColor:[UIColor whiteColor]];
+        [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+        [fala setPosition:CGPointMake(40, 150 - (distancia * i))];
+        [fala setText:[frases objectAtIndex:i]];
         
-        //armazena a frase atual em uma variável temporária
-        NSArray *arrayDeLetrasAtual = [arrayDeArrayDeLetras objectAtIndex:i];
-        
-        //Para cada letra do array atual
-        for (int j = 0; j < [arrayDeLetrasAtual count]; j++) {
-            SKLabelNode *letra = [[SKLabelNode alloc]init];
-            [letra setColor:[UIColor whiteColor]];
-            [letra setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
-            [letra setPosition:CGPointMake(40 + (distanciaX * j), 150 - (distanciaY * i))];
-            [letra setText:[arrayDeLetrasAtual objectAtIndex:j]];
-            //[letra setAlpha:0];
-            
-            //adiciona no arrayDeLetrasNode
-            [arrayDeLetrasNode addObject:letra];
-        }
-        
-        //adicionar no arrayDeArrayDeLetrasNode
-        [arrayDeArrayDeLetrasNode addObject:arrayDeLetrasNode];
-        //reinicia o arrayDeLetrasNode
-        arrayDeLetrasNode = [[NSMutableArray alloc] init];
+        //adiciona ao array
+        [self.arrayDefalasEmFrases addObject:fala];
     }
     
-    //ADICIONA AS LETRAS NA TELA
-    for(int i = 0; i < [arrayDeArrayDeLetrasNode count]; i++){
-        for(int j = 0; j < [[arrayDeArrayDeLetrasNode objectAtIndex:i] count]; j++){
-            [self.cutscene runAction:[SKAction waitForDuration:2] completion:^{
-                NSLog(@"%@", [[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j] text]);
-                [self.caixaDeFala addChild:[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j]];
-            }];
-        }
+    //Adicona as falas na tela
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
     }
 }
-
 
 //Mostra a falas do jogo
 -(void)mostrarFalaAtualNoJogo:(NSArray *)frases
@@ -315,6 +256,7 @@
     [self.fundo setSize:self.cutscene.frame.size];
     [self.cutscene addChild:self.fundo];
 }
+
 
 //Mostrar caixa texto em uma cutscene
 -(void)mostrarCaixaTexto
@@ -394,8 +336,7 @@
     self.falaAtual ++;
 
 }
-
-///Metodo a fazer de mostrar as falas dentro da vila
+///Metodo a fazer de mostrar as falas dentro do jogo
 -(void)mostrarFalaNaVila :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Respeito:(int)respeito
 {
     
@@ -442,55 +383,9 @@
     
     //Pula para a proxima fala
     self.falaAtual ++;
+    
 }
 
-///Metodo a fazer de mostrar as falas dentro da vila - Quando em missão
--(void)mostrarFalaNaMissao :(SKScene*)cena Dicionario:(NSDictionary*)dicionario Parte:(NSString *)parte
-{
-    //inicia o dicionario de acordo com o dicionario passado
-    self.dicionarioDeFalasNPC = [[NSDictionary alloc]initWithDictionary:dicionario];
-    
-    //???
-    [self.caixaDeFala removeAllChildren];
-    
-    //O array de Falas atuais dependerá do respeito passado - Verifica se existe alguma fala em andamento
-    if (self.falasAtuais == nil) {
-        
-        //inicia o array
-        self.falasAtuais = [[NSArray alloc]init];
-        
-        //inicia o NSString que dirá a key
-        NSString *keyDaParte = parte;
-        
-        //define o array de falas atuais de acordo com o respeito
-        self.falasAtuais = [self.dicionarioDeFalasNPC objectForKey:keyDaParte];
-    }
-    
-    //NSStrings temporarias para armazenar o sujeito e fala atual
-    NSString *sujeitoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Sujeito"];
-    NSString *textoTemporario = [[self.falasAtuais objectAtIndex:self.falaAtual]objectForKey:@"Texto"];
-    
-    //Formata o texto lido do Arquivo Plist
-    NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", sujeitoTemporario, textoTemporario];
-    
-    //Separa o texto em frases
-    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:40];
-    
-    //Cria a caixa de texto
-    self.caixaDeFala = [self mostrarCaixaTextoNoJogo:cena];
-    
-    //Mostra as falas
-    [self mostrarFalaAtualNoJogo:frases];
-    
-    //Adiciona a caixa de fala no jogo
-    [cena addChild:self.caixaDeFala];
-    
-    //Adiciona uma imagem com a carinha de quem está falando
-    [self mostraRostoDeQuemFala:[[self.falasAtuais objectAtIndex:self.falaAtual] objectForKey:@"Imagem"] naCena:cena];
-    
-    //Pula para a proxima fala
-    self.falaAtual ++;
-}
 
 //Trocar fala dentro do jogo
 -(BOOL)trocarFala{
