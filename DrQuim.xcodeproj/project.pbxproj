@@ -286,9 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				948819751990218400609A0F /* FalasCutScene.plist */,
+				9488196319901A6D00609A0F /* FalasNoJogo.plist */,
 				9488196119901A6D00609A0F /* ConfigFase.plist */,
 				9488196219901A6D00609A0F /* ConfigMenu.plist */,
-				9488196319901A6D00609A0F /* FalasNoJogo.plist */,
 				9488196419901A6D00609A0F /* ItensJogador.plist */,
 				9488196519901A6D00609A0F /* ItensReferencia.plist */,
 				9488196619901A6D00609A0F /* MissoesJogador.plist */,
