@@ -331,7 +331,7 @@
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
         [self.jogador pararAndar];
-        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(mudarFase)];
+        [self mudarFase];
     }
 }
 //funcao para mudar da fase 1 para 2

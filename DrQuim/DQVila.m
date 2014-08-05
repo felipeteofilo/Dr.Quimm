@@ -19,7 +19,7 @@
         
 //
 //        //Inicia com a fase 2
-        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:3 Fase:2];
+        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:2 Fase:2];
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
 //

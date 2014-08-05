@@ -445,15 +445,13 @@
 			<key>Foto</key>
 			<string></string>
 		</dict>
-	</array>
-	<array>
 		<dict>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>Olha, um macaco.</string>
 			<key>Fundo</key>
-			<string>Cena3_1</string>
+			<string>Cena2_10</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -463,7 +461,7 @@
 			<key>Texto</key>
 			<string>Isso é mesmo um macaco? Ei!! eu conheço aquela maleta! Ela é minha! Pela peruca de newton! Se esse ser está com a minha maleta o que mais terá caído por essa ilha?</string>
 			<key>Fundo</key>
-			<string>Cena3_2</string>
+			<string>Cena2_11</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -473,7 +471,7 @@
 			<key>Texto</key>
 			<string>Ele está indo embora! O que está esperando? vá atrás dele! Pegue a minha maleta agora mesmo!</string>
 			<key>Fundo</key>
-			<string>Cena3_3</string>
+			<string>Cena2_12</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -483,7 +481,7 @@
 			<key>Texto</key>
 			<string> É pra já!</string>
 			<key>Fundo</key>
-			<string>Cena3_4</string>
+			<string>Cena2_13</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -493,7 +491,7 @@
 			<key>Texto</key>
 			<string> Não moleque! Volta aqui!</string>
 			<key>Fundo</key>
-			<string>Cena3_5</string>
+			<string>Cena2_14</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -504,7 +502,7 @@
 			<string>Vou pegar a maleta, vou me provar prestativo!
 </string>
 			<key>Fundo</key>
-			<string>Cena3_6</string>
+			<string>Cena2_15</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -514,7 +512,7 @@
 			<key>Texto</key>
 			<string></string>
 			<key>Fundo</key>
-			<string>Cena3_7</string>
+			<string>Cena2_16</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -524,7 +522,7 @@
 			<key>Texto</key>
 			<string></string>
 			<key>Fundo</key>
-			<string>Cena3_8</string>
+			<string>Cena2_17</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -535,7 +533,7 @@
 			<string>Há! Quem pega quem agora, cara de traseiro?
 </string>
 			<key>Fundo</key>
-			<string>Cena3_9</string>
+			<string>Cena2_18</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -546,7 +544,7 @@
 			<string>Não disse para você esperar, moleque?
 </string>
 			<key>Fundo</key>
-			<string>Cena3_10</string>
+			<string>Cena2_19</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -556,7 +554,7 @@
 			<key>Texto</key>
 			<string>Ei! olha só o que a minha rede pegou!</string>
 			<key>Fundo</key>
-			<string>Cena3_11</string>
+			<string>Cena2_20</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -566,7 +564,7 @@
 			<key>Texto</key>
 			<string>O meu é melhor, tem pelo branco na cara, mas na cabeça ele não tem!</string>
 			<key>Fundo</key>
-			<string>Cena3_12</string>
+			<string>Cena2_21</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -576,7 +574,7 @@
 			<key>Texto</key>
 			<string>Mãe de todos. Minha caça de hoje caiu do céu! olhe o que a grande ave nos trouxe.</string>
 			<key>Fundo</key>
-			<string>Cena3_13</string>
+			<string>Cena2_22</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -586,7 +584,7 @@
 			<key>Texto</key>
 			<string>Você disse que eles cairam do céu? O que estão fazendo? Se foi mesmo a grande ave que os trouxe eles não devem ser tratados assim!</string>
 			<key>Fundo</key>
-			<string>Cena3_14</string>
+			<string>Cena2_23</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -596,7 +594,7 @@
 			<key>Texto</key>
 			<string>M-mas...</string>
 			<key>Fundo</key>
-			<string>cena3_15</string>
+			<string>cena2_24</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -606,7 +604,7 @@
 			<key>Texto</key>
 			<string>Solte-os já ou ficarão sem sobremesa!</string>
 			<key>Fundo</key>
-			<string>Cena3_16</string>
+			<string>Cena2_25</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -616,7 +614,7 @@
 			<key>Texto</key>
 			<string>Diga, quem são vocês?</string>
 			<key>Fundo</key>
-			<string>Cena3_17</string>
+			<string>Cena2_26</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -626,7 +624,7 @@
 			<key>Texto</key>
 			<string>Prazer, eu sou o Dr.Quimm. Renomado cientista da associação internacional de química. </string>
 			<key>Fundo</key>
-			<string>Cena3_18</string>
+			<string>Cena2_27</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -636,7 +634,7 @@
 			<key>Texto</key>
 			<string>E eu sou...</string>
 			<key>Fundo</key>
-			<string>Cena3_19</string>
+			<string>Cena2_28</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -647,7 +645,7 @@
 			<string>Ele é só o piloto que me trouxe aqui e que, por sinal, me derrubou no chão e me deixou sozinho na floresta perigosa.
 </string>
 			<key>Fundo</key>
-			<string>Cena3_20</string>
+			<string>Cena2_29</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -657,7 +655,7 @@
 			<key>Texto</key>
 			<string>Vejo que você está com a perna machucada, venha, venha, vamos cuidar deste ferimento.</string>
 			<key>Fundo</key>
-			<string>Cena3_21</string>
+			<string>Cena2_30</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
@@ -667,7 +665,7 @@
 			<key>Texto</key>
 			<string>E você, jovem que machucou o Remonado, tenho um favor a lhe pedir.</string>
 			<key>Fundo</key>
-			<string>Cena3_22</string>
+			<string>Cena2_31</string>
 			<key>Foto</key>
 			<string></string>
 		</dict>
