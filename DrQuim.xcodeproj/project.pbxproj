@@ -635,7 +635,7 @@
 				ORGANIZATIONNAME = "LEONARDO DE SOUSA MENDES";
 				TargetAttributes = {
 					94080E9A1933BA290024FB94 = {
-						DevelopmentTeam = ERCN3R99BZ;
+						DevelopmentTeam = M25JU54534;
 					};
 					94080EC21933BA290024FB94 = {
 						TestTargetID = 94080E9A1933BA290024FB94;
