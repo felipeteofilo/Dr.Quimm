@@ -3,7 +3,7 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>Falas</key>
+		<key>Alertas</key>
 		<dict>
 			<key>Aleatoria1</key>
 			<array>
@@ -152,136 +152,18 @@
 				</dict>
 			</array>
 		</dict>
+		<key>Com Missão</key>
+		<dict/>
+		<key>Sem Missão</key>
+		<dict/>
 	</dict>
 	<dict>
-		<key>Falas</key>
+		<key>Alertas</key>
+		<dict/>
+		<key>Com Missão</key>
 		<dict>
 			<key>Maedetodos</key>
 			<dict>
-				<key>SemMissao</key>
-				<dict>
-					<key>Respeito0</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Sem desculpas, você vai dormir sem jantar hoje! Mas antes de ir toma esse lanchinho...</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito10</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Se você continuar se comportando assim, ficará de castigo… E sem sobremesa!</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito20</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Você esta se comportando mal ein, mocinho!</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito30</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Se você não fosse tão fofinho eu estaria muito brava com você...</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito40</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Por que você, não esta comendo seus legumes menino?</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito50</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Vai querer repetir o almoço?</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito60</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Você está tão magrinho, que dá dó! Vou dobrar a sua comida.</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito70</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Olha só você está se comportando bem, só falta comer todos os legumes agora!</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito80</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Olha só o que eu tenho aqui… batata doce! Toma. *__*</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito90</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Como é mesmo que se faz, aquela tal de lasanha que você disse gostar tanto?</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Respeito100</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Estou, tão orgulhosa de você meu filho! Vem cá mamãe fez um bolo para você...</string>
-							<key>Imagem</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-				</dict>
 				<key>Missao01</key>
 				<dict>
 					<key>Parte0</key>
@@ -815,130 +697,6 @@
 			</dict>
 			<key>Cacador</key>
 			<dict>
-				<key>SemMissao</key>
-				<dict>
-					<key>Respeito0</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>O que foi? Vai encarar?</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito10</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>O que você quer, cara de bunda?</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito20</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Hoje posso te oferecer uma arma, mais ja adianto, vai custar tudo o que você tem.</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito30</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Talvez eu faça um desconto para você, pensando bem acho que não.</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito40</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Hoje está um bom dia, mas a sua companhia ainda o estraga.</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito50</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Desembucha! O que você quer?</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito60</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Posso te dar algumas coisas hoje... Mas não fique convencido!</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito70</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Como está indo hoje? as armas que te vendi estão te servindo bem?</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito80</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Inventei algumas armadilhas, acho que você vai achar interessante</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito90</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Preciso aprender a fazer aquilo que você faz com os liquidos esquisitos.</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-					<key>Respeito100</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Caçador</string>
-							<key>Texto</key>
-							<string>Hoje você me ensina a fazer aquelas coisas que soltam fumaça?</string>
-							<key>Imagem</key>
-							<string>rostoCacador</string>
-						</dict>
-					</array>
-				</dict>
 				<key>Missao01</key>
 				<dict>
 					<key>Parte0</key>
@@ -1536,260 +1294,6 @@
 			</dict>
 			<key>Chefe</key>
 			<dict>
-				<key>SemMissao</key>
-				<dict>
-					<key>Respeito0</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>*O chefe (ou os chefes?) parece ocupado discutindo consigo mesmo.*</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-					<key>Respeito10</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>*O chefe para por um breve instante sua conversa consigo mesmo para te olhar, mas logo volta aos seus afazeres*</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-					<key>Respeito20</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Hmm, é verdade, nunca tinha reparado nisso.</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>*Você tem a sensação de que o assunto é você.*
-*Você tem a sensação de que o assunto é você.*</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-					<key>Respeito30</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>*O chefe te olha de cima abaixo, e sua cabeça menos ranzinza ri* </string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Oras! Vá caçar, pequenino! Volte quando conseguir carregar uma girafa ou um elefante! Igual a nós quando bebê!</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Meh. Mal consegue carregar o chapéu esquisito, esse aí.</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-					</array>
-					<key>Respeito40</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Olá pequeno! Como sempre, branco como um ovo!</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Argh! Desça já da árvore e não venha aqui de novo!</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-					</array>
-					<key>Respeito50</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Saudações, amigo da aldeia.</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Estamos ocupado! Suma daqui com essa cara feia!</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-					</array>
-					<key>Respeito60</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>*O chefe cochicha consigo mesmo e olha para você, mas depois finge que não te viu.*</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-					<key>Respeito70</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Grr...</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Vamos! Você prometeu!</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Tá, tá.. Saudações, aldeão branco.</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-					</array>
-					<key>Respeito80</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Aldeão branco! Que agradável surpresa. Estávamos aqui conversando sob-</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>-Sobre nada da sua conta! Hmpf!</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-					</array>
-					<key>Respeito90</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Saudações, aldeão branco.</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Saudações! Sempre bom ver essa sua cara branca e magrela.</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>Ele solta uma forte risada, enquanto a outra face
-sorri sutilmente</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-					<key>Respeito100</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Saudações, herói branco!</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Espero que esteja hoje no jantar! É sempre bom quando podemos conversar!</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>É sim, ainda mais quando você traz comida pra eu.</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Eu quis dizer só a companhia mesmo...</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça ranzinza</string>
-							<key>Texto</key>
-							<string>Vai negar agora? A barriga é de nós dois!</string>
-							<key>Imagem</key>
-							<string>rostoChefeRanzinza</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Chefe - Cabeça simpática</string>
-							<key>Texto</key>
-							<string>Tá bem, vai, você tem razão.</string>
-							<key>Imagem</key>
-							<string>rostoChefeSimpatico</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>*E tornam a conversar, contentemente, um com o outro*</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-				</dict>
 				<key>Missao01</key>
 				<dict>
 					<key>Parte0</key>
@@ -2283,154 +1787,6 @@ sorri sutilmente</string>
 			</dict>
 			<key>Curandeiro</key>
 			<dict>
-				<key>SemMissao</key>
-				<dict>
-					<key>Respeito0</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Pilto</string>
-							<key>Texto</key>
-							<string>O velho senhor parece ocupado cuidando do Dr.Quimm, melhor não perturbá-lo agora</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-					<key>Respeito10</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Alma jovem sinto... Que ainda precisa se mostrar digno de ser um morador da floresta</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito20</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Olá, alma jovem... nada mais que um broto, numa floresta de salgueiros.</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito30</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>O crescer vem de dentro! Respeite o que te rodeia, e o que te rodeia te respeitará. Dê tempo ás coisas...</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito40</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Vejo que meu povo começa a te confiar... Isso ser bom ou ruim? Não cabe a mim medir...</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito50</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Saudações, Aldeão Branco... O que lhe traz a mim? Estou um pouco ocupado agora...</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito60</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Sempre bom sentir a presença da sua calorosa alma... hmmm... Ou será que era só o chulé mesmo? Hmm...</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito70</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Querido Aldeão Branco! Venha, dê um abraço neste velho... Tome cuidado em suas caçadas! A mãe natureza é bondosa conosco, mas ao mesmo tempo feroz... Sinta-a, e repeite-a!</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string></string>
-							<key>Texto</key>
-							<string>*você o abraça e sente as cascas de suas costas. Lembram a textura de uma velha árvore*</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Tome cuidado em suas caçadas! A mãe natureza é bondosa conosco, mas ao mesmo tempo feroz... Sinta-a, e repeite-a!</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito80</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Como vão estas jovens pernas? Enquanto elas o conseguirem levar, não há vento contrário que o pare!</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito90</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Um homem não vive só de comidas e bebidas, meu jovem! Um dia você será como eu... </string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>e contemplar a imensidão do cobertor cintilante em cima de nós vai te alimentar mais do que qualquer banquete... Guarde estas palavras!</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-					<key>Respeito100</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Curandeiro</string>
-							<key>Texto</key>
-							<string>Seja bem-vindo á minha casa, Herói branco, como sempre.</string>
-							<key>Imagem</key>
-							<string>rostoCurandeiro</string>
-						</dict>
-					</array>
-				</dict>
 				<key>Missao01</key>
 				<dict>
 					<key>Parte0</key>
@@ -2844,146 +2200,3267 @@ sorri sutilmente</string>
 			</dict>
 			<key>Quimm</key>
 			<dict>
-				<key>SemMissao</key>
+				<key>Missao01</key>
 				<dict>
-					<key>Respeito0</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Pilto</string>
-							<key>Texto</key>
-							<string>Dr. Quimm não diz nada, mas parece estar revoltado por estar na situação que está... Melhor deixá-lo quieto por um tempo.</string>
-							<key>Imagem</key>
-							<string>rostoPiloto</string>
-						</dict>
-					</array>
-					<key>Respeito10</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
-							<key>Texto</key>
-							<string>Primeiro o helicóptero, depois me larga no chão, e agora isso! Se ao menos eu estivesse com meus aparatos, me prepararia um analgésico!</string>
-							<key>Imagem</key>
-							<string>rostoCientista</string>
-						</dict>
-					</array>
-					<key>Respeito20</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
-							<key>Texto</key>
-							<string>Ah, é você, moleque. Sabe, até que estou começando a gostar deste lugar! Quem sabe depois disto eu seja melhor reconhecido pelo que faço...</string>
-							<key>Imagem</key>
-							<string>rostoCientista</string>
-						</dict>
-					</array>
-					<key>Respeito30</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
-							<key>Texto</key>
-							<string>Não importa o quanto eu o estude, nunca vou compreender como aquele tal chefe conseguiu crescer até o tamanho que é! Pelo amor de Marie Curie...</string>
-							<key>Imagem</key>
-							<string>rostoCientista</string>
-						</dict>
-					</array>
-					<key>Respeito40</key>
+					<key>Parte0</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
 							<string>Piloto</string>
 							<key>Texto</key>
-							<string>O Dr. está cantarolando para sí enquanto realiza seus experimentos, Parece estar se divertindo...</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
 							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Respeito50</key>
+					<key>Parte0R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
+							<string>Piloto</string>
 							<key>Texto</key>
-							<string>Ora, bom dia, garoto! Estou ocupado agora, volte mais tarde, por favor.</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
-							<string>rostoCientista</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Respeito60</key>
+					<key>Parte1</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
+							<string>Piloto</string>
 							<key>Texto</key>
-							<string>Heh, vejo que este velho gosta de você! Você deve ouvir bem as palavras dele, ele é muito sábio!</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
-							<string>rostoCientista</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Respeito70</key>
+					<key>Parte1R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
+							<string>Piloto</string>
 							<key>Texto</key>
-							<string>Contanto que eu não seja perturbado, sinto que posso viver por aqui pra sempre! Tantas coisas a descobrir, tantas soluções a experimentar!</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
-							<string>rostoCientista</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Respeito80</key>
+					<key>Parte2</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
+							<string>Piloto</string>
 							<key>Texto</key>
-							<string>Meus recentes experimentos me levaram á conclusão de que não haverá conclusão para meus futuros experimentos... Pelo menos não no espaço amostral presente.</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
-							<string>rostoCientista</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Respeito90</key>
+					<key>Parte2R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
+							<string>Piloto</string>
 							<key>Texto</key>
-							<string>Com a graça de Bohr, descobri depois de muitos experimentos, o remédio perfeito para a dor nas costas! Ele consiste basicamente em sentar com as costas bem apoiadas, e com o bumbum todo...</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
-							<string>rostoCientista</string>
-						</dict>
-						<dict>
-							<key>Sujeito</key>
-							<string>Dr.Quimm</string>
-							<key>Texto</key>
-							<string>O que? Esperava um elixir mágico?</string>
-							<key>Imagem</key>
-							<string>rostoCientista</string>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Respeito100</key>
+					<key>Parte3</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Curandeiro</string>
+							<string>Piloto</string>
 							<key>Texto</key>
-							<string>A possibilidade de deixar esta ilha é interessante, mas ao mesmo tempo... Meu coração me pede pra ficar, caso contrário sofrerei da liberação de uma quantidade exacerbada de cortisol!</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoPiloto</string>
 						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Curandeiro</string>
+							<string>Piloto</string>
 							<key>Texto</key>
-							<string>Oh, céus, as decisões...</string>
+							<string>Melhor deixá-lo descansar.</string>
 							<key>Imagem</key>
-							<string>curandeiro</string>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte7</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte7R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Melhor deixá-lo descansar.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
 						</dict>
 					</array>
 				</dict>
+				<key>Missao02</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Garoto, preciso da minha maleta de volta! Ela tem coisas muito importantes dentro!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Como o que?</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Como... coisas importantes! Você precisa pegar ela para mim!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Está bem!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Ah! E leve o contador Geiger com você! Quando ele apitar é porque detectou radiação, então fique longe!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vai logo, moleque! A maleta está com o Caçador!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Está bem!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vamos! O que está esperando!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vamos! O que esperando? Pegue minha maleta!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>O Caçador disse que só vai entregar se eu caçar um animal para ele.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Pois bem, vá pegar esse tal animal!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vamos! O que está esperando?</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vamos! O que está esperando?</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vamos! O que está esperando?</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vamos! O que está esperando?</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Vamos! O que está esperando? Pegue esse animal!</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Eu não consegui, o contador Geiger mostrou que tinha muita radiação perto dele.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Hum, isso é ruim...</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Quanta radiação? A criatura estava viva? Tinha alguma deformação? Agia estranho? ... </string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Ele me parecia muito bem, na verdade...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Interessante! ... Tenho que anotar isso.</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Muito interessante, um animal que vive bem com a radiação... Preciso estuda-lo</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Dr. Quimm, olha só eu recuperei sua maleta! Agora você pode fazer suas experiências.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Finalmente! Se demorasse mais, eu mesmo iria pegá-la</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string> ...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string> -//-</string>
+							<key>Imagem</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<key>Sem Missão</key>
+		<dict>
+			<key>Maedetodos</key>
+			<dict>
+				<key>Respeito0</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Sem desculpas, você vai dormir sem jantar hoje! Mas antes de ir toma esse lanchinho...</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito10</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Se você continuar se comportando assim, ficará de castigo… E sem sobremesa!</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito20</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Você esta se comportando mal ein, mocinho!</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito30</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Se você não fosse tão fofinho eu estaria muito brava com você...</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito40</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Por que você, não esta comendo seus legumes menino?</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito50</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Vai querer repetir o almoço?</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito60</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Você está tão magrinho, que dá dó! Vou dobrar a sua comida.</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito70</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Olha só você está se comportando bem, só falta comer todos os legumes agora!</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito80</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Olha só o que eu tenho aqui… batata doce! Toma. *__*</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito90</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Como é mesmo que se faz, aquela tal de lasanha que você disse gostar tanto?</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+				<key>Respeito100</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Mãe de todos</string>
+						<key>Texto</key>
+						<string>Estou, tão orgulhosa de você meu filho! Vem cá mamãe fez um bolo para você...</string>
+						<key>Imagem</key>
+						<string>rostoMaedetodos</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Cacador</key>
+			<dict>
+				<key>Respeito0</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>O que foi? Vai encarar?</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito10</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>O que você quer, cara de bunda?</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito20</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Hoje posso te oferecer uma arma, mais ja adianto, vai custar tudo o que você tem.</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito30</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Talvez eu faça um desconto para você, pensando bem acho que não.</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito40</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Hoje está um bom dia, mas a sua companhia ainda o estraga.</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito50</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Desembucha! O que você quer?</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito60</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Posso te dar algumas coisas hoje... Mas não fique convencido!</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito70</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Como está indo hoje? as armas que te vendi estão te servindo bem?</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito80</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Inventei algumas armadilhas, acho que você vai achar interessante</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito90</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Preciso aprender a fazer aquilo que você faz com os liquidos esquisitos.</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+				<key>Respeito100</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Caçador</string>
+						<key>Texto</key>
+						<string>Hoje você me ensina a fazer aquelas coisas que soltam fumaça?</string>
+						<key>Imagem</key>
+						<string>rostoCacador</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Chefe</key>
+			<dict>
+				<key>Respeito0</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>*O chefe (ou os chefes?) parece ocupado discutindo consigo mesmo.*</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito10</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>*O chefe para por um breve instante sua conversa consigo mesmo para te olhar, mas logo volta aos seus afazeres*</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito20</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Hmm, é verdade, nunca tinha reparado nisso.</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>*Você tem a sensação de que o assunto é você.*
+*Você tem a sensação de que o assunto é você.*</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito30</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>*O chefe te olha de cima abaixo, e sua cabeça menos ranzinza ri* </string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Oras! Vá caçar, pequenino! Volte quando conseguir carregar uma girafa ou um elefante! Igual a nós quando bebê!</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Meh. Mal consegue carregar o chapéu esquisito, esse aí.</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+				</array>
+				<key>Respeito40</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Olá pequeno! Como sempre, branco como um ovo!</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Argh! Desça já da árvore e não venha aqui de novo!</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+				</array>
+				<key>Respeito50</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Saudações, amigo da aldeia.</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Estamos ocupado! Suma daqui com essa cara feia!</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+				</array>
+				<key>Respeito60</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>*O chefe cochicha consigo mesmo e olha para você, mas depois finge que não te viu.*</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito70</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Grr...</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Vamos! Você prometeu!</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Tá, tá.. Saudações, aldeão branco.</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+				</array>
+				<key>Respeito80</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Aldeão branco! Que agradável surpresa. Estávamos aqui conversando sob-</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>-Sobre nada da sua conta! Hmpf!</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+				</array>
+				<key>Respeito90</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Saudações, aldeão branco.</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Saudações! Sempre bom ver essa sua cara branca e magrela.</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>Ele solta uma forte risada, enquanto a outra face
+sorri sutilmente</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito100</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Saudações, herói branco!</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Espero que esteja hoje no jantar! É sempre bom quando podemos conversar!</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>É sim, ainda mais quando você traz comida pra eu.</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Eu quis dizer só a companhia mesmo...</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça ranzinza</string>
+						<key>Texto</key>
+						<string>Vai negar agora? A barriga é de nós dois!</string>
+						<key>Imagem</key>
+						<string>rostoChefeRanzinza</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Chefe - Cabeça simpática</string>
+						<key>Texto</key>
+						<string>Tá bem, vai, você tem razão.</string>
+						<key>Imagem</key>
+						<string>rostoChefeSimpatico</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>*E tornam a conversar, contentemente, um com o outro*</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Curandeiro</key>
+			<dict>
+				<key>Respeito0</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Pilto</string>
+						<key>Texto</key>
+						<string>O velho senhor parece ocupado cuidando do Dr.Quimm, melhor não perturbá-lo agora</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito10</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Alma jovem sinto... Que ainda precisa se mostrar digno de ser um morador da floresta</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito20</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Olá, alma jovem... nada mais que um broto, numa floresta de salgueiros.</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito30</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>O crescer vem de dentro! Respeite o que te rodeia, e o que te rodeia te respeitará. Dê tempo ás coisas...</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito40</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Vejo que meu povo começa a te confiar... Isso ser bom ou ruim? Não cabe a mim medir...</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito50</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Saudações, Aldeão Branco... O que lhe traz a mim? Estou um pouco ocupado agora...</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito60</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Sempre bom sentir a presença da sua calorosa alma... hmmm... Ou será que era só o chulé mesmo? Hmm...</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito70</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Querido Aldeão Branco! Venha, dê um abraço neste velho... Tome cuidado em suas caçadas! A mãe natureza é bondosa conosco, mas ao mesmo tempo feroz... Sinta-a, e repeite-a!</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string></string>
+						<key>Texto</key>
+						<string>*você o abraça e sente as cascas de suas costas. Lembram a textura de uma velha árvore*</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Tome cuidado em suas caçadas! A mãe natureza é bondosa conosco, mas ao mesmo tempo feroz... Sinta-a, e repeite-a!</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito80</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Como vão estas jovens pernas? Enquanto elas o conseguirem levar, não há vento contrário que o pare!</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito90</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Um homem não vive só de comidas e bebidas, meu jovem! Um dia você será como eu... </string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>e contemplar a imensidão do cobertor cintilante em cima de nós vai te alimentar mais do que qualquer banquete... Guarde estas palavras!</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+				<key>Respeito100</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Seja bem-vindo á minha casa, Herói branco, como sempre.</string>
+						<key>Imagem</key>
+						<string>rostoCurandeiro</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Quimm</key>
+			<dict>
+				<key>Respeito0</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Pilto</string>
+						<key>Texto</key>
+						<string>Dr. Quimm não diz nada, mas parece estar revoltado por estar na situação que está... Melhor deixá-lo quieto por um tempo.</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito10</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Primeiro o helicóptero, depois me larga no chão, e agora isso! Se ao menos eu estivesse com meus aparatos, me prepararia um analgésico!</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito20</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Ah, é você, moleque. Sabe, até que estou começando a gostar deste lugar! Quem sabe depois disto eu seja melhor reconhecido pelo que faço...</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito30</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Não importa o quanto eu o estude, nunca vou compreender como aquele tal chefe conseguiu crescer até o tamanho que é! Pelo amor de Marie Curie...</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito40</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Piloto</string>
+						<key>Texto</key>
+						<string>O Dr. está cantarolando para sí enquanto realiza seus experimentos, Parece estar se divertindo...</string>
+						<key>Imagem</key>
+						<string>rostoPiloto</string>
+					</dict>
+				</array>
+				<key>Respeito50</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Ora, bom dia, garoto! Estou ocupado agora, volte mais tarde, por favor.</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito60</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Heh, vejo que este velho gosta de você! Você deve ouvir bem as palavras dele, ele é muito sábio!</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito70</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Contanto que eu não seja perturbado, sinto que posso viver por aqui pra sempre! Tantas coisas a descobrir, tantas soluções a experimentar!</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito80</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Meus recentes experimentos me levaram á conclusão de que não haverá conclusão para meus futuros experimentos... Pelo menos não no espaço amostral presente.</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito90</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>Com a graça de Bohr, descobri depois de muitos experimentos, o remédio perfeito para a dor nas costas! Ele consiste basicamente em sentar com as costas bem apoiadas, e com o bumbum todo...</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Dr.Quimm</string>
+						<key>Texto</key>
+						<string>O que? Esperava um elixir mágico?</string>
+						<key>Imagem</key>
+						<string>rostoCientista</string>
+					</dict>
+				</array>
+				<key>Respeito100</key>
+				<array>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>A possibilidade de deixar esta ilha é interessante, mas ao mesmo tempo... Meu coração me pede pra ficar, caso contrário sofrerei da liberação de uma quantidade exacerbada de cortisol!</string>
+						<key>Imagem</key>
+						<string>curandeiro</string>
+					</dict>
+					<dict>
+						<key>Sujeito</key>
+						<string>Curandeiro</string>
+						<key>Texto</key>
+						<string>Oh, céus, as decisões...</string>
+						<key>Imagem</key>
+						<string>curandeiro</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>Falas</key>
+		<dict>
+			<key>Maedetodos</key>
+			<dict>
+				<key>Missao01</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Jovem, preciso que você pegue o resto da caça com o Caçador, afinal todos precisamos jantar.!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Pode deixar comigo, massa! Onde eu encontro ele?!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Você poderá encontrá-lo no extremo leste da vila, ele é quem cuida do armazém de armas e armadilhas.!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>É pra já!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou esperando. Fale com o Caçador e peça o restante da caça.!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>É pra já!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou esperando. Fale com o Caçador e peça o restante da caça.!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>É pra já!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou esperando. Fale com o Caçador e peça o restante da caça.!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>É pra já!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Então, e o que eu te pedi, filho?!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Bem, ele falou que eu precisava provar que você que você tinha me mandado e não me entregou nada.!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Entendo, isso deve ser porque ele não confia em você. Eu devia ter desconfiado que ele não iria te entregar tão facilmente. Aqui na aldeia nós prezamos muito pelo respeito e confiança, sabe?!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Entendi... Mas então o que eu preciso fazer?!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Já sei como fazer ele confiar em você! Fale com o chefe da vila e peça para ele um vidro de &quot;água mágica&quot;. Se der isso ao aldeão, ele irá te dar o que eu pedi.!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Certo! Estou indo lá!!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Ah! Quase me esqueci! Entregue este docinho ao chefe, como prova de que eu é que te mandei.</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Preciso preparar o jantar, logo todos estarão com fome...</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Parece que você conseguiu a água mágica! Leve para o Caçador e ele te dará a Caça!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Parece que você conseguiu a água mágica! Leve para o Caçador e ele te dará a Caça!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte7</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Ufa! aí está você! já estava começando a ficar preocupada.!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Finalmente consegui convencer o Caçador a me entregar a carne.!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Que ótima notícia! Venha, tenho algo para você como recompensa por ter me ajudado!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte7R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Vou preparar o jantar</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+				</dict>
+				<key>Missao02</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Hum... Melhor eu ir falar com o Dr. Quimm!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Hum... Melhor eu ir falar com o Dr. Quimm!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Hum... Melhor eu ir falar com o Caçador!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Hum... Melhor eu ir falar com o Caçador!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Tenho que ir procurar um animal! Até mais!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Tenho que ir procurar um animal! Até mais!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Hum... Melhor eu ir falar com o Caçador!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Hum... Melhor eu ir falar com o Caçador!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Olá, jovem. Precisa de algo?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Sim, o Caçador me pediu para pegar um animal, mas não sei como prender ele sem que seja perigoso para mim.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Entendo, e que animal é esse?</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto:</string>
+							<key>Texto</key>
+							<string>Ele não disse o nome, só falou que é redondo, tem pernas grandes e consegue saber o que estou pensando.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>O que!? Ele te mandou caçar o grande Leopardinho protetor das nascentes ?!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Esse garoto vai dormir sem jantar!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Ainda não acredito que ele te pediu para caçar o grande Leopardinho protetor das nascentes!</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou muito decepicionada com o Caçador. Vou deixar ele sem sobremesa por um mês, a menos que ele coma tudo do prato.</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou muito decepicionada com o Caçador. Vou deixar ele sem sobremesa por um mês, a menos que ele coma tudo do prato.</string>
+							<key>Imagem</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>Cacador</key>
+			<dict>
+				<key>Missao01</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>...</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>...</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>hmm... Oi, A Mãe de todos me mandou pegar o resto da caça.!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>...</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Ela me disse que precisa para fazer o jantar!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Se foi ela mesmo que te mandou, volte e fale para ela que só vou entregar quando você me provar que não está mentindo para mim!!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas... mas...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Já disse que não vou te dar nada até que me prove que foi ela mesma quem te mandou aqui!!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas... mas...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Já disse que não vou te dar nada até que me prove que foi ela mesma quem te mandou aqui!!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas... mas...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Sem provas, sem carne</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Que tal esse docinho? Só a mãe sabe como fazer ele, não é?! Então só pode ter sido ela. ue tal esse docinho? Só a mãe sabe como fazer ele, não é?! Então só pode ter sido ela. </string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Você pode muito bem ter roubado ela...!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Eu não roubei!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Prove!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Ladrãozinho...</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Sem provas, sem carne</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Sem provas, sem carne</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Sem provas, sem carne</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Sem provas, sem carne</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string> mãe de todos pediu para te entregar isso. Acredita em mim agora?!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Ok, acho que foi realmente a mãe de todos que te mandou aqui... Só ela sabia que eu precisava disso, não quis falar com o Chefe para ele não me achar fraco, mas me machuquei um pouco na última caça e...</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Não preciso explicar nada para você! Pegue a caça e vá embora! E agradeça a Mãe por mim!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Leve logo a caça para a mãe! Estou ficando com fome.</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte7</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Leve logo a caça para a mãe! Estou ficando com fome.</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte7R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Leve logo a caça para a mãe! Estou ficando com fome.</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+				</dict>
+				<key>Missao02</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>O que você quer?</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>O que você quer?</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>O que você quer?</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Você ainda está com a maleta do Dr. Quimm... Ele me pediu para pegar de volta.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Não é dele! Eu achei, é minha!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Antes de você achar, estava com ele.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Tudo bem, pode pegar.</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Sério?</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Não! Eu só te dou se você fizer uma coisa por mim!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>hmmm... Eu sabia que isso ia acontecer. Do que você precisa?</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Preciso que você pegue um animal para mim, ele é redondo e com longas pernas, se esconde no fim da floresta e consegue ler seus pensamentos!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>E como eu vou pegar ele?</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Isso é com você, já falei o que eu quero.</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>E, você já pegou algum deles?</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Todo dia, pego pelo menos um, o gosto dele é muito bom sabia?</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Uau!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Não adianta insistir, não vou te contar minha técnica.</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas... mas...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Então, cade a sua grande caça?</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Estou a caminho!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>...</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>...</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>E então, onde ele está?</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Não pude pegar, é muito perigoso, o Dr. Quimm me disse que...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Fracote! Só pegue ele!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas eu...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Deixa de ser medroso!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Fracote, fracote!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Fracote, só pegue ele!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas eu...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Vai logo!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Fracote, só pegue ele!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas eu...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Vai logo!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Dedo-duro!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Dedo-duro!</string>
+							<key>Imagem</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>Chefe</key>
+			<dict>
+				<key>Missao01</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Olá! Obrigado por nos deixar ficar na vila.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Comporte-se e prove que é merecedor da minha boa vontade.!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Vá embora! Eu não deixei coisa nenhuma...</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string> Ai... minha barriga está com aquela queimação mais uma vez.</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Você come demais eu é que pago, é sempre assim!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Que foi?</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Que foi?</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Que foi?</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Estou com fome... </string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Eu não!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Não se faça de durão! Nós dividimos o mesmo estômago vazio!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Oi, a Mãe de todos me pediu para pegar com você uma pouco de água mágica.!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Sei, sei... a mãe.!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Eu tenho um docinho para provar!!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpatica</string>
+							<key>Texto</key>
+							<string>Sim, para ter esse docinho só pode ter sido ela. Mas não entendo porque ela te pediria isso. A água mágica é uma poção que faz com que você recupere a sua saúde.</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Fracote.</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Geralmente, só os guerreiros que se aventuram nas florestas precisam disso, pois se eles se ferirem a ponto de perder toda a saúde, eles ficam inconscientes até que um dos nossos o encontre e o traga para ser tratado.!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Entendi. Parece perigoso.!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>E é, mas se tiver essa poção não vai ter problemas. Ela pode ser usada para recuperar um pouco da sua saúde enquanto se aventura na floresta.!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Agora vá embora!!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas e a poção?!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Antes de te entregar a poção, eu quero que você fale com o Curandeiro. Diga a ele que a minha queimação na barriga começou novamente.!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string> Isso! use o branquelo para pegar para a gente!!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Hmmm... ok.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Anda logo!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Anda logo!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Anda logo!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Ah! Finamente você voltou. Vou tomar logo esses remédios que você trouxe! Não aguento mais!!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>E você volta para casa sem nada!!</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>O que?!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string> É brincadeira dele! Aqui está a poção que a mãe te pediu, a água mágica!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>ufa! Vocês quase me enganaram, Obrigado!!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>Mas não era brincadeira...</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>É sério, não era brincadeira...</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>É sério, não era brincadeira...</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Ranzinza</string>
+							<key>Texto</key>
+							<string>É sério, não era brincadeira...</string>
+							<key>Imagem</key>
+							<string>rostoChefeRanzinza</string>
+						</dict>
+					</array>
+					<key>Parte7</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Ufa... bem melhor. Esse remédio é ótimo!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+					</array>
+					<key>Parte7R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Chefe - Cabeça Simpática</string>
+							<key>Texto</key>
+							<string>Ufa... bem melhor. Esse remédio é ótimo!</string>
+							<key>Imagem</key>
+							<string>rostoChefeSimpatico</string>
+						</dict>
+					</array>
+				</dict>
+				<key>Missao02</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Os dois estão conversando um com o outro e parece importante, melhor não interromper</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>Curandeiro</key>
+			<dict>
+				<key>Missao01</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Como está indo o Dr.Quimm? Como está indo o Dr.Quimm?</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Descanso muitas vezes é o melhor remédio.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Você também parece cansado</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Você também parece cansado</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Você também parece cansado</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Nossa! Estou exausto...!</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Como?!</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Desculpe... É que estão me fazendo andar para cima e para baixo e eu ainda trouxe o Doutor até aqui nas costas.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Agora entendi, e você deve estar com fome ou sede também, não?</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Na verdade os dois, tem alguma coisa aí para comer e beber?</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Tenho um pouco de sopa e água que posso te dar.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Muito obrigado.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Olha, enquanto você estiver andando por aí vai começar a sentir fome e sede e se não se alimentar vai começar a perder saúde. Para evitar isso, sempre pegue comida e bebida com a Mãe antes de sair por aí.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Entendi.</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string> Fique bem, jovem.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Ah! Quase esqueci! O Chefe está pedindo algo para a queimação...</string>
+							<key>Imagem</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Acabei de fazer o remédio dele. Diga a ele para beber e a queimação irá passar.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Ande logo! O chefe precisa dos remédios</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Ande logo! O chefe precisa dos remédios</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Ande logo! O chefe precisa dos remédios</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte7</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte7R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>Sinto a presença de um jovem que precisa provar a todos bondade que mora em seu coração.</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+				</dict>
+				<key>Missao02</key>
+				<dict>
+					<key>Parte0</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte0R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte1</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte1R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte2R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte3</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte3R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte4</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte4R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte5</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Imagem</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>Quimm</key>
+			<dict>
 				<key>Missao01</key>
 				<dict>
 					<key>Parte0</key>
