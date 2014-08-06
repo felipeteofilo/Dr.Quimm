@@ -29,6 +29,8 @@
 		3CAC8435197A01FB000FB1A1 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8433197A01FB000FB1A1 /* Andando.atlas */; };
 		3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8434197A01FB000FB1A1 /* Pulando.atlas */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
+		753554621992C8F3006B62FA /* CaindoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 753554601992C8F3006B62FA /* CaindoDr.atlas */; };
+		753554631992C8F3006B62FA /* DerrapandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 753554611992C8F3006B62FA /* DerrapandoDr.atlas */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
 		94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA01933BA290024FB94 /* CoreGraphics.framework */; };
 		94080EA31933BA290024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
@@ -147,6 +149,8 @@
 		3CAC8434197A01FB000FB1A1 /* Pulando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Pulando.atlas; path = Animacoes/Pulando.atlas; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
+		753554601992C8F3006B62FA /* CaindoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = CaindoDr.atlas; path = Animacoes/CaindoDr.atlas; sourceTree = "<group>"; };
+		753554611992C8F3006B62FA /* DerrapandoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = DerrapandoDr.atlas; path = Animacoes/DerrapandoDr.atlas; sourceTree = "<group>"; };
 		94080E9B1933BA290024FB94 /* DrQuim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrQuim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94080E9E1933BA290024FB94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94080EA01933BA290024FB94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -327,6 +331,8 @@
 		3CAC84201979F630000FB1A1 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				753554601992C8F3006B62FA /* CaindoDr.atlas */,
+				753554611992C8F3006B62FA /* DerrapandoDr.atlas */,
 				3CAC8433197A01FB000FB1A1 /* Andando.atlas */,
 				3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */,
 				3CAC84221979F63D000FB1A1 /* Caindo.atlas */,
@@ -679,6 +685,7 @@
 				C54031BE1989FDB1003384AB /* rostoMaedetodos.png in Resources */,
 				3CAC8435197A01FB000FB1A1 /* Andando.atlas in Resources */,
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
+				753554631992C8F3006B62FA /* DerrapandoDr.atlas in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				C54031BA1989FDB1003384AB /* rostoChefeRanzinza.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
@@ -714,6 +721,7 @@
 				9488196C19901A6D00609A0F /* ItensJogador.plist in Resources */,
 				9488196E19901A6D00609A0F /* MissoesJogador.plist in Resources */,
 				C5E1F417198B223800F7A320 /* Menu.atlas in Resources */,
+				753554621992C8F3006B62FA /* CaindoDr.atlas in Resources */,
 				C5B7FBDF19762A1A00C2CAFC /* BalaoAlerta.png in Resources */,
 				C54031B91989FDB1003384AB /* rostoCacador.png in Resources */,
 				3CAC84291979F63D000FB1A1 /* ParadoDr.atlas in Resources */,

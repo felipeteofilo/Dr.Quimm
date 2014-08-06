@@ -23,9 +23,9 @@
         self.estaFalando = NO;
         
         [self configuracoesFase:1];
-        //[self.controleCutscenes iniciarCutscene:self.scene Seletor:nil];
+        [self.controleCutscenes iniciarCutscene:self.scene Seletor:@selector(iniciarFase)];
         
-        [self iniciarFase];
+        //[self iniciarFase];
     }
     return self;
 }
@@ -51,7 +51,7 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
+    [super touchesBegan:touches withEvent:event];
     //Se não está falando e nem em cutscene...
     if (!self.cutsceneEstaRodando && !self.estaFalando) {
         
@@ -81,8 +81,6 @@
             
                 self.cutsceneEstaRodando = YES;
                 self.estaFalando = YES;
-            }else{
-                [super touchesBegan:touches withEvent:event];
             }
         }
     }

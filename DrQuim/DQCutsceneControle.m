@@ -118,7 +118,7 @@
     }
     
     //NSArray que irá conter o textoFormatado cortado em frases
-    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:37];
+    NSArray *frases = [self separarTextoEmFrasesPassandoTexto:textoFormatado eComprimentoFrase:50];
     
     //remove nós que não devem aparecer na tela
     [self.cutscene removeAllChildren];
@@ -228,52 +228,28 @@
 {
     //Inicia o array de falas que conterá os nodes
     self.arrayDefalasEmFrases = [[NSMutableArray alloc]init];
-    
-    NSArray *arrayDeArrayDeLetras = [[NSArray alloc]initWithArray:[self separarFrasesEmLetrasPassandoFrases:frases]];
-    
-    //Variavel que contém o espaço entre as falas
-    CGFloat distanciaY = 40;
-    CGFloat distanciaX = 20;
 
-    //NSMutalbeArrays que irão armazenar as letras em formato de SKLabelNode - FAZENDO BURRICES
-    NSMutableArray *arrayDeLetrasNode = [[NSMutableArray alloc] init];
-    NSMutableArray *arrayDeArrayDeLetrasNode = [[NSMutableArray alloc] init];
+    //Variavel que contém o espaço entre as falas
+    CGFloat distancia = 40;
     
-    //POPULA O ARRAY DE LETRAS NODE COM NODES DE LETRAS E O ARRAY DE ARRAY DE LETRAS NODE COM OS ARRAY DE NODES DE LETRAS (entendeu?)
-    //Para cada índice no arrayDearrayDeLetras
-    for(int i = 0; i < [arrayDeArrayDeLetras count]; i++){
+    //cria um NSArray de irá armazenar as falas
+    for(int i = 0; i < [frases count]; i++){
+        //cria a fala com cor, posição, alinhamento e texto
+        SKLabelNode *fala = [[SKLabelNode alloc] init];
+        [fala setColor:[UIColor whiteColor]];
+        [fala setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+        [fala setPosition:CGPointMake(40, 150 - (distancia * i))];
+        [fala setText:[frases objectAtIndex:i]];
         
-        //armazena a frase atual em uma variável temporária
-        NSArray *arrayDeLetrasAtual = [arrayDeArrayDeLetras objectAtIndex:i];
-        
-        //Para cada letra do array atual
-        for (int j = 0; j < [arrayDeLetrasAtual count]; j++) {
-            SKLabelNode *letra = [[SKLabelNode alloc]init];
-            [letra setColor:[UIColor whiteColor]];
-            [letra setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
-            [letra setPosition:CGPointMake(40 + (distanciaX * j), 150 - (distanciaY * i))];
-            [letra setText:[arrayDeLetrasAtual objectAtIndex:j]];
-            //[letra setAlpha:0];
-            
-            //adiciona no arrayDeLetrasNode
-            [arrayDeLetrasNode addObject:letra];
-        }
-        
-        //adicionar no arrayDeArrayDeLetrasNode
-        [arrayDeArrayDeLetrasNode addObject:arrayDeLetrasNode];
-        //reinicia o arrayDeLetrasNode
-        arrayDeLetrasNode = [[NSMutableArray alloc] init];
+        //adiciona ao array
+        [self.arrayDefalasEmFrases addObject:fala];
     }
     
-    //ADICIONA AS LETRAS NA TELA
-    for(int i = 0; i < [arrayDeArrayDeLetrasNode count]; i++){
-        for(int j = 0; j < [[arrayDeArrayDeLetrasNode objectAtIndex:i] count]; j++){
-            [self.cutscene runAction:[SKAction waitForDuration:2] completion:^{
-                NSLog(@"%@", [[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j] text]);
-                [self.caixaDeFala addChild:[[arrayDeArrayDeLetrasNode objectAtIndex:i] objectAtIndex:j]];
-            }];
-        }
+    //Adicona as falas na tela
+    for(int i = 0; i < [self.arrayDefalasEmFrases count]; i++){
+        [self.caixaDeFala addChild:[self.arrayDefalasEmFrases objectAtIndex:i]];
     }
+    
 }
 
 

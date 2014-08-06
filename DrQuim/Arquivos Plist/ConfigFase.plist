@@ -6,9 +6,9 @@
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
-			<string></string>
+			<string>DerrapandoDr</string>
 			<key>Caindo</key>
-			<string></string>
+			<string>CaindoDr</string>
 			<key>Escalando</key>
 			<string></string>
 			<key>Parado</key>
