@@ -14,7 +14,7 @@
 @property NSString *texto;
 @property NSString *foto;
 
--(id)initComDicionario: (NSArray *)dicionarioDaFala;
+-(id)initComDicionario: (NSDictionary *)dicionarioDaFala;
 
 
 //TEMPORÁRIO - APENAS PARA NÃO DAR ERRO
