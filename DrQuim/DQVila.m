@@ -37,22 +37,16 @@
     [self adicionaNPC];
     
     
-    
+    self.cutsceneEstaRodando = NO;
     self.hudFase = [[DQHudController alloc]initHud];
     [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
-    
-    
-    
+    [self addChild:self.hudFase];
     self.missao = [[DQMissoesJogador alloc]init];
     
     //TEMPORÁRIO - inicia ele direto na missão 01
     [self.missao iniciarMissao:1];
     
     [self configuraBotaoMenu];
-    NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
-
-    
-    [self addChild:self.hudFase];
     self.cutsceneEstaRodando = NO;
 }
 
