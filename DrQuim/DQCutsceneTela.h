@@ -9,15 +9,18 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQCutsceneControlle.h"
 #import "DQFase.h"
+#import "DQFlorestaParte1.h"
+#import "DQFlorestaParte2.h"
+#import "DQVila.h"
 
 @interface DQCutsceneTela : SKScene
 
 @property DQCutsceneControlle *controleCutScene;
 @property int cutSceneAtual;
-@property int faseAtual;
+@property SKScene *faseApresentar;
 
 
--(id)initCutScene:(int)cutSceneAtual Fase:(int)faseAtual SizeScene:(CGSize)size;
+-(id)initCutScene:(int)cutSceneAtual Fase:(SKScene*)faseApresentar SizeScene:(CGSize)size;
 -(void)mostrarCena;
 -(void)apresentarFase;
 @end
