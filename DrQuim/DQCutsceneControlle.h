@@ -18,6 +18,5 @@
 -(id)initCutscene:(int)cutSceneAtual;
 
 -(SKSpriteNode*)montarCena;
--(void)trocarCena;
 -(BOOL)fimCutScene;
 @end

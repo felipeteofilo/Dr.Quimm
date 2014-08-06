@@ -14,12 +14,9 @@
     if (self=[super init]) {
         self.cenasCutScene=[self cenasCutScene:cutSceneAtual];
         self.cenaAtual=0;
-        
     }
     return self;
 }
-
-
 
 -(SKSpriteNode*)montarCena{
     if ([self fimCutScene]) {
@@ -31,16 +28,20 @@
         
         SKSpriteNode *cenaRetorno=[SKSpriteNode spriteNodeWithImageNamed:[infoCena objectForKey:@"Fundo"]];
         
-        DQFala *falaCena=[[DQFala alloc]init];
-        
         [cenaRetorno setAnchorPoint:CGPointMake(0, 0)];
-        [cenaRetorno addChild:falaCena];
         
-        [falaCena setAnchorPoint:CGPointMake(0, 0)];
-        [falaCena setPosition:CGPointMake(CGRectGetMinX(cenaRetorno.frame)+20, CGRectGetMinY(cenaRetorno.frame)+20)];
         
+        //Verifica se tem fala para ser dita na cena
+        NSString *testeSujeitoCena=[infoCena objectForKey:@"Sujeito"];
+        if (![testeSujeitoCena length]==0) {
+            DQFala *falaCena=[[DQFala alloc]initComDicionario:infoCena];
+            
+            [cenaRetorno addChild:falaCena];
+            [falaCena setAnchorPoint:CGPointMake(0, 0)];
+            [falaCena setPosition:CGPointMake(CGRectGetMinX(cenaRetorno.frame)+20, CGRectGetMinY(cenaRetorno.frame)+20)];
+        }
+
         [self atualizaCenaAtual];
-        
         return cenaRetorno;
     }
 }
