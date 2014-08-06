@@ -105,6 +105,9 @@
 		C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */; };
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
 		C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */; };
+		CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */; };
+		CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48AD11992A11400588E79 /* DQCutsceneTela.m */; };
+		CDC48AD51992A18500588E79 /* DQCutsceneControlle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */; };
 		CDE817F31933C790003516E7 /* DQJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE817F21933C790003516E7 /* DQJogador.m */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +256,12 @@
 		C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
 		C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
 		C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
+		CDC48ACD1992A0C800588E79 /* DQFalasNoJogoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFalasNoJogoControle.h; sourceTree = "<group>"; };
+		CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFalasNoJogoControle.m; sourceTree = "<group>"; };
+		CDC48AD01992A11400588E79 /* DQCutsceneTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneTela.h; sourceTree = "<group>"; };
+		CDC48AD11992A11400588E79 /* DQCutsceneTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneTela.m; sourceTree = "<group>"; };
+		CDC48AD31992A18500588E79 /* DQCutsceneControlle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControlle.h; sourceTree = "<group>"; };
+		CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControlle.m; sourceTree = "<group>"; };
 		CDE817F11933C790003516E7 /* DQJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJogador.h; sourceTree = "<group>"; };
 		CDE817F21933C790003516E7 /* DQJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJogador.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -301,8 +310,6 @@
 		23477FF719463E0E00479AFE /* Falas e Cutscenes */ = {
 			isa = PBXGroup;
 			children = (
-				23477FF819463E7500479AFE /* DQFala.h */,
-				23477FF919463E7500479AFE /* DQFala.m */,
 				23A6DE9919477F1500982F9D /* DQCena.h */,
 				23A6DE9A19477F1500982F9D /* DQCena.m */,
 			);
@@ -374,6 +381,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				CDC48AC919929F4A00588E79 /* _temp novas classes */,
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
 				C57D7C2A1964E3A100EF94C9 /* Controladores */,
 				C511252E1973868D00CECCAD /* ObjetosJogo */,
@@ -586,6 +594,21 @@
 			name = SKScenes;
 			sourceTree = "<group>";
 		};
+		CDC48AC919929F4A00588E79 /* _temp novas classes */ = {
+			isa = PBXGroup;
+			children = (
+				23477FF819463E7500479AFE /* DQFala.h */,
+				23477FF919463E7500479AFE /* DQFala.m */,
+				CDC48ACD1992A0C800588E79 /* DQFalasNoJogoControle.h */,
+				CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */,
+				CDC48AD01992A11400588E79 /* DQCutsceneTela.h */,
+				CDC48AD11992A11400588E79 /* DQCutsceneTela.m */,
+				CDC48AD31992A18500588E79 /* DQCutsceneControlle.h */,
+				CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */,
+			);
+			name = "_temp novas classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -747,6 +770,9 @@
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
 				C54031EA1989FE98003384AB /* DQReferenciaMissaoJogador.m in Sources */,
+				CDC48AD51992A18500588E79 /* DQCutsceneControlle.m in Sources */,
+				CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */,
+				CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				C54031EF1989FEE7003384AB /* DQItem.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
-@interface DQFala : NSObject
+@interface DQFala : SKSpriteNode
 
 @property NSString *sujeito;
 @property NSString *texto;
+@property NSString *foto;
 
-//init com SUJEITO que fala e TEXTO do que fala
--(id)initComSujeito: (NSString *)sujeito_ Texto:(NSString *)texto_;
+-(id)initComArray: (NSArray *)arrayDeFalas;
 
 @end
