@@ -7,7 +7,17 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQFala.h"
 
-@interface DQCutsceneControlle : SKScene
+@interface DQCutsceneControlle : NSObject
 
+@property DQFala *falaCena;
+@property NSArray *cenasCutScene;
+@property int cenaAtual;
+
+-(id)initCutscene:(int)cutSceneAtual;
+
+-(SKSpriteNode*)montarCena;
+-(void)trocarCena;
+-(BOOL)fimCutScene;
 @end

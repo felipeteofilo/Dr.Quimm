@@ -10,4 +10,66 @@
 
 @implementation DQCutsceneControlle
 
+-(id)initCutscene:(int)cutSceneAtual{
+    if (self=[super init]) {
+        self.cenasCutScene=[self cenasCutScene:cutSceneAtual];
+        self.cenaAtual=0;
+        
+    }
+    return self;
+}
+
+
+
+-(SKSpriteNode*)montarCena{
+    if ([self fimCutScene]) {
+        return nil;
+        
+        NSLog(@"FIM DA CUTSCENE LEMBRE-SE DE VERIFICAR ANTES DE PEDIR PARA MONTAR CENA!");
+    }else{
+        NSDictionary *infoCena=[self infoCenaAtual];
+        
+        SKSpriteNode *cenaRetorno=[SKSpriteNode spriteNodeWithImageNamed:[infoCena objectForKey:@"Fundo"]];
+        
+        DQFala *falaCena=[[DQFala alloc]init];
+        
+        [cenaRetorno setAnchorPoint:CGPointMake(0, 0)];
+        [cenaRetorno addChild:falaCena];
+        
+        [falaCena setAnchorPoint:CGPointMake(0, 0)];
+        [falaCena setPosition:CGPointMake(CGRectGetMinX(cenaRetorno.frame)+20, CGRectGetMinY(cenaRetorno.frame)+20)];
+        
+        [self atualizaCenaAtual];
+        
+        return cenaRetorno;
+    }
+}
+
+-(void)atualizaCenaAtual{
+    self.cenaAtual++;
+}
+-(BOOL)fimCutScene{
+    if (self.cenaAtual == [self.cenasCutScene count]) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+-(NSArray*)arquivoPlist{
+    //Acessa o arquivo plist e retorna o array com o
+    NSArray *arrayRetorno=[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"FalasCutScene" ofType:@"plist"]];
+    
+    return arrayRetorno;
+}
+
+-(NSArray*)cenasCutScene:(int)cutSceneAtual{
+    NSArray *arrayRetorno=[[self arquivoPlist]objectAtIndex:cutSceneAtual-1];
+    
+    return arrayRetorno;
+}
+
+-(NSDictionary*)infoCenaAtual{
+    return [self.cenasCutScene objectAtIndex:self.cenaAtual];
+}
 @end
