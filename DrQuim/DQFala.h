@@ -14,6 +14,11 @@
 @property NSString *texto;
 @property NSString *foto;
 
--(id)initComArray: (NSArray *)arrayDeFalas;
+-(id)initComDicionario: (NSArray *)dicionarioDaFala;
+
+
+//TEMPORÁRIO - APENAS PARA NÃO DAR ERRO
+-(id)initComSujeito:sujeitoTemporario Texto:textoTemporario;
+
 
 @end
