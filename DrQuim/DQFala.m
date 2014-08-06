@@ -13,27 +13,67 @@
 //inicia o SKSpriteNode com seu tamanho e cor
 -(id)initComDicionario: (NSDictionary *)dicionarioDaFala{
     if (self = [super initWithColor:[UIColor blackColor] size:CGSizeMake(self.scene.frame.size.width * 0.8, self.scene.frame.size.height * 0.25f)]) {
-        //Verifica se tem foto
+        //inicia as variaveis auxiliares
+        self.sujeito = [[NSString alloc]init];
+        self.texto = [[NSString alloc]init];
+        self.foto = [[NSString alloc]init];
+        
+        //coloca os valores pegos do dicionario de fala nas variaveis auxiliares
+        self.sujeito = [dicionarioDaFala objectForKey:@"Sujeito"];
+        self.texto = [dicionarioDaFala objectForKey:@"Texto"];
+        self.foto = [dicionarioDaFala objectForKey:@"Foto"];
+        
+        //inicia as variaveis de tamanho de texto
+        self.tamanhoTextoComFoto = CGSizeMake(self.frame.size.width * 0.6, self.frame.size.height * 0.8);
+        self.tamanhoTextoSemFoto = CGSizeMake(self.frame.size.width * 0.8, self.frame.size.height * 0.8);
+        
+        //VERIFICA SE TEM FOTO
+        //se tem...
+        if(self.foto != nil){
+            //o tamamho do texto é o com foto
+            self.tamanhoTexto = self.tamanhoTextoComFoto;
+            
+            //chama a classe de foto
+            [self criarFoto];
+        }
+        //se não tem...
+        else{
+            //o tamanho do texto é sem a foto
+            self.tamanhoTexto = self.tamanhoTextoSemFoto;
+        }
+        
+        
 
-        
-        
     }
     return self;
 }
 
-//cria a foto e o adiciona-a
+//cria a foto e a adiciona
 -(void)criarFoto
 {
+    //cria o SKSpriteNode com a imagem da foto
+    SKSpriteNode *spriteFoto = [[SKSpriteNode alloc]initWithImageNamed:self.foto];
     
+    //define tamanho
+    CGFloat lado = self.frame.size.height * 0.8; //o tamanho do quadrado da foto será 80% o tamanho da caixa
+    [spriteFoto setSize:CGSizeMake(lado, lado)];
+    
+    //define a posição
+    CGFloat espacamento = self.frame.size.height * 0.1; //o espaçamento (entre a foto e as "paredes") será 10% o tamanho da caixa
+    [spriteFoto setAnchorPoint:CGPointMake(0, 0)];
+    [spriteFoto setPosition:CGPointMake(espacamento, espacamento)];
+    
+    //adiciona a foto no SKSpriteNode principal - caixa
+    [self addChild:spriteFoto];
 }
 
-//cria o texto e adiciona-o
+//cria o texto e o adiciona
 -(void)criarTexto
 {
     
 }
 
-//cria o aviso de "toque para continuar"
+//cria o aviso de "toque para continuar" e o adiciona
 -(void)criarAviso
 {
     

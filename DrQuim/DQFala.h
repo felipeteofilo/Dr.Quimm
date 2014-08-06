@@ -10,15 +10,24 @@
 
 @interface DQFala : SKSpriteNode
 
+//Variaveis auxiliares ao dicionario
 @property NSString *sujeito;
 @property NSString *texto;
 @property NSString *foto;
 
+//Variaveis de tamamnho ocupado pelo texto
+@property CGSize tamanhoTextoComFoto;
+@property CGSize tamanhoTextoSemFoto;
+@property CGSize tamanhoTexto;
+
+//Método de init - recebe um dicionario da fala atual
 -(id)initComDicionario: (NSDictionary *)dicionarioDaFala;
+
+
+
 
 
 //TEMPORÁRIO - APENAS PARA NÃO DAR ERRO
 -(id)initComSujeito:sujeitoTemporario Texto:textoTemporario;
-
 
 @end
