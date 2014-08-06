@@ -18,14 +18,30 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    //skView.showsPhysics=YES;
+    skView.showsPhysics=YES;
     
     // Create and configure the scene.
     //DQFlorestaParte1 *floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
     //DQVila *floresta=[DQVila sceneWithSize:skView.bounds.size];
     //DQFlorestaParte2 *floresta = [DQFlorestaParte2 sceneWithSize:skView.bounds.size];
     
-    DQCutsceneTela  *floresta=[[DQCutsceneTela alloc]initCutScene:0 Fase:1 SizeScene:skView.bounds.size];
+    //DQCutsceneTela  *floresta=[[DQCutsceneTela alloc]initCutScene:0 Fase:1 SizeScene:skView.bounds.size];
+    
+    
+    
+    //*******
+    //ALTOS TESTES
+    //url
+    NSString *url = [[NSBundle mainBundle]pathForResource:@"FalasNoJogo" ofType:@"plist"];
+    //array da plist
+    NSArray *array = [[NSArray alloc] initWithContentsOfFile:url];
+    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[[array objectAtIndex:0] objectAtIndex:9]];
+    
+    DQTESTE *floresta = [[DQTESTE alloc]initComDicionario:dicionario eSize:skView.bounds.size];
+    //********
+    
+    
+    
     
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     

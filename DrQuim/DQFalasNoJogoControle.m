@@ -40,7 +40,7 @@
         self.arrayDeFalasAtuais = [[self.dicionarioDeFalas objectForKey:@"Alertas"]objectForKey:key];
     }
     //Criamos a caixa de fala que ira ser mostrada no jogo
-    self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual]];
+    //self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual]];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
@@ -65,7 +65,7 @@
     }
     
     //Criamos a caixa de fala que ira ser mostrada no jogo
-    self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual]];
+    //self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual]];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
