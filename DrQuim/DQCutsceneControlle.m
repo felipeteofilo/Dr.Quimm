@@ -30,15 +30,14 @@
         
         [cenaRetorno setAnchorPoint:CGPointMake(0, 0)];
         
-        
         //Verifica se tem fala para ser dita na cena
         NSString *testeSujeitoCena=[infoCena objectForKey:@"Sujeito"];
         if (![testeSujeitoCena length]==0) {
-            DQFala *falaCena=[[DQFala alloc]initComDicionario:infoCena];
-            
-            [cenaRetorno addChild:falaCena];
-            [falaCena setAnchorPoint:CGPointMake(0, 0)];
-            [falaCena setPosition:CGPointMake(CGRectGetMinX(cenaRetorno.frame)+20, CGRectGetMinY(cenaRetorno.frame)+20)];
+//            DQFala *falaCena=[[DQFala alloc]initComDicionario:infoCena];
+//            
+//            [cenaRetorno addChild:falaCena];
+//            [falaCena setAnchorPoint:CGPointMake(0, 0)];
+//            [falaCena setPosition:CGPointMake(CGRectGetMinX(cenaRetorno.frame)+20, CGRectGetMinY(cenaRetorno.frame)+20)];
         }
 
         [self atualizaCenaAtual];
@@ -49,6 +48,7 @@
 -(void)atualizaCenaAtual{
     self.cenaAtual++;
 }
+
 -(BOOL)fimCutScene{
     if (self.cenaAtual == [self.cenasCutScene count]) {
         return YES;
@@ -65,7 +65,7 @@
 }
 
 -(NSArray*)cenasCutScene:(int)cutSceneAtual{
-    NSArray *arrayRetorno=[[self arquivoPlist]objectAtIndex:cutSceneAtual-1];
+    NSArray *arrayRetorno=[[self arquivoPlist]objectAtIndex:cutSceneAtual];
     
     return arrayRetorno;
 }

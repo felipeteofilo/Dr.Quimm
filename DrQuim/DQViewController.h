@@ -12,6 +12,9 @@
 #import "DQVila.h"
 #import "DQFlorestaParte2.h"
 
+
+#import "DQCutsceneTela.h"
+
 @interface DQViewController : UIViewController
 
 @end

@@ -17,7 +17,7 @@
 @property int faseAtual;
 
 
--(id)initcutScene:(int)cutSceneAtual Fase:(int)faseAtual;
+-(id)initCutScene:(int)cutSceneAtual Fase:(int)faseAtual SizeScene:(CGSize)size;
 -(void)mostrarCena;
 -(void)apresentarFase;
 @end
