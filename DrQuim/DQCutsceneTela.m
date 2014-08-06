@@ -10,12 +10,12 @@
 
 @implementation DQCutsceneTela
 
--(id)initCutScene:(int)cutSceneAtual Fase:(int)faseAtual SizeScene:(CGSize)size{
+-(id)initCutScene:(int)cutSceneAtual Fase:(SKScene*)faseApresentar SizeScene:(CGSize)size{
     if (self=[super initWithSize:size]) {
         self.controleCutScene=[[DQCutsceneControlle alloc]initCutscene:cutSceneAtual];
         
         self.cutSceneAtual=cutSceneAtual;
-        self.faseAtual=faseAtual;
+        self.faseApresentar=faseApresentar;
         
         if (![self.controleCutScene fimCutScene]) {
             [self mostrarCena];
@@ -38,8 +38,9 @@
     
     [self addChild:cenaExibir];
 }
+
 -(void)apresentarFase{
-    NSLog(@"Agora inicia a fase moço");
+    [self.view presentScene:self.faseApresentar];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
