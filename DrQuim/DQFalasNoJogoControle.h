@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DQFala.h"
 
 @interface DQFalasNoJogoControle : NSObject
+
+@property DQFala * caixaDeFala;
+
+@property NSMutableDictionary *dicionarioDeFalas;
+
+@property int falaAtual;
+
+
+-(id)initComFaseAtual:(int)faseAtual;
+-(SKNode*)mostrarAlerta :(NSString*)key;
+-(SKNode*)mostrarFala :(NSString*)npc :(NSString*)keyFala;
+-(SKNode*)proximaFala;
+-(void)fimFala;
 
 @end
