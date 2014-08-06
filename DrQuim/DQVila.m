@@ -14,27 +14,17 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        [self configuracoesFase:2];
         
-        self.hudFase = [[DQHudController alloc]initHud];
-        [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
         
         //Inicia com a fase 2
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:3 Fase:2];
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
         
-        //[self iniciarFase];
-        
-        self.missao = [[DQMissoesJogador alloc]init];
-        
-        //TEMPORÁRIO - inicia ele direto na missão 01
-        [self.missao iniciarMissao:1];
-        
-        [self configuraBotaoMenu];
-        NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
+        [self iniciarFase];
+      
 
-        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
 
     }
     
@@ -42,8 +32,26 @@
 }
 
 -(void)iniciarFase{
+    [self configuracoesFase:2];
     [super iniciarFase];
     [self adicionaNPC];
+    
+    
+    
+    self.hudFase = [[DQHudController alloc]initHud];
+    [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
+    
+    
+    
+    self.missao = [[DQMissoesJogador alloc]init];
+    
+    //TEMPORÁRIO - inicia ele direto na missão 01
+    [self.missao iniciarMissao:1];
+    
+    [self configuraBotaoMenu];
+    NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
+
+    
     [self addChild:self.hudFase];
     self.cutsceneEstaRodando = NO;
 }

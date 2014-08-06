@@ -231,7 +231,6 @@
             //ANDAR
             //marca o local em que tocou e desenha as setinhas
             self.pontoDeToqueAndar = posicaoToque;
-            
             [self.direcional removeFromParent];
             //mostra as setinhas
             self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
@@ -245,8 +244,10 @@
             
             [self.jogador pular];
         }
+        
+      
+        
     }
-    //Se estiver falando em jogo...
     else if(self.estaFalando){
         if ([self.controleCutscenes trocarFala]) {
             [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
@@ -258,9 +259,6 @@
             self.cutsceneEstaRodando = NO;
         }
     }
-    
-    
-    
     
     
     CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
