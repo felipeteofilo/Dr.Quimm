@@ -19,9 +19,6 @@
     if (self = [super initWithSize:size]) {
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = NO;
-        
         [self configuracoesFase:1];
         //[self.controleCutscenes iniciarCutscene:self.scene Seletor:nil];
         
@@ -32,62 +29,38 @@
 
 -(void)iniciarFase{
     [super iniciarFase];
-    
     [self definirPontosRadiacao];
-    
-    self.cutsceneEstaRodando = NO;
-    self.estaFalando = NO;
     
     self.mostrouTutorial = YES;
     self.executandoTutorial = NO;
     
 }
-//Ultimo Método que é chamado antes de aparecer a tela, usado para arrumar a camera //===OK===
-- (void)didSimulatePhysics
-{
-    if (!self.cutsceneEstaRodando) {
-        [super didSimulatePhysics];
-    }
-}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    //Se não está falando e nem em cutscene...
-    if (!self.cutsceneEstaRodando && !self.estaFalando) {
-        
-        //Se ainda não mostrou o tutorial, assim que a pessoa clica na tela, ele inicia:
-        if(!self.mostrouTutorial){
-            if(!self.executandoTutorial){
-               // [self iniciarTutorial];
-            }
-        }
-        
-        else{
-            //Verifica em qual lado da tela o jogador está tocando
-            UITouch *posicao = [touches anyObject];
-        
-            //Jeito porco irei arrumar
-            CGPoint posicaoDoToque = [posicao locationInNode:self];
-            SKSpriteNode *nodeTocado = (SKSpriteNode *)[self nodeAtPoint:posicaoDoToque];
-        
-            if ([[nodeTocado name] isEqualToString:@"RadiacaoAlfa"]) {
-                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
-            
-                self.cutsceneEstaRodando = YES;
-                self.estaFalando = YES;
-            }
-            else if ([[nodeTocado name] isEqualToString:@"RadiacaoBeta"]) {
-                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
-            
-                self.cutsceneEstaRodando = YES;
-                self.estaFalando = YES;
-            }else{
-                [super touchesBegan:touches withEvent:event];
-            }
+    //Se ainda não mostrou o tutorial, assim que a pessoa clica na tela, ele inicia:
+    if(!self.mostrouTutorial){
+        if(!self.executandoTutorial){
+            [self iniciarTutorial];
         }
     }
-    
-   
+    else{
+        //Verifica em qual lado da tela o jogador está tocando
+        UITouch *posicao = [touches anyObject];
+        
+        //Jeito porco irei arrumar
+        CGPoint posicaoDoToque = [posicao locationInNode:self];
+        SKSpriteNode *nodeTocado = (SKSpriteNode *)[self nodeAtPoint:posicaoDoToque];
+        
+        if ([[nodeTocado name] isEqualToString:@"RadiacaoAlfa"]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoAlfa"];
+        }
+        else if ([[nodeTocado name] isEqualToString:@"RadiacaoBeta"]) {
+            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:@"RadiacaoBeta"];
+            
+        }else{
+            [super touchesBegan:touches withEvent:event];
+        }
+    }
 }
 
 -(void)iniciarTutorial
@@ -193,15 +166,13 @@
 
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase ==OK==
 -(void)update:(NSTimeInterval)currentTime{
-    if (!self.cutsceneEstaRodando) {
-        [super update:currentTime];
-        [self procurarRadiacao];
-        
-        //Fazer o jogador sair de perto
-        [self falarAlertaRadiacao];
-        
-        [self segundaCutScene];
-    }
+    [super update:currentTime];
+    [self procurarRadiacao];
+    
+    //Fazer o jogador sair de perto
+    [self falarAlertaRadiacao];
+    
+    [self segundaCutScene];
 }
 
 -(void)definirPontosRadiacao{
@@ -278,10 +249,6 @@
         //inicia a fala
         [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
         
-        
-        self.estaFalando = YES;
-        self.falouAtencaoAlpha = YES;
-        
         [self.jogador pararAndar];
     }
     
@@ -305,10 +272,6 @@
         //inicia a fala
         [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyDaFala];
         
-        
-        self.estaFalando = YES;
-        self.falouAtencaoBeta = YES;
-        
         [self.jogador pararAndar];
     }
     
@@ -328,8 +291,6 @@
     if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
         
         [self.controleCutscenes mudarParte];
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = NO;
         [self.jogador pararAndar];
         [self mudarFase];
     }
@@ -365,9 +326,6 @@
                 NSString *keyFalaRadiacao=[self.keyFalaPontoRadiacao objectAtIndex:i];
                 [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:keyFalaRadiacao];
                 
-               
-                self.estaFalando = YES;
-                
                 [self.boolFalouRadiacao removeObjectAtIndex:i];
                 
                 NSNumber *falouRadiacao=[NSNumber numberWithBool:YES];
@@ -377,7 +335,6 @@
                 
                 //Adiciona o Icone
                 [self adicionaIconeRadiacao:[self.keyFalaPontoRadiacao objectAtIndex:i] naPosicao:CGPointMake(pontoAnalisar.x, pontoAnalisar.y + 80.0)];
-                
             }
         }
     }

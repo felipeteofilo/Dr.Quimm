@@ -15,29 +15,8 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:2];
-        
-        
-//
-//        //Inicia com a fase 2
-        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:2 Fase:2];
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = NO;
-//
-        //self iniciarFase];
-//
-//        self.missao = [[DQMissoesJogador alloc]init];
-//        
-//        //TEMPORÁRIO - inicia ele direto na missão 01
-//        [self.missao iniciarMissao:1];
-//        
-//        [self configuraBotaoMenu];
-//        NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
-
-        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
-        
-
-    }
     
+    }
     return self;
 }
 
@@ -45,7 +24,6 @@
     [super iniciarFase];
     [self adicionaNPC];
     
-    self.cutsceneEstaRodando = NO;
     self.hudFase = [[DQHudController alloc]initHud];
     [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
     [self addChild:self.hudFase];
@@ -169,9 +147,6 @@
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
 -(void)interagirComNPC:(DQnpc*)npc{
-    //definições importantes:
-    self.cutsceneEstaRodando = NO;
-    self.estaFalando = YES;
     [self.jogador pararAndar];
     
 

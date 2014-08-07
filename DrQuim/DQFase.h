@@ -64,11 +64,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //HUD com informações
 @property DQHudController *hudFase;
 
-//Variavel Booleana para saber se esta rodando alguma cutscene
-@property BOOL cutsceneEstaRodando;
-@property BOOL estaFalando;
-
-
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(void)configuracoesFase:(int)faseAtual;

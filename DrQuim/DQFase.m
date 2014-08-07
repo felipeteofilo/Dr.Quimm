@@ -232,37 +232,23 @@
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
     
-    if (!self.cutsceneEstaRodando && !self.estaFalando) {
-        //Se estiver na direita
+    //Se estiver na direita
+    
+    if(posicaoToque.x > CGRectGetMidX(self.frame)){
+        //ANDAR
+        //marca o local em que tocou e desenha as setinhas
+        self.pontoDeToqueAndar = posicaoToque;
         
-        if(posicaoToque.x > CGRectGetMidX(self.frame)){
-            //ANDAR
-            //marca o local em que tocou e desenha as setinhas
-            self.pontoDeToqueAndar = posicaoToque;
-            
-            //mostra as setinhas
-            self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
-            [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
-            
-            [self addChild:self.direcional];
-        }
-        //Se estiver na esquerda
-        else if(posicaoToque.x < CGRectGetMidX(self.frame)){
-            //PULAR
-            [self.jogador pular];
-        }
+        //mostra as setinhas
+        self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+        [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
         
-        //Se estiver falando em jogo...
-        else if(self.estaFalando){
-            if ([self.controleCutscenes trocarFala]) {
-                [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
-            }
-            
-            else{
-                self.estaFalando = NO;
-                self.cutsceneEstaRodando = NO;
-            }
-        }
+        [self addChild:self.direcional];
+    }
+    //Se estiver na esquerda
+    else if(posicaoToque.x < CGRectGetMidX(self.frame)){
+        //PULAR
+        [self.jogador pular];
     }
     
     
@@ -323,10 +309,6 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
-    
-    if((self.cutsceneEstaRodando) && (!self.estaFalando)){
-        [self.controleCutscenes trocarCena];
-    }
     
     //faz parar de andar, colocando a direção como nula
     [self.jogador setAndandoParaDirecao:@" "];
