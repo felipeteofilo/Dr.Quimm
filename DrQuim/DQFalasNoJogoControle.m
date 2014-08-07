@@ -31,7 +31,8 @@
 }
 
 //Mostrar Algum alerta da fase passando a key do alerta
--(SKNode*)mostrarAlerta :(NSString*)key{
+-(SKSpriteNode*)mostrarAlertaComKey :(NSString*)key Tamanho:(CGSize)tamanho{
+    self.estadoFala =@"Alerta";
     //Se iremos comecar a mostrar as falas atuais agora
     if (self.falaAtual == -1) {
         
@@ -40,14 +41,15 @@
         self.arrayDeFalasAtuais = [[self.dicionarioDeFalas objectForKey:@"Alertas"]objectForKey:key];
     }
     //Criamos a caixa de fala que ira ser mostrada no jogo
-    //self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual]];
+    self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual] eTamanho:tamanho];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
 }
 
 //Mostrar fala em uma missao ou nao, passando o nome do Npc e a key da fala, e se estiver em missao a missao atual
--(SKNode*)mostrarFala :(NSString*)npc :(NSString*)keyFala :(NSString*)missao {
+-(SKSpriteNode*)mostrarFalaComNPC :(NSString*)npc KeyDaFala:(NSString*)keyFala Missao:(NSString*)missao Tamanho:(CGSize)tamanho {
+    self.estadoFala =@"Fala";
     //Se iremos comecar a mostrar as falas atuais agora
     if (self.falaAtual == -1) {
         
@@ -57,15 +59,15 @@
         //Se a key da missao passada existir, ou seja esta em missao
         if (missao != nil) {
             //Lemos o array de falas atuais do dicionario de falas de acordo com o Npc e a key da missao e fala da missao
-            self.arrayDeFalasAtuais = [[[[self.dicionarioDeFalas objectForKey:@"Com Missao"]objectForKey:npc]objectForKey:missao]objectForKey:keyFala];
+            self.arrayDeFalasAtuais = [[[[self.dicionarioDeFalas objectForKey:@"Com Missão"]objectForKey:npc]objectForKey:missao]objectForKey:keyFala];
         }
         else
             //Se nao estiver em uma missao lemos o dicionario de falas de acordo com o npc e a key da fala
-           self.arrayDeFalasAtuais = [[[self.dicionarioDeFalas objectForKey:@"Sem Missao"]objectForKey:npc]objectForKey:keyFala];
+           self.arrayDeFalasAtuais = [[[self.dicionarioDeFalas objectForKey:@"Sem Missão"]objectForKey:npc]objectForKey:keyFala];
     }
     
     //Criamos a caixa de fala que ira ser mostrada no jogo
-    //self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual]];
+     self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual] eTamanho:tamanho];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;

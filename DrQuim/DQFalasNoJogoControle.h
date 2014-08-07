@@ -23,14 +23,17 @@
 //Varialvel do tipo int que define a fala atual
 @property int falaAtual;
 
+//Variavel do tipo NSString que define se esta passando alerta ou fala de jogo
+@property NSString *estadoFala;
+
 //Iniciar com a fase atual
 -(id)initComFaseAtual:(int)faseAtual;
 
 //Mostrar Algum alerta da fase passando a key do alerta
--(SKNode*)mostrarAlerta :(NSString*)key;
+-(SKSpriteNode*)mostrarAlertaComKey :(NSString*)key Tamanho:(CGSize)tamanho;
 
 //Mostrar fala em uma missao ou nao, passando o nome do Npc e a key da fala, e se estiver em missao a missao atual
--(SKNode*)mostrarFala :(NSString*)npc :(NSString*)keyFala :(NSString*)missao;
+-(SKSpriteNode*)mostrarFalaComNPC :(NSString*)npc KeyDaFala:(NSString*)keyFala Missao:(NSString*)missao Tamanho:(CGSize)tamanho;
 
 //Metodo que retorna se pode ou nao mostrar a proxima fala
 -(Boolean)proximaFala;
