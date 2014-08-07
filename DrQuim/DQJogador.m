@@ -25,7 +25,7 @@
         
         [self.spriteNode setZPosition:10.0f];
         //Deixar o corpo fisico mais prox ao sprite
-        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.spriteNode.size.width, self.spriteNode.size.height-12)];
+        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.spriteNode.size.width-30, self.spriteNode.size.height-30)];
 
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
@@ -157,7 +157,7 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.37f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
 //funcao para animar jogador caindo

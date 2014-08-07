@@ -231,12 +231,10 @@
     
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
-    CGPoint posicaoToqueNode=[[touches anyObject]locationInNode:self];
     
     if (!self.cutsceneEstaRodando && !self.estaFalando) {
-        
-        
         //Se estiver na direita
+        
         if(posicaoToque.x > CGRectGetMidX(self.frame)){
             //ANDAR
             //marca o local em que tocou e desenha as setinhas
@@ -254,12 +252,10 @@
             [self.jogador pular];
         }
         
-        
         //Se estiver falando em jogo...
         else if(self.estaFalando){
             if ([self.controleCutscenes trocarFala]) {
                 [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
-                
             }
             
             else{
@@ -267,10 +263,9 @@
                 self.cutsceneEstaRodando = NO;
             }
         }
-        
     }
     
-
+    
     CGPoint posToqueBackGround=[toque locationInNode:self.backgroundAtual];
     
     //Pega o node de escada na posicao do toque
@@ -287,31 +282,6 @@
         }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
             //Fazer jogador escalar - Descendo
             [self.jogador escalarParaDirecao:@"B"];
-        }
-    }
-    
-    
-    NSArray *arrayNodes=[self nodesAtPoint:posicaoToqueNode];
-    
-    if ([self childNodeWithName:@"MENU"]) {
-        [[self childNodeWithName:@"MENU"]removeFromParent];
-        [self.mundo setPaused:YES];
-    }
-    
-    for (SKSpriteNode *nodeTocado in arrayNodes) {
-        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
-            if (!self.menu) {
-                self.menu=[[DQMenu alloc]initMenu];
-                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
-                
-            }
-            
-            if (![self childNodeWithName:@"MENU"]) {
-                [self addChild:self.menu];
-                [self.mundo setPaused:YES];
-            }
-            
-            break;
         }
     }
 }
@@ -368,6 +338,31 @@
     //Ao parar o toque, pausa sua escalada se ainda estiver escalando
     if ([self.jogador actionForKey:@"escalar"]) {
         [self.jogador pausarEscalada];
+    }
+    
+    CGPoint posicaoToqueNode=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posicaoToqueNode];
+    
+    if ([self childNodeWithName:@"MENU"]) {
+        [[self childNodeWithName:@"MENU"]removeFromParent];
+        //[self.mundo setPaused:NO];
+    }
+    
+    for (SKSpriteNode *nodeTocado in arrayNodes) {
+        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
+            if (!self.menu) {
+                self.menu=[[DQMenu alloc]initMenu];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+                
+            }
+            
+            if (![self childNodeWithName:@"MENU"]) {
+                [self addChild:self.menu];
+                //[self.mundo setPaused:YES];
+            }
+            
+            break;
+        }
     }
 }
 
