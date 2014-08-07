@@ -41,8 +41,8 @@
         self.podeEscalar = NO;
         self.estaNoChao = YES;
         //USADO COMO TESTE
-        self.fome = 10;
-        self.sede = 40;
+        self.fome = 100;
+        self.sede = 100;
         self.vida = 100;
         self.respeito = 0;
         

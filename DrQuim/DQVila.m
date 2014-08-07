@@ -21,10 +21,10 @@
         self.cutsceneEstaRodando = YES;
         self.estaFalando = NO;
         
-        [self iniciarFase];
+        //[self iniciarFase];
       
 
-        //[self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
+        [self.controleCutscenes iniciarCutscene:self Seletor:@selector(iniciarFase)];
 
     }
     
@@ -53,7 +53,10 @@
 
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
-    [self.hudFase atualizarHud];
+    if (!self.cutsceneEstaRodando) {
+        [self.hudFase atualizarHud];
+    }
+    
 }
 
 -(void)adicionaNPC{
