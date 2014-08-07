@@ -44,7 +44,7 @@
     self.missao = [[DQMissoesJogador alloc]init];
     
     //TEMPORÁRIO - inicia ele direto na missão 01
-    [self.missao iniciarMissao:1];
+    //[self.missao iniciarMissao:1];
     
     [self configuraBotaoMenu];
     self.cutsceneEstaRodando = NO;
