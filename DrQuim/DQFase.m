@@ -184,6 +184,11 @@
                 
                 [self adicionarPlataforma:plataforma noNode:self.backgroundFuturo];
                 [self.mundo addChild:self.backgroundFuturo];
+                
+                
+                if (![self childNodeWithName:nomeEscalavel]) {
+                    [self adicionarEscalavelnoBackhround:self.backgroundFuturo Parte:self.parteFaseAtual+1];
+                }
             }
         }
     }
@@ -212,6 +217,10 @@
                 
                 [self adicionarPlataforma:plataforma noNode:self.backgroundAnterior];
                 [self.mundo addChild:self.backgroundAnterior];
+                
+                if (![self childNodeWithName:nomeEscalavel]) {
+                    [self adicionarEscalavelnoBackhround:self.backgroundAnterior Parte:self.parteFaseAtual-1];
+                }
             }
         }
     }
@@ -222,6 +231,7 @@
     
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
+    CGPoint posicaoToqueNode=[[touches anyObject]locationInNode:self];
     
     if (!self.cutsceneEstaRodando && !self.estaFalando) {
         
@@ -241,9 +251,10 @@
         //Se estiver na esquerda
         else if(posicaoToque.x < CGRectGetMidX(self.frame)){
             //PULAR
-            
             [self.jogador pular];
         }
+        
+        
         //Se estiver falando em jogo...
         else if(self.estaFalando){
             if ([self.controleCutscenes trocarFala]) {
@@ -259,12 +270,32 @@
         
     }
     
+
+    CGPoint posToqueBackGround=[toque locationInNode:self.backgroundAtual];
     
-    CGPoint posToqueNode=[[touches anyObject]locationInNode:self];
-    NSArray *arrayNodes=[self nodesAtPoint:posToqueNode];
+    //Pega o node de escada na posicao do toque
+    SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
+    
+    //verifica para onde o jogador deve escalar
+    if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
+        //Verifica se o Y é maior ou menor
+        
+        if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
+            //Fazer jogador escalar - Subindo
+            [self.jogador escalarParaDirecao:@"C"];
+            
+        }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
+            //Fazer jogador escalar - Descendo
+            [self.jogador escalarParaDirecao:@"B"];
+        }
+    }
+    
+    
+    NSArray *arrayNodes=[self nodesAtPoint:posicaoToqueNode];
     
     if ([self childNodeWithName:@"MENU"]) {
-        //return;
+        [[self childNodeWithName:@"MENU"]removeFromParent];
+        [self.mundo setPaused:YES];
     }
     
     for (SKSpriteNode *nodeTocado in arrayNodes) {
@@ -277,6 +308,7 @@
             
             if (![self childNodeWithName:@"MENU"]) {
                 [self addChild:self.menu];
+                [self.mundo setPaused:YES];
             }
             
             break;
@@ -332,6 +364,11 @@
     
     //tirar imagem da setinha da tela
     [self.direcional removeFromParent];
+    
+    //Ao parar o toque, pausa sua escalada se ainda estiver escalando
+    if ([self.jogador actionForKey:@"escalar"]) {
+        [self.jogador pausarEscalada];
+    }
 }
 
 
@@ -571,6 +608,25 @@
     [self.botaoMenu setName:@"botaoMenu"];
     //[self.botaoMenu setScale:0.9];
     [self addChild:self.botaoMenu];
+}
+
+-(void)adicionarEscalavelnoBackhround:(SKSpriteNode*)background Parte:(int)parte{
+    //Adiciona escada caso tenha
+    NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:parte];
+    
+    for (int i=0;i<[arrayEscalaveis count];i++) {
+        
+        //Cada posicao no array de escalaveis tem apenas 2 posicoes (Ponto inicial e ponto Final do escalavel)
+        CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
+        CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
+        
+        //cria a escada e seta o corpo fisico dela
+        DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
+        
+        [self escadaCategoria:escada];
+        
+        [background addChild:escada];
+    }
 }
 
 @end

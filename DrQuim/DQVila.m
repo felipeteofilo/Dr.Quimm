@@ -165,12 +165,6 @@
             }
         }
     }
-    
-    //Ao parar o toque, pausa sua escalada se ainda estiver escalando
-    if ([self.jogador actionForKey:@"escalar"]) {
-        [self.jogador pausarEscalada];
-    }
-    
 }
 
 //FUNCIONANDO APENAS SE NÃO ESTIVER EM NENHUMA MISSÃO
@@ -251,80 +245,5 @@
         self.chefe.falou = NO;
         self.quimm.falou = NO;
     }
-}
-
--(void)criarParteFase{
-    [super criarParteFase];
-    
-    if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
-        if (self.parteFaseAtual +1 <= self.nPartesFase ) {
-            
-            if (![self.backgroundFuturo childNodeWithName:nomeEscalavel]) {
-                NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual +1];
-                
-                for (int i=0;i<[arrayEscalaveis count];i++) {
-                    //Cada posicao no array de escalaveis tem apenas 2 posicoes (Ponto inicial e ponto Final do escalavel)
-                    CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
-                    CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
-                    
-                    //cria a escada e seta o corpo fisico dela
-                    DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
-                    
-                    [super escadaCategoria:escada];
-                    
-                    [self.backgroundFuturo addChild:escada];
-                    
-                    
-                }
-            }
-        }
-    }else{
-        if (self.parteFaseAtual -1 > 0) {
-            
-            if (![self.backgroundAnterior childNodeWithName:nomeEscalavel]) {
-                NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:self.parteFaseAtual -1];
-                
-                for (int i=0;i<[arrayEscalaveis count];i++) {
-                    //Cada posicao no array de escalaceis tem apenas 2 posicoes (POnto inicial e ponto Final do escalavel)
-                    CGPoint pontoInicial= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:0]);
-                    CGPoint pontoFinal= CGPointFromString([[arrayEscalaveis objectAtIndex:i]objectAtIndex:1]);
-                    
-                    //cria a escada e seta o corpo fisico dela
-                    DQEscalavel *escada=[[DQEscalavel alloc]initEscalavelComPontoInicial:pontoInicial ePontoFinal:pontoFinal eLargura:50.0f];
-                    
-                    [super escadaCategoria:escada];
-                    
-                    [self.backgroundAnterior addChild:escada];
-                }
-            }
-        }
-    }
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    
-    UITouch *toque=[touches anyObject];
-    CGPoint posToque=[toque locationInNode:self.backgroundAtual];
-    
-    //Pega o node de escada na posicao do toque
-    SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToque];
-    
-    //verifica para onde o jogador deve escalar 
-    if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
-        //Verifica se o Y é maior ou menor
-        
-        if (posToque.y > (self.jogador.position.y+20.0)) {
-            //Fazer jogador escalar - Subindo
-            [self.jogador escalarParaDirecao:@"C"];
-            
-        }else if (posToque.y < (self.jogador.position.y-20.0)){
-            //Fazer jogador escalar - Descendo
-            [self.jogador escalarParaDirecao:@"B"];
-        }
-        
-    }
-    
-    
 }
 @end
