@@ -370,7 +370,6 @@
             
             //se o jogador  parar  de colidir com o chao setamos que ele nao esta no chao
             [self.jogador setEstaNoChao:NO];
-            
         }
     }
     
