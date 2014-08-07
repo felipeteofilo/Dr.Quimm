@@ -25,16 +25,16 @@
         
         //inicia as variaveis de tamanho de texto
         self.tamanhoTextoComFoto = CGSizeMake(self.frame.size.width * 0.7, self.frame.size.height * 0.8);
-        self.tamanhoTextoSemFoto = CGSizeMake(self.frame.size.width * 0.8, self.frame.size.height * 0.8);
+        self.tamanhoTextoSemFoto = CGSizeMake(self.frame.size.width * 0.95, self.frame.size.height * 0.8);
 
         //inicia as variaveis de posicao de texto
         self.posicaoTextoComFoto = CGSizeMake(self.frame.size.width * 0.25, self.frame.size.height * 0.12);
-        self.posicaoTextoSemFoto = CGSizeMake(self.frame.size.width * 0.8, self.frame.size.height * 0.8);
+        self.posicaoTextoSemFoto = CGSizeMake(self.frame.size.width * 0.03, self.frame.size.height * 0.12);
         
         
         //VERIFICA SE TEM FOTO
         //se tem...
-        if(self.foto != nil){
+        if(![self.foto isEqual:@""]){
             //o tamamho do texto é o com foto
             self.tamanhoTexto = self.tamanhoTextoComFoto;
             self.posicaoTexto = self.posicaoTextoComFoto;
@@ -104,15 +104,13 @@
 //cria o texto e o adiciona
 -(void)criarTexto
 {
-    DQTexto *texto = [[DQTexto alloc]initTexto:self.texto espacoLimite:self.tamanhoTexto fonte:25];
+    NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", self.sujeito, self.texto];
+    DQTexto *texto = [[DQTexto alloc]initTexto:textoFormatado espacoLimite:self.tamanhoTexto fonte:25];
     
     [texto setPosition:CGPointMake(self.posicaoTexto.width + texto.frame.size.width/2, self.posicaoTexto.height + texto.frame.size.height/2)];
     
-    
     [texto mudaCorTexto:[UIColor whiteColor]];
     [self addChild:texto];
-    
-    
 }
 
 //...

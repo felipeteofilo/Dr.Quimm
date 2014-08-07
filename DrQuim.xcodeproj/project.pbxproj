@@ -108,7 +108,6 @@
 		CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */; };
 		CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48AD11992A11400588E79 /* DQCutsceneTela.m */; };
 		CDC48AD51992A18500588E79 /* DQCutsceneControlle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */; };
-		CDC48AD81992BF4F00588E79 /* DQTESTE.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48AD71992BF4F00588E79 /* DQTESTE.m */; };
 		CDE817F31933C790003516E7 /* DQJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE817F21933C790003516E7 /* DQJogador.m */; };
 /* End PBXBuildFile section */
 
@@ -263,8 +262,6 @@
 		CDC48AD11992A11400588E79 /* DQCutsceneTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneTela.m; sourceTree = "<group>"; };
 		CDC48AD31992A18500588E79 /* DQCutsceneControlle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneControlle.h; sourceTree = "<group>"; };
 		CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCutsceneControlle.m; sourceTree = "<group>"; };
-		CDC48AD61992BF4F00588E79 /* DQTESTE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTESTE.h; sourceTree = "<group>"; };
-		CDC48AD71992BF4F00588E79 /* DQTESTE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTESTE.m; sourceTree = "<group>"; };
 		CDE817F11933C790003516E7 /* DQJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJogador.h; sourceTree = "<group>"; };
 		CDE817F21933C790003516E7 /* DQJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJogador.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -608,8 +605,6 @@
 				CDC48AD11992A11400588E79 /* DQCutsceneTela.m */,
 				CDC48AD31992A18500588E79 /* DQCutsceneControlle.h */,
 				CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */,
-				CDC48AD61992BF4F00588E79 /* DQTESTE.h */,
-				CDC48AD71992BF4F00588E79 /* DQTESTE.m */,
 			);
 			name = "_temp novas classes";
 			sourceTree = "<group>";
@@ -800,7 +795,6 @@
 				C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
 				C54031E91989FE98003384AB /* DQOpcaoMenu.m in Sources */,
-				CDC48AD81992BF4F00588E79 /* DQTESTE.m in Sources */,
 				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
 				C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */,
