@@ -40,53 +40,6 @@
     [self.hudFase atualizarHud];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    
-    UITouch *toque = [touches anyObject];
-    CGPoint posToque = [toque locationInNode:self.backgroundAtual];
-    
-    //Pega o node de escada na posicao do toque
-    SKNode *nodeTocado = [self.backgroundAtual nodeAtPoint:posToque];
-    
-    //verifica para onde o jogador deve escalar
-    if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
-        //Verifica se o Y é maior ou menor
-        
-        if (posToque.y > (self.jogador.position.y + 20.0)) {
-            //Fazer jogador escalar - Subindo
-            [self.jogador escalarParaDirecao:@"C"];
-            
-        }else if (posToque.y < (self.jogador.position.y - 20.0)){
-            //Fazer jogador escalar - Descendo
-            [self.jogador escalarParaDirecao:@"B"];
-        }
-        
-    }
-    
-    //Se estiver falando em jogo...
-    else if(self.estaFalando){
-        if ([self.controleCutscenes trocarFala]) {
-            [self.controleCutscenes mostrarFalaNoJogo:self KeyDaFala:nil];
-            
-        }
-        else{
-            
-            self.estaFalando = NO;
-            self.cutsceneEstaRodando = NO;
-        }
-    }
-}
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesEnded:touches withEvent:event];
-    
-    //Ao parar o toque, pausa sua escalada se ainda estiver escalando
-    if ([self.jogador actionForKey:@"escalar"]) {
-        [self.jogador pausarEscalada];
-    }
-}
-
 //FAZER ESCADAS
 -(void)criarParteFase{
     [super criarParteFase];
