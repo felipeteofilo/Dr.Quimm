@@ -29,6 +29,7 @@
 		3CAC8435197A01FB000FB1A1 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8433197A01FB000FB1A1 /* Andando.atlas */; };
 		3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8434197A01FB000FB1A1 /* Pulando.atlas */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
+		75A040901993F73F0084D459 /* DQTesteFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A0408F1993F73F0084D459 /* DQTesteFala.m */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
 		94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA01933BA290024FB94 /* CoreGraphics.framework */; };
 		94080EA31933BA290024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
@@ -150,6 +151,8 @@
 		3CAC8434197A01FB000FB1A1 /* Pulando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Pulando.atlas; path = Animacoes/Pulando.atlas; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
+		75A0408E1993F73F0084D459 /* DQTesteFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTesteFala.h; sourceTree = "<group>"; };
+		75A0408F1993F73F0084D459 /* DQTesteFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTesteFala.m; sourceTree = "<group>"; };
 		94080E9B1933BA290024FB94 /* DrQuim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrQuim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94080E9E1933BA290024FB94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94080EA01933BA290024FB94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -605,6 +608,8 @@
 				CDC48AD11992A11400588E79 /* DQCutsceneTela.m */,
 				CDC48AD31992A18500588E79 /* DQCutsceneControlle.h */,
 				CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */,
+				75A0408E1993F73F0084D459 /* DQTesteFala.h */,
+				75A0408F1993F73F0084D459 /* DQTesteFala.m */,
 			);
 			name = "_temp novas classes";
 			sourceTree = "<group>";
@@ -787,6 +792,7 @@
 				C54031EB1989FE98003384AB /* DQTexto.m in Sources */,
 				C54031E31989FE98003384AB /* DQControleReceita.m in Sources */,
 				C54031E41989FE98003384AB /* DQMenu.m in Sources */,
+				75A040901993F73F0084D459 /* DQTesteFala.m in Sources */,
 				C54031E81989FE98003384AB /* DQMenuReceita.m in Sources */,
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */,
