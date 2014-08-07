@@ -12,7 +12,7 @@
 
 -(id)initCutScene:(int)cutSceneAtual Fase:(SKScene*)faseApresentar SizeScene:(CGSize)size{
     if (self=[super initWithSize:size]) {
-        self.controleCutScene=[[DQCutsceneControlle alloc]initCutscene:cutSceneAtual];
+        self.controleCutScene=[[DQCutsceneControlle alloc]initCutscene:cutSceneAtual TamanhoTela:self.frame.size];
         
         self.cutSceneAtual=cutSceneAtual;
         self.faseApresentar=faseApresentar;

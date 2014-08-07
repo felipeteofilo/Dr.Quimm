@@ -10,10 +10,11 @@
 
 @implementation DQCutsceneControlle
 
--(id)initCutscene:(int)cutSceneAtual{
+-(id)initCutscene:(int)cutSceneAtual TamanhoTela:(CGSize)_tamanho{
     if (self=[super init]) {
         self.cenasCutScene=[self cenasCutScene:cutSceneAtual];
         self.cenaAtual=0;
+        self.tamanhoTela=_tamanho;
     }
     return self;
 }
@@ -33,11 +34,11 @@
         //Verifica se tem fala para ser dita na cena
         NSString *testeSujeitoCena=[infoCena objectForKey:@"Sujeito"];
         if (![testeSujeitoCena length]==0) {
-//            DQFala *falaCena=[[DQFala alloc]initComDicionario:infoCena];
-//            
-//            [cenaRetorno addChild:falaCena];
-//            [falaCena setAnchorPoint:CGPointMake(0, 0)];
-//            [falaCena setPosition:CGPointMake(CGRectGetMinX(cenaRetorno.frame)+20, CGRectGetMinY(cenaRetorno.frame)+20)];
+            DQFala *falaCena=[[DQFala alloc]initComDicionario:infoCena eTamanho:self.tamanhoTela];
+            
+            [cenaRetorno addChild:falaCena];
+            [falaCena setAnchorPoint:CGPointMake(0, 0)];
+            [falaCena setPosition:CGPointMake(cenaRetorno.frame.size.width*0.1, CGRectGetMinY(cenaRetorno.frame)+20)];
         }
 
         [self atualizaCenaAtual];
