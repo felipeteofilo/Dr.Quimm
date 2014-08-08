@@ -14,6 +14,7 @@
 
 @property DQMissao *missao;
 @property int parteAtual;
+@property int proximaMissao;
 @property BOOL emMissao;
 @property SKScene *cena;
 
