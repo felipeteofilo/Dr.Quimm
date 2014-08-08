@@ -29,6 +29,9 @@
 		3CAC8435197A01FB000FB1A1 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8433197A01FB000FB1A1 /* Andando.atlas */; };
 		3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC8434197A01FB000FB1A1 /* Pulando.atlas */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
+		7560591019955F9C00BD455A /* DQMissao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560590F19955F9C00BD455A /* DQMissao.m */; };
+		7560591319955FC700BD455A /* DQMissaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560591219955FC700BD455A /* DQMissaoControle.m */; };
+		756059151995602500BD455A /* Missoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756059141995602500BD455A /* Missoes.plist */; };
 		75A040901993F73F0084D459 /* DQTesteFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A0408F1993F73F0084D459 /* DQTesteFala.m */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
 		94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA01933BA290024FB94 /* CoreGraphics.framework */; };
@@ -151,6 +154,11 @@
 		3CAC8434197A01FB000FB1A1 /* Pulando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Pulando.atlas; path = Animacoes/Pulando.atlas; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
+		7560590E19955F9C00BD455A /* DQMissao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMissao.h; sourceTree = "<group>"; };
+		7560590F19955F9C00BD455A /* DQMissao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissao.m; sourceTree = "<group>"; };
+		7560591119955FC700BD455A /* DQMissaoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMissaoControle.h; sourceTree = "<group>"; };
+		7560591219955FC700BD455A /* DQMissaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissaoControle.m; sourceTree = "<group>"; };
+		756059141995602500BD455A /* Missoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Missoes.plist; sourceTree = "<group>"; };
 		75A0408E1993F73F0084D459 /* DQTesteFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTesteFala.h; sourceTree = "<group>"; };
 		75A0408F1993F73F0084D459 /* DQTesteFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTesteFala.m; sourceTree = "<group>"; };
 		94080E9B1933BA290024FB94 /* DrQuim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrQuim.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -610,6 +618,11 @@
 				CDC48AD41992A18500588E79 /* DQCutsceneControlle.m */,
 				75A0408E1993F73F0084D459 /* DQTesteFala.h */,
 				75A0408F1993F73F0084D459 /* DQTesteFala.m */,
+				7560590E19955F9C00BD455A /* DQMissao.h */,
+				7560590F19955F9C00BD455A /* DQMissao.m */,
+				7560591119955FC700BD455A /* DQMissaoControle.h */,
+				7560591219955FC700BD455A /* DQMissaoControle.m */,
+				756059141995602500BD455A /* Missoes.plist */,
 			);
 			name = "_temp novas classes";
 			sourceTree = "<group>";
@@ -709,6 +722,7 @@
 				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				C54031BA1989FDB1003384AB /* rostoChefeRanzinza.png in Resources */,
+				756059151995602500BD455A /* Missoes.plist in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
@@ -768,6 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7560591019955F9C00BD455A /* DQMissao.m in Sources */,
 				C57F2A6A1986EE7F00C268BE /* DQMissoesJogador.m in Sources */,
 				C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */,
 				23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */,
@@ -779,6 +794,7 @@
 				CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */,
 				CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
+				7560591319955FC700BD455A /* DQMissaoControle.m in Sources */,
 				C54031EF1989FEE7003384AB /* DQItem.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
