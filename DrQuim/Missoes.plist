@@ -86,13 +86,13 @@
 			</dict>
 			<dict>
 				<key>Descricao</key>
-				<string></string>
+				<string>O Caçador quer uma prova de que foi a mãe quem o mandou pegar a carne. Como convencê-lo?</string>
 				<key>NPCRequisito</key>
-				<string></string>
+				<string>Maedetodos</string>
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<string>Docinho</string>
 				<key>ItemEntregue</key>
 				<string></string>
 				<key>Fome</key>
@@ -104,15 +104,15 @@
 			</dict>
 			<dict>
 				<key>Descricao</key>
-				<string></string>
+				<string>Mãe de todos tem uma ideia para provar ao Caçador que foi ela quem o mandou, mas você precisa falar com o Chefe primeiro</string>
 				<key>NPCRequisito</key>
-				<string></string>
+				<string>Chefe</string>
 				<key>ItemRequisito</key>
-				<string></string>
+				<string>Docinho</string>
 				<key>ItemRecebido</key>
 				<string></string>
 				<key>ItemEntregue</key>
-				<string></string>
+				<string>Docinho</string>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -122,15 +122,33 @@
 			</dict>
 			<dict>
 				<key>Descricao</key>
-				<string></string>
+				<string>O chefe irá te ajudar, mas primeiro, você deve pegar o remédio dele com o curandeiro.</string>
 				<key>NPCRequisito</key>
-				<string></string>
+				<string>Curandeiro</string>
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<string>Remedio</string>
 				<key>ItemEntregue</key>
 				<string></string>
+				<key>Fome</key>
+				<integer>100</integer>
+				<key>Sede</key>
+				<integer>100</integer>
+				<key>Vida</key>
+				<integer>100</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Agora que tem o remédio, você deve entregá-lo ao chefe da vila.</string>
+				<key>NPCRequisito</key>
+				<string>Chefe</string>
+				<key>ItemRequisito</key>
+				<string>Remedio</string>
+				<key>ItemRecebido</key>
+				<string>AguaMagica</string>
+				<key>ItemEntregue</key>
+				<string>Remedio</string>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -140,15 +158,15 @@
 			</dict>
 			<dict>
 				<key>Descricao</key>
-				<string></string>
+				<string>Agora que finalmente conseguiu a água mágica, você tem como provar ao caçador que foi a mãe de todos que lhe enviou</string>
 				<key>NPCRequisito</key>
-				<string></string>
+				<string>Cacador</string>
 				<key>ItemRequisito</key>
-				<string></string>
+				<string>AguaMagica</string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<string>Carne</string>
 				<key>ItemEntregue</key>
-				<string></string>
+				<string>AguaMagica</string>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -158,33 +176,15 @@
 			</dict>
 			<dict>
 				<key>Descricao</key>
-				<string></string>
+				<string>Enfim, a caça de hoje! Entregue para mãe de todos e elá poderá fazer o jantar</string>
 				<key>NPCRequisito</key>
-				<string></string>
+				<string>Maedetodos</string>
 				<key>ItemRequisito</key>
-				<string></string>
+				<string>Carne</string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<string>Lança</string>
 				<key>ItemEntregue</key>
-				<string></string>
-				<key>Fome</key>
-				<integer>0</integer>
-				<key>Sede</key>
-				<integer>0</integer>
-				<key>Vida</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>Descricao</key>
-				<string></string>
-				<key>NPCRequisito</key>
-				<string></string>
-				<key>ItemRequisito</key>
-				<string></string>
-				<key>ItemRecebido</key>
-				<string></string>
-				<key>ItemEntregue</key>
-				<string></string>
+				<string>Carne</string>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
