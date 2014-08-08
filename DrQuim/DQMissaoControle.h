@@ -17,13 +17,13 @@
 @property BOOL emMissao;
 @property SKScene *cena;
 
--(id)initCena:(SKScene*)cena;
+//Método INIT, Inicia com a cena em que a missão está acontecendo
+-(id)initCena:(SKScene *)cena;
 
--(BOOL)iniciarNovaMissaoNPC:(NSString*)NPC;
+//Méotodo chamado quando o jogador não está em uma missão - avalia se uma irá começar
+-(BOOL)iniciarNovaMissaoNPC:(NSString *)NPC;
 
--(BOOL)passarParteMissao:(NSString*)NPC item:(NSString*)item;
--(void)entregarItem;
--(void)receberItem;
--(void)receberEstados;
--(void)fimDaMissao;
+//Método chamado quando o jogador está em uma missão - avalia se irá passar de parte ou acabar
+-(BOOL)passarParteMissao:(NSString *)NPC item:(NSString*)item;
+
 @end
