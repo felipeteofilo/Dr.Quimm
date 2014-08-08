@@ -18,6 +18,15 @@
 //funcao para aumentar a fome e a sede em relacao ao tempo
 -(void)atualizarSituacaoJogador;
 
+//Metodo que altera a fome do jogador
+-(void)alterarFomeJogador: (int)fome;
+
+//Metodo que altera a fome do jogador
+-(void)alterarSedeJogador: (int)sede;
+
+//Metodo que altera a fome do jogador
+-(void)alterarVidaJogador: (int)vida;
+
 //Singleton do controlador de vida
 +(id)sharedControleVida;
 

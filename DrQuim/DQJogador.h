@@ -53,6 +53,15 @@
 //Perder Vida
 -(void)perderVida:(int)perda;
 
+//Diminuir fome do personagem
+-(void)diminuirFome:(int)subtracao;
+
+//Diminuir sede do personagem
+-(void)diminuirSede:(int)subtracao;
+
+//Ganha Vida
+-(void)aumentarVida:(int)aumento;
+
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;
 

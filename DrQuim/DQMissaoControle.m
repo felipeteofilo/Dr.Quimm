@@ -81,14 +81,32 @@
     
 }
 
-//TODO - COMUNICAÇÃO COM OS ESTADOS DO JOGADOR
 //Método chamado quando a missão descreve que os estados do jogador devem ser alterados
 -(void)alterarEstados{
     
+    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.missao.arrayPartes objectAtIndex:self.parteAtual]];
     
-    NSLog(@"Alterando estados |Fome:%i Sede:%i Vida:%i |", 0, 0, 0);
+    //Ver se muda os estados
+    //fome
+    int fome = [[dicionario objectForKey:@"Fome"] intValue];
+    if(fome != 0){
+        [[DQVidaControle sharedControleVida] alterarFomeJogador:fome];
+    }
+    
+    //sede
+    int sede = [[dicionario objectForKey:@"Sede"] intValue];
+    if(sede != 0){
+        [[DQVidaControle sharedControleVida] alterarSedeJogador:sede];
+    }
+    
+    //vida
+    int vida = [[dicionario objectForKey:@"Vida"] intValue];
+    if(vida != 0){
+        [[DQVidaControle sharedControleVida] alterarVidaJogador:vida];
+    }
 }
 
+//TODO - COLOCAR MENSSAGENS
 //método chamado quando a missão chega ao fim
 -(void)fimDaMissao{
     self.emMissao = NO;

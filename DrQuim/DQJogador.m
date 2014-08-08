@@ -250,22 +250,32 @@
     
 }
 
+
+//Métodos de mudança de estado
 -(void)aumentarFome:(int)aumento{
-    
     [self setFome:(self.fome - aumento)];
-    
 }
+
 -(void)aumentarSede:(int)aumento{
-    
     [self setSede:(self.sede - aumento)];
-    
+}
+
+-(void)diminuirFome:(int)subtracao{
+    [self setFome:(self.fome + subtracao)];
+}
+-(void)diminuirSede:(int)subtracao{
+    [self setSede:(self.sede + subtracao)];
 }
 
 -(void)perderVida:(int)perda{
-    
     [self setVida:(self.vida - perda)];
-    
 }
+
+-(void)aumentarVida:(int)aumento{
+    [self setVida:(self.vida + aumento)];
+}
+
+
 
 //Método para parar de andar
 -(void)pararAndar{

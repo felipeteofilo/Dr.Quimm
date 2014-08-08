@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <Foundation/Foundation.h>
 #import "DQMissao.h"
+#import "DQVidaControle.h"
 
 @interface DQMissaoControle : NSObject
 

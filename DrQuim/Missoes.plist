@@ -132,9 +132,9 @@
 				<key>ItemEntregue</key>
 				<string></string>
 				<key>Fome</key>
-				<integer>100</integer>
+				<integer>-100</integer>
 				<key>Sede</key>
-				<integer>100</integer>
+				<integer>-100</integer>
 				<key>Vida</key>
 				<integer>100</integer>
 			</dict>
