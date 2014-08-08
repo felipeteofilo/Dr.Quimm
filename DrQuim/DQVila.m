@@ -15,7 +15,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:2];
-        [super iniciarFase];
+        [self iniciarFase];
     }
     return self;
 }
@@ -33,6 +33,7 @@
     [self.missao iniciarMissao:1];
     
     [self configuraBotaoMenu];
+    
     NSLog(@"Missao: %i| Parte: %i", self.missao.missaoAtual, self.missao.parteDaMissao);
 }
 

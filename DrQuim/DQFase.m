@@ -217,11 +217,6 @@
                     [self.backgroundAnterior  addChild:coberturaBackground];
                 }
                 
-                //Adiciona plataformas
-//                SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
-//                [plataforma setName:NomeNodePlataformas];
-//                
-//                [self adicionarPlataforma:plataforma noNode:self.backgroundAnterior];
                 [self criarPlataformaParte:self.parteFaseAtual-1 noBackground:self.backgroundAnterior];
                 [self.mundo addChild:self.backgroundAnterior];
                 
@@ -535,14 +530,8 @@
     
     self.controladorDaVida = [DQVidaControle sharedControleVida];
     
-    self.backgroundAtual =[SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,self.parteFaseAtual]];
-    [self.backgroundAtual setAnchorPoint:CGPointMake(0, 0)];
-    [self.backgroundAtual setPosition:CGPointMake(0,0)];
-    [self.backgroundAtual setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:self.parteFaseAtual daFase:self.faseAtual]];
-    self.backgroundAtual.physicsBody.dynamic = NO;
-    
-    [self chaoCategoria:self.backgroundAtual];
-    
+    self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
+
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:self.backgroundAtual];
     
@@ -587,9 +576,7 @@
 
 -(void)adicionarEscalavelnoBackhround:(SKSpriteNode*)background Parte:(int)parte{
     //Adiciona escada caso tenha
-    //NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:parte];
-
-    NSArray *arrayEscalaveis=[[[self.configFase objectForKey:@"Partes"]objectAtIndex:parte]objectForKey:@"Escalaveis"];
+    NSArray *arrayEscalaveis=[[[self.configFase objectForKey:@"Partes"]objectAtIndex:parte-1]objectForKey:@"Escalaveis"];
     
     for (int i=0;i<[arrayEscalaveis count];i++) {
         
