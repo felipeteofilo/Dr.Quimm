@@ -10,4 +10,31 @@
 
 @implementation DQMissaoControle
 
+-(id)initCena:(SKScene*)cenaRecebida{
+    if (self=[super init]) {
+        self.cena=cenaRecebida;
+    }
+    return self;
+}
+
+-(BOOL)iniciarNovaMissaoNPC:(NSString*)NPC{
+    return NO;
+}
+
+-(BOOL)passarParteMissao:(NSString*)NPC item:(NSString*)item{
+    return NO;
+}
+
+-(void)entregarItem{
+    
+}
+-(void)receberItem{
+    
+}
+-(void)receberEstados{
+    
+}
+-(void)fimDaMissao{
+    
+}
 @end
