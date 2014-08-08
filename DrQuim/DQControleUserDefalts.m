@@ -41,7 +41,7 @@
 }
 
 +(int)faseAtual{
-   return [[self userDefalts]integerForKey:@"FaseAtual"];
+    return [[self userDefalts]integerForKey:@"FaseAtual"];
 }
 
 +(int)parteFaseAtual{
@@ -69,8 +69,8 @@
 }
 +(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede{
     [[self userDefalts]setFloat:vida forKey:@"Vida"];
-        [[self userDefalts]setFloat:fome forKey:@"Fome"];
-        [[self userDefalts]setFloat:sede forKey:@"Sede"];
+    [[self userDefalts]setFloat:fome forKey:@"Fome"];
+    [[self userDefalts]setFloat:sede forKey:@"Sede"];
 }
 +(void)setFaseAtual:(int)fase{
     [[self userDefalts]setInteger:fase forKey:@"FaseAtual"];
