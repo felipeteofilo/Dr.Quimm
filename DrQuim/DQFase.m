@@ -573,4 +573,5 @@
 -(void)pegarConfigFase:(int)fase{
     self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
 }
+
 @end
