@@ -234,6 +234,13 @@
     UITouch *toque=[touches anyObject];
     CGPoint posicaoToque=[toque locationInView:self.view];
     
+    //Verifica se o Menu esata aparecendo se estiver remove eles
+    if ([self childNodeWithName:@"MENU"]) {
+        [[self childNodeWithName:@"MENU"]removeFromParent];
+        [self setPaused:NO];
+        return;
+    }
+    
     //Se estiver na direita
     
     if(posicaoToque.x > CGRectGetMidX(self.frame)){
@@ -322,31 +329,6 @@
     //Ao parar o toque, pausa sua escalada se ainda estiver escalando
     if ([self.jogador actionForKey:@"escalar"]) {
         [self.jogador pausarEscalada];
-    }
-    
-    CGPoint posicaoToqueNode=[[touches anyObject]locationInNode:self];
-    NSArray *arrayNodes=[self nodesAtPoint:posicaoToqueNode];
-    
-    if ([self childNodeWithName:@"MENU"]) {
-        [[self childNodeWithName:@"MENU"]removeFromParent];
-        //[self.mundo setPaused:NO];
-    }
-    
-    for (SKSpriteNode *nodeTocado in arrayNodes) {
-        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
-            if (!self.menu) {
-                self.menu=[[DQMenu alloc]initMenu];
-                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
-                
-            }
-            
-            if (![self childNodeWithName:@"MENU"]) {
-                [self addChild:self.menu];
-                //[self.mundo setPaused:YES];
-            }
-            
-            break;
-        }
     }
 }
 
@@ -570,7 +552,6 @@
     [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.hudFase.position.y-150)];
     
     [self.botaoMenu setName:@"botaoMenu"];
-    //[self.botaoMenu setScale:0.9];
     [self addChild:self.botaoMenu];
 }
 

@@ -57,10 +57,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //CGPoint que guarda onde a pessoa pressionou e assim descobrir se o personagem vai para a direita ou esquerda
 @property CGPoint pontoDeToqueAndar;
 
-//Propriedade para o menu
-@property SKSpriteNode *botaoMenu;
-@property DQMenu *menu;
-
 //HUD com informações
 @property DQHudController *hudFase;
 
