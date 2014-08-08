@@ -547,14 +547,6 @@
     }
 }
 
--(void)configuraBotaoMenu{
-    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
-    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.hudFase.position.y-150)];
-    
-    [self.botaoMenu setName:@"botaoMenu"];
-    [self addChild:self.botaoMenu];
-}
-
 -(void)adicionarEscalavelnoBackhround:(SKSpriteNode*)background Parte:(int)parte{
     //Adiciona escada caso tenha
     NSArray *arrayEscalaveis=[[[self.configFase objectForKey:@"Partes"]objectAtIndex:parte-1]objectForKey:@"Escalaveis"];

@@ -70,6 +70,5 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 -(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
 
 -(void)escadaCategoria :(SKNode*)node;
--(void)configuraBotaoMenu;
 
 @end

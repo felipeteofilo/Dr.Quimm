@@ -24,13 +24,14 @@
         [self.spriteNode setSize:CGSizeMake(90, 160)];
         
         [self.spriteNode setZPosition:10.0f];
+        
         //Deixar o corpo fisico mais prox ao sprite
-        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.spriteNode.size.width, self.spriteNode.size.height-20)];
+        [self configuraCorpoFisico];
 
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
         self.physicsBody.allowsRotation = NO;
-        self.physicsBody.density = 0.6f;
+        self.physicsBody.density = 1.5f;
         self.physicsBody.restitution = 0;
         
         [self addChild:self.spriteNode];
@@ -228,6 +229,25 @@
         //anda para direcao
         [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
     }
+}
+
+-(void)configuraCorpoFisico{
+    CGMutablePathRef path=CGPathCreateMutable();
+    
+    CGPoint primeiroPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPathMoveToPoint(path, NULL, primeiroPonto.x,primeiroPonto.y);
+    
+    CGPoint segundoPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, segundoPonto.x, segundoPonto.y);
+    
+    CGPoint terceiroPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMaxY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, terceiroPonto.x, terceiroPonto.y);
+    
+    CGPoint quartoPonto=CGPointMake(CGRectGetMaxX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, quartoPonto.x, quartoPonto.y);
+    
+    [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:path]];
+    
 }
 
 -(void)aumentarFome:(int)aumento{
