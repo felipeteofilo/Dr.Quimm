@@ -12,7 +12,7 @@
 
 -(id)initComNome:(NSString *)nome
 {
-    self = [super self];
+    self = [super init];
     if(self){
         self.nome = nome;
         
