@@ -64,6 +64,9 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //HUD com informações
 @property DQHudController *hudFase;
 
+//Propriedade que será usada para guardar as configs da fase e nao ficar travando ao ler o plist
+@property NSDictionary *configFase;
+
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(void)configuracoesFase:(int)faseAtual;

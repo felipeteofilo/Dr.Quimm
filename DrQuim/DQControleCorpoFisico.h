@@ -14,5 +14,7 @@
 
 
 +(SKPhysicsBody*)criaCorpoFisicoChaoParte: (int)_parte daFase:(int)_fase;
++(SKPhysicsBody*)criaCorpoFisicoChao:(NSArray*)arrayPosicoes;
 +(SKNode*)criarPlataformaParte: (int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela;
++(SKNode*)criarPlataformaParte:(int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela ArrayPlataforma:(NSArray*)plataformasConfig;
 @end

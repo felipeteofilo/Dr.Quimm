@@ -25,6 +25,7 @@
         return [NSArray arrayWithContentsOfFile:pathArquivoPlist];
     }
 }
+
 +(NSArray*)configParteFase:(int)_fase{
 
     //Verifica se a fase procurada esta dentro do limites do array
@@ -80,6 +81,7 @@
     
     return dicionarioARetornar;
 }
+
 +(NSDictionary*)configFase:(int)fase{
     
     if ((fase -1 <0 )|| (fase -1 >[[self arquivoPlist]count])) {

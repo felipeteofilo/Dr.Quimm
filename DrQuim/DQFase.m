@@ -145,8 +145,9 @@
     //posiciona após a cena
     [backConfigurar setPosition:posicao];
     
-    //Corpo fisico
-    [backConfigurar setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:parte daFase:self.faseAtual]];
+    NSArray *arrayPosicoesChao=[[self infoParteFase:parte]objectForKey:@"CorpoFisicoChao"];
+    
+    [backConfigurar setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChao:arrayPosicoesChao]];
     
     //Configura a categoria do chao do prox Back
     [self chaoCategoria:backConfigurar];
@@ -156,7 +157,15 @@
 
 
 
-
+-(void)criarPlataformaParte:(int)parte noBackground:(SKSpriteNode*)background{
+    NSArray *arrayPlataformas=[[self infoParteFase:parte]objectForKey:@"Plataformas"];
+    
+    SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:parte daFase:self.faseAtual CGFrameTela:self.frame ArrayPlataforma:arrayPlataformas];
+    
+    [plataforma setName:NomeNodePlataformas];
+    
+    [self adicionarPlataforma:plataforma noNode:background];
+}
 
 -(void)criarParteFase{
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMidX(self.frame))){
@@ -179,12 +188,9 @@
                 }
                 
                 //Cria Corpo Fisico para plataformas
-                SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual+1 daFase:self.faseAtual CGFrameTela:self.frame];
-                [plataforma setName:NomeNodePlataformas];
                 
-                [self adicionarPlataforma:plataforma noNode:self.backgroundFuturo];
                 [self.mundo addChild:self.backgroundFuturo];
-                
+                [self criarPlataformaParte:self.parteFaseAtual+1 noBackground:self.backgroundFuturo];
                 
                 if (![self childNodeWithName:nomeEscalavel]) {
                     [self adicionarEscalavelnoBackhround:self.backgroundFuturo Parte:self.parteFaseAtual+1];
@@ -212,10 +218,11 @@
                 }
                 
                 //Adiciona plataformas
-                SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
-                [plataforma setName:NomeNodePlataformas];
-                
-                [self adicionarPlataforma:plataforma noNode:self.backgroundAnterior];
+//                SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual-1 daFase:self.faseAtual CGFrameTela:self.frame];
+//                [plataforma setName:NomeNodePlataformas];
+//                
+//                [self adicionarPlataforma:plataforma noNode:self.backgroundAnterior];
+                [self criarPlataformaParte:self.parteFaseAtual-1 noBackground:self.backgroundAnterior];
                 [self.mundo addChild:self.backgroundAnterior];
                 
                 if (![self childNodeWithName:nomeEscalavel]) {
@@ -516,6 +523,7 @@
     self.faseAtual=faseAtual;
     self.parteFaseAtual=1;
     self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
+    [self pegarConfigFase:self.faseAtual];
 }
 
 -(void)iniciarFase{
@@ -552,13 +560,6 @@
     [self configuraFisicaMundo];
 }
 
-//Metodo que inicia a cena
--(id)initWithSize:(CGSize)size {
-    if (self = [super initWithSize:size]) {
-        
-    }
-    return self;
-}
 -(void)desativaPlataformas{
     //Se tiver um node com plataformas
     if ([self.backgroundAtual childNodeWithName:NomeNodePlataformas]) {
@@ -586,7 +587,9 @@
 
 -(void)adicionarEscalavelnoBackhround:(SKSpriteNode*)background Parte:(int)parte{
     //Adiciona escada caso tenha
-    NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:parte];
+    //NSArray *arrayEscalaveis=[DQConfiguracaoFase escalavelFase:self.faseAtual Parte:parte];
+
+    NSArray *arrayEscalaveis=[[[self.configFase objectForKey:@"Partes"]objectAtIndex:parte]objectForKey:@"Escalaveis"];
     
     for (int i=0;i<[arrayEscalaveis count];i++) {
         
@@ -603,4 +606,11 @@
     }
 }
 
+-(NSDictionary*)infoParteFase:(int)parte{
+    return [[self.configFase objectForKey:@"Partes"]objectAtIndex:parte-1];
+}
+
+-(void)pegarConfigFase:(int)fase{
+    self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
+}
 @end
