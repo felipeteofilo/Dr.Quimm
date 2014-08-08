@@ -10,4 +10,16 @@
 
 @interface DQMissao : NSObject
 
+@property NSString *nome;
+@property NSString *disparador;
+@property NSString *recompensa;
+@property int respeito;
+@property NSArray *arrayPartes;
+@property int quantidadeDePartes;
+@property NSString *ID;
+
+-(id)initMissao :(int)missao;
+-(Boolean)podePassarComNPC :(NSString*)nomeNPC Item:(NSString*)item;
+-(Boolean)podeIniciarComNPC :(NSString*)nomeNPC;
+
 @end
