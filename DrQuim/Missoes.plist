@@ -8,7 +8,7 @@
 		<key>Recompensa</key>
 		<string></string>
 		<key>Disparador</key>
-		<integer>0</integer>
+		<string>0</string>
 		<key>Respeito</key>
 		<integer>0</integer>
 		<key>ID</key>
@@ -185,6 +185,129 @@
 				<string>Lança</string>
 				<key>ItemEntregue</key>
 				<string>Carne</string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Nome</key>
+		<string>Missão 02 - Recuperando a maleta</string>
+		<key>Recompensa</key>
+		<string></string>
+		<key>Disparador</key>
+		<string>Quimm</string>
+		<key>Respeito</key>
+		<integer>10</integer>
+		<key>ID</key>
+		<string>Missao02</string>
+		<key>Partes</key>
+		<array>
+			<dict>
+				<key>Descricao</key>
+				<string>Fale com o Dr. Quimm, ele estava chamando por você.</string>
+				<key>NPCRequisito</key>
+				<string>Quimm</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<string>ContadorGeiger</string>
+				<key>ItemEntregue</key>
+				<string></string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Peça para Caçador devolver a mala do Dr. Quimm.</string>
+				<key>NPCRequisito</key>
+				<string>Cacador</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<string></string>
+				<key>ItemEntregue</key>
+				<string></string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Pegar o animal descrito pelo Caçador</string>
+				<key>NPCRequisito</key>
+				<string>Animal</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<string></string>
+				<key>ItemEntregue</key>
+				<string></string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Pergunte ao Caçador como ele faz para capturar a criatura.</string>
+				<key>NPCRequisito</key>
+				<string>Cacador</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<string></string>
+				<key>ItemEntregue</key>
+				<string></string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Pergunte as pessoas da vila se alguém conhece a técnica.</string>
+				<key>NPCRequisito</key>
+				<string>Maedetodos</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<string>MaletaDoDrQuimm</string>
+				<key>ItemEntregue</key>
+				<string></string>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Por fim, entregue a maleta ao Dr.Quimm</string>
+				<key>NPCRequisito</key>
+				<string>Quimm</string>
+				<key>ItemRequisito</key>
+				<string>MaletaDoDrQuimm</string>
+				<key>ItemRecebido</key>
+				<string></string>
+				<key>ItemEntregue</key>
+				<string>MaletaDoDrQuimm</string>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
