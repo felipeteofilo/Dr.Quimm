@@ -63,6 +63,8 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //Propriedade que será usada para guardar as configs da fase e nao ficar travando ao ler o plist
 @property NSDictionary *configFase;
 
+@property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(void)configuracoesFase:(int)faseAtual;

@@ -82,6 +82,8 @@
             self.backgroundAnterior=nil;
         }
     }
+    
+    [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 
 -(void)removerNodeBackground:(SKNode*)nodeRemover{
@@ -425,6 +427,14 @@
     
     [self.controladorDaVida atualizarSituacaoJogador];
     
+        CFTimeInterval ultimoUpdate = currentTime - self.lastUpdateTimeInterval;
+
+        if (ultimoUpdate > 5) { // more than a second since last update
+            self.lastUpdateTimeInterval = currentTime;
+            
+            //A cada 5 segundos salva os status do jogados
+            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede]];
+        }
 }
 
 - (void)didSimulatePhysics{
@@ -501,6 +511,10 @@
     self.parteFaseAtual=1;
     self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
     [self pegarConfigFase:self.faseAtual];
+    
+    //A cada vez que iniciar a fase salva a fase que o jogador está
+    [DQControleUserDefalts setFaseAtual:self.faseAtual];
+    [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 
 -(void)iniciarFase{
@@ -529,6 +543,7 @@
     
     [self criaJogador];
     [self configuraFisicaMundo];
+    
 }
 
 -(void)desativaPlataformas{
@@ -573,5 +588,6 @@
 -(void)pegarConfigFase:(int)fase{
     self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
 }
+
 
 @end

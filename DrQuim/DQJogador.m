@@ -336,8 +336,4 @@
 -(void)interagir{
     
 }
-
-
-
-
 @end

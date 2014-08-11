@@ -82,6 +82,8 @@
 		C54031EB1989FE98003384AB /* DQTexto.m in Sources */ = {isa = PBXBuildFile; fileRef = C54031E01989FE98003384AB /* DQTexto.m */; };
 		C54031EF1989FEE7003384AB /* DQItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C54031EE1989FEE7003384AB /* DQItem.m */; };
 		C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */ = {isa = PBXBuildFile; fileRef = C54031F11989FF4A003384AB /* DQFlorestaParte2.m */; };
+		C543E13219985F3400C90F19 /* DQMenuInicial.m in Sources */ = {isa = PBXBuildFile; fileRef = C543E13119985F3400C90F19 /* DQMenuInicial.m */; };
+		C543E1341998600A00C90F19 /* IniciarJogo.png in Resources */ = {isa = PBXBuildFile; fileRef = C543E1331998600A00C90F19 /* IniciarJogo.png */; };
 		C54B79B31971CC3D00366512 /* DQVila.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79B21971CC3D00366512 /* DQVila.m */; };
 		C54B79C71972440400366512 /* DQEscalavel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79C61972440400366512 /* DQEscalavel.m */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
@@ -232,6 +234,9 @@
 		C54031EE1989FEE7003384AB /* DQItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQItem.m; sourceTree = "<group>"; };
 		C54031F01989FF4A003384AB /* DQFlorestaParte2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte2.h; sourceTree = "<group>"; };
 		C54031F11989FF4A003384AB /* DQFlorestaParte2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte2.m; sourceTree = "<group>"; };
+		C543E13019985F3400C90F19 /* DQMenuInicial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMenuInicial.h; sourceTree = "<group>"; };
+		C543E13119985F3400C90F19 /* DQMenuInicial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMenuInicial.m; sourceTree = "<group>"; };
+		C543E1331998600A00C90F19 /* IniciarJogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IniciarJogo.png; sourceTree = "<group>"; };
 		C54B79B11971CC3D00366512 /* DQVila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQVila.h; sourceTree = "<group>"; };
 		C54B79B21971CC3D00366512 /* DQVila.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVila.m; sourceTree = "<group>"; };
 		C54B79C51972440400366512 /* DQEscalavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQEscalavel.h; sourceTree = "<group>"; };
@@ -473,6 +478,7 @@
 				C5E1F416198B223800F7A320 /* Menu.atlas */,
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
 				9433F5D71937B4BB00E55E73 /* Personagens */,
+				C543E1331998600A00C90F19 /* IniciarJogo.png */,
 				C5B7FBDE19762A1A00C2CAFC /* BalaoAlerta.png */,
 				23BFADBC1966E4FB00691C04 /* setinhas.png */,
 				23BFA4A9196A3CC700AD5F0C /* icon.png */,
@@ -601,6 +607,8 @@
 				C56A9D81196E252C00DD2347 /* DQFase.m */,
 				C54B79B11971CC3D00366512 /* DQVila.h */,
 				C54B79B21971CC3D00366512 /* DQVila.m */,
+				C543E13019985F3400C90F19 /* DQMenuInicial.h */,
+				C543E13119985F3400C90F19 /* DQMenuInicial.m */,
 			);
 			name = SKScenes;
 			sourceTree = "<group>";
@@ -737,6 +745,7 @@
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
 				3CAC84311979FAD5000FB1A1 /* Parado.atlas in Resources */,
 				C5B7FBDA1975F24100C2CAFC /* tutorialPular.atlas in Resources */,
+				C543E1341998600A00C90F19 /* IniciarJogo.png in Resources */,
 				3CAC84281979F63D000FB1A1 /* Escalando.atlas in Resources */,
 				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
 				9488197319901AE200609A0F /* rostoCientista.png in Resources */,
@@ -813,6 +822,7 @@
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */,
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
+				C543E13219985F3400C90F19 /* DQMenuInicial.m in Sources */,
 				C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */,
 				C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
