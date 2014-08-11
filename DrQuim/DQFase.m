@@ -427,14 +427,14 @@
     
     [self.controladorDaVida atualizarSituacaoJogador];
     
-        CFTimeInterval ultimoUpdate = currentTime - self.lastUpdateTimeInterval;
-
-        if (ultimoUpdate > 5) { // more than a second since last update
-            self.lastUpdateTimeInterval = currentTime;
-            
-            //A cada 5 segundos salva os status do jogados
-            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede]];
-        }
+    CFTimeInterval ultimoUpdate = currentTime - self.lastUpdateTimeInterval;
+    
+    if (ultimoUpdate > 5) { // more than a second since last update
+        self.lastUpdateTimeInterval = currentTime;
+        
+        //A cada 5 segundos salva os status do jogados
+        //[DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:[self.jogador respeito]];
+    }
 }
 
 - (void)didSimulatePhysics{
@@ -517,8 +517,17 @@
     [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 
--(void)iniciarFase{
+-(id)initFase:(int)fase Size:(CGSize)size{
     
+    if (self=[super initWithSize:size ]) {
+        
+        [self configuracoesFase:fase];
+        [self iniciarFase];
+    }
+    return self;
+}
+
+-(void)iniciarFase{
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
     
@@ -527,7 +536,7 @@
     self.controladorDaVida = [DQVidaControle sharedControleVida];
     
     self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
-
+    
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:self.backgroundAtual];
     
@@ -538,12 +547,10 @@
     SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
     
     [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
-    
     [self plataformaCategoria:plataforma];
     
     [self criaJogador];
     [self configuraFisicaMundo];
-    
 }
 
 -(void)desativaPlataformas{

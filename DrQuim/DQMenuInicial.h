@@ -9,6 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQConfigMenu.h"
 #import "DQControleUserDefalts.h"
+#import "DQCutsceneTela.h"
+#import "DQFase.h"
+#import "DQVila.h"
+#import "DQFlorestaParte1.h"
 
 @interface DQMenuInicial : SKScene
 

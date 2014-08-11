@@ -20,7 +20,6 @@
         self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:1];
         
         [self configuracoesFase:1];
-        //[self.controleCutscenes iniciarCutscene:self.scene Seletor:nil];
         
         [self iniciarFase];
     }

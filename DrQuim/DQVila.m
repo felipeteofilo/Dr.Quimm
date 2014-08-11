@@ -22,6 +22,7 @@
 
 -(void)iniciarFase{
     [super iniciarFase];
+    
     [self adicionaNPC];
     
     self.hudFase = [[DQHudController alloc]initHud];
@@ -31,8 +32,6 @@
     
     //TEMPORÁRIO - inicia ele direto na missão 01
     [self.missao iniciarMissao:1];
-    
-   // [self configuraBotaoMenu];
 }
 
 

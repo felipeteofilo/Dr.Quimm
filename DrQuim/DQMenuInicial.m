@@ -17,7 +17,6 @@
         
         
         [self addChild:botaIniciar];
-        
     }
     return self;
 }
@@ -56,6 +55,33 @@
 }
 
 -(void)iniciarJogo{
-    NSLog(@"...");
+    [DQControleUserDefalts setFaseAtual:1];
+    
+    int ultimaFaseJogador=[DQControleUserDefalts faseAtual];
+    
+    DQCutsceneTela *cutscene;
+    DQFase *faseIniciar;
+    
+    switch (ultimaFaseJogador) {
+        case 1:
+            faseIniciar=[[DQFlorestaParte1 alloc]initWithSize:self.frame.size];
+            cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
+            
+            break;
+            
+        case 2:
+            faseIniciar=[[DQVila alloc]initWithSize:self.frame.size];
+            cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
+            
+            break;
+            
+        default:
+            faseIniciar=[[DQFase alloc]initFase:ultimaFaseJogador Size:self.frame.size];
+            cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador Fase:faseIniciar SizeScene:self.frame.size];
+            
+            break;
+    }
+    
+    [self.view presentScene:cutscene];
 }
 @end

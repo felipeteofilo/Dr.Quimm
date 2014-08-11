@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQControleUserDefalts.h"
 #import "DQItensJogador.h"
 #import "DQMissoesJogador.h"
 
