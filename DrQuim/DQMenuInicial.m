@@ -16,10 +16,13 @@
         [botaIniciar setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
         
         SKLabelNode *teste=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
+        SKSpriteNode *teste2=[SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(200, 200)];
+        
         [teste setText:@"teste"];
-        [teste setName:@"teste"];
-        [teste setPosition:CGPointMake(200, 200)];
-        [self addChild:teste];
+        [teste2 setName:@"teste"];
+        [teste2 setPosition:CGPointMake(200, 200)];
+        [self addChild:teste2];
+        [teste2 addChild:teste];
         
         [self addChild:botaIniciar];
     }
@@ -49,7 +52,7 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    CGPoint posToque=[[touches anyObject]locationInView:self.view];
+    CGPoint posToque=[[touches anyObject]locationInNode:self];
     
     SKNode *nodeTocado=[self nodeAtPoint:posToque];
     
