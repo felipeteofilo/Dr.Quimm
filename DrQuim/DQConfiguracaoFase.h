@@ -21,4 +21,6 @@
 +(NSDictionary*)animacoesJogadorFase:(int)_fase;
 +(BOOL)rodarCutSceneFase:(int)fase;
 +(NSDictionary*)configFase:(int)fase;
+
++(void)setRodarCutSceneFase:(int)fase Valor:(BOOL)valor;
 @end

@@ -84,4 +84,17 @@
 +(void)setMissaoAtualJogador:(NSString*)missaoAtual{
     [[self userDefalts]setObject:missaoAtual forKey:@"MissaoJogador"];
 }
+
++(void)setRodouCutSceneFase:(int)fase Valor:(BOOL)valor{
+    NSString *keyFase=[NSString stringWithFormat:@"RodouCutSceneFase%i",fase];
+    
+    [[self userDefalts]setBool:valor forKey:keyFase];
+}
+
++(BOOL)rodouCutSceneFase:(int)fase{
+    NSString *keyFase=[NSString stringWithFormat:@"RodouCutSceneFase%i",fase];
+    
+    return [[DQControleUserDefalts userDefalts]boolForKey:keyFase];
+}
+
 @end

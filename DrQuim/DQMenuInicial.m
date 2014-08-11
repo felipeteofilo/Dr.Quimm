@@ -15,6 +15,11 @@
         SKNode *botaIniciar=[self configuraBotaoIniciar];
         [botaIniciar setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
         
+        SKLabelNode *teste=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
+        [teste setText:@"teste"];
+        [teste setName:@"teste"];
+        [teste setPosition:CGPointMake(200, 200)];
+        [self addChild:teste];
         
         [self addChild:botaIniciar];
     }
@@ -39,7 +44,7 @@
     [imagemIniciar setName:@"Iniciar"];
     
     [botaoIniciar addChild:imagemIniciar];
- 
+    
     return botaoIniciar;
 }
 
@@ -50,6 +55,10 @@
     
     if ([nodeTocado.name isEqualToString:@"Iniciar"]) {
         [self iniciarJogo];
+    }
+    
+    if ([nodeTocado.name isEqualToString:@"teste"]) {
+        [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
     }
 }
 
@@ -65,18 +74,24 @@
     
     switch (ultimaFaseJogador) {
         case 1:
+            
             faseIniciar=[[DQFlorestaParte1 alloc]initWithSize:self.frame.size];
             
-            if ([DQConfiguracaoFase rodarCutSceneFase:ultimaFaseJogador]) {
+            if (![DQControleUserDefalts rodouCutSceneFase:ultimaFaseJogador]) {
                 cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
+                
+                [DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
             }
+            
             break;
             
         case 2:
             faseIniciar=[[DQVila alloc]initWithSize:self.frame.size];
             
-            if ([DQConfiguracaoFase rodarCutSceneFase:ultimaFaseJogador]) {
+            if (![DQControleUserDefalts rodouCutSceneFase:ultimaFaseJogador]) {
                 cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
+                
+                [DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
             }
             
             break;
@@ -84,12 +99,14 @@
         default:
             faseIniciar=[[DQFase alloc]initFase:ultimaFaseJogador Size:self.frame.size];
             
-            if ([DQConfiguracaoFase rodarCutSceneFase:ultimaFaseJogador]) {
+            if (![DQControleUserDefalts rodouCutSceneFase:ultimaFaseJogador]) {
                 cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
+                
+                [DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
             }
-            
             break;
     }
+    
     
     if (cutscene) {
         [self.view presentScene:cutscene];

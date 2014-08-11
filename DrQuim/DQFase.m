@@ -543,11 +543,7 @@
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
     
-    //Adiciona plataforma caso tenha
-    SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
-    
-    [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
-    [self plataformaCategoria:plataforma];
+    [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
     
     [self criaJogador];
     [self configuraFisicaMundo];
@@ -595,6 +591,5 @@
 -(void)pegarConfigFase:(int)fase{
     self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
 }
-
 
 @end

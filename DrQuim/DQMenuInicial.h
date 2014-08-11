@@ -13,7 +13,6 @@
 #import "DQFase.h"
 #import "DQVila.h"
 #import "DQFlorestaParte1.h"
-#import "DQConfiguracaoFase.h"
 
 @interface DQMenuInicial : SKScene
 
