@@ -53,6 +53,11 @@
     return self;
 }
 -(void)atualizaEstadoJogador{
+    
+    if (![DQControleUserDefalts estadoJogadorAtualizado]) {
+        [DQControleUserDefalts setEstadoInicialJogador];
+    }
+    
     NSDictionary *estadoJogador=[DQControleUserDefalts estadosJogador];
     
     self.fome= [[estadoJogador objectForKey:@"Fome"]floatValue];

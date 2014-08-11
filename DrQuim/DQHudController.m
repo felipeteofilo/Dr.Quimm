@@ -19,6 +19,7 @@
         //Inicializa os indicadores
         [self configuraBarras];
         [self configurarBotaoMenu];
+        [self configuraContadorGeiger];
         
         [self setUserInteractionEnabled:YES];
     }
@@ -83,5 +84,13 @@
     
     [self.botaoMenu setName:@"botaoMenu"];
     [self addChild:self.botaoMenu];
+}
+
+-(void)configuraContadorGeiger{
+    self.contador=[[DQContadorGeiger alloc]initContadorNivelRadicao:0];
+    [self.contador setPosition:CGPointMake(CGRectGetMaxX(self.frame)-(self.contador.size.width/4), CGRectGetMinY(self.frame)+130)];
+    
+    [self addChild:self.contador];
+    
 }
 @end

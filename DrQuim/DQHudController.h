@@ -19,7 +19,7 @@
 @property DQBarraStatus *barraFome;
 @property SKSpriteNode *botaoMenu;
 @property DQMenu *menu;
-
+@property DQContadorGeiger *contador;
 
 -(id)initHud;
 -(void)atualizarHud;

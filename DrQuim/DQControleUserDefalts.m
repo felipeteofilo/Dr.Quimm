@@ -97,4 +97,17 @@
     return [[DQControleUserDefalts userDefalts]boolForKey:keyFase];
 }
 
++(BOOL)estadoJogadorAtualizado{
+    return [[DQControleUserDefalts userDefalts]boolForKey:@"estadoJogadorAtualizado"];
+}
+
++(void)setEstadoInicialJogador:(BOOL)valor{
+    [[self userDefalts]setBool:valor forKey:@"estadoJogadorAtualizado"];
+}
+
++(void)setEstadoInicialJogador{
+    [self setEstadoJogadorVida:100 Fome:100 Sede:100 Respeito:10];
+    
+    [self setEstadoInicialJogador:YES];
+}
 @end

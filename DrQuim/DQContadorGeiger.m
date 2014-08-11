@@ -16,6 +16,8 @@
         
         [self setScale:0.2];
         [self setName:@"Contador"];
+        [self setAnchorPoint:CGPointMake(1, 0.5)];
+        
         [self configurarFundoSprite];
     }
     return self;
