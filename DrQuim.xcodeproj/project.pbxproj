@@ -61,6 +61,7 @@
 		9488197319901AE200609A0F /* rostoCientista.png in Resources */ = {isa = PBXBuildFile; fileRef = 9488197119901AE200609A0F /* rostoCientista.png */; };
 		9488197419901AE200609A0F /* rostoPiloto.png in Resources */ = {isa = PBXBuildFile; fileRef = 9488197219901AE200609A0F /* rostoPiloto.png */; };
 		948819761990218400609A0F /* FalasCutScene.plist in Resources */ = {isa = PBXBuildFile; fileRef = 948819751990218400609A0F /* FalasCutScene.plist */; };
+		94A867BE19995AAE00604BA4 /* DQContadorGeiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A867BD19995AAE00604BA4 /* DQContadorGeiger.m */; };
 		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
 		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
 		C51125921973AB6000CECCAD /* FundoHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = C51125911973AB6000CECCAD /* FundoHUD.png */; };
@@ -222,6 +223,8 @@
 		9488197119901AE200609A0F /* rostoCientista.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoCientista.png; path = rostos/rostoCientista.png; sourceTree = "<group>"; };
 		9488197219901AE200609A0F /* rostoPiloto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoPiloto.png; path = rostos/rostoPiloto.png; sourceTree = "<group>"; };
 		948819751990218400609A0F /* FalasCutScene.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FalasCutScene.plist; path = "Arquivos Plist/FalasCutScene.plist"; sourceTree = "<group>"; };
+		94A867BC19995AAE00604BA4 /* DQContadorGeiger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQContadorGeiger.h; sourceTree = "<group>"; };
+		94A867BD19995AAE00604BA4 /* DQContadorGeiger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQContadorGeiger.m; sourceTree = "<group>"; };
 		C51125881973AB4E00CECCAD /* DQBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBarraStatus.h; sourceTree = "<group>"; };
 		C51125891973AB4E00CECCAD /* DQBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBarraStatus.m; sourceTree = "<group>"; };
 		C511258A1973AB4E00CECCAD /* DQHudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHudController.h; sourceTree = "<group>"; };
@@ -546,6 +549,8 @@
 				C54B79C61972440400366512 /* DQEscalavel.m */,
 				C591815F1967756700AFD8B5 /* DQPlataforma.h */,
 				C59181601967756700AFD8B5 /* DQPlataforma.m */,
+				94A867BC19995AAE00604BA4 /* DQContadorGeiger.h */,
+				94A867BD19995AAE00604BA4 /* DQContadorGeiger.m */,
 			);
 			name = ObjetosJogo;
 			sourceTree = "<group>";
@@ -900,6 +905,7 @@
 				C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */,
 				23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */,
 				23A6DE9E194781E200982F9D /* DQCutsceneControle.m in Sources */,
+				94A867BE19995AAE00604BA4 /* DQContadorGeiger.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
 				C54031EA1989FE98003384AB /* DQReferenciaMissaoJogador.m in Sources */,
