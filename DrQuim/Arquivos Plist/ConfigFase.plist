@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>RodarCutScene</key>
+		<true/>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -292,6 +294,10 @@
 		<array/>
 	</dict>
 	<dict>
+		<key>RodarCutScene</key>
+		<true/>
+		<key>PosInicialJogador</key>
+		<string>{10, 200}</string>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -307,8 +313,6 @@
 			<key>Andando</key>
 			<string>Andando</string>
 		</dict>
-		<key>PosInicialJogador</key>
-		<string>{10, 200}</string>
 		<key>NPC</key>
 		<array>
 			<dict>
@@ -436,6 +440,8 @@
 		<array/>
 	</dict>
 	<dict>
+		<key>RodarCutScene</key>
+		<false/>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>

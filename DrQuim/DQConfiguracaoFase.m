@@ -107,4 +107,9 @@
     
     return arrayEscalaceis;
 }
+
++(BOOL)rodarCutSceneFase:(int)fase{
+    return (BOOL)[[self configFase:fase-1]objectForKey:@"RodarCutScene"];
+
+}
 @end
