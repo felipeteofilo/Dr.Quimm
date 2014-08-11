@@ -7,10 +7,23 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQUtils.h"
 
 @interface DQContadorGeiger : SKSpriteNode
+{
+    NSMutableArray *framesAnimacao;
+}
 
-@property NSString *nomeSomAlerta;
 @property int nivelPerigo;
+@property float velocidadeAnimacao;
 
+-(id)initContadorNivelRadicao:(int)nivelRadiacao;
+
+-(void)apitar;
+-(void)pararApitar;
+
+-(void)aumentarNivelPerigo;
+-(void)diminuirNivelPerigo;
+
+-(void)setarNivelPerigo:(int)valor;
 @end

@@ -10,6 +10,7 @@
 #import "DQJogador.h"
 #import "DQBarraStatus.h"
 #import "DQMenu.h"
+#import "DQContadorGeiger.h"
 
 @interface DQHudController : SKSpriteNode
 
@@ -18,6 +19,7 @@
 @property DQBarraStatus *barraFome;
 @property SKSpriteNode *botaoMenu;
 @property DQMenu *menu;
+
 
 -(id)initHud;
 -(void)atualizarHud;
