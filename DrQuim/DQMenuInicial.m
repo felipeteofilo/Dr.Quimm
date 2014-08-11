@@ -55,8 +55,6 @@
 }
 
 -(void)iniciarJogo{
-    [DQControleUserDefalts setFaseAtual:1];
-    
     int ultimaFaseJogador=[DQControleUserDefalts faseAtual];
     
     DQCutsceneTela *cutscene;
@@ -77,11 +75,15 @@
             
         default:
             faseIniciar=[[DQFase alloc]initFase:ultimaFaseJogador Size:self.frame.size];
-            cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador Fase:faseIniciar SizeScene:self.frame.size];
             
             break;
     }
     
-    [self.view presentScene:cutscene];
+    if (cutscene) {
+        [self.view presentScene:cutscene];
+    }else{
+        [self.view presentScene:faseIniciar];
+    }
+    
 }
 @end
