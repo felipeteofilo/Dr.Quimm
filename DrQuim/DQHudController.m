@@ -18,6 +18,9 @@
         
         //Inicializa os indicadores
         [self configuraBarras];
+        [self configurarBotaoMenu];
+        [self configuraContadorGeiger];
+        
         [self setUserInteractionEnabled:YES];
     }
     return self;
@@ -31,7 +34,6 @@
     [self.barraVida setPosition:CGPointMake(90, -98)];
     [self.barraFome setPosition:CGPointMake(431, -98)];
     [self.barraSede setPosition:CGPointMake(739, -98)];
-    
     
     [self addChild:self.barraFome];
     [self addChild:self.barraSede];
@@ -50,6 +52,44 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    CGPoint posicaoToqueNode=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posicaoToqueNode];
+    
+    if ([self childNodeWithName:@"MENU"]) {
+        [[self childNodeWithName:@"MENU"]removeFromParent];
+    }
+    
+    for (SKSpriteNode *nodeTocado in arrayNodes) {
+        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
+            if (!self.menu) {
+                self.menu=[[DQMenu alloc]initMenu];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame)-100)];
+                
+            }
+            
+            if (![self childNodeWithName:@"MENU"]) {
+                [self.parent addChild:self.menu];
+                [self.parent.scene setPaused:YES];
+            }
+            
+            break;
+        }
+    }
 
+}
+-(void)configurarBotaoMenu{
+    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
+    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame)+130)];
+    
+    [self.botaoMenu setName:@"botaoMenu"];
+    [self addChild:self.botaoMenu];
+}
+
+-(void)configuraContadorGeiger{
+    self.contador=[[DQContadorGeiger alloc]initContadorNivelRadicao:0];
+    [self.contador setPosition:CGPointMake(CGRectGetMaxX(self.frame)-(self.contador.size.width/4), CGRectGetMinY(self.frame)+130)];
+    
+    [self addChild:self.contador];
+    
 }
 @end

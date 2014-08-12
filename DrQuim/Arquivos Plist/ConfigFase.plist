@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>RodarCutScene</key>
+		<true/>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -292,6 +294,10 @@
 		<array/>
 	</dict>
 	<dict>
+		<key>RodarCutScene</key>
+		<true/>
+		<key>PosInicialJogador</key>
+		<string>{10, 200}</string>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -307,8 +313,6 @@
 			<key>Andando</key>
 			<string>Andando</string>
 		</dict>
-		<key>PosInicialJogador</key>
-		<string>{10, 200}</string>
 		<key>NPC</key>
 		<array>
 			<dict>
@@ -368,8 +372,8 @@
 				<key>Escalaveis</key>
 				<array>
 					<array>
-						<string>{883, 170}</string>
-						<string>{884, 1018}</string>
+						<string>{883, 150}</string>
+						<string>{884, 1000}</string>
 					</array>
 				</array>
 				<key>CorpoFisicoChao</key>
@@ -382,10 +386,10 @@
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{675, 976}</string>
-						<string>{675, 1019}</string>
-						<string>{1024, 1019}</string>
-						<string>{1024, 976}</string>
+						<string>{675, 960}</string>
+						<string>{675, 1000}</string>
+						<string>{1024, 1000}</string>
+						<string>{1024, 960}</string>
 					</array>
 				</array>
 			</dict>
@@ -400,23 +404,23 @@
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{0, 972}</string>
-						<string>{0, 1016}</string>
-						<string>{165, 1016}</string>
-						<string>{165, 972}</string>
+						<string>{0, 960}</string>
+						<string>{0, 1000}</string>
+						<string>{220, 1000}</string>
+						<string>{220, 960}</string>
 					</array>
 					<array>
-						<string>{149, 795}</string>
-						<string>{149, 847}</string>
-						<string>{910, 847}</string>
+						<string>{200, 795}</string>
+						<string>{200, 840}</string>
+						<string>{910, 840}</string>
 						<string>{910, 795}</string>
 					</array>
 				</array>
 				<key>Escalaveis</key>
 				<array>
 					<array>
-						<string>{665, 166}</string>
-						<string>{665, 848}</string>
+						<string>{680, 150}</string>
+						<string>{680, 840}</string>
 					</array>
 				</array>
 			</dict>
@@ -436,6 +440,23 @@
 		<array/>
 	</dict>
 	<dict>
+		<key>RodarCutScene</key>
+		<false/>
+		<key>Animacoes</key>
+		<dict>
+			<key>Derrapando</key>
+			<string>Derrapando</string>
+			<key>Caindo</key>
+			<string>Caindo</string>
+			<key>Escalando</key>
+			<string>Escalando</string>
+			<key>Parado</key>
+			<string>Parado</string>
+			<key>Pulando</key>
+			<string>Pulando</string>
+			<key>Andando</key>
+			<string>Andando</string>
+		</dict>
 		<key>PosInicialJogador</key>
 		<string>{100, 200}</string>
 		<key>Partes</key>
@@ -736,6 +757,13 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Escalaveis</key>
+				<array>
+					<array>
+						<string>{700, 704}</string>
+						<string>{700, 923}</string>
+					</array>
+				</array>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>

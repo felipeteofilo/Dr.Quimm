@@ -13,7 +13,6 @@
 
 
 +(SKPhysicsBody*)criaCorpoFisicoChaoParte: (int)_parte daFase:(int)_fase{
-    
     NSArray *configParteFase=[DQConfiguracaoFase configParteFase:_fase];
     
     //Usando o array acessado anteriormente, pega o array com os cgpoints da KEY CorpoFisicoChao
@@ -24,6 +23,20 @@
     }else{
         
         SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:[self geraPathDeArray:posicoesAdd]];
+        corpoFisicoRetorno.usesPreciseCollisionDetection = YES;
+        return corpoFisicoRetorno;
+    }
+}
+
++(SKPhysicsBody*)criaCorpoFisicoChao:(NSArray*)arrayPosicoes{
+    //Usando o array acessado anteriormente, pega o array com os cgpoints da KEY CorpoFisicoChao
+    //NSArray *posicoesAdd=[[configParteFase objectAtIndex:_parte-1]objectForKey:@"CorpoFisicoChao"];
+    
+    if ([arrayPosicoes count]==0) {
+        return nil;
+    }else{
+        
+        SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:[self geraPathDeArray:arrayPosicoes]];
         corpoFisicoRetorno.usesPreciseCollisionDetection = YES;
         return corpoFisicoRetorno;
     }
@@ -56,38 +69,43 @@
 +(SKNode*)criarPlataformaParte: (int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela{
     
     NSArray *configParteFase=[DQConfiguracaoFase configParteFase:_fase];
-    
-    SKNode *nodeRetorno;
-    
+
     if (!configParteFase) {
         return nil;
     }else{
         
         NSArray *plataformasConfig=[[configParteFase objectAtIndex:_parte-1]objectForKey:@"Plataformas"];
         
-        if ([plataformasConfig count]!=0) {
-            nodeRetorno=[SKSpriteNode spriteNodeWithColor:nil size:_rectTela.size];
-        }
-        
-        //Cada obj no array plataformas é uma plataforma - Faz um for percorrendo as plataformas para pegar os pontos
-        for (int i=0; i<[plataformasConfig count]; i++) {
-            //A key plataforma é um array com Array de posicoes, que é passado para criar o physicsBody da plataforma
-            
-            CGPathRef pathConfgigurado=[self geraPathDeArray:[plataformasConfig objectAtIndex:i]];
-            SKPhysicsBody *corpoFisicoPlataforma=[SKPhysicsBody bodyWithEdgeLoopFromPath:pathConfgigurado];
-            
-            corpoFisicoPlataforma.usesPreciseCollisionDetection = YES;
-        
-            DQPlataforma *plataforma=[[DQPlataforma alloc]initComY:CGRectGetMaxY(CGPathGetBoundingBox(pathConfgigurado))];
-            [plataforma setPhysicsBody:corpoFisicoPlataforma];
-            
-            [nodeRetorno addChild:plataforma];
-            
-        }
-        
-        
-        return nodeRetorno;
+        return [self criarPlataformaParte:_parte daFase:_fase CGFrameTela:_rectTela ArrayPlataforma:plataformasConfig];
     }
+    
+}
+
++(SKNode*)criarPlataformaParte:(int)_parte daFase:(int)_fase CGFrameTela:(CGRect)_rectTela ArrayPlataforma:(NSArray*)plataformasConfig{
+    SKNode *nodeRetorno;
+    
+    if ([plataformasConfig count]!=0) {
+        nodeRetorno=[SKSpriteNode spriteNodeWithColor:nil size:_rectTela.size];
+    }
+    
+    //Cada obj no array plataformas é uma plataforma - Faz um for percorrendo as plataformas para pegar os pontos
+    for (int i=0; i<[plataformasConfig count]; i++) {
+        //A key plataforma é um array com Array de posicoes, que é passado para criar o physicsBody da plataforma
+        
+        CGPathRef pathConfgigurado=[self geraPathDeArray:[plataformasConfig objectAtIndex:i]];
+        SKPhysicsBody *corpoFisicoPlataforma=[SKPhysicsBody bodyWithEdgeLoopFromPath:pathConfgigurado];
+        
+        corpoFisicoPlataforma.usesPreciseCollisionDetection = YES;
+        
+        DQPlataforma *plataforma=[[DQPlataforma alloc]initComY:CGRectGetMaxY(CGPathGetBoundingBox(pathConfgigurado))];
+        [plataforma setPhysicsBody:corpoFisicoPlataforma];
+        
+        [nodeRetorno addChild:plataforma];
+        
+    }
+    
+    
+    return nodeRetorno;
 }
 
 @end

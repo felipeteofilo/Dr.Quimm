@@ -10,6 +10,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_1</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -18,6 +20,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_2</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -26,6 +30,8 @@
 			<string>Uau! Um dos maiores cientistas do mundo está no meu helicóptero... Preciso dizer algo...</string>
 			<key>Fundo</key>
 			<string>cena1_3</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -34,6 +40,8 @@
 			<string>B-bonito o jaleco do senhor.</string>
 			<key>Fundo</key>
 			<string>cena1_4</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -42,6 +50,8 @@
 			<string>É algodão egípcio </string>
 			<key>Fundo</key>
 			<string>cena1_5</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -50,6 +60,8 @@
 			<string>Que legal! Onde o senhor conseguiu?</string>
 			<key>Fundo</key>
 			<string>cena1_6</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -58,6 +70,8 @@
 			<string>Egito</string>
 			<key>Fundo</key>
 			<string>cena1_7</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -66,6 +80,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_8</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -74,6 +90,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_9</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -82,6 +100,8 @@
 			<string>Mas porque alguém como o senhor está indo para uma ilha como aquela? Meu primo, ele é marinheiro, ele disse que uma vez viu monstros naquela ilha.</string>
 			<key>Fundo</key>
 			<string>cena1_10</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -90,6 +110,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_11</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -98,6 +120,8 @@
 			<string>Tenho um trabalho a fazer.</string>
 			<key>Fundo</key>
 			<string>cena1_12</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -106,6 +130,8 @@
 			<string>Entendo... que trabalho é esse?</string>
 			<key>Fundo</key>
 			<string>cena1_13</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -114,6 +140,8 @@
 			<string>Coleta de amostras</string>
 			<key>Fundo</key>
 			<string>cena1_14</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -122,6 +150,8 @@
 			<string>Amostras... Legal! De que?</string>
 			<key>Fundo</key>
 			<string>cena1_15</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -130,6 +160,8 @@
 			<string>Material radioativo.</string>
 			<key>Fundo</key>
 			<string>cena1_16</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -138,6 +170,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_17</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -146,6 +180,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_18</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -154,6 +190,8 @@
 			<string>RADIOATIVO?!</string>
 			<key>Fundo</key>
 			<string>cena1_19</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -162,6 +200,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_20</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -170,6 +210,8 @@
 			<string>Pela barbas de Darwin! O que foi aquilo? </string>
 			<key>Fundo</key>
 			<string>cena1_21</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -178,6 +220,8 @@
 			<string>Precisamos sair daqui.</string>
 			<key>Fundo</key>
 			<string>cena1_22</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -186,6 +230,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_23</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -194,6 +240,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_24</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -202,6 +250,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_25</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -210,6 +260,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_26</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -218,6 +270,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_27</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -226,6 +280,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_28</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -234,6 +290,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_29</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -242,6 +300,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_30</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -250,6 +310,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_31</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -258,6 +320,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena1_32</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -266,6 +330,8 @@
 			<string>O senhor está bem?</string>
 			<key>Fundo</key>
 			<string>cena1_33</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -274,6 +340,8 @@
 			<string>Não! Machuquei a minha perna!</string>
 			<key>Fundo</key>
 			<string>cena1_34</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -282,6 +350,8 @@
 			<string>Venha, eu te ajudo. Precisamos encontrar algum lugar seguro, já está anoitecendo.</string>
 			<key>Fundo</key>
 			<string>cena1_35</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 	</array>
 	<array>
@@ -292,6 +362,8 @@
 			<string>Voltando ao assunto de radiação, faltou encontrarmos apenas uma.</string>
 			<key>Fundo</key>
 			<string>cena2_1</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -300,6 +372,8 @@
 			<string>Pelos bigodes de Becquerel! Você quer encontrar a radiação gama? </string>
 			<key>Fundo</key>
 			<string>cena2_2</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -308,6 +382,8 @@
 			<string>Sim! É só ficarmos longe, né?!</string>
 			<key>Fundo</key>
 			<string>cena2_3</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -316,6 +392,8 @@
 			<string>Diferente das outras, a gama é uma onda eletromagnética, por isso tem alto poder de penetração. Você pretende ter câncer? ser estéril? talvez apenas cair morto?</string>
 			<key>Fundo</key>
 			<string>cena2_4</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -324,6 +402,8 @@
 			<string>Não</string>
 			<key>Fundo</key>
 			<string>cena2_5</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -332,6 +412,8 @@
 			<string>Então, pelo amor de Marie Curie, Não deseje isso novamente</string>
 			<key>Fundo</key>
 			<string>cena2_6</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -340,6 +422,8 @@
 			<string></string>
 			<key>Fundo</key>
 			<string>cena2_7</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -348,6 +432,8 @@
 			<string>O que é aquilo?</string>
 			<key>Fundo</key>
 			<string>cena2_8</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -356,16 +442,18 @@
 			<string>O que? Uma vila? Este lugar deveria estar inabitado!</string>
 			<key>Fundo</key>
 			<string>cena2_9</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
-	</array>
-	<array>
 		<dict>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
 			<string>Olha, um macaco.</string>
 			<key>Fundo</key>
-			<string>Cena3_1</string>
+			<string>Cena2_10</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -373,7 +461,9 @@
 			<key>Texto</key>
 			<string>Isso é mesmo um macaco? Ei!! eu conheço aquela maleta! Ela é minha! Pela peruca de newton! Se esse ser está com a minha maleta o que mais terá caído por essa ilha?</string>
 			<key>Fundo</key>
-			<string>Cena3_2</string>
+			<string>Cena2_11</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -381,7 +471,9 @@
 			<key>Texto</key>
 			<string>Ele está indo embora! O que está esperando? vá atrás dele! Pegue a minha maleta agora mesmo!</string>
 			<key>Fundo</key>
-			<string>Cena3_3</string>
+			<string>Cena2_12</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -389,7 +481,9 @@
 			<key>Texto</key>
 			<string> É pra já!</string>
 			<key>Fundo</key>
-			<string>Cena3_4</string>
+			<string>Cena2_13</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -397,7 +491,9 @@
 			<key>Texto</key>
 			<string> Não moleque! Volta aqui!</string>
 			<key>Fundo</key>
-			<string>Cena3_5</string>
+			<string>Cena2_14</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -406,7 +502,9 @@
 			<string>Vou pegar a maleta, vou me provar prestativo!
 </string>
 			<key>Fundo</key>
-			<string>Cena3_6</string>
+			<string>Cena2_15</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -414,7 +512,9 @@
 			<key>Texto</key>
 			<string></string>
 			<key>Fundo</key>
-			<string>Cena3_7</string>
+			<string>Cena2_16</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -422,7 +522,9 @@
 			<key>Texto</key>
 			<string></string>
 			<key>Fundo</key>
-			<string>Cena3_8</string>
+			<string>Cena2_17</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -431,7 +533,9 @@
 			<string>Há! Quem pega quem agora, cara de traseiro?
 </string>
 			<key>Fundo</key>
-			<string>Cena3_9</string>
+			<string>Cena2_18</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -440,7 +544,9 @@
 			<string>Não disse para você esperar, moleque?
 </string>
 			<key>Fundo</key>
-			<string>Cena3_10</string>
+			<string>Cena2_19</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -448,7 +554,9 @@
 			<key>Texto</key>
 			<string>Ei! olha só o que a minha rede pegou!</string>
 			<key>Fundo</key>
-			<string>Cena3_11</string>
+			<string>Cena2_20</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -456,7 +564,9 @@
 			<key>Texto</key>
 			<string>O meu é melhor, tem pelo branco na cara, mas na cabeça ele não tem!</string>
 			<key>Fundo</key>
-			<string>Cena3_12</string>
+			<string>Cena2_21</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -464,7 +574,9 @@
 			<key>Texto</key>
 			<string>Mãe de todos. Minha caça de hoje caiu do céu! olhe o que a grande ave nos trouxe.</string>
 			<key>Fundo</key>
-			<string>Cena3_13</string>
+			<string>Cena2_22</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -472,7 +584,9 @@
 			<key>Texto</key>
 			<string>Você disse que eles cairam do céu? O que estão fazendo? Se foi mesmo a grande ave que os trouxe eles não devem ser tratados assim!</string>
 			<key>Fundo</key>
-			<string>Cena3_14</string>
+			<string>Cena2_23</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -480,7 +594,9 @@
 			<key>Texto</key>
 			<string>M-mas...</string>
 			<key>Fundo</key>
-			<string>cena3_15</string>
+			<string>cena2_24</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -488,7 +604,9 @@
 			<key>Texto</key>
 			<string>Solte-os já ou ficarão sem sobremesa!</string>
 			<key>Fundo</key>
-			<string>Cena3_16</string>
+			<string>Cena2_25</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -496,7 +614,9 @@
 			<key>Texto</key>
 			<string>Diga, quem são vocês?</string>
 			<key>Fundo</key>
-			<string>Cena3_17</string>
+			<string>Cena2_26</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -504,7 +624,9 @@
 			<key>Texto</key>
 			<string>Prazer, eu sou o Dr.Quimm. Renomado cientista da associação internacional de química. </string>
 			<key>Fundo</key>
-			<string>Cena3_18</string>
+			<string>Cena2_27</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -512,7 +634,9 @@
 			<key>Texto</key>
 			<string>E eu sou...</string>
 			<key>Fundo</key>
-			<string>Cena3_19</string>
+			<string>Cena2_28</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -521,7 +645,9 @@
 			<string>Ele é só o piloto que me trouxe aqui e que, por sinal, me derrubou no chão e me deixou sozinho na floresta perigosa.
 </string>
 			<key>Fundo</key>
-			<string>Cena3_20</string>
+			<string>Cena2_29</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -529,7 +655,9 @@
 			<key>Texto</key>
 			<string>Vejo que você está com a perna machucada, venha, venha, vamos cuidar deste ferimento.</string>
 			<key>Fundo</key>
-			<string>Cena3_21</string>
+			<string>Cena2_30</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -537,7 +665,9 @@
 			<key>Texto</key>
 			<string>E você, jovem que machucou o Remonado, tenho um favor a lhe pedir.</string>
 			<key>Fundo</key>
-			<string>Cena3_22</string>
+			<string>Cena2_31</string>
+			<key>Foto</key>
+			<string></string>
 		</dict>
 	</array>
 </array>

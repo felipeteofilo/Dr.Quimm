@@ -11,13 +11,29 @@
 @interface DQControleUserDefalts : NSObject
 
 +(NSUserDefaults*)userDefalts;
+
 +(float)volumeMusica;
 +(float)volumeSons;
 +(BOOL)sonsMudo;
 +(BOOL)musicaMuda;
++(NSDictionary*)estadosJogador;
++(int)faseAtual;
++(int)parteFaseAtual;
++(NSString*)missaoAtualJogador;
++(BOOL)rodouCutSceneFase:(int)fase;
+
 +(void)setVolumeMusica:(float)volume;
 +(void)setVolumeSons:(float)volume;
 +(void)setMusicaMuda:(BOOL)mudo;
 +(void)setSonsMudo:(BOOL)mudo;
++(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede;
++(void)setFaseAtual:(int)fase;
++(void)setParteFaseAtual:(int)parte;
++(void)setMissaoAtualJogador:(NSString*)missaoAtual;
++(void)setRodouCutSceneFase:(int)fase Valor:(BOOL)valor;
 
++(BOOL)estadoJogadorAtualizado;
++(void)setEstadoInicialJogador:(BOOL)valor;
++(void)setEstadoInicialJogador;
++(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede Respeito:(float)respeito;
 @end
