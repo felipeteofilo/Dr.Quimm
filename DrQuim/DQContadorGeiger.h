@@ -19,9 +19,6 @@
 
 -(id)initContadorNivelRadicao:(int)nivelRadiacao;
 
--(void)apitar;
--(void)pararApitar;
-
 -(void)aumentarNivelPerigo;
 -(void)diminuirNivelPerigo;
 

@@ -67,11 +67,20 @@
 
 -(void)aumentarNivelPerigo{
     self.nivelPerigo++;
+    
+    if (self.nivelPerigo>2) {
+        self.nivelPerigo=2;
+    }
+    
     [self tocarSomNivelPerigo];
 }
 
 -(void)diminuirNivelPerigo{
     self.nivelPerigo--;
+    
+    if (self.nivelPerigo<0) {
+        self.nivelPerigo=0;
+    }
     
     [self tocarSomNivelPerigo];
 }

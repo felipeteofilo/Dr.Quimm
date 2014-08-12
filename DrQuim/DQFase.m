@@ -435,6 +435,8 @@
         //A cada 5 segundos salva os status do jogados
         //[DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:[self.jogador respeito]];
     }
+    
+    NSLog(@"passou no update");
 }
 
 - (void)didSimulatePhysics{

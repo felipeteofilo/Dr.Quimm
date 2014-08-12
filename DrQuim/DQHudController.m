@@ -35,7 +35,6 @@
     [self.barraFome setPosition:CGPointMake(431, -98)];
     [self.barraSede setPosition:CGPointMake(739, -98)];
     
-    
     [self addChild:self.barraFome];
     [self addChild:self.barraSede];
     [self addChild:self.barraVida];
@@ -70,7 +69,7 @@
             
             if (![self childNodeWithName:@"MENU"]) {
                 [self.parent addChild:self.menu];
-                [self.parent setPaused:YES];
+                [self.parent.scene setPaused:YES];
             }
             
             break;
