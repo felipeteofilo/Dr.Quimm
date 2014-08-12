@@ -36,17 +36,16 @@
     [estadosJogador setObject:[NSNumber numberWithFloat:[[self userDefalts]floatForKey:@"Vida"]] forKey:@"Vida"];
     [estadosJogador setObject:[NSNumber numberWithFloat:[[self userDefalts]floatForKey:@"Fome"]] forKey:@"Fome"];
     [estadosJogador setObject:[NSNumber numberWithFloat:[[self userDefalts]floatForKey:@"Sede"]] forKey:@"Sede"];
-    [estadosJogador setObject:[NSNumber numberWithFloat:[[self userDefalts]floatForKey:@"Respeito"]] forKey:@"Respeito"];
     
     return estadosJogador;
 }
 
 +(int)faseAtual{
-    return (int)[[self userDefalts]integerForKey:@"FaseAtual"];
+    return [[self userDefalts]integerForKey:@"FaseAtual"];
 }
 
 +(int)parteFaseAtual{
-    return (int)[[self userDefalts]integerForKey:@"parteAtual"];
+    return [[self userDefalts]integerForKey:@"parteAtual"];
 }
 +(NSString*)missaoAtualJogador{
     return [[self userDefalts]objectForKey:@"MissaoJogador"];
@@ -74,6 +73,7 @@
     [[self userDefalts]setFloat:sede forKey:@"Sede"];
     [[self userDefalts]setFloat:respeito forKey:@"Respeito"];
 }
+
 +(void)setFaseAtual:(int)fase{
     [[self userDefalts]setInteger:fase forKey:@"FaseAtual"];
 }

@@ -26,7 +26,7 @@
 +(void)setVolumeSons:(float)volume;
 +(void)setMusicaMuda:(BOOL)mudo;
 +(void)setSonsMudo:(BOOL)mudo;
-+(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede Respeito:(float)respeito;
++(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede;
 +(void)setFaseAtual:(int)fase;
 +(void)setParteFaseAtual:(int)parte;
 +(void)setMissaoAtualJogador:(NSString*)missaoAtual;
@@ -35,4 +35,5 @@
 +(BOOL)estadoJogadorAtualizado;
 +(void)setEstadoInicialJogador:(BOOL)valor;
 +(void)setEstadoInicialJogador;
++(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede Respeito:(float)respeito;
 @end

@@ -25,6 +25,7 @@
         [teste2 addChild:teste];
         
         [self addChild:botaIniciar];
+        
     }
     return self;
 }
@@ -66,6 +67,7 @@
 }
 
 -(void)iniciarJogo{
+
     int ultimaFaseJogador=[DQControleUserDefalts faseAtual];
     
     DQCutsceneTela *cutscene;
@@ -117,5 +119,6 @@
         [self.view presentScene:faseIniciar];
     }
     
+
 }
 @end

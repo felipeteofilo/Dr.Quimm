@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import "DQCutsceneControlle.h"
+#import "DQCutsceneControle.h"
 
-@implementation DQCutsceneControlle
+@implementation DQCutsceneControle
 
 -(id)initCutscene:(int)cutSceneAtual TamanhoTela:(CGSize)_tamanho{
     if (self=[super init]) {

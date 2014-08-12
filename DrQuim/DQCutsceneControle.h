@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQFala.h"
 
-@interface DQCutsceneControlle : NSObject
+@interface DQCutsceneControle : NSObject
 
 @property DQFala *falaCena;
 @property NSArray *cenasCutScene;

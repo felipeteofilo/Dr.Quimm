@@ -18,10 +18,6 @@
         self.hudFase = [[DQHudController alloc]initHud];
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
     
-        //Inicia com a fase 3
-        self.controleCutscenes = [[DQCutsceneControle alloc]initComParte:1 Fase:3];
-        self.cutsceneEstaRodando = YES;
-        self.estaFalando = NO;
         
         [self iniciarFase];
         [self addChild:self.hudFase];

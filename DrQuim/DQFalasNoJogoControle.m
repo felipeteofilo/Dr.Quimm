@@ -42,6 +42,10 @@
     }
     //Criamos a caixa de fala que ira ser mostrada no jogo
     self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual] eTamanho:tamanho];
+    self.caixaDeFala.anchorPoint = CGPointZero;
+    [self.caixaDeFala setPosition:CGPointMake(tamanho.width*0.1, tamanho.height *0.75)];
+    
+    [self.caixaDeFala setName:@"falasDoJogo"];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
@@ -68,6 +72,9 @@
     
     //Criamos a caixa de fala que ira ser mostrada no jogo
      self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual] eTamanho:tamanho];
+    self.caixaDeFala.anchorPoint = CGPointZero;
+    [self.caixaDeFala setPosition:CGPointMake(tamanho.width*0.1, tamanho.height *0.75)];
+    [self.caixaDeFala setName:@"falasDoJogo"];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;

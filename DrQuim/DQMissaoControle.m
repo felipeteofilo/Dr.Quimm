@@ -26,13 +26,57 @@
         
         //Apresentando a próxima missão (no caso, a primeira)
         self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
+        
+        [self colocarBalaoDeMissao];
     }
     return self;
+}
+
+
+-(void)colocarBalaoDeMissao{
+    if (self.balao == nil) {
+        self.balao = [[SKSpriteNode alloc]initWithImageNamed:@"BalaoAlerta"];
+        [self.balao setName:@"balaoMissao"];
+        SKTextureAtlas *pastaFrames = [SKTextureAtlas atlasNamed:@"BalaoMissao"];
+        
+        NSInteger numImagens = pastaFrames.textureNames.count;
+        NSMutableArray *frames =[[NSMutableArray alloc]init];
+        
+        for (int i=1; i <= numImagens; i++) {
+            NSString *textureName = [NSString stringWithFormat:@"%d", i];
+            SKTexture *temp = [pastaFrames textureNamed:textureName];
+            [frames addObject:temp];
+        }
+        
+        [self.balao runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:frames
+                                                                             timePerFrame:0.3f
+                                                                                   resize:NO
+                                                                                  restore:YES]] withKey:@"animandoBalao"];
+        
+        self.balao.size = CGSizeMake(50, 50);
+        [self.balao setAnchorPoint:CGPointMake(0, 0)];
+    }
+    
+    
+    SKNode *NPC = [[self.cena childNodeWithName:@"mundo"]childNodeWithName:self.missao.disparador];
+    
+    if (NPC != nil && !self.emMissao && ![[self.cena childNodeWithName:@"mundo"]childNodeWithName:@"balaoMissao"]) {
+        
+        
+        [self.balao setPosition:CGPointMake(NPC.position.x, NPC.position.y+160)];
+        [[self.cena childNodeWithName:@"mundo"]addChild:self.balao];
+    }
+    
+}
+-(void)atualizarCena :(SKScene*)cenaRecebida{
+    
+    self.cena = cenaRecebida;
 }
 
 -(BOOL)iniciarNovaMissaoNPC:(NSString*)NPC{
     if([self.missao podeIniciarComNPC:NPC]){
         self.emMissao = YES;
+        [self.balao removeFromParent];
         return YES;
     }
     else{
@@ -47,7 +91,7 @@
     if([self.missao podePassarComNPC:NPC Item:item Parte:self.parteAtual]){
         [self entregarItem];
         [self receberItem];
-        [self alterarEstados];
+        //[self alterarEstados];
         
         //Verifica se essa foi a última parte...
         if(self.parteAtual+1 >= self.missao.quantidadeDePartes){
@@ -82,36 +126,38 @@
 }
 
 //Método chamado quando a missão descreve que os estados do jogador devem ser alterados
--(void)alterarEstados{
-    
-    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.missao.arrayPartes objectAtIndex:self.parteAtual]];
-    
-    //Ver se muda os estados
-    //fome
-    int fome = [[dicionario objectForKey:@"Fome"] intValue];
-    if(fome != 0){
-        [[DQVidaControle sharedControleVida] alterarFomeJogador:fome];
-    }
-    
-    //sede
-    int sede = [[dicionario objectForKey:@"Sede"] intValue];
-    if(sede != 0){
-        [[DQVidaControle sharedControleVida] alterarSedeJogador:sede];
-    }
-    
-    //vida
-    int vida = [[dicionario objectForKey:@"Vida"] intValue];
-    if(vida != 0){
-        [[DQVidaControle sharedControleVida] alterarVidaJogador:vida];
-    }
-}
+//-(void)alterarEstados{
+//    
+//    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.missao.arrayPartes objectAtIndex:self.parteAtual]];
+//    
+//    //Ver se muda os estados
+//    //fome
+//    int fome = [[dicionario objectForKey:@"Fome"] intValue];
+//    if(fome != 0){
+//        [[DQVidaControle sharedControleVida] alterarFomeJogador:fome];
+//    }
+//    
+//    //sede
+//    int sede = [[dicionario objectForKey:@"Sede"] intValue];
+//    if(sede != 0){
+//        [[DQVidaControle sharedControleVida] alterarSedeJogador:sede];
+//    }
+//    
+//    //vida
+//    int vida = [[dicionario objectForKey:@"Vida"] intValue];
+//    if(vida != 0){
+//        [[DQVidaControle sharedControleVida] alterarVidaJogador:vida];
+//    }
+//}
 
 //TODO - COLOCAR MENSSAGENS
 //método chamado quando a missão chega ao fim
 -(void)fimDaMissao{
+    
     self.emMissao = NO;
     self.parteAtual = 0;
     self.proximaMissao++;
     self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
+    [self colocarBalaoDeMissao];
 }
 @end
