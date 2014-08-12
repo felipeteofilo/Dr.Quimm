@@ -232,76 +232,118 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    
     UITouch *toque=[touches anyObject];
-    CGPoint posicaoToque=[toque locationInView:self.view];
     
-    //Verifica se o Menu esata aparecendo se estiver remove eles
-    if ([self childNodeWithName:@"MENU"]) {
-        [[self childNodeWithName:@"MENU"]removeFromParent];
-        [self setPaused:NO];
-        return;
-    }
-    
-    //Se estiver na direita
-    
-    if(posicaoToque.x > CGRectGetMidX(self.frame)){
-        //ANDAR
-        //marca o local em que tocou e desenha as setinhas
-        self.pontoDeToqueAndar = posicaoToque;
-        
-        //mostra as setinhas
-        self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
-        [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
-        
-        [self addChild:self.direcional];
-    }
-    //Se estiver na esquerda
-    else if(posicaoToque.x < CGRectGetMidX(self.frame)){
-        //PULAR
-        [self.jogador pular];
-    }
-    
-    
-    CGPoint posToqueBackGround=[toque locationInNode:self.backgroundAtual];
+    CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
     
     //Pega o node de escada na posicao do toque
-    SKNode *nodeTocado=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
+    SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];
     
-    //verifica para onde o jogador deve escalar
-    if ([nodeTocado.name isEqualToString:nomeEscalavel]) {
-        //Verifica se o Y é maior ou menor
+    //Se a caixa de fala esta na tela
+    if([self childNodeWithName:@"falasDoJogo"]){
         
-        if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
-            //Fazer jogador escalar - Subindo
-            [self.jogador escalarParaDirecao:@"C"];
+        //Ve se pode pode ir para proxima fala
+        if ([self.controleDeFalas proximaFala]) {
+            if ([self.controleDeFalas.estadoFala isEqual:@"Alerta"]) {
+                SKSpriteNode *falaAtual =[self.controleDeFalas mostrarAlertaComKey:nil Tamanho:self.size];
+                [self addChild:falaAtual];
+            }
+            else{
+                SKSpriteNode *falaAtual =[self.controleDeFalas mostrarFalaComNPC:nil KeyDaFala:nil Missao:nil Tamanho:self.size];
+                [self addChild:falaAtual];
+            }
+        }
+        
+    }
+   
+    //Se a caixa de fala nao esta na tela
+    else{
+        
+        
+        //Verifica se o Menu esta aparecendo se estiver remove eles
+        if ([self childNodeWithName:@"MENU"]) {
+            [[self childNodeWithName:@"MENU"]removeFromParent];
+            [self setPaused:NO];
+            return;
+        }
+        CGPoint posToqueBackGround=[toque locationInNode:self.backgroundAtual];
+        
+        //Pega o node de escada na posicao do toque
+        SKNode *nodeTocadoNoBackGround=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
+        
+        
+        //verifica para onde o jogador deve escalar
+        if ([nodeTocadoNoBackGround.name isEqualToString:nomeEscalavel]) {
+            //Verifica se o Y é maior ou menor
             
-        }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
-            //Fazer jogador escalar - Descendo
-            [self.jogador escalarParaDirecao:@"B"];
+            if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
+                //Fazer jogador escalar - Subindo
+                [self.jogador escalarParaDirecao:@"C"];
+                
+            }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
+                //Fazer jogador escalar - Descendo
+                [self.jogador escalarParaDirecao:@"B"];
+            }
+        }
+        
+        //Posicao do toque na tela
+        CGPoint posicaoToque=[toque locationInView:self.view];
+        
+        //Se estiver na direita
+        
+        if(posicaoToque.x > CGRectGetMidX(self.frame) && ![self.jogador actionForKey:@"escalar"]){
+            
+            //Remove a anterior
+            [self.direcional removeFromParent];
+            //ANDAR
+            //marca o local em que tocou e desenha as setinhas
+            self.pontoDeToqueAndar = posicaoToque;
+            
+            //mostra as setinhas
+            self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+            [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
+            
+            [self addChild:self.direcional];
+        }
+        
+        //Se o node em que tocou for da classe DQNPC, faz o jogador interagir com o NPC
+        if ([[[nodeTocadoNoMundo userData]objectForKey:@"Tipo"] isEqual:@"NPC"]) {
+            
+            //remove as setas direcionais
+            [self.direcional removeFromParent];
+            //para o andar do jogador
+            [self.jogador pararAndar];
+            //faz ele interagir com o npc em questao
+            [self.jogador interagirComNPC:nodeTocadoNoMundo.name ControleDeFalas:self.controleDeFalas];
+        }
+        //Se estiver na esquerda
+        else if(posicaoToque.x < CGRectGetMidX(self.frame)){
+            //PULAR
+            [self.jogador pular];
         }
     }
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesMoved:touches withEvent:event];
-    
-    UITouch *toque = [touches anyObject];
-    CGPoint posicaoToque=[toque locationInNode:self];
-    
-    //Anda corretamente apenas e for do lado direito da tela
-    if(posicaoToque.x > CGRectGetMidX(self.frame)){
-        //se moveu para a direita, anda para a direita - D
-        if(posicaoToque.x > self.pontoDeToqueAndar.x){
-            if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
-                [self.jogador andarParaDirecao:@"D"];
-            }
-        }
+    if (![self childNodeWithName:@"falasDoJogo"]) {
+        UITouch *toque = [touches anyObject];
+        CGPoint posicaoToque=[toque locationInNode:self];
         
-        //senão, move para a esquerda - E
-        else{
-            if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
-                [self.jogador andarParaDirecao:@"E"];
+        //Anda corretamente apenas e for do lado direito da tela
+        if(posicaoToque.x > CGRectGetMidX(self.frame)){
+            //se moveu para a direita, anda para a direita - D
+            if(posicaoToque.x > self.pontoDeToqueAndar.x){
+                if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
+                    [self.jogador andarParaDirecao:@"D"];
+                }
+            }
+            
+            //senão, move para a esquerda - E
+            else{
+                if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
+                    [self.jogador andarParaDirecao:@"E"];
+                }
             }
         }
     }
@@ -321,16 +363,18 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
-    //faz parar de andar, colocando a direção como nula
-    [self.jogador setAndandoParaDirecao:@" "];
-    [self.jogador pararAndar];
-    
-    //tirar imagem da setinha da tela
-    [self.direcional removeFromParent];
-    
-    //Ao parar o toque, pausa sua escalada se ainda estiver escalando
-    if ([self.jogador actionForKey:@"escalar"]) {
-        [self.jogador pausarEscalada];
+    //Se nao ha falas na tela
+    if(![self childNodeWithName:@"falasDoJogo"]){
+        //faz parar de andar
+        [self.jogador pararAndar];
+        
+        //tirar imagem da setinha da tela
+        [self.direcional removeFromParent];
+        
+        //Ao parar o toque, pausa sua escalada se ainda estiver escalando
+        if ([self.jogador actionForKey:@"escalar"]) {
+            [self.jogador pausarEscalada];
+        }
     }
 }
 
@@ -421,7 +465,23 @@
     }
 }
 
+-(void)apresentarCutscene{
+    
+    self.cutscene = [[DQCutsceneTela alloc]initCutScene:self.faseAtual-1 Fase:self SizeScene:self.size];
+    
+    [self.view presentScene:self.cutscene];
+    self.apresentouCutscene =YES;
+    [self iniciarFase];
+}
+
+
 -(void)update:(NSTimeInterval)currentTime{
+    if (!self.apresentouCutscene) {
+        [self apresentarCutscene];
+    }
+    
+    [self.jogador atualizarStatusMissao];
+    
     [self criarParteFase];
     [self verificaCoberturaBackground];
     
@@ -433,7 +493,7 @@
         self.lastUpdateTimeInterval = currentTime;
         
         //A cada 5 segundos salva os status do jogados
-        //[DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:[self.jogador respeito]];
+        [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede]];
     }
 }
 
@@ -517,23 +577,16 @@
     [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 
--(id)initFase:(int)fase Size:(CGSize)size{
-    
-    if (self=[super initWithSize:size ]) {
-        
-        [self configuracoesFase:fase];
-        [self iniciarFase];
-    }
-    return self;
-}
-
 -(void)iniciarFase{
+    
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
-    
+    [self.mundo setName:@"mundo"];
     [self.mundo setZPosition:-100];
     
     self.controladorDaVida = [DQVidaControle sharedControleVida];
+    
+    
     
     self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
     
@@ -547,10 +600,14 @@
     SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
     
     [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
+    
     [self plataformaCategoria:plataforma];
+    
+    self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
     
     [self criaJogador];
     [self configuraFisicaMundo];
+    
 }
 
 -(void)desativaPlataformas{

@@ -7,9 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "DQControleUserDefalts.h"
 #import "DQItensJogador.h"
-#import "DQMissoesJogador.h"
+#import "DQMissaoControle.h"
+#import "DQFalasNoJogoControle.h"
 
 @interface DQJogador : SKSpriteNode
 
@@ -43,7 +43,7 @@
 @property DQItensJogador *itens;
 
 //DQMissoesJogador que armazena tudo relacionado a Missões
-@property DQMissoesJogador *missoes;
+@property DQMissaoControle* controleMissoes;
 
 //Aumentar fome do personagem
 -(void)aumentarFome:(int)aumento;
@@ -75,8 +75,11 @@
 //Método de retorno VOID - Faz o personagem pular
 -(void)pular;
 
-//Método de retorno VOID - Faz o personagem interagir
--(void)interagir;
+//Método de retorno VOID - Faz o personagem interagir com o NPC
+-(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas;
+
+//Metodo para atualizar o status da missao
+-(void)atualizarStatusMissao;
 
 //Singleton do jogador
 +(id)sharedJogador;

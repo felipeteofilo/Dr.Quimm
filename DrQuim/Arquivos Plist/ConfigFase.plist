@@ -6,9 +6,9 @@
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
-			<string></string>
+			<string>DerrapandoDr</string>
 			<key>Caindo</key>
-			<string></string>
+			<string>CaindoDr</string>
 			<key>Escalando</key>
 			<string></string>
 			<key>Parado</key>
@@ -436,21 +436,6 @@
 		<array/>
 	</dict>
 	<dict>
-		<key>Animacoes</key>
-		<dict>
-			<key>Derrapando</key>
-			<string>Derrapando</string>
-			<key>Caindo</key>
-			<string>Caindo</string>
-			<key>Escalando</key>
-			<string>Escalando</string>
-			<key>Parado</key>
-			<string>Parado</string>
-			<key>Pulando</key>
-			<string>Pulando</string>
-			<key>Andando</key>
-			<string>Andando</string>
-		</dict>
 		<key>PosInicialJogador</key>
 		<string>{100, 200}</string>
 		<key>Partes</key>

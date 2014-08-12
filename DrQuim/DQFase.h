@@ -17,8 +17,10 @@
 #import "DQCoberturaBackground.h"
 #import "DQMenu.h"
 #import "DQControleUserDefalts.h"
-#import "DQCutsceneControle.h"
+#import "DQCutsceneTela.h"
 #import "DQVidaControle.h"
+#import "DQFalasNoJogoControle.h"
+#import "DQnpc.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -33,12 +35,17 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
 
-//DQCutsceneControle para controlar as cutscenes e as falas.
-@property DQCutsceneControle *controleCutscenes;
+//DQFalasNoJogoControle para controlar as falas do jogo
+@property DQFalasNoJogoControle *controleDeFalas;
+
+//DQCutsceneControle para apresentar alguma cutscene
+@property DQCutsceneTela *cutscene;
 
 //DQVidaControle para controlar a vida do personagem
 @property DQVidaControle *controladorDaVida;
 
+//Varialvel booleana para definir se a cutscene foi apresentada ou nao
+@property BOOL apresentouCutscene;
 
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode *mundo;
@@ -65,9 +72,12 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 
+
+//Metodo para iniciar Cutscene
+-(void)apresentarCutscene;
+
 //metodo para iniciar a fase
 -(void)iniciarFase;
--(id)initFase:(int)fase Size:(CGSize)size;
 -(void)configuracoesFase:(int)faseAtual;
 -(void)criarParteFase;
 -(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;

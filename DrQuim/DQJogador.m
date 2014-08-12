@@ -13,7 +13,7 @@
 //Leonardo 13/06/2014 - Alterado a função de inicialização do node para que carregue o sprite na propriedade spriteNode
 //Funcao para iniciar e alocar tudo que for necessario para o player
 -(id)initJogadorSprite: (NSString*)name{
-    
+
     if(self = [super init]){
         
         //Leonardo 13/06/2014 - Inicia o sprite
@@ -27,7 +27,7 @@
         
         //Deixar o corpo fisico mais prox ao sprite
         [self configuraCorpoFisico];
-        
+
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
         self.physicsBody.allowsRotation = NO;
@@ -36,47 +36,46 @@
         
         [self addChild:self.spriteNode];
         
+
+        
         //Seta que ele ainda nao pode escalar
         self.podeEscalar = NO;
         self.estaNoChao = YES;
+        //USADO COMO TESTE
+        self.fome = 10;
+        self.sede = 40;
+        self.vida = 100;
+        self.respeito = 0;
         
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         
-        //Inicia a instância da classe missoesJogador
-        self.missoes = [[DQMissoesJogador alloc] init];
+        self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
-        [self atualizaEstadoJogador];
+        
+        
     }
-    
+
     //retorna o jogador
     return self;
 }
--(void)atualizaEstadoJogador{
-    NSDictionary *estadoJogador=[DQControleUserDefalts estadosJogador];
-    
-    self.fome= [[estadoJogador objectForKey:@"Fome"]floatValue];
-    self.vida=[[estadoJogador objectForKey:@"Vida"]floatValue];
-    self.sede=[[estadoJogador objectForKey:@"Sede"]floatValue];
-    self.respeito=[[estadoJogador objectForKey:@"Respeito"]floatValue];
-}
 
 -(void)iniciarAnimacoes:(NSDictionary*)animacoes{
-    
+       
     if (![[animacoes objectForKey:@"Andando"]  isEqual:@""]) {
         framesAndando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Andando"]]];
-        
+
     }
     if (![[animacoes objectForKey:@"Pulando"]  isEqual:@""]) {
         framesPulando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Pulando"]]];
         
     }
     if (![[animacoes objectForKey:@"Parado"]  isEqual:@""]) {
-        framesParado = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Parado"]]];
+       framesParado = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Parado"]]];
         
     }
     if (![[animacoes objectForKey:@"Escalando"]  isEqual:@""]) {
-        framesEscalando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Escalando"]]];
+       framesEscalando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Escalando"]]];
         
     }
     if (![[animacoes objectForKey:@"Caindo"]  isEqual:@""]) {
@@ -124,9 +123,9 @@
 -(void)animarAndando{
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
-                                                                              timePerFrame:0.1f
-                                                                                    resize:NO
-                                                                                   restore:YES]] withKey:@"animandoAndando"];
+                                                                   timePerFrame:0.1f
+                                                                         resize:NO
+                                                                        restore:YES]] withKey:@"animandoAndando"];
 }
 
 //funcao para animar o jogador derrapando
@@ -153,7 +152,7 @@
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
                                                                               timePerFrame:0.9f
                                                                                     resize:NO
-                                                                                   restore:YES]]withKey:@"animandoParado"];
+                                                                                restore:YES]]withKey:@"animandoParado"];
 }
 //funcao para animar jogador pulando
 -(void)animarPular{
@@ -182,7 +181,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 140)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 165)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -281,7 +280,7 @@
 
 //Método para parar de andar
 -(void)pararAndar{
-    
+    self.andandoParaDirecao =@"";
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
@@ -291,6 +290,8 @@
 -(void)escalarParaDirecao:(NSString*)direcao{
     //se puder escalar
     if (self.podeEscalar) {
+        
+        
         SKAction *escalar=[[SKAction alloc]init];
         
         //Desliga a gravidade para o Node
@@ -332,8 +333,47 @@
     [self removeActionForKey:@"escalar"];
 }
 
-//funcao a fazer para ele interagir com pessoas e elementos do cenario
--(void)interagir{
+//funcao que atualiza o status da missao
+-(void)atualizarStatusMissao{
+    [self.controleMissoes atualizarCena:self.scene];
+    [self.controleMissoes colocarBalaoDeMissao];
+}
+
+//funcao a fazer para ele interagir com pessoas
+-(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas{
+    
+    //Se nao estiver em missao
+    if (!self.controleMissoes.emMissao) {
+        //Senao esta iniciando uma nova  missao
+        if (![self.controleMissoes iniciarNovaMissaoNPC:nomeNPC]) {
+            //Cria uma caixa de fala com as falas de respeito e a adiciona na cena
+            NSString *keyDaParte = [NSString stringWithFormat:@"Respeito%i", (self.respeito/10)*10];
+            
+            SKSpriteNode *caixaDeFala =[controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:nil Tamanho:self.scene.size];
+            [self.scene addChild:caixaDeFala];
+        }
+    }
+    //Se esta em missao
+    if (self.controleMissoes.emMissao) {
+        NSString *keyDaParte;
+        //Se é o NPC que passa a parte da missao
+        if ([self.controleMissoes passarParteMissao:nomeNPC item:@""]) {
+            //Cria a key de uma fala principal da missao
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual-1];
+        }
+        //Se nao é o NPC que paasa a parte da missao
+        else{
+            //Cria uma key de uma fala secundaria da missao
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual];
+        }
+        
+        //Cria a caixa de fala com as key obtidas e a adiciona na tela
+        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:self.controleMissoes.missao.ID Tamanho:self.scene.size];
+        
+        [self.scene addChild:caixaDeFala];
+    }
+    
+    
     
 }
 @end

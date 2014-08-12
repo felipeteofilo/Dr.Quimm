@@ -29,6 +29,8 @@
 @property BOOL falouAtencaoAlpha;
 @property BOOL falouAtencaoBeta;
 
+
+
 //Variavel Booleana para definir se já passou o tutorial
 @property BOOL mostrouTutorial;
 @property BOOL executandoTutorial;

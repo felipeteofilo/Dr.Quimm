@@ -10,43 +10,36 @@
 
 @implementation DQnpc
 
--(id)initComNome:(NSString *)nome
+-(id)initComNome:(NSString *)nome naPosicao:(CGPoint)posicao
 {
-    self = [super init];
+    //Inicia o sprite node com o nome da imagem
+    self = [super initWithImageNamed:nome];
     if(self){
-        self.nome = nome;
         
-        //CONFIGURA O DICIONARIO DE FALAS DEPENDENDO DO NOME ATRIBUÍDO A ELE.
-            //Armazena a url do arquivo "FalasNoJogo.plist"
-        NSString *url = [[NSBundle mainBundle]pathForResource:@"FalasNoJogo" ofType:@"plist"];
-            //Armazena o conteúdo do array de "FalasNoJogo.plist"
-        NSArray *arrayFalas = [[NSArray alloc] initWithContentsOfFile:url];
-            //Armazena as falas da vila - De todos os personagens
-        NSDictionary *falasDaVila = [[NSDictionary alloc]initWithDictionary:[[arrayFalas objectAtIndex:1] objectForKey:@"Falas"]];
-            //Dependendo do nome, recebe seu Dicionario de Falas:
-        self.dicionarioDeFalas = [[NSDictionary alloc]initWithDictionary:[falasDaVila objectForKey:nome]];
+        //Configura o SpriteNode
+        if ([nome isEqual:@"Quimm"]) {
+            [self setSize:CGSizeMake(70, 100)];
+        }
+        else{
+            [self setSize:CGSizeMake(180, 200)];
+        }
+        [self setAnchorPoint:CGPointMake(0, 0)];
+        [self setName:nome];
+        [self setPosition:posicao];
+        [self setZPosition:0];
         
-        //DIVIDE O DICIONARIO EM OUTRAS PARTES - COM MISSÃO, MISSÃO01,...
-            //sem missão
-            self.dicionarioDeFalasSemMissao = [[NSDictionary alloc]initWithDictionary:[self.dicionarioDeFalas objectForKey:@"SemMissao"]];
-            //missão01
-            self.dicionarioDeFalasMissao01 = [[NSDictionary alloc]initWithDictionary:[self.dicionarioDeFalas objectForKey:@"Missao01"]];
+        self.name = nome;
+        
+        NSMutableDictionary * tipo = [[NSMutableDictionary alloc]init];
+        
+        [tipo setObject:@"NPC" forKey:@"Tipo"];
+        
+        [self setUserData:tipo];
+    
     }
     return self;
 }
 
--(void)criarSpriteNodeComNome:(NSString*)nome naPosicao:(CGPoint)posicao{
-    
-    //Inicia o sprite node com o nome da imagem
-    self.spriteNode = [SKSpriteNode spriteNodeWithImageNamed:nome];
-    [self.spriteNode setSize:CGSizeMake(180, 200)];
-    
-    //Configura o SpriteNode
-    [self.spriteNode setAnchorPoint:CGPointMake(0, 0)];
-    [self.spriteNode setName:nome];
-    [self.spriteNode setPosition:posicao];
-    [self.spriteNode setZPosition:0];
-}
 
 
 @end

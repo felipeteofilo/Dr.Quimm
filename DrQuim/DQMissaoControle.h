@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <Foundation/Foundation.h>
 #import "DQMissao.h"
-#import "DQVidaControle.h"
+//#import "DQVidaControle.h"
 
 @interface DQMissaoControle : NSObject
 
@@ -19,6 +19,8 @@
 @property BOOL emMissao;
 @property SKScene *cena;
 
+@property SKSpriteNode *balao;
+
 //Método INIT, Inicia com a cena em que a missão está acontecendo
 -(id)initCena:(SKScene *)cena;
 
@@ -27,5 +29,11 @@
 
 //Método chamado quando o jogador está em uma missão - avalia se irá passar de parte ou acabar
 -(BOOL)passarParteMissao:(NSString *)NPC item:(NSString*)item;
+
+//Funcao para atualizar a cena da classe
+-(void)atualizarCena :(SKScene*)cenaRecebida;
+
+//Coloca o balao em cima do personagem
+-(void)colocarBalaoDeMissao;
 
 @end
