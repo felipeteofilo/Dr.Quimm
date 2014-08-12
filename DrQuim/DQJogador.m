@@ -24,13 +24,14 @@
         [self.spriteNode setSize:CGSizeMake(90, 160)];
         
         [self.spriteNode setZPosition:10.0f];
+        
         //Deixar o corpo fisico mais prox ao sprite
-        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.spriteNode.size.width, self.spriteNode.size.height-12)];
+        [self configuraCorpoFisico];
 
         self.physicsBody.usesPreciseCollisionDetection=YES;
         self.physicsBody.affectedByGravity = YES;
         self.physicsBody.allowsRotation = NO;
-        self.physicsBody.density = 0.6f;
+        self.physicsBody.density = 1.5f;
         self.physicsBody.restitution = 0;
         
         [self addChild:self.spriteNode];
@@ -49,8 +50,9 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         
-        //Inicia a instância da classe missoesJogador
-        self.missoes = [[DQMissoesJogador alloc] init];
+        self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
+        
+        
         
     }
 
@@ -157,7 +159,7 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.37f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
 }
 
 //funcao para animar jogador caindo
@@ -179,7 +181,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 140)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 165)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -230,26 +232,55 @@
     }
 }
 
--(void)aumentarFome:(int)aumento{
+-(void)configuraCorpoFisico{
+    CGMutablePathRef path=CGPathCreateMutable();
     
-    [self setFome:(self.fome - aumento)];
+    CGPoint primeiroPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPathMoveToPoint(path, NULL, primeiroPonto.x,primeiroPonto.y);
+    
+    CGPoint segundoPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, segundoPonto.x, segundoPonto.y);
+    
+    CGPoint terceiroPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMaxY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, terceiroPonto.x, terceiroPonto.y);
+    
+    CGPoint quartoPonto=CGPointMake(CGRectGetMaxX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, quartoPonto.x, quartoPonto.y);
+    
+    [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:path]];
     
 }
+
+
+//Métodos de mudança de estado
+-(void)aumentarFome:(int)aumento{
+    [self setFome:(self.fome - aumento)];
+}
+
 -(void)aumentarSede:(int)aumento{
-    
     [self setSede:(self.sede - aumento)];
-    
+}
+
+-(void)diminuirFome:(int)subtracao{
+    [self setFome:(self.fome + subtracao)];
+}
+-(void)diminuirSede:(int)subtracao{
+    [self setSede:(self.sede + subtracao)];
 }
 
 -(void)perderVida:(int)perda{
-    
     [self setVida:(self.vida - perda)];
-    
 }
+
+-(void)aumentarVida:(int)aumento{
+    [self setVida:(self.vida + aumento)];
+}
+
+
 
 //Método para parar de andar
 -(void)pararAndar{
-    
+    self.andandoParaDirecao =@"";
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
@@ -302,12 +333,47 @@
     [self removeActionForKey:@"escalar"];
 }
 
-//funcao a fazer para ele interagir com pessoas e elementos do cenario
--(void)interagir{
-    
+//funcao que atualiza o status da missao
+-(void)atualizarStatusMissao{
+    [self.controleMissoes atualizarCena:self.scene];
+    [self.controleMissoes colocarBalaoDeMissao];
 }
 
-
-
-
+//funcao a fazer para ele interagir com pessoas
+-(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas{
+    
+    //Se nao estiver em missao
+    if (!self.controleMissoes.emMissao) {
+        //Senao esta iniciando uma nova  missao
+        if (![self.controleMissoes iniciarNovaMissaoNPC:nomeNPC]) {
+            //Cria uma caixa de fala com as falas de respeito e a adiciona na cena
+            NSString *keyDaParte = [NSString stringWithFormat:@"Respeito%i", (self.respeito/10)*10];
+            
+            SKSpriteNode *caixaDeFala =[controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:nil Tamanho:self.scene.size];
+            [self.scene addChild:caixaDeFala];
+        }
+    }
+    //Se esta em missao
+    if (self.controleMissoes.emMissao) {
+        NSString *keyDaParte;
+        //Se é o NPC que passa a parte da missao
+        if ([self.controleMissoes passarParteMissao:nomeNPC item:@""]) {
+            //Cria a key de uma fala principal da missao
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual-1];
+        }
+        //Se nao é o NPC que paasa a parte da missao
+        else{
+            //Cria uma key de uma fala secundaria da missao
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual];
+        }
+        
+        //Cria a caixa de fala com as key obtidas e a adiciona na tela
+        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:self.controleMissoes.missao.ID Tamanho:self.scene.size];
+        
+        [self.scene addChild:caixaDeFala];
+    }
+    
+    
+    
+}
 @end

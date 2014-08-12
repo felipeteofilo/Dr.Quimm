@@ -18,6 +18,8 @@
         
         //Inicializa os indicadores
         [self configuraBarras];
+        [self configurarBotaoMenu];
+        
         [self setUserInteractionEnabled:YES];
     }
     return self;
@@ -50,6 +52,36 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    CGPoint posicaoToqueNode=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posicaoToqueNode];
+    
+    if ([self childNodeWithName:@"MENU"]) {
+        [[self childNodeWithName:@"MENU"]removeFromParent];
+    }
+    
+    for (SKSpriteNode *nodeTocado in arrayNodes) {
+        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
+            if (!self.menu) {
+                self.menu=[[DQMenu alloc]initMenu];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame)-100)];
+                
+            }
+            
+            if (![self childNodeWithName:@"MENU"]) {
+                [self.parent addChild:self.menu];
+                [self.parent setPaused:YES];
+            }
+            
+            break;
+        }
+    }
 
+}
+-(void)configurarBotaoMenu{
+    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
+    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame)+130)];
+    
+    [self.botaoMenu setName:@"botaoMenu"];
+    [self addChild:self.botaoMenu];
 }
 @end

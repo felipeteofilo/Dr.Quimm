@@ -10,6 +10,7 @@
 
 @implementation DQMenuItem
 
+@synthesize opcoesMenu,indexAtual;
 -(id)initMenu{
     
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {

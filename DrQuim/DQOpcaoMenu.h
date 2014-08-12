@@ -18,10 +18,6 @@
 @property SKNode *conteudo;
 @property NSString *titulo;
 
--(void)realcarOpcao;
--(void)exibirConteudo;
-
-
 -(id)initOpcaoTitulo:(NSString*)titulo;
 -(void)configuraConteudoQuest:(NSMutableDictionary*)missao index:(int)index;
 -(void)configuraConteudoReceita:(NSDictionary*)receita index:(int)index;
