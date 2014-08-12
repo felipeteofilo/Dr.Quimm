@@ -472,7 +472,7 @@
     
     [self.view presentScene:self.cutscene];
     self.apresentouCutscene =YES;
-    [self iniciarFase];
+    
 }
 
 
@@ -497,7 +497,7 @@
         [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
     }
     
-    NSLog(@"passou no update");
+    
 }
 
 - (void)didSimulatePhysics{

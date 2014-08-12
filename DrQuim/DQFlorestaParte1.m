@@ -18,8 +18,8 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:1];
-        self.apresentouCutscene = NO;
-        
+        self.apresentouCutscene = YES;
+        [self iniciarFase];
         
     }
     return self;
