@@ -19,7 +19,6 @@
         [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
     
         
-        
         [self iniciarFase];
         [self addChild:self.hudFase];
     }
