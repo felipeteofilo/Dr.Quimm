@@ -76,8 +76,11 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //Metodo para iniciar Cutscene
 -(void)apresentarCutscene;
 
+
+
 //metodo para iniciar a fase
 -(void)iniciarFase;
+-(id)initFase:(int)fase Size:(CGSize)size;
 -(void)configuracoesFase:(int)faseAtual;
 -(void)criarParteFase;
 -(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;

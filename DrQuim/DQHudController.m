@@ -19,6 +19,7 @@
         //Inicializa os indicadores
         [self configuraBarras];
         [self configurarBotaoMenu];
+        [self configuraContadorGeiger];
         
         [self setUserInteractionEnabled:YES];
     }
@@ -33,7 +34,6 @@
     [self.barraVida setPosition:CGPointMake(90, -98)];
     [self.barraFome setPosition:CGPointMake(431, -98)];
     [self.barraSede setPosition:CGPointMake(739, -98)];
-    
     
     [self addChild:self.barraFome];
     [self addChild:self.barraSede];
@@ -69,7 +69,7 @@
             
             if (![self childNodeWithName:@"MENU"]) {
                 [self.parent addChild:self.menu];
-                [self.parent setPaused:YES];
+                [self.parent.scene setPaused:YES];
             }
             
             break;
@@ -83,5 +83,13 @@
     
     [self.botaoMenu setName:@"botaoMenu"];
     [self addChild:self.botaoMenu];
+}
+
+-(void)configuraContadorGeiger{
+    self.contador=[[DQContadorGeiger alloc]initContadorNivelRadicao:0];
+    [self.contador setPosition:CGPointMake(CGRectGetMaxX(self.frame)-(self.contador.size.width/4), CGRectGetMinY(self.frame)+130)];
+    
+    [self addChild:self.contador];
+    
 }
 @end

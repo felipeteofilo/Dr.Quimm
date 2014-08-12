@@ -10,6 +10,7 @@
 #import "DQItensJogador.h"
 #import "DQMissaoControle.h"
 #import "DQFalasNoJogoControle.h"
+#import "DQControleUserDefalts.h"
 
 @interface DQJogador : SKSpriteNode
 

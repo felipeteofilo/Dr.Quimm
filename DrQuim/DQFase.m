@@ -494,8 +494,10 @@
         self.lastUpdateTimeInterval = currentTime;
         
         //A cada 5 segundos salva os status do jogados
-        [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede]];
+        [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
     }
+    
+    NSLog(@"passou no update");
 }
 
 - (void)didSimulatePhysics{
@@ -597,12 +599,8 @@
     //Adiciona o mundo na scena
     [self addChild:self.mundo];
     
-    //Adiciona plataforma caso tenha
-    SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parteFaseAtual daFase:self.faseAtual CGFrameTela:self.frame];
-    
-    [self adicionarPlataforma:plataforma noNode:self.backgroundAtual];
-    
-    [self plataformaCategoria:plataforma];
+    [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
+
     
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
     
@@ -653,6 +651,5 @@
 -(void)pegarConfigFase:(int)fase{
     self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
 }
-
 
 @end
