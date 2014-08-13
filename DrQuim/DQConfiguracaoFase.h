@@ -19,4 +19,5 @@
 +(NSArray*)configNPCFase:(int)fase;
 +(NSArray*)escalavelFase:(int)fase Parte:(int)parte;
 +(NSDictionary*)animacoesJogadorFase:(int)_fase;
++(NSDictionary*)configFase:(int)fase;
 @end

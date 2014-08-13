@@ -11,11 +11,12 @@
 #import "DQItem.h"
 #import "DQConfigMenu.h"
 #import "DQTexto.h"
+#import "DQJogador.h"
 
 @interface DQMenuItem : SKSpriteNode<DQProtocolMenu>
 
 
-@property DQItensJogador *itensJogador;
+@property DQJogador *jogador;
 
 @property SKLabelNode *titulo;
 @property NSArray *itens;

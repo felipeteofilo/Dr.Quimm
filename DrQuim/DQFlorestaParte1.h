@@ -19,10 +19,6 @@
 
 @interface DQFlorestaParte1 : DQFase <SKPhysicsContactDelegate>
 
-
-
-
-
 //Variaveis booleanas para definir se fá foi ou não dito as falas in-game que são ditas apenas uma vez
 @property BOOL falouRadiacaoAlpha;
 @property BOOL falouRadiacaoBeta;
@@ -33,6 +29,12 @@
 @property BOOL mostrouTutorial;
 @property BOOL executandoTutorial;
 
+@property BOOL andouDireita;
+@property BOOL andouEsquerda;
+@property BOOL pulou;
+
+//Timer que será usado para definir se precisa exibir ou ñ o tutorial;
+@property (nonatomic) NSTimeInterval contadorAcao;
 //Array com pontos de radiacao e Key de Falas na ordem
 @property NSArray *pontosRadiacao;
 @property NSArray *keyFalaPontoRadiacao;

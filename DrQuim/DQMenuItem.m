@@ -10,6 +10,7 @@
 
 @implementation DQMenuItem
 
+@synthesize opcoesMenu,indexAtual;
 -(id)initMenu{
     
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
@@ -42,28 +43,28 @@
 
 //Lista os itens que o jogador tem disponivel
 -(void)listarItens{
-    self.itensJogador=[[DQItensJogador alloc]init];
     
+    self.jogador =[DQJogador sharedJogador];
     NSMutableArray *arrayItensAdicionar=[NSMutableArray array];
-    NSArray *arrayItens=[self.itensJogador arrayItensJogador];
+    NSArray *arrayItens=[self.jogador.itens arrayItensJogador];
     
     
     for (int i=0; i< [arrayItens count];i++) {
         //Criado para facilitar leitura
         NSString *itemSelecionado=[arrayItens objectAtIndex:i];
         
-        NSString *nomeItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"nome"];
+        NSString *nomeItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"nome"];
         
-        NSString *descricaoItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"descricao"];
+        NSString *descricaoItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"descricao"];
         
-        NSString *categoriaItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"categoria"];
+        NSString *categoriaItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"categoria"];
         
-        NSString *imagemItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"imagem"];
+        NSString *imagemItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"imagem"];
         
         
         DQItem *itemAdicionadar=[[DQItem alloc]initItemNome:nomeItem descricao:descricaoItem categoria:categoriaItem imagem:imagemItem];
         
-        [itemAdicionadar setQndeItem:[[self.itensJogador.dicionarioDeItensJogador objectForKey:itemSelecionado]intValue]];
+        [itemAdicionadar setQndeItem:[[self.jogador.itens.dicionarioDeItensJogador objectForKey:itemSelecionado]intValue]];
         
         [arrayItensAdicionar addObject:itemAdicionadar];
     }
@@ -158,7 +159,7 @@
                 DQItem *itemTocado=[arrayNodes objectAtIndex:i];
                 
                 [self exibeInformacoesItem:itemTocado];
-                i= [arrayNodes count];
+                i= (int)[arrayNodes count];
             }
         }
         

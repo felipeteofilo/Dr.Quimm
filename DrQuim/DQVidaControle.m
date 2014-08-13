@@ -51,6 +51,43 @@
     }
 }
 
+//Metodo que altera a fome do jogador
+-(void)alterarFomeJogador: (int)fome
+{
+    //está ficando com fome
+    if(fome > 0){
+        [self.jogador aumentarFome:fome];
+    }
+    //está perdendo a fome
+    else{
+        [self.jogador diminuirFome:fome];
+    }
+}
 
+//Metodo que altera a fome do jogador
+-(void)alterarSedeJogador: (int)sede
+{
+    //está ficando com sede
+    if(sede > 0){
+        [self.jogador aumentarSede:sede];
+    }
+    //está perdendo a sede
+    else{
+        [self.jogador diminuirSede:sede];
+    }
+}
+
+//Metodo que altera a fome do jogador
+-(void)alterarVidaJogador: (int)vida
+{
+    //está ficando sem vida
+    if(vida > 0){
+        [self.jogador perderVida:vida];
+    }
+    //está ganhando vida
+    else{
+        [self.jogador aumentarVida:vida];
+    }
+}
 
 @end
