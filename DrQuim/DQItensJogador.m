@@ -26,11 +26,8 @@
         //dicionario
         self.dicionarioDeItensReferencia = [[NSMutableDictionary alloc]initWithContentsOfFile:urlItensReferencia];
         
-        [self receberItem:@"Docinho" quantidade:220];
-        [self receberItem:@"Carne" quantidade:220];
-        [self receberItem:@"Lança" quantidade:220];
-        [self receberItem:@"Remedio" quantidade:220];
-        [self receberItem:@"Docinho" quantidade:220];
+        [self receberItem:@"Carne" quantidade:1];
+        
     }
     return self;
 }
@@ -62,7 +59,7 @@
     //escrever no dicionario de itens jogador
     [self.dicionarioDeItensJogador setValue:[NSNumber numberWithInt:quantidadeFinal] forKey:item];
     
-    if ([self.dicionarioDeItensJogador valueForKey:item] <= 0) {
+    if ([[self.dicionarioDeItensJogador valueForKey:item]intValue] <= 0) {
         [self.dicionarioDeItensJogador removeObjectForKey:item];
     }
 }

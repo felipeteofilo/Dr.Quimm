@@ -26,6 +26,7 @@
 }
 
 -(void)prepararExibicao{
+    [self removeAllChildren];
     [self configuraTitulo];
     [self listarItens];
     [self exibeItens];
@@ -61,9 +62,9 @@
         
         NSString *imagemItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"imagem"];
         
-        int qauntidade = [[self.jogador.itens.dicionarioDeItensJogador objectForKey:itemSelecionado]intValue];
+        int quantidade = [[self.jogador.itens.dicionarioDeItensJogador objectForKey:itemSelecionado]intValue];
         
-        DQItem *itemAdicionadar=[[DQItem alloc]initItemNome:nomeItem descricao:descricaoItem categoria:categoriaItem imagem:imagemItem Quantidade:qauntidade];
+        DQItem *itemAdicionadar=[[DQItem alloc]initItemNome:nomeItem descricao:descricaoItem categoria:categoriaItem imagem:imagemItem Quantidade:quantidade];
         
         [arrayItensAdicionar addObject:itemAdicionadar];
     }

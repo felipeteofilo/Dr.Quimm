@@ -16,7 +16,7 @@
         self.cena = cenaRecebida;
         
         //Inicia na parte 0
-        self.parteAtual = 0;
+        self.parteAtual = 7;
         
         //E sem nenhuma missão
         self.emMissao = NO;
@@ -76,6 +76,7 @@
 -(BOOL)iniciarNovaMissaoNPC:(NSString*)NPC{
     if([self.missao podeIniciarComNPC:NPC]){
         self.emMissao = YES;
+        self.parteAtual = 7;
         [self.balao removeFromParent];
         return YES;
     }
@@ -170,7 +171,6 @@
 -(void)fimDaMissao{
     
     self.emMissao = NO;
-    self.parteAtual = 0;
     self.proximaMissao++;
     self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
     [self colocarBalaoDeMissao];
