@@ -16,7 +16,7 @@
         self.cena = cenaRecebida;
         
         //Inicia na parte 0
-        self.parteAtual = 7;
+        self.parteAtual = 0;
         
         //E sem nenhuma missão
         self.emMissao = NO;
@@ -27,6 +27,7 @@
         //Apresentando a próxima missão (no caso, a primeira)
         self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
         
+        
         [self colocarBalaoDeMissao];
     }
     return self;
@@ -35,6 +36,7 @@
 
 -(void)colocarBalaoDeMissao{
     if (self.balao == nil) {
+        
         self.balao = [[SKSpriteNode alloc]initWithImageNamed:@"BalaoAlerta"];
         [self.balao setName:@"balaoMissao"];
         SKTextureAtlas *pastaFrames = [SKTextureAtlas atlasNamed:@"BalaoMissao"];
@@ -74,6 +76,7 @@
 }
 
 -(BOOL)iniciarNovaMissaoNPC:(NSString*)NPC{
+    
     if([self.missao podeIniciarComNPC:NPC]){
         self.emMissao = YES;
         self.parteAtual = 7;
@@ -169,10 +172,10 @@
 //TODO - COLOCAR MENSSAGENS
 //método chamado quando a missão chega ao fim
 -(void)fimDaMissao{
-    
+    self.parteAtual++;
     self.emMissao = NO;
     self.proximaMissao++;
-    self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
+    self.balao = nil;
     [self colocarBalaoDeMissao];
 }
 @end
