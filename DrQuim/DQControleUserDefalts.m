@@ -41,11 +41,11 @@
 }
 
 +(int)faseAtual{
-    return [[self userDefalts]integerForKey:@"FaseAtual"];
+    return (int)[[self userDefalts]integerForKey:@"FaseAtual"];
 }
 
 +(int)parteFaseAtual{
-    return [[self userDefalts]integerForKey:@"parteAtual"];
+    return (int)[[self userDefalts]integerForKey:@"parteAtual"];
 }
 +(NSString*)missaoAtualJogador{
     return [[self userDefalts]objectForKey:@"MissaoJogador"];
