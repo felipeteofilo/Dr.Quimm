@@ -9,6 +9,9 @@
 #import "DQMenuConfiguracao.h"
 
 @implementation DQMenuConfiguracao
+
+@synthesize indexAtual;
+
 -(id)initMenu{
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];

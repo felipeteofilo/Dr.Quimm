@@ -13,7 +13,6 @@
 -(id)initHud{
     if (self=[super initWithImageNamed:@"FundoHUD.png"]) {
         //Inicializa HUD
-        
         [self setAnchorPoint:CGPointMake(0,1)]; //Canto superior esquerdo
         
         //Inicializa os indicadores
@@ -63,7 +62,7 @@
         if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
             if (!self.menu) {
                 self.menu=[[DQMenu alloc]initMenu];
-                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame)-100)];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame)-200)];
                 
             }
             
@@ -77,9 +76,23 @@
     }
 
 }
+-(void)esconderHud{
+    [self setHidden:YES];
+}
+-(void)exibirHud{
+    [self setHidden:NO];
+}
+-(void)esconderContador{
+    [self.contador setHidden:YES];
+}
+-(void)exibirContador{
+    [self.contador setHidden:NO];
+}
+
 -(void)configurarBotaoMenu{
     self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
-    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame)+130)];
+    [self.botaoMenu setAnchorPoint:CGPointMake(0.5, 0.2)];
+    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame))];
     
     [self.botaoMenu setName:@"botaoMenu"];
     [self addChild:self.botaoMenu];
@@ -87,7 +100,8 @@
 
 -(void)configuraContadorGeiger{
     self.contador=[[DQContadorGeiger alloc]initContadorNivelRadicao:0];
-    [self.contador setPosition:CGPointMake(CGRectGetMaxX(self.frame)-(self.contador.size.width/4), CGRectGetMinY(self.frame)+130)];
+    [self.contador setAnchorPoint:CGPointMake(1, 0)];
+    [self.contador setPosition:CGPointMake(CGRectGetMaxX(self.frame)-(self.contador.size.width/4), CGRectGetMinY(self.frame))];
     
     [self addChild:self.contador];
     

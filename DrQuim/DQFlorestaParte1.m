@@ -18,9 +18,8 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:1];
-        self.apresentouCutscene = NO;
         
-        
+        self.apresentouCutscene = YES;
     }
     return self;
 }
@@ -28,6 +27,9 @@
 
 -(void)iniciarFase{
     [super iniciarFase];
+    
+    //Remove o HUD pois o mesmo nao aparece na 1 fase
+    [self.hudFase removeFromParent];
     [self definirPontosRadiacao];
     
     self.mostrouTutorial = YES;
@@ -42,7 +44,6 @@
     if(!self.mostrouTutorial){
         if(!self.executandoTutorial){
             [self iniciarTutorial];
-            
         }
     }
     else{
@@ -58,6 +59,67 @@
         }
         else if ([[nodeTocado name] isEqualToString:@"RadiacaoBeta"]) {
             [self addChild:[self.controleDeFalas mostrarAlertaComKey:@"RadiacaoBeta" Tamanho:self.size]];
+        }
+    }
+}
+
+-(void)iniciarTutorial:(NSString*)acao{
+    SKTextureAtlas *atlasTutorial=[SKTextureAtlas atlasNamed:[NSString stringWithFormat:@"tutorial%@",acao]];
+    NSMutableArray *framesTutorial=[NSMutableArray array];
+    
+    for (int i=1;i <= [[atlasTutorial textureNames]count];i++) {
+        SKTexture *temp = [atlasTutorial textureNamed:[NSString stringWithFormat:@"%d", i]];
+        
+        [framesTutorial addObject:temp];
+    }
+    
+    SKSpriteNode *spriteTutorial=[[SKSpriteNode alloc]init];
+    [spriteTutorial setSize:CGSizeMake(self.frame.size.width/2, self.frame.size.height)];
+    
+    if ([acao isEqualToString:@"Pular"]) {
+        [spriteTutorial setAnchorPoint:CGPointMake(0, 0)];
+        [spriteTutorial setPosition:CGPointMake(0, 0)];
+    }else {
+        [spriteTutorial setAnchorPoint:CGPointMake(0, 0)];
+        [spriteTutorial setPosition:CGPointMake(self.frame.origin.x + self.frame.size.width/2, 0)];
+    }
+    
+    [self animarTutorial:framesTutorial noSpriteNode:spriteTutorial];
+}
+-(void)animarTutorial:(NSArray*)arrayTexturas noSpriteNode:(SKSpriteNode*)spriteTutorial{
+    
+    [self addChild:spriteTutorial];
+    
+    //Desativa a interacao do user
+    [self setUserInteractionEnabled:NO];
+    
+    [spriteTutorial runAction:[SKAction animateWithTextures:arrayTexturas timePerFrame:0.25f] completion:^{
+        //Ativa a interacao do user
+        
+        [self setUserInteractionEnabled:YES];
+        [spriteTutorial removeFromParent];
+    }];
+}
+
+//TODO:- Arrumar o timer
+-(void)verificaApresentacaoTurorial:(NSTimeInterval)currentTime{
+    CFTimeInterval ultimoUpdate = currentTime - self.contadorAcao;
+    
+    //Mais de 2 segundos sem fazer acao nenhuma
+    if (ultimoUpdate > 2) {
+        self.contadorAcao = currentTime;
+        
+        if (!self.andouEsquerda) {
+            [self iniciarTutorial:@"CorrerEsquerda"];
+            self.andouEsquerda=YES;
+            
+        }else if (!self.andouDireita){
+            [self iniciarTutorial:@"CorrerDireita"];
+            self.andouDireita=YES;
+            
+        }else if (!self.pulou){
+            [self iniciarTutorial:@"Pular"];
+            self.pulou=YES;
         }
     }
 }
@@ -104,6 +166,7 @@
     SKTexture *ACD8 = [atlasCorrerD textureNamed:@"tutorialCorrerD008.png"];
     //Adiciona num array
     NSArray *arrayTutorialCorrerD = @[ACD1, ACD2, ACD3, ACD4, ACD5, ACD6, ACD7, ACD8];
+    
     //Cria a ação
     SKAction *acaoTutorialCorrerD = [SKAction animateWithTextures:arrayTutorialCorrerD timePerFrame:0.25f];
     
@@ -117,6 +180,7 @@
     SKTexture *ACE5 = [atlasCorrerE textureNamed:@"tutorialCorrerE005.png"];
     SKTexture *ACE6 = [atlasCorrerE textureNamed:@"tutorialCorrerE006.png"];
     SKTexture *ACE7 = [atlasCorrerE textureNamed:@"tutorialCorrerE007.png"];
+    
     //Adiciona num array
     NSArray *arrayTutorialCorrerE = @[ACE1, ACE2, ACE3, ACE4, ACE5, ACE6, ACE7];
     //Cria a ação
@@ -173,6 +237,9 @@
     [self falarAlertaRadiacao];
     
     [self segundaCutScene];
+    
+    
+    [self verificaApresentacaoTurorial:currentTime];
 }
 
 -(void)definirPontosRadiacao{

@@ -20,7 +20,6 @@
 #import "DQCutsceneTela.h"
 #import "DQVidaControle.h"
 #import "DQFalasNoJogoControle.h"
-#import "DQnpc.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -70,7 +69,8 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //Propriedade que será usada para guardar as configs da fase e nao ficar travando ao ler o plist
 @property NSDictionary *configFase;
 
-@property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
+@property BOOL jogoPausado;
 
 
 //Metodo para iniciar Cutscene
