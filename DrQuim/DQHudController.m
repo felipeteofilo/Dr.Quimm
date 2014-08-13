@@ -76,6 +76,19 @@
     }
 
 }
+-(void)esconderHud{
+    [self setHidden:YES];
+}
+-(void)exibirHud{
+    [self setHidden:NO];
+}
+-(void)esconderContador{
+    [self.contador setHidden:YES];
+}
+-(void)exibirContador{
+    [self.contador setHidden:NO];
+}
+
 -(void)configurarBotaoMenu{
     self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
     [self.botaoMenu setAnchorPoint:CGPointMake(0.5, 0.2)];

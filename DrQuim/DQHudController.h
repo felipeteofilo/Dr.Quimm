@@ -24,4 +24,9 @@
 -(id)initHud;
 -(void)atualizarHud;
 -(void)atualizarBarraStatus;
+-(void)esconderHud;
+-(void)exibirHud;
+-(void)esconderContador;
+-(void)exibirContador;
+
 @end

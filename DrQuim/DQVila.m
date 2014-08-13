@@ -23,14 +23,8 @@
 }
 
 -(void)iniciarFase{
-    [self configuracoesFase:2];
     [super iniciarFase];
     [self adicionaNPC];
-
-    self.hudFase = [[DQHudController alloc]initHud];
-    [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
-    [self addChild:self.hudFase];
-
 }
 
 -(void)adicionaNPC{

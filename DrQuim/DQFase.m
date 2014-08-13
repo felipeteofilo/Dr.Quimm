@@ -611,6 +611,7 @@
     
     [self criaJogador];
     [self configuraFisicaMundo];
+    [self configuraHUD];
     
 }
 
@@ -665,5 +666,11 @@
         [self iniciarFase];
     }
     return self;
+}
+
+-(void)configuraHUD{
+    self.hudFase = [[DQHudController alloc]initHud];
+    [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
+    [self addChild:self.hudFase];
 }
 @end
