@@ -477,42 +477,53 @@
 
 
 -(void)update:(NSTimeInterval)currentTime{
-    if (!self.apresentouCutscene) {
-        [self apresentarCutscene];
-    }
+    //Faz verificação de pausa do jogo
+    self.jogoPausado=self.paused;
     
-    [self.jogador atualizarStatusMissao];
-    
-    [self criarParteFase];
-    [self verificaCoberturaBackground];
-    
-    [self.controladorDaVida atualizarSituacaoJogador];
-    
-    CFTimeInterval ultimoUpdate = currentTime - self.lastUpdateTimeInterval;
-    
-    if (ultimoUpdate > 5) { // more than a second since last update
-        self.lastUpdateTimeInterval = currentTime;
+    if (!self.jogoPausado) {
         
-        //A cada 5 segundos salva os status do jogados
-        [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+        if (!self.apresentouCutscene) {
+            [self apresentarCutscene];
+        }
+        
+        [self.jogador atualizarStatusMissao];
+        
+        [self criarParteFase];
+        [self verificaCoberturaBackground];
+        
+        [self.controladorDaVida atualizarSituacaoJogador];
+        
+        CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
+        
+        if (ultimoUpdate > 10) { // more than a second since last update
+            self.intervaloUltimoUpdate = currentTime;
+            
+            //A cada 10 segundos salva os status do jogados
+            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+        }
     }
     
-    NSLog(@"passou no update");
 }
 
 - (void)didSimulatePhysics{
-    //Chama método para posicionar camera
-    [self posicionaCamera];
-    
-    //Chama método para controlar em que parte da fase esta
-    [self controlarTranscicaoPartesFase];
-    
-    //Desativa plataformas
-    [self desativaPlataformas];
+    if (!self.jogoPausado) {
+        
+        
+        //Chama método para posicionar camera
+        [self posicionaCamera];
+        
+        //Chama método para controlar em que parte da fase esta
+        [self controlarTranscicaoPartesFase];
+        
+        //Desativa plataformas
+        [self desativaPlataformas];
+        
+    }
     
     //Faz algumas verificacoes para animar o jogador
     [self verificarAnimacaoCaindo];
     [self verificarAnimacaoDerrapagem];
+    
     
 }
 
@@ -588,9 +599,7 @@
     [self.mundo setZPosition:-100];
     
     self.controladorDaVida = [DQVidaControle sharedControleVida];
-    
-    
-    
+
     self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
     
     //Adiciona a primeira parte da tela e o jogador no mundo
@@ -600,7 +609,7 @@
     [self addChild:self.mundo];
     
     [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
-
+    
     
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
     

@@ -62,7 +62,6 @@
 		94A8680A19995C4900604BA4 /* ContadorGeiger.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94A8680919995C4900604BA4 /* ContadorGeiger.atlas */; };
 		94A8681C1999683800604BA4 /* DQContadorGeiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8681B1999683800604BA4 /* DQContadorGeiger.m */; };
 		94A8681F199968EF00604BA4 /* DQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8681E199968EF00604BA4 /* DQUtils.m */; };
-		94A868241999696000604BA4 /* ContadorGeiger-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94A868221999696000604BA4 /* ContadorGeiger-1.mp3 */; };
 		94A868251999696000604BA4 /* ContadorGeiger-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94A868231999696000604BA4 /* ContadorGeiger-2.wav */; };
 		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
 		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
@@ -226,7 +225,6 @@
 		94A8681B1999683800604BA4 /* DQContadorGeiger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQContadorGeiger.m; sourceTree = "<group>"; };
 		94A8681D199968EF00604BA4 /* DQUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQUtils.h; sourceTree = "<group>"; };
 		94A8681E199968EF00604BA4 /* DQUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQUtils.m; sourceTree = "<group>"; };
-		94A868221999696000604BA4 /* ContadorGeiger-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ContadorGeiger-1.mp3"; sourceTree = "<group>"; };
 		94A868231999696000604BA4 /* ContadorGeiger-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ContadorGeiger-2.wav"; sourceTree = "<group>"; };
 		C51125881973AB4E00CECCAD /* DQBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBarraStatus.h; sourceTree = "<group>"; };
 		C51125891973AB4E00CECCAD /* DQBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBarraStatus.m; sourceTree = "<group>"; };
@@ -528,7 +526,6 @@
 		94A868211999696000604BA4 /* ContadorGeiger */ = {
 			isa = PBXGroup;
 			children = (
-				94A868221999696000604BA4 /* ContadorGeiger-1.mp3 */,
 				94A868231999696000604BA4 /* ContadorGeiger-2.wav */,
 			);
 			path = ContadorGeiger;
@@ -853,7 +850,6 @@
 				3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */,
 				C5FFDB6519990A10002BBFAB /* Fase3_Parte22.png in Resources */,
 				C5FFDB5E19990A10002BBFAB /* Fase3_Parte16.png in Resources */,
-				94A868241999696000604BA4 /* ContadorGeiger-1.mp3 in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
 				3CAC84311979FAD5000FB1A1 /* Parado.atlas in Resources */,
 				C5FFDB6B19990A10002BBFAB /* Fase3_Parte6.png in Resources */,
