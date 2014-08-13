@@ -114,7 +114,7 @@
 		C55CE5B9199BB65D00375C87 /* Fase3_Parte9.png in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5A1199BB65D00375C87 /* Fase3_Parte9.png */; };
 		C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C2199BBAAF00375C87 /* tutorialCorrerDireita.atlas */; };
 		C55CE5C6199BBAAF00375C87 /* tutorialCorrerEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C3199BBAAF00375C87 /* tutorialCorrerEsquerda.atlas */; };
-		C55CE5C7199BBAAF00375C87 /* tutorialPular.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C4199BBAAF00375C87 /* tutorialPular.atlas */; };
+		C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C8199BBDD300375C87 /* tutorialPular.atlas */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
 		C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */ = {isa = PBXBuildFile; fileRef = C59181601967756700AFD8B5 /* DQPlataforma.m */; };
@@ -296,7 +296,7 @@
 		C55CE5A1199BB65D00375C87 /* Fase3_Parte9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase3_Parte9.png; sourceTree = "<group>"; };
 		C55CE5C2199BBAAF00375C87 /* tutorialCorrerDireita.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerDireita.atlas; sourceTree = "<group>"; };
 		C55CE5C3199BBAAF00375C87 /* tutorialCorrerEsquerda.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialCorrerEsquerda.atlas; sourceTree = "<group>"; };
-		C55CE5C4199BBAAF00375C87 /* tutorialPular.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialPular.atlas; sourceTree = "<group>"; };
+		C55CE5C8199BBDD300375C87 /* tutorialPular.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialPular.atlas; sourceTree = "<group>"; };
 		C56A9D80196E252C00DD2347 /* DQFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFase.h; sourceTree = "<group>"; };
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
@@ -627,9 +627,9 @@
 		C55CE5C1199BBAAF00375C87 /* Tutoriais */ = {
 			isa = PBXGroup;
 			children = (
+				C55CE5C8199BBDD300375C87 /* tutorialPular.atlas */,
 				C55CE5C2199BBAAF00375C87 /* tutorialCorrerDireita.atlas */,
 				C55CE5C3199BBAAF00375C87 /* tutorialCorrerEsquerda.atlas */,
-				C55CE5C4199BBAAF00375C87 /* tutorialPular.atlas */,
 			);
 			path = Tutoriais;
 			sourceTree = "<group>";
@@ -847,7 +847,7 @@
 				C54031BA1989FDB1003384AB /* rostoChefeRanzinza.png in Resources */,
 				756059151995602500BD455A /* Missoes.plist in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
-				C55CE5C7199BBAAF00375C87 /* tutorialPular.atlas in Resources */,
+				C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
 				C55CE5AB199BB65D00375C87 /* Fase3_Parte18.png in Resources */,

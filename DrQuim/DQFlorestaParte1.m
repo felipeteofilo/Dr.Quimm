@@ -68,11 +68,7 @@
     NSMutableArray *framesTutorial=[NSMutableArray array];
     
     for (int i=1;i <= [[atlasTutorial textureNames]count];i++) {
-        NSString *nomeTextura= [NSString stringWithFormat:@"%d.png", i];
-        
-        SKTexture *temp = [atlasTutorial textureNamed:nomeTextura];
-        
-        NSLog(@"%@",nomeTextura);
+        SKTexture *temp = [atlasTutorial textureNamed:[NSString stringWithFormat:@"%d", i]];
         
         [framesTutorial addObject:temp];
     }
@@ -104,6 +100,8 @@
         [spriteTutorial removeFromParent];
     }];
 }
+
+//TODO:- Arrumar o timer
 -(void)verificaApresentacaoTurorial:(NSTimeInterval)currentTime{
     CFTimeInterval ultimoUpdate = currentTime - self.contadorAcao;
     
@@ -113,11 +111,15 @@
         
         if (!self.andouEsquerda) {
             [self iniciarTutorial:@"CorrerEsquerda"];
+            self.andouEsquerda=YES;
             
         }else if (!self.andouDireita){
             [self iniciarTutorial:@"CorrerDireita"];
+            self.andouDireita=YES;
+            
         }else if (!self.pulou){
-            [self iniciarTutorial:@"Pula"];
+            [self iniciarTutorial:@"Pular"];
+            self.pulou=YES;
         }
     }
 }
