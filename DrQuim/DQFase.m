@@ -465,14 +465,7 @@
     }
 }
 
--(void)apresentarCutscene{
-    
-    self.cutscene = [[DQCutsceneTela alloc]initCutScene:self.faseAtual-1 Fase:self SizeScene:self.size];
-    
-    [self.view presentScene:self.cutscene];
-    self.apresentouCutscene =YES;
-    [self iniciarFase];
-}
+
 
 
 -(void)update:(NSTimeInterval)currentTime{
@@ -481,9 +474,7 @@
     
     if (!self.jogoPausado) {
         
-        if (!self.apresentouCutscene) {
-            [self apresentarCutscene];
-        }
+        
         
         [self.jogador atualizarStatusMissao];
         
@@ -502,6 +493,7 @@
         }
     }
     
+
 }
 
 - (void)didSimulatePhysics{

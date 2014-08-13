@@ -14,7 +14,7 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        self.apresentouCutscene =YES;
+        
         
         [self configuracoesFase:2];
         [self iniciarFase];

@@ -43,8 +43,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //DQVidaControle para controlar a vida do personagem
 @property DQVidaControle *controladorDaVida;
 
-//Varialvel booleana para definir se a cutscene foi apresentada ou nao
-@property BOOL apresentouCutscene;
 
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode *mundo;
