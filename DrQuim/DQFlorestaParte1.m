@@ -17,11 +17,10 @@
 //Metodo que inicia a cena
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        [self configuracoesFase:1];
-
+        self.contadorAcao=0;
         
+        [self configuracoesFase:1];
         [self iniciarFase];
-
     }
     return self;
 }
@@ -65,6 +64,125 @@
     }
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (![self childNodeWithName:@"falasDoJogo"]) {
+        UITouch *toque = [touches anyObject];
+        CGPoint posicaoToque=[toque locationInNode:self];
+        
+        //Anda corretamente apenas e for do lado direito da tela
+        if(posicaoToque.x > CGRectGetMidX(self.frame)){
+            //se moveu para a direita, anda para a direita - D
+            if(posicaoToque.x > self.pontoDeToqueAndar.x){
+                if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
+                    [self.jogador andarParaDirecao:@"D"];
+                    self.andouDireita=YES;
+                    self.contadorAcao=0;
+                }
+            }
+            
+            //senão, move para a esquerda - E
+            else{
+                if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
+                    [self.jogador andarParaDirecao:@"E"];
+                    self.andouEsquerda=YES;
+                    self.contadorAcao=0;
+                }
+            }
+        }
+    }
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *toque=[touches anyObject];
+    CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
+    //Pega o node na posicao do toque
+    SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];
+    
+    //Se a caixa de fala esta na tela
+    if([self childNodeWithName:@"falasDoJogo"]){
+        //Ve se pode pode ir para proxima fala
+        if ([self.controleDeFalas proximaFala]) {
+            if ([self.controleDeFalas.estadoFala isEqual:@"Alerta"]) {
+                SKSpriteNode *falaAtual =[self.controleDeFalas mostrarAlertaComKey:nil Tamanho:self.size];
+                [self addChild:falaAtual];
+            }
+            else{
+                SKSpriteNode *falaAtual =[self.controleDeFalas mostrarFalaComNPC:nil KeyDaFala:nil Missao:nil Tamanho:self.size];
+                [self addChild:falaAtual];
+            }
+        }
+        
+    }
+    
+    //Se a caixa de fala nao esta na tela
+    else{
+        //Verifica se o Menu esta aparecendo se estiver remove eles
+        if ([self childNodeWithName:@"MENU"]) {
+            [[self childNodeWithName:@"MENU"]removeFromParent];
+            [self setPaused:NO];
+            return;
+        }
+        CGPoint posToqueBackGround=[toque locationInNode:self.backgroundAtual];
+        //Pega o node de escada na posicao do toque
+        SKNode *nodeTocadoNoBackGround=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
+        
+        //verifica para onde o jogador deve escalar
+        if ([nodeTocadoNoBackGround.name isEqualToString:nomeEscalavel]) {
+            //Verifica se o Y é maior ou menor
+            
+            if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
+                //Fazer jogador escalar - Subindo
+                [self.jogador escalarParaDirecao:@"C"];
+                
+            }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
+                //Fazer jogador escalar - Descendo
+                [self.jogador escalarParaDirecao:@"B"];
+            }
+        }
+        
+        //Posicao do toque na tela
+        CGPoint posicaoToque=[toque locationInNode:self];
+        
+        //Se estiver na direita
+        
+        if(posicaoToque.x > CGRectGetMidX(self.frame) && ![self.jogador actionForKey:@"escalar"]){
+            
+            //Remove a anterior
+            [self.direcional removeFromParent];
+            //ANDAR
+            //marca o local em que tocou e desenha as setinhas
+            self.pontoDeToqueAndar = [toque locationInView:self.view];
+            
+            [self.direcional removeFromParent];
+            //mostra as setinhas
+            self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+            [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
+            
+            [self addChild:self.direcional];
+        }
+        
+        //Se o node em que tocou for da classe DQNPC, faz o jogador interagir com o NPC
+        if ([[[nodeTocadoNoMundo userData]objectForKey:@"Tipo"] isEqual:@"NPC"]) {
+            
+            //remove as setas direcionais
+            [self.direcional removeFromParent];
+            //para o andar do jogador
+            [self.jogador pararAndar];
+            //faz ele interagir com o npc em questao
+            [self.jogador interagirComNPC:nodeTocadoNoMundo.name ControleDeFalas:self.controleDeFalas];
+            
+        }
+        //Se estiver na esquerda
+        else if(posicaoToque.x < CGRectGetMidX(self.frame)){
+            //PULAR
+            [self.jogador pular];
+            self.pulou=YES;
+            self.contadorAcao=0;
+        }
+        
+    }
+}
+
 -(void)iniciarTutorial:(NSString*)acao{
     SKTextureAtlas *atlasTutorial=[SKTextureAtlas atlasNamed:[NSString stringWithFormat:@"tutorial%@",acao]];
     NSMutableArray *framesTutorial=[NSMutableArray array];
@@ -77,6 +195,7 @@
     
     SKSpriteNode *spriteTutorial=[[SKSpriteNode alloc]init];
     [spriteTutorial setSize:CGSizeMake(self.frame.size.width/2, self.frame.size.height)];
+    [spriteTutorial setName:@"Tutorial"];
     
     if ([acao isEqualToString:@"Pular"]) {
         [spriteTutorial setAnchorPoint:CGPointMake(0, 0)];
@@ -88,8 +207,8 @@
     
     [self animarTutorial:framesTutorial noSpriteNode:spriteTutorial];
 }
+
 -(void)animarTutorial:(NSArray*)arrayTexturas noSpriteNode:(SKSpriteNode*)spriteTutorial{
-    
     [self addChild:spriteTutorial];
     
     //Desativa a interacao do user
@@ -100,30 +219,32 @@
         
         [self setUserInteractionEnabled:YES];
         [spriteTutorial removeFromParent];
+        self.contadorAcao=0;
     }];
 }
 
 //TODO:- Arrumar o timer
 -(void)verificaApresentacaoTurorial:(NSTimeInterval)currentTime{
-    CFTimeInterval ultimoUpdate = currentTime - self.contadorAcao;
+    if (self.contadorAcao == 0) {
+        self.contadorAcao = CACurrentMediaTime();
+    }
     
-    //Mais de 2 segundos sem fazer acao nenhuma
-    if (ultimoUpdate > 2) {
-        self.contadorAcao = currentTime;
-        
+    SKNode *node=[self childNodeWithName:@"Tutorial"];
+    
+    if (CACurrentMediaTime()-self.contadorAcao > 2 && !node) {
         if (!self.andouEsquerda) {
             [self iniciarTutorial:@"CorrerEsquerda"];
-            self.andouEsquerda=YES;
             
         }else if (!self.andouDireita){
             [self iniciarTutorial:@"CorrerDireita"];
-            self.andouDireita=YES;
             
         }else if (!self.pulou){
             [self iniciarTutorial:@"Pular"];
-            self.pulou=YES;
         }
+        
+        self.contadorAcao = CACurrentMediaTime();
     }
+    NSLog(@"%f",CACurrentMediaTime()-self.contadorAcao);
 }
 
 -(void)iniciarTutorial

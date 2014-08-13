@@ -314,6 +314,7 @@
             [self.jogador pararAndar];
             //faz ele interagir com o npc em questao
             [self.jogador interagirComNPC:nodeTocadoNoMundo.name ControleDeFalas:self.controleDeFalas];
+            
         }
         //Se estiver na esquerda
         else if(posicaoToque.x < CGRectGetMidX(self.frame)){

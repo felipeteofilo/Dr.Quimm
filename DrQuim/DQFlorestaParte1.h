@@ -34,7 +34,7 @@
 @property BOOL pulou;
 
 //Timer que será usado para definir se precisa exibir ou ñ o tutorial;
-@property (nonatomic) NSTimeInterval contadorAcao;
+@property CFTimeInterval contadorAcao;
 //Array com pontos de radiacao e Key de Falas na ordem
 @property NSArray *pontosRadiacao;
 @property NSArray *keyFalaPontoRadiacao;
