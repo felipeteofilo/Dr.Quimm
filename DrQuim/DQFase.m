@@ -236,7 +236,7 @@
     
     CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
     
-    //Pega o node de escada na posicao do toque
+    //Pega o node na posicao do toque
     SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];
     
     //Se a caixa de fala esta na tela
@@ -258,8 +258,6 @@
     
     //Se a caixa de fala nao esta na tela
     else{
-        
-        
         //Verifica se o Menu esta aparecendo se estiver remove eles
         if ([self childNodeWithName:@"MENU"]) {
             [[self childNodeWithName:@"MENU"]removeFromParent];
@@ -287,7 +285,7 @@
         }
         
         //Posicao do toque na tela
-        CGPoint posicaoToque=[toque locationInView:self.view];
+        CGPoint posicaoToque=[toque locationInNode:self];
         
         //Se estiver na direita
         
@@ -297,7 +295,8 @@
             [self.direcional removeFromParent];
             //ANDAR
             //marca o local em que tocou e desenha as setinhas
-            self.pontoDeToqueAndar = posicaoToque;
+            self.pontoDeToqueAndar = [toque locationInView:self.view];
+            
             [self.direcional removeFromParent];
             //mostra as setinhas
             self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
@@ -508,7 +507,6 @@
 - (void)didSimulatePhysics{
     if (!self.jogoPausado) {
         
-        
         //Chama método para posicionar camera
         [self posicionaCamera];
         
@@ -517,13 +515,11 @@
         
         //Desativa plataformas
         [self desativaPlataformas];
-        
     }
     
     //Faz algumas verificacoes para animar o jogador
     [self verificarAnimacaoCaindo];
     [self verificarAnimacaoDerrapagem];
-    
     
 }
 
