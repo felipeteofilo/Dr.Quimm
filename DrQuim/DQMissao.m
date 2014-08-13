@@ -35,7 +35,7 @@
         
         
         //Aqui setamos a quantidade de partes dessa missao atual
-        self.quantidadeDePartes = self.arrayPartes.count;
+        self.quantidadeDePartes = (int)self.arrayPartes.count;
         
     }
     return self;

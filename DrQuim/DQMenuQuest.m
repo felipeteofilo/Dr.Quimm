@@ -83,7 +83,7 @@
             DQOpcaoMenu *opcaoTocada=[arrayNodes objectAtIndex:i];
             
             [self detalharQuest:opcaoTocada.conteudo.userData];
-            i= [arrayNodes count];
+            i= (int)[arrayNodes count];
             
         }
     }

@@ -159,7 +159,7 @@
                 DQItem *itemTocado=[arrayNodes objectAtIndex:i];
                 
                 [self exibeInformacoesItem:itemTocado];
-                i= [arrayNodes count];
+                i= (int)[arrayNodes count];
             }
         }
         

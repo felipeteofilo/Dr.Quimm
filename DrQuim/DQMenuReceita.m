@@ -10,6 +10,8 @@
 
 @implementation DQMenuReceita
 
+@synthesize indexAtual;
+
 -(id)initMenu{
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];
@@ -70,7 +72,7 @@
             //Será util ao fazer a navegacao
             [self setIndexSelecionado:[indexOpcao intValue]];
             
-            i= [arrayNodes count];
+            i= (int)[arrayNodes count];
             
         }
     }

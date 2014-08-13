@@ -20,7 +20,6 @@
 #import "DQCutsceneTela.h"
 #import "DQVidaControle.h"
 #import "DQFalasNoJogoControle.h"
-#import "DQnpc.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -44,8 +43,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //DQVidaControle para controlar a vida do personagem
 @property DQVidaControle *controladorDaVida;
 
-//Varialvel booleana para definir se a cutscene foi apresentada ou nao
-@property BOOL apresentouCutscene;
 
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode *mundo;
@@ -70,7 +67,8 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //Propriedade que será usada para guardar as configs da fase e nao ficar travando ao ler o plist
 @property NSDictionary *configFase;
 
-@property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+@property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
+@property BOOL jogoPausado;
 
 
 //Metodo para iniciar Cutscene

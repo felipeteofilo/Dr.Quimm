@@ -236,7 +236,7 @@
     
     CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
     
-    //Pega o node de escada na posicao do toque
+    //Pega o node na posicao do toque
     SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];
     
     //Se a caixa de fala esta na tela
@@ -258,8 +258,6 @@
     
     //Se a caixa de fala nao esta na tela
     else{
-        
-        
         //Verifica se o Menu esta aparecendo se estiver remove eles
         if ([self childNodeWithName:@"MENU"]) {
             [[self childNodeWithName:@"MENU"]removeFromParent];
@@ -287,7 +285,7 @@
         }
         
         //Posicao do toque na tela
-        CGPoint posicaoToque=[toque locationInView:self.view];
+        CGPoint posicaoToque=[toque locationInNode:self];
         
         //Se estiver na direita
         
@@ -297,7 +295,8 @@
             [self.direcional removeFromParent];
             //ANDAR
             //marca o local em que tocou e desenha as setinhas
-            self.pontoDeToqueAndar = posicaoToque;
+            self.pontoDeToqueAndar = [toque locationInView:self.view];
+            
             [self.direcional removeFromParent];
             //mostra as setinhas
             self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
@@ -466,49 +465,49 @@
     }
 }
 
--(void)apresentarCutscene{
-    
-    self.cutscene = [[DQCutsceneTela alloc]initCutScene:self.faseAtual-1 Fase:self SizeScene:self.size];
-    
-    [self.view presentScene:self.cutscene];
-    self.apresentouCutscene =YES;
-    
-}
+
 
 
 -(void)update:(NSTimeInterval)currentTime{
-    if (!self.apresentouCutscene) {
-        [self apresentarCutscene];
-    }
+    //Faz verificação de pausa do jogo
+    self.jogoPausado=self.paused;
     
-    [self.jogador atualizarStatusMissao];
-    
-    [self criarParteFase];
-    [self verificaCoberturaBackground];
-    
-    [self.controladorDaVida atualizarSituacaoJogador];
-    
-    CFTimeInterval ultimoUpdate = currentTime - self.lastUpdateTimeInterval;
-    
-    if (ultimoUpdate > 5) { // more than a second since last update
-        self.lastUpdateTimeInterval = currentTime;
+    if (!self.jogoPausado) {
         
-        //A cada 5 segundos salva os status do jogados
-        [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+        
+        
+        [self.jogador atualizarStatusMissao];
+        
+        [self criarParteFase];
+        [self verificaCoberturaBackground];
+        
+        [self.controladorDaVida atualizarSituacaoJogador];
+        
+        CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
+        
+        if (ultimoUpdate > 10) { // more than a second since last update
+            self.intervaloUltimoUpdate = currentTime;
+            
+            //A cada 10 segundos salva os status do jogados
+            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+        }
     }
     
-    
+
 }
 
 - (void)didSimulatePhysics{
-    //Chama método para posicionar camera
-    [self posicionaCamera];
-    
-    //Chama método para controlar em que parte da fase esta
-    [self controlarTranscicaoPartesFase];
-    
-    //Desativa plataformas
-    [self desativaPlataformas];
+    if (!self.jogoPausado) {
+        
+        //Chama método para posicionar camera
+        [self posicionaCamera];
+        
+        //Chama método para controlar em que parte da fase esta
+        [self controlarTranscicaoPartesFase];
+        
+        //Desativa plataformas
+        [self desativaPlataformas];
+    }
     
     //Faz algumas verificacoes para animar o jogador
     [self verificarAnimacaoCaindo];
@@ -588,9 +587,7 @@
     [self.mundo setZPosition:-100];
     
     self.controladorDaVida = [DQVidaControle sharedControleVida];
-    
-    
-    
+
     self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
     
     //Adiciona a primeira parte da tela e o jogador no mundo
@@ -600,12 +597,13 @@
     [self addChild:self.mundo];
     
     [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
-
+    
     
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
     
     [self criaJogador];
     [self configuraFisicaMundo];
+    [self configuraHUD];
     
 }
 
@@ -652,4 +650,19 @@
     self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
 }
 
+-(id)initFase:(int)fase Size:(CGSize)size{
+    
+    if (self=[super initWithSize:size ]) {
+        
+        [self configuracoesFase:fase];
+        [self iniciarFase];
+    }
+    return self;
+}
+
+-(void)configuraHUD{
+    self.hudFase = [[DQHudController alloc]initHud];
+    [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
+    [self addChild:self.hudFase];
+}
 @end
