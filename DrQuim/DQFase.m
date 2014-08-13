@@ -652,4 +652,13 @@
     self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
 }
 
+-(id)initFase:(int)fase Size:(CGSize)size{
+    
+    if (self=[super initWithSize:size ]) {
+        
+        [self configuracoesFase:fase];
+        [self iniciarFase];
+    }
+    return self;
+}
 @end

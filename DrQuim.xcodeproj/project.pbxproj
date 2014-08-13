@@ -89,6 +89,7 @@
 		C543E1341998600A00C90F19 /* IniciarJogo.png in Resources */ = {isa = PBXBuildFile; fileRef = C543E1331998600A00C90F19 /* IniciarJogo.png */; };
 		C54B79B31971CC3D00366512 /* DQVila.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79B21971CC3D00366512 /* DQVila.m */; };
 		C54B79C71972440400366512 /* DQEscalavel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79C61972440400366512 /* DQEscalavel.m */; };
+		C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE57C199B9D0000375C87 /* BalaoMissao.atlas */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
 		C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */ = {isa = PBXBuildFile; fileRef = C59181601967756700AFD8B5 /* DQPlataforma.m */; };
@@ -270,6 +271,7 @@
 		C54B79B21971CC3D00366512 /* DQVila.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVila.m; sourceTree = "<group>"; };
 		C54B79C51972440400366512 /* DQEscalavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQEscalavel.h; sourceTree = "<group>"; };
 		C54B79C61972440400366512 /* DQEscalavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQEscalavel.m; sourceTree = "<group>"; };
+		C55CE57C199B9D0000375C87 /* BalaoMissao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BalaoMissao.atlas; sourceTree = "<group>"; };
 		C56A9D80196E252C00DD2347 /* DQFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFase.h; sourceTree = "<group>"; };
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				C55CE57C199B9D0000375C87 /* BalaoMissao.atlas */,
 				94A8680919995C4900604BA4 /* ContadorGeiger.atlas */,
 				C5BFD5A7198C5000005F3460 /* cutScenes */,
 				C5E1F40B198AD0A300F7A320 /* itens.atlas */,
@@ -844,6 +847,7 @@
 				9488197419901AE200609A0F /* rostoPiloto.png in Resources */,
 				23622C0A1975F4CB00D83532 /* tutorialCorrerDireita.atlas in Resources */,
 				C5D2A69D196A535800F3B7C4 /* Fase1_Parte2.png in Resources */,
+				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C5BFD5A6198C4FF0005F3460 /* cutscene3.atlas in Resources */,
 				C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */,
 				3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */,
