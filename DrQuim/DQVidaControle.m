@@ -39,55 +39,18 @@
     }
     if (CACurrentMediaTime()-self.inicioContador > 10) {
         if (self.jogador.fome > 0) {
-            [self.jogador aumentarFome:1];
+            [self.jogador alterarFomeJogador:1];
         }
         if (self.jogador.sede > 0) {
-            [self.jogador aumentarSede:2];
+            [self.jogador alterarSedeJogador:2];
         }
         if (self.jogador.vida > 0 && self.jogador.fome <= 0 && self.jogador.sede <= 0) {
-            [self.jogador perderVida:1];
+            [self.jogador alterarVidaJogador:-1];
         }
         self.inicioContador = CACurrentMediaTime();
     }
 }
 
-//Metodo que altera a fome do jogador
--(void)alterarFomeJogador: (int)fome
-{
-    //está ficando com fome
-    if(fome > 0){
-        [self.jogador aumentarFome:fome];
-    }
-    //está perdendo a fome
-    else{
-        [self.jogador diminuirFome:fome];
-    }
-}
 
-//Metodo que altera a fome do jogador
--(void)alterarSedeJogador: (int)sede
-{
-    //está ficando com sede
-    if(sede > 0){
-        [self.jogador aumentarSede:sede];
-    }
-    //está perdendo a sede
-    else{
-        [self.jogador diminuirSede:sede];
-    }
-}
-
-//Metodo que altera a fome do jogador
--(void)alterarVidaJogador: (int)vida
-{
-    //está ficando sem vida
-    if(vida > 0){
-        [self.jogador perderVida:vida];
-    }
-    //está ganhando vida
-    else{
-        [self.jogador aumentarVida:vida];
-    }
-}
 
 @end

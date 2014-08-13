@@ -46,23 +46,14 @@
 //DQMissoesJogador que armazena tudo relacionado a Missões
 @property DQMissaoControle* controleMissoes;
 
-//Aumentar fome do personagem
--(void)aumentarFome:(int)aumento;
+//Metodo que altera a fome do jogador
+-(void)alterarFomeJogador: (int)fome;
 
-//Aumentar sede do personagem
--(void)aumentarSede:(int)aumento;
+//Metodo que altera a fome do jogador
+-(void)alterarSedeJogador: (int)sede;
 
-//Perder Vida
--(void)perderVida:(int)perda;
-
-//Diminuir fome do personagem
--(void)diminuirFome:(int)subtracao;
-
-//Diminuir sede do personagem
--(void)diminuirSede:(int)subtracao;
-
-//Ganha Vida
--(void)aumentarVida:(int)aumento;
+//Metodo que altera a fome do jogador
+-(void)alterarVidaJogador: (int)vida;
 
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;

@@ -15,11 +15,9 @@
     self = [super init];
     if(self){
         
-        //Popula o dicionario de itens que o jogador possui
-        //url
-        NSString *urlItensJogador = [[NSBundle mainBundle] pathForResource:@"ItensJogador" ofType:@"plist"];
+        
         //dicionario
-        self.dicionarioDeItensJogador = [[NSMutableDictionary alloc]initWithContentsOfFile:urlItensJogador];
+        self.dicionarioDeItensJogador = [[NSMutableDictionary alloc]init];
         
         
         //Popula o dicionario que descreve os itens
@@ -28,12 +26,11 @@
         //dicionario
         self.dicionarioDeItensReferencia = [[NSMutableDictionary alloc]initWithContentsOfFile:urlItensReferencia];
         
-        
-//        //TESTE
-//        [self receberItem:@"Docinho" quantidade:2];
-//        [self entregarItem:@"Docinho" quantidade:1];
-//
-//        [self mostrarItens];
+        [self receberItem:@"Docinho" quantidade:220];
+        [self receberItem:@"Carne" quantidade:220];
+        [self receberItem:@"Lança" quantidade:220];
+        [self receberItem:@"Remedio" quantidade:220];
+        [self receberItem:@"Docinho" quantidade:220];
     }
     return self;
 }
@@ -41,12 +38,18 @@
 //Método que adiciona um item ao jogador
 -(void)receberItem: (NSString *)item quantidade:(int)quantidade;
 {
-    //Soma a quantidade á quantidadeAtual
-    int quantidadeAtual = [[self.dicionarioDeItensJogador objectForKey:item] intValue];
-    int quantidadeFinal = quantidadeAtual + quantidade;
+    int quantidadeFinal = quantidade;
     
-    //escrever na plist
-    [self.dicionarioDeItensJogador setValue:[NSNumber numberWithInt:quantidadeFinal] forKey:item];
+    //Soma a quantidade á quantidadeAtual
+    
+    if ([self.dicionarioDeItensJogador objectForKey:item]) {
+        int quantidadeAtual = [[self.dicionarioDeItensJogador objectForKey:item] intValue];
+        quantidadeFinal = quantidadeAtual + quantidade;
+    }
+    
+    
+    //escrever no dicionario a nova quantidade e o item
+    [self.dicionarioDeItensJogador setObject:[NSNumber numberWithInt:quantidadeFinal] forKey:item];
 }
 
 //Método que tira um item do jogador
@@ -56,8 +59,12 @@
     int quantidadeAtual = [[self.dicionarioDeItensJogador objectForKey:item] intValue];
     int quantidadeFinal = quantidadeAtual - quantidade;
     
-    //escrever na plist
+    //escrever no dicionario de itens jogador
     [self.dicionarioDeItensJogador setValue:[NSNumber numberWithInt:quantidadeFinal] forKey:item];
+    
+    if ([self.dicionarioDeItensJogador valueForKey:item] <= 0) {
+        [self.dicionarioDeItensJogador removeObjectForKey:item];
+    }
 }
 
 -(void)mostrarItens

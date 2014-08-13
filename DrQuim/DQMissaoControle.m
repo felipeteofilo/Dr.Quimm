@@ -86,11 +86,27 @@
 
 
 //TODO - AO INVÉZ DE UM ITEM PASSADO POR PARAMETRO, CONFERIR NO INVENTÁRIO
--(BOOL)passarParteMissao:(NSString*)NPC item:(NSString*)item{
+-(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items{
+    
+    Boolean podePassar = false;
+    
     //Verifica se tem os pré-requisitos para passar de parte (dentro de uma missão)
-    if([self.missao podePassarComNPC:NPC Item:item Parte:self.parteAtual]){
-        [self entregarItem];
-        [self receberItem];
+    for (int i = 0;i < items.count ; i++) {
+        
+        NSString *item = [items objectAtIndex:i];
+        if([self.missao podePassarComNPC:NPC Item:item Parte:self.parteAtual]){
+            podePassar = true;
+            break;
+        }
+    }
+    if (items.count == 0) {
+        if([self.missao podePassarComNPC:NPC Item:@"" Parte:self.parteAtual]){
+            podePassar = true;
+        }
+    }
+    
+    if(podePassar){
+        
         //[self alterarEstados];
         
         //Verifica se essa foi a última parte...
@@ -113,8 +129,7 @@
 //TODO - COMUNICAÇÃO COM ITENS E INVENTÁRIO
 //Método chamado quando a missão descreve que um item deve ser entregue
 -(void)entregarItem{
-    NSString *item = @"oi";
-    NSLog(@"Item %@ entregue", item);
+    
 }
 
 //TODO - COMUNICAÇÃO COM ITENS E INVENTÁRIO

@@ -79,6 +79,7 @@
 }
 
 -(void)apresentarConteudo{
+    [self.conteudo performSelector:@selector(prepararExibicao) withObject:nil];
     [self.parent addChild:self.conteudo];
 }
 -(void)esconderConteudo{

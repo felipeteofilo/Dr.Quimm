@@ -16,11 +16,15 @@
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];
         [self setName:@"Livro de Receitas"];
-        [self configuraTitulo];
-        [self recuperarReceita];
-        [self exibirOpcoes];
+
     }
     return self;
+}
+
+-(void)prepararExibicao{
+    [self configuraTitulo];
+    [self recuperarReceita];
+    [self exibirOpcoes];
 }
 
 -(void)configuraTitulo{

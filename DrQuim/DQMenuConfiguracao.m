@@ -17,16 +17,18 @@
         [self setUserInteractionEnabled:YES];
         [self setName:@"Configurações"];
         
-        [self configuraTitulo];
-        [self configuraBarraStatus];
-        [self configuraBotaoMudo];
-        
         [DQControleUserDefalts setSonsMudo:NO];
         [DQControleUserDefalts setMusicaMuda:NO];
         
         [self atualizaBarras];
     }
     return self;
+}
+
+-(void)prepararExibicao{
+    [self configuraTitulo];
+    [self configuraBarraStatus];
+    [self configuraBotaoMudo];
 }
 
 -(void)configuraTitulo{

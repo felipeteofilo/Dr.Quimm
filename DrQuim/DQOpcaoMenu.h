@@ -13,7 +13,7 @@
 #import "DQMenuQuest.h"
 #import "DQMenuReceita.h"
 
-@interface DQOpcaoMenu : SKSpriteNode
+@interface DQOpcaoMenu : SKSpriteNode <DQProtocolMenu>
 
 @property SKNode *conteudo;
 @property NSString *titulo;
