@@ -14,12 +14,10 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
-        [self configuracoesFase:2];
         self.apresentouCutscene =YES;
         
+        [self configuracoesFase:2];
         [self iniciarFase];
-        
     }
     return self;
 }
@@ -28,19 +26,11 @@
     [self configuracoesFase:2];
     [super iniciarFase];
     [self adicionaNPC];
-    
-    
+
     self.hudFase = [[DQHudController alloc]initHud];
     [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
     [self addChild:self.hudFase];
-    
-    
-}
 
-
--(void)update:(NSTimeInterval)currentTime{
-    [super update:currentTime];
-    
 }
 
 -(void)adicionaNPC{
@@ -62,10 +52,4 @@
     
     
 }
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesEnded:touches withEvent:event];
-}
-
-
 @end
