@@ -31,6 +31,9 @@
 //Método chamado quando o jogador está em uma missão - avalia se irá passar de parte ou acabar
 -(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items;
 
+//Metodo que finaliza a missao
+-(void)fimDaMissao;
+
 //Funcao para atualizar a cena da classe
 -(void)atualizarCena :(SKScene*)cenaRecebida;
 

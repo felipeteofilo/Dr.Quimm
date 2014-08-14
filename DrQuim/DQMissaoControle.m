@@ -79,7 +79,6 @@
     
     if([self.missao podeIniciarComNPC:NPC]){
         self.emMissao = YES;
-        self.parteAtual = 7;
         [self.balao removeFromParent];
         return YES;
     }
@@ -110,17 +109,7 @@
     }
     
     if(podePassar){
-        
-        //[self alterarEstados];
-        
-        //Verifica se essa foi a última parte...
-        if(self.parteAtual+1 >= self.missao.quantidadeDePartes){
-            [self fimDaMissao];
-        }
-        else{
-            self.parteAtual++;
-        }
-        
+        self.parteAtual++;
         //retorna que a parte passou
         return YES;
     }
@@ -129,53 +118,14 @@
         return NO;
     }
 }
-
-//TODO - COMUNICAÇÃO COM ITENS E INVENTÁRIO
-//Método chamado quando a missão descreve que um item deve ser entregue
--(void)entregarItem{
-    
-}
-
-//TODO - COMUNICAÇÃO COM ITENS E INVENTÁRIO
-//Método chamado quando a missão descreve que um item deve ser recebido
--(void)receberItem{
-    NSString *item = @"oi";
-    NSLog(@"Item %@ entregue", item);
-    
-}
-
-//Método chamado quando a missão descreve que os estados do jogador devem ser alterados
-//-(void)alterarEstados{
-//    
-//    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.missao.arrayPartes objectAtIndex:self.parteAtual]];
-//    
-//    //Ver se muda os estados
-//    //fome
-//    int fome = [[dicionario objectForKey:@"Fome"] intValue];
-//    if(fome != 0){
-//        [[DQVidaControle sharedControleVida] alterarFomeJogador:fome];
-//    }
-//    
-//    //sede
-//    int sede = [[dicionario objectForKey:@"Sede"] intValue];
-//    if(sede != 0){
-//        [[DQVidaControle sharedControleVida] alterarSedeJogador:sede];
-//    }
-//    
-//    //vida
-//    int vida = [[dicionario objectForKey:@"Vida"] intValue];
-//    if(vida != 0){
-//        [[DQVidaControle sharedControleVida] alterarVidaJogador:vida];
-//    }
-//}
-
 //TODO - COLOCAR MENSSAGENS
 //método chamado quando a missão chega ao fim
 -(void)fimDaMissao{
-    self.parteAtual++;
+    
     self.emMissao = NO;
     self.proximaMissao++;
-    self.balao = nil;
+    self.parteAtual = 0;
+    self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
     [self colocarBalaoDeMissao];
 }
 @end

@@ -11,6 +11,7 @@
 #import "DQMissaoControle.h"
 #import "DQFalasNoJogoControle.h"
 #import "DQControleUserDefalts.h"
+#import "DQArmadilhasJogador.h"
 
 @interface DQJogador : SKSpriteNode
 
@@ -42,6 +43,9 @@
 
 //DQItensJogador que armazena tudo relacionado a itens
 @property DQItensJogador *itens;
+
+//DQArmadilhasJogador que armazena tudo relacionado a Armadilhas
+@property DQArmadilhasJogador *armadilhas;
 
 //DQMissoesJogador que armazena tudo relacionado a Missões
 @property DQMissaoControle* controleMissoes;

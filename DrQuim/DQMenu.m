@@ -64,7 +64,7 @@
     NSMutableArray *arrayRetorno=[NSMutableArray array];
     NSArray *arrayOpcoes=[DQConfigMenu opcoesMenuPrincial];
     
-    float ultimoY=self.titulo.frame.size.height+self.titulo.position.y +500;
+    float ultimoY=self.titulo.frame.size.height+self.titulo.position.y +400;
     
     
     for (int i=0; i< [arrayOpcoes count]; i++) {

@@ -12,6 +12,7 @@
 #import "DQConfigMenu.h"
 #import "DQMenuQuest.h"
 #import "DQMenuReceita.h"
+#import "DQMenuArmadilhas.h"
 
 @interface DQOpcaoMenu : SKSpriteNode <DQProtocolMenu>
 

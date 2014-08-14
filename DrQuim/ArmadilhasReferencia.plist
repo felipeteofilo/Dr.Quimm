@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ArmadilhaSimples</key>
+	<dict>
+		<key>nome</key>
+		<string>Armadilha Simples</string>
+		<key>descricao</key>
+		<string>Armadilha para capturar pequenos animais.</string>
+		<key>imagem</key>
+		<string>lanca</string>
+	</dict>
+</dict>
+</plist>

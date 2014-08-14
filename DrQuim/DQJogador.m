@@ -49,8 +49,10 @@
         
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
+        self.armadilhas =[[DQArmadilhasJogador alloc]init];
         
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
+        
         
         
         
@@ -413,13 +415,18 @@
     //Se esta em missao
     if (self.controleMissoes.emMissao) {
         NSString *keyDaParte;
+        NSString *missao = self.controleMissoes.missao.ID;
         //Se é o NPC que passa a parte da missao
         if ([self.controleMissoes passarParteMissao:nomeNPC inventario:[self.itens arrayItensJogador]]) {
             //Cria a key de uma fala principal da missao
             keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual-1];
+            
             [self entregarItem];
             [self receberItem];
             [self alterarEstados];
+            if(self.controleMissoes.parteAtual+1 >= self.controleMissoes.missao.quantidadeDePartes){
+                [self.controleMissoes fimDaMissao];
+            }
             
         }
         //Se nao é o NPC que passa a parte da missao ou nao tem o item
@@ -429,7 +436,7 @@
         }
         
         //Cria a caixa de fala com as key obtidas e a adiciona na tela
-        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:self.controleMissoes.missao.ID Tamanho:self.scene.size];
+        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
         
         [self.scene addChild:caixaDeFala];
     }
