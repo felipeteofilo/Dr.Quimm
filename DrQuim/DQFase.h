@@ -70,12 +70,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 @property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
 @property BOOL jogoPausado;
 
-
-//Metodo para iniciar Cutscene
--(void)apresentarCutscene;
-
-
-
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(id)initFase:(int)fase Size:(CGSize)size;

@@ -462,6 +462,8 @@
 		<key>Partes</key>
 		<array>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -474,6 +476,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -507,6 +511,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -556,6 +562,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -577,6 +585,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -606,6 +616,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -622,6 +634,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -642,6 +656,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -678,6 +694,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -715,6 +733,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -730,6 +750,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -757,6 +779,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>Escalaveis</key>
 				<array>
 					<array>
@@ -798,6 +822,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -833,6 +859,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -853,6 +881,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -884,6 +914,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -926,6 +958,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -947,6 +981,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -960,6 +996,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -977,6 +1015,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -1005,6 +1045,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -1043,6 +1085,8 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -1061,6 +1105,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -1072,6 +1118,8 @@
 				<array/>
 			</dict>
 			<dict>
+				<key>Animais</key>
+				<array/>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>

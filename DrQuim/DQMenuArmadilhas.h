@@ -10,10 +10,17 @@
 #import "DQProtocolMenu.h"
 #import "DQJogador.h"
 #import "DQArmadilha.h"
+#import "DQItem.h"
+
 
 @interface DQMenuArmadilhas : SKSpriteNode<DQProtocolMenu>
 
 @property DQJogador *jogador;
+
+@property NSString *chanceAtual;
+@property int parteAtual;
+
+@property NSMutableDictionary *lugaresArmados;
 
 @property SKLabelNode *titulo;
 

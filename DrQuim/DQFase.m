@@ -50,6 +50,7 @@
     //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMaxX(self.frame))){
         if (self.parteFaseAtual + 1 <= self.nPartesFase ) {
+            
             self.parteFaseAtual ++;
             
             [self removerNodeBackground:self.backgroundAnterior];
@@ -82,7 +83,20 @@
             self.backgroundAnterior=nil;
         }
     }
+    NSMutableDictionary * parte = [[NSMutableDictionary alloc]init];
     
+    NSMutableDictionary *configAnimaisFase =[[NSMutableDictionary alloc]init];
+    
+    NSArray *animais = [NSArray arrayWithArray:[DQConfiguracaoFase animaisFase:self.faseAtual Parte:self.parteFaseAtual]];
+    
+    [configAnimaisFase setObject:[NSNumber numberWithInt:self.parteFaseAtual ]forKey:@"Parte"];
+    
+    [configAnimaisFase setObject:animais forKey:@"Animais"];
+    
+    
+    [parte setObject:configAnimaisFase forKey:@"ConfigParte"];
+    
+    [self setUserData:parte];
     [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 
