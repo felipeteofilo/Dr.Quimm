@@ -4,6 +4,10 @@
 <dict>
 	<key>ArmadilhaSimples</key>
 	<dict>
+		<key>Animacao</key>
+		<string>ArmadilhaSimples</string>
+		<key>ImagemFundo</key>
+		<string>Fase3_Parte23</string>
 		<key>nome</key>
 		<string>Armadilha Simples</string>
 		<key>descricao</key>

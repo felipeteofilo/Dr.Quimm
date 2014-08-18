@@ -12,14 +12,14 @@
 @implementation DQAnimal
 
 
--(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao{
+-(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao Isca:(DQIsca*)isca{
     if (self =[super init]){
         self.spriteAnimal=[SKSpriteNode spriteNodeWithImageNamed:imagemAnimal];
         self.raioVisao=rVisao;
         self.nomeAnimal=nome;
         self.acoes =[NSMutableArray array];
         self.nAcoesVez=2;
-        self.objetoAtracao=[[DQIsca alloc]initIsca];
+        self.objetoAtracao=isca;
         
         [self addChild:self.spriteAnimal];
         [self setName:@"animal"];

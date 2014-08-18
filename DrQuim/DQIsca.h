@@ -13,5 +13,5 @@
 @property NSString *objeto;
 @property NSString *detalhe;
 
--(id)initIsca;
+-(id)initIsca :(NSString*)nome Caracterisca:(NSString*)caracteristica;
 @end

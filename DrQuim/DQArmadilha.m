@@ -10,10 +10,12 @@
 
 @implementation DQArmadilha
 
--(id)initArmadilhaNome:(NSString*)nome descricao:(NSString*)descricao imagem:(NSString*)imagem {
+-(id)initArmadilhaNome:(NSString*)nome descricao:(NSString*)descricao imagem:(NSString*)imagem fundo:(NSString*)fundo animacao:(NSString*)animacao; {
     if (self =[super initWithImageNamed:imagem]) {
         self.nome=nome;
         self.descricao=descricao;
+        self.imagemFundo =fundo;
+        self.animacao = animacao;
     }
     return self;
 }

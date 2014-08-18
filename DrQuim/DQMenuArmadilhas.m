@@ -16,9 +16,6 @@
         self.itensColuna=4;
         self.itensLinha=3;
         self.lugaresArmados = [[NSMutableDictionary alloc]init];
-        
-        
-        
         [self setUserInteractionEnabled:YES];
         
     }
@@ -28,8 +25,9 @@
 
 -(void)atualizarChance{
     float chance = arc4random()%60;
-    
+    float animal = arc4random()%[[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]count]-1;
     self.chanceAtual =[NSString stringWithFormat:@"Chance %.0f %%",chance];
+    self.animalAtual =[[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]objectAtIndex:animal];
 }
 
 -(void)prepararExibicao{
@@ -53,12 +51,11 @@
         NSString *nomeArmadilha= [[self.jogador.armadilhas.dicionarioDeArmadilhasReferencia objectForKey:itemSelecionado] objectForKey:@"nome"];
         
         NSString *descricaoArmadilha = [[self.jogador.armadilhas.dicionarioDeArmadilhasReferencia objectForKey:itemSelecionado] objectForKey:@"descricao"];
-        
-        
-        
         NSString *imagemArmadilha = [[self.jogador.armadilhas.dicionarioDeArmadilhasReferencia objectForKey:itemSelecionado] objectForKey:@"imagem"];
+        NSString *imagemFundo = [[self.jogador.armadilhas.dicionarioDeArmadilhasReferencia objectForKey:itemSelecionado] objectForKey:@"ImagemFundo"];
+        NSString *animacao = [[self.jogador.armadilhas.dicionarioDeArmadilhasReferencia objectForKey:itemSelecionado] objectForKey:@"Animacao"];
         
-        DQArmadilha *armadilha =[[DQArmadilha alloc]initArmadilhaNome:nomeArmadilha descricao:descricaoArmadilha imagem:imagemArmadilha];
+        DQArmadilha *armadilha =[[DQArmadilha alloc]initArmadilhaNome:nomeArmadilha descricao:descricaoArmadilha imagem:imagemArmadilha fundo:imagemFundo animacao:animacao];
         
         [arrayArmadilhasAdicionar addObject:armadilha];
     }
@@ -171,13 +168,15 @@
         NSString *itemSelecionado=[arrayItens objectAtIndex:i];
         
         if ([[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"Isca"]) {
-            NSString *nomeItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"nome"];
+            NSString *nomeItem = [[[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado]objectForKey:@"Isca"] objectForKey:@"Nome"];
+            
+            NSString *caracteristica = [[[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado]objectForKey:@"Isca"] objectForKey:@"Caracteristica"];
             
             NSString *imagemItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"imagem"];
             
             int quantidade = [[self.jogador.itens.dicionarioDeItensJogador objectForKey:itemSelecionado]intValue];
             
-            DQItem *itemAdicionadar=[[DQItem alloc]initItemNome:nomeItem descricao:@"" categoria:@"" imagem:imagemItem Quantidade:quantidade];
+            DQItem *itemAdicionadar=[[DQItem alloc]initItemNome:nomeItem descricao:caracteristica categoria:@"" imagem:imagemItem Quantidade:quantidade];
             
             [arrayItensAdicionar addObject:itemAdicionadar];
         }
@@ -207,6 +206,8 @@
                 [quantidade setFontSize:45];
                 
                 [quantidade setPosition:CGPointMake(itemMostrar.position.x + 180, itemMostrar.position.y + 35)];
+                
+                
                 [self addChild:quantidade];
                 [self addChild:itemMostrar];
                 
@@ -235,7 +236,7 @@
     [[self childNodeWithName:@"Destaque"]removeFromParent];
     SKSpriteNode *mensagemDeErro=[SKSpriteNode spriteNodeWithImageNamed:@"FundoDetalheItem.png"];
     [mensagemDeErro setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
-    [mensagemDeErro setName:@"MensagemDeErro"];
+    [mensagemDeErro setName:@"DetalheArmadilha"];
     
     
     
@@ -266,12 +267,16 @@
     
     NSString *keyDaParte = [NSString stringWithFormat:@"%d",self.parteAtual];
     
+//    if ([[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]count] <= 0 ) {
+//        [self mensagemDeErro:@"Sem Animais Próximos"];
+//        return;
+//    }
     if ([[self.lugaresArmados objectForKey:keyDaParte]boolValue]) {
-        [self mensagemDeErro:@"Lugar Ja Usado"];
-        
+        [self mensagemDeErro:@"Lugar Já Usado"];
         return;
-    
     }
+    
+    
     NSNumber *colocouArmadilha = [NSNumber numberWithBool:YES];
     [self.lugaresArmados setObject:colocouArmadilha forKey:keyDaParte];
     
@@ -279,17 +284,22 @@
     [self exibeItens];
 }
 
+-(void)armadilhaArmada :(DQItem*)isca{
+    
+    DQIsca * iscaEscolhida = [[DQIsca alloc]initIsca:isca.nome Caracterisca:isca.descricao];
+    
+    DQArmadilhaAnimacao *animacao = [[DQArmadilhaAnimacao alloc]initArmadilha:self.armadilhaSelecionada animal:self.animalAtual Isca:iscaEscolhida chance:[self.chanceAtual floatValue] cenaRetornar:self.scene];
+    
+    [self.scene.view presentScene:animacao];
+
+}
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
     CGPoint posToque=[[touches anyObject]locationInNode:self];
     NSArray *arrayNodes=[self nodesAtPoint:posToque];
-    for(int i=0;i<[arrayNodes count];i++){
-        if ([[[arrayNodes objectAtIndex:i]name] isEqual:@"Usar"] ) {
-            [self armarArmadilha];
-            i = (int)[arrayNodes count];
-        }
-    }
+    
     if ([self childNodeWithName:@"DetalheArmadilha"]) {
         [[self childNodeWithName:@"DetalheArmadilha"]removeFromParent];
         [[self childNodeWithName:@"Destaque"]removeFromParent];
@@ -297,15 +307,32 @@
     else{
         for(int i=0;i<[arrayNodes count];i++){
             if ([[arrayNodes objectAtIndex:i]isKindOfClass:[DQArmadilha class]]) {
-                DQArmadilha *ArmadilhaTocada=[arrayNodes objectAtIndex:i];
+                DQArmadilha *armadilhaTocada=[arrayNodes objectAtIndex:i];
+                self.armadilhaSelecionada = armadilhaTocada;
+                [self exibeInformacoesArmadilha:armadilhaTocada];
+                break;
+            }
+            if ([[arrayNodes objectAtIndex:i]isKindOfClass:[DQItem class]]) {
+                DQItem *iscaEscolhida=[arrayNodes objectAtIndex:i];
                 
-                [self exibeInformacoesArmadilha:ArmadilhaTocada];
-                i = (int)[arrayNodes count];
+                [self armadilhaArmada:iscaEscolhida];
+                break;
             }
         }
     }
     
+    for(int i=0;i<[arrayNodes count];i++){
+        if ([[[arrayNodes objectAtIndex:i]name] isEqual:@"Usar"] ) {
+            [self armarArmadilha];
+            i = (int)[arrayNodes count];
+        }
+    }
+    
     if ([[self nodeAtPoint:posToque].name isEqualToString:self.titulo.name]) {
+        if ([self.titulo.text isEqual:@"Iscas"]) {
+            NSString *keyDaParte = [NSString stringWithFormat:@"%d",self.parteAtual];
+            [self.lugaresArmados removeObjectForKey:keyDaParte];
+        }
         [self removeAllChildren];
         [self removeFromParent];
     }

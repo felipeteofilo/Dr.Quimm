@@ -12,8 +12,9 @@
 
 @property NSString *nome;
 @property NSString *descricao;
-@property NSString *categoria;
+@property NSString *imagemFundo;
+@property NSString *animacao;
 
--(id)initArmadilhaNome:(NSString*)nome descricao:(NSString*)descricao imagem:(NSString*)imagem;
+-(id)initArmadilhaNome:(NSString*)nome descricao:(NSString*)descricao imagem:(NSString*)imagem fundo:(NSString*)fundo animacao:(NSString*)animacao;
 
 @end

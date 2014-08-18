@@ -11,6 +11,8 @@
 #import "DQJogador.h"
 #import "DQArmadilha.h"
 #import "DQItem.h"
+#import "DQArmadilhaAnimacao.h"
+
 
 
 @interface DQMenuArmadilhas : SKSpriteNode<DQProtocolMenu>
@@ -18,6 +20,8 @@
 @property DQJogador *jogador;
 
 @property NSString *chanceAtual;
+@property NSString *animalAtual;
+@property DQArmadilha *armadilhaSelecionada;
 @property int parteAtual;
 
 @property NSMutableDictionary *lugaresArmados;

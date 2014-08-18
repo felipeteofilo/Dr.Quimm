@@ -18,7 +18,12 @@
 	<key>Carne</key>
 	<dict>
 		<key>Isca</key>
-		<true/>
+		<dict>
+			<key>Caracteristica</key>
+			<string>Coelho</string>
+			<key>Nome</key>
+			<string>Carne</string>
+		</dict>
 		<key>nome</key>
 		<string>Carne</string>
 		<key>descricao</key>
@@ -30,8 +35,6 @@
 	</dict>
 	<key>AguaMagica</key>
 	<dict>
-		<key>Isca</key>
-		<false/>
 		<key>nome</key>
 		<string>Água mágica</string>
 		<key>descricao</key>
@@ -43,8 +46,6 @@
 	</dict>
 	<key>Remedio</key>
 	<dict>
-		<key>Isca</key>
-		<false/>
 		<key>nome</key>
 		<string>Remédio para queimação</string>
 		<key>descricao</key>
@@ -56,10 +57,15 @@
 	</dict>
 	<key>Docinho</key>
 	<dict>
-		<key>Isca</key>
-		<true/>
 		<key>nome</key>
 		<string>Docinho</string>
+		<key>Isca</key>
+		<dict>
+			<key>Caracteristica</key>
+			<string>Acucar</string>
+			<key>Nome</key>
+			<string>Docinho</string>
+		</dict>
 		<key>descricao</key>
 		<string>Docinho feito com açúcar e clara de ovos. Apenas a Mãe de todos sabe a receita</string>
 		<key>categoria</key>
@@ -69,8 +75,6 @@
 	</dict>
 	<key>Contador Geiger</key>
 	<dict>
-		<key>Isca</key>
-		<false/>
 		<key>nome</key>
 		<string>Contador Geiger</string>
 		<key>descricao</key>
@@ -82,8 +86,6 @@
 	</dict>
 	<key>Maleta do Dr. Quimm</key>
 	<dict>
-		<key>Isca</key>
-		<false/>
 		<key>nome</key>
 		<string>Maleta do Dr. Quimm</string>
 		<key>descricao</key>

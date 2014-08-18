@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, Personalidade) {
 @property DQIsca *objetoAtracao;
 @property NSMutableArray *acoes;
 
--(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao;
+-(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao Isca:(DQIsca*)isca;
 -(void)andar;
 -(void)pararAnimacao;
 -(void)atacar;

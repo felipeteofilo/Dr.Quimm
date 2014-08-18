@@ -10,21 +10,21 @@
 
 @implementation DQControleSom
 
-NSError *error;
-NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"pew-pew-lei" withExtension:@"caf"];
-AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-[player setVolume:masterVolume];
-[player prepareToPlay];
-
-SKAction*   playAction = [SKAction runBlock:^{
-    [player play];
-}];
-SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
-SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
-
-[self runAction:groupActions];
-
--(id)initControleSom:(SKScene*)fase{
-    
-}
+//NSError *error;
+//NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"pew-pew-lei" withExtension:@"caf"];
+//AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+//[player setVolume:masterVolume];
+//[player prepareToPlay];
+//
+//SKAction*   playAction = [SKAction runBlock:^{
+//    [player play];
+//}];
+//SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
+//SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+//
+//[self runAction:groupActions];
+//
+//-(id)initControleSom:(SKScene*)fase{
+//    
+//}
 @end
