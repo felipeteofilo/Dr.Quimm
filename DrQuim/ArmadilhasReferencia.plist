@@ -13,7 +13,7 @@
 		<key>descricao</key>
 		<string>Armadilha para capturar pequenos animais.</string>
 		<key>imagem</key>
-		<string>lanca</string>
+		<string>ArmadilhaSimples</string>
 	</dict>
 </dict>
 </plist>
