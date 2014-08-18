@@ -69,11 +69,30 @@
     
     SKSpriteNode *armadilha = [[SKSpriteNode alloc]initWithTexture:[atlasAnimacao textureNamed:[NSString stringWithFormat:@"%d", 1]]];
     
+    [armadilha setSize:self.size];
+    [armadilha setAnchorPoint:CGPointZero];
+    [armadilha setPosition:CGPointZero];
     
     
+    SKSpriteNode *jogador = [[SKSpriteNode alloc]initWithImageNamed:@"JogadorEscondido"];
+    [jogador setAnchorPoint:CGPointZero];
+    [jogador setSize:CGSizeMake(150, 250)];
+    [jogador setPosition:CGPointMake(8, 60)];
     
     
-    [self.view presentScene:self.cenaRetornar];
+    [self.animal setAnchorPoint:CGPointZero];
+    [self.animal setZPosition:100];
+    [self.animal setPosition:CGPointMake(CGRectGetMidX(self.frame)-(self.animal.size.width/2), 135)];
+    
+   
+    
+    [self addChild:jogador];
+    
+    [self addChild:armadilha];
+    [self addChild:self.animal];
+    
+    
+    //[self.view presentScene:self.cenaRetornar];
     
 }
 

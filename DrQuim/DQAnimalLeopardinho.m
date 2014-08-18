@@ -10,8 +10,9 @@
 
 @implementation DQAnimalLeopardinho
 
--(id)initLeopardinho{DQIsca *isca = [[DQIsca alloc]initIsca:@"Carne" Caracterisca:@"Coelho"];
-    if (self=[super initAnimalNome:@"Coelho" sprite:@"parado1" raioVisao:50 Isca:isca]) {
+-(id)initLeopardinho{
+    DQIsca *isca = [[DQIsca alloc]initIsca:@"Carne" Caracterisca:@"Coelho"];
+    if (self=[super initAnimalNome:@"Leopardinho" sprite:@"andando1" raioVisao:100 Isca:isca]){
         
         self.distanciaAndar=100;
         self.tempoAndar=2;

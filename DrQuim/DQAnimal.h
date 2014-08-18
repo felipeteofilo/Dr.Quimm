@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, Personalidade) {
     Agressivo = 1,
 };
 
-@interface DQAnimal : SKNode
+@interface DQAnimal : SKSpriteNode
 
 {
     NSMutableArray *framesAnimacao;
