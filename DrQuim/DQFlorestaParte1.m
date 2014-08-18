@@ -382,8 +382,11 @@
 }
 
 -(void)apitarRadiacao{
+    [self apitarRadiacao:@"ContadorGeiger-1.mp3"];
+}
+-(void)apitarRadiacao:(NSString*)nomeArquivoAudio{
     if (![self actionForKey:@"apitar"]) {
-        SKAction *apitar=[SKAction playSoundFileNamed:@"beep.mp3" waitForCompletion:YES];
+        SKAction *apitar=[SKAction playSoundFileNamed:nomeArquivoAudio waitForCompletion:YES];
         SKAction *parar=[SKAction removeFromParent];
         
         [self runAction:[SKAction sequence:@[apitar,parar]]withKey:@"apitar"];

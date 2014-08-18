@@ -76,10 +76,10 @@
 				<array>
 					<string>{0, 0}</string>
 					<string>{0, 110}</string>
-					<string>{285, 105}</string>
-					<string>{285, 210}</string>
-					<string>{506, 211}</string>
-					<string>{506, 304}</string>
+					<string>{300, 105}</string>
+					<string>{300, 210}</string>
+					<string>{530, 211}</string>
+					<string>{530, 304}</string>
 					<string>{769, 313}</string>
 					<string>{765, 924}</string>
 					<string>{1023, 927}</string>

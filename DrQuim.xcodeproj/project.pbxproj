@@ -14,7 +14,6 @@
 		23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFADBC1966E4FB00691C04 /* setinhas.png */; };
 		3C26D9071974B499002FEC9A /* cutscene1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C26D9061974B499002FEC9A /* cutscene1.atlas */; };
 		3C26D9091974B4A2002FEC9A /* cutscene2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C26D9081974B4A2002FEC9A /* cutscene2.atlas */; };
-		3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CA4549A1969C70C00FB62D5 /* beep.mp3 */; };
 		3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CABE62D1977533F0064199A /* DQCoberturaBackground.m */; };
 		3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */; };
 		3CAC84271979F63D000FB1A1 /* Caindo.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84221979F63D000FB1A1 /* Caindo.atlas */; };
@@ -73,6 +72,7 @@
 		C52FBF2719A18D790059E973 /* Coelho.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C52FBF2419A18D790059E973 /* Coelho.atlas */; };
 		C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C52FBF2519A18D790059E973 /* Leopardinho.atlas */; };
 		C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C52FBF2619A18D790059E973 /* Toupeira.atlas */; };
+		C52FBF2C19A197450059E973 /* DQControleSom.m in Sources */ = {isa = PBXBuildFile; fileRef = C52FBF2B19A197450059E973 /* DQControleSom.m */; };
 		C54031B91989FDB1003384AB /* rostoCacador.png in Resources */ = {isa = PBXBuildFile; fileRef = C54031B21989FDB1003384AB /* rostoCacador.png */; };
 		C54031BA1989FDB1003384AB /* rostoChefeRanzinza.png in Resources */ = {isa = PBXBuildFile; fileRef = C54031B31989FDB1003384AB /* rostoChefeRanzinza.png */; };
 		C54031BB1989FDB1003384AB /* rostoChefeSimpatico.png in Resources */ = {isa = PBXBuildFile; fileRef = C54031B41989FDB1003384AB /* rostoChefeSimpatico.png */; };
@@ -173,7 +173,6 @@
 		23BFADBC1966E4FB00691C04 /* setinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setinhas.png; sourceTree = "<group>"; };
 		3C26D9061974B499002FEC9A /* cutscene1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cutscene1.atlas; sourceTree = "<group>"; };
 		3C26D9081974B4A2002FEC9A /* cutscene2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cutscene2.atlas; sourceTree = "<group>"; };
-		3CA4549A1969C70C00FB62D5 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beep.mp3; path = ../beep.mp3; sourceTree = "<group>"; };
 		3CABE62C1977533F0064199A /* DQCoberturaBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoberturaBackground.h; sourceTree = "<group>"; };
 		3CABE62D1977533F0064199A /* DQCoberturaBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoberturaBackground.m; sourceTree = "<group>"; };
 		3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = AndandoDr.atlas; path = Animacoes/AndandoDr.atlas; sourceTree = "<group>"; };
@@ -254,6 +253,8 @@
 		C52FBF2419A18D790059E973 /* Coelho.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Coelho.atlas; sourceTree = "<group>"; };
 		C52FBF2519A18D790059E973 /* Leopardinho.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Leopardinho.atlas; sourceTree = "<group>"; };
 		C52FBF2619A18D790059E973 /* Toupeira.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Toupeira.atlas; sourceTree = "<group>"; };
+		C52FBF2A19A197450059E973 /* DQControleSom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleSom.h; sourceTree = "<group>"; };
+		C52FBF2B19A197450059E973 /* DQControleSom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleSom.m; sourceTree = "<group>"; };
 		C54031B21989FDB1003384AB /* rostoCacador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoCacador.png; path = Personagens/rostos/rostoCacador.png; sourceTree = "<group>"; };
 		C54031B31989FDB1003384AB /* rostoChefeRanzinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoChefeRanzinza.png; path = Personagens/rostos/rostoChefeRanzinza.png; sourceTree = "<group>"; };
 		C54031B41989FDB1003384AB /* rostoChefeSimpatico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rostoChefeSimpatico.png; path = Personagens/rostos/rostoChefeSimpatico.png; sourceTree = "<group>"; };
@@ -543,7 +544,6 @@
 		94A868201999696000604BA4 /* Sons */ = {
 			isa = PBXGroup;
 			children = (
-				3CA4549A1969C70C00FB62D5 /* beep.mp3 */,
 				94A868211999696000604BA4 /* ContadorGeiger */,
 			);
 			path = Sons;
@@ -716,6 +716,8 @@
 				C5BFD5A3198C4F53005F3460 /* DQVidaControle.m */,
 				C52FBF1F19A18D220059E973 /* DQUteis.h */,
 				C52FBF2019A18D220059E973 /* DQUteis.m */,
+				C52FBF2A19A197450059E973 /* DQControleSom.h */,
+				C52FBF2B19A197450059E973 /* DQControleSom.m */,
 			);
 			name = Controladores;
 			sourceTree = "<group>";
@@ -889,7 +891,6 @@
 				C55CE5AD199BB65D00375C87 /* Fase3_Parte2.png in Resources */,
 				3CAC8435197A01FB000FB1A1 /* Andando.atlas in Resources */,
 				C55CE5B9199BB65D00375C87 /* Fase3_Parte9.png in Resources */,
-				3CA4549B1969C70C00FB62D5 /* beep.mp3 in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				C54031BA1989FDB1003384AB /* rostoChefeRanzinza.png in Resources */,
 				756059151995602500BD455A /* Missoes.plist in Resources */,
@@ -977,6 +978,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52FBF2C19A197450059E973 /* DQControleSom.m in Sources */,
 				7560591019955F9C00BD455A /* DQMissao.m in Sources */,
 				C52FBF1B19A18D0A0059E973 /* DQAnimalToupeira.m in Sources */,
 				C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */,
