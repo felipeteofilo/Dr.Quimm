@@ -249,17 +249,20 @@
 -(void)configuraCorpoFisico{
     CGMutablePathRef path=CGPathCreateMutable();
     
-    CGPoint primeiroPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPoint primeiroPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)+20), CGRectGetMinY(self.spriteNode.frame)+20);
     CGPathMoveToPoint(path, NULL, primeiroPonto.x,primeiroPonto.y);
+
+    CGPoint segundoPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)-20), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPathAddLineToPoint(path, NULL, segundoPonto.x,segundoPonto.y);
     
-    CGPoint segundoPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
-    CGPathAddLineToPoint(path, NULL, segundoPonto.x, segundoPonto.y);
-    
-    CGPoint terceiroPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMaxY(self.spriteNode.frame));
+    CGPoint terceiroPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
     CGPathAddLineToPoint(path, NULL, terceiroPonto.x, terceiroPonto.y);
     
-    CGPoint quartoPonto=CGPointMake(CGRectGetMaxX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPoint quartoPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMaxY(self.spriteNode.frame));
     CGPathAddLineToPoint(path, NULL, quartoPonto.x, quartoPonto.y);
+    
+    CGPoint quintoPonto=CGPointMake(CGRectGetMaxX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, quintoPonto.x, quintoPonto.y);
     
     [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:path]];
     
@@ -304,8 +307,6 @@
 -(void)escalarParaDirecao:(NSString*)direcao{
     //se puder escalar
     if (self.podeEscalar) {
-        
-        
         SKAction *escalar=[[SKAction alloc]init];
         
         //Desliga a gravidade para o Node
@@ -313,7 +314,6 @@
         // verifica para qual direcao sera a escalada
         if ([direcao isEqualToString:@"C"]) {
             //Sobe
-            
             escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
             
         }else if([direcao isEqualToString:@"B"]){

@@ -223,7 +223,6 @@
     }];
 }
 
-//TODO:- Arrumar o timer
 -(void)verificaApresentacaoTurorial:(NSTimeInterval)currentTime{
     if (self.contadorAcao == 0) {
         self.contadorAcao = CACurrentMediaTime();
@@ -244,7 +243,6 @@
         
         self.contadorAcao = CACurrentMediaTime();
     }
-    NSLog(@"%f",CACurrentMediaTime()-self.contadorAcao);
 }
 
 -(void)iniciarTutorial
@@ -536,5 +534,14 @@
             }
         }
     }
+}
+
+//"SOBRESCREVE" O metodo para nao bugar
+-(void)verificarAnimacaoCaindo{
+
+}
+
+//"SOBRESCREVE" O metodo para nao bugar
+-(void)verificarAnimacaoDerrapagem{
 }
 @end
