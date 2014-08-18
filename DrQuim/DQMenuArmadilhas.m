@@ -288,7 +288,7 @@
     
     DQIsca * iscaEscolhida = [[DQIsca alloc]initIsca:isca.nome Caracterisca:isca.descricao];
     
-    DQArmadilhaAnimacao *animacao = [[DQArmadilhaAnimacao alloc]initArmadilha:self.armadilhaSelecionada animal:@"Leopardinho" Isca:iscaEscolhida chance:[self.chanceAtual floatValue] cenaRetornar:self.scene];
+    DQArmadilhaAnimacao *animacao = [[DQArmadilhaAnimacao alloc]initArmadilha:self.armadilhaSelecionada animal:@"Toupeira" Isca:iscaEscolhida chance:[self.chanceAtual floatValue] cenaRetornar:self.scene];
     
     [self.scene.view presentScene:animacao];
 

@@ -27,6 +27,29 @@
     return self;
 }
 
+-(void)andarPara :(CGPoint)destino{
+    SKAction *andar;
+    
+    
+    andar=[SKAction moveTo:destino duration:3];
+    if (self.dirCaminhada == 'D') {
+        self.spriteAnimal.xScale = fabs(self.spriteAnimal.xScale)*-1;
+    }
+    else{
+        self.spriteAnimal.xScale = fabs(self.spriteAnimal.xScale)*1;
+    }
+    
+    self.acaoAtual=@"andar";
+    
+    [self iniciarAnimacao:@"andando"];
+    [self animarAnimal];
+    
+    [self runAction:andar completion:^{
+        [self pararAnimacao];
+    }];
+}
+
+
 -(void)andar{
     SKAction *andar;
     

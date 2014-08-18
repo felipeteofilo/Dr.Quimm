@@ -47,7 +47,7 @@
     //limpa a lista de acoes do animal
     [self.acoes removeAllObjects];
     
-    [self iniciarAnimacao:@"correndo"];
+    [self iniciarAnimacao:@"andando"];
     [self correr];
 }
 
@@ -67,7 +67,7 @@
     if (andar) {
         self.acaoAtual=@"andar";
         
-        [self iniciarAnimacao:@"correndo"];
+        [self iniciarAnimacao:@"andando"];
         [self animarAnimal];
         [self runAction:andar completion:^{
             [self parar];
@@ -91,7 +91,7 @@
     if (correr) {
         self.acaoAtual=@"fugindo";
         
-        [self iniciarAnimacao:@"correndo"];
+        [self iniciarAnimacao:@"andando"];
         [self animarAnimal];
         
         [self runAction:correr completion:^{

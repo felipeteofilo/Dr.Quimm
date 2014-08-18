@@ -79,12 +79,15 @@
     [jogador setSize:CGSizeMake(150, 250)];
     [jogador setPosition:CGPointMake(8, 60)];
     
+    NSLog(self.animal.nomeAnimal);
     
     [self.animal setAnchorPoint:CGPointZero];
     [self.animal setZPosition:100];
     [self.animal setPosition:CGPointMake(CGRectGetMidX(self.frame)-(self.animal.size.width/2), 135)];
     
-   
+    [self.animal setDirCaminhada:'D'];
+    
+    [self.animal andarPara:CGPointMake(750, 135)];
     
     [self addChild:jogador];
     
