@@ -24,5 +24,7 @@ SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
 
 [self runAction:groupActions];
 
-
+-(id)initControleSom:(SKScene*)fase{
+    
+}
 @end

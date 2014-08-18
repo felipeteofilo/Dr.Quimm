@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @interface DQControleSom : NSObject
+
+@property NSString *somPrincipal;
+@property NSArray *sonsSecundarios;
 
 @end
