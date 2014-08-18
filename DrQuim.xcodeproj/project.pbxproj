@@ -58,7 +58,6 @@
 		948819761990218400609A0F /* FalasCutScene.plist in Resources */ = {isa = PBXBuildFile; fileRef = 948819751990218400609A0F /* FalasCutScene.plist */; };
 		94A8680A19995C4900604BA4 /* ContadorGeiger.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94A8680919995C4900604BA4 /* ContadorGeiger.atlas */; };
 		94A8681C1999683800604BA4 /* DQContadorGeiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8681B1999683800604BA4 /* DQContadorGeiger.m */; };
-		94A8681F199968EF00604BA4 /* DQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8681E199968EF00604BA4 /* DQUtils.m */; };
 		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
 		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
 		C51125921973AB6000CECCAD /* FundoHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = C51125911973AB6000CECCAD /* FundoHUD.png */; };
@@ -245,8 +244,6 @@
 		94A8680919995C4900604BA4 /* ContadorGeiger.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ContadorGeiger.atlas; sourceTree = "<group>"; };
 		94A8681A1999683800604BA4 /* DQContadorGeiger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQContadorGeiger.h; sourceTree = "<group>"; };
 		94A8681B1999683800604BA4 /* DQContadorGeiger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQContadorGeiger.m; sourceTree = "<group>"; };
-		94A8681D199968EF00604BA4 /* DQUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQUtils.h; sourceTree = "<group>"; };
-		94A8681E199968EF00604BA4 /* DQUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQUtils.m; sourceTree = "<group>"; };
 		C51125881973AB4E00CECCAD /* DQBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBarraStatus.h; sourceTree = "<group>"; };
 		C51125891973AB4E00CECCAD /* DQBarraStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBarraStatus.m; sourceTree = "<group>"; };
 		C511258A1973AB4E00CECCAD /* DQHudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHudController.h; sourceTree = "<group>"; };
@@ -520,8 +517,8 @@
 				C51125891973AB4E00CECCAD /* DQBarraStatus.m */,
 				9488195E19901A4600609A0F /* DQItensJogador.h */,
 				9488195F19901A4600609A0F /* DQItensJogador.m */,
-				94A8681D199968EF00604BA4 /* DQUtils.h */,
-				94A8681E199968EF00604BA4 /* DQUtils.m */,
+				C52FBF1F19A18D220059E973 /* DQUteis.h */,
+				C52FBF2019A18D220059E973 /* DQUteis.m */,
 				C54031EC1989FED0003384AB /* Menu */,
 				94080EBD1933BA290024FB94 /* Images.xcassets */,
 				94080EB21933BA290024FB94 /* Main.storyboard */,
@@ -783,8 +780,6 @@
 				C5B1740A1968C77800143B8D /* DQConfiguracaoFase.m */,
 				C5BFD5A2198C4F53005F3460 /* DQVidaControle.h */,
 				C5BFD5A3198C4F53005F3460 /* DQVidaControle.m */,
-				C52FBF1F19A18D220059E973 /* DQUteis.h */,
-				C52FBF2019A18D220059E973 /* DQUteis.m */,
 				C52FBF2A19A197450059E973 /* DQControleSom.h */,
 				C52FBF2B19A197450059E973 /* DQControleSom.m */,
 			);
@@ -1091,7 +1086,6 @@
 				C54031E31989FE98003384AB /* DQControleReceita.m in Sources */,
 				C54031E41989FE98003384AB /* DQMenu.m in Sources */,
 				C52FBF1A19A18D0A0059E973 /* DQAnimalLeopardinho.m in Sources */,
-				94A8681F199968EF00604BA4 /* DQUtils.m in Sources */,
 				C54031E81989FE98003384AB /* DQMenuReceita.m in Sources */,
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */,

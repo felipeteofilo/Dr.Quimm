@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "DQControleUserDefalts.h"
 
-@interface DQControleSom : NSObject
+@interface DQControleSom : SKNode
 
-@property NSString *somPrincipal;
-@property NSArray *sonsSecundarios;
+@property NSArray * listaSons;
+@property int indiceSomTocar;
 
+-(void)tocarSom;
+-(int)sortearSomTocar;
++(void)tocarSom:(NSString*)nomeSomTocar;
 @end

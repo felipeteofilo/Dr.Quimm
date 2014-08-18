@@ -297,7 +297,7 @@
 	</dict>
 	<dict>
 		<key>MusicaFundo</key>
-		<string></string>
+		<string>MusicaFundo04</string>
 		<key>RodarCutScene</key>
 		<true/>
 		<key>PosInicialJogador</key>
