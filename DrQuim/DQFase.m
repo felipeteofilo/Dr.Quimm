@@ -328,6 +328,7 @@
             [self.jogador pararAndar];
             //faz ele interagir com o npc em questao
             [self.jogador interagirComNPC:nodeTocadoNoMundo.name ControleDeFalas:self.controleDeFalas];
+            
         }
         //Se estiver na esquerda
         else if(posicaoToque.x < CGRectGetMidX(self.frame)){
@@ -487,32 +488,25 @@
     self.jogoPausado=self.paused;
     
     if (!self.jogoPausado) {
-        
-        
-        
+
         [self.jogador atualizarStatusMissao];
-        
         [self criarParteFase];
         [self verificaCoberturaBackground];
-        
         [self.controladorDaVida atualizarSituacaoJogador];
         
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
         
-        if (ultimoUpdate > 10) { // more than a second since last update
+        if (ultimoUpdate > 60) {
             self.intervaloUltimoUpdate = currentTime;
             
-            //A cada 10 segundos salva os status do jogados
+            //A cada 60 segundos salva os status do jogados
             [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
         }
     }
-    
-
 }
 
 - (void)didSimulatePhysics{
     if (!self.jogoPausado) {
-        
         //Chama método para posicionar camera
         [self posicionaCamera];
         
@@ -532,7 +526,7 @@
 //funcao para vefrificar se pode animar jogador caindo de altas distancias
 -(void)verificarAnimacaoCaindo{
     //se esta caindo de uma distancia muito grande anima ele caindo
-    if ( !self.jogador.estaNoChao && self.jogador.physicsBody.velocity.dy < -535 && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"]) {
+    if (!self.jogador.estaNoChao && self.jogador.physicsBody.velocity.dy < -535 && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"]) {
         [self.jogador animarCaindo];
     }
 }
