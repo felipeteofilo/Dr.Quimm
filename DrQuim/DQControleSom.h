@@ -19,6 +19,7 @@ typedef NS_ENUM(int, TipoObjeto){
 
 @interface DQControleSom : SKNode
 
+@property AVAudioPlayer *playerSom;
 @property NSArray * listaSons;
 @property int indiceSomTocar;
 
@@ -27,4 +28,5 @@ typedef NS_ENUM(int, TipoObjeto){
 -(void)tocarSom:(AVAudioPlayer*)player;
 -(void)proxSom;
 -(id)initControleSom:(TipoObjeto)objetoControlado;
+-(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar;
 @end

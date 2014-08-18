@@ -15,21 +15,28 @@
 }
 
 -(void)tocarSom:(AVAudioPlayer*)player{
-    SKAction *playAction = [SKAction runBlock:^{
-        [player play];
-    }];
-    
-    SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
-    SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
-    
-    [self runAction:sequence];
+//    SKAction *playAction = [SKAction runBlock:^{
+//        [player play];
+//    }];
+//    
+//    SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
+//    SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+//    
+//    [self runAction:sequence];
+//
+    self.playerSom=player;
+    [self.playerSom play];
 }
+
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar{
     NSError *error;
     NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
     AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlSom error:&error];
     
+    NSLog(@"Volume Som: %f",[DQControleUserDefalts volumeSons]);
+    
     [player setVolume:[DQControleUserDefalts volumeSons]];
+    [player setNumberOfLoops:20];
     [player prepareToPlay];
     
     return player;

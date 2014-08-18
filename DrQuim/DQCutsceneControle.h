@@ -20,4 +20,5 @@
 
 -(SKSpriteNode*)montarCena;
 -(BOOL)fimCutScene;
+-(NSString*)somCenaCutScene;
 @end

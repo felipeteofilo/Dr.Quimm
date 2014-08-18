@@ -13,7 +13,7 @@
 			<key>Foto</key>
 			<string></string>
 			<key>SomFundo</key>
-			<string></string>
+			<string>Helicoptero</string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -265,7 +265,7 @@
 			<key>Foto</key>
 			<string></string>
 			<key>SomFundo</key>
-			<string></string>
+			<string>AlertaHelicoptero</string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -277,7 +277,7 @@
 			<key>Foto</key>
 			<string></string>
 			<key>SomFundo</key>
-			<string></string>
+			<string>AlertaHelicoptero</string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>

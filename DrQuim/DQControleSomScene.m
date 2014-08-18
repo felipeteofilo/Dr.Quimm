@@ -5,15 +5,38 @@
 //  Created by LEONARDO DE SOUSA MENDES on 18/08/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
+#define NSONSAMBIENTE 6
 
 #import "DQControleSomScene.h"
 
 @implementation DQControleSomScene
 
--(id)initControleSomScene:(TipoCena)tipoCena indiceCena:(int)idCena{
+-(id)initControleSomFundo:(TipoCena)tipoCena nomeSom:(NSString*)somFundo indiceCena:(int)idCena{
     if (self=[super init]) {
-        self.tipoCenaConfigurado =tipoCena;
+        self.musicaFundo=somFundo;
         self.indiceScene=idCena;
+        self.tipoCena=tipoCena;
+        
+        //Verifica se nao esta na fase da vila para preencher os sons de animais da floresta
+        if ((self.tipoCena == Fase) && (idCena!=2)) {
+            [self configuraListaEfeitosSonoros];
+        }
+        self.playerMusicaFundo=[self configuraMusicaFundo:somFundo];
+    }
+    return self;
+}
+
+-(id)initControleSomFundo:(TipoCena)tipoCena idTela:(int)idCena{
+    if (self=[super init]) {
+        self.indiceScene=idCena;
+        self.tipoCena=tipoCena;
+        
+        //Verifica se nao esta na fase da vila para preencher os sons de animais da floresta
+        if ((self.tipoCena ==Fase) && (idCena!=2)) {
+            [self configuraListaEfeitosSonoros];
+        }
+        
+        [self configuraMusicaFundo:[self nomeSonsFundoFase]];
     }
     return self;
 }
@@ -32,20 +55,38 @@
 }
 
 -(void)tocarSom:(AVAudioPlayer *)player{
-    [super tocarSom:[self configuraMusicaFundo:self.musicaFundo]];
+    //[super tocarSom:[self configuraMusicaFundo:self.musicaFundo]];
+    
+    [player play];
 }
 
+-(void)tocarMusicaFundo{
+    [self.playerMusicaFundo play];
+}
 -(NSString*)nomeSonsFundoFase{
-    NSString *stringRetorno;
+    NSString *retorno;
     
-    if (self.tipoCenaConfigurado==Fase) {
-        //Acessa config fase
-        stringRetorno=[DQConfiguracaoFase somFundoFase:self.indiceScene];
+    retorno= [DQConfiguracaoFase somFundoFase:self.indiceScene];
+    
+    if (retorno) {
+        return retorno;
     }else{
-        //Acessa config CutScene
-        
+        return @"MusicaFundo03";
     }
+}
 
-    return stringRetorno;
+-(NSArray*)configuraListaEfeitosSonoros{
+    NSMutableArray *listaSons=[NSMutableArray array];
+    NSArray *sonsDisponiveis=[NSArray arrayWithObjects:@"Fundo01 - Passaros ",@"Fundo03 - Animal ",@"Fundo05 - Insetos",@"Fundo07 - Sapos ",@"Fundo08 - Vento ", nil];
+    
+    int valorSorteado;
+    
+    for (int i=0; i < NSONSAMBIENTE; i++) {
+        valorSorteado=arc4random()%NSONSAMBIENTE;
+        
+        [listaSons addObject:[sonsDisponiveis objectAtIndex:valorSorteado]];
+    }
+    
+    return listaSons;
 }
 @end

@@ -16,9 +16,13 @@
         
         self.cutSceneAtual=cutSceneAtual;
         self.faseApresentar=faseApresentar;
+        self.controleSomScene=[[DQControleSomScene alloc]initControleSomFundo:CutScene nomeSom:[self.controleCutScene somCenaCutScene] indiceCena:self.cutSceneAtual];
         
         if (![self.controleCutScene fimCutScene]) {
             [self mostrarCena];
+            [self.controleSomScene tocarMusicaFundo];
+        }else{
+            [self apresentarFase];
         }
         
     }
@@ -37,6 +41,12 @@
     [cenaExibir setSize:self.frame.size];
     
     [self addChild:cenaExibir];
+    
+    NSString *nomeSomCenaCutScene=[self.controleCutScene somCenaCutScene];
+    
+    if ([nomeSomCenaCutScene length]!=0) {
+        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene]];
+    }
 }
 
 -(void)apresentarFase{

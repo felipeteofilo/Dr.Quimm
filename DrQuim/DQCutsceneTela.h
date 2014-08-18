@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQCutsceneControle.h"
-
+#import "DQControleSomScene.h"
 
 
 @interface DQCutsceneTela : SKScene
@@ -16,7 +16,7 @@
 @property DQCutsceneControle *controleCutScene;
 @property int cutSceneAtual;
 @property SKScene *faseApresentar;
-
+@property   DQControleSomScene *controleSomScene;
 
 -(id)initCutScene:(int)cutSceneAtual Fase:(SKScene*)faseApresentar SizeScene:(CGSize)size;
 -(void)mostrarCena;

@@ -17,9 +17,12 @@ typedef NS_ENUM(int, TipoCena){
 
 @interface DQControleSomScene : DQControleSom
 
-@property TipoCena tipoCenaConfigurado;
+@property AVAudioPlayer *playerMusicaFundo;
 @property NSString *musicaFundo;
 @property int indiceScene;
+@property TipoCena tipoCena;
 
--(id)initControleSomScene:(TipoCena)tipoCena indiceCena:(int)indiceCena;
+-(id)initControleSomFundo:(TipoCena)tipoCena nomeSom:(NSString*)somFundo indiceCena:(int)idCena;
+-(id)initControleSomFundo:(TipoCena)tipoCena idTela:(int)idCena;
+-(void)tocarMusicaFundo;
 @end
