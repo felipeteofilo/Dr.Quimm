@@ -3,10 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>MusicaFundo</key>
+		<key>SomFundo</key>
 		<string></string>
-		<key>RodarCutScene</key>
-		<true/>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -296,10 +294,8 @@
 		<array/>
 	</dict>
 	<dict>
-		<key>MusicaFundo</key>
+		<key>SomFundo</key>
 		<string>MusicaFundo04</string>
-		<key>RodarCutScene</key>
-		<true/>
 		<key>PosInicialJogador</key>
 		<string>{10, 200}</string>
 		<key>Animacoes</key>
@@ -444,10 +440,8 @@
 		<array/>
 	</dict>
 	<dict>
-		<key>MusicaFundo</key>
+		<key>SomFundo</key>
 		<string></string>
-		<key>RodarCutScene</key>
-		<false/>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>

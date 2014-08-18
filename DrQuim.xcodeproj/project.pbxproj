@@ -44,6 +44,9 @@
 		94080EC71933BA2A0024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
+		9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469691319A27EDA00087B20 /* DQControleSomScene.m */; };
+		9469691819A2934100087B20 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691619A2934100087B20 /* Passo.mp3 */; };
+		9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691719A2934100087B20 /* somPerdeuVida.mp3 */; };
 		947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */; };
 		9488196019901A4600609A0F /* DQItensJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = 9488195F19901A4600609A0F /* DQItensJogador.m */; };
 		9488196919901A6D00609A0F /* ConfigFase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9488196119901A6D00609A0F /* ConfigFase.plist */; };
@@ -227,6 +230,10 @@
 		94080ECC1933BA2A0024FB94 /* DrQuimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrQuimTests-Info.plist"; sourceTree = "<group>"; };
 		94080ECE1933BA2A0024FB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
+		9469691219A27EDA00087B20 /* DQControleSomScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleSomScene.h; sourceTree = "<group>"; };
+		9469691319A27EDA00087B20 /* DQControleSomScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleSomScene.m; sourceTree = "<group>"; };
+		9469691619A2934100087B20 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
+		9469691719A2934100087B20 /* somPerdeuVida.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somPerdeuVida.mp3; sourceTree = "<group>"; };
 		947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleCorpoFisico.h; sourceTree = "<group>"; };
 		947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleCorpoFisico.m; sourceTree = "<group>"; };
 		9488195E19901A4600609A0F /* DQItensJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQItensJogador.h; sourceTree = "<group>"; };
@@ -568,9 +575,19 @@
 			path = Personagens;
 			sourceTree = "<group>";
 		};
+		9469691519A2934100087B20 /* Jogador */ = {
+			isa = PBXGroup;
+			children = (
+				9469691619A2934100087B20 /* Passo.mp3 */,
+				9469691719A2934100087B20 /* somPerdeuVida.mp3 */,
+			);
+			path = Jogador;
+			sourceTree = "<group>";
+		};
 		94A868201999696000604BA4 /* Sons */ = {
 			isa = PBXGroup;
 			children = (
+				9469691519A2934100087B20 /* Jogador */,
 				C55264E319A24A5B00BD59CE /* Animais */,
 				C55264E719A24A5B00BD59CE /* Efeitos */,
 				C55264F019A24A5B00BD59CE /* Musicas Fundo */,
@@ -782,6 +799,8 @@
 				C5BFD5A3198C4F53005F3460 /* DQVidaControle.m */,
 				C52FBF2A19A197450059E973 /* DQControleSom.h */,
 				C52FBF2B19A197450059E973 /* DQControleSom.m */,
+				9469691219A27EDA00087B20 /* DQControleSomScene.h */,
+				9469691319A27EDA00087B20 /* DQControleSomScene.m */,
 			);
 			name = Controladores;
 			sourceTree = "<group>";
@@ -976,6 +995,7 @@
 				C5D2A69D196A535800F3B7C4 /* Fase1_Parte2.png in Resources */,
 				C55264FE19A24A5B00BD59CE /* Grama02.mp3 in Resources */,
 				C55CE5AC199BB65D00375C87 /* Fase3_Parte19.png in Resources */,
+				9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */,
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
 				C55CE5AF199BB65D00375C87 /* Fase3_Parte21.png in Resources */,
@@ -1020,6 +1040,7 @@
 				9488196C19901A6D00609A0F /* ItensJogador.plist in Resources */,
 				C55CE5B2199BB65D00375C87 /* Fase3_Parte24.png in Resources */,
 				C55CE5A4199BB65D00375C87 /* Fase3_Parte11.png in Resources */,
+				9469691819A2934100087B20 /* Passo.mp3 in Resources */,
 				C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */,
 				C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */,
 				C55CE5B8199BB65D00375C87 /* Fase3_Parte8.png in Resources */,
@@ -1095,6 +1116,7 @@
 				C543E13219985F3400C90F19 /* DQMenuInicial.m in Sources */,
 				C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */,
 				C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */,
+				9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
 				C54031E91989FE98003384AB /* DQOpcaoMenu.m in Sources */,
 				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,

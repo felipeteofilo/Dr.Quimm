@@ -11,6 +11,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQControleUserDefalts.h"
 
+typedef NS_ENUM(int, TipoObjeto){
+    Personagem=0,
+    ContadorGeiger=1,
+    NPC=3,
+};
+
 @interface DQControleSom : SKNode
 
 @property NSArray * listaSons;
@@ -18,5 +24,7 @@
 
 -(void)tocarSom;
 -(int)sortearSomTocar;
-+(void)tocarSom:(NSString*)nomeSomTocar;
+-(void)tocarSom:(AVAudioPlayer*)player;
+-(void)proxSom;
+-(id)initControleSom:(TipoObjeto)objetoControlado;
 @end

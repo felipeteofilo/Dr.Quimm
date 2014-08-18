@@ -11,17 +11,10 @@
 @implementation DQControleSom
 
 -(void)tocarSom{
-    [self tocarSom:[self.listaSons objectAtIndex:self.indiceSomTocar]];
+     [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
 }
 
--(void)tocarSom:(NSString*)nomeSomTocar{
-    NSError *error;
-    NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
-    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlSom error:&error];
-    
-    [player setVolume:[DQControleUserDefalts volumeSons]];
-    [player prepareToPlay];
-    
+-(void)tocarSom:(AVAudioPlayer*)player{
     SKAction *playAction = [SKAction runBlock:^{
         [player play];
     }];
@@ -31,15 +24,25 @@
     
     [self runAction:sequence];
 }
+-(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar{
+    NSError *error;
+    NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlSom error:&error];
+    
+    [player setVolume:[DQControleUserDefalts volumeSons]];
+    [player prepareToPlay];
+    
+    return player;
+}
 
 //Passa o nome do objeto que recebera o controle de som para configurar os sons especificos
--(id)initControleSom:(NSString*)nomeObjetoControlado{
+-(id)initControleSom:(TipoObjeto)objetoControlado;{
     if (self=[super init]) {
         self.indiceSomTocar=0;
         
-        if (![nomeObjetoControlado isEqualToString:@"contador"]) {
-            [self configurarListaSons];
-        }
+//        if (![nomeObjetoControlado isEqualToString:@"contador"]) {
+//            [self configurarListaSons];
+//        }
     }
     return self;
 }

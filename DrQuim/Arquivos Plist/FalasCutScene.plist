@@ -12,6 +12,8 @@
 			<string>cena1_1</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -21,6 +23,8 @@
 			<key>Fundo</key>
 			<string>cena1_2</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -32,6 +36,8 @@
 			<string>cena1_3</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -41,6 +47,8 @@
 			<key>Fundo</key>
 			<string>cena1_4</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -52,6 +60,8 @@
 			<string>cena1_5</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -61,6 +71,8 @@
 			<key>Fundo</key>
 			<string>cena1_6</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -72,6 +84,8 @@
 			<string>cena1_7</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -81,6 +95,8 @@
 			<key>Fundo</key>
 			<string>cena1_8</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -92,6 +108,8 @@
 			<string>cena1_9</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -101,6 +119,8 @@
 			<key>Fundo</key>
 			<string>cena1_10</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -112,6 +132,8 @@
 			<string>cena1_11</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -121,6 +143,8 @@
 			<key>Fundo</key>
 			<string>cena1_12</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -132,6 +156,8 @@
 			<string>cena1_13</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -142,8 +168,12 @@
 			<string>cena1_14</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -154,6 +184,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -164,6 +196,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
@@ -174,6 +208,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
@@ -184,6 +220,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -202,6 +240,8 @@
 			<string>cena1_20</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -211,6 +251,8 @@
 			<key>Fundo</key>
 			<string>cena1_21</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -222,6 +264,8 @@
 			<string>cena1_22</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -231,6 +275,8 @@
 			<key>Fundo</key>
 			<string>cena1_23</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -242,6 +288,8 @@
 			<string>cena1_24</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -251,6 +299,8 @@
 			<key>Fundo</key>
 			<string>cena1_25</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -262,6 +312,8 @@
 			<string>cena1_26</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -271,6 +323,8 @@
 			<key>Fundo</key>
 			<string>cena1_27</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -282,6 +336,8 @@
 			<string>cena1_28</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -291,6 +347,8 @@
 			<key>Fundo</key>
 			<string>cena1_29</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -302,6 +360,8 @@
 			<string>cena1_30</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -311,6 +371,8 @@
 			<key>Fundo</key>
 			<string>cena1_31</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -322,6 +384,8 @@
 			<string>cena1_32</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -331,6 +395,8 @@
 			<key>Fundo</key>
 			<string>cena1_33</string>
 			<key>Foto</key>
+			<string></string>
+			<key>SomFundo</key>
 			<string></string>
 		</dict>
 		<dict>
@@ -342,6 +408,8 @@
 			<string>cena1_34</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
@@ -352,10 +420,14 @@
 			<string>cena1_35</string>
 			<key>Foto</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 		</dict>
 	</array>
 	<array>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -366,6 +438,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -376,6 +450,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -386,6 +462,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -396,6 +474,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -406,6 +486,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -418,6 +500,8 @@
 		<dict>
 			<key>Sujeito</key>
 			<string></string>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Texto</key>
 			<string></string>
 			<key>Fundo</key>
@@ -426,6 +510,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -436,6 +522,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -446,6 +534,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -456,6 +546,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -466,6 +558,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -476,6 +570,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -486,6 +582,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -496,6 +594,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -507,6 +607,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
@@ -517,6 +619,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string></string>
 			<key>Texto</key>
@@ -527,6 +631,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Caçador</string>
 			<key>Texto</key>
@@ -538,6 +644,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -549,6 +657,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Caçador</string>
 			<key>Texto</key>
@@ -559,6 +669,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Aldeao Desconhecido</string>
 			<key>Texto</key>
@@ -569,6 +681,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Caçador</string>
 			<key>Texto</key>
@@ -579,6 +693,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Mãe de Todos</string>
 			<key>Texto</key>
@@ -589,6 +705,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Caçador</string>
 			<key>Texto</key>
@@ -599,6 +717,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Mãe de Todos</string>
 			<key>Texto</key>
@@ -609,6 +729,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Mãe de Todos</string>
 			<key>Texto</key>
@@ -619,6 +741,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -629,6 +753,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Piloto</string>
 			<key>Texto</key>
@@ -639,6 +765,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Cientista</string>
 			<key>Texto</key>
@@ -650,6 +778,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Mãe de Todos</string>
 			<key>Texto</key>
@@ -660,6 +790,8 @@
 			<string></string>
 		</dict>
 		<dict>
+			<key>SomFundo</key>
+			<string></string>
 			<key>Sujeito</key>
 			<string>Mãe de Todos</string>
 			<key>Texto</key>
