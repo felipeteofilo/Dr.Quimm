@@ -21,7 +21,13 @@
         if ((self.tipoCena == Fase) && (idCena!=2)) {
             self.listaSons=[self configuraListaEfeitosSonoros];
         }
-        self.playerMusicaFundo =[self configuraMusicaFundo:somFundo];
+        
+        if ([self.musicaFundo length]!=0) {
+            self.playerMusicaFundo =[self configuraMusicaFundo:somFundo];
+        }else{
+            self.playerMusicaFundo =nil;
+        }
+        
     }
     return self;
 }
@@ -56,7 +62,9 @@
 }
 
 -(void)tocarMusicaFundo{
-    [self.playerMusicaFundo play];
+    if (self.playerMusicaFundo) {
+        [self.playerMusicaFundo play];
+    }
 }
 -(NSArray*)configuraListaEfeitosSonoros{
     NSMutableArray *listaSons=[NSMutableArray array];

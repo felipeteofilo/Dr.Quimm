@@ -202,10 +202,8 @@
     [self.volumeMusica atualizarBarra:[DQControleUserDefalts volumeMusica]*100];
     [self.volumeSom atualizarBarra:[DQControleUserDefalts volumeSons]*100];
     
-    SEL selAtualizarVolume=@selector(atualizaSomMusicaFundo);
-    
-    if ([self.parent.scene respondsToSelector:selAtualizarVolume]) {
-        [self.parent.scene performSelector:selAtualizarVolume];
+    if ([self.parent.scene respondsToSelector:@selector(atualizaSomMusicaFundo)]) {
+        [self.parent.scene performSelector:@selector(atualizaSomMusicaFundo)];
     }
     
 }

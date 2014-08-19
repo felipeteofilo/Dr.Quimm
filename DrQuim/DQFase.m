@@ -496,6 +496,13 @@
     }
 }
 
+-(void)didMoveToView:(SKView *)view{
+    [super didMoveToView:view];
+    
+    //So chama o som qndo a Scene aparecer
+    [self.controleSom tocarMusicaFundo];
+    
+}
 - (void)didSimulatePhysics{
     if (!self.jogoPausado) {
         //Chama método para posicionar camera
@@ -608,7 +615,6 @@
 -(void)configurarSomFundo{
     self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
     
-    [self.controleSom tocarMusicaFundo];
     [self addChild:self.controleSom];
 }
 
