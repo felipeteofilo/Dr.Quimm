@@ -112,9 +112,12 @@
     if ([[self nodeAtPoint:posToque].name isEqualToString:self.titulo.name]) {
         [self esconderMenu];
     }
+    
+    [self atualizaBarras];
 }
 
 -(void)esconderMenu{
+    [self atualizaBarras];
     [self removeFromParent];
 }
 
@@ -200,6 +203,11 @@
     
     [self.volumeMusica atualizarBarra:[DQControleUserDefalts volumeMusica]*100];
     [self.volumeSom atualizarBarra:[DQControleUserDefalts volumeSons]*100];
+    
+    if ([self.parent.scene respondsToSelector:@selector(atualizaSomMusicaFundo)]) {
+        [self.parent.scene performSelector:@selector(atualizaSomMusicaFundo)];
+    }
+    
 }
 
 @end

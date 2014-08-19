@@ -17,13 +17,6 @@
         self.indexAtual=0;
         
         [self setName:@"MENU"];
-        [self configuraTitulo];
-        //[self configuraNavegacao];
-        
-        //carrega o array com as opçoes
-        self.opcoesMenu=[self configuraOpcoesMenu];
-        
-        [self setScale:0.7f];
     }
     return self;
     
@@ -145,11 +138,22 @@
 }
 
 -(void)esconderMenu{
+    //Quero o avo do menu, pq ele é adicionado na HUD e a HUD na fase
+    [self.parent.scene setPaused:NO];
+    
     [self removeFromParent];
 }
 
 -(void)realcarMenu{
     return;
 }
-
+-(void)prepararExibicao{
+    [self configuraTitulo];
+    //[self configuraNavegacao];
+    
+    //carrega o array com as opçoes
+    self.opcoesMenu=[self configuraOpcoesMenu];
+    
+    [self setScale:0.7f];
+}
 @end

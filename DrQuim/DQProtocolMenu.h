@@ -15,8 +15,9 @@
 @property NSArray *opcoesMenu;
 @property int indexAtual;
 
-@required
+@optional
 -(id)initMenu;
+@required
 -(void)esconderMenu;
 -(void)prepararExibicao;
 @end

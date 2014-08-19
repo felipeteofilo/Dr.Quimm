@@ -16,7 +16,4 @@
 //Método INIT que inicia o NPC com o nome dele e a posicao
 -(id)initComNome:(NSString *)nome naPosicao:(CGPoint)posicao;
 
-
-
-
 @end

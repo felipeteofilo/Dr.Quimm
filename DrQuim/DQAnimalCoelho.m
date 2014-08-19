@@ -106,15 +106,15 @@
     }];
 }
 
--(void)realizarAcao{
-    if (![self.spriteAnimal hasActions]) {
-        if ([self.acoes count] > 0) {
-            [self performSelector:[self seletorProxAcao]];
-            
-            [self.acoes removeObjectAtIndex:0];
-        }else{
-            [self rastrearAreaBackground:self.scene];
-        }
-    }
-}
+//-(void)realizarAcao{
+//    if (![self.spriteAnimal hasActions]) {
+//        if ([self.acoes count] > 0) {
+//            [self performSelector:[self seletorProxAcao]];
+//            
+//            [self.acoes removeObjectAtIndex:0];
+//        }else{
+//            [self rastrearAreaBackground:self.scene];
+//        }
+//    }
+//}
 @end

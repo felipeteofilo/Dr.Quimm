@@ -7,7 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "DQUtils.h"
+#import "DQUteis.h"
+#import "DQControleSom.h"
 
 @interface DQContadorGeiger : SKSpriteNode
 {

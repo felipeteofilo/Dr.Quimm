@@ -10,6 +10,8 @@
 
 @implementation DQMenuArmadilhas
 
+@synthesize indexAtual;
+
 -(id)initMenu{
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setName:@"Armadilhas"];

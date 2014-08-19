@@ -45,6 +45,7 @@
     self.mundo.position = posicaoMundo;
 }
 
+
 -(void)controlarTranscicaoPartesFase{
     
     //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
@@ -458,9 +459,7 @@
             
             //Adiciona + 50 de tolerancia
             float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 30.0f;
-            
-            
-            
+
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
                 [self plataformaCategoria:secondBody.node];
@@ -474,13 +473,14 @@
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
             //seta que o jogador pode subir ou descer
             [self.jogador setPodeEscalar:YES];
-            
         }
         
     }
 }
 
-
+-(void)atualizaSomMusicaFundo{
+    [self.controleSom.playerMusicaFundo setVolume:[DQControleUserDefalts volumeMusica]];
+}
 
 
 -(void)update:(NSTimeInterval)currentTime{
@@ -495,16 +495,28 @@
         [self.controladorDaVida atualizarSituacaoJogador];
         
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
-        
-        if (ultimoUpdate > 60) {
+
+        if (ultimoUpdate > 30) {
             self.intervaloUltimoUpdate = currentTime;
             
+            if (self.faseAtual !=2) {
+                if ([DQUteis sortearChanceSim:50.0]) {
+                    [self.controleSom tocarSomLista];
+                }
+            }
             //A cada 60 segundos salva os status do jogados
             [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
         }
     }
 }
 
+-(void)didMoveToView:(SKView *)view{
+    [super didMoveToView:view];
+    
+    //So chama o som qndo a Scene aparecer
+    [self.controleSom tocarMusicaFundo];
+    
+}
 - (void)didSimulatePhysics{
     if (!self.jogoPausado) {
         //Chama método para posicionar camera
@@ -605,14 +617,19 @@
     [self addChild:self.mundo];
     
     [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
-    
-    
+
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
     
     [self criaJogador];
     [self configuraFisicaMundo];
     [self configuraHUD];
+    [self configurarSomFundo];
+}
+
+-(void)configurarSomFundo{
+    self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
     
+    [self addChild:self.controleSom];
 }
 
 -(void)desativaPlataformas{

@@ -1,5 +1,5 @@
 //
-//  DQUtils.h
+//  DQUteis.h
 //  Contador
 //
 //  Created by LEONARDO DE SOUSA MENDES on 11/08/14.

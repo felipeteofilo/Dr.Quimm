@@ -56,6 +56,7 @@
     
     if ([self childNodeWithName:@"MENU"]) {
         [[self childNodeWithName:@"MENU"]removeFromParent];
+        [self.parent.scene setPaused:NO];
     }
     
     for (SKSpriteNode *nodeTocado in arrayNodes) {

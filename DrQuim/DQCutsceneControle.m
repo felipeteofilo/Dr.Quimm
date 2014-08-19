@@ -65,6 +65,17 @@
     return arrayRetorno;
 }
 
+-(NSString*)somCenaCutScene{
+    NSString *stringRetorno;
+    
+    stringRetorno=[[self infoCenaAtual]objectForKey:@"SomFundo"];
+    
+    if (stringRetorno) {
+        return stringRetorno;
+    }else{
+        return nil;
+    }
+}
 -(NSArray*)cenasCutScene:(int)cutSceneAtual{
     NSArray *arrayRetorno=[[self arquivoPlist]objectAtIndex:cutSceneAtual];
     

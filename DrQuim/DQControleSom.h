@@ -7,11 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "DQControleUserDefalts.h"
 
-@interface DQControleSom : NSObject
+typedef NS_ENUM(int, TipoObjeto){
+    Personagem=0,
+    ContadorGeiger=1,
+    NPC=3,
+};
 
-@property NSString *somPrincipal;
-@property NSArray *sonsSecundarios;
+@interface DQControleSom : SKNode
 
+@property AVAudioPlayer *playerSom;
+@property NSArray * listaSons;
+@property int indiceSomTocar;
+
+-(void)tocarSom;
+-(int)sortearSomTocar;
+-(void)tocarSom:(AVAudioPlayer*)player;
+-(void)proxSom;
+-(id)initControleSom:(TipoObjeto)objetoControlado;
+-(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar;
+-(void)tocarSomLista;
 @end

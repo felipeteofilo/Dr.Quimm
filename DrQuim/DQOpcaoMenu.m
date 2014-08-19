@@ -89,4 +89,6 @@
 -(void)esconderConteudo{
     [self.conteudo removeFromParent];
 }
+-(void)esconderMenu{
+}
 @end

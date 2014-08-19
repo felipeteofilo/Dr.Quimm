@@ -25,7 +25,15 @@
         return [NSArray arrayWithContentsOfFile:pathArquivoPlist];
     }
 }
-
++(NSString*)somFundoFase:(int)_fase{
+    NSString *retorno=[[[self arquivoPlist]objectAtIndex:_fase-1]objectForKey:@"SomFundo"];
+    
+    if ([retorno length]==0) {
+        return @"MusicaFundo03";
+    }else{
+        return retorno;
+    }
+}
 +(NSArray*)configParteFase:(int)_fase{
 
     //Verifica se a fase procurada esta dentro do limites do array
