@@ -5,7 +5,6 @@
 //  Created by Leonardo de Sousa Mendes on 17/08/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
-
 #import "DQControleSom.h"
 
 @implementation DQControleSom
@@ -15,7 +14,6 @@
      [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
 }
 
-//-(void)tocarSom:(NSString*)nomeSomTocar{
 -(void)tocarSom:(AVAudioPlayer*)player{
     SKAction *playAction = [SKAction runBlock:^{
         [player play];
@@ -45,13 +43,24 @@
 -(id)initControleSom:(TipoObjeto)objetoControlado;{
     if (self=[super init]) {
         self.indiceSomTocar=0;
-        
+        self.tipoObjeto=objetoControlado;
     }
     return self;
 }
 
 -(void)configurarListaSons{
-    
+    if (self.tipoObjeto==NPC) {
+        NSArray *sonsdisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Pequena-1",@"FalaPersonagens-Pequena-2",@"FalaPersonagens-Grande-1",@"FalaPersonagens-Media-1",@"FalaPersonagens-Media-2", nil];
+        
+        NSMutableArray *arraySons=[NSMutableArray array];
+        
+        int valorSorteado;
+
+        for (int i=0; i<3; i++) {
+            valorSorteado=arc4random()%[sonsdisponiveis count]-1;
+            [arraySons addObject:[sonsdisponiveis objectAtIndex:valorSorteado]];
+        }
+    }
 }
 
 -(void)pararSom{

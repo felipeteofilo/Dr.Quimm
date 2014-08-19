@@ -94,4 +94,8 @@
     return true;
 }
 
+-(void)configurarControleSom{
+    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
+
+}
 @end

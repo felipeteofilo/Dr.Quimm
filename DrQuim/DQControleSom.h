@@ -22,6 +22,7 @@ typedef NS_ENUM(int, TipoObjeto){
 @property AVAudioPlayer *playerSom;
 @property NSArray * listaSons;
 @property int indiceSomTocar;
+@property TipoObjeto tipoObjeto;
 
 -(void)tocarSom;
 -(int)sortearSomTocar;

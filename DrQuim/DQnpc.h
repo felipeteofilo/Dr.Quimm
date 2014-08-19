@@ -7,11 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQControleSom.h"
 
 @interface DQnpc : SKSpriteNode
 
 //NSString que armazena o nome do NPC
 @property NSString *nome;
+
+@property DQControleSom *controleSom;
 
 //Método INIT que inicia o NPC com o nome dele e a posicao
 -(id)initComNome:(NSString *)nome naPosicao:(CGPoint)posicao;
