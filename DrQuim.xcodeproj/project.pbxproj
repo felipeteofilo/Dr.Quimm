@@ -42,6 +42,12 @@
 		94080EC71933BA2A0024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
+		943710AD19A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710A719A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 */; };
+		943710AE19A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710A819A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 */; };
+		943710AF19A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710A919A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 */; };
+		943710B019A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710AA19A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 */; };
+		943710B119A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710AB19A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 */; };
+		943710B219A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710AC19A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 */; };
 		9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469691319A27EDA00087B20 /* DQControleSomScene.m */; };
 		9469691819A2934100087B20 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691619A2934100087B20 /* Passo.mp3 */; };
 		9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691719A2934100087B20 /* somPerdeuVida.mp3 */; };
@@ -227,6 +233,12 @@
 		94080ECC1933BA2A0024FB94 /* DrQuimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrQuimTests-Info.plist"; sourceTree = "<group>"; };
 		94080ECE1933BA2A0024FB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
+		943710A719A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Grande-1.mp3"; sourceTree = "<group>"; };
+		943710A819A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Media-1.mp3"; sourceTree = "<group>"; };
+		943710A919A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Media-2.mp3"; sourceTree = "<group>"; };
+		943710AA19A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Media-3.mp3"; sourceTree = "<group>"; };
+		943710AB19A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Pequena-1.mp3"; sourceTree = "<group>"; };
+		943710AC19A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Pequena-2.mp3"; sourceTree = "<group>"; };
 		9469691219A27EDA00087B20 /* DQControleSomScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleSomScene.h; sourceTree = "<group>"; };
 		9469691319A27EDA00087B20 /* DQControleSomScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleSomScene.m; sourceTree = "<group>"; };
 		9469691619A2934100087B20 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
@@ -573,6 +585,19 @@
 			path = Personagens;
 			sourceTree = "<group>";
 		};
+		943710A619A3CE8600B8846E /* NPCs */ = {
+			isa = PBXGroup;
+			children = (
+				943710A719A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 */,
+				943710A819A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 */,
+				943710A919A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 */,
+				943710AA19A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 */,
+				943710AB19A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 */,
+				943710AC19A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 */,
+			);
+			path = NPCs;
+			sourceTree = "<group>";
+		};
 		9469691519A2934100087B20 /* Jogador */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +620,7 @@
 		94A868201999696000604BA4 /* Sons */ = {
 			isa = PBXGroup;
 			children = (
+				943710A619A3CE8600B8846E /* NPCs */,
 				9469691519A2934100087B20 /* Jogador */,
 				C55264E319A24A5B00BD59CE /* Animais */,
 				C55264E719A24A5B00BD59CE /* Efeitos */,
@@ -989,17 +1015,21 @@
 				C55CE5AA199BB65D00375C87 /* Fase3_Parte17.png in Resources */,
 				C55264F519A24A5B00BD59CE /* Animal01 - Coelho.mp3 in Resources */,
 				9488197419901AE200609A0F /* rostoPiloto.png in Resources */,
+				943710AF19A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 in Resources */,
 				C5D2A69D196A535800F3B7C4 /* Fase1_Parte2.png in Resources */,
 				9469692019A2A31100087B20 /* cutscene1.atlas in Resources */,
 				C55CE5AC199BB65D00375C87 /* Fase3_Parte19.png in Resources */,
 				9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */,
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
+				943710B019A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 in Resources */,
 				C55CE5AF199BB65D00375C87 /* Fase3_Parte21.png in Resources */,
 				C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */,
 				C552650119A24A5B00BD59CE /* MusicaFundo02.mp3 in Resources */,
 				3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */,
+				943710B219A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
+				943710AE19A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 in Resources */,
 				3CAC84311979FAD5000FB1A1 /* Parado.atlas in Resources */,
 				C55CE5AE199BB65D00375C87 /* Fase3_Parte20.png in Resources */,
 				C55264F719A24A5B00BD59CE /* Animal04 - Topeira.mp3 in Resources */,
@@ -1008,6 +1038,7 @@
 				C55CE5A8199BB65D00375C87 /* Fase3_Parte15.png in Resources */,
 				C552650319A24A5B00BD59CE /* MusicaFundo04.mp3 in Resources */,
 				3CAC84281979F63D000FB1A1 /* Escalando.atlas in Resources */,
+				943710AD19A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 in Resources */,
 				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
 				9488197319901AE200609A0F /* rostoCientista.png in Resources */,
 				C5D2A69C196A535800F3B7C4 /* Fase1_Parte1.png in Resources */,
@@ -1035,6 +1066,7 @@
 				9488196C19901A6D00609A0F /* ItensJogador.plist in Resources */,
 				C55CE5B2199BB65D00375C87 /* Fase3_Parte24.png in Resources */,
 				C55CE5A4199BB65D00375C87 /* Fase3_Parte11.png in Resources */,
+				943710B119A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 in Resources */,
 				9469691819A2934100087B20 /* Passo.mp3 in Resources */,
 				9469691B19A2A2A600087B20 /* Helicoptero.mp3 in Resources */,
 				C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */,
