@@ -54,12 +54,6 @@
     return player;
 }
 
--(void)tocarSom:(AVAudioPlayer *)player{
-    //[super tocarSom:[self configuraMusicaFundo:self.musicaFundo]];
-    
-    [player play];
-}
-
 -(void)tocarMusicaFundo{
     [self.playerMusicaFundo play];
 }

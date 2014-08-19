@@ -24,6 +24,7 @@
         }else{
             [self apresentarFase];
         }
+        [self addChild:self.controleSomScene];
         
     }
     return self;
@@ -34,6 +35,24 @@
         [[self childNodeWithName:@"CenaCutScene"]removeFromParent];
     }
     
+    NSString *nomeSomCenaCutScene=[self.controleCutScene somCenaCutScene];
+    
+    if([nomeSomCenaCutScene isEqualToString:@"REMOVERSOM"]){
+        //Que deus me perdoe por essa gambiarra
+        [self.controleSomScene.playerMusicaFundo stop];
+        [self.controleSomScene removeActionForKey:@"tocandoSom"];
+        
+    }else if ([nomeSomCenaCutScene length]!=0){
+        //Remove o som anteriores
+        [self.controleSomScene removeActionForKey:@"tocandoSom"];
+        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene]];
+        
+    }else{
+        //Remove o som anteriores para nao ficar tocando o som anterior
+        [self.controleSomScene removeActionForKey:@"tocandoSom"];
+    }
+    
+    
     SKSpriteNode *cenaExibir=[self.controleCutScene montarCena];
     [cenaExibir setName:@"CenaCutScene"];
     
@@ -41,12 +60,6 @@
     [cenaExibir setSize:self.frame.size];
     
     [self addChild:cenaExibir];
-    
-    NSString *nomeSomCenaCutScene=[self.controleCutScene somCenaCutScene];
-    
-    if ([nomeSomCenaCutScene length]!=0) {
-        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene]];
-    }
 }
 
 -(void)apresentarFase{

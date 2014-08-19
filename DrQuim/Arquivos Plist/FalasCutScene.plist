@@ -289,7 +289,7 @@
 			<key>Foto</key>
 			<string></string>
 			<key>SomFundo</key>
-			<string></string>
+			<string>REMOVERSOM</string>
 		</dict>
 		<dict>
 			<key>Sujeito</key>
