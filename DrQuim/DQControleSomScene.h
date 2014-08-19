@@ -23,7 +23,5 @@ typedef NS_ENUM(int, TipoCena){
 @property TipoCena tipoCena;
 
 -(id)initControleSomFundo:(TipoCena)tipoCena nomeSom:(NSString*)somFundo indiceCena:(int)idCena;
--(id)initControleSomFundo:(TipoCena)tipoCena idTela:(int)idCena;
 -(void)tocarMusicaFundo;
--(NSString*)nomeSomFundoFase;
 @end

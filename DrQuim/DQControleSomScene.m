@@ -32,21 +32,6 @@
     return self;
 }
 
--(id)initControleSomFundo:(TipoCena)tipoCena idTela:(int)idCena{
-    if (self=[super init]) {
-        self.indiceScene=idCena;
-        self.tipoCena=tipoCena;
-        
-        //Verifica se nao esta na fase da vila para preencher os sons de animais da floresta
-        if ((self.tipoCena ==Fase) && (idCena!=2)) {
-            [self configuraListaEfeitosSonoros];
-        }
-        
-        [self configuraMusicaFundo:[self nomeSomFundoFase]];
-    }
-    return self;
-}
-
 -(AVAudioPlayer*)configuraMusicaFundo:(NSString*)nomeSomTocar{
     NSError *error;
     
