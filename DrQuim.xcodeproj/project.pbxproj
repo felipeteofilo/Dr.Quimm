@@ -55,6 +55,7 @@
 		943710C019A3DF3600B8846E /* DQMenuArmadilhas.m in Sources */ = {isa = PBXBuildFile; fileRef = 943710BF19A3DF3600B8846E /* DQMenuArmadilhas.m */; };
 		943710C419A3E04000B8846E /* Armadilhas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 943710C219A3E04000B8846E /* Armadilhas.atlas */; };
 		943710C519A3E04000B8846E /* ArmadilhaSimples.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 943710C319A3E04000B8846E /* ArmadilhaSimples.atlas */; };
+		943710C719A3E31100B8846E /* ArmadilhasReferencia.plist in Resources */ = {isa = PBXBuildFile; fileRef = 943710C619A3E31100B8846E /* ArmadilhasReferencia.plist */; };
 		9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469691319A27EDA00087B20 /* DQControleSomScene.m */; };
 		9469691819A2934100087B20 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691619A2934100087B20 /* Passo.mp3 */; };
 		9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691719A2934100087B20 /* somPerdeuVida.mp3 */; };
@@ -257,6 +258,7 @@
 		943710BF19A3DF3600B8846E /* DQMenuArmadilhas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMenuArmadilhas.m; sourceTree = "<group>"; };
 		943710C219A3E04000B8846E /* Armadilhas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Armadilhas.atlas; sourceTree = "<group>"; };
 		943710C319A3E04000B8846E /* ArmadilhaSimples.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ArmadilhaSimples.atlas; sourceTree = "<group>"; };
+		943710C619A3E31100B8846E /* ArmadilhasReferencia.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ArmadilhasReferencia.plist; path = "Arquivos Plist/ArmadilhasReferencia.plist"; sourceTree = "<group>"; };
 		9469691219A27EDA00087B20 /* DQControleSomScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleSomScene.h; sourceTree = "<group>"; };
 		9469691319A27EDA00087B20 /* DQControleSomScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleSomScene.m; sourceTree = "<group>"; };
 		9469691619A2934100087B20 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 		2323166F1947BCAB0002FB1D /* Arquvos XML */ = {
 			isa = PBXGroup;
 			children = (
+				943710C619A3E31100B8846E /* ArmadilhasReferencia.plist */,
 				948819751990218400609A0F /* FalasCutScene.plist */,
 				9488196319901A6D00609A0F /* FalasNoJogo.plist */,
 				9488196119901A6D00609A0F /* ConfigFase.plist */,
@@ -1045,6 +1048,7 @@
 				C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */,
 				C55264F819A24A5B00BD59CE /* AlertaHelicoptero.mp3 in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
+				943710C719A3E31100B8846E /* ArmadilhasReferencia.plist in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
 				C55CE5AB199BB65D00375C87 /* Fase3_Parte18.png in Resources */,
 				C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */,

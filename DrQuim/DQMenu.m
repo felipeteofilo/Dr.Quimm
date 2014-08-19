@@ -17,6 +17,13 @@
         self.indexAtual=0;
         
         [self setName:@"MENU"];
+        [self configuraTitulo];
+        //[self configuraNavegacao];
+        
+        //carrega o array com as opçoes
+        self.opcoesMenu=[self configuraOpcoesMenu];
+        
+        [self setScale:0.7f];
     }
     return self;
     
@@ -148,12 +155,6 @@
     return;
 }
 -(void)prepararExibicao{
-    [self configuraTitulo];
-    //[self configuraNavegacao];
-    
-    //carrega o array com as opçoes
-    self.opcoesMenu=[self configuraOpcoesMenu];
-    
-    [self setScale:0.7f];
+
 }
 @end
