@@ -11,7 +11,7 @@
 @implementation DQAnimalToupeira
 
 -(id)initToupeira{
-    DQIsca *isca = [[DQIsca alloc]initIsca:@"Doce" Caracterisca:@"Batata"];
+    DQIsca *isca = [[DQIsca alloc]initIsca:@"Doce" Caracterisca:@"Batata"Imagem:nil];
     if (self=[super initAnimalNome:@"Toupeira" sprite:@"parada1" raioVisao:60 Isca:isca]) {
         self.dirCaminhada='E';
         self.distanciaAndar=40;

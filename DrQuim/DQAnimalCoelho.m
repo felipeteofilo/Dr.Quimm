@@ -11,7 +11,7 @@
 @implementation DQAnimalCoelho
 
 -(id)initCoelho{
-    DQIsca *isca = [[DQIsca alloc]initIsca:@"Liquido" Caracterisca:@"Amarelo"];
+    DQIsca *isca = [[DQIsca alloc]initIsca:@"Liquido" Caracterisca:@"Amarelo"Imagem:nil];
     if (self=[super initAnimalNome:@"Coelho" sprite:@"parado1" raioVisao:50 Isca:isca]) {
         self.dirCaminhada='E';
         self.distanciaAndar=50;

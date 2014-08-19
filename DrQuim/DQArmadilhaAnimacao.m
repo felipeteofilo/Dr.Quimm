@@ -19,7 +19,8 @@
         [imagemFundo setPosition:CGPointZero];
         
         [self addChild:imagemFundo];
-        
+        [[[DQJogador sharedJogador]itens]entregarItem:isca.objeto quantidade:1];
+        self.imagemIsca =isca.imagem;
         self.cenaRetornar = cena;
         self.capturado =false;
         if ([nomeAnimal isEqualToString:@"Coelho"]) {
@@ -38,13 +39,19 @@
             self.capturado = [toupera serCapturaChance:chance :isca];
         }
         
-        self.armadilha = armadilha;
+        self.animacaoArmadilha = armadilha.animacao;
+        [self iniciarTela];
     }
     return self;
 }
 
 -(void)didMoveToView:(SKView *)view{
-    [self animarCapturando];
+    if (self.capturado) {
+        [self animarCapturando];
+    }
+    else{
+        [self animarFalhando];
+    }
 }
 
 -(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames{
@@ -60,18 +67,18 @@
     return frames;
 }
 
-
--(void)animarCapturando{
+-(void)iniciarTela{
+    SKTextureAtlas * atlasAnimacao = [SKTextureAtlas atlasNamed:self.animacaoArmadilha];
     
-    SKTextureAtlas * atlasAnimacao = [SKTextureAtlas atlasNamed:self.armadilha.animacao];
+    self.framesAnimacao = [self lerFrames:atlasAnimacao];
     
-    NSMutableArray *arrayFrames = [self lerFrames:atlasAnimacao];
+    CGPoint lugarIsca=CGPointMake(750, 50);
     
-    SKSpriteNode *armadilha = [[SKSpriteNode alloc]initWithTexture:[atlasAnimacao textureNamed:[NSString stringWithFormat:@"%d", 1]]];
+    self.armadilha = [[SKSpriteNode alloc]initWithTexture:[atlasAnimacao textureNamed:[NSString stringWithFormat:@"%d", 1]]];
     
-    [armadilha setSize:self.size];
-    [armadilha setAnchorPoint:CGPointZero];
-    [armadilha setPosition:CGPointZero];
+    [self.armadilha setSize:self.size];
+    [self.armadilha setAnchorPoint:CGPointZero];
+    [self.armadilha setPosition:CGPointZero];
     
     
     SKSpriteNode *jogador = [[SKSpriteNode alloc]initWithImageNamed:@"JogadorEscondido"];
@@ -79,23 +86,64 @@
     [jogador setSize:CGSizeMake(150, 250)];
     [jogador setPosition:CGPointMake(8, 60)];
     
-    NSLog(self.animal.nomeAnimal);
+    SKSpriteNode *isca = [[SKSpriteNode alloc]initWithTexture:self.imagemIsca];
+    
+    [isca setAnchorPoint:CGPointZero];
+    [isca setSize:CGSizeMake(150,150)];
+    [isca setPosition:lugarIsca];
+    [isca setZPosition:90];
+    [isca setName:@"Isca"];
     
     [self.animal setAnchorPoint:CGPointZero];
     [self.animal setZPosition:100];
     [self.animal setPosition:CGPointMake(CGRectGetMidX(self.frame)-(self.animal.size.width/2), 135)];
-    
-    [self.animal setDirCaminhada:'D'];
-    
-    [self.animal andarPara:CGPointMake(750, 135)];
-    
+    [self addChild:isca];
     [self addChild:jogador];
     
-    [self addChild:armadilha];
+    [self addChild:self.armadilha];
     [self addChild:self.animal];
     
+}
+
+-(void)voltarParaFase{
+    [NSThread sleepForTimeInterval:1.0f];
+    [self.view presentScene:self.cenaRetornar];
+}
+
+
+-(void)animarCapturando{
+    [self.animal setDirCaminhada:'D'];
     
-    //[self.view presentScene:self.cenaRetornar];
+    [[DQJogador sharedJogador]receberItem:self.animal.nomeAnimal quantidade:1];
+    
+    
+    SKAction * andar = [self.animal andarPara:CGPointMake(750, 135)];
+    
+    [self.animal runAction:andar completion:^{
+        [self.animal pararAnimacao];
+        
+        [self.animal setZPosition:60];
+        [self.armadilha setZPosition:65];
+        [[self childNodeWithName:@"Isca"]removeFromParent];
+        [self.animal runAction:[SKAction moveTo:CGPointMake(770, 200) duration:1.0]];
+        [self.armadilha runAction:[SKAction animateWithTextures:self.framesAnimacao timePerFrame:0.3 resize:NO restore:NO] completion:^{
+            
+            [self voltarParaFase];
+            
+        }];
+    }];
+}
+-(void)animarFalhando{
+    
+    [self.animal setDirCaminhada:'E'];
+    
+    SKAction * andar = [self.animal andarPara:CGPointMake(-60, 135)];
+    
+    [self.animal runAction:andar completion:^{
+        [self.animal pararAnimacao];
+        [self voltarParaFase];
+    }];
+    
     
 }
 

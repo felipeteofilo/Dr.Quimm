@@ -20,6 +20,7 @@
 @property DQJogador *jogador;
 
 @property NSString *chanceAtual;
+@property float chance;
 @property NSString *animalAtual;
 @property DQArmadilha *armadilhaSelecionada;
 @property int parteAtual;

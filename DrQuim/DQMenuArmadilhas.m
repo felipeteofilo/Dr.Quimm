@@ -24,10 +24,13 @@
 }
 
 -(void)atualizarChance{
-    float chance = arc4random()%60;
+    self.chance= arc4random()%60;
+    
     float animal = arc4random()%[[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]count]-1;
-    self.chanceAtual =[NSString stringWithFormat:@"Chance %.0f %%",chance];
+    self.chanceAtual =[NSString stringWithFormat:@"Chance %.0f %%",self.chance];
     self.animalAtual =[[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]objectAtIndex:animal];
+    
+    
 }
 
 -(void)prepararExibicao{
@@ -267,10 +270,10 @@
     
     NSString *keyDaParte = [NSString stringWithFormat:@"%d",self.parteAtual];
     
-//    if ([[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]count] <= 0 ) {
-//        [self mensagemDeErro:@"Sem Animais Próximos"];
-//        return;
-//    }
+    if ([[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]count] <= 0 ) {
+        [self mensagemDeErro:@"Sem Animais Próximos"];
+        return;
+    }
     if ([[self.lugaresArmados objectForKey:keyDaParte]boolValue]) {
         [self mensagemDeErro:@"Lugar Já Usado"];
         return;
@@ -286,11 +289,16 @@
 
 -(void)armadilhaArmada :(DQItem*)isca{
     
-    DQIsca * iscaEscolhida = [[DQIsca alloc]initIsca:isca.nome Caracterisca:isca.descricao];
+    DQIsca * iscaEscolhida = [[DQIsca alloc]initIsca:isca.nome Caracterisca:isca.descricao Imagem:isca.texture];
     
-    DQArmadilhaAnimacao *animacao = [[DQArmadilhaAnimacao alloc]initArmadilha:self.armadilhaSelecionada animal:@"Toupeira" Isca:iscaEscolhida chance:[self.chanceAtual floatValue] cenaRetornar:self.scene];
+    
+    
+    DQArmadilhaAnimacao *animacao = [[DQArmadilhaAnimacao alloc]initArmadilha:self.armadilhaSelecionada animal:@"Coelho" Isca:iscaEscolhida chance:self.chance cenaRetornar:self.scene];
     
     [self.scene.view presentScene:animacao];
+    
+    [self removeAllChildren];
+    [self removeFromParent];
 
 }
 
