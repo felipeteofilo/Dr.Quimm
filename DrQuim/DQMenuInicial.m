@@ -12,8 +12,27 @@
 
 -(id)initWithSize:(CGSize)size{
     if (self=[super initWithSize:size]) {
-        SKNode *botaIniciar=[self configuraBotaoIniciar];
-        [botaIniciar setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        //configura background da scene
+        SKSpriteNode *fundoTela=[SKSpriteNode spriteNodeWithImageNamed:@"ImagemInicioJogo"];
+        [fundoTela setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [self addChild:fundoTela];
+        
+        self.mensagemCarregando=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
+        [self.mensagemCarregando setText:@"Dr. Quimm"];
+        [self.mensagemCarregando setFontSize:100.0f];
+        [self.mensagemCarregando setFontColor:[UIColor grayColor]];
+        
+        [self.mensagemCarregando setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [self.mensagemCarregando setAlpha:0.0f];
+        
+        [self addChild:self.mensagemCarregando];
+        
+        
+        self.imagemFrasco=[SKSpriteNode spriteNodeWithImageNamed:@"IniciarJogo"];
+        [self.imagemFrasco setAnchorPoint:CGPointMake(0.5, 1)];
+        [self.imagemFrasco setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.mensagemCarregando.frame)-20)];
+        
+        [self addChild:self.imagemFrasco];
         
         SKLabelNode *teste=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
         SKSpriteNode *teste2=[SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(200, 200)];
@@ -24,43 +43,40 @@
         [self addChild:teste2];
         [teste2 addChild:teste];
         
-        [self addChild:botaIniciar];
-        
     }
     return self;
 }
 
--(SKNode*)configuraBotaoIniciar{
-    SKNode *botaoIniciar=[SKNode node];
-    [botaoIniciar setName:@"Iniciar"];
+-(void)didMoveToView:(SKView *)view{
+    [super didMoveToView:view];
     
-    SKLabelNode *textoIniciar=[SKLabelNode labelNodeWithFontNamed:[ DQConfigMenu fonteMenu]];
-    [textoIniciar setText:@"Começar"];
-    [textoIniciar setPosition:CGPointMake(0,0)];
-    [textoIniciar setFontSize:50.0];
-    [textoIniciar setName:@"Iniciar"];
+    [self animarFrasco];
+}
+-(void)animarFrasco{
+    [self.imagemFrasco runAction:[SKAction rotateByAngle:M_1_PI duration:1] completion:^{
+        
+    }];
+}
+
+-(void)animarMensagem{
+    [self.mensagemCarregando runAction:[SKAction fadeInWithDuration:1] completion:^{
+        [self.mensagemCarregando runAction:[SKAction repeatAction:[SKAction performSelector:@selector(atualizarTextoMensagem) onTarget:self] count:3]completion:^{
+            [self iniciarJogo];
+        }];
+    }];
+}
+
+-(void)atualizarTextoMensagem{
+    NSString *textoMensagem=[NSString stringWithFormat:@"%@.",self.mensagemCarregando.text];
     
-    [botaoIniciar addChild:textoIniciar];
-    
-    SKSpriteNode *imagemIniciar=[SKSpriteNode spriteNodeWithImageNamed:@"IniciarJogo"];
-    [imagemIniciar setAnchorPoint:CGPointMake(0.9, 0.4)];
-    [imagemIniciar setPosition:CGPointMake(textoIniciar.frame.size.width, 0)];
-    [imagemIniciar setName:@"Iniciar"];
-    
-    [botaoIniciar addChild:imagemIniciar];
-    
-    return botaoIniciar;
+    [self.mensagemCarregando setText:textoMensagem];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     CGPoint posToque=[[touches anyObject]locationInNode:self];
     
     SKNode *nodeTocado=[self nodeAtPoint:posToque];
-    
-    if ([nodeTocado.name isEqualToString:@"Iniciar"]) {
-        [self iniciarJogo];
-    }
-    
+
     if ([nodeTocado.name isEqualToString:@"teste"]) {
         [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
         [DQControleUserDefalts setRodouCutSceneFase:2 Valor:NO];

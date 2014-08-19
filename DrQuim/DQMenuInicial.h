@@ -16,4 +16,8 @@
 
 @interface DQMenuInicial : SKScene
 
+@property SKLabelNode *mensagemCarregando;
+@property SKSpriteNode *imagemFrasco;
+
+-(void)iniciarJogo;
 @end
