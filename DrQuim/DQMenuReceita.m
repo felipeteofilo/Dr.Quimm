@@ -163,6 +163,7 @@
 }
 
 -(void)esconderMenu{
+    
     [self removeFromParent];
 }
 

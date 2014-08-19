@@ -493,6 +493,8 @@
         [self criarParteFase];
         [self verificaCoberturaBackground];
         [self.controladorDaVida atualizarSituacaoJogador];
+        [self.hudFase atualizarBarraStatus];
+        
         
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
 
@@ -527,12 +529,11 @@
         
         //Desativa plataformas
         [self desativaPlataformas];
+        
+        //Faz algumas verificacoes para animar o jogador
+        [self verificarAnimacaoCaindo];
+        [self verificarAnimacaoDerrapagem];
     }
-    
-    //Faz algumas verificacoes para animar o jogador
-    [self verificarAnimacaoCaindo];
-    [self verificarAnimacaoDerrapagem];
-    
 }
 
 //funcao para vefrificar se pode animar jogador caindo de altas distancias
@@ -550,7 +551,7 @@
         [self.jogador animarDerrapando];
     }
     //se nao retira a animacao
-    if ([self.jogador.spriteNode actionForKey:@"animandoDerrapando"] && self.jogador.physicsBody.velocity.dx == 0 ) {
+    if ([self.jogador.spriteNode actionForKey:@"animandoDerrapando"] && self.jogador.physicsBody.velocity.dx < 10 && self.jogador.physicsBody.velocity.dx > -10 ) {
         [self.jogador pararDerrapar];
     }
 }

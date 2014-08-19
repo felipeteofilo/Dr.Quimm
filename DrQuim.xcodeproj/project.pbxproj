@@ -27,6 +27,8 @@
 		7560591019955F9C00BD455A /* DQMissao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560590F19955F9C00BD455A /* DQMissao.m */; };
 		7560591319955FC700BD455A /* DQMissaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560591219955FC700BD455A /* DQMissaoControle.m */; };
 		756059151995602500BD455A /* Missoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756059141995602500BD455A /* Missoes.plist */; };
+		7567F5C119A3E50E00A62DDE /* CaindoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7567F5BF19A3E50E00A62DDE /* CaindoDr.atlas */; };
+		7567F5C219A3E50E00A62DDE /* DerrapandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7567F5C019A3E50E00A62DDE /* DerrapandoDr.atlas */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
 		94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA01933BA290024FB94 /* CoreGraphics.framework */; };
 		94080EA31933BA290024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
@@ -220,6 +222,8 @@
 		7560591119955FC700BD455A /* DQMissaoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMissaoControle.h; sourceTree = "<group>"; };
 		7560591219955FC700BD455A /* DQMissaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissaoControle.m; sourceTree = "<group>"; };
 		756059141995602500BD455A /* Missoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Missoes.plist; sourceTree = "<group>"; };
+		7567F5BF19A3E50E00A62DDE /* CaindoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = CaindoDr.atlas; path = Animacoes/CaindoDr.atlas; sourceTree = "<group>"; };
+		7567F5C019A3E50E00A62DDE /* DerrapandoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = DerrapandoDr.atlas; path = Animacoes/DerrapandoDr.atlas; sourceTree = "<group>"; };
 		94080E9B1933BA290024FB94 /* DrQuim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrQuim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94080E9E1933BA290024FB94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94080EA01933BA290024FB94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -487,6 +491,8 @@
 		3CAC84201979F630000FB1A1 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				7567F5BF19A3E50E00A62DDE /* CaindoDr.atlas */,
+				7567F5C019A3E50E00A62DDE /* DerrapandoDr.atlas */,
 				3CAC8433197A01FB000FB1A1 /* Andando.atlas */,
 				3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */,
 				3CAC84221979F63D000FB1A1 /* Caindo.atlas */,
@@ -1106,10 +1112,12 @@
 				9488196C19901A6D00609A0F /* ItensJogador.plist in Resources */,
 				C55CE5B2199BB65D00375C87 /* Fase3_Parte24.png in Resources */,
 				C55CE5A4199BB65D00375C87 /* Fase3_Parte11.png in Resources */,
+				7567F5C119A3E50E00A62DDE /* CaindoDr.atlas in Resources */,
 				943710B119A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 in Resources */,
 				9469691819A2934100087B20 /* Passo.mp3 in Resources */,
 				9469691B19A2A2A600087B20 /* Helicoptero.mp3 in Resources */,
 				C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */,
+				7567F5C219A3E50E00A62DDE /* DerrapandoDr.atlas in Resources */,
 				C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */,
 				C55CE5B8199BB65D00375C87 /* Fase3_Parte8.png in Resources */,
 				9488196E19901A6D00609A0F /* MissoesJogador.plist in Resources */,

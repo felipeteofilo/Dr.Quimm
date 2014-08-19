@@ -38,6 +38,7 @@
         
         SKPhysicsBody *corpoFisicoRetorno=[SKPhysicsBody bodyWithEdgeLoopFromPath:[self geraPathDeArray:arrayPosicoes]];
         corpoFisicoRetorno.usesPreciseCollisionDetection = YES;
+        corpoFisicoRetorno.restitution =0;
         return corpoFisicoRetorno;
     }
 }

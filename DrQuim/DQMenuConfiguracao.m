@@ -117,6 +117,7 @@
 }
 
 -(void)esconderMenu{
+    
     [self atualizaBarras];
     [self removeFromParent];
 }
