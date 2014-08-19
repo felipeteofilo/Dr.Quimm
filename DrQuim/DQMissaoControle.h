@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <Foundation/Foundation.h>
 #import "DQMissao.h"
+
 //#import "DQVidaControle.h"
 
 @interface DQMissaoControle : NSObject
@@ -28,7 +29,10 @@
 -(BOOL)iniciarNovaMissaoNPC:(NSString *)NPC;
 
 //Método chamado quando o jogador está em uma missão - avalia se irá passar de parte ou acabar
--(BOOL)passarParteMissao:(NSString *)NPC item:(NSString*)item;
+-(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items;
+
+//Metodo que finaliza a missao
+-(void)fimDaMissao;
 
 //Funcao para atualizar a cena da classe
 -(void)atualizarCena :(SKScene*)cenaRecebida;

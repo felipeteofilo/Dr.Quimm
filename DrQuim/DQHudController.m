@@ -69,7 +69,7 @@
             
             if (![self childNodeWithName:@"MENU"]) {
                 [self.parent addChild:self.menu];
-                [self.parent.scene setPaused:YES];
+                //[self.parent.scene setPaused:YES];
             }
             
             break;

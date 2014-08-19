@@ -11,7 +11,8 @@
 @implementation DQAnimalCoelho
 
 -(id)initCoelho{
-    if (self=[super initAnimalNome:@"Coelho" sprite:@"parado1" raioVisao:50]) {
+    DQIsca *isca = [[DQIsca alloc]initIsca:@"Liquido" Caracterisca:@"Amarelo"Imagem:nil];
+    if (self=[super initAnimalNome:@"Coelho" sprite:@"parado1" raioVisao:50 Isca:isca]) {
         self.dirCaminhada='E';
         self.distanciaAndar=50;
         self.tempoAndar=2;
@@ -46,7 +47,7 @@
     //limpa a lista de acoes do animal
     [self.acoes removeAllObjects];
     
-    [self iniciarAnimacao:@"correndo"];
+    [self iniciarAnimacao:@"andando"];
     [self correr];
 }
 
@@ -66,7 +67,7 @@
     if (andar) {
         self.acaoAtual=@"andar";
         
-        [self iniciarAnimacao:@"correndo"];
+        [self iniciarAnimacao:@"andando"];
         [self animarAnimal];
         [self runAction:andar completion:^{
             [self parar];
@@ -90,7 +91,7 @@
     if (correr) {
         self.acaoAtual=@"fugindo";
         
-        [self iniciarAnimacao:@"correndo"];
+        [self iniciarAnimacao:@"andando"];
         [self animarAnimal];
         
         [self runAction:correr completion:^{

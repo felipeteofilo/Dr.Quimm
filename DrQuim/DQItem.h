@@ -16,5 +16,5 @@
 @property int qndeItem;
 
 
--(id)initItemNome:(NSString*)nome descricao:(NSString*)descricao categoria:(NSString*)categoria imagem:(NSString*)imagem;
+-(id)initItemNome:(NSString*)nome descricao:(NSString*)descricao categoria:(NSString*)categoria imagem:(NSString*)imagem Quantidade:(int)quantidade;
 @end

@@ -109,7 +109,11 @@
         return retorno;
     }
 }
-
++(NSArray*)animaisFase:(int)fase Parte:(int)parte{
+    NSArray *arrayAnimais=[[DQConfiguracaoFase configParteFase:fase parte:parte]objectForKey:@"Animais"];
+    
+    return arrayAnimais;
+}
 +(NSArray*)escalavelFase:(int)fase Parte:(int)parte{
     NSArray *arrayEscalaceis=[[DQConfiguracaoFase configParteFase:fase parte:parte]objectForKey:@"Escalaveis"];
     

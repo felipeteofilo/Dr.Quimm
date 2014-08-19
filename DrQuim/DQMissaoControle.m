@@ -27,6 +27,7 @@
         //Apresentando a próxima missão (no caso, a primeira)
         self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
         
+        
         [self colocarBalaoDeMissao];
     }
     return self;
@@ -35,6 +36,7 @@
 
 -(void)colocarBalaoDeMissao{
     if (self.balao == nil) {
+        
         self.balao = [[SKSpriteNode alloc]initWithImageNamed:@"BalaoAlerta"];
         [self.balao setName:@"balaoMissao"];
         SKTextureAtlas *pastaFrames = [SKTextureAtlas atlasNamed:@"BalaoMissao"];
@@ -74,6 +76,7 @@
 }
 
 -(BOOL)iniciarNovaMissaoNPC:(NSString*)NPC{
+    
     if([self.missao podeIniciarComNPC:NPC]){
         self.emMissao = YES;
         [self.balao removeFromParent];
@@ -86,21 +89,27 @@
 
 
 //TODO - AO INVÉZ DE UM ITEM PASSADO POR PARAMETRO, CONFERIR NO INVENTÁRIO
--(BOOL)passarParteMissao:(NSString*)NPC item:(NSString*)item{
+-(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items{
+    
+    Boolean podePassar = false;
+    
     //Verifica se tem os pré-requisitos para passar de parte (dentro de uma missão)
-    if([self.missao podePassarComNPC:NPC Item:item Parte:self.parteAtual]){
-        [self entregarItem];
-        [self receberItem];
-        //[self alterarEstados];
+    for (int i = 0;i < items.count ; i++) {
         
-        //Verifica se essa foi a última parte...
-        if(self.parteAtual+1 >= self.missao.quantidadeDePartes){
-            [self fimDaMissao];
+        NSString *item = [items objectAtIndex:i];
+        if([self.missao podePassarComNPC:NPC Item:item Parte:self.parteAtual]){
+            podePassar = true;
+            break;
         }
-        else{
-            self.parteAtual++;
+    }
+    if (items.count == 0) {
+        if([self.missao podePassarComNPC:NPC Item:@"" Parte:self.parteAtual]){
+            podePassar = true;
         }
-        
+    }
+    
+    if(podePassar){
+        self.parteAtual++;
         //retorna que a parte passou
         return YES;
     }
@@ -109,54 +118,13 @@
         return NO;
     }
 }
-
-//TODO - COMUNICAÇÃO COM ITENS E INVENTÁRIO
-//Método chamado quando a missão descreve que um item deve ser entregue
--(void)entregarItem{
-    NSString *item = @"oi";
-    NSLog(@"Item %@ entregue", item);
-}
-
-//TODO - COMUNICAÇÃO COM ITENS E INVENTÁRIO
-//Método chamado quando a missão descreve que um item deve ser recebido
--(void)receberItem{
-    NSString *item = @"oi";
-    NSLog(@"Item %@ entregue", item);
-    
-}
-
-//Método chamado quando a missão descreve que os estados do jogador devem ser alterados
-//-(void)alterarEstados{
-//    
-//    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.missao.arrayPartes objectAtIndex:self.parteAtual]];
-//    
-//    //Ver se muda os estados
-//    //fome
-//    int fome = [[dicionario objectForKey:@"Fome"] intValue];
-//    if(fome != 0){
-//        [[DQVidaControle sharedControleVida] alterarFomeJogador:fome];
-//    }
-//    
-//    //sede
-//    int sede = [[dicionario objectForKey:@"Sede"] intValue];
-//    if(sede != 0){
-//        [[DQVidaControle sharedControleVida] alterarSedeJogador:sede];
-//    }
-//    
-//    //vida
-//    int vida = [[dicionario objectForKey:@"Vida"] intValue];
-//    if(vida != 0){
-//        [[DQVidaControle sharedControleVida] alterarVidaJogador:vida];
-//    }
-//}
-
 //TODO - COLOCAR MENSSAGENS
 //método chamado quando a missão chega ao fim
 -(void)fimDaMissao{
     
     self.emMissao = NO;
-    self.parteAtual = 0;
     self.proximaMissao++;
+    self.parteAtual = 0;
     self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
     [self colocarBalaoDeMissao];
 }

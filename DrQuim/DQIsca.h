@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @interface DQIsca : NSObject
 
 @property NSString *objeto;
 @property NSString *detalhe;
+@property SKTexture *imagem;
 
--(id)initIsca;
+-(id)initIsca :(NSString*)nome Caracterisca:(NSString*)caracteristica Imagem:(SKTexture*)imagem;
 @end

@@ -49,6 +49,12 @@
 		943710B119A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710AB19A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 */; };
 		943710B219A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710AC19A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 */; };
 		943710B419A3CF5F00B8846E /* ImagemInicioJogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */; };
+		943710B719A3DEF300B8846E /* DQArmadilhaAnimacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 943710B619A3DEF300B8846E /* DQArmadilhaAnimacao.m */; };
+		943710BA19A3DF0000B8846E /* DQArmadilha.m in Sources */ = {isa = PBXBuildFile; fileRef = 943710B919A3DF0000B8846E /* DQArmadilha.m */; };
+		943710BD19A3DF1100B8846E /* DQArmadilhasJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = 943710BC19A3DF1100B8846E /* DQArmadilhasJogador.m */; };
+		943710C019A3DF3600B8846E /* DQMenuArmadilhas.m in Sources */ = {isa = PBXBuildFile; fileRef = 943710BF19A3DF3600B8846E /* DQMenuArmadilhas.m */; };
+		943710C419A3E04000B8846E /* Armadilhas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 943710C219A3E04000B8846E /* Armadilhas.atlas */; };
+		943710C519A3E04000B8846E /* ArmadilhaSimples.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 943710C319A3E04000B8846E /* ArmadilhaSimples.atlas */; };
 		9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469691319A27EDA00087B20 /* DQControleSomScene.m */; };
 		9469691819A2934100087B20 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691619A2934100087B20 /* Passo.mp3 */; };
 		9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9469691719A2934100087B20 /* somPerdeuVida.mp3 */; };
@@ -240,7 +246,17 @@
 		943710AA19A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Media-3.mp3"; sourceTree = "<group>"; };
 		943710AB19A3CE8600B8846E /* FalaPersonagens-Pequena-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Pequena-1.mp3"; sourceTree = "<group>"; };
 		943710AC19A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Pequena-2.mp3"; sourceTree = "<group>"; };
-		943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImagemInicioJogo.png; path = Imagens/ImagemInicioJogo.png; sourceTree = "<group>"; };
+		943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImagemInicioJogo.png; sourceTree = "<group>"; };
+		943710B519A3DEF300B8846E /* DQArmadilhaAnimacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQArmadilhaAnimacao.h; sourceTree = "<group>"; };
+		943710B619A3DEF300B8846E /* DQArmadilhaAnimacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQArmadilhaAnimacao.m; sourceTree = "<group>"; };
+		943710B819A3DF0000B8846E /* DQArmadilha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQArmadilha.h; sourceTree = "<group>"; };
+		943710B919A3DF0000B8846E /* DQArmadilha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQArmadilha.m; sourceTree = "<group>"; };
+		943710BB19A3DF1100B8846E /* DQArmadilhasJogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQArmadilhasJogador.h; sourceTree = "<group>"; };
+		943710BC19A3DF1100B8846E /* DQArmadilhasJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQArmadilhasJogador.m; sourceTree = "<group>"; };
+		943710BE19A3DF3600B8846E /* DQMenuArmadilhas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMenuArmadilhas.h; sourceTree = "<group>"; };
+		943710BF19A3DF3600B8846E /* DQMenuArmadilhas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMenuArmadilhas.m; sourceTree = "<group>"; };
+		943710C219A3E04000B8846E /* Armadilhas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Armadilhas.atlas; sourceTree = "<group>"; };
+		943710C319A3E04000B8846E /* ArmadilhaSimples.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ArmadilhaSimples.atlas; sourceTree = "<group>"; };
 		9469691219A27EDA00087B20 /* DQControleSomScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleSomScene.h; sourceTree = "<group>"; };
 		9469691319A27EDA00087B20 /* DQControleSomScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleSomScene.m; sourceTree = "<group>"; };
 		9469691619A2934100087B20 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
@@ -536,6 +552,8 @@
 				C51125891973AB4E00CECCAD /* DQBarraStatus.m */,
 				9488195E19901A4600609A0F /* DQItensJogador.h */,
 				9488195F19901A4600609A0F /* DQItensJogador.m */,
+				943710BB19A3DF1100B8846E /* DQArmadilhasJogador.h */,
+				943710BC19A3DF1100B8846E /* DQArmadilhasJogador.m */,
 				C52FBF1F19A18D220059E973 /* DQUteis.h */,
 				C52FBF2019A18D220059E973 /* DQUteis.m */,
 				C54031EC1989FED0003384AB /* Menu */,
@@ -551,7 +569,6 @@
 			children = (
 				94A868201999696000604BA4 /* Sons */,
 				94AE258A19351620003E6015 /* Imagens */,
-				943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */,
 				94080EA81933BA290024FB94 /* DrQuim-Info.plist */,
 				94080EA91933BA290024FB94 /* InfoPlist.strings */,
 				94080EAC1933BA290024FB94 /* main.m */,
@@ -601,6 +618,15 @@
 			path = NPCs;
 			sourceTree = "<group>";
 		};
+		943710C119A3E04000B8846E /* Armadilhas */ = {
+			isa = PBXGroup;
+			children = (
+				943710C219A3E04000B8846E /* Armadilhas.atlas */,
+				943710C319A3E04000B8846E /* ArmadilhaSimples.atlas */,
+			);
+			path = Armadilhas;
+			sourceTree = "<group>";
+		};
 		9469691519A2934100087B20 /* Jogador */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +671,8 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				943710C119A3E04000B8846E /* Armadilhas */,
+				943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */,
 				C52FBF2319A18D790059E973 /* Animais */,
 				C55CE5C1199BBAAF00375C87 /* Tutoriais */,
 				C55CE57C199B9D0000375C87 /* BalaoMissao.atlas */,
@@ -667,6 +695,8 @@
 		C511252E1973868D00CECCAD /* ObjetosJogo */ = {
 			isa = PBXGroup;
 			children = (
+				943710B819A3DF0000B8846E /* DQArmadilha.h */,
+				943710B919A3DF0000B8846E /* DQArmadilha.m */,
 				C52FBF1C19A18D160059E973 /* DQIsca.h */,
 				C52FBF1D19A18D160059E973 /* DQIsca.m */,
 				C52FBF1019A18D0A0059E973 /* DQAnimal.h */,
@@ -704,6 +734,8 @@
 		C54031EC1989FED0003384AB /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				943710BE19A3DF3600B8846E /* DQMenuArmadilhas.h */,
+				943710BF19A3DF3600B8846E /* DQMenuArmadilhas.m */,
 				C54031D01989FE98003384AB /* DQMenu.h */,
 				C54031D11989FE98003384AB /* DQMenu.m */,
 				C54031D21989FE98003384AB /* DQMenuConfiguracao.h */,
@@ -872,6 +904,8 @@
 		CDB3FA4C194BA61D0099CF6C /* SKScenes */ = {
 			isa = PBXGroup;
 			children = (
+				943710B519A3DEF300B8846E /* DQArmadilhaAnimacao.h */,
+				943710B619A3DEF300B8846E /* DQArmadilhaAnimacao.m */,
 				CDC48AD01992A11400588E79 /* DQCutsceneTela.h */,
 				CDC48AD11992A11400588E79 /* DQCutsceneTela.m */,
 				752FB1D01935146300DB4328 /* DQFlorestaParte1.h */,
@@ -1015,6 +1049,7 @@
 				C55CE5AB199BB65D00375C87 /* Fase3_Parte18.png in Resources */,
 				C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */,
 				3CAC84301979FAD5000FB1A1 /* Derrapando.atlas in Resources */,
+				943710C419A3E04000B8846E /* Armadilhas.atlas in Resources */,
 				C55CE5AA199BB65D00375C87 /* Fase3_Parte17.png in Resources */,
 				C55264F519A24A5B00BD59CE /* Animal01 - Coelho.mp3 in Resources */,
 				9488197419901AE200609A0F /* rostoPiloto.png in Resources */,
@@ -1022,6 +1057,7 @@
 				C5D2A69D196A535800F3B7C4 /* Fase1_Parte2.png in Resources */,
 				9469692019A2A31100087B20 /* cutscene1.atlas in Resources */,
 				C55CE5AC199BB65D00375C87 /* Fase3_Parte19.png in Resources */,
+				943710C519A3E04000B8846E /* ArmadilhaSimples.atlas in Resources */,
 				9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */,
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
@@ -1111,6 +1147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C52FBF2C19A197450059E973 /* DQControleSom.m in Sources */,
+				943710B719A3DEF300B8846E /* DQArmadilhaAnimacao.m in Sources */,
 				7560591019955F9C00BD455A /* DQMissao.m in Sources */,
 				C52FBF1B19A18D0A0059E973 /* DQAnimalToupeira.m in Sources */,
 				C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */,
@@ -1128,10 +1165,12 @@
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
 				C54031E61989FE98003384AB /* DQMenuItem.m in Sources */,
+				943710C019A3DF3600B8846E /* DQMenuArmadilhas.m in Sources */,
 				C52FBF1E19A18D160059E973 /* DQIsca.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
 				C54031E11989FE98003384AB /* DQConfigMenu.m in Sources */,
 				C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */,
+				943710BD19A3DF1100B8846E /* DQArmadilhasJogador.m in Sources */,
 				C54031E71989FE98003384AB /* DQMenuQuest.m in Sources */,
 				C54031E51989FE98003384AB /* DQMenuConfiguracao.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
@@ -1146,6 +1185,7 @@
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
 				C52FBF1819A18D0A0059E973 /* DQAnimal.m in Sources */,
 				C543E13219985F3400C90F19 /* DQMenuInicial.m in Sources */,
+				943710BA19A3DF0000B8846E /* DQArmadilha.m in Sources */,
 				C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */,
 				C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */,
 				9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */,

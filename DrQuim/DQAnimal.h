@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, Personalidade) {
     Agressivo = 1,
 };
 
-@interface DQAnimal : SKNode
+@interface DQAnimal : SKSpriteNode
 
 {
     NSMutableArray *framesAnimacao;
@@ -34,8 +34,9 @@ typedef NS_ENUM(NSInteger, Personalidade) {
 @property DQIsca *objetoAtracao;
 @property NSMutableArray *acoes;
 
--(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao;
+-(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao Isca:(DQIsca*)isca;
 -(void)andar;
+-(SKAction*)andarPara :(CGPoint)destino;
 -(void)pararAnimacao;
 -(void)atacar;
 -(void)rastrearAreaBackground:(SKNode*)background;

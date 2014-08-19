@@ -10,10 +10,12 @@
 
 @implementation DQIsca
 
--(id)initIsca{
+-(id)initIsca :(NSString*)nome Caracterisca:(NSString*)caracteristica Imagem:(SKTexture*)imagem{
     if (self=[super init]) {
-        self.objeto=@"liquido";
-        self.detalhe=@"amarelo";
+        self.objeto=nome;
+        self.detalhe=caracteristica;
+        self.imagem = imagem;
+        
     }
     return self;
 }

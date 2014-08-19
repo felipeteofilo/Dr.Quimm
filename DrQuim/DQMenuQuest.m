@@ -16,12 +16,14 @@
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];
         [self setName:@"Missões"];
-        
-        [self configuraTitulo];
-        [self listarMissoesJogador];
-        [self configuraOpcoesMenuQuest];
     }
     return self;
+}
+
+-(void)prepararExibicao{
+    [self configuraTitulo];
+    [self listarMissoesJogador];
+    [self configuraOpcoesMenuQuest];
 }
 
 -(void)configuraTitulo{

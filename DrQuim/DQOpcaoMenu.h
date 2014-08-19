@@ -12,8 +12,9 @@
 #import "DQConfigMenu.h"
 #import "DQMenuQuest.h"
 #import "DQMenuReceita.h"
+#import "DQMenuArmadilhas.h"
 
-@interface DQOpcaoMenu : SKSpriteNode
+@interface DQOpcaoMenu : SKSpriteNode <DQProtocolMenu>
 
 @property SKNode *conteudo;
 @property NSString *titulo;

@@ -12,20 +12,41 @@
 @implementation DQAnimal
 
 
--(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao{
+-(id)initAnimalNome:(NSString*)nome sprite:(NSString*)imagemAnimal raioVisao:(float)rVisao Isca:(DQIsca*)isca{
     if (self =[super init]){
         self.spriteAnimal=[SKSpriteNode spriteNodeWithImageNamed:imagemAnimal];
         self.raioVisao=rVisao;
         self.nomeAnimal=nome;
         self.acoes =[NSMutableArray array];
         self.nAcoesVez=2;
-        self.objetoAtracao=[[DQIsca alloc]initIsca];
+        self.objetoAtracao=isca;
         
         [self addChild:self.spriteAnimal];
         [self setName:@"animal"];
     }
     return self;
 }
+
+-(SKAction*)andarPara :(CGPoint)destino{
+    SKAction *andar;
+    
+    
+    andar=[SKAction moveTo:destino duration:4];
+    if (self.dirCaminhada == 'D') {
+        self.spriteAnimal.xScale = fabs(self.spriteAnimal.xScale)*-1;
+    }
+    else{
+        self.spriteAnimal.xScale = fabs(self.spriteAnimal.xScale)*1;
+    }
+    
+    self.acaoAtual=@"andar";
+    
+    [self iniciarAnimacao:@"andando"];
+    [self animarAnimal];
+    
+    return andar;
+}
+
 
 -(void)andar{
     SKAction *andar;

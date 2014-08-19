@@ -40,8 +40,10 @@
         
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
+        self.armadilhas =[[DQArmadilhasJogador alloc]init];
         
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
+        
         
         
         
@@ -264,33 +266,76 @@
     self.physicsBody.restitution = 0;
     
 }
-
-
-//Métodos de mudança de estado
--(void)aumentarFome:(int)aumento{
-    [self setFome:(self.fome - aumento)];
+//Metodo que altera a Fome do jogador
+-(void)alterarFomeJogador: (int)fome
+{
+    
+    
+    //está ficando com fome
+    if(fome > 0){
+        if ((self.fome - fome) < 0) {
+            [self setFome:0];
+        }
+        else{
+            [self setFome:(self.fome - fome)];
+        }
+    }
+    //está perdendo a fome
+    else{
+        if ((self.fome + fome) >100) {
+            [self setFome:100];
+        }
+        else{
+            [self setFome:(self.fome + fome)];
+        }
+    }
 }
 
--(void)aumentarSede:(int)aumento{
-    [self setSede:(self.sede - aumento)];
+//Metodo que altera a Sede do jogador
+-(void)alterarSedeJogador: (int)sede
+{
+    //está ficando com sede
+    if(sede > 0){
+        if ((self.sede - sede) < 0) {
+            [self setSede:0];
+        }
+        else{
+            [self setSede:(self.sede - sede)];
+        }
+    }
+    //está perdendo a sede
+    else{
+        if ((self.sede + sede) > 100) {
+            [self setSede:100];
+        }
+        else{
+            [self setSede:(self.sede + sede)];
+        }
+    }
 }
 
--(void)diminuirFome:(int)subtracao{
-    [self setFome:(self.fome + subtracao)];
+//Metodo que altera a Vida do jogador
+-(void)alterarVidaJogador: (int)vida
+{
+    //está ficando sem vida
+    if(vida > 0){
+        if ((self.vida - vida) < 0) {
+            [self setVida:0];
+        }
+        else{
+            [self setSede:(self.vida - vida)];
+        }
+    }
+    //está ganhando vida
+    else{
+        if ((self.vida + vida) > 100) {
+            [self setVida:100];
+        }
+        else{
+            [self setSede:(self.vida + vida)];
+        }
+    }
 }
--(void)diminuirSede:(int)subtracao{
-    [self setSede:(self.sede + subtracao)];
-}
-
--(void)perderVida:(int)perda{
-    [self setVida:(self.vida - perda)];
-}
-
--(void)aumentarVida:(int)aumento{
-    [self setVida:(self.vida + aumento)];
-}
-
-
 
 //Método para parar de andar
 -(void)pararAndar{
@@ -367,24 +412,83 @@
     //Se esta em missao
     if (self.controleMissoes.emMissao) {
         NSString *keyDaParte;
+        NSString *missao = self.controleMissoes.missao.ID;
         //Se é o NPC que passa a parte da missao
-        if ([self.controleMissoes passarParteMissao:nomeNPC item:@""]) {
+        if ([self.controleMissoes passarParteMissao:nomeNPC inventario:[self.itens arrayItensJogador]]) {
             //Cria a key de uma fala principal da missao
             keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual-1];
+            
+            [self entregarItem];
+            [self receberItem];
+            [self alterarEstados];
+            if(self.controleMissoes.parteAtual+1 >= self.controleMissoes.missao.quantidadeDePartes){
+                [self.controleMissoes fimDaMissao];
+            }
+            
         }
-        //Se nao é o NPC que paasa a parte da missao
+        //Se nao é o NPC que passa a parte da missao ou nao tem o item
         else{
             //Cria uma key de uma fala secundaria da missao
             keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual];
         }
         
         //Cria a caixa de fala com as key obtidas e a adiciona na tela
-        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:self.controleMissoes.missao.ID Tamanho:self.scene.size];
+        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
         
         [self.scene addChild:caixaDeFala];
     }
+}
+
+
+//Método chamado quando a missão descreve que um item deve ser entregue
+-(void)entregarItem{
+    NSMutableArray*itemsParaEntregar = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ItemEntregue"];
     
+    for (int i = 0; i< itemsParaEntregar.count; i++) {
+        NSString *nomeItem = [[itemsParaEntregar objectAtIndex:i]objectForKey:@"Nome"];
+        int quantidade = [[[itemsParaEntregar objectAtIndex:i]objectForKey:@"Quantidade"]intValue];
+        
+        [self.itens entregarItem:nomeItem  quantidade:quantidade];
+    }
+}
+
+
+//Método chamado quando a missão descreve que um item deve ser recebido
+-(void)receberItem{
+    NSMutableArray*itemsParaReceber = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ItemRecebido"];
     
+    for (int i = 0; i< itemsParaReceber.count; i++) {
+        NSString *nomeItem = [[itemsParaReceber objectAtIndex:i]objectForKey:@"Nome"];
+        int quantidade = [[[itemsParaReceber objectAtIndex:i]objectForKey:@"Quantidade"]intValue];
+        
+        [self.itens receberItem:nomeItem  quantidade:quantidade];
+    }
     
 }
+
+//Metodo para alterar os estados do jogador em missao
+-(void)alterarEstados{
+
+    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]];
+
+    //Ver se muda os estados
+    //fome
+    int fome = [[dicionario objectForKey:@"Fome"] intValue];
+    if(fome != 0){
+        [self alterarFomeJogador:fome];
+    }
+
+    //sede
+    int sede = [[dicionario objectForKey:@"Sede"] intValue];
+    if(sede != 0){
+        [self alterarSedeJogador:sede];
+    }
+
+    //vida
+    int vida = [[dicionario objectForKey:@"Vida"] intValue];
+    if(vida != 0){
+        [self alterarVidaJogador:vida];
+    }
+}
+
 @end

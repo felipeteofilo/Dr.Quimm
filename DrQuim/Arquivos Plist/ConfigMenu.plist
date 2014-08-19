@@ -5,6 +5,7 @@
 	<key>MenuPrincipal</key>
 	<array>
 		<string>Itens</string>
+		<string>Armadilhas</string>
 		<string>Missões</string>
 		<string>Livro de Receitas</string>
 		<string>Configurações</string>

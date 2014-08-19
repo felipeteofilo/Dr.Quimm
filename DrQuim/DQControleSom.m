@@ -46,9 +46,6 @@
     if (self=[super init]) {
         self.indiceSomTocar=0;
         
-//        if (![nomeObjetoControlado isEqualToString:@"contador"]) {
-//            [self configurarListaSons];
-//        }
     }
     return self;
 }

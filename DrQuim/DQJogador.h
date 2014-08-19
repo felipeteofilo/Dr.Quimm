@@ -11,6 +11,7 @@
 #import "DQMissaoControle.h"
 #import "DQFalasNoJogoControle.h"
 #import "DQControleUserDefalts.h"
+#import "DQArmadilhasJogador.h"
 
 @interface DQJogador : SKSpriteNode
 
@@ -43,26 +44,20 @@
 //DQItensJogador que armazena tudo relacionado a itens
 @property DQItensJogador *itens;
 
+//DQArmadilhasJogador que armazena tudo relacionado a Armadilhas
+@property DQArmadilhasJogador *armadilhas;
+
 //DQMissoesJogador que armazena tudo relacionado a Missões
 @property DQMissaoControle* controleMissoes;
 
-//Aumentar fome do personagem
--(void)aumentarFome:(int)aumento;
+//Metodo que altera a fome do jogador
+-(void)alterarFomeJogador: (int)fome;
 
-//Aumentar sede do personagem
--(void)aumentarSede:(int)aumento;
+//Metodo que altera a fome do jogador
+-(void)alterarSedeJogador: (int)sede;
 
-//Perder Vida
--(void)perderVida:(int)perda;
-
-//Diminuir fome do personagem
--(void)diminuirFome:(int)subtracao;
-
-//Diminuir sede do personagem
--(void)diminuirSede:(int)subtracao;
-
-//Ganha Vida
--(void)aumentarVida:(int)aumento;
+//Metodo que altera a fome do jogador
+-(void)alterarVidaJogador: (int)vida;
 
 //Função de inicialização
 -(id)initJogadorSprite: (NSString*)name;
