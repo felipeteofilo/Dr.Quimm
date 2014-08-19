@@ -20,7 +20,7 @@
     
         
         [self iniciarFase];
-        [self addChild:self.hudFase];
+        //[self addChild:self.hudFase];
     }
     return self;
 }
