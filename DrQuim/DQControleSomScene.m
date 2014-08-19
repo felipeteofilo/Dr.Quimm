@@ -47,6 +47,7 @@
     NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
     AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlSom error:&error];
     
+    NSLog(@"volume som: %f",[DQControleUserDefalts volumeMusica]);
     [player setVolume:[DQControleUserDefalts volumeMusica]];
     [player setNumberOfLoops:-1];
     [player prepareToPlay];

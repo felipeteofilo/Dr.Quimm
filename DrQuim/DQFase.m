@@ -45,6 +45,7 @@
     self.mundo.position = posicaoMundo;
 }
 
+
 -(void)controlarTranscicaoPartesFase{
     
     //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
@@ -463,7 +464,9 @@
     }
 }
 
-
+-(void)atualizaSomMusicaFundo{
+    [self.controleSom.playerMusicaFundo setVolume:[DQControleUserDefalts volumeMusica]];
+}
 
 
 -(void)update:(NSTimeInterval)currentTime{
@@ -481,6 +484,7 @@
 
         if (ultimoUpdate > 30) {
             self.intervaloUltimoUpdate = currentTime;
+            
             if (self.faseAtual !=2) {
                 if ([DQUteis sortearChanceSim:50.0]) {
                     [self.controleSom tocarSomLista];
