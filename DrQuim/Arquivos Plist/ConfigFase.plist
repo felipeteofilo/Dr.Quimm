@@ -90,38 +90,38 @@
 					<array>
 						<string>{0, 725}</string>
 						<string>{0, 773}</string>
-						<string>{90, 773}</string>
-						<string>{90, 725}</string>
+						<string>{80, 773}</string>
+						<string>{80, 725}</string>
 					</array>
 					<array>
-						<string>{38, 869}</string>
-						<string>{296, 868}</string>
-						<string>{298, 926}</string>
-						<string>{43, 926}</string>
+						<string>{30, 880}</string>
+						<string>{350, 880}</string>
+						<string>{350, 890}</string>
+						<string>{30, 890}</string>
 					</array>
 					<array>
 						<string>{405, 966}</string>
 						<string>{400, 1028}</string>
-						<string>{666, 1028}</string>
-						<string>{666, 967}</string>
+						<string>{676, 1025}</string>
+						<string>{676, 967}</string>
 					</array>
 					<array>
-						<string>{38, 598}</string>
-						<string>{22, 642}</string>
-						<string>{458, 645}</string>
-						<string>{463, 592}</string>
+						<string>{38, 590}</string>
+						<string>{22, 638}</string>
+						<string>{480, 638}</string>
+						<string>{480, 590}</string>
 					</array>
 					<array>
-						<string>{514, 493}</string>
+						<string>{514, 483}</string>
 						<string>{513, 541}</string>
 						<string>{734, 541}</string>
-						<string>{736, 492}</string>
+						<string>{736, 483}</string>
 					</array>
 					<array>
 						<string>{238, 370}</string>
 						<string>{237, 424}</string>
-						<string>{513, 427}</string>
-						<string>{518, 372}</string>
+						<string>{545, 427}</string>
+						<string>{545, 372}</string>
 					</array>
 				</array>
 			</dict>

@@ -27,17 +27,8 @@
         
         //Deixar o corpo fisico mais prox ao sprite
         [self configuraCorpoFisico];
-        
-        self.physicsBody.usesPreciseCollisionDetection=YES;
-        self.physicsBody.affectedByGravity = YES;
-        self.physicsBody.allowsRotation = NO;
-        self.physicsBody.density = 1.5f;
-        self.physicsBody.restitution = 0;
-        
         [self addChild:self.spriteNode];
-        
-        
-        
+
         //Seta que ele ainda nao pode escalar
         self.podeEscalar = NO;
         self.estaNoChao = YES;
@@ -195,7 +186,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 165)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 175)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -249,22 +240,28 @@
 -(void)configuraCorpoFisico{
     CGMutablePathRef path=CGPathCreateMutable();
     
-    CGPoint primeiroPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)+20), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPoint primeiroPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)+15), CGRectGetMinY(self.spriteNode.frame)+20);
     CGPathMoveToPoint(path, NULL, primeiroPonto.x,primeiroPonto.y);
 
-    CGPoint segundoPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)-20), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPoint segundoPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)-15), CGRectGetMinY(self.spriteNode.frame)+20);
     CGPathAddLineToPoint(path, NULL, segundoPonto.x,segundoPonto.y);
     
-    CGPoint terceiroPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPoint terceiroPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame)+15, CGRectGetMidY(self.spriteNode.frame));
     CGPathAddLineToPoint(path, NULL, terceiroPonto.x, terceiroPonto.y);
     
     CGPoint quartoPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMaxY(self.spriteNode.frame));
     CGPathAddLineToPoint(path, NULL, quartoPonto.x, quartoPonto.y);
     
-    CGPoint quintoPonto=CGPointMake(CGRectGetMaxX(self.spriteNode.frame), CGRectGetMidY(self.spriteNode.frame));
+    CGPoint quintoPonto=CGPointMake(CGRectGetMaxX(self.spriteNode.frame)-15, CGRectGetMidY(self.spriteNode.frame));
     CGPathAddLineToPoint(path, NULL, quintoPonto.x, quintoPonto.y);
     
     [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:path]];
+    
+    self.physicsBody.usesPreciseCollisionDetection=YES;
+    self.physicsBody.affectedByGravity = YES;
+    self.physicsBody.allowsRotation = NO;
+    self.physicsBody.mass = 0.566667;
+    self.physicsBody.restitution = 0;
     
 }
 

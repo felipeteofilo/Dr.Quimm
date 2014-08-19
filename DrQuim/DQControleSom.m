@@ -11,6 +11,7 @@
 @implementation DQControleSom
 
 -(void)tocarSom{
+    NSLog(@"passou pelo tocar som puro");
      [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
 }
 
@@ -56,13 +57,24 @@
     
 }
 
+-(void)pararSom{
+    [self removeAllActions];
+}
+
 -(void)proxSom{
-    if (self.indiceSomTocar < ([self.listaSons count])) {
+    if (self.indiceSomTocar < ([self.listaSons count]-1)) {
         self.indiceSomTocar ++;
     }else{
         self.indiceSomTocar=0;
     }
 }
+
+-(void)tocarSomLista{
+    [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
+    
+    [self proxSom];
+}
+
 -(int)sortearSomTocar{
     return arc4random()%[self.listaSons count];
 }

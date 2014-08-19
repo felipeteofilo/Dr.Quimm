@@ -444,9 +444,7 @@
             
             //Adiciona + 50 de tolerancia
             float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 30.0f;
-            
-            
-            
+
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
                 [self plataformaCategoria:secondBody.node];
@@ -460,7 +458,6 @@
         if ([secondBody.node.name isEqualToString:nomeEscalavel]) {
             //seta que o jogador pode subir ou descer
             [self.jogador setPodeEscalar:YES];
-            
         }
         
     }
@@ -481,10 +478,14 @@
         [self.controladorDaVida atualizarSituacaoJogador];
         
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
-        
-        if (ultimoUpdate > 60) {
+
+        if (ultimoUpdate > 30) {
             self.intervaloUltimoUpdate = currentTime;
-            
+            if (self.faseAtual !=2) {
+                if ([DQUteis sortearChanceSim:50.0]) {
+                    [self.controleSom tocarSomLista];
+                }
+            }
             //A cada 60 segundos salva os status do jogados
             [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
         }
@@ -591,14 +592,20 @@
     [self addChild:self.mundo];
     
     [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
-    
-    
+
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
     
     [self criaJogador];
     [self configuraFisicaMundo];
     [self configuraHUD];
+    [self configurarSomFundo];
+}
+
+-(void)configurarSomFundo{
+    self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
     
+    [self.controleSom tocarMusicaFundo];
+    [self addChild:self.controleSom];
 }
 
 -(void)desativaPlataformas{

@@ -29,7 +29,7 @@
     NSString *retorno=[[[self arquivoPlist]objectAtIndex:_fase-1]objectForKey:@"SomFundo"];
     
     if ([retorno length]==0) {
-        return nil;
+        return @"MusicaFundo03";
     }else{
         return retorno;
     }

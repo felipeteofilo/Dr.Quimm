@@ -20,6 +20,7 @@
 #import "DQCutsceneTela.h"
 #import "DQVidaControle.h"
 #import "DQFalasNoJogoControle.h"
+#import "DQControleSomScene.h"
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -69,6 +70,10 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
 @property (nonatomic) NSTimeInterval intervaloUltimoUpdate;
 @property BOOL jogoPausado;
+
+//Sera usado para sons
+@property DQControleSomScene *controleSom;
+
 
 //metodo para iniciar a fase
 -(void)iniciarFase;

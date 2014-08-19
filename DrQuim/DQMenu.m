@@ -145,6 +145,9 @@
 }
 
 -(void)esconderMenu{
+    //Quero o avo do menu, pq ele é adicionado na HUD e a HUD na fase
+    [self.parent.scene setPaused:NO];
+    
     [self removeFromParent];
 }
 

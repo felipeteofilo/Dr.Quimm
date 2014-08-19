@@ -29,4 +29,5 @@ typedef NS_ENUM(int, TipoObjeto){
 -(void)proxSom;
 -(id)initControleSom:(TipoObjeto)objetoControlado;
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar;
+-(void)tocarSomLista;
 @end

@@ -5,7 +5,7 @@
 //  Created by LEONARDO DE SOUSA MENDES on 18/08/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
-#define NSONSAMBIENTE 6
+#define NSONSAMBIENTE 5
 
 #import "DQControleSomScene.h"
 
@@ -19,9 +19,9 @@
         
         //Verifica se nao esta na fase da vila para preencher os sons de animais da floresta
         if ((self.tipoCena == Fase) && (idCena!=2)) {
-            [self configuraListaEfeitosSonoros];
+            self.listaSons=[self configuraListaEfeitosSonoros];
         }
-        self.playerMusicaFundo=[self configuraMusicaFundo:somFundo];
+        self.playerMusicaFundo =[self configuraMusicaFundo:somFundo];
     }
     return self;
 }
@@ -36,7 +36,7 @@
             [self configuraListaEfeitosSonoros];
         }
         
-        [self configuraMusicaFundo:[self nomeSonsFundoFase]];
+        [self configuraMusicaFundo:[self nomeSomFundoFase]];
     }
     return self;
 }
@@ -57,18 +57,6 @@
 -(void)tocarMusicaFundo{
     [self.playerMusicaFundo play];
 }
--(NSString*)nomeSonsFundoFase{
-    NSString *retorno;
-    
-    retorno= [DQConfiguracaoFase somFundoFase:self.indiceScene];
-    
-    if (retorno) {
-        return retorno;
-    }else{
-        return @"MusicaFundo03";
-    }
-}
-
 -(NSArray*)configuraListaEfeitosSonoros{
     NSMutableArray *listaSons=[NSMutableArray array];
     NSArray *sonsDisponiveis=[NSArray arrayWithObjects:@"Fundo01 - Passaros ",@"Fundo03 - Animal ",@"Fundo05 - Insetos",@"Fundo07 - Sapos ",@"Fundo08 - Vento ", nil];
