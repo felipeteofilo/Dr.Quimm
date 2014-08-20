@@ -184,6 +184,8 @@
 		CD54D9BF19A51F7700C2798D /* papelReceita.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B719A51F7700C2798D /* papelReceita.png */; };
 		CD54D9C019A51F7700C2798D /* quadrado.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B819A51F7700C2798D /* quadrado.png */; };
 		CD54D9C119A51F7700C2798D /* Recipientes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B919A51F7700C2798D /* Recipientes.atlas */; };
+		CD54D9CA19A523C800C2798D /* CaindoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9C819A523C800C2798D /* CaindoDr.atlas */; };
+		CD54D9CB19A523C800C2798D /* DerrapandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9C919A523C800C2798D /* DerrapandoDr.atlas */; };
 		CD616FE119A51D8700B5C63A /* AmostrasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD616FDF19A51D8700B5C63A /* AmostrasQuimicas.plist */; };
 		CD616FE219A51D8700B5C63A /* ReceitasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD616FE019A51D8700B5C63A /* ReceitasQuimicas.plist */; };
 		CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */; };
@@ -435,6 +437,8 @@
 		CD54D9B719A51F7700C2798D /* papelReceita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papelReceita.png; sourceTree = "<group>"; };
 		CD54D9B819A51F7700C2798D /* quadrado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quadrado.png; sourceTree = "<group>"; };
 		CD54D9B919A51F7700C2798D /* Recipientes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Recipientes.atlas; sourceTree = "<group>"; };
+		CD54D9C819A523C800C2798D /* CaindoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = CaindoDr.atlas; path = Animacoes/CaindoDr.atlas; sourceTree = "<group>"; };
+		CD54D9C919A523C800C2798D /* DerrapandoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = DerrapandoDr.atlas; path = Animacoes/DerrapandoDr.atlas; sourceTree = "<group>"; };
 		CD616FDF19A51D8700B5C63A /* AmostrasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AmostrasQuimicas.plist; path = "Arquivos Plist/AmostrasQuimicas.plist"; sourceTree = "<group>"; };
 		CD616FE019A51D8700B5C63A /* ReceitasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReceitasQuimicas.plist; path = "Arquivos Plist/ReceitasQuimicas.plist"; sourceTree = "<group>"; };
 		CDC48ACD1992A0C800588E79 /* DQFalasNoJogoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFalasNoJogoControle.h; sourceTree = "<group>"; };
@@ -500,6 +504,8 @@
 		3CAC84201979F630000FB1A1 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				CD54D9C819A523C800C2798D /* CaindoDr.atlas */,
+				CD54D9C919A523C800C2798D /* DerrapandoDr.atlas */,
 				3CAC8433197A01FB000FB1A1 /* Andando.atlas */,
 				3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */,
 				3CAC84221979F63D000FB1A1 /* Caindo.atlas */,
@@ -1065,6 +1071,7 @@
 			files = (
 				C58F75E919A4F20B00DC7A71 /* Fase3_Parte6.png in Resources */,
 				C5EE3A5B1974A9FD008D3D8D /* Fase2_Parte1.png in Resources */,
+				CD54D9CB19A523C800C2798D /* DerrapandoDr.atlas in Resources */,
 				CD54D9C119A51F7700C2798D /* Recipientes.atlas in Resources */,
 				C5E1F40D198AD0A300F7A320 /* itens.atlas in Resources */,
 				9437111B19A3EF1E00B8846E /* NPCS.atlas in Resources */,
@@ -1116,6 +1123,7 @@
 				9469692019A2A31100087B20 /* cutscene1.atlas in Resources */,
 				C58F75F119A4F20B00DC7A71 /* Fase3_Parte14.png in Resources */,
 				943710C519A3E04000B8846E /* ArmadilhaSimples.atlas in Resources */,
+				CD54D9CA19A523C800C2798D /* CaindoDr.atlas in Resources */,
 				9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */,
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,

@@ -425,13 +425,4 @@
         }
     }
 }
-
-//"SOBRESCREVE" O metodo para nao bugar
--(void)verificarAnimacaoCaindo{
-    
-}
-
-//"SOBRESCREVE" O metodo para nao bugar
--(void)verificarAnimacaoDerrapagem{
-}
 @end

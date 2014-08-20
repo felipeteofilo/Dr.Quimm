@@ -39,13 +39,13 @@
     }
     if (CACurrentMediaTime()-self.inicioContador > 10) {
         if (self.jogador.fome > 0) {
-            [self.jogador alterarFomeJogador:1];
+            [self.jogador alterarFomeJogador:2];
         }
         if (self.jogador.sede > 0) {
-            [self.jogador alterarSedeJogador:2];
+            [self.jogador alterarSedeJogador:4];
         }
         if (self.jogador.vida > 0 && self.jogador.fome <= 0 && self.jogador.sede <= 0) {
-            [self.jogador alterarVidaJogador:-1];
+            [self.jogador alterarVidaJogador:-2];
         }
         self.inicioContador = CACurrentMediaTime();
     }

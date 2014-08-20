@@ -166,6 +166,7 @@
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     
     [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    
 }
 
 //funcao para animar jogador caindo
@@ -187,7 +188,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 185)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 200)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -199,7 +200,7 @@
 
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
-    if (![self.spriteNode actionForKey:@"animandoEscalada"]) {
+    if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
         
         
         //variavel SKAction- define a direcao do movimento
