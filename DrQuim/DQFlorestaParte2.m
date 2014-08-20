@@ -14,13 +14,8 @@
 {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:3];
-        
-        self.hudFase = [[DQHudController alloc]initHud];
-        [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
-    
-        
+
         [self iniciarFase];
-        //[self addChild:self.hudFase];
     }
     return self;
 }
@@ -34,11 +29,6 @@
 {
     [super update:currentTime];
     [self.hudFase atualizarHud];
-}
-
-//FAZER ESCADAS
--(void)criarParteFase{
-    [super criarParteFase];
 }
 
 @end

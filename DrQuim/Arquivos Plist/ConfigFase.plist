@@ -458,7 +458,7 @@
 			<string>Andando</string>
 		</dict>
 		<key>PosInicialJogador</key>
-		<string>{12000, 4000}</string>
+		<string>{12000, 900}</string>
 		<key>Partes</key>
 		<array>
 			<dict>
@@ -795,8 +795,8 @@
 				<key>Escalaveis</key>
 				<array>
 					<array>
-						<string>{700, 704}</string>
-						<string>{700, 923}</string>
+						<string>{670, 500}</string>
+						<string>{670, 923}</string>
 					</array>
 				</array>
 				<key>CorpoFisicoChao</key>

@@ -458,8 +458,8 @@
         if ([secondBody.node.name isEqualToString:nomePlataforma]){
             
             //Adiciona + 50 de tolerancia
-            float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 30.0f;
-
+            float yPlataforma =[[secondBody.node.userData objectForKey:nomeMaiorY]floatValue] + 00.0f;
+            
             //Verifica se jogador esta abaixo da plataforma que colidiu
             if (firstBody.node.position.y < yPlataforma ) {
                 [self plataformaCategoria:secondBody.node];
@@ -515,7 +515,6 @@
     
     //So chama o som qndo a Scene aparecer
     [self.controleSom tocarMusicaFundo];
-    
 }
 - (void)didSimulatePhysics{
     if (!self.jogoPausado) {
