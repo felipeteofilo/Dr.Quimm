@@ -515,8 +515,15 @@
 -(void)didMoveToView:(SKView *)view{
     [super didMoveToView:view];
     
+    //Chama o iniciar fase
+    [self iniciarFase];
+    
     //So chama o som qndo a Scene aparecer
     [self.controleSom tocarMusicaFundo];
+    
+    //A cada vez que iniciar a fase salva a fase que o jogador está
+    [DQControleUserDefalts setFaseAtual:self.faseAtual];
+    [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 - (void)didSimulatePhysics{
     if (!self.jogoPausado) {
@@ -593,10 +600,6 @@
     self.parteFaseAtual=1;
     self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
     [self pegarConfigFase:self.faseAtual];
-    
-    //A cada vez que iniciar a fase salva a fase que o jogador está
-    [DQControleUserDefalts setFaseAtual:self.faseAtual];
-    [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 
 -(void)iniciarFase{
@@ -680,7 +683,7 @@
     if (self=[super initWithSize:size ]) {
         
         [self configuracoesFase:fase];
-        [self iniciarFase];
+        //[self iniciarFase];
     }
     return self;
 }

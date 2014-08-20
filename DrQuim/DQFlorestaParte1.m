@@ -20,19 +20,20 @@
         self.contadorAcao=0;
         
         [self configuracoesFase:1];
-        [self iniciarFase];
+        //Esta chamando no metodo didMoveToView da classe mae
+        //[self iniciarFase];
     }
     return self;
 }
 
 
 -(void)iniciarFase{
-    [DQControleUserDefalts setVolumeMusica:0];
     [super iniciarFase];
     
     //Remove o HUD pois o mesmo nao aparece na 1 fase
     [self.hudFase removeFromParent];
     [self definirPontosRadiacao];
+    [self.jogador setDistAndar:90];
 }
 
 
@@ -385,13 +386,19 @@
         [self mudarFase];
     }
 }
-//funcao para mudar da fase 1 para 2
+
+//metodo para mudar da fase 1 para vila
 -(void)mudarFase{
-    DQVila *fase2=[DQVila sceneWithSize:self.view.bounds.size];
+    DQVila *vila=[DQVila sceneWithSize:self.view.bounds.size];
     
-    fase2.scaleMode = SKSceneScaleModeAspectFill;
+    vila.scaleMode = SKSceneScaleModeAspectFill;
     
-    [self.view presentScene:fase2];
+    //Cria um cutSceneTela
+    DQCutsceneTela *proxCutScene=[[DQCutsceneTela alloc]initCutScene:2 Fase:vila SizeScene:self.view.bounds.size];
+    
+    [proxCutScene setScaleMode:SKSceneScaleModeAspectFill];
+    
+    [self.view presentScene:proxCutScene];
 }
 
 

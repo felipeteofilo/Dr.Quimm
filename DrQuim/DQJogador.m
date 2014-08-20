@@ -47,7 +47,7 @@
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
         
-        self.distAndar=90;
+        self.distAndar=100;
         self.impulsoPulo=200;
     }
     
