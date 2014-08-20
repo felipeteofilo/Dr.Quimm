@@ -50,6 +50,11 @@
     NSString *itemRequisitado = [[self.arrayPartes objectAtIndex:parte]objectForKey:@"ItemRequisito"];
     
     //se for os items requisitados retornamos que a fase foi concluida e pode ser passada para a proxima fase
+    if ([itemRequisitado isEqual:@""]) {
+        if ([nomeNPC isEqual:NPCRequisitado]){
+            return true;
+        }
+    }
     if ([nomeNPC isEqual:NPCRequisitado] && [item isEqual:itemRequisitado]) {
         return true;
     }
