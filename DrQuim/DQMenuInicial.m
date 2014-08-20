@@ -67,6 +67,8 @@
         [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
         [DQControleUserDefalts setRodouCutSceneFase:2 Valor:NO];
         [DQControleUserDefalts setFaseAtual:1];
+        [DQControleUserDefalts setVolumeMusica:50.0];
+        [DQControleUserDefalts setVolumeSons:50.];
     }
 }
 

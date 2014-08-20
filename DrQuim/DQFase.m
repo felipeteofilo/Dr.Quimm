@@ -609,7 +609,7 @@
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
     self.mundo =[SKNode node];
     [self.mundo setName:@"mundo"];
-    [self.mundo setZPosition:100];
+    [self.mundo setZPosition:-100];
     
     self.controladorDaVida = [DQVidaControle sharedControleVida];
 
