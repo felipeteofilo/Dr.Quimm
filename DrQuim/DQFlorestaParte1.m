@@ -380,7 +380,8 @@
     //-> segundaCutscene
     //se o jogador chegar ao local da fala, comeca a fala
     
-    if( self.jogador.position.x > pontoSegundaCutscene.x && self.jogador.position.y > pontoSegundaCutscene.y){
+    //Alterado para verificar apenas pelo X
+    if( self.jogador.position.x > pontoSegundaCutscene.x){
         
         [self.jogador pararAndar];
         [self mudarFase];
@@ -394,7 +395,7 @@
     vila.scaleMode = SKSceneScaleModeAspectFill;
     
     //Cria um cutSceneTela
-    DQCutsceneTela *proxCutScene=[[DQCutsceneTela alloc]initCutScene:2 Fase:vila SizeScene:self.view.bounds.size];
+    DQCutsceneTela *proxCutScene=[[DQCutsceneTela alloc]initCutScene:1 Fase:vila SizeScene:self.view.bounds.size];
     
     [proxCutScene setScaleMode:SKSceneScaleModeAspectFill];
     

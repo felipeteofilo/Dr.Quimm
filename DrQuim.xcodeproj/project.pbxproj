@@ -42,6 +42,7 @@
 		94080EC71933BA2A0024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
 		94080ECF1933BA2A0024FB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94080ECD1933BA2A0024FB94 /* InfoPlist.strings */; };
 		94080ED11933BA2A0024FB94 /* DrQuimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94080ED01933BA2A0024FB94 /* DrQuimTests.m */; };
+		94331C7E19A5399400FD04F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94331C7D19A5399400FD04F8 /* AVFoundation.framework */; };
 		943710AD19A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710A719A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 */; };
 		943710AE19A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710A819A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 */; };
 		943710AF19A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 943710A919A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 */; };
@@ -252,6 +253,8 @@
 		94080ECC1933BA2A0024FB94 /* DrQuimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrQuimTests-Info.plist"; sourceTree = "<group>"; };
 		94080ECE1933BA2A0024FB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94080ED01933BA2A0024FB94 /* DrQuimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrQuimTests.m; sourceTree = "<group>"; };
+		94331C7A19A538C300FD04F8 /* DrQuim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DrQuim.entitlements; sourceTree = "<group>"; };
+		94331C7D19A5399400FD04F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		943710A719A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Grande-1.mp3"; sourceTree = "<group>"; };
 		943710A819A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Media-1.mp3"; sourceTree = "<group>"; };
 		943710A919A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Media-2.mp3"; sourceTree = "<group>"; };
@@ -454,6 +457,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94331C7E19A5399400FD04F8 /* AVFoundation.framework in Frameworks */,
 				94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */,
 				94080EA31933BA290024FB94 /* UIKit.framework in Frameworks */,
 				94080EA51933BA290024FB94 /* SpriteKit.framework in Frameworks */,
@@ -541,6 +545,7 @@
 		94080E9D1933BA290024FB94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94331C7D19A5399400FD04F8 /* AVFoundation.framework */,
 				94080E9E1933BA290024FB94 /* Foundation.framework */,
 				94080EA01933BA290024FB94 /* CoreGraphics.framework */,
 				94080EA21933BA290024FB94 /* UIKit.framework */,
@@ -553,6 +558,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				94331C7A19A538C300FD04F8 /* DrQuim.entitlements */,
 				CD616FE319A51DA800B5C63A /* Transformacoes */,
 				CDC48AC919929F4A00588E79 /* _temp novas classes */,
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
@@ -1039,6 +1045,11 @@
 				TargetAttributes = {
 					94080E9A1933BA290024FB94 = {
 						DevelopmentTeam = M25JU54534;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 					94080EC21933BA290024FB94 = {
 						TestTargetID = 94080E9A1933BA290024FB94;
@@ -1393,7 +1404,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrQuim/DrQuim-Prefix.pch";
 				INFOPLIST_FILE = "DrQuim/DrQuim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -1412,7 +1423,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrQuim/DrQuim-Prefix.pch";
 				INFOPLIST_FILE = "DrQuim/DrQuim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
