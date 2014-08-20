@@ -177,6 +177,14 @@
 		CD54D9AE19A51E4E00C2798D /* DQReceitaQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A619A51E4E00C2798D /* DQReceitaQuimica.m */; };
 		CD54D9AF19A51E4E00C2798D /* DQTransformacaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A819A51E4E00C2798D /* DQTransformacaoControle.m */; };
 		CD54D9B019A51E4E00C2798D /* DQTransformacaoTela.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9AA19A51E4E00C2798D /* DQTransformacaoTela.m */; };
+		CD54D9BA19A51F7700C2798D /* destino.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B219A51F7700C2798D /* destino.png */; };
+		CD54D9BB19A51F7700C2798D /* Elementos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B319A51F7700C2798D /* Elementos.atlas */; };
+		CD54D9BC19A51F7700C2798D /* maletaCorpo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B419A51F7700C2798D /* maletaCorpo.png */; };
+		CD54D9BD19A51F7700C2798D /* maletaFrente.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B519A51F7700C2798D /* maletaFrente.png */; };
+		CD54D9BE19A51F7700C2798D /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B619A51F7700C2798D /* ok.png */; };
+		CD54D9BF19A51F7700C2798D /* papelReceita.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B719A51F7700C2798D /* papelReceita.png */; };
+		CD54D9C019A51F7700C2798D /* quadrado.png in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B819A51F7700C2798D /* quadrado.png */; };
+		CD54D9C119A51F7700C2798D /* Recipientes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CD54D9B919A51F7700C2798D /* Recipientes.atlas */; };
 		CD616FE119A51D8700B5C63A /* AmostrasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD616FDF19A51D8700B5C63A /* AmostrasQuimicas.plist */; };
 		CD616FE219A51D8700B5C63A /* ReceitasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD616FE019A51D8700B5C63A /* ReceitasQuimicas.plist */; };
 		CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */; };
@@ -422,6 +430,14 @@
 		CD54D9A819A51E4E00C2798D /* DQTransformacaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTransformacaoControle.m; sourceTree = "<group>"; };
 		CD54D9A919A51E4E00C2798D /* DQTransformacaoTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTransformacaoTela.h; sourceTree = "<group>"; };
 		CD54D9AA19A51E4E00C2798D /* DQTransformacaoTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTransformacaoTela.m; sourceTree = "<group>"; };
+		CD54D9B219A51F7700C2798D /* destino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = destino.png; sourceTree = "<group>"; };
+		CD54D9B319A51F7700C2798D /* Elementos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Elementos.atlas; sourceTree = "<group>"; };
+		CD54D9B419A51F7700C2798D /* maletaCorpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maletaCorpo.png; sourceTree = "<group>"; };
+		CD54D9B519A51F7700C2798D /* maletaFrente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maletaFrente.png; sourceTree = "<group>"; };
+		CD54D9B619A51F7700C2798D /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		CD54D9B719A51F7700C2798D /* papelReceita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papelReceita.png; sourceTree = "<group>"; };
+		CD54D9B819A51F7700C2798D /* quadrado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quadrado.png; sourceTree = "<group>"; };
+		CD54D9B919A51F7700C2798D /* Recipientes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Recipientes.atlas; sourceTree = "<group>"; };
 		CD616FDF19A51D8700B5C63A /* AmostrasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AmostrasQuimicas.plist; path = "Arquivos Plist/AmostrasQuimicas.plist"; sourceTree = "<group>"; };
 		CD616FE019A51D8700B5C63A /* ReceitasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReceitasQuimicas.plist; path = "Arquivos Plist/ReceitasQuimicas.plist"; sourceTree = "<group>"; };
 		CDC48ACD1992A0C800588E79 /* DQFalasNoJogoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFalasNoJogoControle.h; sourceTree = "<group>"; };
@@ -672,6 +688,7 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				CD54D9B119A51F7700C2798D /* Transformacoes */,
 				943710C119A3E04000B8846E /* Armadilhas */,
 				943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */,
 				C52FBF2319A18D790059E973 /* Animais */,
@@ -902,6 +919,21 @@
 			name = Fase1;
 			sourceTree = "<group>";
 		};
+		CD54D9B119A51F7700C2798D /* Transformacoes */ = {
+			isa = PBXGroup;
+			children = (
+				CD54D9B219A51F7700C2798D /* destino.png */,
+				CD54D9B319A51F7700C2798D /* Elementos.atlas */,
+				CD54D9B419A51F7700C2798D /* maletaCorpo.png */,
+				CD54D9B519A51F7700C2798D /* maletaFrente.png */,
+				CD54D9B619A51F7700C2798D /* ok.png */,
+				CD54D9B719A51F7700C2798D /* papelReceita.png */,
+				CD54D9B819A51F7700C2798D /* quadrado.png */,
+				CD54D9B919A51F7700C2798D /* Recipientes.atlas */,
+			);
+			path = Transformacoes;
+			sourceTree = "<group>";
+		};
 		CD616FE319A51DA800B5C63A /* Transformacoes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,17 +1070,22 @@
 			files = (
 				C58F75E919A4F20B00DC7A71 /* Fase3_Parte6.png in Resources */,
 				C5EE3A5B1974A9FD008D3D8D /* Fase2_Parte1.png in Resources */,
+				CD54D9C119A51F7700C2798D /* Recipientes.atlas in Resources */,
 				C5E1F40D198AD0A300F7A320 /* itens.atlas in Resources */,
 				9437111B19A3EF1E00B8846E /* NPCS.atlas in Resources */,
 				C58F75C619A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 in Resources */,
+				CD54D9BE19A51F7700C2798D /* ok.png in Resources */,
 				3CAC84271979F63D000FB1A1 /* Caindo.atlas in Resources */,
 				C58F75E419A4F20B00DC7A71 /* Fase3_Parte1.png in Resources */,
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				9488196A19901A6D00609A0F /* ConfigMenu.plist in Resources */,
+				CD54D9BA19A51F7700C2798D /* destino.png in Resources */,
 				CD616FE119A51D8700B5C63A /* AmostrasQuimicas.plist in Resources */,
 				9488196D19901A6D00609A0F /* ItensReferencia.plist in Resources */,
 				C552650219A24A5B00BD59CE /* MusicaFundo03.mp3 in Resources */,
+				CD54D9BB19A51F7700C2798D /* Elementos.atlas in Resources */,
+				CD54D9C019A51F7700C2798D /* quadrado.png in Resources */,
 				9488197019901A6D00609A0F /* Receitas.plist in Resources */,
 				C58F75F419A4F20B00DC7A71 /* Fase3_Parte17.png in Resources */,
 				C55264F619A24A5B00BD59CE /* Animal02 - animalFeroz.mp3 in Resources */,
@@ -1056,6 +1093,7 @@
 				3CAC8435197A01FB000FB1A1 /* Andando.atlas in Resources */,
 				C552650019A24A5B00BD59CE /* MusicaFundo01.mp3 in Resources */,
 				C58F75EA19A4F20B00DC7A71 /* Fase3_Parte7.png in Resources */,
+				CD54D9BD19A51F7700C2798D /* maletaFrente.png in Resources */,
 				C5D2A6A1196A535800F3B7C4 /* Fase1_Parte5.png in Resources */,
 				C58F75EB19A4F20B00DC7A71 /* Fase3_Parte8.png in Resources */,
 				C58F75C919A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 in Resources */,
@@ -1075,6 +1113,7 @@
 				C58F75F219A4F20B00DC7A71 /* Fase3_Parte15.png in Resources */,
 				C58F75ED19A4F20B00DC7A71 /* Fase3_Parte10.png in Resources */,
 				3CAC84301979FAD5000FB1A1 /* Derrapando.atlas in Resources */,
+				CD54D9BC19A51F7700C2798D /* maletaCorpo.png in Resources */,
 				943710C419A3E04000B8846E /* Armadilhas.atlas in Resources */,
 				C55264F519A24A5B00BD59CE /* Animal01 - Coelho.mp3 in Resources */,
 				943710AF19A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 in Resources */,
@@ -1091,6 +1130,7 @@
 				C552650119A24A5B00BD59CE /* MusicaFundo02.mp3 in Resources */,
 				3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */,
 				943710B219A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 in Resources */,
+				CD54D9BF19A51F7700C2798D /* papelReceita.png in Resources */,
 				C58F75F819A4F20B00DC7A71 /* Fase3_Parte21.png in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
 				943710AE19A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 in Resources */,
