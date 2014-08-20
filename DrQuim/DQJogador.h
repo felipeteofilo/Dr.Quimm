@@ -115,4 +115,6 @@
 
 //Funcao para parar de derrapar
 -(void)pararDerrapar;
+
+-(BOOL)estaComContadorGeiger;
 @end

@@ -30,6 +30,16 @@
     return [[self userDefalts]boolForKey:@"musicaMuda"];
 }
 
++(BOOL)primeiraExecucaoDispositivo{
+    BOOL jaExecutou= [[self userDefalts]boolForKey:@"JaExecutou"];
+    
+    if (jaExecutou) {
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
 +(NSDictionary*)estadosJogador{
     NSMutableDictionary *estadosJogador=[NSMutableDictionary dictionary];
     
@@ -109,5 +119,8 @@
     [self setEstadoJogadorVida:100 Fome:100 Sede:100 Respeito:10];
     
     [self setEstadoInicialJogador:YES];
+}
++(void)atualizarPrimeiraExecucao{
+    [[self userDefalts]setBool:YES forKey:@"JaExecutou"];
 }
 @end

@@ -44,6 +44,10 @@
     [super didMoveToView:view];
     
     [self animarMensagem];
+    
+    if ([DQControleUserDefalts primeiraExecucaoDispositivo]) {
+        [self configuracoesInicial];
+    }
 }
 
 -(void)animarMensagem{
@@ -78,7 +82,9 @@
     [DQControleUserDefalts setFaseAtual:1];
     [DQControleUserDefalts setVolumeMusica:50.0];
     [DQControleUserDefalts setVolumeSons:50.];
-    //DQControleUserDefalts setEstadoJogadorVida:<#(float)#> Fome:<#(float)#> Sede:<#(float)#> Respeito:<#(float)#>
+    [DQControleUserDefalts setEstadoJogadorVida:100 Fome:100 Sede:100 Respeito:0];
+    
+    [DQControleUserDefalts atualizarPrimeiraExecucao];
 }
 -(void)iniciarJogo{
     

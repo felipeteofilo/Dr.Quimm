@@ -201,6 +201,10 @@
     }
 }
 
+-(BOOL)estaComContadorGeiger{
+    return [[self.itens arrayItensJogador] containsObject:@"Contador Geiger"];
+}
+
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {

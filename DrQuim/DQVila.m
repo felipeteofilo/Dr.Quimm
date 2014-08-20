@@ -21,7 +21,16 @@
 
 -(void)iniciarFase{
     [super iniciarFase];
+    
     [self adicionaNPC];
+    
+    //Verifica se o jogador ja tem o contador Geiger
+    if(![self.jogador estaComContadorGeiger]){
+        //NAo tem esconde
+        [self.hudFase esconderContador];
+    }
+    
+    
 }
 
 -(void)adicionaNPC{
@@ -40,7 +49,5 @@
         [self.npcs addObject:npc];
         [self.mundo addChild:npc];
     }
-    
-    
 }
 @end
