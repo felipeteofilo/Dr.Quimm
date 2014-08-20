@@ -172,7 +172,6 @@
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
 		C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */; };
 		CD54D9AB19A51E4E00C2798D /* DQAmostraQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */; };
-		CD54D9AC19A51E4E00C2798D /* DQControleReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A219A51E4E00C2798D /* DQControleReceita.m */; };
 		CD54D9AD19A51E4E00C2798D /* DQMaletaQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A419A51E4E00C2798D /* DQMaletaQuimica.m */; };
 		CD54D9AE19A51E4E00C2798D /* DQReceitaQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A619A51E4E00C2798D /* DQReceitaQuimica.m */; };
 		CD54D9AF19A51E4E00C2798D /* DQTransformacaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A819A51E4E00C2798D /* DQTransformacaoControle.m */; };
@@ -420,8 +419,6 @@
 		C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
 		CD54D99F19A51E4E00C2798D /* DQAmostraQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAmostraQuimica.h; sourceTree = "<group>"; };
 		CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAmostraQuimica.m; sourceTree = "<group>"; };
-		CD54D9A119A51E4E00C2798D /* DQControleReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleReceita.h; sourceTree = "<group>"; };
-		CD54D9A219A51E4E00C2798D /* DQControleReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleReceita.m; sourceTree = "<group>"; };
 		CD54D9A319A51E4E00C2798D /* DQMaletaQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMaletaQuimica.h; sourceTree = "<group>"; };
 		CD54D9A419A51E4E00C2798D /* DQMaletaQuimica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMaletaQuimica.m; sourceTree = "<group>"; };
 		CD54D9A519A51E4E00C2798D /* DQReceitaQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQReceitaQuimica.h; sourceTree = "<group>"; };
@@ -939,8 +936,6 @@
 			children = (
 				CD54D99F19A51E4E00C2798D /* DQAmostraQuimica.h */,
 				CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */,
-				CD54D9A119A51E4E00C2798D /* DQControleReceita.h */,
-				CD54D9A219A51E4E00C2798D /* DQControleReceita.m */,
 				CD54D9A319A51E4E00C2798D /* DQMaletaQuimica.h */,
 				CD54D9A419A51E4E00C2798D /* DQMaletaQuimica.m */,
 				CD54D9A519A51E4E00C2798D /* DQReceitaQuimica.h */,
@@ -1227,7 +1222,6 @@
 				C54031E61989FE98003384AB /* DQMenuItem.m in Sources */,
 				943710C019A3DF3600B8846E /* DQMenuArmadilhas.m in Sources */,
 				C52FBF1E19A18D160059E973 /* DQIsca.m in Sources */,
-				CD54D9AC19A51E4E00C2798D /* DQControleReceita.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
 				C54031E11989FE98003384AB /* DQConfigMenu.m in Sources */,
 				C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */,
