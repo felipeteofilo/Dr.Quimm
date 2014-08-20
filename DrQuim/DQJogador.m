@@ -46,6 +46,9 @@
         
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
+        
+        self.distAndar=90;
+        self.impulsoPulo=200;
     }
     
     //retorna o jogador
@@ -188,7 +191,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 200)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, self.impulsoPulo)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -210,7 +213,9 @@
         if ([direcao isEqual:@"D"]) {
             
             self.andandoParaDirecao = @"D";
-            movimentar =[SKAction moveByX:90 y:0 duration:1.0];
+            //Alterado para usar da propriedade
+            //movimentar =[SKAction moveByX:90 y:0 duration:1.0];
+            movimentar=[SKAction moveByX:self.distAndar y:0 duration:1.0];
             
             if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
                 [self.physicsBody setVelocity:CGVectorMake(10, -10)];
@@ -221,7 +226,9 @@
         }else{
             
             self.andandoParaDirecao = @"E";
-            movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
+            //Alte
+            //movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
+                        movimentar=[SKAction moveByX:(self.distAndar *-1) y:0 duration:1.0];
             
             //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
             self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;

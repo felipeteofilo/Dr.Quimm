@@ -40,6 +40,9 @@
 @property BOOL podeEscalar;
 @property BOOL estaNoChao;
 
+@property float distAndar;
+@property int impulsoPulo;
+
 @property NSString *andandoParaDirecao;
 
 @property DQControleSom *controleSom;
