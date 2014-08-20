@@ -13,11 +13,13 @@
 -(id)initHud{
     if (self=[super initWithImageNamed:@"FundoHUD.png"]) {
         //Inicializa HUD
-        
         [self setAnchorPoint:CGPointMake(0,1)]; //Canto superior esquerdo
         
         //Inicializa os indicadores
         [self configuraBarras];
+        [self configurarBotaoMenu];
+        [self configuraContadorGeiger];
+        
         [self setUserInteractionEnabled:YES];
     }
     return self;
@@ -31,7 +33,6 @@
     [self.barraVida setPosition:CGPointMake(90, -98)];
     [self.barraFome setPosition:CGPointMake(431, -98)];
     [self.barraSede setPosition:CGPointMake(739, -98)];
-    
     
     [self addChild:self.barraFome];
     [self addChild:self.barraSede];
@@ -50,6 +51,60 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    CGPoint posicaoToqueNode=[[touches anyObject]locationInNode:self];
+    NSArray *arrayNodes=[self nodesAtPoint:posicaoToqueNode];
+    
+    if ([self childNodeWithName:@"MENU"]) {
+        [[self childNodeWithName:@"MENU"]removeFromParent];
+        [self.parent.scene setPaused:NO];
+    }
+    
+    for (SKSpriteNode *nodeTocado in arrayNodes) {
+        if ([nodeTocado.name isEqualToString:@"botaoMenu"]) {
+            if (!self.menu) {
+                self.menu=[[DQMenu alloc]initMenu];
+                [self.menu setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame)-200)];
+                
+            }
+            
+            if (![self childNodeWithName:@"MENU"]) {
+                [self.parent addChild:self.menu];
+                [self.parent.scene setPaused:YES];
+            }
+            
+            break;
+        }
+    }
 
+}
+-(void)esconderHud{
+    [self setHidden:YES];
+}
+-(void)exibirHud{
+    [self setHidden:NO];
+}
+-(void)esconderContador{
+    [self.contador setHidden:YES];
+}
+-(void)exibirContador{
+    [self.contador setHidden:NO];
+}
+
+-(void)configurarBotaoMenu{
+    self.botaoMenu=[SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
+    [self.botaoMenu setAnchorPoint:CGPointMake(0.5, 0.2)];
+    [self.botaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame))];
+    
+    [self.botaoMenu setName:@"botaoMenu"];
+    [self addChild:self.botaoMenu];
+}
+
+-(void)configuraContadorGeiger{
+    self.contador=[[DQContadorGeiger alloc]initContadorNivelRadicao:0];
+    [self.contador setAnchorPoint:CGPointMake(1, 0)];
+    [self.contador setPosition:CGPointMake(CGRectGetMaxX(self.frame)-(self.contador.size.width/4), CGRectGetMinY(self.frame))];
+    
+    [self addChild:self.contador];
+    
 }
 @end

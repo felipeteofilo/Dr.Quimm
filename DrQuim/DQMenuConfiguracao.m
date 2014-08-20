@@ -9,14 +9,13 @@
 #import "DQMenuConfiguracao.h"
 
 @implementation DQMenuConfiguracao
+
+@synthesize indexAtual;
+
 -(id)initMenu{
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];
         [self setName:@"Configurações"];
-        
-        [self configuraTitulo];
-        [self configuraBarraStatus];
-        [self configuraBotaoMudo];
         
         [DQControleUserDefalts setSonsMudo:NO];
         [DQControleUserDefalts setMusicaMuda:NO];
@@ -24,6 +23,12 @@
         [self atualizaBarras];
     }
     return self;
+}
+
+-(void)prepararExibicao{
+    [self configuraTitulo];
+    [self configuraBarraStatus];
+    [self configuraBotaoMudo];
 }
 
 -(void)configuraTitulo{
@@ -107,9 +112,13 @@
     if ([[self nodeAtPoint:posToque].name isEqualToString:self.titulo.name]) {
         [self esconderMenu];
     }
+    
+    [self atualizaBarras];
 }
 
 -(void)esconderMenu{
+    
+    [self atualizaBarras];
     [self removeFromParent];
 }
 
@@ -195,6 +204,11 @@
     
     [self.volumeMusica atualizarBarra:[DQControleUserDefalts volumeMusica]*100];
     [self.volumeSom atualizarBarra:[DQControleUserDefalts volumeSons]*100];
+    
+    if ([self.parent.scene respondsToSelector:@selector(atualizaSomMusicaFundo)]) {
+        [self.parent.scene performSelector:@selector(atualizaSomMusicaFundo)];
+    }
+    
 }
 
 @end

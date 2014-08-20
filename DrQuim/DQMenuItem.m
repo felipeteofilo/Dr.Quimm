@@ -10,18 +10,14 @@
 
 @implementation DQMenuItem
 
+@synthesize opcoesMenu,indexAtual;
 -(id)initMenu{
     
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setName:@"Itens"];
         
-        [self configuraTitulo];
-        
         self.itensColuna=4;
         self.itensLinha=3;
-        
-        [self listarItens];
-        [self exibeItens];
         
         [self setUserInteractionEnabled:YES];
         
@@ -29,6 +25,12 @@
     return self;
 }
 
+-(void)prepararExibicao{
+    [self removeAllChildren];
+    [self configuraTitulo];
+    [self listarItens];
+    [self exibeItens];
+}
 -(void)configuraTitulo{
     self.titulo=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
     
@@ -42,28 +44,27 @@
 
 //Lista os itens que o jogador tem disponivel
 -(void)listarItens{
-    self.itensJogador=[[DQItensJogador alloc]init];
     
+    self.jogador =[DQJogador sharedJogador];
     NSMutableArray *arrayItensAdicionar=[NSMutableArray array];
-    NSArray *arrayItens=[self.itensJogador arrayItensJogador];
+    NSArray *arrayItens=[self.jogador.itens arrayItensJogador];
     
     
     for (int i=0; i< [arrayItens count];i++) {
         //Criado para facilitar leitura
         NSString *itemSelecionado=[arrayItens objectAtIndex:i];
         
-        NSString *nomeItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"nome"];
+        NSString *nomeItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"nome"];
         
-        NSString *descricaoItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"descricao"];
+        NSString *descricaoItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"descricao"];
         
-        NSString *categoriaItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"categoria"];
+        NSString *categoriaItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"categoria"];
         
-        NSString *imagemItem = [[self.itensJogador.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"imagem"];
+        NSString *imagemItem = [[self.jogador.itens.dicionarioDeItensReferencia objectForKey:itemSelecionado] objectForKey:@"imagem"];
         
+        int quantidade = [[self.jogador.itens.dicionarioDeItensJogador objectForKey:itemSelecionado]intValue];
         
-        DQItem *itemAdicionadar=[[DQItem alloc]initItemNome:nomeItem descricao:descricaoItem categoria:categoriaItem imagem:imagemItem];
-        
-        [itemAdicionadar setQndeItem:[[self.itensJogador.dicionarioDeItensJogador objectForKey:itemSelecionado]intValue]];
+        DQItem *itemAdicionadar=[[DQItem alloc]initItemNome:nomeItem descricao:descricaoItem categoria:categoriaItem imagem:imagemItem Quantidade:quantidade];
         
         [arrayItensAdicionar addObject:itemAdicionadar];
     }
@@ -86,6 +87,13 @@
                 
                 [itemMostrar setAnchorPoint:CGPointMake(0, 0)];
                 [itemMostrar setPosition:posicaoNode];
+                SKLabelNode *quantidade = [[SKLabelNode alloc]init];
+                [quantidade setText:[NSString stringWithFormat:@"%d",itemMostrar.qndeItem]];
+                [quantidade setColor:[UIColor whiteColor]];
+                [quantidade setFontSize:45];
+                
+                [quantidade setPosition:CGPointMake(itemMostrar.position.x + 180, itemMostrar.position.y + 35)];
+                [self addChild:quantidade];
                 [self addChild:itemMostrar];
                 
                 posicaoNode=CGPointMake((itemMostrar.position.x + quadroItem.width + 10), posicaoNode.y);
@@ -119,7 +127,7 @@
     DQTexto *nome=[[DQTexto alloc]initTexto:[itemExibir nome] espacoLimite:sizeNome fonte:30.0];
     [nome alinhaTextoHorizontal:SKLabelHorizontalAlignmentModeCenter];
     [nome mudaCorTexto:[UIColor blackColor]];
-
+    
     CGSize sizeCategoria=CGSizeMake(detalheItem.frame.size.width-60, 60);
     DQTexto *categoria=[[DQTexto alloc]initTexto:[itemExibir categoria] espacoLimite:sizeCategoria fonte:30.0f];
     [categoria alinhaTextoHorizontal:SKLabelHorizontalAlignmentModeCenter];
@@ -137,7 +145,7 @@
     [categoria setPosition:CGPointMake(nome.position.x, nome.position.y - 65)];
     [descricao setPosition:CGPointMake(categoria.position.x, categoria.position.y-160)];
     
-
+    
     [detalheItem setScale:1.5f];
     [detalheItem setZPosition:100];
     return detalheItem;
@@ -158,7 +166,7 @@
                 DQItem *itemTocado=[arrayNodes objectAtIndex:i];
                 
                 [self exibeInformacoesItem:itemTocado];
-                i= [arrayNodes count];
+                i= (int)[arrayNodes count];
             }
         }
         
@@ -169,6 +177,7 @@
 }
 
 -(void)esconderMenu{
+    
     [self removeFromParent];
 }
 @end

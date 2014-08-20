@@ -4,6 +4,8 @@
 <dict>
 	<key>Lança</key>
 	<dict>
+		<key>Isca</key>
+		<false/>
 		<key>nome</key>
 		<string>Lança simples</string>
 		<key>descricao</key>
@@ -15,6 +17,13 @@
 	</dict>
 	<key>Carne</key>
 	<dict>
+		<key>Isca</key>
+		<dict>
+			<key>Caracteristica</key>
+			<string>Coelho</string>
+			<key>Nome</key>
+			<string>Carne</string>
+		</dict>
 		<key>nome</key>
 		<string>Carne</string>
 		<key>descricao</key>
@@ -50,6 +59,13 @@
 	<dict>
 		<key>nome</key>
 		<string>Docinho</string>
+		<key>Isca</key>
+		<dict>
+			<key>Caracteristica</key>
+			<string>Acucar</string>
+			<key>Nome</key>
+			<string>Docinho</string>
+		</dict>
 		<key>descricao</key>
 		<string>Docinho feito com açúcar e clara de ovos. Apenas a Mãe de todos sabe a receita</string>
 		<key>categoria</key>

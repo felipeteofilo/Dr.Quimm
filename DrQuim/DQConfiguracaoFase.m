@@ -25,6 +25,15 @@
         return [NSArray arrayWithContentsOfFile:pathArquivoPlist];
     }
 }
++(NSString*)somFundoFase:(int)_fase{
+    NSString *retorno=[[[self arquivoPlist]objectAtIndex:_fase-1]objectForKey:@"SomFundo"];
+    
+    if ([retorno length]==0) {
+        return @"MusicaFundo03";
+    }else{
+        return retorno;
+    }
+}
 +(NSArray*)configParteFase:(int)_fase{
 
     //Verifica se a fase procurada esta dentro do limites do array
@@ -80,6 +89,7 @@
     
     return dicionarioARetornar;
 }
+
 +(NSDictionary*)configFase:(int)fase{
     
     if ((fase -1 <0 )|| (fase -1 >[[self arquivoPlist]count])) {
@@ -99,7 +109,11 @@
         return retorno;
     }
 }
-
++(NSArray*)animaisFase:(int)fase Parte:(int)parte{
+    NSArray *arrayAnimais=[[DQConfiguracaoFase configParteFase:fase parte:parte]objectForKey:@"Animais"];
+    
+    return arrayAnimais;
+}
 +(NSArray*)escalavelFase:(int)fase Parte:(int)parte{
     NSArray *arrayEscalaceis=[[DQConfiguracaoFase configParteFase:fase parte:parte]objectForKey:@"Escalaveis"];
     

@@ -29,16 +29,18 @@
         case 0:
             [self configuraMenuItens];
             break;
-            
         case 1:
+            [self configuraMenuArmadilhas];
+            break;
+        case 2:
             [self configuraMenuQuest];
             break;
             
-        case 2:
+        case 3:
             [self configuraMenuLivro];
             break;
             
-        case 3:
+        case 4:
             [self configuraMenuConfig];
             break;
             
@@ -54,7 +56,9 @@
 -(void)configuraMenuItens{
     self.conteudo=[[DQMenuItem alloc]initMenu];
 }
-
+-(void)configuraMenuArmadilhas{
+    self.conteudo=[[DQMenuArmadilhas alloc]initMenu];
+}
 -(void)configuraMenuLivro{
     self.conteudo=[[DQMenuReceita alloc]initMenu];
 }
@@ -79,9 +83,13 @@
 }
 
 -(void)apresentarConteudo{
+    [self.conteudo performSelector:@selector(prepararExibicao) withObject:nil];
     [self.parent addChild:self.conteudo];
 }
 -(void)esconderConteudo{
     [self.conteudo removeFromParent];
+}
+-(void)esconderMenu{
+   
 }
 @end

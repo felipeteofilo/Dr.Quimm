@@ -7,38 +7,16 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQControleSom.h"
 
-@interface DQnpc : SKNode
-
-//SKSpriteNode do NPC
-@property SKSpriteNode *spriteNode;
+@interface DQnpc : SKSpriteNode
 
 //NSString que armazena o nome do NPC
 @property NSString *nome;
 
-//Bool que armazena se o jogador já falou com o NPC na parte especificada
-@property BOOL falou;
+@property DQControleSom *controleSom;
 
-//NSDictionary que armazena as falas do NPC atual
-@property NSDictionary *dicionarioDeFalas;
-
-//NSDictionary que armazena as falas do NPC atual - QUANDO SEM MISSÃO
-@property NSDictionary *dicionarioDeFalasSemMissao;
-
-//NSDictionary que armazena as falas do NPC atual - QUANDO NA MISSÃO1
-@property NSDictionary *dicionarioDeFalasMissao01;
-
-//Método INIT que inicia o NPC com o nome dele
--(id)initComNome: (NSString *)nome;
-
-//Método que faz com que o NPC diga suas falas - Baseadas no respeito
--(void)interagirSemMissao: (int)respeito;
-
-//Método que faz com que o NPC diga suas falas - Baseadas na missão atual e na parte dela
--(void)interagirComMissao: (int)missao eParte:(int)parte;
-
-//Método que cria o SpriteNode do SKNode em questão
--(void)criarSpriteNodeComNome:(NSString*)nome naPosicao:(CGPoint)posicao;
-
+//Método INIT que inicia o NPC com o nome dele e a posicao
+-(id)initComNome:(NSString *)nome naPosicao:(CGPoint)posicao;
 
 @end

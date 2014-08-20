@@ -10,16 +10,20 @@
 
 @implementation DQMenuQuest
 
+@synthesize indexAtual;
+
 -(id)initMenu{
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];
         [self setName:@"Missões"];
-        
-        [self configuraTitulo];
-        [self listarMissoesJogador];
-        [self configuraOpcoesMenuQuest];
     }
     return self;
+}
+
+-(void)prepararExibicao{
+    [self configuraTitulo];
+    [self listarMissoesJogador];
+    [self configuraOpcoesMenuQuest];
 }
 
 -(void)configuraTitulo{
@@ -61,7 +65,7 @@
         [opcaoMenu setAnchorPoint:CGPointMake(0.5, 0)];
         [opcaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.frame.size.height - ultimoY)];
         
-        [opcaoMenu configuraConteudoQuest:[DQReferenciaMissaoJogador detalharMissaoAtual:i+1]index:i];
+        [opcaoMenu configuraConteudoQuest:(NSMutableDictionary*)[DQReferenciaMissaoJogador detalharMissaoAtual:i+1]index:i];
         
         [opcaoMenu setName:@"Missao"];
         
@@ -81,7 +85,7 @@
             DQOpcaoMenu *opcaoTocada=[arrayNodes objectAtIndex:i];
             
             [self detalharQuest:opcaoTocada.conteudo.userData];
-            i= [arrayNodes count];
+            i= (int)[arrayNodes count];
             
         }
     }
@@ -97,6 +101,7 @@
 }
 
 -(void)esconderMenu{
+    
     [self removeFromParent];
 }
 

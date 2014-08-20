@@ -30,6 +30,28 @@
     return [[self userDefalts]boolForKey:@"musicaMuda"];
 }
 
++(NSDictionary*)estadosJogador{
+    NSMutableDictionary *estadosJogador=[NSMutableDictionary dictionary];
+    
+    [estadosJogador setObject:[NSNumber numberWithFloat:[[self userDefalts]floatForKey:@"Vida"]] forKey:@"Vida"];
+    [estadosJogador setObject:[NSNumber numberWithFloat:[[self userDefalts]floatForKey:@"Fome"]] forKey:@"Fome"];
+    [estadosJogador setObject:[NSNumber numberWithFloat:[[self userDefalts]floatForKey:@"Sede"]] forKey:@"Sede"];
+    
+    return estadosJogador;
+}
+
++(int)faseAtual{
+    return (int)[[self userDefalts]integerForKey:@"FaseAtual"];
+}
+
++(int)parteFaseAtual{
+    return (int)[[self userDefalts]integerForKey:@"parteAtual"];
+}
++(NSString*)missaoAtualJogador{
+    return [[self userDefalts]objectForKey:@"MissaoJogador"];
+}
+
+
 +(void)setVolumeMusica:(float)volume{
     [[self userDefalts]setFloat:volume forKey:@"volumeMusica"];
 }
@@ -45,5 +67,47 @@
 +(void)setSonsMudo:(BOOL)mudo{
     [[self userDefalts]setBool:mudo forKey:@"somMudo"];
 }
++(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede Respeito:(float)respeito{
+    [[self userDefalts]setFloat:vida forKey:@"Vida"];
+    [[self userDefalts]setFloat:fome forKey:@"Fome"];
+    [[self userDefalts]setFloat:sede forKey:@"Sede"];
+    [[self userDefalts]setFloat:respeito forKey:@"Respeito"];
+}
 
++(void)setFaseAtual:(int)fase{
+    [[self userDefalts]setInteger:fase forKey:@"FaseAtual"];
+}
++(void)setParteFaseAtual:(int)parte{
+    [[self userDefalts]setInteger:parte forKey:@"ParteAtual"];
+}
+
++(void)setMissaoAtualJogador:(NSString*)missaoAtual{
+    [[self userDefalts]setObject:missaoAtual forKey:@"MissaoJogador"];
+}
+
++(void)setRodouCutSceneFase:(int)fase Valor:(BOOL)valor{
+    NSString *keyFase=[NSString stringWithFormat:@"RodouCutSceneFase%i",fase];
+    
+    [[self userDefalts]setBool:valor forKey:keyFase];
+}
+
++(BOOL)rodouCutSceneFase:(int)fase{
+    NSString *keyFase=[NSString stringWithFormat:@"RodouCutSceneFase%i",fase];
+    
+    return [[DQControleUserDefalts userDefalts]boolForKey:keyFase];
+}
+
++(BOOL)estadoJogadorAtualizado{
+    return [[DQControleUserDefalts userDefalts]boolForKey:@"estadoJogadorAtualizado"];
+}
+
++(void)setEstadoInicialJogador:(BOOL)valor{
+    [[self userDefalts]setBool:valor forKey:@"estadoJogadorAtualizado"];
+}
+
++(void)setEstadoInicialJogador{
+    [self setEstadoJogadorVida:100 Fome:100 Sede:100 Respeito:10];
+    
+    [self setEstadoInicialJogador:YES];
+}
 @end

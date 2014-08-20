@@ -10,15 +10,21 @@
 
 @implementation DQMenuReceita
 
+@synthesize indexAtual;
+
 -(id)initMenu{
     if (self=[super initWithImageNamed:@"FundoMenu.png"]) {
         [self setUserInteractionEnabled:YES];
         [self setName:@"Livro de Receitas"];
-        [self configuraTitulo];
-        [self recuperarReceita];
-        [self exibirOpcoes];
+
     }
     return self;
+}
+
+-(void)prepararExibicao{
+    [self configuraTitulo];
+    [self recuperarReceita];
+    [self exibirOpcoes];
 }
 
 -(void)configuraTitulo{
@@ -70,7 +76,7 @@
             //Será util ao fazer a navegacao
             [self setIndexSelecionado:[indexOpcao intValue]];
             
-            i= [arrayNodes count];
+            i= (int)[arrayNodes count];
             
         }
     }
@@ -157,6 +163,7 @@
 }
 
 -(void)esconderMenu{
+    
     [self removeFromParent];
 }
 

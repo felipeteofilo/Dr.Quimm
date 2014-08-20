@@ -13,7 +13,7 @@
 //Leonardo 13/06/2014 - Alterado a função de inicialização do node para que carregue o sprite na propriedade spriteNode
 //Funcao para iniciar e alocar tudo que for necessario para o player
 -(id)initJogadorSprite: (NSString*)name{
-
+    
     if(self = [super init]){
         
         //Leonardo 13/06/2014 - Inicia o sprite
@@ -24,56 +24,64 @@
         [self.spriteNode setSize:CGSizeMake(90, 160)];
         
         [self.spriteNode setZPosition:10.0f];
+        
         //Deixar o corpo fisico mais prox ao sprite
-        self.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.spriteNode.size.width, self.spriteNode.size.height-12)];
-
-        self.physicsBody.usesPreciseCollisionDetection=YES;
-        self.physicsBody.affectedByGravity = YES;
-        self.physicsBody.allowsRotation = NO;
-        self.physicsBody.density = 0.6f;
-        self.physicsBody.restitution = 0;
-        
+        [self configuraCorpoFisico];
         [self addChild:self.spriteNode];
-        
 
-        
         //Seta que ele ainda nao pode escalar
         self.podeEscalar = NO;
         self.estaNoChao = YES;
         //USADO COMO TESTE
-        self.fome = 10;
-        self.sede = 40;
+        self.fome = 100;
+        self.sede = 100;
         self.vida = 100;
         self.respeito = 0;
         
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
+        self.armadilhas =[[DQArmadilhasJogador alloc]init];
         
-        //Inicia a instância da classe missoesJogador
-        self.missoes = [[DQMissoesJogador alloc] init];
+        self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
+        self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
+        [self addChild:self.controleSom];
     }
-
+    
     //retorna o jogador
     return self;
 }
+-(void)atualizaEstadoJogador{
+    
+    if (![DQControleUserDefalts estadoJogadorAtualizado]) {
+        [DQControleUserDefalts setEstadoInicialJogador];
+    }
+    
+    NSDictionary *estadoJogador=[DQControleUserDefalts estadosJogador];
+    
+    self.fome= [[estadoJogador objectForKey:@"Fome"]floatValue];
+    self.vida=[[estadoJogador objectForKey:@"Vida"]floatValue];
+    self.sede=[[estadoJogador objectForKey:@"Sede"]floatValue];
+    self.respeito=[[estadoJogador objectForKey:@"Respeito"]floatValue];
+}
+
 
 -(void)iniciarAnimacoes:(NSDictionary*)animacoes{
-       
+    
     if (![[animacoes objectForKey:@"Andando"]  isEqual:@""]) {
         framesAndando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Andando"]]];
-
+        
     }
     if (![[animacoes objectForKey:@"Pulando"]  isEqual:@""]) {
         framesPulando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Pulando"]]];
         
     }
     if (![[animacoes objectForKey:@"Parado"]  isEqual:@""]) {
-       framesParado = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Parado"]]];
+        framesParado = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Parado"]]];
         
     }
     if (![[animacoes objectForKey:@"Escalando"]  isEqual:@""]) {
-       framesEscalando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Escalando"]]];
+        framesEscalando = [self lerFrames:[SKTextureAtlas atlasNamed:[animacoes objectForKey:@"Escalando"]]];
         
     }
     if (![[animacoes objectForKey:@"Caindo"]  isEqual:@""]) {
@@ -121,9 +129,9 @@
 -(void)animarAndando{
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
-                                                                   timePerFrame:0.1f
-                                                                         resize:NO
-                                                                        restore:YES]] withKey:@"animandoAndando"];
+                                                                              timePerFrame:0.1f
+                                                                                    resize:NO
+                                                                                   restore:YES]] withKey:@"animandoAndando"];
 }
 
 //funcao para animar o jogador derrapando
@@ -150,14 +158,15 @@
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesParado
                                                                               timePerFrame:0.9f
                                                                                     resize:NO
-                                                                                restore:YES]]withKey:@"animandoParado"];
+                                                                                   restore:YES]]withKey:@"animandoParado"];
 }
 //funcao para animar jogador pulando
 -(void)animarPular{
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     
-    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.37f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    
 }
 
 //funcao para animar jogador caindo
@@ -179,7 +188,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 140)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 200)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -191,7 +200,7 @@
 
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
-    if (![self.spriteNode actionForKey:@"animandoEscalada"]) {
+    if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
         
         
         //variavel SKAction- define a direcao do movimento
@@ -227,40 +236,124 @@
         
         //anda para direcao
         [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+        
+        //adicionado som
+        [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
     }
 }
 
--(void)aumentarFome:(int)aumento{
+-(void)configuraCorpoFisico{
+    CGMutablePathRef path=CGPathCreateMutable();
     
-    [self setFome:(self.fome - aumento)];
+    CGPoint primeiroPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)+15), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPathMoveToPoint(path, NULL, primeiroPonto.x,primeiroPonto.y);
+
+    CGPoint segundoPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)-15), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPathAddLineToPoint(path, NULL, segundoPonto.x,segundoPonto.y);
+    
+    CGPoint terceiroPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame)+15, CGRectGetMidY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, terceiroPonto.x, terceiroPonto.y);
+    
+    CGPoint quartoPonto=CGPointMake(CGRectGetMidX(self.spriteNode.frame), CGRectGetMaxY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, quartoPonto.x, quartoPonto.y);
+    
+    CGPoint quintoPonto=CGPointMake(CGRectGetMaxX(self.spriteNode.frame)-15, CGRectGetMidY(self.spriteNode.frame));
+    CGPathAddLineToPoint(path, NULL, quintoPonto.x, quintoPonto.y);
+    
+    [self setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:path]];
+    
+    self.physicsBody.usesPreciseCollisionDetection=YES;
+    self.physicsBody.affectedByGravity = YES;
+    self.physicsBody.allowsRotation = NO;
+    self.physicsBody.mass = 0.566667;
+    self.physicsBody.restitution = 0;
     
 }
--(void)aumentarSede:(int)aumento{
+//Metodo que altera a Fome do jogador
+-(void)alterarFomeJogador: (int)fome
+{
     
-    [self setSede:(self.sede - aumento)];
     
+    //está ficando com fome
+    if(fome > 0){
+        if ((self.fome - fome) < 0) {
+            [self setFome:0];
+        }
+        else{
+            [self setFome:(self.fome - fome)];
+        }
+    }
+    //está perdendo a fome
+    else{
+        if ((self.fome + fome) >100) {
+            [self setFome:100];
+        }
+        else{
+            [self setFome:(self.fome + fome)];
+        }
+    }
 }
 
--(void)perderVida:(int)perda{
-    
-    [self setVida:(self.vida - perda)];
-    
+//Metodo que altera a Sede do jogador
+-(void)alterarSedeJogador: (int)sede
+{
+    //está ficando com sede
+    if(sede > 0){
+        if ((self.sede - sede) < 0) {
+            [self setSede:0];
+        }
+        else{
+            [self setSede:(self.sede - sede)];
+        }
+    }
+    //está perdendo a sede
+    else{
+        if ((self.sede + sede) > 100) {
+            [self setSede:100];
+        }
+        else{
+            [self setSede:(self.sede + sede)];
+        }
+    }
+}
+
+//Metodo que altera a Vida do jogador
+-(void)alterarVidaJogador: (int)vida
+{
+    //está ficando sem vida
+    if(vida > 0){
+        if ((self.vida - vida) < 0) {
+            [self setVida:0];
+        }
+        else{
+            [self setSede:(self.vida - vida)];
+        }
+    }
+    //está ganhando vida
+    else{
+        if ((self.vida + vida) > 100) {
+            [self setVida:100];
+        }
+        else{
+            [self setSede:(self.vida + vida)];
+        }
+    }
 }
 
 //Método para parar de andar
 -(void)pararAndar{
-    
+    self.andandoParaDirecao =@"";
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
+    
+    [self.controleSom pararSom];
 }
 
 //funcao para fazer o jogador escalar
 -(void)escalarParaDirecao:(NSString*)direcao{
     //se puder escalar
     if (self.podeEscalar) {
-        
-        
         SKAction *escalar=[[SKAction alloc]init];
         
         //Desliga a gravidade para o Node
@@ -268,7 +361,6 @@
         // verifica para qual direcao sera a escalada
         if ([direcao isEqualToString:@"C"]) {
             //Sobe
-            
             escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
             
         }else if([direcao isEqualToString:@"B"]){
@@ -302,12 +394,106 @@
     [self removeActionForKey:@"escalar"];
 }
 
-//funcao a fazer para ele interagir com pessoas e elementos do cenario
--(void)interagir{
+//funcao que atualiza o status da missao
+-(void)atualizarStatusMissao{
+    [self.controleMissoes atualizarCena:self.scene];
+    [self.controleMissoes colocarBalaoDeMissao];
+}
+
+//funcao a fazer para ele interagir com pessoas
+-(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas{
     
+    //Se nao estiver em missao
+    if (!self.controleMissoes.emMissao) {
+        //Senao esta iniciando uma nova  missao
+        if (![self.controleMissoes iniciarNovaMissaoNPC:nomeNPC]) {
+            //Cria uma caixa de fala com as falas de respeito e a adiciona na cena
+            NSString *keyDaParte = [NSString stringWithFormat:@"Respeito%i", (self.respeito/10)*10];
+            
+            SKSpriteNode *caixaDeFala =[controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:nil Tamanho:self.scene.size];
+            [self.scene addChild:caixaDeFala];
+        }
+    }
+    //Se esta em missao
+    if (self.controleMissoes.emMissao) {
+        NSString *keyDaParte;
+        NSString *missao = self.controleMissoes.missao.ID;
+        //Se é o NPC que passa a parte da missao
+        if ([self.controleMissoes passarParteMissao:nomeNPC inventario:[self.itens arrayItensJogador]]) {
+            //Cria a key de uma fala principal da missao
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual-1];
+            
+            [self entregarItem];
+            [self receberItem];
+            [self alterarEstados];
+            if(self.controleMissoes.parteAtual+1 >= self.controleMissoes.missao.quantidadeDePartes){
+                [self.controleMissoes fimDaMissao];
+            }
+            
+        }
+        //Se nao é o NPC que passa a parte da missao ou nao tem o item
+        else{
+            //Cria uma key de uma fala secundaria da missao
+            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual];
+        }
+        
+        //Cria a caixa de fala com as key obtidas e a adiciona na tela
+        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
+        
+        [self.scene addChild:caixaDeFala];
+    }
 }
 
 
+//Método chamado quando a missão descreve que um item deve ser entregue
+-(void)entregarItem{
+    NSMutableArray*itemsParaEntregar = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ItemEntregue"];
+    
+    for (int i = 0; i< itemsParaEntregar.count; i++) {
+        NSString *nomeItem = [[itemsParaEntregar objectAtIndex:i]objectForKey:@"Nome"];
+        int quantidade = [[[itemsParaEntregar objectAtIndex:i]objectForKey:@"Quantidade"]intValue];
+        
+        [self.itens entregarItem:nomeItem  quantidade:quantidade];
+    }
+}
 
+
+//Método chamado quando a missão descreve que um item deve ser recebido
+-(void)receberItem{
+    NSMutableArray*itemsParaReceber = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ItemRecebido"];
+    
+    for (int i = 0; i< itemsParaReceber.count; i++) {
+        NSString *nomeItem = [[itemsParaReceber objectAtIndex:i]objectForKey:@"Nome"];
+        int quantidade = [[[itemsParaReceber objectAtIndex:i]objectForKey:@"Quantidade"]intValue];
+        
+        [self.itens receberItem:nomeItem  quantidade:quantidade];
+    }
+    
+}
+
+//Metodo para alterar os estados do jogador em missao
+-(void)alterarEstados{
+
+    NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]];
+
+    //Ver se muda os estados
+    //fome
+    int fome = [[dicionario objectForKey:@"Fome"] intValue];
+    if(fome != 0){
+        [self alterarFomeJogador:fome];
+    }
+
+    //sede
+    int sede = [[dicionario objectForKey:@"Sede"] intValue];
+    if(sede != 0){
+        [self alterarSedeJogador:sede];
+    }
+
+    //vida
+    int vida = [[dicionario objectForKey:@"Vida"] intValue];
+    if(vida != 0){
+        [self alterarVidaJogador:vida];
+    }
+}
 
 @end

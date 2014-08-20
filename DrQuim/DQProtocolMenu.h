@@ -11,13 +11,14 @@
 
 @protocol DQProtocolMenu <NSObject>
 
-@property (nonatomic, readwrite) SEL seletorPausaSkScene;
 @property SKLabelNode *titulo;
 @property NSArray *opcoesMenu;
-@property int nItensLinha;
 @property int indexAtual;
 
+@optional
 -(id)initMenu;
+-(void)prepararExibicao;
+@required
 -(void)esconderMenu;
 
 @end

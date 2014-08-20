@@ -5,11 +5,12 @@
 	<key>MenuPrincipal</key>
 	<array>
 		<string>Itens</string>
+		<string>Armadilhas</string>
 		<string>Missões</string>
 		<string>Livro de Receitas</string>
 		<string>Configurações</string>
 	</array>
 	<key>Fonte</key>
-	<string>ArialMT</string>
+	<string>Noteworthy-Light</string>
 </dict>
 </plist>
