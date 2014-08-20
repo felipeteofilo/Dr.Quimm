@@ -21,6 +21,10 @@
 +(NSArray*)receitasConfiguradas{
     NSArray *arrayRetorno=[NSArray arrayWithContentsOfFile:[self pathArquivoReceitas]];
     
+    if([arrayRetorno count] == 0){
+        return nil;
+    }
+    
     return arrayRetorno;
 }
 
