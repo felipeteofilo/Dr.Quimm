@@ -458,7 +458,7 @@
 			<string>Andando</string>
 		</dict>
 		<key>PosInicialJogador</key>
-		<string>{12000, 900}</string>
+		<string>{100, 200}</string>
 		<key>Partes</key>
 		<array>
 			<dict>
