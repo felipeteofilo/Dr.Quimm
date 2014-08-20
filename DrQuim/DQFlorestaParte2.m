@@ -14,8 +14,6 @@
 {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:3];
-
-        [self iniciarFase];
     }
     return self;
 }
