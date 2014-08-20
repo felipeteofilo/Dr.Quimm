@@ -292,11 +292,11 @@
     }
     //está perdendo a fome
     else{
-        if ((self.fome + fome) >100) {
+        if ((self.fome -(fome)) >100) {
             [self setFome:100];
         }
         else{
-            [self setFome:(self.fome + fome)];
+            [self setFome:(self.fome -(fome))];
         }
     }
 }
@@ -315,11 +315,11 @@
     }
     //está perdendo a sede
     else{
-        if ((self.sede + sede) > 100) {
+        if ((self.sede -(sede)) > 100) {
             [self setSede:100];
         }
         else{
-            [self setSede:(self.sede + sede)];
+            [self setSede:(self.sede -(sede))];
         }
     }
 }
@@ -328,7 +328,7 @@
 -(void)alterarVidaJogador: (int)vida
 {
     //está ficando sem vida
-    if(vida > 0){
+    if(vida < 0){
         if ((self.vida - vida) < 0) {
             [self setVida:0];
         }
@@ -433,7 +433,7 @@
             [self entregarItem];
             [self receberItem];
             [self alterarEstados];
-            if(self.controleMissoes.parteAtual+1 >= self.controleMissoes.missao.quantidadeDePartes){
+            if(self.controleMissoes.parteAtual+1 > self.controleMissoes.missao.quantidadeDePartes){
                 [self.controleMissoes fimDaMissao];
             }
             

@@ -44,10 +44,11 @@
     
 }
 -(void)listarMissoesJogador{
-    NSMutableArray *missoesJogador=[NSMutableArray arrayWithArray:[DQReferenciaMissaoJogador arquivoPlist:[DQReferenciaMissaoJogador pathArquivoMissoesJogador]]];
+    NSMutableArray *missoesJogador= [[NSMutableArray alloc]init];
+    DQJogador * jogador = [DQJogador sharedJogador];
+    [missoesJogador addObject:jogador.controleMissoes.missao];
     
-    //Remove a missao 0 - Sem missao
-    [missoesJogador removeObjectAtIndex:0];
+    
     
     self.opcoesMenu=missoesJogador;
 }
@@ -57,7 +58,7 @@
     for (int i=0; i< [self.opcoesMenu count]; i++) {
         
         //Diminuir o tamanho do nome p facilitar
-        NSString *titulo = [[self.opcoesMenu objectAtIndex:i]objectForKey:@"Nome"];
+        NSString *titulo = [[self.opcoesMenu objectAtIndex:i]nome] ;
         NSArray *array = [titulo componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"-"]];
         titulo=[array objectAtIndex:1];
         
@@ -65,7 +66,7 @@
         [opcaoMenu setAnchorPoint:CGPointMake(0.5, 0)];
         [opcaoMenu setPosition:CGPointMake(CGRectGetMidX(self.frame),self.frame.size.height - ultimoY)];
         
-        [opcaoMenu configuraConteudoQuest:(NSMutableDictionary*)[DQReferenciaMissaoJogador detalharMissaoAtual:i+1]index:i];
+       
         
         [opcaoMenu setName:@"Missao"];
         
@@ -82,9 +83,7 @@
     
     for(int i=0;i<[arrayNodes count];i++){
         if ([[arrayNodes objectAtIndex:i]isKindOfClass:[DQOpcaoMenu class]]) {
-            DQOpcaoMenu *opcaoTocada=[arrayNodes objectAtIndex:i];
-            
-            [self detalharQuest:opcaoTocada.conteudo.userData];
+            [self detalharQuest];
             i= (int)[arrayNodes count];
             
         }
@@ -109,22 +108,30 @@
     return;
 }
 
--(void)detalharQuest:(NSDictionary*)missao{
+-(void)detalharQuest{
     self.detalheQuest=[SKSpriteNode spriteNodeWithImageNamed:@"FundoQuestDetalhe"];
     [self.detalheQuest setName:@"DetalheQuest"];
     [self.detalheQuest setAlpha:1.0f];
     
     CGSize sizeNome=CGSizeMake(self.detalheQuest.frame.size.width-80, 100);
-    DQTexto *nome=[[DQTexto alloc]initTexto:[missao objectForKey:@"Nome"] espacoLimite:sizeNome fonte:45.5f];
+    
+    DQJogador * jogador = [DQJogador sharedJogador];
+    
+    NSString *nomeMissao = jogador.controleMissoes.missao.nome;
+    NSString *objetivo = [[jogador.controleMissoes.missao.arrayPartes objectAtIndex:jogador.controleMissoes.parteAtual]objectForKey:@"Descricao"];
+    NSString *recompensaMissao = jogador.controleMissoes.missao.recompensa;
+    NSNumber *respeitoGanhar=[NSNumber numberWithInt:jogador.controleMissoes.missao.respeito];
+    
+    DQTexto *nome=[[DQTexto alloc]initTexto:nomeMissao espacoLimite:sizeNome fonte:45.5f];
     [nome setAnchorPoint:CGPointMake(0, 1)];
     
     CGSize sizeObjetivoAtual=CGSizeMake(sizeNome.width, 500);
-    DQTexto *objectivoAtual=[[DQTexto alloc]initTexto:[NSString stringWithFormat:@"Objetivo Atual: %@",[missao objectForKey:@"Objetivo Atual"]] espacoLimite:sizeObjetivoAtual fonte:35.0f];
+    DQTexto *objectivoAtual=[[DQTexto alloc]initTexto:[NSString stringWithFormat:@"Objetivo Atual: %@",objetivo]  espacoLimite:sizeObjetivoAtual fonte:35.0f];
     
     CGSize sizeRecompensa=CGSizeMake(sizeObjetivoAtual.width, 50);
-    DQTexto *recompensa=[[DQTexto alloc]initTexto:[NSString stringWithFormat:@"Recompensa: %@",[missao objectForKey:@"Recompensa"]] espacoLimite:sizeRecompensa fonte:30.0f];
+    DQTexto *recompensa=[[DQTexto alloc]initTexto:[NSString stringWithFormat:@"Recompensa: %@",recompensaMissao] espacoLimite:sizeRecompensa fonte:30.0f];
     
-    NSNumber *respeitoGanhar=[missao objectForKey:@"Respeito"];
+    
     
     CGSize sizeRespeito=CGSizeMake(sizeNome.width, 50);
     DQTexto *respeito=[[DQTexto alloc]initTexto:[NSString stringWithFormat:@"Respeito: +%i",[respeitoGanhar intValue]] espacoLimite:sizeRespeito fonte:30.0f];
