@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Nome</key>
+		<string>Líquido amarelo</string>
+		<key>Descricao</key>
+		<string>Uma mistura amarela que possúi Iodeto de Chumbo e Nitrato de Potássio</string>
+		<key>Imagem</key>
+		<string>LiquidoAmarelo</string>
+		<key>Ingredientes</key>
+		<array>
+			<string>Nitrato de Chumbo</string>
+			<string>Iodeto de Potássio</string>
+		</array>
+		<key>Resultado</key>
+		<array>
+			<dict>
+				<key>Nome</key>
+				<string>Nitrato de Potássio</string>
+				<key>Formula</key>
+				<string>KNO3</string>
+				<key>Elementos</key>
+				<array>
+					<string>K</string>
+					<string>N</string>
+					<string>O</string>
+					<string>O</string>
+					<string>O</string>
+				</array>
+			</dict>
+			<dict>
+				<key>Nome</key>
+				<string>Nitrato de Potássio</string>
+				<key>Formula</key>
+				<string>KNO3</string>
+				<key>Elementos</key>
+				<array>
+					<string>K</string>
+					<string>N</string>
+					<string>O</string>
+					<string>O</string>
+					<string>O</string>
+				</array>
+			</dict>
+			<dict>
+				<key>Nome</key>
+				<string>Iodeto de Chumbo</string>
+				<key>Formula</key>
+				<string>PbI2</string>
+				<key>Elementos</key>
+				<array>
+					<string>Pb</string>
+					<string>I</string>
+					<string>I</string>
+				</array>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

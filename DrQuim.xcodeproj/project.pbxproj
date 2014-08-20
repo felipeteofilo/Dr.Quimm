@@ -171,6 +171,14 @@
 		C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */; };
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
 		C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */; };
+		CD54D9AB19A51E4E00C2798D /* DQAmostraQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */; };
+		CD54D9AC19A51E4E00C2798D /* DQControleReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A219A51E4E00C2798D /* DQControleReceita.m */; };
+		CD54D9AD19A51E4E00C2798D /* DQMaletaQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A419A51E4E00C2798D /* DQMaletaQuimica.m */; };
+		CD54D9AE19A51E4E00C2798D /* DQReceitaQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A619A51E4E00C2798D /* DQReceitaQuimica.m */; };
+		CD54D9AF19A51E4E00C2798D /* DQTransformacaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A819A51E4E00C2798D /* DQTransformacaoControle.m */; };
+		CD54D9B019A51E4E00C2798D /* DQTransformacaoTela.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9AA19A51E4E00C2798D /* DQTransformacaoTela.m */; };
+		CD616FE119A51D8700B5C63A /* AmostrasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD616FDF19A51D8700B5C63A /* AmostrasQuimicas.plist */; };
+		CD616FE219A51D8700B5C63A /* ReceitasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD616FE019A51D8700B5C63A /* ReceitasQuimicas.plist */; };
 		CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */; };
 		CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC48AD11992A11400588E79 /* DQCutsceneTela.m */; };
 		CDE817F31933C790003516E7 /* DQJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE817F21933C790003516E7 /* DQJogador.m */; };
@@ -402,6 +410,20 @@
 		C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
 		C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
 		C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
+		CD54D99F19A51E4E00C2798D /* DQAmostraQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAmostraQuimica.h; sourceTree = "<group>"; };
+		CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAmostraQuimica.m; sourceTree = "<group>"; };
+		CD54D9A119A51E4E00C2798D /* DQControleReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleReceita.h; sourceTree = "<group>"; };
+		CD54D9A219A51E4E00C2798D /* DQControleReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleReceita.m; sourceTree = "<group>"; };
+		CD54D9A319A51E4E00C2798D /* DQMaletaQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMaletaQuimica.h; sourceTree = "<group>"; };
+		CD54D9A419A51E4E00C2798D /* DQMaletaQuimica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMaletaQuimica.m; sourceTree = "<group>"; };
+		CD54D9A519A51E4E00C2798D /* DQReceitaQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQReceitaQuimica.h; sourceTree = "<group>"; };
+		CD54D9A619A51E4E00C2798D /* DQReceitaQuimica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQReceitaQuimica.m; sourceTree = "<group>"; };
+		CD54D9A719A51E4E00C2798D /* DQTransformacaoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTransformacaoControle.h; sourceTree = "<group>"; };
+		CD54D9A819A51E4E00C2798D /* DQTransformacaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTransformacaoControle.m; sourceTree = "<group>"; };
+		CD54D9A919A51E4E00C2798D /* DQTransformacaoTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTransformacaoTela.h; sourceTree = "<group>"; };
+		CD54D9AA19A51E4E00C2798D /* DQTransformacaoTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTransformacaoTela.m; sourceTree = "<group>"; };
+		CD616FDF19A51D8700B5C63A /* AmostrasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AmostrasQuimicas.plist; path = "Arquivos Plist/AmostrasQuimicas.plist"; sourceTree = "<group>"; };
+		CD616FE019A51D8700B5C63A /* ReceitasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReceitasQuimicas.plist; path = "Arquivos Plist/ReceitasQuimicas.plist"; sourceTree = "<group>"; };
 		CDC48ACD1992A0C800588E79 /* DQFalasNoJogoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFalasNoJogoControle.h; sourceTree = "<group>"; };
 		CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFalasNoJogoControle.m; sourceTree = "<group>"; };
 		CDC48AD01992A11400588E79 /* DQCutsceneTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCutsceneTela.h; sourceTree = "<group>"; };
@@ -438,6 +460,8 @@
 		2323166F1947BCAB0002FB1D /* Arquvos XML */ = {
 			isa = PBXGroup;
 			children = (
+				CD616FDF19A51D8700B5C63A /* AmostrasQuimicas.plist */,
+				CD616FE019A51D8700B5C63A /* ReceitasQuimicas.plist */,
 				943710C619A3E31100B8846E /* ArmadilhasReferencia.plist */,
 				948819751990218400609A0F /* FalasCutScene.plist */,
 				9488196319901A6D00609A0F /* FalasNoJogo.plist */,
@@ -510,6 +534,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				CD616FE319A51DA800B5C63A /* Transformacoes */,
 				CDC48AC919929F4A00588E79 /* _temp novas classes */,
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
 				C57D7C2A1964E3A100EF94C9 /* Controladores */,
@@ -877,6 +902,25 @@
 			name = Fase1;
 			sourceTree = "<group>";
 		};
+		CD616FE319A51DA800B5C63A /* Transformacoes */ = {
+			isa = PBXGroup;
+			children = (
+				CD54D99F19A51E4E00C2798D /* DQAmostraQuimica.h */,
+				CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */,
+				CD54D9A119A51E4E00C2798D /* DQControleReceita.h */,
+				CD54D9A219A51E4E00C2798D /* DQControleReceita.m */,
+				CD54D9A319A51E4E00C2798D /* DQMaletaQuimica.h */,
+				CD54D9A419A51E4E00C2798D /* DQMaletaQuimica.m */,
+				CD54D9A519A51E4E00C2798D /* DQReceitaQuimica.h */,
+				CD54D9A619A51E4E00C2798D /* DQReceitaQuimica.m */,
+				CD54D9A719A51E4E00C2798D /* DQTransformacaoControle.h */,
+				CD54D9A819A51E4E00C2798D /* DQTransformacaoControle.m */,
+				CD54D9A919A51E4E00C2798D /* DQTransformacaoTela.h */,
+				CD54D9AA19A51E4E00C2798D /* DQTransformacaoTela.m */,
+			);
+			name = Transformacoes;
+			sourceTree = "<group>";
+		};
 		CDB3FA4C194BA61D0099CF6C /* SKScenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1046,7 @@
 				C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				9488196A19901A6D00609A0F /* ConfigMenu.plist in Resources */,
+				CD616FE119A51D8700B5C63A /* AmostrasQuimicas.plist in Resources */,
 				9488196D19901A6D00609A0F /* ItensReferencia.plist in Resources */,
 				C552650219A24A5B00BD59CE /* MusicaFundo03.mp3 in Resources */,
 				9488197019901A6D00609A0F /* Receitas.plist in Resources */,
@@ -1023,6 +1068,7 @@
 				C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				943710C719A3E31100B8846E /* ArmadilhasReferencia.plist in Resources */,
+				CD616FE219A51D8700B5C63A /* ReceitasQuimicas.plist in Resources */,
 				94080EBE1933BA290024FB94 /* Images.xcassets in Resources */,
 				C58F75FB19A4F20B00DC7A71 /* Fase3_Parte24.png in Resources */,
 				C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */,
@@ -1117,12 +1163,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD54D9AE19A51E4E00C2798D /* DQReceitaQuimica.m in Sources */,
 				C52FBF2C19A197450059E973 /* DQControleSom.m in Sources */,
 				943710B719A3DEF300B8846E /* DQArmadilhaAnimacao.m in Sources */,
 				7560591019955F9C00BD455A /* DQMissao.m in Sources */,
 				C52FBF1B19A18D0A0059E973 /* DQAnimalToupeira.m in Sources */,
+				CD54D9AD19A51E4E00C2798D /* DQMaletaQuimica.m in Sources */,
 				C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */,
 				23A538E9196C6E9E00821BAF /* DQnpc.m in Sources */,
+				CD54D9AB19A51E4E00C2798D /* DQAmostraQuimica.m in Sources */,
 				94A8681C1999683800604BA4 /* DQContadorGeiger.m in Sources */,
 				C52FBF2119A18D220059E973 /* DQUteis.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
@@ -1138,6 +1187,7 @@
 				C54031E61989FE98003384AB /* DQMenuItem.m in Sources */,
 				943710C019A3DF3600B8846E /* DQMenuArmadilhas.m in Sources */,
 				C52FBF1E19A18D160059E973 /* DQIsca.m in Sources */,
+				CD54D9AC19A51E4E00C2798D /* DQControleReceita.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
 				C54031E11989FE98003384AB /* DQConfigMenu.m in Sources */,
 				C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */,
@@ -1145,6 +1195,7 @@
 				C54031E71989FE98003384AB /* DQMenuQuest.m in Sources */,
 				C54031E51989FE98003384AB /* DQMenuConfiguracao.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
+				CD54D9B019A51E4E00C2798D /* DQTransformacaoTela.m in Sources */,
 				C54031EB1989FE98003384AB /* DQTexto.m in Sources */,
 				C54031E31989FE98003384AB /* DQControleReceita.m in Sources */,
 				C54031E41989FE98003384AB /* DQMenu.m in Sources */,
@@ -1152,6 +1203,7 @@
 				C54031E81989FE98003384AB /* DQMenuReceita.m in Sources */,
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
 				3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */,
+				CD54D9AF19A51E4E00C2798D /* DQTransformacaoControle.m in Sources */,
 				755876FF199AB5E40084E5AC /* DQCutsceneControle.m in Sources */,
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
 				C52FBF1819A18D0A0059E973 /* DQAnimal.m in Sources */,
