@@ -35,21 +35,18 @@
         [[self childNodeWithName:@"CenaCutScene"]removeFromParent];
     }
     
+    //Remove os sons anteriores
+    [self.controleSomScene removeAllActions];
+    
     NSString *nomeSomCenaCutScene=[self.controleCutScene somCenaCutScene];
     
-    if([nomeSomCenaCutScene isEqualToString:@"REMOVERSOM"]){
-        //Que deus me perdoe por essa gambiarra
-        [self.controleSomScene.playerMusicaFundo stop];
-        [self.controleSomScene removeActionForKey:@"tocandoSom"];
-        
-    }else if ([nomeSomCenaCutScene length]!=0){
+    if ([nomeSomCenaCutScene length]!=0){
         //Remove o som anteriores
         [self.controleSomScene removeActionForKey:@"tocandoSom"];
-        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene]];
+        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene nLoops:-1]];
         
-    }else{
-        //Remove o som anteriores para nao ficar tocando o som anterior
-        [self.controleSomScene removeActionForKey:@"tocandoSom"];
+    }else if ([nomeSomCenaCutScene isEqualToString:@"REMOVERSOM"]){
+        [self.controleSomScene.playerMusicaFundo stop];
     }
     
     

@@ -44,9 +44,8 @@
         
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
-        
-        
-        
+        self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
+        [self addChild:self.controleSom];
     }
     
     //retorna o jogador
@@ -188,7 +187,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 175)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, 185)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -236,6 +235,9 @@
         
         //anda para direcao
         [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+        
+        //adicionado som
+        [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
     }
 }
 
@@ -343,6 +345,8 @@
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
+    
+    [self.controleSom pararSom];
 }
 
 //funcao para fazer o jogador escalar

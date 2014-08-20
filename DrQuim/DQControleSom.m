@@ -10,23 +10,42 @@
 @implementation DQControleSom
 
 -(void)tocarSom{
-    NSLog(@"passou pelo tocar som puro");
-     [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
+    [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
 }
 
 -(void)tocarSom:(AVAudioPlayer*)player{
     SKAction *playAction = [SKAction runBlock:^{
         [player play];
     }];
-
     
-    SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
-    SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+    //Faz com que a execução das actions atrasem p dar tempo de sair o som
+    SKAction *waitAction = [SKAction waitForDuration:player.duration];
     
-    [self runAction:sequence withKey:@"tocandoSom"];
+    //Chama o play e o atraso
+    SKAction *sequence = [SKAction sequence:@[playAction,waitAction]];
 
+    [self runAction:sequence completion:^{
+        [self removeAllActions];
+    }];
 }
 
+-(void)tocarSomLooping:(AVAudioPlayer*)player{
+    SKAction *playAction = [SKAction runBlock:^{
+        [player play];
+    }];
+    
+    //Faz com que a execução das actions atrasem p dar tempo de sair o som
+    SKAction *waitAction = [SKAction waitForDuration:player.duration];
+    
+    //Chama o play e o atraso
+    SKAction *sequence = [SKAction sequence:@[playAction,waitAction]];
+
+    [self runAction:sequence withKey:@"tocandoSom"];
+}
+
+-(void)pararSom{
+    [self removeActionForKey:@"tocandoSom"];
+}
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar{
     NSError *error;
     NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
@@ -39,6 +58,17 @@
     return player;
 }
 
+-(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar nLoops:(int)nLoops{
+    NSError *error;
+    NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlSom error:&error];
+    
+    [player setVolume:[DQControleUserDefalts volumeSons]];
+    [player prepareToPlay];
+    [player setNumberOfLoops:nLoops];
+    
+    return player;
+}
 //Passa o nome do objeto que recebera o controle de som para configurar os sons especificos
 -(id)initControleSom:(TipoObjeto)objetoControlado;{
     if (self=[super init]) {
@@ -49,22 +79,18 @@
 }
 
 -(void)configurarListaSons{
-    if (self.tipoObjeto==NPC) {
+    if (self.tipoObjeto==NPC || self.tipoObjeto==Jogador) {
         NSArray *sonsdisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Pequena-1",@"FalaPersonagens-Pequena-2",@"FalaPersonagens-Grande-1",@"FalaPersonagens-Media-1",@"FalaPersonagens-Media-2", nil];
         
         NSMutableArray *arraySons=[NSMutableArray array];
         
         int valorSorteado;
-
+        
         for (int i=0; i<3; i++) {
             valorSorteado=arc4random()%[sonsdisponiveis count]-1;
             [arraySons addObject:[sonsdisponiveis objectAtIndex:valorSorteado]];
         }
     }
-}
-
--(void)pararSom{
-    [self removeAllActions];
 }
 
 -(void)proxSom{

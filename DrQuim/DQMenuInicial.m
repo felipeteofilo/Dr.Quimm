@@ -66,7 +66,7 @@
     if ([nodeTocado.name isEqualToString:@"teste"]) {
         [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
         [DQControleUserDefalts setRodouCutSceneFase:2 Valor:NO];
-        [DQControleUserDefalts setFaseAtual:2];
+        [DQControleUserDefalts setFaseAtual:1];
     }
 }
 
