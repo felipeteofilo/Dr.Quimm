@@ -13,6 +13,9 @@
     [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
 }
 
+-(void)tocarSomAleatorio{
+    
+}
 -(void)tocarSom:(AVAudioPlayer*)player{
     SKAction *playAction = [SKAction runBlock:^{
         [player play];
@@ -90,6 +93,8 @@
             valorSorteado=arc4random()%[sonsdisponiveis count]-1;
             [arraySons addObject:[sonsdisponiveis objectAtIndex:valorSorteado]];
         }
+        
+        self.listaSons=arraySons;
     }
 }
 
