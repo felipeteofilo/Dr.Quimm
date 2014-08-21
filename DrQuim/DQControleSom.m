@@ -98,6 +98,24 @@
     }
 }
 
+-(NSString*)somFala:(TamanhoTexto)tamanhoFala{
+    NSArray *sonsDisponiveis;
+    
+    if (tamanhoFala==Pequeno) {
+        sonsDisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Pequena-1",@"FalaPersonagens-Pequena-2",nil];
+    }else if (tamanhoFala==Medio){
+        sonsDisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Media-1",@"FalaPersonagens-Media-2",nil];
+    }else{
+        sonsDisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Grande-1",@"FalaPersonagens-Grande-2",nil];
+    }
+    
+    int valorSorteado=(arc4random()%[sonsDisponiveis count]);
+    
+    NSLog(@"valor sorteado :%i",valorSorteado);
+    return [sonsDisponiveis objectAtIndex:valorSorteado];
+}
+
+
 -(void)proxSom{
     if (self.indiceSomTocar < ([self.listaSons count]-1)) {
         self.indiceSomTocar ++;

@@ -165,6 +165,7 @@
 		C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D2A699196A535800F3B7C4 /* Fase1_Parte6.png */; };
 		C5D2A6A3196A535800F3B7C4 /* Fase1_Parte7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D2A69A196A535800F3B7C4 /* Fase1_Parte7.png */; };
 		C5D2A6A4196A535800F3B7C4 /* Fase1_Parte8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */; };
+		C5DB265219A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5DB265119A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 */; };
 		C5E1F40D198AD0A300F7A320 /* itens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40B198AD0A300F7A320 /* itens.atlas */; };
 		C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */; };
 		C5E1F417198B223800F7A320 /* Menu.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F416198B223800F7A320 /* Menu.atlas */; };
@@ -414,6 +415,7 @@
 		C5D2A699196A535800F3B7C4 /* Fase1_Parte6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte6.png; path = MapaFundo/Fase1/Fase1_Parte6.png; sourceTree = "<group>"; };
 		C5D2A69A196A535800F3B7C4 /* Fase1_Parte7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte7.png; path = MapaFundo/Fase1/Fase1_Parte7.png; sourceTree = "<group>"; };
 		C5D2A69B196A535800F3B7C4 /* Fase1_Parte8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fase1_Parte8.png; path = MapaFundo/Fase1/Fase1_Parte8.png; sourceTree = "<group>"; };
+		C5DB265119A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Grande-2.mp3"; sourceTree = "<group>"; };
 		C5E1F40B198AD0A300F7A320 /* itens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = itens.atlas; sourceTree = "<group>"; };
 		C5E1F413198AECC800F7A320 /* DQControleUserDefalts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleUserDefalts.h; sourceTree = "<group>"; };
 		C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleUserDefalts.m; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 		943710A619A3CE8600B8846E /* NPCs */ = {
 			isa = PBXGroup;
 			children = (
+				C5DB265119A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 */,
 				943710A719A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 */,
 				943710A819A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 */,
 				943710A919A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 */,
@@ -699,7 +702,6 @@
 			children = (
 				CD54D9B119A51F7700C2798D /* Transformacoes */,
 				943710C119A3E04000B8846E /* Armadilhas */,
-				943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */,
 				C52FBF2319A18D790059E973 /* Animais */,
 				C55CE5C1199BBAAF00375C87 /* Tutoriais */,
 				C55CE57C199B9D0000375C87 /* BalaoMissao.atlas */,
@@ -715,6 +717,7 @@
 				23BFADBC1966E4FB00691C04 /* setinhas.png */,
 				23BFA4A9196A3CC700AD5F0C /* icon.png */,
 				C51125911973AB6000CECCAD /* FundoHUD.png */,
+				943710B319A3CF5F00B8846E /* ImagemInicioJogo.png */,
 			);
 			path = Imagens;
 			sourceTree = "<group>";
@@ -1192,6 +1195,7 @@
 				3CAC84291979F63D000FB1A1 /* ParadoDr.atlas in Resources */,
 				C58F75BF19A4EB9A00DC7A71 /* Passo.mp3 in Resources */,
 				C58F75FA19A4F20B00DC7A71 /* Fase3_Parte23.png in Resources */,
+				C5DB265219A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 in Resources */,
 				C58F75C719A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 in Resources */,
 				C58F75F719A4F20B00DC7A71 /* Fase3_Parte20.png in Resources */,
 				C5D2A69F196A535800F3B7C4 /* Fase1_Parte4_Coberta.png in Resources */,

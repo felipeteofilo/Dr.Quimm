@@ -17,6 +17,12 @@ typedef NS_ENUM(int, TipoObjeto){
     NPC=3,
 };
 
+typedef NS_ENUM(int, TamanhoTexto){
+    Pequeno=1,
+    Medio=2,
+    Grande=3,
+};
+
 @interface DQControleSom : SKNode
 
 @property AVAudioPlayer *playerSom;
@@ -34,4 +40,5 @@ typedef NS_ENUM(int, TipoObjeto){
 -(void)tocarSomLista;
 -(void)tocarSomLooping:(AVAudioPlayer*)player;
 -(void)pararSom;
+-(NSString*)somFala:(TamanhoTexto)tamanhoFala;
 @end

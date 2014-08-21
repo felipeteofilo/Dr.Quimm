@@ -208,8 +208,7 @@
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
-        
-        
+
         //variavel SKAction- define a direcao do movimento
         SKAction *movimentar =[[SKAction alloc]init];
         
@@ -248,8 +247,10 @@
         //anda para direcao
         [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
         
-        //adicionado som
-        [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
+        if (self.estaNoChao) {
+            //adicionado som
+            [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
+        }
     }
 }
 
@@ -339,6 +340,8 @@
         else{
             [self setSede:(self.vida - vida)];
         }
+        
+        [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:@"somPerdeuVida"]];
     }
     //está ganhando vida
     else{

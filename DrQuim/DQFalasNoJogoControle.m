@@ -76,6 +76,16 @@
     [self.caixaDeFala setPosition:CGPointMake(tamanho.width*0.1, tamanho.height *0.75)];
     [self.caixaDeFala setName:@"falasDoJogo"];
     
+    
+    //Cria o controlador de som
+    DQControleSom *controleSom=[[DQControleSom alloc]initControleSom:NPC];
+    
+    //Verifica qual a duracao do som da fala a ser tocado
+    [controleSom tocarSom:[controleSom configuraPlayerSom:[controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
+    
+    //Adiciona o controlador de Som á caixa de falas
+    [self.caixaDeFala addChild:controleSom];
+    
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
 }
@@ -96,6 +106,5 @@
 
 -(void)configurarControleSom{
     self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
-
 }
 @end
