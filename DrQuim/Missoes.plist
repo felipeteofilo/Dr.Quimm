@@ -258,7 +258,7 @@
 		<key>Nome</key>
 		<string>Missão 02 - Recuperando a maleta</string>
 		<key>Recompensa</key>
-		<string></string>
+		<string>Maleta do Dr.Quimm</string>
 		<key>Disparador</key>
 		<string>Quimm</string>
 		<key>Respeito</key>
@@ -273,9 +273,11 @@
 				<key>NPCRequisito</key>
 				<string>Quimm</string>
 				<key>ItemRequisito</key>
-				<string></string>
+				<array/>
 				<key>ItemRecebido</key>
-				<string>ContadorGeiger</string>
+				<array>
+					<string>ContadorGeiger</string>
+				</array>
 				<key>ItemEntregue</key>
 				<string></string>
 				<key>Fome</key>
@@ -293,9 +295,9 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -311,9 +313,9 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -329,9 +331,9 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -347,9 +349,11 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string>MaletaDoDrQuimm</string>
+				<array>
+					<string>MaletaDoDrQuimm</string>
+				</array>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -365,9 +369,11 @@
 				<key>ItemRequisito</key>
 				<string>MaletaDoDrQuimm</string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string>MaletaDoDrQuimm</string>
+				<array>
+					<string>MaletaDoDrQuimm</string>
+				</array>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
