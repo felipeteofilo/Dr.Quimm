@@ -20,5 +20,5 @@
 @property NSMutableArray *npcs;
 
 //Usado para definir se irá apresentar a cena da bronca ou não
-@property BOOL apresentaCenaBronca;
+@property BOOL apresentouCenaBronca;
 @end

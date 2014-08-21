@@ -57,5 +57,13 @@
     [self.view presentScene:cenaBronca];
 }
 
-
+-(void)update:(NSTimeInterval)currentTime{
+    [super update:currentTime];
+    
+    if ((!self.apresentouCenaBronca) && ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missão 02"])&&(self.jogador.controleMissoes.parteAtual==5)) {
+        
+        self.apresentouCenaBronca=YES;
+        [self apresentouCenaBronca];
+    }
+}
 @end
