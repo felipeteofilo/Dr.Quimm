@@ -66,7 +66,7 @@
         [self apresentouCenaBronca];
     }
     
-    if (self.mostrandoContador) {
+    if (!self.mostrandoContador) {
         
         if([self.jogador estaComContadorGeiger]){
             //tem nao esconde
