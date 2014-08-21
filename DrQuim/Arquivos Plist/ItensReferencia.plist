@@ -82,7 +82,7 @@
 		<key>categoria</key>
 		<string>Item de Missão</string>
 		<key>imagem</key>
-		<string></string>
+		<string>ContadorGeiger</string>
 	</dict>
 	<key>Maleta do Dr. Quimm</key>
 	<dict>

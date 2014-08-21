@@ -448,7 +448,7 @@
         //Se nao é o NPC que passa a parte da missao ou nao tem o item
         else{
             //Cria uma key de uma fala secundaria da missao
-            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual];
+            keyDaParte = [NSString stringWithFormat:@"Parte%iR", self.controleMissoes.parteAtual];
         }
         
         //Cria a caixa de fala com as key obtidas e a adiciona na tela

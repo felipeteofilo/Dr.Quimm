@@ -273,13 +273,18 @@
 				<key>NPCRequisito</key>
 				<string>Quimm</string>
 				<key>ItemRequisito</key>
-				<array/>
+				<string></string>
 				<key>ItemRecebido</key>
 				<array>
-					<string>ContadorGeiger</string>
+					<dict>
+						<key>Nome</key>
+						<string>Contador Geiger</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
 				</array>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -350,7 +355,12 @@
 				<string></string>
 				<key>ItemRecebido</key>
 				<array>
-					<string>MaletaDoDrQuimm</string>
+					<dict>
+						<key>Nome</key>
+						<string>MaletaDoDrQuimm</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
 				</array>
 				<key>ItemEntregue</key>
 				<array/>
@@ -372,7 +382,12 @@
 				<array/>
 				<key>ItemEntregue</key>
 				<array>
-					<string>MaletaDoDrQuimm</string>
+					<dict>
+						<key>Nome</key>
+						<string>MaletaDoDrQuimm</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
 				</array>
 				<key>Fome</key>
 				<integer>0</integer>
