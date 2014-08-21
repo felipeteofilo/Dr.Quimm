@@ -632,7 +632,9 @@
 			</dict>
 			<dict>
 				<key>Animais</key>
-				<array/>
+				<array>
+					<string>Leopardinho</string>
+				</array>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
