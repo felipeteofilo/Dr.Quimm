@@ -48,7 +48,7 @@
         [self addChild:self.controleSom];
         
         self.distAndar=100;
-        self.impulsoPulo=200;
+        self.impulsoPulo=210;
     }
     
     //retorna o jogador

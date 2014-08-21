@@ -21,7 +21,7 @@
 			<string>AndandoDr</string>
 		</dict>
 		<key>PosInicialJogador</key>
-		<string>{400, 600}</string>
+		<string>{2200, 600}</string>
 		<key>Partes</key>
 		<array>
 			<dict>
@@ -52,9 +52,9 @@
 					<string>{0, 0}</string>
 					<string>{0, 480}</string>
 					<string>{124, 480}</string>
-					<string>{124, 564}</string>
-					<string>{340, 567}</string>
-					<string>{340, 653}</string>
+					<string>{124, 560}</string>
+					<string>{350, 567}</string>
+					<string>{350, 653}</string>
 					<string>{637, 657}</string>
 					<string>{643, 283}</string>
 					<string>{827, 108}</string>
@@ -65,8 +65,8 @@
 				<array>
 					<array>
 						<string>{866, 727}</string>
-						<string>{866, 772}</string>
-						<string>{1023, 773}</string>
+						<string>{866, 765}</string>
+						<string>{1023, 765}</string>
 						<string>{1023, 725}</string>
 					</array>
 				</array>
@@ -78,8 +78,8 @@
 					<string>{0, 110}</string>
 					<string>{300, 105}</string>
 					<string>{300, 210}</string>
-					<string>{530, 211}</string>
-					<string>{530, 304}</string>
+					<string>{550, 211}</string>
+					<string>{550, 304}</string>
 					<string>{769, 313}</string>
 					<string>{765, 924}</string>
 					<string>{1023, 927}</string>
@@ -89,8 +89,8 @@
 				<array>
 					<array>
 						<string>{0, 725}</string>
-						<string>{0, 773}</string>
-						<string>{80, 773}</string>
+						<string>{0, 765}</string>
+						<string>{80, 765}</string>
 						<string>{80, 725}</string>
 					</array>
 					<array>
