@@ -39,7 +39,7 @@
 		<key>Nome</key>
 		<string>Missão 01 - Ajudando a mãe de todos</string>
 		<key>Recompensa</key>
-		<string>Lança</string>
+		<string>Armadilha Simples</string>
 		<key>Disparador</key>
 		<string>Maedetodos</string>
 		<key>Respeito</key>
@@ -224,15 +224,12 @@
 				<integer>0</integer>
 			</dict>
 			<dict>
-				<key>ItemRecebido</key>
+				<key>ArmadilhasEntregue</key>
 				<array>
-					<dict>
-						<key>Nome</key>
-						<string>Lança</string>
-						<key>Quantidade</key>
-						<integer>1</integer>
-					</dict>
+					<string>ArmadilhaSimples</string>
 				</array>
+				<key>ItemRecebido</key>
+				<array/>
 				<key>Descricao</key>
 				<string>Enfim, a caça de hoje! Entregue para mãe de todos e elá poderá fazer o jantar</string>
 				<key>NPCRequisito</key>

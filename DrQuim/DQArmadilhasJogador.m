@@ -26,7 +26,7 @@
         //dicionario
         self.dicionarioDeArmadilhasReferencia = [[NSMutableDictionary alloc]initWithContentsOfFile:urlItensReferencia];
         
-        [self receberArmadilha:@"ArmadilhaSimples"];
+        //[self receberArmadilha:@"ArmadilhaSimples"];
         
         
     }
