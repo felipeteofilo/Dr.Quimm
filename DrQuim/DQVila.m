@@ -50,4 +50,12 @@
         [self.mundo addChild:npc];
     }
 }
+
+-(void)apresentarCenaBronca{
+    DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
+    
+    [self.view presentScene:cenaBronca];
+}
+
+
 @end

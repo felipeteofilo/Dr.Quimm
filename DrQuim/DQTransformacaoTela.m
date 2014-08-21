@@ -10,8 +10,38 @@
 
 @implementation DQTransformacaoTela
 
--(id)initWithSize:(CGSize)size {
+//-(id)initWithSize:(CGSize)size {
+//    if (self = [super initWithSize:size]) {
+//        //inicia mostrando a maleta
+//        self.transformacaoControle = [[DQTransformacaoControle alloc]initComTamanho:self.frame.size];
+//        
+//        //dicionario da receita
+//        self.urlReceitas = [[NSBundle mainBundle] pathForResource:@"ReceitasQuimicas" ofType:@"plist"];
+//        self.arrayReceitas = [[NSArray alloc] initWithContentsOfFile:self.urlReceitas];
+//        self.dicionarioReceitaAtual = [[NSDictionary alloc] initWithDictionary:[self.arrayReceitas objectAtIndex:0]];
+//        
+//        //inicia a maleta
+//        self.maletaQuimica = [[DQMaletaQuimica alloc] initComTamanho:self.frame.size eDicionarioDaReceita:self.dicionarioReceitaAtual];
+//        self.maletaQuimica.position = CGPointMake(self.frame.size.width * 0.05, self.frame.size.height * 0.05);
+//        
+//        //mostra a maleta
+//        [self addChild:self.maletaQuimica];
+//        self.mostrandoTelaDeSelecao = YES;
+//        
+//        //Define quais as amostras importantes nessa receita
+//        //descobre o nome da amostra 1
+//        self.nomeAmostra1 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:0];
+//        
+//        //descobre o nome da amostra 2
+//        self.nomeAmostra2 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:1];
+//    }
+//    return self;
+//}
+
+-(id)initCenaTransformacoes:(CGSize)size telaAnterior:(SKScene *)telaAnterior{
     if (self = [super initWithSize:size]) {
+        self.cenaAnterior=telaAnterior;
+        
         //inicia mostrando a maleta
         self.transformacaoControle = [[DQTransformacaoControle alloc]initComTamanho:self.frame.size];
         
@@ -29,13 +59,19 @@
         self.mostrandoTelaDeSelecao = YES;
         
         //Define quais as amostras importantes nessa receita
-            //descobre o nome da amostra 1
+        //descobre o nome da amostra 1
         self.nomeAmostra1 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:0];
         
-            //descobre o nome da amostra 2
+        //descobre o nome da amostra 2
         self.nomeAmostra2 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:1];
+        
+        [self mostrarTelaTransformacao];
     }
     return self;
+}
+
+-(void)sairTelaTransformacoes{
+    [self.view presentScene:self.cenaAnterior];
 }
 
 -(void)mostrarTelaTransformacao
@@ -57,7 +93,7 @@
     labelReagentes.position = CGPointMake(self.frame.size.width * 0.25, self.frame.size.height - labelReagentes.frame.size.height - 10);
     [self addChild:labelReagentes];
     
-
+    
     
     //CRIA TEXTO "Produto"
     SKLabelNode *labelProduto = [[SKLabelNode alloc]init];
@@ -71,12 +107,12 @@
     
     
     //MOSTRAR OS ELEMENTOS DOS DOIS INGREDIENTES DA RECEITA
-        //Referenciando as amostras
+    //Referenciando as amostras
     NSString *urlAmostras = [[NSBundle mainBundle] pathForResource:@"AmostrasQuimicas" ofType:@"plist"];
     NSArray *arrayAmostras = [[NSArray alloc] initWithContentsOfFile:urlAmostras];
     
-        //Definindo quantidade necessária de
-
+    //Definindo quantidade necessária de
+    
     //Passa por todas as amostras
     for(int i = 0; i < [arrayAmostras count]; i++){
         //se for a primeira amostra
@@ -92,7 +128,7 @@
                 //cria um SKSpriteNode temporário apenas para armazenar esse SKSprite node
                 SKSpriteNode *spriteTemporario = [self.arrayDeSpritesDeElementosAmostra1 objectAtIndex:j];
                 spriteTemporario.position = CGPointMake(self.frame.size.width * 0.1,
-                                                       (self.frame.size.height * 0.80) - ((self.frame.size.height * 0.85)/10 * j));
+                                                        (self.frame.size.height * 0.80) - ((self.frame.size.height * 0.85)/10 * j));
                 
                 //Adiciona-o na scene
                 [self addChild:spriteTemporario];
@@ -112,12 +148,12 @@
                 //cria um SKSpriteNode temporário apenas para armazenar esse SKSprite node
                 SKSpriteNode *spriteTemporario = [self.arrayDeSpritesDeElementosAmostra2 objectAtIndex:j];
                 spriteTemporario.position = CGPointMake(self.frame.size.width * 0.3,
-                                                       (self.frame.size.height * 0.80) - ((self.frame.size.height * 0.85)/10 * j));
+                                                        (self.frame.size.height * 0.80) - ((self.frame.size.height * 0.85)/10 * j));
                 
                 //Adiciona-o na scene
                 [self addChild:spriteTemporario];
             }
-
+            
             //popula o array de SKSpriteNodes de elementos daquela amostra
             self.arrayDeSpritesDeElementosAmostra2 = [self popularArrayDeSpritesDeElementos:self.arrayDeElementosAmostra2];
             
@@ -126,7 +162,7 @@
                 //cria um SKSpriteNode temporário apenas para armazenar esse SKSprite node
                 SKSpriteNode *spriteTemporario2 = [self.arrayDeSpritesDeElementosAmostra2 objectAtIndex:j];
                 spriteTemporario2.position = CGPointMake(self.frame.size.width * 0.3,
-                                                        (self.frame.size.height * 0.5) - ((self.frame.size.height * 0.85)/10 * j));
+                                                         (self.frame.size.height * 0.5) - ((self.frame.size.height * 0.85)/10 * j));
                 
                 //Adiciona-o na scene
                 [self addChild:spriteTemporario2];
@@ -150,19 +186,19 @@
             SKSpriteNode *spriteDestinoTemporario = [[SKSpriteNode alloc] initWithImageNamed:@"destino"];
             
             //Define propriedades
-                //tamanho
-                spriteDestinoTemporario.size = CGSizeMake(75, 75);
+            //tamanho
+            spriteDestinoTemporario.size = CGSizeMake(75, 75);
             
-                //nome
-                NSString *stringNome = [NSString stringWithFormat:@"destino_%@", [[[[[self.arrayReceitas objectAtIndex:0] objectForKey:@"Resultado"] objectAtIndex:i] objectForKey:@"Elementos"] objectAtIndex:j]];
-                spriteDestinoTemporario.name = stringNome;
+            //nome
+            NSString *stringNome = [NSString stringWithFormat:@"destino_%@", [[[[[self.arrayReceitas objectAtIndex:0] objectForKey:@"Resultado"] objectAtIndex:i] objectForKey:@"Elementos"] objectAtIndex:j]];
+            spriteDestinoTemporario.name = stringNome;
             
-                //anchorPoint
-                spriteDestinoTemporario.anchorPoint = CGPointZero;
+            //anchorPoint
+            spriteDestinoTemporario.anchorPoint = CGPointZero;
             
-                //posição
-                spriteDestinoTemporario.position = CGPointMake(self.frame.size.width * (0.60 + (i * 0.15)),
-                                                              (self.frame.size.height * 0.80) - ((self.frame.size.height * 0.95)/10 * j));
+            //posição
+            spriteDestinoTemporario.position = CGPointMake(self.frame.size.width * (0.60 + (i * 0.15)),
+                                                           (self.frame.size.height * 0.80) - ((self.frame.size.height * 0.95)/10 * j));
             
             //Adiciona o sprite na cena
             [self addChild:spriteDestinoTemporario];
@@ -172,7 +208,7 @@
         }
     }
     
-
+    
     //MOSTRAR O ROSTO DO DR.QUIMM - TODO(adicionar texto com a carinha do Quimm)
 }
 
@@ -269,7 +305,7 @@
         SKNode *nodeTocado = [self.scene nodeAtPoint:posicaoToque];
         
         //Se tocar em uma amostra que conste na receita atual, ela fica selecionada
-            //se tocar na amostra 1
+        //se tocar na amostra 1
         if([nodeTocado.name isEqualToString:self.nomeAmostra1]){
             //Se ela já tiver sido selecionada... faz animação de seleção
             if(!self.amostra1Selecionada){
@@ -331,13 +367,13 @@
                     if([nomeNodeTocado isEqualToString:nomeNodeDestino]){
                         //define que aquele é o novo frame dele
                         [self.nodeTocado setPosition: [[self.arrayDeSpritesDestino objectAtIndex:i] position]];
-                         
+                        
                         //deixa o nome do nodeTocado como nil
                         self.nodeTocado.name = nil;
                         
                         //deixa o nome do node de destino como nil
                         [[self.arrayDeSpritesDestino objectAtIndex:i] setName:@" "];
-                         
+                        
                         //define que o node todado é nil
                         self.nodeTocado = nil;
                     }
@@ -358,6 +394,7 @@
     //Verifica se todos os nodes foram posicionados com seus iguais
     //inicia um booleano com valor de YES. Se algum sprite do array tiver nome ainda, muda para NO
     BOOL terminou = YES;
+    
     for(int i = 0; i < [self.arrayDeSpritesDestino count]; i++){
         //Se um deles ainda tiver nome...
         if(![[[self.arrayDeSpritesDestino objectAtIndex:i]name] isEqualToString:@" "]){
@@ -371,6 +408,9 @@
         SKSpriteNode *quadradoDoFinal = [[SKSpriteNode alloc] initWithColor:[UIColor blueColor] size:self.frame.size];
         quadradoDoFinal.anchorPoint = CGPointZero;
         [self addChild:quadradoDoFinal];
+        
+        //Fechar tela de transformações
+        [self sairTelaTransformacoes];
     }
 }
 

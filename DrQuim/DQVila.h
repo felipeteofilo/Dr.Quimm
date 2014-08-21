@@ -10,7 +10,7 @@
 #import "DQBarraStatus.h"
 #import "DQNpc.h"
 #import "DQCutsceneControle.h"
-
+#import "DQCenaBronca.h"
 
 @interface DQVila : DQFase
 
@@ -19,4 +19,6 @@
 //NPCs dessa fase
 @property NSMutableArray *npcs;
 
+//Usado para definir se irá apresentar a cena da bronca ou não
+@property BOOL apresentaCenaBronca;
 @end

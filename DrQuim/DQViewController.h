@@ -13,7 +13,7 @@
 #import "DQVila.h"
 #import "DQFlorestaParte2.h"
 #import "DQCenaBronca.h"
-
+#import "DQTransformacaoTela.h"
 #import "DQCutsceneTela.h"
 
 @interface DQViewController : UIViewController

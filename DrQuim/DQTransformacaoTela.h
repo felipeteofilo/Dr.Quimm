@@ -56,8 +56,8 @@
 @property NSMutableArray *arrayDeSpritesDestino;
 //*************
 
-
-
+//Propriedade para voltar a tela que chamou
+@property SKScene *cenaAnterior;
 
 
 //NSDictionary da receita atual
@@ -69,4 +69,5 @@
 //Método que mostra a tela de transformação
 -(void)mostrarTelaTransformacao;
 
+-(id)initCenaTransformacoes:(CGSize)size telaAnterior:(SKScene*)telaAnterior;
 @end

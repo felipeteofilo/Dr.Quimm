@@ -30,6 +30,7 @@
     
 //    DQCutsceneTela  *floresta=[[DQCutsceneTela alloc]initCutScene:0 Fase:floresta1 SizeScene:skView.bounds.size];
     DQCenaBronca *floresta=[[DQCenaBronca alloc]initCena:skView.bounds.size cena:floresta1];
+    //DQTransformacaoTela *floresta=[[DQTransformacaoTela alloc]initCenaTransformacoes:skView.bounds.size telaAnterior:floresta1];
     
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     
