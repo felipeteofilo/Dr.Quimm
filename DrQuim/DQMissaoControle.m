@@ -16,7 +16,7 @@
         self.cena = cenaRecebida;
         
         //Inicia na parte 0
-        self.parteAtual = 0;
+        self.parteAtual = 7;
         
         //E sem nenhuma missão
         self.emMissao = NO;

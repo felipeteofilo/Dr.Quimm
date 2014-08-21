@@ -48,7 +48,7 @@
         [self addChild:self.controleSom];
         
         self.distAndar=100;
-        self.impulsoPulo=200;
+        self.impulsoPulo=210;
     }
     
     //retorna o jogador
@@ -461,6 +461,18 @@
 
 //Método chamado quando a missão descreve que um item deve ser entregue
 -(void)entregarItem{
+    
+    if ([[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ArmadilhasEntregue"]) {
+        NSMutableArray*armadilhasParaEntregar = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ArmadilhasEntregue"];
+        for (int i = 0; i< armadilhasParaEntregar.count; i++) {
+            NSString *nomeArmadilha = [armadilhasParaEntregar objectAtIndex:i];
+            
+            
+            [self.armadilhas receberArmadilha:nomeArmadilha];
+        }
+    }
+    
+    
     NSMutableArray*itemsParaEntregar = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ItemEntregue"];
     
     for (int i = 0; i< itemsParaEntregar.count; i++) {

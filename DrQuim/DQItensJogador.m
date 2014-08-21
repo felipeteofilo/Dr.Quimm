@@ -26,7 +26,7 @@
         //dicionario
         self.dicionarioDeItensReferencia = [[NSMutableDictionary alloc]initWithContentsOfFile:urlItensReferencia];
         
-        
+        [self receberItem:@"Carne" quantidade:1];
     }
     return self;
 }
