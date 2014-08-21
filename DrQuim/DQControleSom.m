@@ -24,13 +24,13 @@
     }];
     
     //Faz com que a execução das actions atrasem p dar tempo de sair o som
-    SKAction *waitAction = [SKAction waitForDuration:player.duration-0.5];
+    SKAction *waitAction = [SKAction waitForDuration:self.playerSom.duration];
     
     //Chama o play e o atraso
     SKAction *sequence = [SKAction sequence:@[playAction,waitAction]];
 
     [self runAction:sequence completion:^{
-        [self removeAllActions];
+        //[self removeAllActions];
         [self.playerSom stop];
     }];
 }
@@ -50,8 +50,13 @@
 }
 
 -(void)pararSom{
+    
+    SKAction *stopAction=[SKAction runBlock:^{
+            [self.playerSom stop];
+    }];
+
+    [self runAction:stopAction];
     [self removeAllActions];
-    [self.playerSom stop];
 }
 
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar{
