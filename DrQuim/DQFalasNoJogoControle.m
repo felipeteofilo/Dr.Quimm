@@ -77,6 +77,9 @@
     [self.caixaDeFala setName:@"falasDoJogo"];
     
     
+    //Para o som anterior
+    [self.controleSom pararSom];
+    
     //Cria o controlador de som
     DQControleSom *controleSom=[[DQControleSom alloc]initControleSom:NPC];
     
@@ -94,6 +97,10 @@
 -(Boolean)proximaFala{
     //Setamos a fala atual para a proxima e removemos a caixa de falas anterior da tela
     self.falaAtual++;
+    
+    //Remover sons Anteriores
+    [self.controleSom pararSom];
+    
     [self.caixaDeFala removeFromParent];
     //verificamos se e o fim das falas atuais e retornamos que nao ha mais falas
     if (self.falaAtual >= self.arrayDeFalasAtuais.count) {

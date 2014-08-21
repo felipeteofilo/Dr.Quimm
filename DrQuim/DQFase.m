@@ -268,7 +268,6 @@
                 [self addChild:falaAtual];
             }
         }
-        
     }
     
     //Se a caixa de fala nao esta na tela

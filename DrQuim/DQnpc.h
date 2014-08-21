@@ -1,5 +1,5 @@
 //
-//  DQnpc.h
+//  DQNpc.h
 //  DrQuim
 //
 //  Created by Julia Yamamoto on 08/07/14.
@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQControleSom.h"
 
-@interface DQnpc : SKSpriteNode
+@interface DQNpc : SKSpriteNode
 
 //NSString que armazena o nome do NPC
 @property NSString *nome;

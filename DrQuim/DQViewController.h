@@ -12,7 +12,7 @@
 #import "DQMenuInicial.h"
 #import "DQVila.h"
 #import "DQFlorestaParte2.h"
-
+#import "DQCenaBronca.h"
 
 #import "DQCutsceneTela.h"
 

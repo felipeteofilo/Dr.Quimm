@@ -44,7 +44,7 @@
         //instancia o NPC dependendo de seu nome
         
         //Inicia o spriteNode daquele node com o NOME e POSICAO
-        DQnpc *npc = [[DQnpc alloc] initComNome:nomeNPC naPosicao:posicaoNPC];
+        DQNpc *npc = [[DQNpc alloc] initComNome:nomeNPC naPosicao:posicaoNPC];
         
         [self.npcs addObject:npc];
         [self.mundo addChild:npc];

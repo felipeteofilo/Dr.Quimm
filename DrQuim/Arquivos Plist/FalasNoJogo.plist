@@ -159,7 +159,91 @@
 	</dict>
 	<dict>
 		<key>Alertas</key>
-		<dict/>
+		<dict>
+			<key>Bronca Mae Todos</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cacador</string>
+					<key>Texto</key>
+					<string>Olá, mãe! eu...</string>
+					<key>Foto</key>
+					<string>rostoCacador</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Mãe de todos</string>
+					<key>Texto</key>
+					<string>Rapazinho! Você disse a este jovem para caçar o grande Leopardinho protetor das nascentes?</string>
+					<key>Foto</key>
+					<string>rostoMaedetodos</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cacador</string>
+					<key>Texto</key>
+					<string>...</string>
+					<key>Foto</key>
+					<string>rostoCacador</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Mãe de todos</string>
+					<key>Texto</key>
+					<string>Menino feio! você sabia que ele é sagrado, fez isso só para enganar o pobre coitado! Ainda bem que ele é covarde, ou teria matado nosso protetor.</string>
+					<key>Foto</key>
+					<string>rostoMaedetodos</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto:</string>
+					<key>Texto</key>
+					<string>n-não foi covardia, eu vi no contador e...</string>
+					<key>Foto</key>
+					<string>rostoPiloto</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Mãe de todos</string>
+					<key>Texto</key>
+					<string>Por que você fez isso, menino?</string>
+					<key>Foto</key>
+					<string>rostoMaedetodos</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cacador</string>
+					<key>Texto</key>
+					<string>E-ele queria minha caixa que eu achei!</string>
+					<key>Foto</key>
+					<string>rostoCacador</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Mãe de todos</string>
+					<key>Texto</key>
+					<string>Agora como castigo, você vai entregar para ele!</string>
+					<key>Foto</key>
+					<string>rostoMaedetodos</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cacador</string>
+					<key>Texto</key>
+					<string>M-as mãe...</string>
+					<key>Foto</key>
+					<string>rostoCacador</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Mãe de todos</string>
+					<key>Texto</key>
+					<string>Agora mesmo, mocinho!</string>
+					<key>Foto</key>
+					<string>rostoMaedetodos</string>
+				</dict>
+			</array>
+		</dict>
 		<key>Com Missão</key>
 		<dict>
 			<key>Maedetodos</key>

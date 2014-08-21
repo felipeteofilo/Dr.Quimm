@@ -47,8 +47,9 @@
 }
 
 -(void)pararSom{
-    [self removeActionForKey:@"tocandoSom"];
+    [self removeAllActions];
 }
+
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar{
     NSError *error;
     NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
@@ -111,7 +112,6 @@
     
     int valorSorteado=(arc4random()%[sonsDisponiveis count]);
     
-    NSLog(@"valor sorteado :%i",valorSorteado);
     return [sonsDisponiveis objectAtIndex:valorSorteado];
 }
 

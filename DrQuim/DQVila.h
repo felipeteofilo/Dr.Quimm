@@ -8,15 +8,13 @@
 
 #import "DQFase.h"
 #import "DQBarraStatus.h"
-#import "DQnpc.h"
+#import "DQNpc.h"
 #import "DQCutsceneControle.h"
 
 
 @interface DQVila : DQFase
 
 @property NSMutableArray *escalavel;
-
-
 
 //NPCs dessa fase
 @property NSMutableArray *npcs;
