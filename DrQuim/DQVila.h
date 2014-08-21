@@ -21,4 +21,6 @@
 
 //Usado para definir se irá apresentar a cena da bronca ou não
 @property BOOL apresentouCenaBronca;
+@property BOOL mostrandoContador;
+
 @end

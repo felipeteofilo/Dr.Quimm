@@ -28,9 +28,9 @@
     if(![self.jogador estaComContadorGeiger]){
         //NAo tem esconde
         [self.hudFase esconderContador];
+    }else{
+        self.mostrandoContador=YES;
     }
-    
-    
 }
 
 -(void)adicionaNPC{
@@ -65,5 +65,16 @@
         self.apresentouCenaBronca=YES;
         [self apresentouCenaBronca];
     }
+    
+    if (self.mostrandoContador) {
+        
+        if([self.jogador estaComContadorGeiger]){
+            //tem nao esconde
+            [self.hudFase exibirContador];
+            
+            self.mostrandoContador=YES;
+        }
+    }
 }
+
 @end

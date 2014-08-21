@@ -14,24 +14,24 @@
 //    if (self = [super initWithSize:size]) {
 //        //inicia mostrando a maleta
 //        self.transformacaoControle = [[DQTransformacaoControle alloc]initComTamanho:self.frame.size];
-//        
+//
 //        //dicionario da receita
 //        self.urlReceitas = [[NSBundle mainBundle] pathForResource:@"ReceitasQuimicas" ofType:@"plist"];
 //        self.arrayReceitas = [[NSArray alloc] initWithContentsOfFile:self.urlReceitas];
 //        self.dicionarioReceitaAtual = [[NSDictionary alloc] initWithDictionary:[self.arrayReceitas objectAtIndex:0]];
-//        
+//
 //        //inicia a maleta
 //        self.maletaQuimica = [[DQMaletaQuimica alloc] initComTamanho:self.frame.size eDicionarioDaReceita:self.dicionarioReceitaAtual];
 //        self.maletaQuimica.position = CGPointMake(self.frame.size.width * 0.05, self.frame.size.height * 0.05);
-//        
+//
 //        //mostra a maleta
 //        [self addChild:self.maletaQuimica];
 //        self.mostrandoTelaDeSelecao = YES;
-//        
+//
 //        //Define quais as amostras importantes nessa receita
 //        //descobre o nome da amostra 1
 //        self.nomeAmostra1 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:0];
-//        
+//
 //        //descobre o nome da amostra 2
 //        self.nomeAmostra2 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:1];
 //    }
@@ -59,13 +59,16 @@
         self.mostrandoTelaDeSelecao = YES;
         
         //Define quais as amostras importantes nessa receita
+        //Define quais as amostras importantes nessa receita
         //descobre o nome da amostra 1
         self.nomeAmostra1 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:0];
         
         //descobre o nome da amostra 2
         self.nomeAmostra2 = [[self.dicionarioReceitaAtual objectForKey:@"Ingredientes"]objectAtIndex:1];
         
-        [self mostrarTelaTransformacao];
+        
+        self.nodeTocado=[SKNode node];
+        //[self mostrarTelaTransformacao];
     }
     return self;
 }
@@ -238,6 +241,8 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [super touchesBegan:touches withEvent:event];
+    
     //SE ESTIVER NA TELA DE TRANSFORMAÇÃO...
     if(!self.mostrandoTelaDeSelecao){
         //Armazena o toque e a posição dele
@@ -271,6 +276,8 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [super touchesMoved:touches withEvent:event];
+    
     //SE ESTIVER NA TELA DE TRANSFORMAÇÃO...
     if(!self.mostrandoTelaDeSelecao){
         //Se o nodetocado não for nil
@@ -295,6 +302,8 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [super touchesEnded:touches withEvent:event];
+    
     //SE ESTIVER NA TELA DE SELEÇÃO...
     if(self.mostrandoTelaDeSelecao){
         //Armazena o toque e a posição dele
