@@ -458,7 +458,7 @@
 			<string>Andando</string>
 		</dict>
 		<key>PosInicialJogador</key>
-		<string>{7500, 1400}</string>
+		<string>{23000, 1400}</string>
 		<key>Partes</key>
 		<array>
 			<dict>
@@ -841,14 +841,20 @@
 					<array>
 						<string>{890, 1200}</string>
 						<string>{885, 1250}</string>
-						<string></string>
-						<string></string>
+						<string>{1024, 1235}</string>
+						<string>{1024, 1195}</string>
 					</array>
 					<array>
-						<string></string>
-						<string></string>
-						<string></string>
-						<string></string>
+						<string>{665, 920}</string>
+						<string>{655, 960}</string>
+						<string>{940, 960}</string>
+						<string>{900, 920}</string>
+					</array>
+					<array>
+						<string>{950, 960}</string>
+						<string>{1024, 1005}</string>
+						<string>{1024, 965}</string>
+						<string>{925, 925}</string>
 					</array>
 				</array>
 			</dict>
@@ -866,26 +872,22 @@
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{0, 1293}</string>
-						<string>{80, 1273}</string>
-						<string>{0, 1263}</string>
+						<string>{0, 1195}</string>
+						<string>{0, 1235}</string>
+						<string>{165, 1213}</string>
+						<string>{165, 1190}</string>
 					</array>
 					<array>
-						<string>{0, 1045}</string>
-						<string>{51, 1077}</string>
-						<string>{198, 1077}</string>
-						<string>{190, 1104}</string>
-						<string>{1024, 1104}</string>
-						<string>{1024, 1052}</string>
-						<string>{206, 1052}</string>
-						<string>{202, 1061}</string>
-						<string>{93, 1053}</string>
-						<string>{0, 995}</string>
+						<string>{0, 1005}</string>
+						<string>{200, 1090}</string>
+						<string>{200, 1050}</string>
+						<string>{0, 965}</string>
 					</array>
 					<array>
-						<string>{0, 510}</string>
-						<string>{33, 510}</string>
-						<string>{0, 496}</string>
+						<string>{200, 1090}</string>
+						<string>{200, 1050}</string>
+						<string>{1024, 1050}</string>
+						<string>{1024, 1100}</string>
 					</array>
 				</array>
 			</dict>
@@ -904,10 +906,21 @@
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{0, 1104}</string>
-						<string>{286, 1102}</string>
-						<string>{254, 1054}</string>
-						<string>{0, 1052}</string>
+						<string>{0, 1100}</string>
+						<string>{280, 1100}</string>
+						<string>{260, 1050}</string>
+						<string>{0, 1050}</string>
+					</array>
+					<array>
+						<string>{420, 1090}</string>
+						<string>{520, 1100}</string>
+						<string>{480, 1070}</string>
+					</array>
+					<array>
+						<string>{530, 1155}</string>
+						<string>{1024, 1160}</string>
+						<string>{1024, 1120}</string>
+						<string>{530, 1120}</string>
 					</array>
 				</array>
 			</dict>
@@ -925,22 +938,16 @@
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{882, 1192}</string>
-						<string>{1024, 1192}</string>
-						<string>{1024, 1144}</string>
-						<string>{910, 1144}</string>
+						<string>{0, 1160}</string>
+						<string>{780, 1160}</string>
+						<string>{760, 1125}</string>
+						<string>{0, 1120}</string>
 					</array>
 					<array>
-						<string>{0, 1168}</string>
-						<string>{627, 1168}</string>
-						<string>{585, 1126}</string>
-						<string>{0, 1124}</string>
-					</array>
-					<array>
-						<string>{451, 676}</string>
-						<string>{736, 676}</string>
-						<string>{657, 592}</string>
-						<string>{570, 580}</string>
+						<string>{900, 1190}</string>
+						<string>{1024, 1190}</string>
+						<string>{1024, 1140}</string>
+						<string>{930, 1144}</string>
 					</array>
 				</array>
 			</dict>
@@ -957,34 +964,34 @@
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{0, 1192}</string>
-						<string>{415, 1192}</string>
-						<string>{415, 1144}</string>
-						<string>{0, 1144}</string>
+						<string>{0, 1190}</string>
+						<string>{415, 1190}</string>
+						<string>{415, 1145}</string>
+						<string>{0, 1145}</string>
 					</array>
 					<array>
-						<string>{393, 849}</string>
-						<string>{851, 848}</string>
+						<string>{305, 1075}</string>
+						<string>{475, 1075}</string>
+						<string>{465, 1040}</string>
+						<string>{317, 1035}</string>
+					</array>
+					<array>
+						<string>{410, 925}</string>
+						<string>{415, 965}</string>
+						<string>{580, 966}</string>
+						<string>{545, 925}</string>
+					</array>
+					<array>
+						<string>{390, 850}</string>
+						<string>{850, 850}</string>
 						<string>{810, 810}</string>
-						<string>{422, 808}</string>
+						<string>{420, 805}</string>
 					</array>
 					<array>
-						<string>{90, 664}</string>
-						<string>{459, 664}</string>
-						<string>{459, 600}</string>
-						<string>{90, 600}</string>
-					</array>
-					<array>
-						<string>{231, 1020}</string>
-						<string>{561, 1020}</string>
-						<string>{528, 980}</string>
-						<string>{242, 980}</string>
-					</array>
-					<array>
-						<string>{774, 748}</string>
-						<string>{1024, 748}</string>
-						<string>{1024, 716}</string>
-						<string>{779, 716}</string>
+						<string>{775, 750}</string>
+						<string>{1024, 750}</string>
+						<string>{1024, 715}</string>
+						<string>{780, 715}</string>
 					</array>
 				</array>
 			</dict>
@@ -1017,22 +1024,22 @@
 						<string>{0, 718}</string>
 					</array>
 					<array>
-						<string>{70, 955}</string>
+						<string>{70, 945}</string>
 						<string>{495, 980}</string>
-						<string>{525, 880}</string>
+						<string>{510, 925}</string>
+						<string>{70, 935}</string>
+					</array>
+					<array>
+						<string>{495, 875}</string>
 						<string>{740, 880}</string>
-						<string>{780, 850}</string>
+						<string>{710, 840}</string>
+						<string>{500, 860}</string>
+					</array>
+					<array>
+						<string>{780, 845}</string>
 						<string>{840, 905}</string>
 						<string>{1024, 910}</string>
-						<string>{1024, 830}</string>
-						<string>{950, 820}</string>
-						<string>{800, 717}</string>
-						<string>{645, 715}</string>
-						<string>{740, 810}</string>
-						<string>{710, 840}</string>
-						<string>{480, 865}</string>
-						<string>{475, 930}</string>
-						<string>{70, 940}</string>
+						<string>{1024, 850}</string>
 					</array>
 				</array>
 			</dict>
@@ -1066,14 +1073,14 @@
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
-					<string>{0, 1005}</string>
-					<string>{1024, 1005}</string>
-					<string>{1024, 929}</string>
-					<string>{457, 617}</string>
-					<string>{471, 309}</string>
-					<string>{669, 189}</string>
-					<string>{951, 88}</string>
-					<string>{1024, 88}</string>
+					<string>{0, 965}</string>
+					<string>{1024, 975}</string>
+					<string>{1024, 930}</string>
+					<string>{455, 620}</string>
+					<string>{470, 310}</string>
+					<string>{670, 190}</string>
+					<string>{950, 90}</string>
+					<string>{1024, 105}</string>
 					<string>{1024, 0}</string>
 				</array>
 				<key>Plataformas</key>
@@ -1092,19 +1099,21 @@
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{11, 1419}</string>
-						<string>{956, 1419}</string>
-						<string>{956, 1398}</string>
-						<string>{1024, 1398}</string>
-						<string>{1024, 1374}</string>
-						<string>{914, 1374}</string>
-						<string>{914, 1392}</string>
-						<string>{11, 1392}</string>
+						<string>{10, 1415}</string>
+						<string>{960, 1415}</string>
+						<string>{955, 1390}</string>
+						<string>{10, 1390}</string>
 					</array>
 					<array>
-						<string>{0, 1005}</string>
-						<string>{137, 1005}</string>
-						<string>{0, 931}</string>
+						<string>{940, 1395}</string>
+						<string>{1024, 1395}</string>
+						<string>{1024, 1375}</string>
+						<string>{940, 1375}</string>
+					</array>
+					<array>
+						<string>{0, 975}</string>
+						<string>{105, 975}</string>
+						<string>{0, 930}</string>
 					</array>
 				</array>
 			</dict>
@@ -1114,37 +1123,51 @@
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
-					<string>{0, 118}</string>
-					<string>{447, 579}</string>
-					<string>{556, 579}</string>
-					<string>{561, 830}</string>
-					<string>{396, 1056}</string>
-					<string>{457, 1059}</string>
-					<string>{454, 1200}</string>
-					<string>{647, 1200}</string>
-					<string>{693, 1117}</string>
-					<string>{963, 919}</string>
-					<string>{1024, 918}</string>
+					<string>{0, 435}</string>
+					<string>{445, 575}</string>
+					<string>{555, 575}</string>
+					<string>{560, 750}</string>
+					<string>{330, 885}</string>
+					<string>{300, 925}</string>
+					<string>{380, 925}</string>
+					<string>{405, 945}</string>
+					<string>{405, 1040}</string>
+					<string>{460, 1040}</string>
+					<string>{460, 1125}</string>
+					<string>{525, 1125}</string>
+					<string>{525, 1195}</string>
+					<string>{645, 1200}</string>
+					<string>{695, 1235}</string>
+					<string>{645, 1300}</string>
+					<string>{880, 1300}</string>
+					<string>{920, 1220}</string>
+					<string>{1024, 1220}</string>
+					<string>{1024, 0}</string>
 				</array>
 				<key>Plataformas</key>
 				<array>
 					<array>
-						<string>{30, 804}</string>
-						<string>{351, 804}</string>
-						<string>{227, 631}</string>
-						<string>{173, 624}</string>
+						<string>{30, 805}</string>
+						<string>{305, 805}</string>
+						<string>{265, 690}</string>
+						<string>{175, 625}</string>
 					</array>
 					<array>
-						<string>{0, 1398}</string>
-						<string>{478, 1398}</string>
-						<string>{478, 1374}</string>
-						<string>{0, 1374}</string>
+						<string>{230, 665}</string>
+						<string>{265, 690}</string>
+						<string>{390, 690}</string>
 					</array>
 					<array>
-						<string>{645, 1300}</string>
-						<string>{879, 1300}</string>
-						<string>{771, 1227}</string>
-						<string>{698, 1227}</string>
+						<string>{0, 1395}</string>
+						<string>{475, 1395}</string>
+						<string>{450, 1375}</string>
+						<string>{0, 1375}</string>
+					</array>
+					<array>
+						<string>{450, 1335}</string>
+						<string>{480, 1360}</string>
+						<string>{565, 1360}</string>
+						<string>{565, 1335}</string>
 					</array>
 				</array>
 			</dict>
@@ -1154,15 +1177,30 @@
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
-					<string>{0, 918}</string>
-					<string>{90, 918}</string>
-					<string>{130, 714}</string>
-					<string>{222, 714}</string>
-					<string>{264, 504}</string>
-					<string>{409, 504}</string>
-					<string>{430, 365}</string>
-					<string>{670, 157}</string>
-					<string>{1024, 156}</string>
+					<string>{0, 1220}</string>
+					<string>{30, 1220}</string>
+					<string>{80, 1155}</string>
+					<string>{445, 1055}</string>
+					<string>{445, 1015}</string>
+					<string>{745, 950}</string>
+					<string>{745, 895}</string>
+					<string>{770, 895}</string>
+					<string>{770, 860}</string>
+					<string>{795, 860}</string>
+					<string>{795, 790}</string>
+					<string>{825, 790}</string>
+					<string>{825, 720}</string>
+					<string>{860, 710}</string>
+					<string>{860, 630}</string>
+					<string>{885, 630}</string>
+					<string>{885, 535}</string>
+					<string>{920, 535}</string>
+					<string>{920, 460}</string>
+					<string>{960, 460}</string>
+					<string>{960, 385}</string>
+					<string>{995, 385}</string>
+					<string>{995, 310}</string>
+					<string>{1024, 310}</string>
 					<string>{1024, 0}</string>
 				</array>
 				<key>Plataformas</key>
@@ -1174,8 +1212,12 @@
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
-					<string>{0, 156}</string>
-					<string>{1024, 156}</string>
+					<string>{0, 310}</string>
+					<string>{15, 310}</string>
+					<string>{15, 220}</string>
+					<string>{60, 220}</string>
+					<string>{60, 155}</string>
+					<string>{1024, 155}</string>
 					<string>{1024, 0}</string>
 				</array>
 				<key>Plataformas</key>
