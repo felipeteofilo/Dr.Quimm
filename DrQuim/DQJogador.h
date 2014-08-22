@@ -116,5 +116,8 @@
 //Funcao para parar de derrapar
 -(void)pararDerrapar;
 
+-(void)interagirComNPC:(NSString *)nomeNPC;
+
+//Metodo que verifica se ja esta com contador
 -(BOOL)estaComContadorGeiger;
 @end

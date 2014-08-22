@@ -202,6 +202,7 @@
     }
 }
 
+//TODO- Melhorar metodo e passar ele p o DQUteis
 -(BOOL)estaComContadorGeiger{
     return [[self.itens arrayItensJogador] containsObject:@"Contador Geiger"];
 }
@@ -414,6 +415,7 @@
     [self.controleMissoes atualizarCena:self.scene];
     [self.controleMissoes colocarBalaoDeMissao];
 }
+
 
 //funcao a fazer para ele interagir com pessoas
 -(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas{

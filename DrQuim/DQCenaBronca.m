@@ -38,6 +38,9 @@
     [self.jogador setPosition:CGPointMake(50, 200)];
     [self.jogador iniciarAnimacoes:[DQConfiguracaoFase animacoesJogadorFase:2]];
     
+    [self.jogador removeFromParent];
+}
+-(void)didMoveToView:(SKView *)view{
     [self addChild:self.maeDeTodos];
     [self addChild:self.cacador];
     [self addChild:self.jogador];
@@ -80,6 +83,7 @@
 -(void)dispararFalas{
     if (self.jogador.position .x > (self.maeDeTodos.position.x-200) && !self.comecouAlerta) {
         [self addChild:[self.controleDeFalas mostrarAlertaComKey:@"Bronca Mae Todos" Tamanho:self.size]];
+        //[self.jogador interagirComNPC:@"Maedetodos"];
         
         //Atualiza bool
         self.comecouAlerta=YES;
@@ -89,6 +93,11 @@
     
 }
 
+-(void)voltaVila{
+    DQVila *vila=[[DQVila alloc]initFase:2 Size:self.view.bounds.size];
+    
+    [self.view presentScene:vila];
+}
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     UITouch *toque=[touches anyObject];
@@ -111,7 +120,9 @@
     }else {
         //Verifica bool
         if (self.comecouAlerta) {
-            [self.view presentScene:self.cenaAnterior];
+            [self.jogador removeFromParent];
+            //self.jogador.controleMissoes.parteAtual++;
+            [self voltaVila];
             
         }else{
             //Verifica se o Menu esta aparecendo se estiver remove eles

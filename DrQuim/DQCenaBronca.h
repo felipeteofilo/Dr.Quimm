@@ -12,6 +12,7 @@
 #import "DQConfiguracaoFase.h"
 #import "DQControleCorpoFisico.h"
 #import "DQFalasNoJogoControle.h"
+#import "DQVila.h"
 
 @interface DQCenaBronca : SKScene<SKPhysicsContactDelegate>
 

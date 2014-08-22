@@ -54,6 +54,7 @@
 -(void)apresentarCenaBronca{
     DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
     
+    self.jogador.controleMissoes.parteAtual++;
     [self.view presentScene:cenaBronca];
 }
 -(void)apresentarFloresta2{

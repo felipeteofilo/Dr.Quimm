@@ -766,7 +766,29 @@
 							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou muito decepicionada com o Caçador. Vou deixar ele sem sobremesa por um mês, a menos que ele coma tudo do prato.</string>
+							<key>Foto</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
 					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou muito decepicionada com o Caçador. Vou deixar ele sem sobremesa por um mês, a menos que ele coma tudo do prato.</string>
+							<key>Foto</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte6R </key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -1363,7 +1385,29 @@
 							<string>rostoCacador</string>
 						</dict>
 					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Dedo-duro!</string>
+							<key>Foto</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
 					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Dedo-duro!</string>
+							<key>Foto</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -1846,6 +1890,10 @@
 						</dict>
 					</array>
 					<key>Parte5</key>
+					<array/>
+					<key>Parte5R</key>
+					<array/>
+					<key>Parte6</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -1856,7 +1904,7 @@
 							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Parte5R</key>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -2269,7 +2317,29 @@
 							<string>rostoCurandeiro</string>
 						</dict>
 					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Foto</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
 					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string>O vento sussurra em meus ouvidos... São sussurros gelados...</string>
+							<key>Foto</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -2698,7 +2768,45 @@
 							<string>rostoPiloto</string>
 						</dict>
 					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Dr. Quimm, olha só eu recuperei sua maleta! Agora você pode fazer suas experiências.</string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string>Finalmente! Se demorasse mais, eu mesmo iria pegá-la</string>
+							<key>Foto</key>
+							<string>rostoCientista</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string> ...</string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
 					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string> -//-</string>
+							<key>Foto</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
