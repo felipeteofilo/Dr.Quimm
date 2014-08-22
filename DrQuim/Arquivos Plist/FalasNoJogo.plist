@@ -766,17 +766,6 @@
 							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
-					<key>Parte6</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string>Estou muito decepicionada com o Caçador. Vou deixar ele sem sobremesa por um mês, a menos que ele coma tudo do prato.</string>
-							<key>Foto</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
 					<key>Parte5R</key>
 					<array>
 						<dict>
@@ -788,7 +777,18 @@
 							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
-					<key>Parte6R </key>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string>Estou muito decepicionada com o Caçador. Vou deixar ele sem sobremesa por um mês, a menos que ele coma tudo do prato.</string>
+							<key>Foto</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>

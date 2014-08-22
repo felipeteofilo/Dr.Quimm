@@ -51,6 +51,9 @@
     }
 }
 
+-(void)didMoveToView:(SKView *)view{
+    NSLog(@"Parte Atual Missao %i",self.jogador.controleMissoes.parteAtual);
+}
 -(void)apresentarCenaBronca{
     DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
     
