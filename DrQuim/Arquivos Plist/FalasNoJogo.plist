@@ -3508,7 +3508,43 @@ sorri sutilmente</string>
 	</dict>
 	<dict>
 		<key>Alertas</key>
-		<dict/>
+		<dict>
+			<key>RadiacaoLeopardinho</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto</string>
+					<key>Texto</key>
+					<string>Achei! agora é só pegar ele e... O que é isso?</string>
+					<key>Foto</key>
+					<string>rostoPiloto</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto</string>
+					<key>Texto</key>
+					<string>Nossa! o contador geiger está apontando radiação onde está ele? deve ser perigoso chegar perto.</string>
+					<key>Foto</key>
+					<string>rostoPiloto</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto</string>
+					<key>Texto</key>
+					<string>Mas o caçador disse que pega ele todos os dias... Como ele consegue?</string>
+					<key>Foto</key>
+					<string>rostoPiloto</string>
+				</dict>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto</string>
+					<key>Texto</key>
+					<string>Vou voltar e perguntar para ele, deve existir alguma técnica.</string>
+					<key>Foto</key>
+					<string>rostoPiloto</string>
+				</dict>
+			</array>
+		</dict>
 		<key>Com Missão</key>
 		<dict/>
 		<key>Sem Missão</key>

@@ -56,16 +56,48 @@
     
     [self.view presentScene:cenaBronca];
 }
+-(void)apresentarFloresta2{
+    
+    self.posicaoJogador= self.jogador.position;
+    
+    DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initFase:self.faseAtual+1 Size:self.size];
+    
+    [floresta2 salvarCenaVila:self];
+    
+    [self.view presentScene:floresta2];
+    
+    
+    self.apresentouVila =YES;
+    
+    
+}
 
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     
-    if ((!self.apresentouCenaBronca) && ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missão 02"])&&(self.jogador.controleMissoes.parteAtual==5)) {
+    
+    if (self.apresentouVila) {
         
-        self.apresentouCenaBronca=YES;
-        [self apresentouCenaBronca];
+        [self.jogador removeFromParent];
+        
+        self.jogador.position = self.posicaoJogador;
+        
+        [self.mundo addChild:self.jogador];
+        self.apresentouVila =NO;
     }
     
+    if (![self childNodeWithName:@"falasDoJogo"] && ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao02"])) {
+        
+        if ((!self.apresentouCenaBronca) && (self.jogador.controleMissoes.parteAtual== 5)) {
+            
+            self.apresentouCenaBronca=YES;
+            [self apresentarCenaBronca];
+        }
+        if((self.jogador.controleMissoes.parteAtual== 2)){
+            
+            [self apresentarFloresta2];
+        }
+    }
     if (!self.mostrandoContador) {
         
         if([self.jogador estaComContadorGeiger]){

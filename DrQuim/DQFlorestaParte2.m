@@ -26,6 +26,12 @@
     [self posicionarAnimais];
 }
 
+-(void)salvarCenaVila :(SKScene*)vila{
+    
+    self.vila =vila;
+    
+}
+
 
 -(void)posicionarAnimais{
     DQAnimalLeopardinho * leopardo = [[DQAnimalLeopardinho alloc]initLeopardinho];
