@@ -10,6 +10,7 @@
 #import "DQAmostraQuimica.h"
 #import "DQMaletaQuimica.h"
 #import "DQTransformacaoControle.h"
+#import "DQVila.h"
 
 @interface DQTransformacaoTela : SKScene
 

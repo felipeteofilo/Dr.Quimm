@@ -74,7 +74,9 @@
 //}
 
 -(void)sairTelaTransformacoes{
-    [self.view presentScene:self.cenaAnterior];
+    DQVila *vila=[DQVila sceneWithSize:self.view.bounds.size];
+    vila.scaleMode = SKSceneScaleModeAspectFill;
+    [self.view presentScene:vila];
 }
 
 -(void)mostrarTelaTransformacao
@@ -375,7 +377,8 @@
                     //Se for...
                     if([nomeNodeTocado isEqualToString:nomeNodeDestino]){
                         //define que aquele é o novo frame dele
-                        [self.nodeTocado setPosition: [[self.arrayDeSpritesDestino objectAtIndex:i] position]];
+                        SKNode *nodeDestino = [self.arrayDeSpritesDestino objectAtIndex:i];
+                        [self.nodeTocado setPosition: nodeDestino.position];
                         
                         //deixa o nome do nodeTocado como nil
                         self.nodeTocado.name = nil;
