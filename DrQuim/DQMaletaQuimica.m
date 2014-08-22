@@ -17,6 +17,13 @@
         //Ajusta algumas particularidades do SKSpriteNode geral - um quadrado preto que ocupa o 90% da tela
         self.anchorPoint = CGPointZero;
         
+        //Cria a imagem de fundo da maleta
+        SKSpriteNode *fundo = [[SKSpriteNode alloc] initWithImageNamed:@"fundoMaleta"];
+        fundo.anchorPoint = CGPointZero;
+        fundo.size = self.frame.size;
+        fundo.position = CGPointZero;
+        [self addChild:fundo];
+        
         //Cria o corpo da maleta
         [self criarMaletaCorpo];
         

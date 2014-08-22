@@ -81,6 +81,15 @@
 
 -(void)mostrarTelaTransformacao
 {
+    //CRIA A IMAGEM DE FUNDO
+    SKSpriteNode *fundo = [[SKSpriteNode alloc] initWithImageNamed:@"fundoTransformacao"];
+    fundo.anchorPoint = CGPointZero;
+    fundo.size = self.frame.size;
+    fundo.position = CGPointZero;
+    fundo.alpha = 0.5f;
+    [self addChild:fundo];
+    
+    
     //CRIA LINHA DO MEIO --> TODO - colocar imagem
     SKSpriteNode *linhaDoMeio = [[SKSpriteNode alloc]initWithColor:[UIColor whiteColor] size:CGSizeMake(self.frame.size.width * 0.001, self.frame.size.height)];
     linhaDoMeio.anchorPoint = CGPointZero;
