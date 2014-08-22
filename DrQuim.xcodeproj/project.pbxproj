@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2340FDE319A70EB200E8FCCE /* DQNTransformacaoTela.m in Sources */ = {isa = PBXBuildFile; fileRef = 2340FDE219A70EB200E8FCCE /* DQNTransformacaoTela.m */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23A538E9196C6E9E00821BAF /* DQNpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQNpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
@@ -207,6 +208,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2340FDE119A70EB200E8FCCE /* DQNTransformacaoTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNTransformacaoTela.h; sourceTree = "<group>"; };
+		2340FDE219A70EB200E8FCCE /* DQNTransformacaoTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNTransformacaoTela.m; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		23A538E7196C6E9E00821BAF /* DQNpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNpc.h; sourceTree = "<group>"; };
@@ -501,6 +504,15 @@
 			name = "Arquvos XML";
 			sourceTree = "<group>";
 		};
+		2340FDE019A70D3600E8FCCE /* Novas transformacoes */ = {
+			isa = PBXGroup;
+			children = (
+				2340FDE119A70EB200E8FCCE /* DQNTransformacaoTela.h */,
+				2340FDE219A70EB200E8FCCE /* DQNTransformacaoTela.m */,
+			);
+			name = "Novas transformacoes";
+			sourceTree = "<group>";
+		};
 		23477FF719463E0E00479AFE /* Falas e Cutscenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +575,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				2340FDE019A70D3600E8FCCE /* Novas transformacoes */,
 				94331C7A19A538C300FD04F8 /* DrQuim.entitlements */,
 				CD616FE319A51DA800B5C63A /* Transformacoes */,
 				CDC48AC919929F4A00588E79 /* _temp novas classes */,
@@ -1276,6 +1289,7 @@
 				9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
 				C54031E91989FE98003384AB /* DQOpcaoMenu.m in Sources */,
+				2340FDE319A70EB200E8FCCE /* DQNTransformacaoTela.m in Sources */,
 				943D3BBA19A667B600A87254 /* DQCenaBronca.m in Sources */,
 				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,

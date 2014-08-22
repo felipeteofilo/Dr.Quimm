@@ -22,15 +22,16 @@
     
     // Create and configure the scene.
 
-    //DQFlorestaParte1 *floresta = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
+    //DQFlorestaParte1 *floresta1 = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
 
-    DQVila *floresta=[DQVila sceneWithSize:skView.bounds.size];
+    //DQVila *floresta=[DQVila sceneWithSize:skView.bounds.size];
     //DQFlorestaParte2 *floresta = [DQFlorestaParte2 sceneWithSize:skView.bounds.size];
     //DQMenuInicial *floresta=[DQMenuInicial sceneWithSize:skView.bounds.size];
     
 //    DQCutsceneTela  *floresta=[[DQCutsceneTela alloc]initCutScene:0 Fase:floresta1 SizeScene:skView.bounds.size];
     //DQCenaBronca *floresta=[[DQCenaBronca alloc]initCena:skView.bounds.size cena:floresta1];
-//    DQTransformacaoTela *floresta=[[DQTransformacaoTela alloc]initCenaTransformacoes:skView.bounds.size telaAnterior:floresta1];
+    //DQNTransformacaoTela *floresta=[[DQNTransformacaoTela alloc]initCenaTransformacoes:skView.bounds.size telaAnterior:floresta1];
+    DQTransformacaoTela *floresta = [[DQTransformacaoTela alloc] initWithSize:skView.bounds.size];
     
     floresta.scaleMode = SKSceneScaleModeAspectFill;
     
