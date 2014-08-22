@@ -49,6 +49,7 @@
         
         self.distAndar=100;
         self.impulsoPulo=210;
+        [self setName:@"Jogador"];
     }
     
     //retorna o jogador

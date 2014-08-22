@@ -27,9 +27,7 @@
 }
 
 -(void)salvarCenaVila :(SKScene*)vila{
-    
     self.vila =vila;
-    
 }
 
 
@@ -42,8 +40,6 @@
     leopardo.spriteAnimal.xScale = fabs(leopardo.spriteAnimal.xScale)*-1;
     
     [self.mundo addChild:leopardo];
-    
-
 }
 
 -(void)falarAlertaRadiacao{
@@ -53,37 +49,45 @@
     //inicia-os com suas coordenadas
     //-> alerta Radicao Leopardinho
     pontoAlertaRadiacao = CGPointMake(5700, 400);
-   
-    if ((self.jogador.position.x > pontoAlertaRadiacao.x - RAIOAPITAR  && self.jogador.position.x < pontoAlertaRadiacao.x + RAIOAPITAR) && self.jogador.position.y > pontoAlertaRadiacao.y - 10 ){
-        
-        [self apitarRadiacao:@"ContadorGeiger-1.mp3"];
     
-    //-> alerta alpha
-    if(self.jogador.position.x > pontoAlertaRadiacao.x  && self.jogador.position.x < pontoAlertaRadiacao.x+100 && self.jogador.position.y >= pontoAlertaRadiacao.y -20 && !self.falouRadiacaoLeopardinho){
+    if (self.jogador.controleMissoes.parteAtual == 2) {
         
         
-        //inicia a fala
-        NSString *keyDaFala = @"RadiacaoLeopardinho";
         
-        [self addChild:[self.controleDeFalas mostrarAlertaComKey:keyDaFala Tamanho:self.size]];
-        self.jogador.controleMissoes.parteAtual++;
-        [self.direcional removeFromParent];
-        self.falouRadiacaoLeopardinho =YES;
-        [self.jogador pararAndar];
+        if ((self.jogador.position.x > pontoAlertaRadiacao.x - RAIOAPITAR  && self.jogador.position.x < pontoAlertaRadiacao.x + RAIOAPITAR) && self.jogador.position.y > pontoAlertaRadiacao.y - 10 ){
+            
+            [self atualizarPerigoContador];
+            
+            //-> alerta alpha
+            if(self.jogador.position.x > pontoAlertaRadiacao.x  && self.jogador.position.x < pontoAlertaRadiacao.x+100 && self.jogador.position.y >= pontoAlertaRadiacao.y -20 && !self.falouRadiacaoLeopardinho){
+                
+                
+                //inicia a fala
+                NSString *keyDaFala = @"RadiacaoLeopardinho";
+                
+                [self addChild:[self.controleDeFalas mostrarAlertaComKey:keyDaFala Tamanho:self.size]];
+                self.jogador.controleMissoes.parteAtual++;
+                [self.direcional removeFromParent];
+                self.falouRadiacaoLeopardinho =YES;
+                [self.jogador pararAndar];
+            }
         }
     }
 }
 
-
--(void)apitarRadiacao:(NSString*)nomeArquivoAudio{
-    if (![self actionForKey:@"apitar"]) {
-        [self.hudFase.contador setarNivelPerigo:3];
-        SKAction *apitar=[SKAction playSoundFileNamed:nomeArquivoAudio waitForCompletion:YES];
-        SKAction *parar=[SKAction removeFromParent];
-        
-        [self runAction:[SKAction sequence:@[apitar,parar]]withKey:@"apitar"];
-    }
+-(void)atualizarPerigoContador{
+    [self.hudFase.contador setarNivelPerigo:3];
 }
+
+//-(void)apitarRadiacao:(NSString*)nomeArquivoAudio{
+//    if (![self actionForKey:@"apitar"]) {
+//        [self.hudFase.contador setarNivelPerigo:3];
+//        SKAction *apitar=[SKAction playSoundFileNamed:nomeArquivoAudio waitForCompletion:YES];
+//        SKAction *parar=[SKAction removeFromParent];
+//
+//        [self runAction:[SKAction sequence:@[apitar,parar]]withKey:@"apitar"];
+//    }
+//}
 
 -(void)update: (NSTimeInterval)currentTime
 {

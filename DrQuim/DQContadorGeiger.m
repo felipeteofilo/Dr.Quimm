@@ -101,10 +101,13 @@
     [self configurarFundoSprite];
     
     if (self.nivelPerigo >0) {
-        NSString *nomeSom=[NSString stringWithFormat:@"ContadorGeiger-%i.mp3",self.nivelPerigo];
+        if (![self actionForKey:@"tocarSom"]) {
+            NSString *nomeSom=[NSString stringWithFormat:@"ContadorGeiger-%i.mp3",self.nivelPerigo];
+            
+            [self removeActionForKey:@"tocarSom"];
+            [self runAction:[SKAction repeatActionForever:[SKAction playSoundFileNamed:nomeSom waitForCompletion:YES]]withKey:@"tocarSom"];
+        }
         
-        [self removeActionForKey:@"tocarSom"];
-        [self runAction:[SKAction repeatActionForever:[SKAction playSoundFileNamed:nomeSom waitForCompletion:YES]]withKey:@"tocarSom"];
     }
 }
 @end
