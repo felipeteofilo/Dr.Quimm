@@ -15,14 +15,17 @@
         //configura background da scene
         SKSpriteNode *fundoTela=[SKSpriteNode spriteNodeWithImageNamed:@"ImagemInicioJogo"];
         [fundoTela setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [fundoTela setZPosition:-50.0f];
+        [fundoTela setAlpha:0.9f];
+        fundoTela.xScale=-1;
         [self addChild:fundoTela];
         
         self.mensagemCarregando=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
         [self.mensagemCarregando setText:@"Dr. Quimm"];
-        [self.mensagemCarregando setFontSize:120.0f];
-        [self.mensagemCarregando setFontColor:[UIColor grayColor]];
+        [self.mensagemCarregando setFontSize:190.0f];
+        [self.mensagemCarregando setFontColor:[UIColor colorWithRed:35.5/255.0f green:50.0/255.0f blue:44.0/255.0f alpha:1.0]];
         
-        [self.mensagemCarregando setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [self.mensagemCarregando setPosition:CGPointMake(600, CGRectGetMidY(self.frame)+100)];
         [self.mensagemCarregando setAlpha:0.0f];
         
         [self addChild:self.mensagemCarregando];
@@ -33,8 +36,8 @@
         [teste setText:@"teste"];
         [teste2 setName:@"teste"];
         [teste2 setPosition:CGPointMake(200, 200)];
-        [self addChild:teste2];
-        [teste2 addChild:teste];
+        //[self addChild:teste2];
+        //[teste2 addChild:teste];
         
     }
     return self;
@@ -51,7 +54,7 @@
 }
 
 -(void)animarMensagem{
-    [self.mensagemCarregando runAction:[SKAction fadeInWithDuration:1.5] completion:^{
+    [self.mensagemCarregando runAction:[SKAction sequence:@[[SKAction fadeInWithDuration:1.5],[SKAction waitForDuration:0.5]]] completion:^{
         [self iniciarJogo];
     }];
 }
