@@ -28,9 +28,6 @@
 
 
 -(void)posicionarAnimais{
-    
-    
-    
     DQAnimalLeopardinho * leopardo = [[DQAnimalLeopardinho alloc]initLeopardinho];
     
     [leopardo setPosition:CGPointMake(6120, 475)];
