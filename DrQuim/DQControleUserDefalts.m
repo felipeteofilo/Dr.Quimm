@@ -66,6 +66,15 @@
     return [[self userDefalts]objectForKey:@"MissaoJogador"];
 }
 
++(NSMutableDictionary*)itensAtuaisJogador{
+    return [[self userDefalts]objectForKey:@"Inventario"];
+}
++(NSMutableArray*)armadilhasAtuaisJogador{
+    
+    return [[self userDefalts]objectForKey:@"Armadilhas"];
+    
+}
+
 
 +(void)setVolumeMusica:(float)volume{
     [[self userDefalts]setFloat:volume forKey:@"volumeMusica"];
@@ -98,6 +107,13 @@
 
 +(void)setMissaoAtualJogador:(NSDictionary*)missaoAtual{
     [[self userDefalts]setObject:missaoAtual forKey:@"MissaoJogador"];
+}
+
++(void)setItensAtuaisJogador:(NSDictionary*)inventario{
+    [[self userDefalts]setObject:inventario forKey:@"Inventario"];
+}
++(void)setArmadilhasAtuaisJogador:(NSArray*)armadilhas{
+    [[self userDefalts]setObject:armadilhas forKey:@"Armadilhas"];
 }
 
 +(void)setRodouCutSceneFase:(int)fase Valor:(BOOL)valor{

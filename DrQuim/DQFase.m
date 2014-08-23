@@ -515,6 +515,10 @@
             
             [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.proximaMissao] forKey:@"MissaoAtual"];
             
+            [DQControleUserDefalts setItensAtuaisJogador:self.jogador.itens.dicionarioDeItensJogador];
+            
+            [DQControleUserDefalts setArmadilhasAtuaisJogador:self.jogador.armadilhas.arrayDeArmadilhasJogador];
+            
             [DQControleUserDefalts setMissaoAtualJogador:missao];
         }
     }

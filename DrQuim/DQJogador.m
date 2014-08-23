@@ -40,8 +40,16 @@
         
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
+        
+        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
+            self.itens.dicionarioDeItensJogador = [DQControleUserDefalts itensAtuaisJogador];
+        }
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
         
+        
+        if ([DQControleUserDefalts armadilhasAtuaisJogador]!=nil) {
+            self.armadilhas.arrayDeArmadilhasJogador = [DQControleUserDefalts armadilhasAtuaisJogador];
+        }
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
         //se nao existe nenhuma missao ainda
