@@ -62,7 +62,7 @@
 +(int)parteFaseAtual{
     return (int)[[self userDefalts]integerForKey:@"parteAtual"];
 }
-+(NSString*)missaoAtualJogador{
++(NSDictionary*)missaoAtualJogador{
     return [[self userDefalts]objectForKey:@"MissaoJogador"];
 }
 
@@ -96,7 +96,7 @@
     [[self userDefalts]setInteger:parte forKey:@"ParteAtual"];
 }
 
-+(void)setMissaoAtualJogador:(NSString*)missaoAtual{
++(void)setMissaoAtualJogador:(NSDictionary*)missaoAtual{
     [[self userDefalts]setObject:missaoAtual forKey:@"MissaoJogador"];
 }
 

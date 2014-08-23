@@ -40,4 +40,6 @@
 //Coloca o balao em cima do personagem
 -(void)colocarBalaoDeMissao;
 
+-(void)iniciarMissao;
+
 @end

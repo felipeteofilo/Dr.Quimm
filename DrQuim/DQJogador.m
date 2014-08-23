@@ -44,6 +44,16 @@
         
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
+        //se nao existe nenhuma missao ainda
+        if([DQControleUserDefalts missaoAtualJogador] != nil){
+            NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
+            self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
+            self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
+            self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
+            
+            [self.controleMissoes iniciarMissao];
+        }
+        
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
         
