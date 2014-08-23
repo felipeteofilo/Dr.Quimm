@@ -62,8 +62,17 @@
 +(int)parteFaseAtual{
     return (int)[[self userDefalts]integerForKey:@"parteAtual"];
 }
-+(NSString*)missaoAtualJogador{
++(NSDictionary*)missaoAtualJogador{
     return [[self userDefalts]objectForKey:@"MissaoJogador"];
+}
+
++(NSMutableDictionary*)itensAtuaisJogador{
+    return [[self userDefalts]objectForKey:@"Inventario"];
+}
++(NSMutableArray*)armadilhasAtuaisJogador{
+    
+    return [[self userDefalts]objectForKey:@"Armadilhas"];
+    
 }
 
 
@@ -96,8 +105,15 @@
     [[self userDefalts]setInteger:parte forKey:@"ParteAtual"];
 }
 
-+(void)setMissaoAtualJogador:(NSString*)missaoAtual{
++(void)setMissaoAtualJogador:(NSDictionary*)missaoAtual{
     [[self userDefalts]setObject:missaoAtual forKey:@"MissaoJogador"];
+}
+
++(void)setItensAtuaisJogador:(NSDictionary*)inventario{
+    [[self userDefalts]setObject:inventario forKey:@"Inventario"];
+}
++(void)setArmadilhasAtuaisJogador:(NSArray*)armadilhas{
+    [[self userDefalts]setObject:armadilhas forKey:@"Armadilhas"];
 }
 
 +(void)setRodouCutSceneFase:(int)fase Valor:(BOOL)valor{

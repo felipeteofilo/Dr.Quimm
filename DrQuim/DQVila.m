@@ -58,7 +58,6 @@
         [self.mundo addChild:npc];
     }
 }
-
 -(void)apresentarCenaMaleta{
     DQTransformacaoTela *cenaTransformacoes=[[DQTransformacaoTela alloc]initWithSize:self.view.bounds.size];
     
@@ -74,7 +73,7 @@
 -(void)apresentarFloresta2{
     self.posicaoJogador= self.jogador.position;
     
-    DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initFase:self.faseAtual+1 Size:self.size];
+    DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initWithSize:self.size];
     
     [floresta2 salvarCenaVila:self];
     

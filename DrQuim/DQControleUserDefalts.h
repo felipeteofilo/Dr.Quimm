@@ -19,7 +19,9 @@
 +(NSDictionary*)estadosJogador;
 +(int)faseAtual;
 +(int)parteFaseAtual;
-+(NSString*)missaoAtualJogador;
++(NSDictionary*)missaoAtualJogador;
++(NSMutableDictionary*)itensAtuaisJogador;
++(NSMutableArray*)armadilhasAtuaisJogador;
 +(BOOL)rodouCutSceneFase:(int)fase;
 +(BOOL)primeiraExecucaoDispositivo;
 +(BOOL)estadoJogadorAtualizado;
@@ -30,7 +32,9 @@
 +(void)setSonsMudo:(BOOL)mudo;
 +(void)setFaseAtual:(int)fase;
 +(void)setParteFaseAtual:(int)parte;
-+(void)setMissaoAtualJogador:(NSString*)missaoAtual;
++(void)setMissaoAtualJogador:(NSDictionary*)missaoAtual;
++(void)setItensAtuaisJogador:(NSDictionary*)inventario;
++(void)setArmadilhasAtuaisJogador:(NSArray*)armadilhas;
 +(void)setRodouCutSceneFase:(int)fase Valor:(BOOL)valor;
 +(void)setEstadoInicialJogador:(BOOL)valor;
 +(void)setEstadoInicialJogador;

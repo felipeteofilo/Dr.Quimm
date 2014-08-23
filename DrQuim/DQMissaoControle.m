@@ -25,12 +25,16 @@
         self.proximaMissao = 1;
         
         //Apresentando a próxima missão (no caso, a primeira)
-        self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
+        [self iniciarMissao];
         
         
         [self colocarBalaoDeMissao];
     }
     return self;
+}
+
+-(void)iniciarMissao{
+    self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
 }
 
 
@@ -125,7 +129,7 @@
     self.emMissao = NO;
     self.proximaMissao++;
     self.parteAtual = 0;
-    self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];
+    [self iniciarMissao];
     [self colocarBalaoDeMissao];
 }
 @end

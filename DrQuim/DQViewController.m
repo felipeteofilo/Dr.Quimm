@@ -17,16 +17,16 @@
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     //skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    skView.showsPhysics=YES;
+    //skView.showsNodeCount = YES;
+    //skView.showsPhysics=YES;
     
     // Create and configure the scene.
 
     //DQFlorestaParte1 *floresta1 = [DQFlorestaParte1 sceneWithSize:skView.bounds.size];
 
-    DQVila *floresta=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+    //DQVila *floresta=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
     //DQFlorestaParte2 *floresta = [[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
-    //DQMenuInicial *floresta=[DQMenuInicial sceneWithSize:skView.bounds.size];
+    DQMenuInicial *floresta=[DQMenuInicial sceneWithSize:skView.bounds.size];
     
 //    DQCutsceneTela  *floresta=[[DQCutsceneTela alloc]initCutScene:0 Fase:floresta1 SizeScene:skView.bounds.size];
     //DQCenaBronca *floresta=[[DQCenaBronca alloc]initCena:skView.bounds.size cena:floresta1];
