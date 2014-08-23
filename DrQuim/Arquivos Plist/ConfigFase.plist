@@ -463,7 +463,9 @@
 		<array>
 			<dict>
 				<key>Animais</key>
-				<array/>
+				<array>
+					<string>Coelho</string>
+				</array>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -574,7 +576,9 @@
 			</dict>
 			<dict>
 				<key>Animais</key>
-				<array/>
+				<array>
+					<string>Coelho</string>
+				</array>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -591,7 +595,9 @@
 			</dict>
 			<dict>
 				<key>Animais</key>
-				<array/>
+				<array>
+					<string>Coelho</string>
+				</array>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>

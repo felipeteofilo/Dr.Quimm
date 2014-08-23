@@ -207,6 +207,7 @@
     return [self estaComItem:@"Contador Geiger"];
 }
 -(BOOL)estaComItem:(NSString*)nomeItem{
+    NSArray *arra=[self.itens arrayItensJogador];
     return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
 

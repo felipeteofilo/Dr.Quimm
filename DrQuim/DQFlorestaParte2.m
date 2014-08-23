@@ -30,7 +30,9 @@
     self.vila =vila;
 }
 
-
+-(void)configuraAnimaisParte{
+    
+}
 -(void)posicionarAnimais{
     DQAnimalLeopardinho * leopardo = [[DQAnimalLeopardinho alloc]initLeopardinho];
     
@@ -90,14 +92,12 @@
         [self.view presentScene:self.vila];
     }
 
-//TODO:- Deixar isso certo pela graça do senhor todo poderoso!
+//TODO:- Melhorar Método
     //Verifica se: esta na missao03, nao esta falando e ja tem o coelho
     if (([self.jogador.controleMissoes.missao.ID isEqualToString:@"Missao03"])&&(self.jogador.controleMissoes.parteAtual==4)) {
         
-        if ([self.jogador estaComItem:@"coelho"]) {
+        if ([self.jogador estaComItem:@"Coelho"]) {
             //Esta na missao 3, e tem o coelho passa a parte da missao e volta p vila
-            self.jogador.controleMissoes.parteAtual++;
-            
             [self.view presentScene:self.vila];
         }
 

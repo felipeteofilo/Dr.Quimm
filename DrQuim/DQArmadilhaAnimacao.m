@@ -114,7 +114,7 @@
 -(void)animarCapturando{
     [self.animal setDirCaminhada:'D'];
     
-    [[DQJogador sharedJogador]receberItem:self.animal.nomeAnimal quantidade:1];
+    [[[DQJogador sharedJogador] itens]receberItem:self.animal.nomeAnimal quantidade:1];
     
     
     SKAction * andar = [self.animal andarPara:CGPointMake(750, 135)];

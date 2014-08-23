@@ -1108,6 +1108,28 @@
 					<array>
 						<dict>
 							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
 							<string>Piloto:</string>
 							<key>Texto</key>
 							<string>Aqui está! Consegui pegar o coelho!</string>
@@ -1187,7 +1209,7 @@
 							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
-					<key>Parte5R</key>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -1952,12 +1974,34 @@
 							<key>Sujeito</key>
 							<string>Caçador</string>
 							<key>Texto</key>
-							<string>Você ter conseguido foi pura sorte! Não tem nada demais nisso! todos sabem como os coelhos são fáceis de pegar!</string>
+							<string></string>
 							<key>Foto</key>
 							<string>rostoCacador</string>
 						</dict>
 					</array>
 					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Caçador</string>
+							<key>Texto</key>
+							<string>Você ter conseguido foi pura sorte! Não tem nada demais nisso! todos sabem como os coelhos são fáceis de pegar!</string>
+							<key>Foto</key>
+							<string>rostoCacador</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -2686,6 +2730,28 @@
 					<array>
 						<dict>
 							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
 							<string>Chefe - Cabeça Simpática</string>
 							<key>Texto</key>
 							<string>hmmm... então ele não é um covarde afinal.</string>
@@ -2701,7 +2767,7 @@
 							<string>rostoChefeRanzinza</string>
 						</dict>
 					</array>
-					<key>Parte5R</key>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -3394,6 +3460,28 @@
 							<key>Sujeito</key>
 							<string>Curandeiro</string>
 							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoCurandeiro</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Curandeiro</string>
+							<key>Texto</key>
 							<string>Boa sorte na sua caçada, meu jovem!</string>
 							<key>Foto</key>
 							<string>rostoCurandeiro</string>
@@ -3407,7 +3495,7 @@
 							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Parte5R</key>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
@@ -4018,6 +4106,28 @@
 					<array>
 						<dict>
 							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte5R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Cientista</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoCientista</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
 							<string>Piloto</string>
 							<key>Texto</key>
 							<string>Prefere voar... hump! esse moleque não tem mais jeito...</string>
@@ -4025,7 +4135,7 @@
 							<string>rostoPiloto</string>
 						</dict>
 					</array>
-					<key>Parte5R</key>
+					<key>Parte6R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>

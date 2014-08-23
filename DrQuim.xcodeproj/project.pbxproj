@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2340FDE319A70EB200E8FCCE /* DQNTransformacaoTela.m in Sources */ = {isa = PBXBuildFile; fileRef = 2340FDE219A70EB200E8FCCE /* DQNTransformacaoTela.m */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23A538E9196C6E9E00821BAF /* DQNpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQNpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
@@ -27,7 +26,6 @@
 		755876FF199AB5E40084E5AC /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 755876FE199AB5E40084E5AC /* DQCutsceneControle.m */; };
 		7560591019955F9C00BD455A /* DQMissao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560590F19955F9C00BD455A /* DQMissao.m */; };
 		7560591319955FC700BD455A /* DQMissaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560591219955FC700BD455A /* DQMissaoControle.m */; };
-		756059151995602500BD455A /* Missoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756059141995602500BD455A /* Missoes.plist */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
 		94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA01933BA290024FB94 /* CoreGraphics.framework */; };
 		94080EA31933BA290024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
@@ -190,6 +188,8 @@
 		C5FFB44219A939FF004F3CD0 /* Maleta_NaHCO.png in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB43519A939FF004F3CD0 /* Maleta_NaHCO.png */; };
 		C5FFB44319A939FF004F3CD0 /* Maleta_NH4OH.png in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB43619A939FF004F3CD0 /* Maleta_NH4OH.png */; };
 		C5FFB44419A939FF004F3CD0 /* Maleta_Pb(NO3)2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB43719A939FF004F3CD0 /* Maleta_Pb(NO3)2.png */; };
+		C5FFB44619A946B1004F3CD0 /* JogadorEscondido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB44519A946B1004F3CD0 /* JogadorEscondido.png */; };
+		C5FFB44819A94AF6004F3CD0 /* Missoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB44719A94AF6004F3CD0 /* Missoes.plist */; };
 		CD1392C119A7C25A00143DCA /* destino.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C019A7C25A00143DCA /* destino.png */; };
 		CD1392C719A7C2A000143DCA /* elemento_I.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C219A7C2A000143DCA /* elemento_I.png */; };
 		CD1392C819A7C2A000143DCA /* elemento_K.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C319A7C2A000143DCA /* elemento_K.png */; };
@@ -226,8 +226,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2340FDE119A70EB200E8FCCE /* DQNTransformacaoTela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNTransformacaoTela.h; sourceTree = "<group>"; };
-		2340FDE219A70EB200E8FCCE /* DQNTransformacaoTela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNTransformacaoTela.m; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		23A538E7196C6E9E00821BAF /* DQNpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNpc.h; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 		7560590F19955F9C00BD455A /* DQMissao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissao.m; sourceTree = "<group>"; };
 		7560591119955FC700BD455A /* DQMissaoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMissaoControle.h; sourceTree = "<group>"; };
 		7560591219955FC700BD455A /* DQMissaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissaoControle.m; sourceTree = "<group>"; };
-		756059141995602500BD455A /* Missoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Missoes.plist; sourceTree = "<group>"; };
 		94080E9B1933BA290024FB94 /* DrQuim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrQuim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94080E9E1933BA290024FB94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94080EA01933BA290024FB94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -463,6 +460,8 @@
 		C5FFB43519A939FF004F3CD0 /* Maleta_NaHCO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maleta_NaHCO.png; sourceTree = "<group>"; };
 		C5FFB43619A939FF004F3CD0 /* Maleta_NH4OH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maleta_NH4OH.png; sourceTree = "<group>"; };
 		C5FFB43719A939FF004F3CD0 /* Maleta_Pb(NO3)2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maleta_Pb(NO3)2.png"; sourceTree = "<group>"; };
+		C5FFB44519A946B1004F3CD0 /* JogadorEscondido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JogadorEscondido.png; sourceTree = "<group>"; };
+		C5FFB44719A94AF6004F3CD0 /* Missoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Missoes.plist; path = "Arquivos Plist/Missoes.plist"; sourceTree = "<group>"; };
 		CD1392C019A7C25A00143DCA /* destino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = destino.png; sourceTree = "<group>"; };
 		CD1392C219A7C2A000143DCA /* elemento_I.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_I.png; sourceTree = "<group>"; };
 		CD1392C319A7C2A000143DCA /* elemento_K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_K.png; sourceTree = "<group>"; };
@@ -525,6 +524,7 @@
 		2323166F1947BCAB0002FB1D /* Arquvos XML */ = {
 			isa = PBXGroup;
 			children = (
+				C5FFB44719A94AF6004F3CD0 /* Missoes.plist */,
 				C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */,
 				C5FFB42519A93706004F3CD0 /* Receitas.plist */,
 				C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */,
@@ -538,15 +538,6 @@
 				9488196619901A6D00609A0F /* MissoesJogador.plist */,
 			);
 			name = "Arquvos XML";
-			sourceTree = "<group>";
-		};
-		2340FDE019A70D3600E8FCCE /* Novas transformacoes */ = {
-			isa = PBXGroup;
-			children = (
-				2340FDE119A70EB200E8FCCE /* DQNTransformacaoTela.h */,
-				2340FDE219A70EB200E8FCCE /* DQNTransformacaoTela.m */,
-			);
-			name = "Novas transformacoes";
 			sourceTree = "<group>";
 		};
 		23477FF719463E0E00479AFE /* Falas e Cutscenes */ = {
@@ -611,10 +602,8 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
-				2340FDE019A70D3600E8FCCE /* Novas transformacoes */,
 				94331C7A19A538C300FD04F8 /* DrQuim.entitlements */,
 				CD616FE319A51DA800B5C63A /* Transformacoes */,
-				CDC48AC919929F4A00588E79 /* _temp novas classes */,
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
 				C57D7C2A1964E3A100EF94C9 /* Controladores */,
 				C511252E1973868D00CECCAD /* ObjetosJogo */,
@@ -681,6 +670,7 @@
 				943D3BB619A6654A00A87254 /* Rostos.atlas */,
 				9437111A19A3EF1E00B8846E /* NPCS.atlas */,
 				C57D7C2B1964E99000EF94C9 /* Jogador.png */,
+				C5FFB44519A946B1004F3CD0 /* JogadorEscondido.png */,
 			);
 			path = Personagens;
 			sourceTree = "<group>";
@@ -779,6 +769,8 @@
 		C511252E1973868D00CECCAD /* ObjetosJogo */ = {
 			isa = PBXGroup;
 			children = (
+				7560590E19955F9C00BD455A /* DQMissao.h */,
+				7560590F19955F9C00BD455A /* DQMissao.m */,
 				23477FF819463E7500479AFE /* DQFala.h */,
 				23477FF919463E7500479AFE /* DQFala.m */,
 				943710B819A3DF0000B8846E /* DQArmadilha.h */,
@@ -931,6 +923,8 @@
 		C57D7C2A1964E3A100EF94C9 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				7560591119955FC700BD455A /* DQMissaoControle.h */,
+				7560591219955FC700BD455A /* DQMissaoControle.m */,
 				CDC48ACD1992A0C800588E79 /* DQFalasNoJogoControle.h */,
 				CDC48ACE1992A0C800588E79 /* DQFalasNoJogoControle.m */,
 				755876FD199AB5E40084E5AC /* DQCutsceneControle.h */,
@@ -1066,18 +1060,6 @@
 			name = SKScenes;
 			sourceTree = "<group>";
 		};
-		CDC48AC919929F4A00588E79 /* _temp novas classes */ = {
-			isa = PBXGroup;
-			children = (
-				7560590E19955F9C00BD455A /* DQMissao.h */,
-				7560590F19955F9C00BD455A /* DQMissao.m */,
-				7560591119955FC700BD455A /* DQMissaoControle.h */,
-				7560591219955FC700BD455A /* DQMissaoControle.m */,
-				756059141995602500BD455A /* Missoes.plist */,
-			);
-			name = "_temp novas classes";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1196,7 +1178,6 @@
 				C5FFB43D19A939FF004F3CD0 /* Maleta_H2SO4.png in Resources */,
 				C58F75EC19A4F20B00DC7A71 /* Fase3_Parte9.png in Resources */,
 				CD1392C819A7C2A000143DCA /* elemento_K.png in Resources */,
-				756059151995602500BD455A /* Missoes.plist in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				C5FFB43F19A939FF004F3CD0 /* Maleta_KI.png in Resources */,
 				C58F75CA19A4EBEA00DC7A71 /* Fundo07 - Sapos .mp3 in Resources */,
@@ -1226,6 +1207,7 @@
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
 				943710B019A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 in Resources */,
+				C5FFB44819A94AF6004F3CD0 /* Missoes.plist in Resources */,
 				C58F75E619A4F20B00DC7A71 /* Fase3_Parte3.png in Resources */,
 				C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */,
 				CD1392C119A7C25A00143DCA /* destino.png in Resources */,
@@ -1262,6 +1244,7 @@
 				C55CE580199BA91F00375C87 /* ContadorGeiger-1.mp3 in Resources */,
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
 				9488196919901A6D00609A0F /* ConfigFase.plist in Resources */,
+				C5FFB44619A946B1004F3CD0 /* JogadorEscondido.png in Resources */,
 				943710B419A3CF5F00B8846E /* ImagemInicioJogo.png in Resources */,
 				943D3BB719A6654A00A87254 /* Rostos.atlas in Resources */,
 				3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */,
@@ -1369,7 +1352,6 @@
 				9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
 				C54031E91989FE98003384AB /* DQOpcaoMenu.m in Sources */,
-				2340FDE319A70EB200E8FCCE /* DQNTransformacaoTela.m in Sources */,
 				943D3BBA19A667B600A87254 /* DQCenaBronca.m in Sources */,
 				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
