@@ -84,18 +84,10 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSArray *arrayNodes=[self.mundo nodesAtPoint:[[touches anyObject]locationInNode:self.backgroundAtual]];
-    
-    SKNode *nodeQuimm;
-    
-    for (SKNode *node in arrayNodes) {
-        if ([node.name isEqualToString:@"Quimm"]) {
-            nodeQuimm=node;
-        }
-    }
+    SKNode *nodeQuimm=[self.mundo nodeAtPoint:[[touches anyObject]locationInNode:self.mundo]];
     
     //Verifica se esta sem missao e se tocou no Dr. Quimm
-    if ((![self.jogador.controleMissoes emMissao])&&(nodeQuimm)) {
+    if ((![self.jogador.controleMissoes emMissao])&&([nodeQuimm.name isEqualToString:@"Quimm"])) {
         //Tocando abre a maleta
         [self apresentarCenaMaleta];
     }else{
