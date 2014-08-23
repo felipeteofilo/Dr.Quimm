@@ -540,24 +540,6 @@
 			</dict>
 			<dict>
 				<key>Descricao</key>
-				<string></string>
-				<key>NPCRequisito</key>
-				<string></string>
-				<key>ItemRequisito</key>
-				<string></string>
-				<key>ItemRecebido</key>
-				<array/>
-				<key>ItemEntregue</key>
-				<array/>
-				<key>Fome</key>
-				<integer>0</integer>
-				<key>Sede</key>
-				<integer>0</integer>
-				<key>Vida</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>Descricao</key>
 				<string>Agora que você tem o coelho, leve-o para a mãe de todos</string>
 				<key>NPCRequisito</key>
 				<string>Maedetodos</string>

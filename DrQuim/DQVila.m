@@ -51,28 +51,19 @@
         
         //Inicia o spriteNode daquele node com o NOME e POSICAO
         DQNpc *npc = [[DQNpc alloc] initComNome:nomeNPC naPosicao:posicaoNPC];
+        [npc setZPosition:50.0f];
+        [npc setName:nomeNPC];
         
         [self.npcs addObject:npc];
         [self.mundo addChild:npc];
     }
 }
 
--(void)didMoveToView:(SKView *)view{
-    NSLog(@"Parte Atual Missao %i",self.jogador.controleMissoes.parteAtual);
-}
-
 -(void)apresentarCenaMaleta{
+    DQTransformacaoTela *cenaTransformacoes=[[DQTransformacaoTela alloc]initWithSize:self.view.bounds.size];
     
-    if (!self.falouCurandeiroCacadaCoelho) {
-        self.falouCurandeiroCacadaCoelho=YES;
-        [DQControleUserDefalts setFalouCurandeiroCacadaCoelho:YES];
-        
-        DQTransformacaoTela *cenaTransformacoes=[[DQTransformacaoTela alloc]initWithSize:self.view.bounds.size];
-        
-        self.posicaoJogador=self.jogador.position;
-        [self.view presentScene:cenaTransformacoes];
-        
-    }
+    self.posicaoJogador=self.jogador.position;
+    [self.view presentScene:cenaTransformacoes];
 }
 -(void)apresentarCenaBronca{
     DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
@@ -89,17 +80,28 @@
     
     [self.view presentScene:floresta2];
     
-    
     self.apresentouVila =YES;
-    
     
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-}
-
--(void)irParaFlorestaCacada{
+    NSArray *arrayNodes=[self.mundo nodesAtPoint:[[touches anyObject]locationInNode:self.backgroundAtual]];
+    
+    SKNode *nodeQuimm;
+    
+    for (SKNode *node in arrayNodes) {
+        if ([node.name isEqualToString:@"Quimm"]) {
+            nodeQuimm=node;
+        }
+    }
+    
+    //Verifica se esta sem missao e se tocou no Dr. Quimm
+    if ((![self.jogador.controleMissoes emMissao])&&(nodeQuimm)) {
+        //Tocando abre a maleta
+        [self apresentarCenaMaleta];
+    }else{
+        [super touchesBegan:touches withEvent:event];
+    }
     
 }
 
@@ -134,7 +136,13 @@
         
         if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao03"]) {
             if(self.jogador.controleMissoes.parteAtual== 2){
-                [self apresentarCenaMaleta];
+                if (!self.falouCurandeiroCacadaCoelho) {
+                    
+                    //Atualiza para nao ficar chamando direto
+                    self.falouCurandeiroCacadaCoelho=YES;
+                    [DQControleUserDefalts setFalouCurandeiroCacadaCoelho:YES];
+                    [self apresentarCenaMaleta];
+                }
             }
             //Assim que ele fala com o cacador vai mudar a parte da missao, entao vai p floresta
             if(self.jogador.controleMissoes.parteAtual== 4){

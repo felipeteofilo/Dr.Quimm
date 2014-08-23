@@ -23,7 +23,7 @@
         
         [self.spriteNode setSize:CGSizeMake(90, 160)];
         
-        [self.spriteNode setZPosition:10.0f];
+        [self.spriteNode setZPosition:100.0f];
         
         //Deixar o corpo fisico mais prox ao sprite
         [self configuraCorpoFisico];

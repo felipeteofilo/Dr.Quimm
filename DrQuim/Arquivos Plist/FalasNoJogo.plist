@@ -1108,28 +1108,6 @@
 					<array>
 						<dict>
 							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string></string>
-							<key>Foto</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Parte5R</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
-							<string>Mãe de todos</string>
-							<key>Texto</key>
-							<string></string>
-							<key>Foto</key>
-							<string>rostoMaedetodos</string>
-						</dict>
-					</array>
-					<key>Parte6</key>
-					<array>
-						<dict>
-							<key>Sujeito</key>
 							<string>Piloto:</string>
 							<key>Texto</key>
 							<string>Aqui está! Consegui pegar o coelho!</string>
@@ -1209,13 +1187,35 @@
 							<string>rostoMaedetodos</string>
 						</dict>
 					</array>
-					<key>Parte6R</key>
+					<key>Parte5R</key>
 					<array>
 						<dict>
 							<key>Sujeito</key>
 							<string>Mãe de todos</string>
 							<key>Texto</key>
 							<string>-//-</string>
+							<key>Foto</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte6</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string></string>
+							<key>Foto</key>
+							<string>rostoMaedetodos</string>
+						</dict>
+					</array>
+					<key>Parte6R</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Mãe de todos</string>
+							<key>Texto</key>
+							<string></string>
 							<key>Foto</key>
 							<string>rostoMaedetodos</string>
 						</dict>

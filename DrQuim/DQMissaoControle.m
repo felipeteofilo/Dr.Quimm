@@ -16,13 +16,13 @@
         self.cena = cenaRecebida;
         
         //Inicia na parte 0
-        self.parteAtual = 3;
+        self.parteAtual = 0;
         
         //E sem nenhuma missão
-        self.emMissao = YES;
+        self.emMissao = NO;
         
         //Define a próxima missão (a primeira)
-        self.proximaMissao = 3;
+        self.proximaMissao = 1;
         
         //Apresentando a próxima missão (no caso, a primeira)
         self.missao = [[DQMissao alloc] initMissao:self.proximaMissao];

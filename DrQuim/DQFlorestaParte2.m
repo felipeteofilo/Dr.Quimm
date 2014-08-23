@@ -98,6 +98,8 @@
         
         if ([self.jogador estaComItem:@"Coelho"]) {
             //Esta na missao 3, e tem o coelho passa a parte da missao e volta p vila
+            
+            self.jogador.controleMissoes.parteAtual++;
             [self.view presentScene:self.vila];
         }
 
