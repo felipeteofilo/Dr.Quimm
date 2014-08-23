@@ -58,6 +58,7 @@
 }
 
 -(void)didMoveToView:(SKView *)view{
+    [super didMoveToView:view];
     NSLog(@"Parte Atual Missao %i",self.jogador.controleMissoes.parteAtual);
 }
 
@@ -83,7 +84,7 @@
 -(void)apresentarFloresta2{
     self.posicaoJogador= self.jogador.position;
     
-    DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initFase:self.faseAtual+1 Size:self.size];
+    DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initWithSize:self.size];
     
     [floresta2 salvarCenaVila:self];
     

@@ -128,11 +128,7 @@
         default:
             faseIniciar=[[DQFase alloc]initFase:ultimaFaseJogador Size:self.frame.size];
             
-            if (![DQControleUserDefalts rodouCutSceneFase:ultimaFaseJogador]) {
-                cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
-                
-                [DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
-            }
+
             break;
     }
     

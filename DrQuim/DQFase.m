@@ -507,12 +507,23 @@
             }
             //A cada 60 segundos salva os status do jogados
             [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+            
+            NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
+            
+            [missao setObject:[NSNumber numberWithBool:self.jogador.controleMissoes.emMissao] forKey:@"EmMissao"];
+            [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.parteAtual]forKey:@"ParteAtual"];
+            
+            [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.proximaMissao] forKey:@"MissaoAtual"];
+            
+            [DQControleUserDefalts setMissaoAtualJogador:missao];
         }
     }
 }
 
 -(void)didMoveToView:(SKView *)view{
     [super didMoveToView:view];
+    
+    [self iniciarFase];
     
     //So chama o som qndo a Scene aparecer
     [self.controleSom tocarMusicaFundo];
@@ -683,7 +694,7 @@
         [self configuracoesFase:fase];
         //[self iniciarFase];
         //Chama o iniciar fase
-        [self iniciarFase];
+        //[self iniciarFase];
     }
     return self;
 }
