@@ -87,8 +87,7 @@
     }
 }
 
-
-//TODO - AO INVÉZ DE UM ITEM PASSADO POR PARAMETRO, CONFERIR NO INVENTÁRIO
+//Verfica se pode passar parte damissao pelo nome do npc e o inventario para conferir se tem o item
 -(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items{
     
     Boolean podePassar = false;

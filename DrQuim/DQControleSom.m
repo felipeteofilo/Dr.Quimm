@@ -17,6 +17,8 @@
     
 }
 -(void)tocarSom:(AVAudioPlayer*)player{
+    
+    
     self.playerSom=player;
     
     SKAction *playAction = [SKAction runBlock:^{
@@ -28,6 +30,8 @@
     
     //Chama o play e o atraso
     SKAction *sequence = [SKAction sequence:@[playAction,waitAction]];
+    
+    
 
     [self runAction:sequence completion:^{
         //[self removeAllActions];
@@ -50,13 +54,16 @@
 }
 
 -(void)pararSom{
+    [self.playerSom stop];
     
     SKAction *stopAction=[SKAction runBlock:^{
             [self.playerSom stop];
     }];
 
     [self runAction:stopAction];
-    [self removeAllActions];
+    if ([self hasActions]) {
+        [self removeAllActions];
+    }
 }
 
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar{
