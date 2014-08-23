@@ -95,5 +95,45 @@
 		<key>imagem</key>
 		<string>maleta</string>
 	</dict>
+	<key>liquidoAmarelo</key>
+	<dict>
+		<key>nome</key>
+		<string>Líquido Amarelo</string>
+		<key>descricao</key>
+		<string>Vidro com liquido amarelo, que pode ser usado como isca.</string>
+		<key>categoria</key>
+		<string>Item de Missão</string>
+		<key>imagem</key>
+		<string>liquidoAmarelo</string>
+		<key>Isca</key>
+		<dict>
+			<key>Caracteristica</key>
+			<string>Amarelo</string>
+			<key>Nome</key>
+			<string>Liquido</string>
+		</dict>
+	</dict>
+	<key>armadilhaSimples</key>
+	<dict>
+		<key>nome</key>
+		<string>Armadilha Simples</string>
+		<key>descricao</key>
+		<string>Armadilha usada para capturar animais na floresta.</string>
+		<key>categoria</key>
+		<string>Item de Missão</string>
+		<key>imagem</key>
+		<string>ArmadilhaSimples</string>
+	</dict>
+	<key>coelho</key>
+	<dict>
+		<key>nome</key>
+		<string>Coelho</string>
+		<key>descricao</key>
+		<string>Coelho caçado mais cedo!</string>
+		<key>categoria</key>
+		<string>Item de Missão</string>
+		<key>imagem</key>
+		<string>carne</string>
+	</dict>
 </dict>
 </plist>

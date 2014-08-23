@@ -32,5 +32,15 @@
 		<key>ParteAtual</key>
 		<integer>0</integer>
 	</dict>
+	<dict>
+		<key>Nome</key>
+		<string>Missão 03 - Caçando o coelho</string>
+		<key>Atual</key>
+		<false/>
+		<key>Partes</key>
+		<integer>6</integer>
+		<key>ParteAtual</key>
+		<integer>0</integer>
+	</dict>
 </array>
 </plist>
