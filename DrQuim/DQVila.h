@@ -8,17 +8,22 @@
 
 #import "DQFase.h"
 #import "DQBarraStatus.h"
-#import "DQnpc.h"
+#import "DQNpc.h"
 #import "DQCutsceneControle.h"
-
+#import "DQCenaBronca.h"
+#import "DQFlorestaParte2.h"
 
 @interface DQVila : DQFase
 
 @property NSMutableArray *escalavel;
 
-
-
+@property CGPoint posicaoJogador;
 //NPCs dessa fase
 @property NSMutableArray *npcs;
+
+//Usado para definir se irá apresentar a cena da bronca ou não
+@property BOOL apresentouCenaBronca;
+@property BOOL apresentouVila;
+@property BOOL mostrandoContador;
 
 @end

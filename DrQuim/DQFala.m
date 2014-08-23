@@ -26,7 +26,7 @@
         //inicia as variaveis de tamanho de texto
         self.tamanhoTextoComFoto = CGSizeMake(self.frame.size.width * 0.7, self.frame.size.height * 0.8);
         self.tamanhoTextoSemFoto = CGSizeMake(self.frame.size.width * 0.95, self.frame.size.height * 0.8);
-
+        
         //inicia as variaveis de posicao de texto
         self.posicaoTextoComFoto = CGSizeMake(self.frame.size.width * 0.25, self.frame.size.height * 0.12);
         self.posicaoTextoSemFoto = CGSizeMake(self.frame.size.width * 0.03, self.frame.size.height * 0.12);
@@ -96,7 +96,7 @@
     SKAction *fadeIn = [SKAction fadeInWithDuration:0.8f];
     SKAction *fadeOut = [SKAction fadeOutWithDuration:0.8f];
     SKAction *piscar = [SKAction sequence:@[fadeIn, fadeOut]];
-
+    
     //Fica repetindo a ação
     [aviso runAction:[SKAction repeatActionForever:piscar] withKey:@"textoPiscando"];
 }
@@ -105,12 +105,18 @@
 -(void)criarTexto
 {
     NSString *textoFormatado = [NSString stringWithFormat:@"%@: %@", self.sujeito, self.texto];
-    DQTexto *texto = [[DQTexto alloc]initTexto:textoFormatado espacoLimite:self.tamanhoTexto fonte:25];
     
-    [texto setPosition:CGPointMake(self.posicaoTexto.width + texto.frame.size.width/2, self.posicaoTexto.height + texto.frame.size.height/2)];
+    //DQTexto *texto = [[DQTexto alloc]initTexto:textoFormatado espacoLimite:self.tamanhoTexto fonte:25];
+    //[texto setPosition:CGPointMake(self.posicaoTexto.width + texto.frame.size.width/2, self.posicaoTexto.height + texto.frame.size.height/2)];
+    //[texto mudaCorTexto:[UIColor whiteColor]];
+    //[self addChild:texto];
     
-    [texto mudaCorTexto:[UIColor whiteColor]];
-    [self addChild:texto];
+    self.textoConfigurado=[[DQTexto alloc]initTexto:textoFormatado espacoLimite:self.tamanhoTexto fonte:25];
+    
+    [self.textoConfigurado setPosition:CGPointMake(self.posicaoTexto.width + self.textoConfigurado.frame.size.width/2, self.posicaoTexto.height + self.textoConfigurado.frame.size.height/2)];
+
+    [self.textoConfigurado mudaCorTexto:[UIColor whiteColor]];
+    [self addChild:self.textoConfigurado];
 }
 
 //...
@@ -121,4 +127,13 @@
     return self;
 }
 
+-(TamanhoTexto)tamanhoTexo{
+    if ([self.textoConfigurado.labelstexto count]==1) {
+        return Pequeno;
+    }else if([self.textoConfigurado.labelstexto count]==2){
+        return Medio;
+    }else{
+        return Grande;
+    }
+}
 @end

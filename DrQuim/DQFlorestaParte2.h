@@ -9,14 +9,20 @@
 #import "DQFase.h"
 #import "DQBarraStatus.h"
 #import "DQCutsceneControle.h"
+#import "DQVila.h"
+
 
 @interface DQFlorestaParte2 : DQFase
 
 //DQCutsceneControle para controlar as cutscenes e as falas.
 @property DQCutsceneControle *controleCutscenes;
 
+@property SKScene *vila;
+
 //Booleanos para controle da DQCutsceneControle
-@property BOOL cutsceneEstaRodando;
-@property BOOL estaFalando;
+@property BOOL falouRadiacaoLeopardinho;
+
+//funcao que salva referencia da vila
+-(void)salvarCenaVila :(SKScene*)vila;
 
 @end

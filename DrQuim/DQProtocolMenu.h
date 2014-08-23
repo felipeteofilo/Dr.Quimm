@@ -17,7 +17,8 @@
 
 @optional
 -(id)initMenu;
+-(void)prepararExibicao;
 @required
 -(void)esconderMenu;
--(void)prepararExibicao;
+
 @end

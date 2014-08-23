@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DQControleSom.h"
 #import "DQFala.h"
 
 @interface DQFalasNoJogoControle : NSObject
@@ -25,6 +26,8 @@
 
 //Variavel do tipo NSString que define se esta passando alerta ou fala de jogo
 @property NSString *estadoFala;
+
+@property DQControleSom *controleSom;
 
 //Iniciar com a fase atual
 -(id)initComFaseAtual:(int)faseAtual;

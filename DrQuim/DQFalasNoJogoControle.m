@@ -47,6 +47,17 @@
     
     [self.caixaDeFala setName:@"falasDoJogo"];
     
+    
+    
+    //Cria o controlador de som
+    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
+    
+    //Verifica qual a duracao do som da fala a ser tocado
+    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
+    
+    //Adiciona o controlador de Som á caixa de falas
+    [self.caixaDeFala addChild:self.controleSom];
+    
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
 }
@@ -76,6 +87,18 @@
     [self.caixaDeFala setPosition:CGPointMake(tamanho.width*0.1, tamanho.height *0.75)];
     [self.caixaDeFala setName:@"falasDoJogo"];
     
+    
+    
+    
+    //Cria o controlador de som
+    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
+    
+    //Verifica qual a duracao do som da fala a ser tocado
+    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
+    
+    //Adiciona o controlador de Som á caixa de falas
+    [self.caixaDeFala addChild:self.controleSom];
+    
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
 }
@@ -84,6 +107,11 @@
 -(Boolean)proximaFala{
     //Setamos a fala atual para a proxima e removemos a caixa de falas anterior da tela
     self.falaAtual++;
+    
+    //Remover sons Anteriores
+    [self.controleSom pararSom];
+    
+    
     [self.caixaDeFala removeFromParent];
     //verificamos se e o fim das falas atuais e retornamos que nao ha mais falas
     if (self.falaAtual >= self.arrayDeFalasAtuais.count) {
@@ -94,4 +122,7 @@
     return true;
 }
 
+-(void)configurarControleSom{
+    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
+}
 @end

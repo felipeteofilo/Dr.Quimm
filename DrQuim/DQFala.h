@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQTexto.h"
+#import "DQControleSom.h"
 
 @interface DQFala : SKSpriteNode
 
@@ -26,14 +27,15 @@
 @property CGSize posicaoTextoSemFoto;
 @property CGSize posicaoTexto;
 
+//Adicionado o DQTexto nas propriedades para poder manipulá-lo futuramente
+@property DQTexto *textoConfigurado;
+
+
 //Método de início - recebe o dicionário da fala e o tamanho da cena a quem pertence
 -(id)initComDicionario: (NSDictionary *)dicionarioDaFala eTamanho:(CGSize)tamanho;
-
-
-
-
 
 //TEMPORÁRIO - APENAS PARA NÃO DAR ERRO
 -(id)initComSujeito:sujeitoTemporario Texto:textoTemporario;
 
+-(TamanhoTexto)tamanhoTexo;
 @end

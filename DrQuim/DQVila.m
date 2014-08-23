@@ -14,17 +14,23 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
-        
         [self configuracoesFase:2];
-        [self iniciarFase];
     }
     return self;
 }
 
 -(void)iniciarFase{
     [super iniciarFase];
+    
     [self adicionaNPC];
+    
+    //Verifica se o jogador ja tem o contador Geiger
+    if(![self.jogador estaComContadorGeiger]){
+        //NAo tem esconde
+        [self.hudFase esconderContador];
+    }else{
+        self.mostrandoContador=YES;
+    }
 }
 
 -(void)adicionaNPC{
@@ -38,12 +44,73 @@
         //instancia o NPC dependendo de seu nome
         
         //Inicia o spriteNode daquele node com o NOME e POSICAO
-        DQnpc *npc = [[DQnpc alloc] initComNome:nomeNPC naPosicao:posicaoNPC];
+        DQNpc *npc = [[DQNpc alloc] initComNome:nomeNPC naPosicao:posicaoNPC];
         
         [self.npcs addObject:npc];
         [self.mundo addChild:npc];
     }
+}
+
+-(void)didMoveToView:(SKView *)view{
+    NSLog(@"Parte Atual Missao %i",self.jogador.controleMissoes.parteAtual);
+}
+-(void)apresentarCenaBronca{
+    DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
+    
+    self.jogador.controleMissoes.parteAtual++;
+    [self.view presentScene:cenaBronca];
+}
+-(void)apresentarFloresta2{
+    
+    self.posicaoJogador= self.jogador.position;
+    
+    DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initFase:self.faseAtual+1 Size:self.size];
+    
+    [floresta2 salvarCenaVila:self];
+    
+    [self.view presentScene:floresta2];
+    
+    
+    self.apresentouVila =YES;
     
     
 }
+
+-(void)update:(NSTimeInterval)currentTime{
+    [super update:currentTime];
+    
+    
+    if (self.apresentouVila) {
+        
+        [self.jogador removeFromParent];
+        
+        self.jogador.position = self.posicaoJogador;
+        
+        [self.mundo addChild:self.jogador];
+        self.apresentouVila =NO;
+    }
+    
+    if (![self childNodeWithName:@"falasDoJogo"] && ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao02"])) {
+        
+        if ((!self.apresentouCenaBronca) && (self.jogador.controleMissoes.parteAtual== 5)) {
+            
+            self.apresentouCenaBronca=YES;
+            [self apresentarCenaBronca];
+        }
+        if((self.jogador.controleMissoes.parteAtual== 2)){
+            
+            [self apresentarFloresta2];
+        }
+    }
+    if (!self.mostrandoContador) {
+        
+        if([self.jogador estaComContadorGeiger]){
+            //tem nao esconde
+            [self.hudFase exibirContador];
+            
+            self.mostrandoContador=YES;
+        }
+    }
+}
+
 @end

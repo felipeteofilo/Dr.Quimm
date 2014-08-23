@@ -15,24 +15,20 @@
         //configura background da scene
         SKSpriteNode *fundoTela=[SKSpriteNode spriteNodeWithImageNamed:@"ImagemInicioJogo"];
         [fundoTela setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [fundoTela setZPosition:-50.0f];
+        [fundoTela setAlpha:0.9f];
+        fundoTela.xScale=-1;
         [self addChild:fundoTela];
         
         self.mensagemCarregando=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
         [self.mensagemCarregando setText:@"Dr. Quimm"];
-        [self.mensagemCarregando setFontSize:100.0f];
-        [self.mensagemCarregando setFontColor:[UIColor grayColor]];
+        [self.mensagemCarregando setFontSize:190.0f];
+        [self.mensagemCarregando setFontColor:[UIColor colorWithRed:35.5/255.0f green:50.0/255.0f blue:44.0/255.0f alpha:1.0]];
         
-        [self.mensagemCarregando setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [self.mensagemCarregando setPosition:CGPointMake(600, CGRectGetMidY(self.frame)+100)];
         [self.mensagemCarregando setAlpha:0.0f];
         
         [self addChild:self.mensagemCarregando];
-        
-        
-        self.imagemFrasco=[SKSpriteNode spriteNodeWithImageNamed:@"IniciarJogo"];
-        [self.imagemFrasco setAnchorPoint:CGPointMake(0.5, 1)];
-        [self.imagemFrasco setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.mensagemCarregando.frame)-20)];
-        
-        [self addChild:self.imagemFrasco];
         
         SKLabelNode *teste=[SKLabelNode labelNodeWithFontNamed:[DQConfigMenu fonteMenu]];
         SKSpriteNode *teste2=[SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(200, 200)];
@@ -40,8 +36,8 @@
         [teste setText:@"teste"];
         [teste2 setName:@"teste"];
         [teste2 setPosition:CGPointMake(200, 200)];
-        [self addChild:teste2];
-        [teste2 addChild:teste];
+        //[self addChild:teste2];
+        //[teste2 addChild:teste];
         
     }
     return self;
@@ -50,19 +46,16 @@
 -(void)didMoveToView:(SKView *)view{
     [super didMoveToView:view];
     
-    [self animarFrasco];
-}
--(void)animarFrasco{
-    [self.imagemFrasco runAction:[SKAction rotateByAngle:M_1_PI duration:1] completion:^{
-        
-    }];
+    [self animarMensagem];
+    
+    if ([DQControleUserDefalts primeiraExecucaoDispositivo]) {
+        [self configuracoesInicial];
+    }
 }
 
 -(void)animarMensagem{
-    [self.mensagemCarregando runAction:[SKAction fadeInWithDuration:1] completion:^{
-        [self.mensagemCarregando runAction:[SKAction repeatAction:[SKAction performSelector:@selector(atualizarTextoMensagem) onTarget:self] count:3]completion:^{
-            [self iniciarJogo];
-        }];
+    [self.mensagemCarregando runAction:[SKAction sequence:@[[SKAction fadeInWithDuration:1.5],[SKAction waitForDuration:0.5]]] completion:^{
+        [self iniciarJogo];
     }];
 }
 
@@ -76,15 +69,28 @@
     CGPoint posToque=[[touches anyObject]locationInNode:self];
     
     SKNode *nodeTocado=[self nodeAtPoint:posToque];
-
+    
     if ([nodeTocado.name isEqualToString:@"teste"]) {
         [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
         [DQControleUserDefalts setRodouCutSceneFase:2 Valor:NO];
+        [DQControleUserDefalts setFaseAtual:1];
+        [DQControleUserDefalts setVolumeMusica:50.0];
+        [DQControleUserDefalts setVolumeSons:50.];
     }
 }
 
+-(void)configuracoesInicial{
+    [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
+    [DQControleUserDefalts setRodouCutSceneFase:2 Valor:NO];
+    [DQControleUserDefalts setFaseAtual:1];
+    [DQControleUserDefalts setVolumeMusica:50.0];
+    [DQControleUserDefalts setVolumeSons:50.];
+    [DQControleUserDefalts setEstadoJogadorVida:100 Fome:100 Sede:100 Respeito:0];
+    
+    [DQControleUserDefalts atualizarPrimeiraExecucao];
+}
 -(void)iniciarJogo{
-
+    
     int ultimaFaseJogador=[DQControleUserDefalts faseAtual];
     
     DQCutsceneTela *cutscene;
@@ -137,6 +143,6 @@
         [self.view presentScene:faseIniciar];
     }
     
-
+    
 }
 @end

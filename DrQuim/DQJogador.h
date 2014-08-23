@@ -12,6 +12,7 @@
 #import "DQFalasNoJogoControle.h"
 #import "DQControleUserDefalts.h"
 #import "DQArmadilhasJogador.h"
+#import "DQControleSom.h"
 
 @interface DQJogador : SKSpriteNode
 
@@ -39,7 +40,12 @@
 @property BOOL podeEscalar;
 @property BOOL estaNoChao;
 
+@property float distAndar;
+@property int impulsoPulo;
+
 @property NSString *andandoParaDirecao;
+
+@property DQControleSom *controleSom;
 
 //DQItensJogador que armazena tudo relacionado a itens
 @property DQItensJogador *itens;
@@ -109,4 +115,9 @@
 
 //Funcao para parar de derrapar
 -(void)pararDerrapar;
+
+-(void)interagirComNPC:(NSString *)nomeNPC;
+
+//Metodo que verifica se ja esta com contador
+-(BOOL)estaComContadorGeiger;
 @end

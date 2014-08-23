@@ -1,14 +1,14 @@
 //
-//  DQnpc.m
+//  DQNpc.m
 //  DrQuim
 //
 //  Created by Julia Yamamoto on 08/07/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import "DQnpc.h"
+#import "DQNpc.h"
 
-@implementation DQnpc
+@implementation DQNpc
 
 -(id)initComNome:(NSString *)nome naPosicao:(CGPoint)posicao
 {

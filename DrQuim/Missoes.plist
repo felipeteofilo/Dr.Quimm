@@ -39,7 +39,7 @@
 		<key>Nome</key>
 		<string>Missão 01 - Ajudando a mãe de todos</string>
 		<key>Recompensa</key>
-		<string>Lança</string>
+		<string>Armadilha Simples</string>
 		<key>Disparador</key>
 		<string>Maedetodos</string>
 		<key>Respeito</key>
@@ -224,15 +224,12 @@
 				<integer>0</integer>
 			</dict>
 			<dict>
-				<key>ItemRecebido</key>
+				<key>ArmadilhasEntregue</key>
 				<array>
-					<dict>
-						<key>Nome</key>
-						<string>Lança</string>
-						<key>Quantidade</key>
-						<integer>1</integer>
-					</dict>
+					<string>ArmadilhaSimples</string>
 				</array>
+				<key>ItemRecebido</key>
+				<array/>
 				<key>Descricao</key>
 				<string>Enfim, a caça de hoje! Entregue para mãe de todos e elá poderá fazer o jantar</string>
 				<key>NPCRequisito</key>
@@ -261,7 +258,7 @@
 		<key>Nome</key>
 		<string>Missão 02 - Recuperando a maleta</string>
 		<key>Recompensa</key>
-		<string></string>
+		<string>Maleta do Dr.Quimm</string>
 		<key>Disparador</key>
 		<string>Quimm</string>
 		<key>Respeito</key>
@@ -278,9 +275,16 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string>ContadorGeiger</string>
+				<array>
+					<dict>
+						<key>Nome</key>
+						<string>Contador Geiger</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
+				</array>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -296,9 +300,9 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -314,9 +318,9 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -332,9 +336,9 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string></string>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -350,9 +354,34 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<string>MaletaDoDrQuimm</string>
+				<array>
+					<dict>
+						<key>Nome</key>
+						<string>MaletaDoDrQuimm</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
+				</array>
 				<key>ItemEntregue</key>
+				<array/>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Momento Constrangedor!</string>
+				<key>NPCRequisito</key>
+				<string>Quimm</string>
+				<key>ItemRequisito</key>
 				<string></string>
+				<key>ItemRecebido</key>
+				<array/>
+				<key>ItemEntregue</key>
+				<array/>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>
@@ -368,9 +397,167 @@
 				<key>ItemRequisito</key>
 				<string>MaletaDoDrQuimm</string>
 				<key>ItemRecebido</key>
-				<string></string>
+				<array/>
 				<key>ItemEntregue</key>
-				<string>MaletaDoDrQuimm</string>
+				<array>
+					<dict>
+						<key>Nome</key>
+						<string>MaletaDoDrQuimm</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
+				</array>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Nome</key>
+		<string>Missão 03 - Caçando o coelho</string>
+		<key>Recompensa</key>
+		<string></string>
+		<key>Disparador</key>
+		<string>Maedetodos</string>
+		<key>Respeito</key>
+		<integer>10</integer>
+		<key>ID</key>
+		<string>Missao03</string>
+		<key>Partes</key>
+		<array>
+			<dict>
+				<key>Descricao</key>
+				<string>Fale com a mãe de todos, ela tem uma idéia!</string>
+				<key>NPCRequisito</key>
+				<string>Maedetodos</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<array/>
+				<key>ItemEntregue</key>
+				<array/>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>100</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Encontre algo amarelo para servir de isca</string>
+				<key>NPCRequisito</key>
+				<string>Curandeiro</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<array>
+					<dict>
+						<key>Nome</key>
+						<string>liquidoAmarelo</string>
+						<key>Quantidade</key>
+						<integer>2</integer>
+					</dict>
+				</array>
+				<key>ItemEntregue</key>
+				<array/>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Mostre o líquido amarelo para a mãe de todos</string>
+				<key>NPCRequisito</key>
+				<string>Maedetodos</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<array/>
+				<key>ItemEntregue</key>
+				<array/>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Vá até o caçador para que ele te guie até o local onde estão os coelhos￼</string>
+				<key>NPCRequisito</key>
+				<string>Cacador</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<array>
+					<dict>
+						<key>Nome</key>
+						<string>armadilhaSimples</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
+				</array>
+				<key>ItemEntregue</key>
+				<array/>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Capture o coelho posicionando a armadilha e colocando a isca amarela no centro dela.</string>
+				<key>NPCRequisito</key>
+				<string></string>
+				<key>ItemRequisito</key>
+				<string>coelho</string>
+				<key>ItemRecebido</key>
+				<array/>
+				<key>ItemEntregue</key>
+				<array/>
+				<key>Fome</key>
+				<integer>0</integer>
+				<key>Sede</key>
+				<integer>0</integer>
+				<key>Vida</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Descricao</key>
+				<string>Agora que você tem o coelho, leve-o para a mãe de todos</string>
+				<key>NPCRequisito</key>
+				<string>Maedetodos</string>
+				<key>ItemRequisito</key>
+				<string></string>
+				<key>ItemRecebido</key>
+				<array>
+					<dict>
+						<key>Nome</key>
+						<string>docinho</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
+				</array>
+				<key>ItemEntregue</key>
+				<array>
+					<dict>
+						<key>Nome</key>
+						<string>coelho</string>
+						<key>Quantidade</key>
+						<integer>1</integer>
+					</dict>
+				</array>
 				<key>Fome</key>
 				<integer>0</integer>
 				<key>Sede</key>

@@ -12,9 +12,15 @@
 #import "DQControleUserDefalts.h"
 
 typedef NS_ENUM(int, TipoObjeto){
-    Personagem=0,
+    Jogador=0,
     ContadorGeiger=1,
     NPC=3,
+};
+
+typedef NS_ENUM(int, TamanhoTexto){
+    Pequeno=1,
+    Medio=2,
+    Grande=3,
 };
 
 @interface DQControleSom : SKNode
@@ -22,6 +28,7 @@ typedef NS_ENUM(int, TipoObjeto){
 @property AVAudioPlayer *playerSom;
 @property NSArray * listaSons;
 @property int indiceSomTocar;
+@property TipoObjeto tipoObjeto;
 
 -(void)tocarSom;
 -(int)sortearSomTocar;
@@ -29,5 +36,9 @@ typedef NS_ENUM(int, TipoObjeto){
 -(void)proxSom;
 -(id)initControleSom:(TipoObjeto)objetoControlado;
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar;
+-(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar nLoops:(int)nLoops;
 -(void)tocarSomLista;
+-(void)tocarSomLooping:(AVAudioPlayer*)player;
+-(void)pararSom;
+-(NSString*)somFala:(TamanhoTexto)tamanhoFala;
 @end

@@ -29,6 +29,7 @@
     [self configuraTitulo];
     [self configuraBarraStatus];
     [self configuraBotaoMudo];
+    [self atualizaBarras];
 }
 
 -(void)configuraTitulo{

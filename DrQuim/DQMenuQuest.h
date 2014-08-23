@@ -10,6 +10,7 @@
 #import "DQConfigMenu.h"
 #import "DQReferenciaMissaoJogador.h"
 #import "DQTexto.h"
+#import "DQJogador.h"
 
 @interface DQMenuQuest : SKSpriteNode <DQProtocolMenu>
 

@@ -5,28 +5,65 @@
 //  Created by Leonardo de Sousa Mendes on 17/08/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
-
 #import "DQControleSom.h"
 
 @implementation DQControleSom
 
 -(void)tocarSom{
-    NSLog(@"passou pelo tocar som puro");
-     [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
+    [self tocarSom:[self configuraPlayerSom:[self.listaSons objectAtIndex:self.indiceSomTocar]]];
 }
 
-//-(void)tocarSom:(NSString*)nomeSomTocar{
+-(void)tocarSomAleatorio{
+    
+}
 -(void)tocarSom:(AVAudioPlayer*)player{
+    
+    
+    self.playerSom=player;
+    
+    SKAction *playAction = [SKAction runBlock:^{
+        [self.playerSom play];
+    }];
+    
+    //Faz com que a execução das actions atrasem p dar tempo de sair o som
+    SKAction *waitAction = [SKAction waitForDuration:self.playerSom.duration];
+    
+    //Chama o play e o atraso
+    SKAction *sequence = [SKAction sequence:@[playAction,waitAction]];
+    
+    
+
+    [self runAction:sequence completion:^{
+        //[self removeAllActions];
+        [self.playerSom stop];
+    }];
+}
+
+-(void)tocarSomLooping:(AVAudioPlayer*)player{
     SKAction *playAction = [SKAction runBlock:^{
         [player play];
     }];
+    
+    //Faz com que a execução das actions atrasem p dar tempo de sair o som
+    SKAction *waitAction = [SKAction waitForDuration:player.duration];
+    
+    //Chama o play e o atraso
+    SKAction *sequence = [SKAction sequence:@[playAction,waitAction]];
 
-    
-    SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
-    SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
-    
     [self runAction:sequence withKey:@"tocandoSom"];
+}
 
+-(void)pararSom{
+    [self.playerSom stop];
+    
+    SKAction *stopAction=[SKAction runBlock:^{
+            [self.playerSom stop];
+    }];
+
+    [self runAction:stopAction];
+    if ([self hasActions]) {
+        [self removeAllActions];
+    }
 }
 
 -(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar{
@@ -41,22 +78,59 @@
     return player;
 }
 
+-(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar nLoops:(int)nLoops{
+    NSError *error;
+    NSURL *urlSom = [[NSBundle mainBundle] URLForResource:nomeSomTocar withExtension:@"mp3"];
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlSom error:&error];
+    
+    [player setVolume:[DQControleUserDefalts volumeSons]];
+    [player prepareToPlay];
+    [player setNumberOfLoops:nLoops];
+    
+    return player;
+}
 //Passa o nome do objeto que recebera o controle de som para configurar os sons especificos
 -(id)initControleSom:(TipoObjeto)objetoControlado;{
     if (self=[super init]) {
         self.indiceSomTocar=0;
-        
+        self.tipoObjeto=objetoControlado;
     }
     return self;
 }
 
 -(void)configurarListaSons{
-    
+    if (self.tipoObjeto==NPC || self.tipoObjeto==Jogador) {
+        NSArray *sonsdisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Pequena-1",@"FalaPersonagens-Pequena-2",@"FalaPersonagens-Grande-1",@"FalaPersonagens-Media-1",@"FalaPersonagens-Media-2", nil];
+        
+        NSMutableArray *arraySons=[NSMutableArray array];
+        
+        int valorSorteado;
+        
+        for (int i=0; i<3; i++) {
+            valorSorteado=arc4random()%[sonsdisponiveis count]-1;
+            [arraySons addObject:[sonsdisponiveis objectAtIndex:valorSorteado]];
+        }
+        
+        self.listaSons=arraySons;
+    }
 }
 
--(void)pararSom{
-    [self removeAllActions];
+-(NSString*)somFala:(TamanhoTexto)tamanhoFala{
+    NSArray *sonsDisponiveis;
+    
+    if (tamanhoFala==Pequeno) {
+        sonsDisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Pequena-1",@"FalaPersonagens-Pequena-2",nil];
+    }else if (tamanhoFala==Medio){
+        sonsDisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Media-1",@"FalaPersonagens-Media-2",nil];
+    }else{
+        sonsDisponiveis=[NSArray arrayWithObjects:@"FalaPersonagens-Grande-1",@"FalaPersonagens-Grande-2",nil];
+    }
+    
+    int valorSorteado=(arc4random()%[sonsDisponiveis count]);
+    
+    return [sonsDisponiveis objectAtIndex:valorSorteado];
 }
+
 
 -(void)proxSom{
     if (self.indiceSomTocar < ([self.listaSons count]-1)) {

@@ -44,9 +44,12 @@
         
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
+        self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
+        [self addChild:self.controleSom];
         
-        
-        
+        self.distAndar=100;
+        self.impulsoPulo=210;
+        [self setName:@"Jogador"];
     }
     
     //retorna o jogador
@@ -189,7 +192,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, 175)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, self.impulsoPulo)];
         self.podePular += 1;
         self.estaNoChao = NO;
         
@@ -199,11 +202,15 @@
     }
 }
 
+//TODO- Melhorar metodo e passar ele p o DQUteis
+-(BOOL)estaComContadorGeiger{
+    return [[self.itens arrayItensJogador] containsObject:@"Contador Geiger"];
+}
+
 //metodo com retorno void - faz o jogador andar
 -(void)andarParaDirecao:(NSString*)direcao{
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
-        
-        
+
         //variavel SKAction- define a direcao do movimento
         SKAction *movimentar =[[SKAction alloc]init];
         
@@ -211,7 +218,9 @@
         if ([direcao isEqual:@"D"]) {
             
             self.andandoParaDirecao = @"D";
-            movimentar =[SKAction moveByX:90 y:0 duration:1.0];
+            //Alterado para usar da propriedade
+            //movimentar =[SKAction moveByX:90 y:0 duration:1.0];
+            movimentar=[SKAction moveByX:self.distAndar y:0 duration:1.0];
             
             if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
                 [self.physicsBody setVelocity:CGVectorMake(10, -10)];
@@ -222,7 +231,9 @@
         }else{
             
             self.andandoParaDirecao = @"E";
-            movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
+            //Alte
+            //movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
+                        movimentar=[SKAction moveByX:(self.distAndar *-1) y:0 duration:1.0];
             
             //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
             self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
@@ -237,6 +248,11 @@
         
         //anda para direcao
         [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+        
+        if (self.estaNoChao) {
+            //adicionado som
+            [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
+        }
     }
 }
 
@@ -283,11 +299,11 @@
     }
     //está perdendo a fome
     else{
-        if ((self.fome + fome) >100) {
+        if ((self.fome -(fome)) >100) {
             [self setFome:100];
         }
         else{
-            [self setFome:(self.fome + fome)];
+            [self setFome:(self.fome -(fome))];
         }
     }
 }
@@ -306,11 +322,11 @@
     }
     //está perdendo a sede
     else{
-        if ((self.sede + sede) > 100) {
+        if ((self.sede -(sede)) > 100) {
             [self setSede:100];
         }
         else{
-            [self setSede:(self.sede + sede)];
+            [self setSede:(self.sede -(sede))];
         }
     }
 }
@@ -319,13 +335,15 @@
 -(void)alterarVidaJogador: (int)vida
 {
     //está ficando sem vida
-    if(vida > 0){
+    if(vida < 0){
         if ((self.vida - vida) < 0) {
             [self setVida:0];
         }
         else{
             [self setSede:(self.vida - vida)];
         }
+        
+        [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:@"somPerdeuVida"]];
     }
     //está ganhando vida
     else{
@@ -344,6 +362,8 @@
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
+    
+    [self.controleSom pararSom];
 }
 
 //funcao para fazer o jogador escalar
@@ -396,6 +416,7 @@
     [self.controleMissoes colocarBalaoDeMissao];
 }
 
+
 //funcao a fazer para ele interagir com pessoas
 -(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas{
     
@@ -422,7 +443,7 @@
             [self entregarItem];
             [self receberItem];
             [self alterarEstados];
-            if(self.controleMissoes.parteAtual+1 >= self.controleMissoes.missao.quantidadeDePartes){
+            if(self.controleMissoes.parteAtual+1 > self.controleMissoes.missao.quantidadeDePartes){
                 [self.controleMissoes fimDaMissao];
             }
             
@@ -430,7 +451,7 @@
         //Se nao é o NPC que passa a parte da missao ou nao tem o item
         else{
             //Cria uma key de uma fala secundaria da missao
-            keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual];
+            keyDaParte = [NSString stringWithFormat:@"Parte%iR", self.controleMissoes.parteAtual];
         }
         
         //Cria a caixa de fala com as key obtidas e a adiciona na tela
@@ -443,6 +464,18 @@
 
 //Método chamado quando a missão descreve que um item deve ser entregue
 -(void)entregarItem{
+    
+    if ([[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ArmadilhasEntregue"]) {
+        NSMutableArray*armadilhasParaEntregar = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ArmadilhasEntregue"];
+        for (int i = 0; i< armadilhasParaEntregar.count; i++) {
+            NSString *nomeArmadilha = [armadilhasParaEntregar objectAtIndex:i];
+            
+            
+            [self.armadilhas receberArmadilha:nomeArmadilha];
+        }
+    }
+    
+    
     NSMutableArray*itemsParaEntregar = [[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]objectForKey:@"ItemEntregue"];
     
     for (int i = 0; i< itemsParaEntregar.count; i++) {

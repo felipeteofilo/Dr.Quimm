@@ -37,7 +37,7 @@
         self.inicioContador = CACurrentMediaTime();
         
     }
-    if (CACurrentMediaTime()-self.inicioContador > 10) {
+    if (CACurrentMediaTime()-self.inicioContador > 30) {
         if (self.jogador.fome > 0) {
             [self.jogador alterarFomeJogador:2];
         }
