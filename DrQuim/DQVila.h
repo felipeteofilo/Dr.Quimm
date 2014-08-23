@@ -12,6 +12,8 @@
 #import "DQCutsceneControle.h"
 #import "DQCenaBronca.h"
 #import "DQFlorestaParte2.h"
+#import "DQTransformacaoTela.h"
+#import "DQControleUserDefalts.h"
 
 @interface DQVila : DQFase
 
@@ -26,4 +28,5 @@
 @property BOOL apresentouVila;
 @property BOOL mostrandoContador;
 
+@property BOOL falouCurandeiroCacadaCoelho;
 @end

@@ -16,7 +16,7 @@
         self.cena = cenaRecebida;
         
         //Inicia na parte 0
-        self.parteAtual = 0;
+        self.parteAtual = 3;
         
         //E sem nenhuma missão
         self.emMissao = YES;
@@ -87,7 +87,8 @@
     }
 }
 
-//Verfica se pode passar parte damissao pelo nome do npc e o inventario para conferir se tem o item
+
+//TODO:- AO INVÉZ DE UM ITEM PASSADO POR PARAMETRO, CONFERIR NO INVENTÁRIO
 -(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items{
     
     Boolean podePassar = false;
@@ -117,7 +118,7 @@
         return NO;
     }
 }
-//TODO - COLOCAR MENSSAGENS
+//TODO:- COLOCAR MENSSAGENS
 //método chamado quando a missão chega ao fim
 -(void)fimDaMissao{
     

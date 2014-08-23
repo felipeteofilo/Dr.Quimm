@@ -14,4 +14,5 @@
 +(float)calcularDistanciaPontos:(CGPoint)primeiroPonto ponto2:(CGPoint)segundoPonto;
 +(NSMutableArray*)ordenarValores:(NSMutableArray*)array;
 +(BOOL)sortearChanceSim:(float)chanceSim;
++(BOOL)array:(NSArray*)array contemString:(NSString*)stringTestar;
 @end
