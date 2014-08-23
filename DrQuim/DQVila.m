@@ -18,7 +18,13 @@
     }
     return self;
 }
-
+-(id)initFase:(int)fase Size:(CGSize)size{
+    if([super initFase:fase Size:size]){
+        self.falouCurandeiroCacadaCoelho=[DQControleUserDefalts falouCurandeiroCacadaCoelho];
+    }
+    
+    return self;
+}
 -(void)iniciarFase{
     [super iniciarFase];
     
@@ -54,6 +60,20 @@
 -(void)didMoveToView:(SKView *)view{
     NSLog(@"Parte Atual Missao %i",self.jogador.controleMissoes.parteAtual);
 }
+
+-(void)apresentarCenaMaleta{
+    
+    if (!self.falouCurandeiroCacadaCoelho) {
+        self.falouCurandeiroCacadaCoelho=YES;
+        [DQControleUserDefalts setFalouCurandeiroCacadaCoelho:YES];
+        
+        DQTransformacaoTela *cenaTransformacoes=[[DQTransformacaoTela alloc]initWithSize:self.view.bounds.size];
+        
+        self.posicaoJogador=self.jogador.position;
+        [self.view presentScene:cenaTransformacoes];
+        
+    }
+}
 -(void)apresentarCenaBronca{
     DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
     
@@ -61,7 +81,6 @@
     [self.view presentScene:cenaBronca];
 }
 -(void)apresentarFloresta2{
-    
     self.posicaoJogador= self.jogador.position;
     
     DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initFase:self.faseAtual+1 Size:self.size];
@@ -73,6 +92,14 @@
     
     self.apresentouVila =YES;
     
+    
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+}
+
+-(void)irParaFlorestaCacada{
     
 }
 
@@ -90,16 +117,29 @@
         self.apresentouVila =NO;
     }
     
-    if (![self childNodeWithName:@"falasDoJogo"] && ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao02"])) {
+    if (![self childNodeWithName:@"falasDoJogo"]){
         
-        if ((!self.apresentouCenaBronca) && (self.jogador.controleMissoes.parteAtual== 5)) {
+        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao02"]) {
             
-            self.apresentouCenaBronca=YES;
-            [self apresentarCenaBronca];
+            if ((!self.apresentouCenaBronca) && (self.jogador.controleMissoes.parteAtual== 5)) {
+                
+                self.apresentouCenaBronca=YES;
+                [self apresentarCenaBronca];
+            }
+            if((self.jogador.controleMissoes.parteAtual== 2)){
+                
+                [self apresentarFloresta2];
+            }
         }
-        if((self.jogador.controleMissoes.parteAtual== 2)){
-            
-            [self apresentarFloresta2];
+        
+        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao03"]) {
+            if(self.jogador.controleMissoes.parteAtual== 2){
+                [self apresentarCenaMaleta];
+            }
+            //Assim que ele fala com o cacador vai mudar a parte da missao, entao vai p floresta
+            if(self.jogador.controleMissoes.parteAtual== 4){
+                [self apresentarFloresta2];
+            }
         }
     }
     if (!self.mostrandoContador) {
@@ -112,5 +152,4 @@
         }
     }
 }
-
 @end

@@ -133,7 +133,7 @@
 		<key>categoria</key>
 		<string>Item de Missão</string>
 		<key>imagem</key>
-		<string>carne</string>
+		<string>itemCoelho</string>
 	</dict>
 </dict>
 </plist>

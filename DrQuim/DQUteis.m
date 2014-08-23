@@ -40,4 +40,7 @@
     }
     
 }
++(BOOL)array:(NSArray*)array contemString:(NSString*)stringTestar{
+    return [array containsObject:@"Contador Geiger"];
+}
 @end

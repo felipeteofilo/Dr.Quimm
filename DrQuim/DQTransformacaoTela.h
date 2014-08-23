@@ -69,6 +69,4 @@
 
 //Método que mostra a tela de transformação
 -(void)mostrarTelaTransformacao;
-
--(id)initCenaTransformacoes:(CGSize)size telaAnterior:(SKScene*)telaAnterior;
 @end

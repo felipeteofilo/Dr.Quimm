@@ -39,7 +39,12 @@
         return YES;
     }
 }
-
++(BOOL)falouCurandeiroCacadaCoelho{
+    return [[self userDefalts]boolForKey:@"falouCurandeiroCacadaCoelho"];
+}
++(void)setFalouCurandeiroCacadaCoelho:(BOOL)valor{
+    [[self userDefalts]setBool:valor forKey:@"falouCurandeiroCacadaCoelho"];
+}
 +(NSDictionary*)estadosJogador{
     NSMutableDictionary *estadosJogador=[NSMutableDictionary dictionary];
     

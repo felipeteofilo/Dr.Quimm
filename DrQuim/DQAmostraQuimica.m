@@ -19,6 +19,7 @@
             //formula
         self.formula = [dicionario objectForKey:@"Formula"];
             //imagem
+        
         self.imagem = [UIImage imageNamed:[dicionario objectForKey:@"Imagem"]];
             //elementos
         self.arrayDeElementos = [dicionario objectForKey:@"Elementos"];

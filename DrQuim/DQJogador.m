@@ -202,9 +202,12 @@
     }
 }
 
-//TODO- Melhorar metodo e passar ele p o DQUteis
+//TODO:- Melhorar metodo e passar ele p o DQUteis
 -(BOOL)estaComContadorGeiger{
-    return [[self.itens arrayItensJogador] containsObject:@"Contador Geiger"];
+    return [self estaComItem:@"Contador Geiger"];
+}
+-(BOOL)estaComItem:(NSString*)nomeItem{
+    return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
 
 //metodo com retorno void - faz o jogador andar

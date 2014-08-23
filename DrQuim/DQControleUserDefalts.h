@@ -36,4 +36,6 @@
 +(void)setEstadoInicialJogador;
 +(void)setEstadoJogadorVida:(float)vida Fome:(float)fome Sede:(float)sede Respeito:(float)respeito;
 +(void)atualizarPrimeiraExecucao;
++(BOOL)falouCurandeiroCacadaCoelho;
++(void)setFalouCurandeiroCacadaCoelho:(BOOL)valor;
 @end

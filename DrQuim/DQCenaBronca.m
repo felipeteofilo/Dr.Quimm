@@ -95,7 +95,7 @@
 
 -(void)voltaVila{
     DQVila *vila=[[DQVila alloc]initFase:2 Size:self.view.bounds.size];
-    
+    vila.scaleMode = SKSceneScaleModeAspectFill;
     [self.view presentScene:vila];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

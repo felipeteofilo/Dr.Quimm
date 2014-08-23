@@ -13,6 +13,7 @@
 #import "DQControleUserDefalts.h"
 #import "DQArmadilhasJogador.h"
 #import "DQControleSom.h"
+#import "DQUteis.h"
 
 @interface DQJogador : SKSpriteNode
 
@@ -117,6 +118,9 @@
 -(void)pararDerrapar;
 
 -(void)interagirComNPC:(NSString *)nomeNPC;
+
+//Metodo para verificar se esta com qualquer item passado no parametro
+-(BOOL)estaComItem:(NSString*)nomeItem;
 
 //Metodo que verifica se ja esta com contador
 -(BOOL)estaComContadorGeiger;
