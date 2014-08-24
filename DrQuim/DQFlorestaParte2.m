@@ -23,7 +23,9 @@
 -(void)iniciarFase
 {
     [super iniciarFase];
-    [self posicionarAnimais];
+    if([self.jogador.controleMissoes.missao.ID isEqualToString:@"Missao02"]){
+        [self posicionarAnimais];
+    }
 }
 
 -(void)salvarCenaVila :(SKScene*)vila{
