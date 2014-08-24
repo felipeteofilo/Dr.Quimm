@@ -527,7 +527,7 @@
 -(void)didMoveToView:(SKView *)view{
     [super didMoveToView:view];
     
-    [self iniciarFase];
+    
     
     //So chama o som qndo a Scene aparecer
     [self.controleSom tocarMusicaFundo];
@@ -609,10 +609,12 @@
 }
 
 -(void)configuracoesFase:(int)faseAtual{
+    
     self.faseAtual=faseAtual;
     self.parteFaseAtual=1;
     self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
     [self pegarConfigFase:self.faseAtual];
+    [self iniciarFase];
 }
 
 -(void)iniciarFase{

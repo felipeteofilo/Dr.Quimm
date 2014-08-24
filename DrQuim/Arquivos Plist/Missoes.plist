@@ -12,7 +12,7 @@
 		<key>Respeito</key>
 		<integer>0</integer>
 		<key>ID</key>
-		<string></string>
+		<string>Missao00</string>
 		<key>Partes</key>
 		<array>
 			<dict>
@@ -39,7 +39,7 @@
 		<key>Nome</key>
 		<string>Missão 01 - Ajudando a mãe de todos</string>
 		<key>Recompensa</key>
-		<string>Armadilha Simples</string>
+		<string></string>
 		<key>Disparador</key>
 		<string>Maedetodos</string>
 		<key>Respeito</key>
@@ -225,9 +225,7 @@
 			</dict>
 			<dict>
 				<key>ArmadilhasEntregue</key>
-				<array>
-					<string>ArmadilhaSimples</string>
-				</array>
+				<array/>
 				<key>ItemRecebido</key>
 				<array/>
 				<key>Descricao</key>

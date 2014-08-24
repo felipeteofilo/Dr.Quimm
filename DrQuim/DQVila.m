@@ -87,7 +87,7 @@
     SKNode *nodeQuimm=[self.mundo nodeAtPoint:[[touches anyObject]locationInNode:self.mundo]];
     
     //Verifica se esta sem missao e se tocou no Dr. Quimm
-    if ((![self.jogador.controleMissoes emMissao])&&([nodeQuimm.name isEqualToString:@"Quimm"])) {
+    if ((![self.jogador.controleMissoes emMissao] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao00"])&&([nodeQuimm.name isEqualToString:@"Quimm"])) {
         //Tocando abre a maleta
         [self apresentarCenaMaleta];
     }else{

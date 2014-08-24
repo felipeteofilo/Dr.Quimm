@@ -28,7 +28,7 @@
 -(void)atualizarChance{
     self.chance= arc4random()%60;
     
-    float animal = arc4random()%[[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]count]-1;
+    float animal = arc4random()%[[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]count];
     self.chanceAtual =[NSString stringWithFormat:@"Chance %.0f %%",self.chance];
     self.animalAtual =[[[[self.scene userData]objectForKey:@"ConfigParte"]objectForKey:@"Animais"]objectAtIndex:animal];
     
