@@ -27,7 +27,6 @@
         }else{
             self.playerMusicaFundo =nil;
         }
-        
     }
     return self;
 }
@@ -45,6 +44,10 @@
     return player;
 }
 
+-(void)pararSom{
+    [super pararSom];
+    [self.playerMusicaFundo stop];
+}
 -(void)tocarMusicaFundo{
     if (self.playerMusicaFundo) {
         [self.playerMusicaFundo play];

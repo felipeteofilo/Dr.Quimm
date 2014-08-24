@@ -59,6 +59,9 @@
     }
 }
 -(void)apresentarCenaMaleta{
+    //Remove o som
+    [self.controleSom pararSom];
+    
     DQTransformacaoTela *cenaTransformacoes=[[DQTransformacaoTela alloc]initWithSize:self.view.bounds.size];
     
     self.posicaoJogador=self.jogador.position;
@@ -71,6 +74,9 @@
     [self.view presentScene:cenaBronca];
 }
 -(void)apresentarFloresta2{
+    //Remove o som
+    [self.controleSom pararSom];
+    
     self.posicaoJogador= self.jogador.position;
     
     DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initWithSize:self.size];

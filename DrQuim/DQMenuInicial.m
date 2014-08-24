@@ -36,8 +36,8 @@
         [teste setText:@"teste"];
         [teste2 setName:@"teste"];
         [teste2 setPosition:CGPointMake(200, 200)];
-        //[self addChild:teste2];
-        //[teste2 addChild:teste];
+//        [self addChild:teste2];
+//        [teste2 addChild:teste];
         
     }
     return self;
@@ -74,8 +74,8 @@
         [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
         [DQControleUserDefalts setRodouCutSceneFase:2 Valor:NO];
         [DQControleUserDefalts setFaseAtual:1];
-        [DQControleUserDefalts setVolumeMusica:50.0];
-        [DQControleUserDefalts setVolumeSons:50.];
+        [DQControleUserDefalts setVolumeMusica:0.50f];
+        [DQControleUserDefalts setVolumeSons:0.50f];
     }
 }
 
@@ -83,8 +83,8 @@
     [DQControleUserDefalts setRodouCutSceneFase:1 Valor:NO];
     [DQControleUserDefalts setRodouCutSceneFase:2 Valor:NO];
     [DQControleUserDefalts setFaseAtual:1];
-    [DQControleUserDefalts setVolumeMusica:50.0];
-    [DQControleUserDefalts setVolumeSons:50.];
+    [DQControleUserDefalts setVolumeMusica:0.50f];
+    [DQControleUserDefalts setVolumeSons:0.50f];
     [DQControleUserDefalts setEstadoJogadorVida:100 Fome:100 Sede:100 Respeito:0];
     
     [DQControleUserDefalts atualizarPrimeiraExecucao];
