@@ -547,7 +547,7 @@
 				<array>
 					<dict>
 						<key>Nome</key>
-						<string>docinho</string>
+						<string>Docinho</string>
 						<key>Quantidade</key>
 						<integer>1</integer>
 					</dict>
@@ -556,7 +556,7 @@
 				<array>
 					<dict>
 						<key>Nome</key>
-						<string>coelho</string>
+						<string>Coelho</string>
 						<key>Quantidade</key>
 						<integer>1</integer>
 					</dict>

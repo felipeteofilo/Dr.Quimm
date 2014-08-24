@@ -60,7 +60,13 @@
         //Diminuir o tamanho do nome p facilitar
         NSString *titulo = [[self.opcoesMenu objectAtIndex:i]nome] ;
         NSArray *array = [titulo componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"-"]];
-        titulo=[array objectAtIndex:1];
+        if (array.count == 1) {
+            titulo=[array objectAtIndex:i];
+        }
+        else{
+            titulo=[array objectAtIndex:1];
+        }
+        
         
         DQOpcaoMenu *opcaoMenu=[[DQOpcaoMenu alloc]initOpcaoTitulo:titulo];
         [opcaoMenu setAnchorPoint:CGPointMake(0.5, 0)];

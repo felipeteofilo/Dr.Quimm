@@ -397,6 +397,8 @@
     //Cria um cutSceneTela
     DQCutsceneTela *proxCutScene=[[DQCutsceneTela alloc]initCutScene:1 Fase:vila SizeScene:self.view.bounds.size];
     
+    [DQControleUserDefalts setRodouCutSceneFase:self.faseAtual+1 Valor:YES];
+    
     [proxCutScene setScaleMode:SKSceneScaleModeAspectFill];
     
     [self.view presentScene:proxCutScene];

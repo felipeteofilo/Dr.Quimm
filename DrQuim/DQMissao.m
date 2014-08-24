@@ -17,7 +17,7 @@
         NSString *caminhoArrayList =[[NSBundle mainBundle] pathForResource:@"Missoes" ofType:@"plist"];
         NSArray *arquivo =[NSArray arrayWithContentsOfFile:caminhoArrayList];
         
-        if (missao > arquivo.count) {
+        if (missao >= arquivo.count) {
             missao = 0;
         }
         
