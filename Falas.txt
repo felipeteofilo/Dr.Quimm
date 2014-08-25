@@ -1,0 +1,67 @@
+Apresentacão:
+
+Introdução
+	Contexto
+		As escolas sempre tiveram um desafio muito grande ao ensinar em uma sala de aula. Os barulhos externos, bagunça na sala de aula e o desinteresse dos alunos. A tecnologia e a internet contribuíram para a distribuição de conteúdo, mas também de distração. Por um lado temos a facilidade com que podemos encontrar informações, por outro, todas as distrações que encontramos de forma anda mais fácil.
+	
+	Motivação/ Problema
+		Assim, procuramos uma forma divertida e descontraída de ensinar, para que o aluno consiga seu momento de distração e ainda assim aprender algo. O maior desafio nesse sistema é encontrar o equilíbrio entre o aprendizado e a diversão.
+		
+	Proposta
+		Nossa proposta foi criar um jogo onde o aluno possa participar de forma ativa e compreender aos poucos os conceitos da matéria. A matéria que escolhemos para tentar criar tal ambiente foi a química. Isso porque muitos alunos afirmam gostar e ser uma matéria pela qual se interessam bastante, mas que tem muita dificuldade para compreender.
+
+	Justificativa
+		Ao fazer com que o aluno interaja ativamente com o conteúdo apresentado, fazemos com que ele participe daquilo, seja parte daquilo e assim se comprometa e consiga fixar melhor o conteúdo. Isso também pode acabar com alguma preguiça ou falta de vontade, afinal, ele estará jogando e não estudando.
+
+
+Conceito
+	Teorias de memorização
+		1. Colocar em ação
+			Para que sua mente possa lembrar de algum assunto específico, uma boa opção é associá-lo a alguma ação.
+		2. Objetos estranhos
+			O cérebro associa palavras a imagens.
+		3. Exagero
+			Outra tática para memorizar um assunto é exagerá-lo; aumentar as proporções de qualquer fato que deva ser lembrado. 
+		4. Fantasia
+			Transformar fatos reais em fantasia também pode ajudar a memorizar o conteúdo estudado. Pode parecer incomum, mas é isso que faz com que o cérebro guarde as informações.
+		5. Lado pessoal
+			Relacionar o conteúdo estudado com algo que tenha uma conexão pessoal direta com você também ajuda a memorizar. 
+
+
+	Teorias de ensino
+		"Na pedagogia não há uma fórmula secreta para fazer com que qualquer aluno saiba aprender. Mas há alguns processos e estratégias que maximizam o rendimento escolar de determinados alunos, em determinadas situações, em determinadas matérias” Alcino Simões
+		Alguns pontos foram apontados como chave para que os alunos possam aprender (em uma sala de aula comum):
+		*Registrar sistematicamente a avaliação formativa;
+		*Fornecer fichas de objetivos;
+		*Desenvolver auto-confiança;
+		Em um jogo, isso seria feito com medalhas, missões, quantidade limitadas de tentativas até que o problema fosse resolvido, recompensas e outros aspectos que mostrariam o quanto ele tem aprendido
+	
+Metodologia
+	CBL
+		Iniciamos o nosso CBL com a pergunta: “Como um jogo interativo pode influenciar no aprendizado das pessoas”. Isso nos levou ao aplicativo que temos hoje. O CBL foi útil para reunir informações em um só lugar e nos obrigar a procurar e pesquisar e durante a fase de pesquisas foi amplamente usado. Já na hora do desenvolvimento, usávamos ele apenas quando precisávamos pensar qual seria o próximo passo (desenvolver a fase dessa forma ou daquela). Concluimos assim que ele cumpre bem o papel de organizador de ideias, mas não o de administrados de projetos, para isso, usamos muitos conceitos de Scrum, utilizando kanbans e burndowns para nos auxiliar com tarefas e prazos.
+	Escopo
+		Após conseguirmos as direções de como seria nosso aplicativo, Definimos um escopo inicial para ele. O que a nossa primeira versão teria? 
+		.Introdução - Apresentação dos personagens(com a historia), tutorial de como jogar, passar conceitos dos tipos de radiação
+		.Vila - Apresentação de NPC`s da vila, missões, barra de respeito e interagir com NPC`s 		
+		.Primeira fase - Novas mecânicas de jogo (abaixar e escalar), barra de fome, barra de sede, acesso a menu e inventário, sistema de captura e utilização de itens
+		 .Alguns conceitos em transformações químicas e equipamentos químicos
+		
+	Etapas do projeto
+		Tivemos ,ao todo, 6 sprints sendo 4 principais e 2 intermediárias. Fizemos as intermediárias porque muitas vezes tínhamos que mudar algo a partir do feedback recolhidos dos usuários e outras vezes precisávamos “correr” atrás dos prazos. 
+			——>Sprint 1 - 26/05 ~ 27/06
+			——>Sprint 1.5 - 02/07 ~ 07/07
+			——>Sprint 2 - 08/07 ~ 15/07
+			——>Sprint 2.5 - 16/07 ~ 21/07
+			——>Sprint 3 - 22/07 ~ 04/08
+			——>Sprint 4 - 05/08 ~ 22/08
+
+	Testes dos usuários
+		Após cada uma das sprints e muitas vezes no meio delas, coletávamos o feedback de alguns voluntários entre nosso público alvo e anotávamos suas observações, a partir disso, pudemos melhorar a jogabilidade do Dr.Quimm. Por exemplo, mudamos os comandos, melhoramos os diálogos, aplicamos “gracinhas”, tais como o Jogador deslizar ao estar em uma inclinação e se desesperar ao cair de alturas muito grandes.
+
+
+Contribuições - demo
+		Apresentação do demo
+		
+Conclusões
+	Por fim, desenvolvemos um aplicativo que passa alguns conteúdos de química, equilibrando diversão e aprendizado, ainda temos muito o que melhorar ele. Passamos muito texto para um público alvo que não gosta de ler, o aplicativo ainda tem algumas falhas que podem desistimular o usuário e pretendemos colocar muito mais conteúdo e diversão.
+	Cada um de nós tem seus próprios agradecimentos... Agradecemos o professor Willian por ter nos guiado e ajudado, Ao César, nosso ilustrador que fez um belíssimo trabalho em seu tempo livre, que sabemos, não é pouco. Aos nossos colegas que ajudaram a relaxar e distrair e também que nos orientaram em alguns momentos e ao Luiz que fez a vozinha!
