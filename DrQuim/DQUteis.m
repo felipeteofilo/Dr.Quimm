@@ -38,6 +38,7 @@
     }else{
         return NO;
     }
+    
 }
 +(BOOL)array:(NSArray*)array contemString:(NSString*)stringTestar{
     return [array containsObject:stringTestar];
