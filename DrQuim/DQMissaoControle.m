@@ -22,7 +22,7 @@
         self.emMissao = NO;
         
         //Define a próxima missão (a primeira)
-        self.proximaMissao = 1;
+        self.proximaMissao = 2;
         
         //Apresentando a próxima missão (no caso, a primeira)
         [self iniciarMissao];

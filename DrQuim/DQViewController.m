@@ -16,7 +16,8 @@
 
     SKView * skView = (SKView *)self.view;
 
-    DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
+    //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
+    DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
     
     menuInicial.scaleMode = SKSceneScaleModeAspectFill;
     
