@@ -24,7 +24,7 @@
 		<key>3EE7E87C37FF678AEE539DB1C5A363262271CFD4</key>
 		<string>../..</string>
 		<key>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</key>
-		<string>../../../../..</string>
+		<string>../../..</string>
 		<key>78A154C0-F396-444F-877F-DBCFB3907EA7</key>
 		<string>../../../AppFinal</string>
 	</dict>
@@ -42,7 +42,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
