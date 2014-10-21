@@ -65,7 +65,7 @@
             //se moveu para a direita, anda para a direita - D
             if(posicaoToque.x > self.pontoDeToqueAndar.x){
                 if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
-                    [self.jogador andarParaDirecao:@"D"];
+                    //[self.jogador andarParaDirecao:@"D"];
                     self.andouDireita=YES;
                     self.contadorAcao=0;
                 }
@@ -74,7 +74,7 @@
             //senão, move para a esquerda - E
             else{
                 if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
-                    [self.jogador andarParaDirecao:@"E"];
+                    //[self.jogador andarParaDirecao:@"E"];
                     self.andouEsquerda=YES;
                     self.contadorAcao=0;
                 }
@@ -300,7 +300,7 @@
     [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
 }
 -(void)afastaJogadorRadiacao{
-    [self.jogador andarParaDirecao:@"E"];
+    [self.jogador andarParaDirecao:'E' eDistancia:100];
     [self.jogador runAction:[SKAction moveToX:self.jogador.position.x-15 duration:0.5] withKey:@"saindoDePerto"];
 }
 -(void)falarAlertaRadiacao{

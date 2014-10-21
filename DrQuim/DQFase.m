@@ -47,7 +47,6 @@
 
 
 -(void)controlarTranscicaoPartesFase{
-    
     //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMaxX(self.frame))){
         if (self.parteFaseAtual + 1 <= self.nPartesFase ) {
@@ -84,17 +83,13 @@
             self.backgroundAnterior=nil;
         }
     }
+    
     NSMutableDictionary * parte = [[NSMutableDictionary alloc]init];
-    
     NSMutableDictionary *configAnimaisFase =[[NSMutableDictionary alloc]init];
-    
     NSArray *animais = [NSArray arrayWithArray:[DQConfiguracaoFase animaisFase:self.faseAtual Parte:self.parteFaseAtual]];
     
     [configAnimaisFase setObject:[NSNumber numberWithInt:self.parteFaseAtual ]forKey:@"Parte"];
-    
     [configAnimaisFase setObject:animais forKey:@"Animais"];
-    
-    
     [parte setObject:configAnimaisFase forKey:@"ConfigParte"];
     
     [self setUserData:parte];
@@ -306,24 +301,24 @@
         if(posicaoToque.x > CGRectGetMidX(self.frame) && ![self.jogador actionForKey:@"escalar"]){
             
             //Remove a anterior
-            [self.direcional removeFromParent];
+            //[self.direcional removeFromParent];
             //ANDAR
             //marca o local em que tocou e desenha as setinhas
             self.pontoDeToqueAndar = [toque locationInView:self.view];
             
-            [self.direcional removeFromParent];
+            //[self.direcional removeFromParent];
             //mostra as setinhas
-            self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
-            [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
+            //self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+            //[self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
             
-            [self addChild:self.direcional];
+            //[self addChild:self.direcional];
         }
         
         //Se o node em que tocou for da classe DQNPC, faz o jogador interagir com o NPC
         if ([[[nodeTocadoNoMundo userData]objectForKey:@"Tipo"] isEqual:@"NPC"]) {
             
             //remove as setas direcionais
-            [self.direcional removeFromParent];
+            //[self.direcional removeFromParent];
             //para o andar do jogador
             [self.jogador pararAndar];
             //faz ele interagir com o npc em questao
@@ -339,6 +334,7 @@
     }
 }
 
+<<<<<<< Updated upstream
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesMoved:touches withEvent:event];
     if (![self childNodeWithName:@"falasDoJogo"]) {
@@ -362,6 +358,32 @@
         }
     }
 }
+=======
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+//    [super touchesMoved:touches withEvent:event];
+//    if (![self childNodeWithName:@"falasDoJogo"]) {
+//        UITouch *toque = [touches anyObject];
+//        CGPoint posicaoToque=[toque locationInNode:self];
+//        
+//        //Anda corretamente apenas e for do lado direito da tela
+//        if(posicaoToque.x > CGRectGetMidX(self.frame)){
+//            //se moveu para a direita, anda para a direita - D
+//            if(posicaoToque.x > self.pontoDeToqueAndar.x){
+//                if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
+//                    [self.jogador andarParaDirecao:@"D"];
+//                }
+//            }
+//            
+//            //senão, move para a esquerda - E
+//            else{
+//                if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
+//                    [self.jogador andarParaDirecao:@"E"];
+//                }
+//            }
+//        }
+//    }
+//}
+>>>>>>> Stashed changes
 
 -(void)verificaCoberturaBackground{
     DQCoberturaBackground *cobetura=(DQCoberturaBackground*)[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
@@ -383,7 +405,7 @@
         [self.jogador pararAndar];
         
         //tirar imagem da setinha da tela
-        [self.direcional removeFromParent];
+        //[self.direcional removeFromParent];
         
         //Ao parar o toque, pausa sua escalada se ainda estiver escalando
         if ([self.jogador actionForKey:@"escalar"]) {
@@ -475,7 +497,6 @@
 -(void)atualizaSomMusicaFundo{
     [self.controleSom.playerMusicaFundo setVolume:[DQControleUserDefalts volumeMusica]];
 }
-
 
 -(void)update:(NSTimeInterval)currentTime{
     //Faz verificação de pausa do jogo
@@ -647,6 +668,7 @@
     [self configuraFisicaMundo];
     [self configuraHUD];
     [self configurarSomFundo];
+    [self configurarControles];
 }
 
 -(void)configurarSomFundo{
@@ -714,5 +736,28 @@
     self.hudFase = [[DQHudController alloc]initHud];
     [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
     [self addChild:self.hudFase];
+}
+
+//Configura controles
+-(void)configurarControles{
+    self.direcional = [[DQBotaoDirecional alloc]initBotao:@"testeBotao" comSel:@selector(movimentaPersonagem:) eDelegate:self eTamanho:CGSizeMake(100,100)];
+    
+    [self.direcional setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.9f,CGRectGetHeight(self.frame)*0.1f )];
+    [self addChild:self.direcional];
+}
+
+//MOVIMENTA O PERSONAGEM
+-(void)movimentaPersonagem:(NSNumber*)forcaMovimento{
+    char dirCaminhada;
+    
+    //Decide a direção q precisa mover
+    if ([forcaMovimento floatValue] > 0) {
+        dirCaminhada ='D';
+    }else{
+        dirCaminhada='E';
+    }
+    
+    //Chama metodo passando qnto ele irá andar
+    [self.jogador andarParaDirecao:dirCaminhada eDistancia:[forcaMovimento floatValue]];
 }
 @end
