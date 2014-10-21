@@ -37,7 +37,7 @@
 @property int sede;
 @property int respeito;
 //========================================================
-@property int podePular;
+
 @property BOOL podeEscalar;
 @property BOOL estaNoChao;
 

@@ -353,7 +353,6 @@
                     [self.jogador andarParaDirecao:@"D"];
                 }
             }
-            
             //senão, move para a esquerda - E
             else{
                 if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
@@ -410,13 +409,6 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
-        if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
-            
-            //se o jogador  parar  de colidir com o chao setamos que ele nao esta no chao
-            [self.jogador setEstaNoChao:NO];
-        }
-    }
     
     
     //se parou de colidir com a escada
@@ -425,6 +417,8 @@
         [self.jogador pararEscalar];
     }
 }
+
+
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
@@ -442,16 +436,17 @@
         secondBody = contact.bodyA;
     }
     
+   
+
+    
     // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
             
-            //se o jogador colidiu com o chao setamos que ele estao no chao e verificamos se ele esta andando e o animamos
-            [self.jogador setPodePular:0];
+            //se o jogador colidiu com o chao setamos que ele estao no chao
+            
             [self.jogador setEstaNoChao:YES];
-            if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] ) {
-                [self.jogador animarAndando];
-            }
+           
         }
         
         if ([secondBody.node.name isEqualToString:nomePlataforma]){
@@ -552,14 +547,24 @@
         //Faz algumas verificacoes para animar o jogador
         [self verificarAnimacaoCaindo];
         [self verificarAnimacaoDerrapagem];
+        [self verificarAndando];
     }
 }
 
 //funcao para vefrificar se pode animar jogador caindo de altas distancias
 -(void)verificarAnimacaoCaindo{
     //se esta caindo de uma distancia muito grande anima ele caindo
-    if (!self.jogador.estaNoChao && self.jogador.physicsBody.velocity.dy < -535 && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"]) {
+    if (self.jogador.physicsBody.velocity.dy < -535 && ![self.jogador.spriteNode actionForKey:@"animandoCaindo"]) {
         [self.jogador animarCaindo];
+    }
+}
+
+//funcao que verifica se ele esta andando e anima ele andando
+-(void)verificarAndando{
+    
+    //verifica se nao esta animando o pulo e anima o jogador andando
+    if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] && self.jogador.estaNoChao && ![self.jogador actionForKey:@"animandoCaindo"]) {
+        [self.jogador animarAndando];
     }
 }
 

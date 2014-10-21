@@ -15,6 +15,8 @@
     [super viewDidAppear:animated];
 
     SKView * skView = (SKView *)self.view;
+    
+    skView.showsPhysics = YES;
 
     //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
     DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];

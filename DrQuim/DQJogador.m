@@ -149,11 +149,13 @@
 
 //funcao para animar o jogador andando
 -(void)animarAndando{
-    //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
+    
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
                                                                               timePerFrame:0.1f
                                                                                     resize:NO
                                                                                    restore:YES]] withKey:@"animandoAndando"];
+    [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
+    
 }
 
 //funcao para animar o jogador derrapando
@@ -187,7 +189,10 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     
+        
+    
     [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
+    
     
 }
 
@@ -205,13 +210,13 @@
 -(void)pular{
     
     //verifica se ele esta no ar, se ja estiver nao pula
-    if (self.podePular < 1 && ![self.spriteNode actionForKey:@"animandoEscalada"]) {
+    if (self.estaNoChao && ![self.spriteNode actionForKey:@"animandoEscalada"]) {
         
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
         [self.physicsBody applyImpulse:CGVectorMake(0, self.impulsoPulo)];
-        self.podePular += 1;
+        
         self.estaNoChao = NO;
         
         
@@ -225,7 +230,7 @@
     return [self estaComItem:@"Contador Geiger"];
 }
 -(BOOL)estaComItem:(NSString*)nomeItem{
-    NSArray *arra=[self.itens arrayItensJogador];
+   // NSArray *arra=[self.itens arrayItensJogador];
     return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
 
@@ -262,19 +267,8 @@
             
         }
         
-        //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-        //verifica se nao esta animando o pulo e anima o jogador andando
-        if (![self.spriteNode actionForKey:@"animandoPulo"]) {
-            [self animarAndando];
-        }
-        
         //anda para direcao
         [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
-        
-        if (self.estaNoChao) {
-            //adicionado som
-            [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
-        }
     }
 }
 
@@ -303,6 +297,7 @@
     self.physicsBody.allowsRotation = NO;
     self.physicsBody.mass = 0.566667;
     self.physicsBody.restitution = 0;
+    
     
 }
 //Metodo que altera a Fome do jogador
