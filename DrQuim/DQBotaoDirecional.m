@@ -8,6 +8,7 @@
 
 #import "DQBotaoDirecional.h"
 #define forcaMovBotao 0.5f
+#define limiteMovimento 100
 
 @implementation DQBotaoDirecional
 
@@ -23,49 +24,66 @@
     [super touchesBegan:touches withEvent:event];
     
     //pega a posicao do primeiro toque
-    self.posicaoToqueInicial=[[touches anyObject]locationInNode:self.parent];
+    self.posicaoToqueInicial=[[touches anyObject]locationInNode:self];
     
     //Pega a posicaoX inicial do botao
-    self.xInicialBotao=self.position.x;
+    self.posicaoInicialBotao=self.position;
 }
 
 //Calcula qnto precisa andar
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     //pega  a posicao do toque atual
-    CGPoint posicaoToqueAtual=[[touches anyObject]locationInNode:self.parent];
+    CGPoint posicaoToqueAtual=[[touches anyObject]locationInNode:self];
     
-    //Pega delta do movimento em X
-    //TODO: Arrumar conversão valores
-    self.forcaMovimento =posicaoToqueAtual.x - self.posicaoToqueInicial.x;
-    
-    //TODO: decidir se moveu o Y ou X
+    //Verifica as alteracoes nas posicoes
+    float alteracaoX=posicaoToqueAtual.x - self.posicaoToqueInicial.x;
+    float alteracaoY=posicaoToqueAtual.y - self.posicaoToqueInicial.y;
 
-    if (!self.travaMovDirecional) {
-        //Faz botao mecher
-        if (self.forcaMovimento > 0) {
-            [self setPosition:CGPointMake(self.position.x+forcaMovBotao, self.position.y)];
-        }else{
-            [self setPosition:CGPointMake(self.position.x-forcaMovBotao, self.position.y)];
+    //Das alterações verifica qual é mais forte X ou Y
+    if (fabsf(alteracaoX) > fabsf(alteracaoY)) {
+        //O carinha mexeu mais na horizontal faz o jogador andar
+        NSLog(@"andar");
+        
+        //Verifica se ja passou do limite de movimentação
+        if (self.forcaMovimento < limiteMovimento) {
+            //Pega delta do movimento em X
+            self.forcaMovimento =+alteracaoX;
         }
-    }
-    
-    //TODO: Animar alteração em Y
-    //Cria limite para animação movimento do botao
-    if (fabsf(self.position.x - self.xInicialBotao) > 6) {
-        self.travaMovDirecional=YES;
+
+        
+        //TODO: decidir se moveu o Y ou X
+        if (!self.travaMovDirecional) {
+            
+            //Faz botao mecher
+            if (self.forcaMovimento > 0) {
+                [self setPosition:CGPointMake(self.position.x+forcaMovBotao, self.position.y)];
+            }else{
+                [self setPosition:CGPointMake(self.position.x-forcaMovBotao, self.position.y)];
+            }
+        }
+        
+        //TODO: Animar alteração em Y
+        //Cria limite para animação movimento do botao
+        if (fabsf(self.position.x - self.posicaoInicialBotao.x) > 6) {
+            self.travaMovDirecional=YES;
+        }
+        
+        //Faz ele andar
+        if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
+            [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:self.forcaMovimento]];
+        }
+    }else{
+        //O carinha mexeu mais na vertical faz o jogador escala
+        NSLog(@"escala");
     }
 }
 
 //Executa a açao
 //Faz a ação do botão
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
-        [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:self.forcaMovimento]];
-    }
     
     //Retorna á posição inicial
-    [self setPosition:CGPointMake(self.xInicialBotao, self.position.y)];
-    
+    [self setPosition:self.posicaoInicialBotao];
     [self setAlpha:0.2f];
     
     self.travaMovDirecional=NO;

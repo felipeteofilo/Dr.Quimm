@@ -333,32 +333,6 @@
         
     }
 }
-
-<<<<<<< Updated upstream
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesMoved:touches withEvent:event];
-    if (![self childNodeWithName:@"falasDoJogo"]) {
-        UITouch *toque = [touches anyObject];
-        CGPoint posicaoToque=[toque locationInNode:self];
-        
-        //Anda corretamente apenas e for do lado direito da tela
-        if(posicaoToque.x > CGRectGetMidX(self.frame)){
-            //se moveu para a direita, anda para a direita - D
-            if(posicaoToque.x > self.pontoDeToqueAndar.x){
-                if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
-                    [self.jogador andarParaDirecao:@"D"];
-                }
-            }
-            //senão, move para a esquerda - E
-            else{
-                if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
-                    [self.jogador andarParaDirecao:@"E"];
-                }
-            }
-        }
-    }
-}
-=======
 //-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 //    [super touchesMoved:touches withEvent:event];
 //    if (![self childNodeWithName:@"falasDoJogo"]) {
@@ -383,7 +357,6 @@
 //        }
 //    }
 //}
->>>>>>> Stashed changes
 
 -(void)verificaCoberturaBackground{
     DQCoberturaBackground *cobetura=(DQCoberturaBackground*)[self.backgroundAtual childNodeWithName:NomeNodeCobertura];

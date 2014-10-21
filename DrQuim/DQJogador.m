@@ -229,10 +229,6 @@
     return [self estaComItem:@"Contador Geiger"];
 }
 -(BOOL)estaComItem:(NSString*)nomeItem{
-<<<<<<< Updated upstream
-   // NSArray *arra=[self.itens arrayItensJogador];
-=======
->>>>>>> Stashed changes
     return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
 

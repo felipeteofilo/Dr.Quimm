@@ -11,7 +11,7 @@
 @interface DQBotaoDirecional : DQBotao
 
 @property CGPoint posicaoToqueInicial;
-@property float xInicialBotao;
+@property CGPoint posicaoInicialBotao;
 @property float forcaMovimento;
 @property BOOL travaMovDirecional;
 
