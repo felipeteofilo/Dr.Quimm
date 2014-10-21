@@ -166,14 +166,14 @@
             //se moveu para a direita, anda para a direita - D
             if(posicaoToque.x > self.pontoDeToqueAndar.x){
                 if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
-                    [self.jogador andarParaDirecao:@"D"];
+                    //[self.jogador andarParaDirecao:@"D"];
                 }
             }
             
             //senão, move para a esquerda - E
             else{
                 if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
-                    [self.jogador andarParaDirecao:@"E"];
+                    //[self.jogador andarParaDirecao:@"E"];
                 }
             }
         }

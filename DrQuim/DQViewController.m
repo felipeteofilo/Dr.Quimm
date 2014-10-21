@@ -20,6 +20,7 @@
 
     //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
     DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+    //DQSceneTeste *menuInicial=[[DQSceneTeste alloc]initWithSize:skView.bounds.size];
     
     menuInicial.scaleMode = SKSceneScaleModeAspectFill;
     

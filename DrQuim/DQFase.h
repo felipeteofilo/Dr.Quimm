@@ -21,6 +21,9 @@
 #import "DQVidaControle.h"
 #import "DQFalasNoJogoControle.h"
 #import "DQControleSomScene.h"
+#import "DQCoreDataController.h"
+#import "DQBotaoDirecional.h"
+
 
 //define as categorias de colisao
 static const UInt32 JogadorCategoria = 0x1 << 0;
@@ -56,8 +59,9 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 @property int parteFaseAtual;
 @property int nPartesFase;
 
-//SKSpriteNode da setinha que auxilia o jogador a entender para onde ele precisa andar
-@property SKSpriteNode *direcional;
+//Removido pois terá um botao exclusivo
+////SKSpriteNode da setinha que auxilia o jogador a entender para onde ele precisa andar
+//@property SKSpriteNode *direcional;
 
 //CGPoint que guarda onde a pessoa pressionou e assim descobrir se o personagem vai para a direita ou esquerda
 @property CGPoint pontoDeToqueAndar;
@@ -74,6 +78,8 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //Sera usado para sons
 @property DQControleSomScene *controleSom;
 
+//Controles
+@property DQBotaoDirecional *direcional;
 
 //metodo para iniciar a fase
 -(void)iniciarFase;

@@ -40,9 +40,11 @@
 }
 
 -(void)atualizarBarraStatus{
-    [self.barraFome atualizarBarra:[[DQJogador sharedJogador]fome]];
-    [self.barraSede atualizarBarra:[[DQJogador sharedJogador]sede]];
-    [self.barraVida atualizarBarra:[[DQJogador sharedJogador]vida]];
+    DQJogador *jogador = [DQJogador sharedJogador];
+    
+    [self.barraFome atualizarBarra:jogador.fome];
+    [self.barraSede atualizarBarra:jogador.sede];
+    [self.barraVida atualizarBarra:jogador.vida];
 }
 
 -(void)atualizarHud{

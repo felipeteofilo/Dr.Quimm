@@ -14,6 +14,7 @@
 #import "DQArmadilhasJogador.h"
 #import "DQControleSom.h"
 #import "DQUteis.h"
+#import "DQCoreDataController.h"
 
 @interface DQJogador : SKSpriteNode
 
@@ -72,9 +73,6 @@
 //Funcao para iniciar os frames das animacoes
 -(void)iniciarAnimacoes:(NSDictionary*)animacoes;
 
-//Método de retorno VOID - Faz o personagem andar para a direção que foi passada
--(void)andarParaDirecao:(NSString*)direcao;
-
 //Método de retorno VOID - Faz o personagem pular
 -(void)pular;
 
@@ -124,4 +122,7 @@
 
 //Metodo que verifica se ja esta com contador
 -(BOOL)estaComContadorGeiger;
+
+//Método de retorno VOID - Faz o personagem andar para a direção que foi passada
+-(void)andarParaDirecao:(char)direcao eDistancia:(float)distancia;
 @end

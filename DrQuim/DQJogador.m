@@ -28,7 +28,7 @@
         //Deixar o corpo fisico mais prox ao sprite
         [self configuraCorpoFisico];
         [self addChild:self.spriteNode];
-
+        
         //Seta que ele ainda nao pode escalar
         self.podeEscalar = NO;
         self.estaNoChao = YES;
@@ -38,29 +38,51 @@
         self.vida = 100;
         self.respeito = 0;
         
+        
+        
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
-        
-        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
-            self.itens.dicionarioDeItensJogador = [DQControleUserDefalts itensAtuaisJogador];
-        }
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
         
-        
-        if ([DQControleUserDefalts armadilhasAtuaisJogador]!=nil) {
-            self.armadilhas.arrayDeArmadilhasJogador = [DQControleUserDefalts armadilhasAtuaisJogador];
+        Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
+        if (infoSave !=nil) {
+            self.fome = [[infoSave fome]intValue];
+            self.sede = [[infoSave sede]intValue];
+            self.vida= [[infoSave vida]intValue];
+            self.respeito = [[infoSave respeito]intValue];
+            
+            
+            self.itens = [infoSave itens];
+            self.armadilhas = [infoSave armadilhas];
         }
+        
+        
+        
+//        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
+//            self.itens.dicionarioDeItensJogador = [DQControleUserDefalts itensAtuaisJogador];
+//        }
+//        self.armadilhas =[[DQArmadilhasJogador alloc]init];
+//        
+//        
+//        if ([DQControleUserDefalts armadilhasAtuaisJogador]!=nil) {
+//            self.armadilhas.arrayDeArmadilhasJogador = [DQControleUserDefalts armadilhasAtuaisJogador];
+//        }
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
         //se nao existe nenhuma missao ainda
-        if([DQControleUserDefalts missaoAtualJogador] != nil){
-            NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
+//        if([DQControleUserDefalts missaoAtualJogador] != nil){
+          //  NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
+        if (infoSave !=nil) {
+            
+        
+            NSDictionary *missao = [infoSave missao];
             self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
             self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
             self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
             
             [self.controleMissoes iniciarMissao];
         }
+       // }
         
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
@@ -131,7 +153,6 @@
     
     return frames;
 }
-
 
 //Singleton do jogador
 +(id)sharedJogador
@@ -230,24 +251,25 @@
     return [self estaComItem:@"Contador Geiger"];
 }
 -(BOOL)estaComItem:(NSString*)nomeItem{
-   // NSArray *arra=[self.itens arrayItensJogador];
+
     return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
 
-//metodo com retorno void - faz o jogador andar
--(void)andarParaDirecao:(NSString*)direcao{
+//Alterado cabeçalho funçao
+//-(void)andarParaDirecao:(NSString*)direcao{
+-(void)andarParaDirecao:(char)direcao eDistancia:(float)distancia{
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
-
+        
         //variavel SKAction- define a direcao do movimento
         SKAction *movimentar =[[SKAction alloc]init];
         
         //se a direcao for para direita
-        if ([direcao isEqual:@"D"]) {
+        if (direcao=='D') {
             
             self.andandoParaDirecao = @"D";
             //Alterado para usar da propriedade
-            //movimentar =[SKAction moveByX:90 y:0 duration:1.0];
-            movimentar=[SKAction moveByX:self.distAndar y:0 duration:1.0];
+            //movimentar=[SKAction moveByX:self.distAndar y:0 duration:1.0];
+            movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
             
             if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
                 [self.physicsBody setVelocity:CGVectorMake(10, -10)];
@@ -258,9 +280,8 @@
         }else{
             
             self.andandoParaDirecao = @"E";
-            //Alte
-            //movimentar =[SKAction moveByX:-90 y:0 duration:1.0];
-                        movimentar=[SKAction moveByX:(self.distAndar *-1) y:0 duration:1.0];
+            //movimentar=[SKAction moveByX:(self.distAndar *-1) y:0 duration:1.0];
+            movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
             
             //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
             self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
@@ -277,7 +298,7 @@
     
     CGPoint primeiroPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)+15), CGRectGetMinY(self.spriteNode.frame)+20);
     CGPathMoveToPoint(path, NULL, primeiroPonto.x,primeiroPonto.y);
-
+    
     CGPoint segundoPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)-15), CGRectGetMinY(self.spriteNode.frame)+20);
     CGPathAddLineToPoint(path, NULL, segundoPonto.x,segundoPonto.y);
     
@@ -519,22 +540,22 @@
 
 //Metodo para alterar os estados do jogador em missao
 -(void)alterarEstados{
-
+    
     NSDictionary *dicionario = [[NSDictionary alloc] initWithDictionary:[self.controleMissoes.missao.arrayPartes objectAtIndex:self.controleMissoes.parteAtual-1]];
-
+    
     //Ver se muda os estados
     //fome
     int fome = [[dicionario objectForKey:@"Fome"] intValue];
     if(fome != 0){
         [self alterarFomeJogador:fome];
     }
-
+    
     //sede
     int sede = [[dicionario objectForKey:@"Sede"] intValue];
     if(sede != 0){
         [self alterarSedeJogador:sede];
     }
-
+    
     //vida
     int vida = [[dicionario objectForKey:@"Vida"] intValue];
     if(vida != 0){
