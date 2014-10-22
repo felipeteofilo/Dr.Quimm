@@ -497,32 +497,7 @@
                     [self.controleSom tocarSomLista];
                 }
             }
-            //A cada 60 segundos salva os status do jogados
-//            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
-            
-            NSString *nome = @"Jogador1";
-            
-            [DQCoreDataController salvarVida:self.jogador.vida respeito:self.jogador.respeito fome:self.jogador.fome sede:self.jogador.sede doJogador:nome];
-            
-            NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
-            
-            [missao setObject:[NSNumber numberWithBool:self.jogador.controleMissoes.emMissao] forKey:@"EmMissao"];
-            [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.parteAtual]forKey:@"ParteAtual"];
-            
-            [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.proximaMissao] forKey:@"MissaoAtual"];
-            
-            
-            [DQCoreDataController salvarItens:self.jogador.itens.dicionarioDeItensJogador doJogador:nome];
-            
-            [DQCoreDataController salvarArmadilhas:self.jogador.armadilhas.arrayDeArmadilhasJogador doJogador:nome];
-            
-            [DQCoreDataController salvarMissao:missao doJogador:nome];
-            
-//            [DQControleUserDefalts setItensAtuaisJogador:self.jogador.itens.dicionarioDeItensJogador];
-//            
-//            [DQControleUserDefalts setArmadilhasAtuaisJogador:self.jogador.armadilhas.arrayDeArmadilhasJogador];
-//            
-//            [DQControleUserDefalts setMissaoAtualJogador:missao];
+         
         }
     }
 }

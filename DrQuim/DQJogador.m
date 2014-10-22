@@ -43,46 +43,9 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
-        
-        Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
-        if (infoSave !=nil) {
-            self.fome = [[infoSave fome]intValue];
-            self.sede = [[infoSave sede]intValue];
-            self.vida= [[infoSave vida]intValue];
-            self.respeito = [[infoSave respeito]intValue];
-            
-            
-            self.itens = [infoSave itens];
-            self.armadilhas = [infoSave armadilhas];
-        }
-        
-        
-        
-//        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
-//            self.itens.dicionarioDeItensJogador = [DQControleUserDefalts itensAtuaisJogador];
-//        }
-//        self.armadilhas =[[DQArmadilhasJogador alloc]init];
-//        
-//        
-//        if ([DQControleUserDefalts armadilhasAtuaisJogador]!=nil) {
-//            self.armadilhas.arrayDeArmadilhasJogador = [DQControleUserDefalts armadilhasAtuaisJogador];
-//        }
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
-        //se nao existe nenhuma missao ainda
-//        if([DQControleUserDefalts missaoAtualJogador] != nil){
-          //  NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
-        if (infoSave !=nil) {
-            
-        
-            NSDictionary *missao = [infoSave missao];
-            self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
-            self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
-            self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
-            
-            [self.controleMissoes iniciarMissao];
-        }
-       // }
+        [self.controleMissoes iniciarMissao];
         
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
@@ -95,6 +58,51 @@
     //retorna o jogador
     return self;
 }
+
+
+-(void)carregarInformacoesDoJogador:(NSString*)jogador{
+    Usuario *infoSave = [DQCoreDataController procurarJogador:jogador];
+    if (infoSave !=nil) {
+        self.fome = [[infoSave fome]intValue];
+        self.sede = [[infoSave sede]intValue];
+        self.vida= [[infoSave vida]intValue];
+        self.respeito = [[infoSave respeito]intValue];
+        
+        
+        self.itens.dicionarioDeItensJogador = [infoSave itens];
+        self.armadilhas.arrayDeArmadilhasJogador = [infoSave armadilhas];
+        
+        
+        NSDictionary *missao = [infoSave missao];
+        self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
+        self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
+        self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
+        
+        [self.controleMissoes iniciarMissao];
+
+    }
+
+}
+
+-(void)salvarJogoDoJogador:(NSString*)jogador{
+    [DQCoreDataController salvarVida:self.vida respeito:self.respeito fome:self.fome sede:self.sede doJogador:jogador];
+    
+    NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
+    
+    [missao setObject:[NSNumber numberWithBool:self.controleMissoes.emMissao] forKey:@"EmMissao"];
+    [missao setObject:[NSNumber numberWithInt:self.controleMissoes.parteAtual]forKey:@"ParteAtual"];
+    
+    [missao setObject:[NSNumber numberWithInt:self.controleMissoes.proximaMissao] forKey:@"MissaoAtual"];
+    
+    
+    [DQCoreDataController salvarItens:self.itens.dicionarioDeItensJogador doJogador:jogador];
+    
+    [DQCoreDataController salvarArmadilhas:self.armadilhas.arrayDeArmadilhasJogador doJogador:jogador];
+    
+    [DQCoreDataController salvarMissao:missao doJogador:jogador];
+
+}
+
 -(void)atualizaEstadoJogador{
     
     if (![DQControleUserDefalts estadoJogadorAtualizado]) {
