@@ -28,6 +28,10 @@
 		755876FF199AB5E40084E5AC /* DQCutsceneControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 755876FE199AB5E40084E5AC /* DQCutsceneControle.m */; };
 		7560591019955F9C00BD455A /* DQMissao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560590F19955F9C00BD455A /* DQMissao.m */; };
 		7560591319955FC700BD455A /* DQMissaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560591219955FC700BD455A /* DQMissaoControle.m */; };
+		75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */; };
+		75FDF3F519F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */; };
+		75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */; };
+		75FDF40219F6F1AB007E1C66 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF40119F6F1AB007E1C66 /* Usuario.m */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
 		94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA01933BA290024FB94 /* CoreGraphics.framework */; };
 		94080EA31933BA290024FB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080EA21933BA290024FB94 /* UIKit.framework */; };
@@ -259,6 +263,12 @@
 		7560590F19955F9C00BD455A /* DQMissao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissao.m; sourceTree = "<group>"; };
 		7560591119955FC700BD455A /* DQMissaoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMissaoControle.h; sourceTree = "<group>"; };
 		7560591219955FC700BD455A /* DQMissaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissaoControle.m; sourceTree = "<group>"; };
+		75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DQCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoreDataController.h; sourceTree = "<group>"; };
+		75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoreDataController.m; sourceTree = "<group>"; };
+		75FDF40019F6F1AB007E1C66 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		75FDF40119F6F1AB007E1C66 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		94080E9B1933BA290024FB94 /* DrQuim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrQuim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94080E9E1933BA290024FB94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94080EA01933BA290024FB94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -511,6 +521,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */,
 				94331C7E19A5399400FD04F8 /* AVFoundation.framework in Frameworks */,
 				94080EA11933BA290024FB94 /* CoreGraphics.framework in Frameworks */,
 				94080EA31933BA290024FB94 /* UIKit.framework in Frameworks */,
@@ -578,6 +589,18 @@
 			name = Animacoes;
 			sourceTree = "<group>";
 		};
+		75FDF3F619F6E343007E1C66 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */,
+				75FDF40019F6F1AB007E1C66 /* Usuario.h */,
+				75FDF40119F6F1AB007E1C66 /* Usuario.m */,
+				75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */,
+				75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		94080E921933BA290024FB94 = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +623,7 @@
 		94080E9D1933BA290024FB94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */,
 				94331C7D19A5399400FD04F8 /* AVFoundation.framework */,
 				94080E9E1933BA290024FB94 /* Foundation.framework */,
 				94080EA01933BA290024FB94 /* CoreGraphics.framework */,
@@ -613,6 +637,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				75FDF3F619F6E343007E1C66 /* CoreData */,
 				94331C7A19A538C300FD04F8 /* DrQuim.entitlements */,
 				CD616FE319A51DA800B5C63A /* Transformacoes */,
 				2323166F1947BCAB0002FB1D /* Arquvos XML */,
@@ -1342,9 +1367,11 @@
 				C52FBF2119A18D220059E973 /* DQUteis.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
+				75FDF3F519F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld in Sources */,
 				C54031EA1989FE98003384AB /* DQReferenciaMissaoJogador.m in Sources */,
 				CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */,
 				CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */,
+				75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				7560591319955FC700BD455A /* DQMissaoControle.m in Sources */,
 				C54031EF1989FEE7003384AB /* DQItem.m in Sources */,
@@ -1369,6 +1396,7 @@
 				C52FBF1A19A18D0A0059E973 /* DQAnimalLeopardinho.m in Sources */,
 				C54031E81989FE98003384AB /* DQMenuReceita.m in Sources */,
 				C54B79B31971CC3D00366512 /* DQVila.m in Sources */,
+				75FDF40219F6F1AB007E1C66 /* Usuario.m in Sources */,
 				3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */,
 				CD54D9AF19A51E4E00C2798D /* DQTransformacaoControle.m in Sources */,
 				755876FF199AB5E40084E5AC /* DQCutsceneControle.m in Sources */,
@@ -1619,6 +1647,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */;
+			path = DQCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 94080E931933BA290024FB94 /* Project object */;
 }

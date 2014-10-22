@@ -14,6 +14,7 @@
 #import "DQArmadilhasJogador.h"
 #import "DQControleSom.h"
 #import "DQUteis.h"
+#import "DQCoreDataController.h"
 
 @interface DQJogador : SKSpriteNode
 

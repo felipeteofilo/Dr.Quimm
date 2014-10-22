@@ -333,6 +333,7 @@
         
     }
 }
+
 //-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 //    [super touchesMoved:touches withEvent:event];
 //    if (![self childNodeWithName:@"falasDoJogo"]) {
@@ -495,7 +496,11 @@
                 }
             }
             //A cada 60 segundos salva os status do jogados
-            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+//            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+            
+            NSString *nome = @"Jogador1";
+            
+            [DQCoreDataController salvarVida:self.jogador.vida respeito:self.jogador.respeito fome:self.jogador.fome sede:self.jogador.sede doJogador:nome];
             
             NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
             
@@ -504,11 +509,18 @@
             
             [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.proximaMissao] forKey:@"MissaoAtual"];
             
-            [DQControleUserDefalts setItensAtuaisJogador:self.jogador.itens.dicionarioDeItensJogador];
             
-            [DQControleUserDefalts setArmadilhasAtuaisJogador:self.jogador.armadilhas.arrayDeArmadilhasJogador];
+            [DQCoreDataController salvarItens:self.jogador.itens.dicionarioDeItensJogador doJogador:nome];
             
-            [DQControleUserDefalts setMissaoAtualJogador:missao];
+            [DQCoreDataController salvarArmadilhas:self.jogador.armadilhas.arrayDeArmadilhasJogador doJogador:nome];
+            
+            [DQCoreDataController salvarMissao:missao doJogador:nome];
+            
+//            [DQControleUserDefalts setItensAtuaisJogador:self.jogador.itens.dicionarioDeItensJogador];
+//            
+//            [DQControleUserDefalts setArmadilhasAtuaisJogador:self.jogador.armadilhas.arrayDeArmadilhasJogador];
+//            
+//            [DQControleUserDefalts setMissaoAtualJogador:missao];
         }
     }
 }

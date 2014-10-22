@@ -11,7 +11,7 @@
 @implementation DQPlataforma
 
 -(id)initComY:(float)_maiorY{
-    if ([super init]) {
+    if (self=[super init]) {
         self.name=nomePlataforma;
         
         self.anchorPoint=CGPointMake(0, 1);

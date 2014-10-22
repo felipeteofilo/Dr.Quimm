@@ -19,7 +19,7 @@
     return self;
 }
 -(id)initFase:(int)fase Size:(CGSize)size{
-    if([super initFase:fase Size:size]){
+    if(self=[super initFase:fase Size:size]){
         self.falouCurandeiroCacadaCoelho=[DQControleUserDefalts falouCurandeiroCacadaCoelho];
     }
     
