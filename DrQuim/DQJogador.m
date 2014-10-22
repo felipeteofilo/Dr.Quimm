@@ -43,49 +43,48 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
-        //LEO comentou aqui
-//        Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
-//        if (infoSave !=nil) {
-//            self.fome = [[infoSave fome]intValue];
-//            self.sede = [[infoSave sede]intValue];
-//            self.vida= [[infoSave vida]intValue];
-//            self.respeito = [[infoSave respeito]intValue];
-//            
-//            
-//            self.itens = [infoSave itens];
-//            self.armadilhas = [infoSave armadilhas];
-//        }
-//        
+
+        Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
+        if (infoSave !=nil) {
+            self.fome = [[infoSave fome]intValue];
+            self.sede = [[infoSave sede]intValue];
+            self.vida= [[infoSave vida]intValue];
+            self.respeito = [[infoSave respeito]intValue];
+            
+            
+            self.itens = [infoSave itens];
+            self.armadilhas = [infoSave armadilhas];
+        }
         
         
-//        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
-//            self.itens.dicionarioDeItensJogador = [DQControleUserDefalts itensAtuaisJogador];
-//        }
-//        self.armadilhas =[[DQArmadilhasJogador alloc]init];
-//        
-//        
-//        if ([DQControleUserDefalts armadilhasAtuaisJogador]!=nil) {
-//            self.armadilhas.arrayDeArmadilhasJogador = [DQControleUserDefalts armadilhasAtuaisJogador];
-//        }
+        
+        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
+            self.itens.dicionarioDeItensJogador = [DQControleUserDefalts itensAtuaisJogador];
+        }
+        self.armadilhas =[[DQArmadilhasJogador alloc]init];
+        
+        
+        if ([DQControleUserDefalts armadilhasAtuaisJogador]!=nil) {
+            self.armadilhas.arrayDeArmadilhasJogador = [DQControleUserDefalts armadilhasAtuaisJogador];
+        }
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
         //se nao existe nenhuma missao ainda
 //        if([DQControleUserDefalts missaoAtualJogador] != nil){
           //  NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
 
-        //LEO Comentou aqui
-//        if (infoSave !=nil) {
-//            
-//        
-//            NSDictionary *missao = [infoSave missao];
-//            self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
-//            self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
-//            self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
-//            
-//            [self.controleMissoes iniciarMissao];
-//        }
-       // }
+        if (infoSave !=nil) {
+            
         
+            NSDictionary *missao = [infoSave missao];
+            self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
+            self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
+            self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
+            
+            [self.controleMissoes iniciarMissao];
+        }
+        }
+    
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
         
