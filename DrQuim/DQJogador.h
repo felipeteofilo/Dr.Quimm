@@ -103,9 +103,6 @@
 //Método para parar de andar
 -(void)pararAndar;
 
-//funcao para fazer o jogador escalar
--(void)escalarParaDirecao:(NSString*)direcao;
-
 //funcao para parar a escalada do jogador
 -(void)pararEscalar;
 
@@ -125,4 +122,6 @@
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
 -(void)andarParaDirecao:(char)direcao eDistancia:(float)distancia;
+//funcao para fazer o jogador escalar
+-(void)escalarParaDirecao:(char)direcao;
 @end

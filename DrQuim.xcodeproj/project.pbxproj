@@ -29,7 +29,7 @@
 		7560591019955F9C00BD455A /* DQMissao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560590F19955F9C00BD455A /* DQMissao.m */; };
 		7560591319955FC700BD455A /* DQMissaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560591219955FC700BD455A /* DQMissaoControle.m */; };
 		75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */; };
-		75FDF3F519F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */; };
+		75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */; };
 		75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */; };
 		75FDF40219F6F1AB007E1C66 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF40119F6F1AB007E1C66 /* Usuario.m */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
@@ -264,7 +264,7 @@
 		7560591119955FC700BD455A /* DQMissaoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMissaoControle.h; sourceTree = "<group>"; };
 		7560591219955FC700BD455A /* DQMissaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissaoControle.m; sourceTree = "<group>"; };
 		75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DQCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrQuim.xcdatamodel; sourceTree = "<group>"; };
 		75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoreDataController.h; sourceTree = "<group>"; };
 		75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoreDataController.m; sourceTree = "<group>"; };
 		75FDF40019F6F1AB007E1C66 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
@@ -592,7 +592,7 @@
 		75FDF3F619F6E343007E1C66 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */,
+				75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */,
 				75FDF40019F6F1AB007E1C66 /* Usuario.h */,
 				75FDF40119F6F1AB007E1C66 /* Usuario.m */,
 				75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */,
@@ -1367,7 +1367,7 @@
 				C52FBF2119A18D220059E973 /* DQUteis.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
-				75FDF3F519F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld in Sources */,
+				75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */,
 				C54031EA1989FE98003384AB /* DQReferenciaMissaoJogador.m in Sources */,
 				CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */,
 				CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */,
@@ -1649,13 +1649,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */ = {
+		75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */,
+				75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */,
 			);
-			currentVersion = 75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */;
-			path = DQCoreDataModel.xcdatamodeld;
+			currentVersion = 75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */;
+			path = DrQuim.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -278,20 +278,20 @@
         //Pega o node de escada na posicao do toque
         SKNode *nodeTocadoNoBackGround=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
         
-        
-        //verifica para onde o jogador deve escalar
-        if ([nodeTocadoNoBackGround.name isEqualToString:nomeEscalavel]) {
-            //Verifica se o Y é maior ou menor
-            
-            if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
-                //Fazer jogador escalar - Subindo
-                [self.jogador escalarParaDirecao:@"C"];
-                
-            }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
-                //Fazer jogador escalar - Descendo
-                [self.jogador escalarParaDirecao:@"B"];
-            }
-        }
+        //Movido para método especifico
+        //        //verifica para onde o jogador deve escalar
+        //        if ([nodeTocadoNoBackGround.name isEqualToString:nomeEscalavel]) {
+        //            //Verifica se o Y é maior ou menor
+        //
+        //            if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
+        //                //Fazer jogador escalar - Subindo
+        //                [self.jogador escalarParaDirecao:@"C"];
+        //
+        //            }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
+        //                //Fazer jogador escalar - Descendo
+        //                [self.jogador escalarParaDirecao:@"B"];
+        //            }
+        //        }
         
         //Posicao do toque na tela
         CGPoint posicaoToque=[toque locationInNode:self];
@@ -339,7 +339,7 @@
 //    if (![self childNodeWithName:@"falasDoJogo"]) {
 //        UITouch *toque = [touches anyObject];
 //        CGPoint posicaoToque=[toque locationInNode:self];
-//        
+//
 //        //Anda corretamente apenas e for do lado direito da tela
 //        if(posicaoToque.x > CGRectGetMidX(self.frame)){
 //            //se moveu para a direita, anda para a direita - D
@@ -348,7 +348,7 @@
 //                    [self.jogador andarParaDirecao:@"D"];
 //                }
 //            }
-//            
+//
 //            //senão, move para a esquerda - E
 //            else{
 //                if (![self.jogador.andandoParaDirecao isEqualToString:@"E"] ) {
@@ -375,16 +375,16 @@
     
     //Se nao ha falas na tela
     if(![self childNodeWithName:@"falasDoJogo"]){
-        //faz parar de andar
-        [self.jogador pararAndar];
-        
-        //tirar imagem da setinha da tela
-        //[self.direcional removeFromParent];
-        
-        //Ao parar o toque, pausa sua escalada se ainda estiver escalando
-        if ([self.jogador actionForKey:@"escalar"]) {
-            [self.jogador pausarEscalada];
-        }
+//        //faz parar de andar
+//        [self.jogador pararAndar];
+//        
+//        //tirar imagem da setinha da tela
+//        //[self.direcional removeFromParent];
+//        
+//        //Ao parar o toque, pausa sua escalada se ainda estiver escalando
+//        if ([self.jogador actionForKey:@"escalar"]) {
+//            [self.jogador pausarEscalada];
+//        }
     }
 }
 
@@ -432,8 +432,8 @@
         secondBody = contact.bodyA;
     }
     
-   
-
+    
+    
     
     // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
@@ -442,7 +442,7 @@
             //se o jogador colidiu com o chao setamos que ele estao no chao
             
             [self.jogador setEstaNoChao:YES];
-           
+            
         }
         
         if ([secondBody.node.name isEqualToString:nomePlataforma]){
@@ -477,7 +477,7 @@
     self.jogoPausado=self.paused;
     
     if (!self.jogoPausado) {
-
+        
         [self.jogador atualizarStatusMissao];
         [self criarParteFase];
         [self verificaCoberturaBackground];
@@ -486,7 +486,7 @@
         
         
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
-
+        
         if (ultimoUpdate > 30) {
             self.intervaloUltimoUpdate = currentTime;
             
@@ -496,7 +496,7 @@
                 }
             }
             //A cada 60 segundos salva os status do jogados
-//            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
+            //            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
             
             NSString *nome = @"Jogador1";
             
@@ -516,11 +516,11 @@
             
             [DQCoreDataController salvarMissao:missao doJogador:nome];
             
-//            [DQControleUserDefalts setItensAtuaisJogador:self.jogador.itens.dicionarioDeItensJogador];
-//            
-//            [DQControleUserDefalts setArmadilhasAtuaisJogador:self.jogador.armadilhas.arrayDeArmadilhasJogador];
-//            
-//            [DQControleUserDefalts setMissaoAtualJogador:missao];
+            //            [DQControleUserDefalts setItensAtuaisJogador:self.jogador.itens.dicionarioDeItensJogador];
+            //
+            //            [DQControleUserDefalts setArmadilhasAtuaisJogador:self.jogador.armadilhas.arrayDeArmadilhasJogador];
+            //
+            //            [DQControleUserDefalts setMissaoAtualJogador:missao];
         }
     }
 }
@@ -636,7 +636,7 @@
     [self.mundo setZPosition:-100];
     
     self.controladorDaVida = [DQVidaControle sharedControleVida];
-
+    
     self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
     
     //Adiciona a primeira parte da tela e o jogador no mundo
@@ -646,7 +646,7 @@
     [self addChild:self.mundo];
     
     [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
-
+    
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
     
     [self criaJogador];
@@ -725,10 +725,29 @@
 
 //Configura controles
 -(void)configurarControles{
-    self.direcional = [[DQBotaoDirecional alloc]initBotao:@"testeBotao" comSel:@selector(movimentaPersonagem:) eDelegate:self eTamanho:CGSizeMake(100,100)];
+    self.direcional=[[DQBotaoDirecional alloc]initDirecional:@"testeBotao" seletorHorizontal:@selector(movimentaPersonagem:) seletorVertical:@selector(escaladaPersonagem:) selSoltarDir:@selector(pararPersonagem) dalegateSeletores:self];
     
     [self.direcional setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.9f,CGRectGetHeight(self.frame)*0.1f )];
     [self addChild:self.direcional];
+}
+
+-(void)escaladaPersonagem:(NSNumber*)valorMovimento{
+    //Verifica se pode escalar
+    BOOL podeEscalar=NO;
+    
+    if (podeEscalar) {
+        
+        
+        //Recebeu um valor positivo significa que quer subir
+        if ([valorMovimento floatValue]>0) {
+            //Fazer jogador escalar - Subindo
+            [self.jogador escalarParaDirecao:'C'];
+            
+        }else{
+            //Fazer jogador escalar - Descendo
+            [self.jogador escalarParaDirecao:'B'];
+        }
+    }
 }
 
 //MOVIMENTA O PERSONAGEM
@@ -744,5 +763,15 @@
     
     //Chama metodo passando qnto ele irá andar
     [self.jogador andarParaDirecao:dirCaminhada eDistancia:[forcaMovimento floatValue]];
+}
+
+-(void)pararPersonagem{
+    //faz parar de andar
+    [self.jogador pararAndar];
+
+    //Ao parar o toque, pausa sua escalada se ainda estiver escalando
+    if ([self.jogador actionForKey:@"escalar"]) {
+        [self.jogador pausarEscalada];
+    }
 }
 @end

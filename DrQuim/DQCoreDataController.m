@@ -18,7 +18,7 @@
     [appDelegate managedObjectContext];
     
     NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"Jogador"
+    [NSEntityDescription entityForName:@"Usuario"
                 inManagedObjectContext:context];
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];

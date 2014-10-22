@@ -43,19 +43,19 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
-        
-        Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
-        if (infoSave !=nil) {
-            self.fome = [[infoSave fome]intValue];
-            self.sede = [[infoSave sede]intValue];
-            self.vida= [[infoSave vida]intValue];
-            self.respeito = [[infoSave respeito]intValue];
-            
-            
-            self.itens = [infoSave itens];
-            self.armadilhas = [infoSave armadilhas];
-        }
-        
+        //LEO comentou aqui
+//        Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
+//        if (infoSave !=nil) {
+//            self.fome = [[infoSave fome]intValue];
+//            self.sede = [[infoSave sede]intValue];
+//            self.vida= [[infoSave vida]intValue];
+//            self.respeito = [[infoSave respeito]intValue];
+//            
+//            
+//            self.itens = [infoSave itens];
+//            self.armadilhas = [infoSave armadilhas];
+//        }
+//        
         
         
 //        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
@@ -72,16 +72,18 @@
         //se nao existe nenhuma missao ainda
 //        if([DQControleUserDefalts missaoAtualJogador] != nil){
           //  NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
-        if (infoSave !=nil) {
-            
-        
-            NSDictionary *missao = [infoSave missao];
-            self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
-            self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
-            self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
-            
-            [self.controleMissoes iniciarMissao];
-        }
+
+        //LEO Comentou aqui
+//        if (infoSave !=nil) {
+//            
+//        
+//            NSDictionary *missao = [infoSave missao];
+//            self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
+//            self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
+//            self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
+//            
+//            [self.controleMissoes iniciarMissao];
+//        }
        // }
         
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
@@ -267,7 +269,6 @@
             
             self.andandoParaDirecao = @"D";
             //Alterado para usar da propriedade
-            //movimentar=[SKAction moveByX:self.distAndar y:0 duration:1.0];
             movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
             
             if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
@@ -279,12 +280,10 @@
         }else{
             
             self.andandoParaDirecao = @"E";
-            //movimentar=[SKAction moveByX:(self.distAndar *-1) y:0 duration:1.0];
             movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
             
             //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
             self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
-            
         }
         
         //anda para direcao
@@ -404,7 +403,7 @@
 }
 
 //funcao para fazer o jogador escalar
--(void)escalarParaDirecao:(NSString*)direcao{
+-(void)escalarParaDirecao:(char)direcao{
     //se puder escalar
     if (self.podeEscalar) {
         SKAction *escalar=[[SKAction alloc]init];
@@ -412,11 +411,11 @@
         //Desliga a gravidade para o Node
         self.physicsBody.dynamic=NO;
         // verifica para qual direcao sera a escalada
-        if ([direcao isEqualToString:@"C"]) {
+        if (direcao=='C') {
             //Sobe
             escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
             
-        }else if([direcao isEqualToString:@"B"]){
+        }else if(direcao=='B'){
             //Desce
             escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
         }

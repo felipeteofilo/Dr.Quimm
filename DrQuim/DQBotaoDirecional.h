@@ -17,4 +17,9 @@
 
 //Seletor p fazer a escalada
 @property SEL seletorVertical;
+
+//Qndo o jogador tirar o dedo do direcional
+@property SEL selSoltouDirecional;
+
+-(id)initDirecional:(NSString*)imagemBotao seletorHorizontal:(SEL)seletorHorizontal seletorVertical:(SEL)selVertical selSoltarDir:(SEL)soltarDir dalegateSeletores:(id)delegate;
 @end
