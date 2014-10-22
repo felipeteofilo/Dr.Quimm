@@ -15,6 +15,10 @@
 @property float forcaMovimento;
 @property BOOL travaMovDirecional;
 
+//Boleanos p decidir se aumenta em X ou Y
+@property BOOL movimentoX;
+@property BOOL movimentoY;
+
 //Seletor p fazer a escalada
 @property SEL seletorVertical;
 

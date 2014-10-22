@@ -43,7 +43,7 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
-
+        
         Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
         if (infoSave !=nil) {
             self.fome = [[infoSave fome]intValue];
@@ -70,12 +70,12 @@
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
         //se nao existe nenhuma missao ainda
-//        if([DQControleUserDefalts missaoAtualJogador] != nil){
-          //  NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
-
+        //        if([DQControleUserDefalts missaoAtualJogador] != nil){
+        //  NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
+        
         if (infoSave !=nil) {
             
-        
+            
             NSDictionary *missao = [infoSave missao];
             self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
             self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
@@ -83,8 +83,7 @@
             
             [self.controleMissoes iniciarMissao];
         }
-        }
-    
+        
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
         
@@ -211,7 +210,7 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     
-        
+    
     
     [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
     
