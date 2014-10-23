@@ -497,7 +497,6 @@
                     [self.controleSom tocarSomLista];
                 }
             }
-         
         }
     }
 }

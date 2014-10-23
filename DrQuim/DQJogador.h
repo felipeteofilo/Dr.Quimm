@@ -125,4 +125,7 @@
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
 -(void)andarParaDirecao:(char)direcao eDistancia:(float)distancia;
+
+//Método de salvar
+-(void)salvarJogoDoJogador:(NSString*)jogador;
 @end

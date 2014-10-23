@@ -7,6 +7,7 @@
 //
 
 #import "DQJogador.h"
+#import "DQFase.h"
 
 @implementation DQJogador
 
@@ -86,6 +87,10 @@
 
 -(void)salvarJogoDoJogador:(NSString*)jogador{
     [DQCoreDataController salvarVida:self.vida respeito:self.respeito fome:self.fome sede:self.sede doJogador:jogador];
+    
+    DQFase * fase = (DQFase*)self.scene;
+    
+    [DQCoreDataController salvarFaseAtual:fase.faseAtual doJogador:jogador];
     
     NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
     

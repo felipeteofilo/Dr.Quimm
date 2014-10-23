@@ -126,5 +126,25 @@
     [context save:&erro];
     
 }
++(void)salvarFaseAtual:(int)fase doJogador:(NSString*)nome{
+    DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    Usuario *newContact = [self procurarJogador:nome];
+    
+    if (newContact == nil) {
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Usuario"
+                      inManagedObjectContext:context];
+        [newContact setNome:nome];
+    }
+    
+    [newContact setFase:[NSNumber numberWithInt:fase]];
+    
+    
+    NSError *erro;
+    [context save:&erro];
+
+}
 
 @end
