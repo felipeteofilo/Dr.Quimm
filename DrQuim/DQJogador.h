@@ -128,4 +128,7 @@
 
 //Método de salvar
 -(void)salvarJogoDoJogador:(NSString*)jogador;
+
+//Metodo de carregar
+-(void)carregarInformacoesDoJogador:(NSString*)jogador;
 @end

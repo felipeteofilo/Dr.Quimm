@@ -126,7 +126,7 @@
     [context save:&erro];
     
 }
-+(void)salvarFaseAtual:(int)fase doJogador:(NSString*)nome{
++(void)salvarFaseAtual:(int)fase parte:(int)parte doJogador:(NSString*)nome{
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
@@ -140,6 +140,7 @@
     }
     
     [newContact setFase:[NSNumber numberWithInt:fase]];
+    [newContact setPartefase:[NSNumber numberWithInt:parte]];
     
     
     NSError *erro;

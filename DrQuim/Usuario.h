@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSNumber * fome;
 @property (nonatomic, retain) NSNumber * sede;
 @property (nonatomic, retain) NSNumber * fase;
+@property (nonatomic, retain) NSNumber * partefase;
 @property (nonatomic, retain) NSNumber * respeito;
 @property (nonatomic, retain) id missao;
 @property (nonatomic, retain) id itens;

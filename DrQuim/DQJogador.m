@@ -90,7 +90,8 @@
     
     DQFase * fase = (DQFase*)self.scene;
     
-    [DQCoreDataController salvarFaseAtual:fase.faseAtual doJogador:jogador];
+    [DQCoreDataController salvarFaseAtual:fase.faseAtual parte:fase.parteFaseAtual doJogador:jogador];
+    
     
     NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
     

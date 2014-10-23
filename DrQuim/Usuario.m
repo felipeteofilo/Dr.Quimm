@@ -15,6 +15,7 @@
 @dynamic fome;
 @dynamic sede;
 @dynamic fase;
+@dynamic partefase;
 @dynamic respeito;
 @dynamic missao;
 @dynamic itens;
