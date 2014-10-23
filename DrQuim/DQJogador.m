@@ -7,6 +7,8 @@
 //
 
 #import "DQJogador.h"
+#define distAndar 100
+#define impulsoPulo 210
 
 @implementation DQJogador
 
@@ -87,8 +89,6 @@
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
         
-        self.distAndar=100;
-        self.impulsoPulo=210;
         [self setName:@"Jogador"];
     }
     
@@ -236,7 +236,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, self.impulsoPulo)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, impulsoPulo)];
         
         self.estaNoChao = NO;
         
@@ -256,7 +256,9 @@
 
 //Alterado cabeçalho funçao
 //-(void)andarParaDirecao:(NSString*)direcao{
--(void)andarParaDirecao:(char)direcao eDistancia:(float)distancia{
+-(void)andarParaDirecao:(char)direcao eVelocidade:(float)velocidade{
+    NSLog(@"Dist Andar p Vel %f",(distAndar * velocidade));
+    
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
         
         //variavel SKAction- define a direcao do movimento
@@ -267,7 +269,7 @@
             
             self.andandoParaDirecao = @"D";
             //Alterado para usar da propriedade
-            movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
+            movimentar=[SKAction moveByX:distAndar+(distAndar * velocidade) y:0 duration:1.0];
             
             if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
                 [self.physicsBody setVelocity:CGVectorMake(10, -10)];
@@ -278,7 +280,8 @@
         }else{
             
             self.andandoParaDirecao = @"E";
-            movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
+            movimentar=[SKAction moveByX:(distAndar+(distAndar * velocidade)*-1) y:0 duration:1.0];
+            NSLog(@"Vel andar: %f",(distAndar+(distAndar * velocidade)*-1));
             
             //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
             self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;

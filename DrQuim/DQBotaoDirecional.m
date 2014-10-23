@@ -69,8 +69,12 @@
 -(void)processaMovimentoHorizontal:(float)forcaMov{
     //O carinha mexeu mais na horizontal faz o jogador andar
     //Verifica se ja passou do limite de movimentação
-    if (self.forcaMovimento <= limiteMovimento) {
+    if((self.forcaMovimento >= 0)&&(self.forcaMovimento <= limiteMovimento)) {
         //Pega delta do movimento em X
+        self.forcaMovimento =+forcaMov;
+    }
+        
+    if ((self.forcaMovimento <= 0 )&&(self.forcaMovimento >= (limiteMovimento*-1))) {
         self.forcaMovimento =+forcaMov;
     }
     
@@ -90,7 +94,7 @@
     
     //Faz ele andar
     if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
-        [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:self.forcaMovimento]];
+        [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:(self.forcaMovimento/100)]];
     }
 }
 
@@ -106,7 +110,6 @@
             [self setPosition:CGPointMake(self.position.x, self.position.y+forcaMovBotao)];
         }else{
             [self setPosition:CGPointMake(self.position.x, self.position.y-forcaMovBotao)];
-            NSLog(@"Força movimento %f",self.position.y);
         }
     }
     

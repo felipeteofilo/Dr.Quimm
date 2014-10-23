@@ -121,7 +121,7 @@
 -(BOOL)estaComContadorGeiger;
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
--(void)andarParaDirecao:(char)direcao eDistancia:(float)distancia;
+-(void)andarParaDirecao:(char)direcao eVelocidade:(float)velocidade;
 //funcao para fazer o jogador escalar
 -(void)escalarParaDirecao:(char)direcao;
 @end

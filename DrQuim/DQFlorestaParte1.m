@@ -300,7 +300,7 @@
     [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
 }
 -(void)afastaJogadorRadiacao{
-    [self.jogador andarParaDirecao:'E' eDistancia:100];
+    [self.jogador andarParaDirecao:'E' eVelocidade:0.5f];
     [self.jogador runAction:[SKAction moveToX:self.jogador.position.x-15 duration:0.5] withKey:@"saindoDePerto"];
 }
 -(void)falarAlertaRadiacao{

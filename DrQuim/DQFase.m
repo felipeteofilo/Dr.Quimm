@@ -732,12 +732,7 @@
 }
 
 -(void)escaladaPersonagem:(NSNumber*)valorMovimento{
-    //Verifica se pode escalar
-    BOOL podeEscalar=NO;
-    
-    if (podeEscalar) {
-        
-        
+    if ([self.jogador podeEscalar]) {
         //Recebeu um valor positivo significa que quer subir
         if ([valorMovimento floatValue]>0) {
             //Fazer jogador escalar - Subindo
@@ -762,13 +757,13 @@
     }
     
     //Chama metodo passando qnto ele irá andar
-    [self.jogador andarParaDirecao:dirCaminhada eDistancia:[forcaMovimento floatValue]];
+    [self.jogador andarParaDirecao:dirCaminhada eVelocidade:[forcaMovimento floatValue]];
 }
 
 -(void)pararPersonagem{
     //faz parar de andar
     [self.jogador pararAndar];
-
+    
     //Ao parar o toque, pausa sua escalada se ainda estiver escalando
     if ([self.jogador actionForKey:@"escalar"]) {
         [self.jogador pausarEscalada];
