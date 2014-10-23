@@ -20,6 +20,7 @@
         
         //Leonardo 13/06/2014 - Inicia o sprite
         self.spriteNode=[SKSpriteNode spriteNodeWithImageNamed:name];
+        [self.spriteNode setName:@"spriteJogador"];
         
         [self setAnchorPoint:CGPointMake(0, 0)];
         
@@ -174,8 +175,10 @@
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
                                                                               timePerFrame:0.1f
                                                                                     resize:NO
-                                                                                   restore:YES]] withKey:@"animandoAndando"];
-    [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
+                                                                                   restore:YES]]withKey:@"animandoAndando"];
+    
+    //TODO: Adicionar controle de som
+    //    [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
     
 }
 
@@ -255,12 +258,8 @@
 }
 
 //Alterado cabeçalho funçao
-//-(void)andarParaDirecao:(NSString*)direcao{
 -(void)andarParaDirecao:(char)direcao eVelocidade:(float)velocidade{
-    NSLog(@"Dist Andar p Vel %f",(distAndar * velocidade));
-    
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
-        
         //variavel SKAction- define a direcao do movimento
         SKAction *movimentar =[[SKAction alloc]init];
         
@@ -280,15 +279,25 @@
         }else{
             
             self.andandoParaDirecao = @"E";
-            movimentar=[SKAction moveByX:(distAndar+(distAndar * velocidade)*-1) y:0 duration:1.0];
-            NSLog(@"Vel andar: %f",(distAndar+(distAndar * velocidade)*-1));
+            movimentar=[SKAction moveByX:(distAndar-(distAndar * velocidade))*-1 y:0 duration:1.0];
             
             //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
             self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
         }
         
-        //anda para direcao
-        [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+        //verifica se nao esta animando o pulo e anima o jogador andando
+        if (![self.spriteNode actionForKey:@"animandoAndando"] && self.estaNoChao && ![self actionForKey:@"animandoCaindo"]) {
+            
+            //Cria action para animar
+            SKAction *animacaoMover = [SKAction runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando timePerFrame:0.09f resize:NO restore:YES]] onChildWithName:self.spriteNode.name];
+
+            [self runAction:[SKAction repeatActionForever:[SKAction group:@[movimentar,animacaoMover]]] withKey:@"andar"];
+            
+        }else{
+            //Esta no alto so move
+            [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+
+        }
     }
 }
 
@@ -399,6 +408,12 @@
     //remove as acoes de andar e animarAndando
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
+    
+    if (![self.spriteNode actionForKey:@"animandoEscalada"] && ![self.spriteNode actionForKey:@"animandoPulo"] && ![self.spriteNode actionForKey:@"animandoDerrapando"]&& ![self.spriteNode actionForKey:@"animandoCaindo"]) {
+        [self.spriteNode removeAllActions];
+        
+        [self animarParado];
+    }
     
     [self.controleSom pararSom];
 }

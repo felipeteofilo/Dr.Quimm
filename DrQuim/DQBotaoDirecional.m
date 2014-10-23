@@ -12,7 +12,7 @@
 
 @implementation DQBotaoDirecional
 
--(id)initDirecional:(NSString*)imagemBotao seletorHorizontal:(SEL)seletorHorizontal seletorVertical:(SEL)selVertical selSoltarDir:(SEL)soltarDir dalegateSeletores:(id)delegate{
+-(id)initDirecional:(NSString*)imagemBotao seletorHorizontal:(SEL)seletorHorizontal seletorVertical:(SEL)selVertical selSoltarDir:(SEL)soltarDir dalegateSeletores:(id<DQControleProtocoll>)delegate{
     
     if (self=[super initBotao:imagemBotao comSel:seletorHorizontal eDelegate:delegate eTamanho:CGSizeMake(100,100)]) {
         
@@ -46,9 +46,8 @@
     //Verifica se ja esta ocorrendo algum movimento
     if (!self.movimentoX && !self.movimentoY) {
         //Das alterações verifica qual é mais forte X ou Y
-        if (fabsf(alteracaoX) > fabsf(alteracaoY)) {
+        if (fabsf(alteracaoX)+5 > fabsf(alteracaoY)) {
             self.movimentoX=YES;
-            
             //Moveu em X nao move em Y
             self.movimentoY=NO;
         }else{

@@ -112,8 +112,6 @@
 //Funcao para parar de derrapar
 -(void)pararDerrapar;
 
--(void)interagirComNPC:(NSString *)nomeNPC;
-
 //Metodo para verificar se esta com qualquer item passado no parametro
 -(BOOL)estaComItem:(NSString*)nomeItem;
 

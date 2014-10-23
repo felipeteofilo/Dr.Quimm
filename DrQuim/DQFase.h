@@ -24,7 +24,7 @@
 
 #import "DQCoreDataController.h"
 #import "DQBotaoDirecional.h"
-
+#import "DQControleProtocoll.h"
 
 
 //define as categorias de colisao
@@ -35,7 +35,7 @@ static const UInt32 EscadaCategoria = 0x1 << 3;
 
 static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
-@interface DQFase : SKScene <SKPhysicsContactDelegate>
+@interface DQFase : SKScene <SKPhysicsContactDelegate,DQControleProtocoll>
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;

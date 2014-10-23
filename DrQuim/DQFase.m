@@ -276,7 +276,7 @@
         CGPoint posToqueBackGround=[toque locationInNode:self.backgroundAtual];
         
         //Pega o node de escada na posicao do toque
-        SKNode *nodeTocadoNoBackGround=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
+        //SKNode *nodeTocadoNoBackGround=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
         
         //Movido para método especifico
         //        //verifica para onde o jogador deve escalar
@@ -334,7 +334,7 @@
     }
 }
 
-//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+/*-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 //    [super touchesMoved:touches withEvent:event];
 //    if (![self childNodeWithName:@"falasDoJogo"]) {
 //        UITouch *toque = [touches anyObject];
@@ -357,7 +357,8 @@
 //            }
 //        }
 //    }
-//}
+}
+ */
 
 -(void)verificaCoberturaBackground{
     DQCoberturaBackground *cobetura=(DQCoberturaBackground*)[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
@@ -372,20 +373,6 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
-    
-    //Se nao ha falas na tela
-    if(![self childNodeWithName:@"falasDoJogo"]){
-//        //faz parar de andar
-//        [self.jogador pararAndar];
-//        
-//        //tirar imagem da setinha da tela
-//        //[self.direcional removeFromParent];
-//        
-//        //Ao parar o toque, pausa sua escalada se ainda estiver escalando
-//        if ([self.jogador actionForKey:@"escalar"]) {
-//            [self.jogador pausarEscalada];
-//        }
-    }
 }
 
 
@@ -431,9 +418,6 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    
-    
-    
     
     // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
@@ -567,11 +551,11 @@
 
 //funcao que verifica se ele esta andando e anima ele andando
 -(void)verificarAndando{
-    
-    //verifica se nao esta animando o pulo e anima o jogador andando
-    if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] && self.jogador.estaNoChao && ![self.jogador actionForKey:@"animandoCaindo"]) {
-        [self.jogador animarAndando];
-    }
+//    
+//    //verifica se nao esta animando o pulo e anima o jogador andando
+//    if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] && self.jogador.estaNoChao && ![self.jogador actionForKey:@"animandoCaindo"]) {
+//        [self.jogador animarAndando];
+//    }
 }
 
 //funcao para verificar se pode animar jogador derrapando
@@ -764,9 +748,10 @@
     //faz parar de andar
     [self.jogador pararAndar];
     
-    //Ao parar o toque, pausa sua escalada se ainda estiver escalando
-    if ([self.jogador actionForKey:@"escalar"]) {
-        [self.jogador pausarEscalada];
-    }
+    [self.jogador pausarEscalada];
+}
+
+-(void)puloPersonagem{
+    [self.jogador pular];
 }
 @end

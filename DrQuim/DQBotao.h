@@ -7,12 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "DQControleProtocoll.h"
 
 @interface DQBotao : SKSpriteNode
 
 @property SEL acaoRealizar;
-@property id delegateBotao;
+@property id<DQControleProtocoll> delegateBotao;
 @property NSString *atlasAnimacao;
 
--(id)initBotao:(NSString*)atlasAnimacao comSel:(SEL)seletor eDelegate:(id)delegate eTamanho:(CGSize)size;
+-(id)initBotao:(NSString*)atlasAnimacao comSel:(SEL)seletor eDelegate:(id<DQControleProtocoll>)delegate eTamanho:(CGSize)size;
 @end
