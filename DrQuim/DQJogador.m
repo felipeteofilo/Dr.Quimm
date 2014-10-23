@@ -261,7 +261,7 @@
 -(void)andarParaDirecao:(char)direcao eVelocidade:(float)velocidade{
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
         //variavel SKAction- define a direcao do movimento
-        SKAction *movimentar =[[SKAction alloc]init];
+        SKAction *movimentar;
         
         //se a direcao for para direita
         if (direcao=='D') {
@@ -290,13 +290,12 @@
             
             //Cria action para animar
             SKAction *animacaoMover = [SKAction runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando timePerFrame:0.09f resize:NO restore:YES]] onChildWithName:self.spriteNode.name];
-
-            [self runAction:[SKAction repeatActionForever:[SKAction group:@[movimentar,animacaoMover]]] withKey:@"andar"];
             
+            [self runAction:[SKAction repeatActionForever:[SKAction group:@[movimentar,animacaoMover]]] withKey:@"andar"];
         }else{
             //Esta no alto so move
             [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
-
+            
         }
     }
 }

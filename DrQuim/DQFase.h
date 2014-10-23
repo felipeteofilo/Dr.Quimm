@@ -21,7 +21,6 @@
 #import "DQVidaControle.h"
 #import "DQFalasNoJogoControle.h"
 #import "DQControleSomScene.h"
-
 #import "DQCoreDataController.h"
 #import "DQBotaoDirecional.h"
 #import "DQControleProtocoll.h"
@@ -49,7 +48,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //DQVidaControle para controlar a vida do personagem
 @property DQVidaControle *controladorDaVida;
 
-
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode *mundo;
 @property SKSpriteNode *backgroundAnterior;
@@ -60,10 +58,6 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 @property int faseAtual;
 @property int parteFaseAtual;
 @property int nPartesFase;
-
-//Removido pois terá um botao exclusivo
-////SKSpriteNode da setinha que auxilia o jogador a entender para onde ele precisa andar
-//@property SKSpriteNode *direcional;
 
 //CGPoint que guarda onde a pessoa pressionou e assim descobrir se o personagem vai para a direita ou esquerda
 @property CGPoint pontoDeToqueAndar;
@@ -82,6 +76,7 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
 //Controles
 @property DQBotaoDirecional *direcional;
+@property DQBotao *botaoPulo;
 
 //metodo para iniciar a fase
 -(void)iniciarFase;

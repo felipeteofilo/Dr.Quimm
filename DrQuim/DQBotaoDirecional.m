@@ -9,6 +9,7 @@
 #import "DQBotaoDirecional.h"
 #define forcaMovBotao 0.5f
 #define limiteMovimento 100
+#define limiteMovimentoBotao 10
 
 @implementation DQBotaoDirecional
 
@@ -46,7 +47,7 @@
     //Verifica se ja esta ocorrendo algum movimento
     if (!self.movimentoX && !self.movimentoY) {
         //Das alterações verifica qual é mais forte X ou Y
-        if (fabsf(alteracaoX)+5 > fabsf(alteracaoY)) {
+        if (fabsf(alteracaoX)+2 > fabsf(alteracaoY)) {
             self.movimentoX=YES;
             //Moveu em X nao move em Y
             self.movimentoY=NO;
@@ -87,14 +88,13 @@
     }
     
     //Cria limite para animação movimento do botao
-    if (fabsf(self.position.x - self.posicaoInicialBotao.x) > 6) {
+    if (fabsf(self.position.x - self.posicaoInicialBotao.x) > limiteMovimentoBotao) {
         self.travaMovDirecional=YES;
     }
     
     //Faz ele andar
-    if ([self.delegateBotao respondsToSelector:self.acaoRealizar]) {
-        [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:(self.forcaMovimento/100)]];
-    }
+    [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:(self.forcaMovimento/100)]];
+
 }
 
 -(void)processaMovimentoVertical:(float)forcaMov{
@@ -113,15 +113,12 @@
     }
     
     //O carinha mexeu mais na vertical faz o jogador escala
-    if (fabsf(self.position.y - self.posicaoInicialBotao.y) > 6) {
+    if (fabsf(self.position.y - self.posicaoInicialBotao.y) > limiteMovimentoBotao) {
         self.travaMovDirecional=YES;
     }
     
     //Faz ele escalar
-    if ([self.delegateBotao respondsToSelector:self.seletorVertical]) {
-        //So preciso mandar se foi positivo ou negativo p escolher entre subir ou descer a escada
-        [self.delegateBotao performSelector:self.seletorVertical withObject:[NSNumber numberWithFloat:forcaMov]];
-    }
+    [self.delegateBotao performSelector:self.seletorVertical withObject:[NSNumber numberWithFloat:forcaMov]];
 }
 
 //Faz a ação do botão

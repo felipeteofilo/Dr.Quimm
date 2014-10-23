@@ -27,9 +27,6 @@
     [skView presentScene:menuInicial];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-}
 -(BOOL)prefersStatusBarHidden
 {
     return YES;

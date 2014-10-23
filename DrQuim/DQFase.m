@@ -13,39 +13,102 @@
 
 @implementation DQFase
 
-//Método para controle da posição da campera
--(void)posicionaCamera{
+#pragma mark Inicio e Configuracao da Fase
+-(id)initFase:(int)fase Size:(CGSize)size{
     
-    CGPoint posicaoJogador = self.jogador.position;
-    CGPoint posicaoMundo = self.mundo.position;
-    CGPoint coordenadaXY=CGPointMake(posicaoMundo.x + posicaoJogador.x, posicaoMundo.y + posicaoJogador.y);
-    
-    //Verifica se as coordenadas do jogador em relacao ao mundo e sua real posicao o posicionando sempre ao centro da tela
-    if(coordenadaXY.x <= bordaCameraX && posicaoJogador.x >= bordaCameraX)
-    {
-        posicaoMundo.x = posicaoMundo.x - coordenadaXY.x  + bordaCameraX;
+    if (self=[super initWithSize:size ]) {
+        
+        [self configuracoesFase:fase];
+        //[self iniciarFase];
+        //Chama o iniciar fase
+        //[self iniciarFase];
     }
-    
-    if(coordenadaXY.y <= bordaCameraY && posicaoJogador.y >= bordaCameraY)
-    {
-        posicaoMundo.y = posicaoMundo.y - coordenadaXY.y  + bordaCameraY;
-    }
-    
-    //Verifica se as coordenadas do jogador em relacao ao mundo nao ultrpassam os limites impostos e o posiciona corretamente, lembrando sempre que o mundo que e reposicionado.
-    if(coordenadaXY.x > (self.frame.size.width - bordaCameraX) && posicaoJogador.x < (self.nPartesFase *1024) -bordaCameraX)
-    {
-        posicaoMundo.x = posicaoMundo.x + (self.frame.size.width - coordenadaXY.x) - bordaCameraX;
-    }
-    if(coordenadaXY.y > (self.frame.size.height - bordaCameraY) && posicaoJogador.y < 1536 - bordaCameraY)
-    {
-        posicaoMundo.y = posicaoMundo.y + (self.frame.size.height - coordenadaXY.y) - bordaCameraY;
-    }
-    
-    //seta a nova posicao do mundo
-    self.mundo.position = posicaoMundo;
+    return self;
 }
 
+-(NSDictionary*)infoParteFase:(int)parte{
+    return [[self.configFase objectForKey:@"Partes"]objectAtIndex:parte-1];
+}
 
+-(void)configuracoesFase:(int)faseAtual{
+    
+    self.faseAtual=faseAtual;
+    self.parteFaseAtual=1;
+    self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
+    
+    [self pegarConfigFase:self.faseAtual];
+    [self iniciarFase];
+}
+
+-(void)pegarConfigFase:(int)fase{
+    self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
+}
+
+-(void)configuraFisicaMundo{
+    //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
+    self.physicsWorld.gravity=CGVectorMake(0, -3);
+    
+    //Seta que a classe que ira delegar o contato sera essa mesma
+    [self.physicsWorld setContactDelegate:self];
+    
+    //Cria um corpo fisico ao redor da tela para nao deixar o jogador cair pela lateral
+    [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
+    
+}
+
+-(void)iniciarFase{
+    
+    //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
+    self.mundo =[SKNode node];
+    [self.mundo setName:@"mundo"];
+    [self.mundo setZPosition:-100];
+    
+    self.controladorDaVida = [DQVidaControle sharedControleVida];
+    
+    self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
+    
+    //Adiciona a primeira parte da tela e o jogador no mundo
+    [self.mundo addChild:self.backgroundAtual];
+    
+    //Adiciona o mundo na scena
+    [self addChild:self.mundo];
+    
+    [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
+    
+    self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
+    
+    [self criaJogador];
+    [self configuraFisicaMundo];
+    [self configuraHUD];
+    [self configurarSomFundo];
+    [self configurarControles];
+}
+
+-(void)configurarSomFundo{
+    self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
+    
+    [self addChild:self.controleSom];
+}
+
+-(void)criaJogador{
+    //Inicia o jogador pelo singleton
+    self.jogador = [DQJogador sharedJogador];
+    
+    [self.jogador iniciarAnimacoes:[DQConfiguracaoFase animacoesJogadorFase:self.faseAtual]];
+    //seta as categorias de colisao do jogador
+    [self jogadorCategoria:self.jogador];
+    
+    [self.jogador setPosition:[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual]];
+    
+    if (!self.mundo) {
+        NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");
+    }else {
+        [self.jogador removeFromParent];
+        [self.mundo addChild:self.jogador];
+    }
+}
+
+#pragma mark Controle de Backgrounds
 -(void)controlarTranscicaoPartesFase{
     //Verifica se o X do jogador é maior que o X da parte + a largura de uma tela
     if (self.jogador.position.x > (self.backgroundAtual.position.x + CGRectGetMaxX(self.frame))){
@@ -84,7 +147,7 @@
         }
     }
     
-    NSMutableDictionary * parte = [[NSMutableDictionary alloc]init];
+    NSMutableDictionary *parte = [[NSMutableDictionary alloc]init];
     NSMutableDictionary *configAnimaisFase =[[NSMutableDictionary alloc]init];
     NSArray *animais = [NSArray arrayWithArray:[DQConfiguracaoFase animaisFase:self.faseAtual Parte:self.parteFaseAtual]];
     
@@ -96,10 +159,45 @@
     [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
 }
 
+-(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao{
+    NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,parte];
+    
+    SKSpriteNode *backConfigurar=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
+    
+    //Atualiza o anchorpoint
+    [backConfigurar setAnchorPoint:CGPointMake(0, 0)];
+    
+    //Deixa o background no fundo da tela
+    [backConfigurar setZPosition: -100.0];
+    
+    //posiciona após a cena
+    [backConfigurar setPosition:posicao];
+    
+    NSArray *arrayPosicoesChao=[[self infoParteFase:parte]objectForKey:@"CorpoFisicoChao"];
+    
+    [backConfigurar setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChao:arrayPosicoesChao]];
+    
+    //Configura a categoria do chao do prox Back
+    [self chaoCategoria:backConfigurar];
+    
+    return backConfigurar;
+}
+
 -(void)removerNodeBackground:(SKNode*)nodeRemover{
     if (nodeRemover) {
         [nodeRemover removeFromParent];
         nodeRemover = nil;
+    }
+}
+
+-(void)verificaCoberturaBackground{
+    DQCoberturaBackground *cobetura=(DQCoberturaBackground*)[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
+    
+    if ([cobetura.name isEqualToString:NomeNodeCobertura]) {
+        //Converte a posicao do jogador para o sistema de coordenadas do no que tem a cobertura
+        CGPoint posJogadorConvertida=[self.mundo convertPoint:self.jogador.position toNode:self.backgroundAtual];
+        
+        [cobetura manipulaCobertura:posJogadorConvertida];
     }
 }
 
@@ -142,32 +240,6 @@
     node.physicsBody.contactTestBitMask=JogadorCategoria;
     node.physicsBody.usesPreciseCollisionDetection=YES;
 }
-
--(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao{
-    NSString *nomeImagemBack=[NSString stringWithFormat:@"Fase%i_Parte%i",self.faseAtual,parte];
-    
-    SKSpriteNode *backConfigurar=[SKSpriteNode spriteNodeWithImageNamed:nomeImagemBack];
-    
-    //Atualiza o anchorpoint
-    [backConfigurar setAnchorPoint:CGPointMake(0, 0)];
-    
-    //Deixa o background no fundo da tela
-    [backConfigurar setZPosition: -100.0];
-    
-    //posiciona após a cena
-    [backConfigurar setPosition:posicao];
-    
-    NSArray *arrayPosicoesChao=[[self infoParteFase:parte]objectForKey:@"CorpoFisicoChao"];
-    
-    [backConfigurar setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChao:arrayPosicoesChao]];
-    
-    //Configura a categoria do chao do prox Back
-    [self chaoCategoria:backConfigurar];
-    
-    return backConfigurar;
-}
-
-
 
 -(void)criarPlataformaParte:(int)parte noBackground:(SKSpriteNode*)background{
     NSArray *arrayPlataformas=[[self infoParteFase:parte]objectForKey:@"Plataformas"];
@@ -273,25 +345,6 @@
             [self setPaused:NO];
             return;
         }
-        CGPoint posToqueBackGround=[toque locationInNode:self.backgroundAtual];
-        
-        //Pega o node de escada na posicao do toque
-        //SKNode *nodeTocadoNoBackGround=[self.backgroundAtual nodeAtPoint:posToqueBackGround];
-        
-        //Movido para método especifico
-        //        //verifica para onde o jogador deve escalar
-        //        if ([nodeTocadoNoBackGround.name isEqualToString:nomeEscalavel]) {
-        //            //Verifica se o Y é maior ou menor
-        //
-        //            if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
-        //                //Fazer jogador escalar - Subindo
-        //                [self.jogador escalarParaDirecao:@"C"];
-        //
-        //            }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
-        //                //Fazer jogador escalar - Descendo
-        //                [self.jogador escalarParaDirecao:@"B"];
-        //            }
-        //        }
         
         //Posicao do toque na tela
         CGPoint posicaoToque=[toque locationInNode:self];
@@ -328,7 +381,7 @@
         //Se estiver na esquerda
         else if(posicaoToque.x < CGRectGetMidX(self.frame)){
             //PULAR
-            [self.jogador pular];
+            //[self.jogador pular];
         }
         
     }
@@ -360,22 +413,7 @@
 }
  */
 
--(void)verificaCoberturaBackground{
-    DQCoberturaBackground *cobetura=(DQCoberturaBackground*)[self.backgroundAtual childNodeWithName:NomeNodeCobertura];
-    
-    if ([cobetura.name isEqualToString:NomeNodeCobertura]) {
-        //Converte a posicao do jogador para o sistema de coordenadas do no que tem a cobertura
-        CGPoint posJogadorConvertida=[self.mundo convertPoint:self.jogador.position toNode:self.backgroundAtual];
-        
-        [cobetura manipulaCobertura:posJogadorConvertida];
-    }
-}
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesEnded:touches withEvent:event];
-}
-
-
+#pragma mark Controle de Contato
 //Metodo chamado ao final de alguma colisao
 -(void)didEndContact:(SKPhysicsContact *)contact{
     
@@ -384,12 +422,12 @@
     
     if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
     {
-        firstBody = contact.bodyA;
+        //firstBody = contact.bodyA;
         secondBody = contact.bodyB;
     }
     else
     {
-        firstBody = contact.bodyB;
+        //firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
     
@@ -400,8 +438,6 @@
         [self.jogador pararEscalar];
     }
 }
-
-
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
@@ -452,10 +488,7 @@
     }
 }
 
--(void)atualizaSomMusicaFundo{
-    [self.controleSom.playerMusicaFundo setVolume:[DQControleUserDefalts volumeMusica]];
-}
-
+#pragma mark CicloFrames
 -(void)update:(NSTimeInterval)currentTime{
     //Faz verificação de pausa do jogo
     self.jogoPausado=self.paused;
@@ -479,8 +512,6 @@
                     [self.controleSom tocarSomLista];
                 }
             }
-            //A cada 60 segundos salva os status do jogados
-            //            [DQControleUserDefalts setEstadoJogadorVida:[self.jogador vida] Fome:[self.jogador fome] Sede:[self.jogador sede] Respeito:self.jogador.respeito];
             
             NSString *nome = @"Jogador1";
             
@@ -499,30 +530,10 @@
             [DQCoreDataController salvarArmadilhas:self.jogador.armadilhas.arrayDeArmadilhasJogador doJogador:nome];
             
             [DQCoreDataController salvarMissao:missao doJogador:nome];
-            
-            //            [DQControleUserDefalts setItensAtuaisJogador:self.jogador.itens.dicionarioDeItensJogador];
-            //
-            //            [DQControleUserDefalts setArmadilhasAtuaisJogador:self.jogador.armadilhas.arrayDeArmadilhasJogador];
-            //
-            //            [DQControleUserDefalts setMissaoAtualJogador:missao];
         }
     }
 }
 
--(void)didMoveToView:(SKView *)view{
-    [super didMoveToView:view];
-    
-    
-    
-    //So chama o som qndo a Scene aparecer
-    [self.controleSom tocarMusicaFundo];
-    
-    //A cada vez que iniciar a fase salva a fase que o jogador está
-    [DQControleUserDefalts setFaseAtual:self.faseAtual];
-    [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
-    
-    [self.controleSom playerMusicaFundo];
-}
 - (void)didSimulatePhysics{
     if (!self.jogoPausado) {
         //Chama método para posicionar camera
@@ -541,6 +552,26 @@
     }
 }
 
+#pragma mark Outros
+-(void)atualizaSomMusicaFundo{
+    [self.controleSom.playerMusicaFundo setVolume:[DQControleUserDefalts volumeMusica]];
+}
+
+-(void)didMoveToView:(SKView *)view{
+    [super didMoveToView:view];
+    
+    
+    
+    //So chama o som qndo a Scene aparecer
+    [self.controleSom tocarMusicaFundo];
+    
+    //A cada vez que iniciar a fase salva a fase que o jogador está
+    [DQControleUserDefalts setFaseAtual:self.faseAtual];
+    [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
+    
+    [self.controleSom playerMusicaFundo];
+}
+
 //funcao para vefrificar se pode animar jogador caindo de altas distancias
 -(void)verificarAnimacaoCaindo{
     //se esta caindo de uma distancia muito grande anima ele caindo
@@ -551,11 +582,12 @@
 
 //funcao que verifica se ele esta andando e anima ele andando
 -(void)verificarAndando{
-//    
-//    //verifica se nao esta animando o pulo e anima o jogador andando
-//    if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] && self.jogador.estaNoChao && ![self.jogador actionForKey:@"animandoCaindo"]) {
-//        [self.jogador animarAndando];
-//    }
+/*
+    //verifica se nao esta animando o pulo e anima o jogador andando
+    if (![self.jogador.spriteNode actionForKey:@"animandoAndando"] && [self.jogador actionForKey:@"andar"] && self.jogador.estaNoChao && ![self.jogador actionForKey:@"animandoCaindo"]) {
+        [self.jogador animarAndando];
+    }
+ */
 }
 
 //funcao para verificar se pode animar jogador derrapando
@@ -568,82 +600,6 @@
     if ([self.jogador.spriteNode actionForKey:@"animandoDerrapando"] && self.jogador.physicsBody.velocity.dx < 10 && self.jogador.physicsBody.velocity.dx > -10 ) {
         [self.jogador pararDerrapar];
     }
-}
-
--(void)configuraFisicaMundo{
-    //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
-    self.physicsWorld.gravity=CGVectorMake(0, -3);
-    
-    //Seta que a classe que ira delegar o contato sera essa mesma
-    [self.physicsWorld setContactDelegate:self];
-    
-    //Cria um corpo fisico ao redor da tela para nao deixar o jogador cair pela lateral
-    [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
-    
-}
-
--(void)criaJogador{
-    //Leonardo - inicializa o jogador
-    //Inicia o jogador pelo singleton
-    self.jogador = [DQJogador sharedJogador];
-    
-    [self.jogador iniciarAnimacoes:[DQConfiguracaoFase animacoesJogadorFase:self.faseAtual]];
-    //seta as categorias de colisao do jogador
-    [self jogadorCategoria:self.jogador];
-    
-    CGPoint pontoInicial=[DQConfiguracaoFase posicaoInicialJogadorFase:self.faseAtual];
-    
-    [self.jogador setPosition:pontoInicial];
-    
-    if (!self.mundo) {
-        NSLog(@"POR FAVOR INICIE O MUNDO ANTES DE CHAMAR A CRIAÇÃO DO JOGADOR");
-    }else {
-        [self.jogador removeFromParent];
-        [self.mundo addChild:self.jogador];
-    }
-}
-
--(void)configuracoesFase:(int)faseAtual{
-    
-    self.faseAtual=faseAtual;
-    self.parteFaseAtual=1;
-    self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
-    [self pegarConfigFase:self.faseAtual];
-    [self iniciarFase];
-}
-
--(void)iniciarFase{
-    
-    //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda
-    self.mundo =[SKNode node];
-    [self.mundo setName:@"mundo"];
-    [self.mundo setZPosition:-100];
-    
-    self.controladorDaVida = [DQVidaControle sharedControleVida];
-    
-    self.backgroundAtual=[self configurarBackgroundParte:self.parteFaseAtual naPos:CGPointMake(0, 0)];
-    
-    //Adiciona a primeira parte da tela e o jogador no mundo
-    [self.mundo addChild:self.backgroundAtual];
-    
-    //Adiciona o mundo na scena
-    [self addChild:self.mundo];
-    
-    [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
-    
-    self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
-    
-    [self criaJogador];
-    [self configuraFisicaMundo];
-    [self configuraHUD];
-    [self configurarSomFundo];
-    [self configurarControles];
-}
-
--(void)configurarSomFundo{
-    self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
-    
-    [self addChild:self.controleSom];
 }
 
 -(void)desativaPlataformas{
@@ -681,38 +637,24 @@
     }
 }
 
--(NSDictionary*)infoParteFase:(int)parte{
-    return [[self.configFase objectForKey:@"Partes"]objectAtIndex:parte-1];
-}
-
--(void)pegarConfigFase:(int)fase{
-    self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
-}
-
--(id)initFase:(int)fase Size:(CGSize)size{
-    
-    if (self=[super initWithSize:size ]) {
-        
-        [self configuracoesFase:fase];
-        //[self iniciarFase];
-        //Chama o iniciar fase
-        //[self iniciarFase];
-    }
-    return self;
-}
-
 -(void)configuraHUD{
     self.hudFase = [[DQHudController alloc]initHud];
     [self.hudFase setPosition:CGPointMake(0, CGRectGetMaxY(self.frame))];
     [self addChild:self.hudFase];
 }
 
+#pragma mark Controle Personagem
 //Configura controles
 -(void)configurarControles{
     self.direcional=[[DQBotaoDirecional alloc]initDirecional:@"testeBotao" seletorHorizontal:@selector(movimentaPersonagem:) seletorVertical:@selector(escaladaPersonagem:) selSoltarDir:@selector(pararPersonagem) dalegateSeletores:self];
     
     [self.direcional setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.9f,CGRectGetHeight(self.frame)*0.1f )];
     [self addChild:self.direcional];
+    
+    self.botaoPulo=[[DQBotao alloc]initBotao:@"testeBotao" comSel:@selector(puloPersonagem) eDelegate:self eTamanho:CGSizeMake(100, 100)];
+    
+    [self.botaoPulo setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.1f, CGRectGetHeight(self.frame)*0.1f)];
+    [self addChild:self.botaoPulo];
 }
 
 -(void)escaladaPersonagem:(NSNumber*)valorMovimento{
@@ -747,11 +689,42 @@
 -(void)pararPersonagem{
     //faz parar de andar
     [self.jogador pararAndar];
-    
     [self.jogador pausarEscalada];
 }
 
 -(void)puloPersonagem{
     [self.jogador pular];
+}
+
+//Método para controle da posição da campera
+-(void)posicionaCamera{
+    
+    CGPoint posicaoJogador = self.jogador.position;
+    CGPoint posicaoMundo = self.mundo.position;
+    CGPoint coordenadaXY=CGPointMake(posicaoMundo.x + posicaoJogador.x, posicaoMundo.y + posicaoJogador.y);
+    
+    //Verifica se as coordenadas do jogador em relacao ao mundo e sua real posicao o posicionando sempre ao centro da tela
+    if(coordenadaXY.x <= bordaCameraX && posicaoJogador.x >= bordaCameraX)
+    {
+        posicaoMundo.x = posicaoMundo.x - coordenadaXY.x  + bordaCameraX;
+    }
+    
+    if(coordenadaXY.y <= bordaCameraY && posicaoJogador.y >= bordaCameraY)
+    {
+        posicaoMundo.y = posicaoMundo.y - coordenadaXY.y  + bordaCameraY;
+    }
+    
+    //Verifica se as coordenadas do jogador em relacao ao mundo nao ultrpassam os limites impostos e o posiciona corretamente, lembrando sempre que o mundo que e reposicionado.
+    if(coordenadaXY.x > (self.frame.size.width - bordaCameraX) && posicaoJogador.x < (self.nPartesFase *1024) -bordaCameraX)
+    {
+        posicaoMundo.x = posicaoMundo.x + (self.frame.size.width - coordenadaXY.x) - bordaCameraX;
+    }
+    if(coordenadaXY.y > (self.frame.size.height - bordaCameraY) && posicaoJogador.y < 1536 - bordaCameraY)
+    {
+        posicaoMundo.y = posicaoMundo.y + (self.frame.size.height - coordenadaXY.y) - bordaCameraY;
+    }
+    
+    //seta a nova posicao do mundo
+    self.mundo.position = posicaoMundo;
 }
 @end
