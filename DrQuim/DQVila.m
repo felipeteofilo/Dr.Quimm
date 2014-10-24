@@ -79,9 +79,9 @@
     
     self.posicaoJogador= self.jogador.position;
     
-    DQFlorestaParte2 *floresta2=[[DQFlorestaParte2 alloc]initWithSize:self.size];
+    SKScene *floresta2 = [[DQFasesControle sharedFasesControle]mudarDeFase:3 Size:self.size];
     
-    [floresta2 salvarCenaVila:self];
+   // [floresta2 salvarCenaVila:self];
     
     [self.view presentScene:floresta2];
     

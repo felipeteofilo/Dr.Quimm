@@ -24,6 +24,7 @@
 
 #import "DQCoreDataController.h"
 #import "DQBotaoDirecional.h"
+#import "DQFasesControle.h"
 
 
 
