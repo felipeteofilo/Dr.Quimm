@@ -24,15 +24,8 @@
 #import "DQCoreDataController.h"
 #import "DQBotaoDirecional.h"
 #import "DQControleProtocoll.h"
-
-
-//define as categorias de colisao
-static const UInt32 JogadorCategoria = 0x1 << 0;
-static const UInt32 ChaoCategoria = 0x1 << 1;
-static const UInt32 PlataformaCategoria = 0x1 << 2;
-static const UInt32 EscadaCategoria = 0x1 << 3;
-
-static NSString* NomeNodePlataformas= @"NodeComPlataformas";
+#import "DQUteis.h"
+#import "DQBackground.h"
 
 @interface DQFase : SKScene <SKPhysicsContactDelegate,DQControleProtocoll>
 
@@ -50,9 +43,15 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode *mundo;
+
+/* CLASSE ESPECIFICA
 @property SKSpriteNode *backgroundAnterior;
 @property SKSpriteNode *backgroundAtual;
 @property SKSpriteNode *backgroundFuturo;
+ */
+@property DQBackground *backgroundAnterior;
+@property DQBackground *backgroundAtual;
+@property DQBackground *backgroundFuturo;
 
 //Informações da Fase
 @property int faseAtual;
@@ -83,8 +82,8 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 -(id)initFase:(int)fase Size:(CGSize)size;
 -(void)configuracoesFase:(int)faseAtual;
 -(void)criarParteFase;
--(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
-
--(void)escadaCategoria :(SKNode*)node;
+//-(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
+//
+//-(void)escadaCategoria :(SKNode*)node;
 -(void)criaJogador;
 @end

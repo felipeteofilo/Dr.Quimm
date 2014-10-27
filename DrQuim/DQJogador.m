@@ -40,9 +40,7 @@
         self.sede = 100;
         self.vida = 100;
         self.respeito = 0;
-        
-        
-        
+
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
@@ -91,6 +89,7 @@
         [self addChild:self.controleSom];
         
         [self setName:@"Jogador"];
+        [self definePhisicsBody];
     }
     
     //retorna o jogador
@@ -575,5 +574,28 @@
         [self alterarVidaJogador:vida];
     }
 }
+-(void)definePhisicsBody{
+    //Chao Categoria
+    self.physicsBody.categoryBitMask=JogadorCategoria;
+    self.physicsBody.collisionBitMask=ChaoCategoria | PlataformaAtivadaCategoria;
+    self.physicsBody.contactTestBitMask= PlataformaDesativadaCategoria;
+    self.physicsBody.usesPreciseCollisionDetection=YES;
+}
 
+-(void)verificarAnimacaoCaindo{
+    //se esta caindo de uma distancia muito grande anima ele caindo
+    if (self.physicsBody.velocity.dy < -535 && ![self.spriteNode actionForKey:@"animandoCaindo"]) {
+        [self animarCaindo];
+    }
+}
+-(void)verificarAnimacaoDerrapagem{
+    //se jogador esta derrapando anima ele derrapando
+    if (self.estaNoChao && (self.physicsBody.velocity.dx < -10 || self.physicsBody.velocity.dx > 10) && ![self.spriteNode actionForKey:@"animandoAndando"] && ![self.spriteNode actionForKey:@"animandoDerrapando"]) {
+        [self animarDerrapando];
+    }
+    //se nao retira a animacao
+    if ([self.spriteNode actionForKey:@"animandoDerrapando"] && self.physicsBody.velocity.dx < 10 && self.physicsBody.velocity.dx > -10 ) {
+        [self pararDerrapar];
+    }
+}
 @end

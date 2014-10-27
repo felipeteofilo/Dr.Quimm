@@ -122,4 +122,7 @@
 -(void)andarParaDirecao:(char)direcao eVelocidade:(float)velocidade;
 //funcao para fazer o jogador escalar
 -(void)escalarParaDirecao:(char)direcao;
+
+-(void)verificarAnimacaoCaindo;
+-(void)verificarAnimacaoDerrapagem;
 @end

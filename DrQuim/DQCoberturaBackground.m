@@ -49,29 +49,27 @@
 
 //Será usado para dar fadeOut, na cobertura do background
 -(void)manipulaCobertura:(CGPoint)posJogador{
-    
 //    //Fazer validacao da posicao jogador
-//    NSLog(@"PosCobertura X:%f Y:%f",self.position.x,self.position.y);
     
     //Valida se esta dentro em X e em Y
     if ((posJogador.x >= self.position.x && posJogador.x < self.posFinal.x) && (posJogador.y >= self.position.y)){// && posJogador.y < self.posFinal.y))  {
-        [self mostrarBackground];
+        [self mostrarCobertura];
     }
     
     if((posJogador.x > self.posFinal.x && posJogador.y > self.posFinal.y) || (posJogador.x < self.position.x && posJogador.y <= self.position.y)){
-        [self esconderBackground];
+        [self esconderCobertura];
     }
     
 }
 
--(void)mostrarBackground{
+-(void)mostrarCobertura{
     if (!self.hasActions) {
         SKAction *fadeOut=[SKAction fadeOutWithDuration:0.5];
         [self runAction:fadeOut withKey:@"fadeOut"];
     }
 }
 
--(void)esconderBackground{
+-(void)esconderCobertura{
     if (self.hasActions) {
         SKAction *fadeIn=[SKAction fadeInWithDuration:0.5];
         [self runAction:fadeIn withKey:@"fadeIn"];

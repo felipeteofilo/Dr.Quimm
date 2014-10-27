@@ -86,6 +86,7 @@
 		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
 		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
 		C51125921973AB6000CECCAD /* FundoHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = C51125911973AB6000CECCAD /* FundoHUD.png */; };
+		C513748C19FABFBB006E75D2 /* DQBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = C513748B19FABFBB006E75D2 /* DQBackground.m */; };
 		C5223EFF19F6C8A300C17FAD /* DQBotaoDirecional.m in Sources */ = {isa = PBXBuildFile; fileRef = C5223EFE19F6C8A300C17FAD /* DQBotaoDirecional.m */; };
 		C5223F0219F6CF3A00C17FAD /* DQSceneTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = C5223F0119F6CF3A00C17FAD /* DQSceneTeste.m */; };
 		C5223F0419F6D0F600C17FAD /* testeBotao.png in Resources */ = {isa = PBXBuildFile; fileRef = C5223F0319F6D0F600C17FAD /* testeBotao.png */; };
@@ -341,6 +342,8 @@
 		C511258A1973AB4E00CECCAD /* DQHudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHudController.h; sourceTree = "<group>"; };
 		C511258B1973AB4E00CECCAD /* DQHudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHudController.m; sourceTree = "<group>"; };
 		C51125911973AB6000CECCAD /* FundoHUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FundoHUD.png; sourceTree = "<group>"; };
+		C513748A19FABFBB006E75D2 /* DQBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBackground.h; sourceTree = "<group>"; };
+		C513748B19FABFBB006E75D2 /* DQBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBackground.m; sourceTree = "<group>"; };
 		C5223EFD19F6C8A300C17FAD /* DQBotaoDirecional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBotaoDirecional.h; sourceTree = "<group>"; };
 		C5223EFE19F6C8A300C17FAD /* DQBotaoDirecional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBotaoDirecional.m; sourceTree = "<group>"; };
 		C5223F0019F6CF3A00C17FAD /* DQSceneTeste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQSceneTeste.h; sourceTree = "<group>"; };
@@ -832,6 +835,8 @@
 				C54B79C61972440400366512 /* DQEscalavel.m */,
 				C591815F1967756700AFD8B5 /* DQPlataforma.h */,
 				C59181601967756700AFD8B5 /* DQPlataforma.m */,
+				C513748A19FABFBB006E75D2 /* DQBackground.h */,
+				C513748B19FABFBB006E75D2 /* DQBackground.m */,
 			);
 			name = ObjetosJogo;
 			sourceTree = "<group>";
@@ -1418,6 +1423,7 @@
 				C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
 				C52FBF1919A18D0A0059E973 /* DQAnimalCoelho.m in Sources */,
+				C513748C19FABFBB006E75D2 /* DQBackground.m in Sources */,
 				9488196019901A4600609A0F /* DQItensJogador.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
