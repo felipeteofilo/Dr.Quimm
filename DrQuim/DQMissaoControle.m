@@ -7,6 +7,7 @@
 //
 
 #import "DQMissaoControle.h"
+#import "DQFasesControle.h"
 
 @implementation DQMissaoControle
 
@@ -16,10 +17,10 @@
         self.cena = cenaRecebida;
         
         //Inicia na parte 0
-        self.parteAtual = 2;
+        self.parteAtual = 1;
         
         //E sem nenhuma missão
-        self.emMissao = NO;
+        self.emMissao = YES;
         
         //Define a próxima missão (a primeira)
         self.proximaMissao = 2;
@@ -79,6 +80,15 @@
     self.cena = cenaRecebida;
 }
 
+-(void)mudarFase{
+    
+    if([[self.missao.arrayPartes objectAtIndex:self.parteAtual]objectForKey:@"FaseParaIr"]){
+        int fase = [[[self.missao.arrayPartes objectAtIndex:self.parteAtual]objectForKey:@"FaseParaIr"]intValue];
+        [[DQFasesControle sharedFasesControle]mudarDeFase:fase Size:self.cena];
+    }
+    
+}
+
 -(BOOL)iniciarNovaMissaoNPC:(NSString*)NPC{
     
     if([self.missao podeIniciarComNPC:NPC]){
@@ -92,8 +102,8 @@
 }
 
 
-//TODO:- AO INVÉZ DE UM ITEM PASSADO POR PARAMETRO, CONFERIR NO INVENTÁRIO
--(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items{
+
+-(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items posicao:(CGPoint)posicao{
     
     Boolean podePassar = false;
     
@@ -101,19 +111,21 @@
     for (int i = 0;i < items.count ; i++) {
         
         NSString *item = [items objectAtIndex:i];
-        if([self.missao podePassarComNPC:NPC Item:item Parte:self.parteAtual]){
+        if([self.missao podePassarComNPC:NPC Item:item Parte:self.parteAtual posicao:posicao]){
             podePassar = true;
             break;
         }
     }
     if (items.count == 0) {
-        if([self.missao podePassarComNPC:NPC Item:@"" Parte:self.parteAtual]){
+        if([self.missao podePassarComNPC:NPC Item:@"" Parte:self.parteAtual posicao:posicao]){
             podePassar = true;
         }
     }
     
     if(podePassar){
+        
         self.parteAtual++;
+        [self mudarFase];
         //retorna que a parte passou
         return YES;
     }

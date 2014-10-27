@@ -31,7 +31,7 @@
 
 
 //Metodo que retorna um boolean informando se pode ser passada a parte atual ou ja esta no fim da missao
--(Boolean)podePassarComNPC :(NSString*)nomeNPC Item:(NSString*)item Parte:(int)parte;
+-(Boolean)podePassarComNPC :(NSString*)nomeNPC Item:(NSString*)item Parte:(int)parte posicao:(CGPoint)posicao;
 
 //Metodo que retorna um boolean informando se pode iniciar a missao ou nao
 -(Boolean)podeIniciarComNPC :(NSString*)nomeNPC;

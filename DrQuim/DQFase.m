@@ -480,7 +480,7 @@
     
     if (!self.jogoPausado) {
 
-        [self.jogador atualizarStatusMissao];
+        [self.jogador atualizarStatusMissao:self.controleDeFalas];
         [self criarParteFase];
         [self verificaCoberturaBackground];
         [self.controladorDaVida atualizarSituacaoJogador];

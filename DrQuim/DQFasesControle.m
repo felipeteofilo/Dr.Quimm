@@ -33,22 +33,22 @@
 }
 
 
--(SKScene*)mudarDeFase :(int)fase Size:(CGSize)size{
+-(void)mudarDeFase :(int)fase Size:(SKScene*)scene{
     
     SKScene *faseRetorno;
     
     for (int i = 0; i < self.fases.count ; i++) {
         if ([[[self.fases objectAtIndex:i]objectForKey:@"ID"]intValue] == fase) {
             NSString *nomeDaClasse = [[self.fases objectAtIndex:i]objectForKey:@"Nome"];
-            faseRetorno = [[NSClassFromString(nomeDaClasse) alloc]initWithSize:size];
+            faseRetorno = [[NSClassFromString(nomeDaClasse) alloc]initWithSize:scene.size];
             break;
         }
     }
     if (faseRetorno == nil) {
-        faseRetorno = [[DQFase alloc]initFase:fase Size:size];
+        faseRetorno = [[DQFase alloc]initFase:fase Size:scene.size];
     }
     
-    return faseRetorno;
+    [scene.view presentScene:faseRetorno];
 }
 
 @end

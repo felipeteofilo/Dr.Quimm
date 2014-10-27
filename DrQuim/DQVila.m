@@ -79,11 +79,11 @@
     
     self.posicaoJogador= self.jogador.position;
     
-    SKScene *floresta2 = [[DQFasesControle sharedFasesControle]mudarDeFase:3 Size:self.size];
+    [[DQFasesControle sharedFasesControle]mudarDeFase:3 Size:self];
     
    // [floresta2 salvarCenaVila:self];
     
-    [self.view presentScene:floresta2];
+    
     
     self.apresentouVila =YES;
     
@@ -116,37 +116,37 @@
         self.apresentouVila =NO;
     }
     
-    if (![self childNodeWithName:@"falasDoJogo"]){
-        
-        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao02"]) {
-            
-            if ((!self.apresentouCenaBronca) && (self.jogador.controleMissoes.parteAtual== 5)) {
-                
-                self.apresentouCenaBronca=YES;
-                [self apresentarCenaBronca];
-            }
-            if((self.jogador.controleMissoes.parteAtual== 2)){
-                
-                [self apresentarFloresta2];
-            }
-        }
-        
-        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao03"]) {
-            if(self.jogador.controleMissoes.parteAtual== 2){
-                if (!self.falouCurandeiroCacadaCoelho) {
-                    
-                    //Atualiza para nao ficar chamando direto
-                    self.falouCurandeiroCacadaCoelho=YES;
-                    [DQControleUserDefalts setFalouCurandeiroCacadaCoelho:YES];
-                    [self apresentarCenaMaleta];
-                }
-            }
-            //Assim que ele fala com o cacador vai mudar a parte da missao, entao vai p floresta
-            if(self.jogador.controleMissoes.parteAtual== 4){
-                [self apresentarFloresta2];
-            }
-        }
-    }
+//    if (![self childNodeWithName:@"falasDoJogo"]){
+//        
+//        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao02"]) {
+//            
+//            if ((!self.apresentouCenaBronca) && (self.jogador.controleMissoes.parteAtual== 5)) {
+//                
+//                self.apresentouCenaBronca=YES;
+//                [self apresentarCenaBronca];
+//            }
+//            if((self.jogador.controleMissoes.parteAtual== 2)){
+//                
+//                [self apresentarFloresta2];
+//            }
+//        }
+//        
+//        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao03"]) {
+//            if(self.jogador.controleMissoes.parteAtual== 2){
+//                if (!self.falouCurandeiroCacadaCoelho) {
+//                    
+//                    //Atualiza para nao ficar chamando direto
+//                    self.falouCurandeiroCacadaCoelho=YES;
+//                    [DQControleUserDefalts setFalouCurandeiroCacadaCoelho:YES];
+//                    [self apresentarCenaMaleta];
+//                }
+//            }
+//            //Assim que ele fala com o cacador vai mudar a parte da missao, entao vai p floresta
+//            if(self.jogador.controleMissoes.parteAtual== 4){
+//                [self apresentarFloresta2];
+//            }
+//        }
+//    }
     if (!self.mostrandoContador) {
         
         if([self.jogador estaComContadorGeiger]){

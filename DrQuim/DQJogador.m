@@ -80,9 +80,9 @@
         self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
         
         [self.controleMissoes iniciarMissao];
-
+        
     }
-
+    
 }
 
 -(void)salvarJogoDoJogador:(NSString*)jogador{
@@ -106,7 +106,7 @@
     [DQCoreDataController salvarArmadilhas:self.armadilhas.arrayDeArmadilhasJogador doJogador:jogador];
     
     [DQCoreDataController salvarMissao:missao doJogador:jogador];
-
+    
 }
 
 -(void)atualizaEstadoJogador{
@@ -224,7 +224,7 @@
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
     
-        
+    
     
     [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
     
@@ -265,7 +265,7 @@
     return [self estaComItem:@"Contador Geiger"];
 }
 -(BOOL)estaComItem:(NSString*)nomeItem{
-
+    
     return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
 
@@ -463,9 +463,16 @@
 }
 
 //funcao que atualiza o status da missao
--(void)atualizarStatusMissao{
+-(void)atualizarStatusMissao :(DQFalasNoJogoControle*)controleFalas{
+    if(self.controleMissoes.emMissao){
+        [self interagirComNPC:@"Piloto" ControleDeFalas:controleFalas];
+    }
+    
     [self.controleMissoes atualizarCena:self.scene];
     [self.controleMissoes colocarBalaoDeMissao];
+    
+   
+    
 }
 
 
@@ -488,7 +495,7 @@
         NSString *keyDaParte;
         NSString *missao = self.controleMissoes.missao.ID;
         //Se é o NPC que passa a parte da missao
-        if ([self.controleMissoes passarParteMissao:nomeNPC inventario:[self.itens arrayItensJogador]]) {
+        if ([self.controleMissoes passarParteMissao:nomeNPC inventario:[self.itens arrayItensJogador]posicao:self.position]) {
             //Cria a key de uma fala principal da missao
             keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual-1];
             
@@ -501,15 +508,18 @@
             
         }
         //Se nao é o NPC que passa a parte da missao ou nao tem o item
-        else{
+        else if(![nomeNPC isEqualToString:@"Piloto"]){
             //Cria uma key de uma fala secundaria da missao
             keyDaParte = [NSString stringWithFormat:@"Parte%iR", self.controleMissoes.parteAtual];
         }
+        if (keyDaParte != nil) {
+            
         
         //Cria a caixa de fala com as key obtidas e a adiciona na tela
         SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
         
         [self.scene addChild:caixaDeFala];
+        }
     }
 }
 

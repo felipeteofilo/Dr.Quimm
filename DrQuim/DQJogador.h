@@ -80,7 +80,7 @@
 -(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas;
 
 //Metodo para atualizar o status da missao
--(void)atualizarStatusMissao;
+-(void)atualizarStatusMissao :(DQFalasNoJogoControle*)controleFalas;
 
 //Singleton do jogador
 +(id)sharedJogador;

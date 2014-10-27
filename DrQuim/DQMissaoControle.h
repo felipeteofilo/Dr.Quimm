@@ -29,7 +29,7 @@
 -(BOOL)iniciarNovaMissaoNPC:(NSString *)NPC;
 
 //Método chamado quando o jogador está em uma missão - avalia se irá passar de parte ou acabar
--(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items;
+-(BOOL)passarParteMissao:(NSString *)NPC inventario:(NSArray*)items posicao:(CGPoint)posicao;
 
 //Metodo que finaliza a missao
 -(void)fimDaMissao;
@@ -41,5 +41,6 @@
 -(void)colocarBalaoDeMissao;
 
 -(void)iniciarMissao;
+-(void)mudarFase;
 
 @end

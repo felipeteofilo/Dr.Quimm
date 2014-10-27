@@ -39,22 +39,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DrQuim/DQFlorestaParte2.m"
-            timestampString = "435865743.796416"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-initWithSize:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DrQuim/DQVila.m"
             timestampString = "435865753.348592"
             startingColumnNumber = "9223372036854775807"
@@ -71,13 +55,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DrQuim/DQFasesControle.m"
-            timestampString = "435872432.908659"
+            filePath = "DrQuim/DQMissaoControle.m"
+            timestampString = "436130667.672795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-init"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-mudarFase"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
