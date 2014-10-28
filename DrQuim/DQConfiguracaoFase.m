@@ -84,10 +84,7 @@
     return pontoRetorno;
 }
 +(NSDictionary*)animacoesJogadorFase:(int)_fase{
-    NSDictionary *dicionarioARetornar=[[NSDictionary alloc]init];
-    dicionarioARetornar = [[[self arquivoPlist]objectAtIndex:_fase-1]objectForKey:@"Animacoes"];
-    
-    return dicionarioARetornar;
+    return [[[self arquivoPlist]objectAtIndex:_fase-1]objectForKey:@"Animacoes"];
 }
 
 +(NSDictionary*)configFase:(int)fase{

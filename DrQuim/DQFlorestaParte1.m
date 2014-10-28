@@ -123,11 +123,11 @@
             
             if (posToqueBackGround.y > (self.jogador.position.y+20.0)) {
                 //Fazer jogador escalar - Subindo
-                [self.jogador escalarParaDirecao:@"C"];
+                [self.jogador escalarParaDirecao:'C'];
                 
             }else if (posToqueBackGround.y < (self.jogador.position.y-20.0)){
                 //Fazer jogador escalar - Descendo
-                [self.jogador escalarParaDirecao:@"B"];
+                [self.jogador escalarParaDirecao:'B'];
             }
         }
         
@@ -146,7 +146,7 @@
             
             [self.direcional removeFromParent];
             //mostra as setinhas
-            self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
+            //self.direcional = [SKSpriteNode spriteNodeWithImageNamed:@"setinhas"];
             [self.direcional setPosition: CGPointMake(self.pontoDeToqueAndar.x, self.frame.size.height - self.pontoDeToqueAndar.y)];
             
             [self addChild:self.direcional];
@@ -300,7 +300,7 @@
     [self.mundo insertChild:iconeRadiacaoAlpha atIndex:0];
 }
 -(void)afastaJogadorRadiacao{
-    [self.jogador andarParaDirecao:'E' eDistancia:100];
+    [self.jogador andarParaDirecao:'E' eVelocidade:0.5f];
     [self.jogador runAction:[SKAction moveToX:self.jogador.position.x-15 duration:0.5] withKey:@"saindoDePerto"];
 }
 -(void)falarAlertaRadiacao{

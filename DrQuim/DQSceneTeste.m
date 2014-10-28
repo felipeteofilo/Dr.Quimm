@@ -14,11 +14,6 @@
     if (self=[super initWithSize:size]) {
         [self setBackgroundColor:[UIColor purpleColor]];
         
-        //Cria um botao direcional
-        DQBotaoDirecional *botaoDir=[[DQBotaoDirecional alloc]initBotao:@"testeBotao" comSel:@selector(moverPersonagem:) eDelegate:self eTamanho:CGSizeMake(100, 100)];
-        
-        [botaoDir setPosition:CGPointMake(100, 100)];
-        [self addChild:botaoDir];
     }
     return self;
 }

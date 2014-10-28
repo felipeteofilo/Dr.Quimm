@@ -11,7 +11,7 @@
 @implementation DQVila
 
 
-
+#pragma mark Inicialização Fase
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         [self configuracoesFase:2];
@@ -19,7 +19,7 @@
     return self;
 }
 -(id)initFase:(int)fase Size:(CGSize)size{
-    if([super initFase:fase Size:size]){
+    if(self=[super initFase:fase Size:size]){
         self.falouCurandeiroCacadaCoelho=[DQControleUserDefalts falouCurandeiroCacadaCoelho];
     }
     

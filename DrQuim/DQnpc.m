@@ -35,11 +35,11 @@
         [tipo setObject:@"NPC" forKey:@"Tipo"];
         
         [self setUserData:tipo];
+        
+        //[self setUserInteractionEnabled:YES];
     
     }
     return self;
 }
-
-
 
 @end

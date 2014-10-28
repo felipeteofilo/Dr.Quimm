@@ -43,4 +43,5 @@
 +(BOOL)array:(NSArray*)array contemString:(NSString*)stringTestar{
     return [array containsObject:stringTestar];
 }
+
 @end

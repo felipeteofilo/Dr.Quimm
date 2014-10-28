@@ -31,7 +31,7 @@
 		7560591019955F9C00BD455A /* DQMissao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560590F19955F9C00BD455A /* DQMissao.m */; };
 		7560591319955FC700BD455A /* DQMissaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7560591219955FC700BD455A /* DQMissaoControle.m */; };
 		75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */; };
-		75FDF3F519F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */; };
+		75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */; };
 		75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */; };
 		75FDF40219F6F1AB007E1C66 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF40119F6F1AB007E1C66 /* Usuario.m */; };
 		94080E9F1933BA290024FB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94080E9E1933BA290024FB94 /* Foundation.framework */; };
@@ -88,6 +88,7 @@
 		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
 		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
 		C51125921973AB6000CECCAD /* FundoHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = C51125911973AB6000CECCAD /* FundoHUD.png */; };
+		C513748C19FABFBB006E75D2 /* DQBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = C513748B19FABFBB006E75D2 /* DQBackground.m */; };
 		C5223EFF19F6C8A300C17FAD /* DQBotaoDirecional.m in Sources */ = {isa = PBXBuildFile; fileRef = C5223EFE19F6C8A300C17FAD /* DQBotaoDirecional.m */; };
 		C5223F0219F6CF3A00C17FAD /* DQSceneTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = C5223F0119F6CF3A00C17FAD /* DQSceneTeste.m */; };
 		C5223F0419F6D0F600C17FAD /* testeBotao.png in Resources */ = {isa = PBXBuildFile; fileRef = C5223F0319F6D0F600C17FAD /* testeBotao.png */; };
@@ -184,6 +185,7 @@
 		C5EE3A5C1974A9FD008D3D8D /* Fase2_Parte2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */; };
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
 		C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */; };
+		C5F2D8F31A000B48009D384C /* FasesConfiguradas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5F2D8F21A000B48009D384C /* FasesConfiguradas.plist */; };
 		C5FFB42719A93706004F3CD0 /* AmostrasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */; };
 		C5FFB42819A93706004F3CD0 /* Receitas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42519A93706004F3CD0 /* Receitas.plist */; };
 		C5FFB42919A93706004F3CD0 /* ReceitasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */; };
@@ -269,7 +271,7 @@
 		7560591119955FC700BD455A /* DQMissaoControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMissaoControle.h; sourceTree = "<group>"; };
 		7560591219955FC700BD455A /* DQMissaoControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMissaoControle.m; sourceTree = "<group>"; };
 		75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DQCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrQuim.xcdatamodel; sourceTree = "<group>"; };
 		75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoreDataController.h; sourceTree = "<group>"; };
 		75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoreDataController.m; sourceTree = "<group>"; };
 		75FDF40019F6F1AB007E1C66 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
@@ -346,6 +348,8 @@
 		C511258A1973AB4E00CECCAD /* DQHudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQHudController.h; sourceTree = "<group>"; };
 		C511258B1973AB4E00CECCAD /* DQHudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQHudController.m; sourceTree = "<group>"; };
 		C51125911973AB6000CECCAD /* FundoHUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FundoHUD.png; sourceTree = "<group>"; };
+		C513748A19FABFBB006E75D2 /* DQBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBackground.h; sourceTree = "<group>"; };
+		C513748B19FABFBB006E75D2 /* DQBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBackground.m; sourceTree = "<group>"; };
 		C5223EFD19F6C8A300C17FAD /* DQBotaoDirecional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBotaoDirecional.h; sourceTree = "<group>"; };
 		C5223EFE19F6C8A300C17FAD /* DQBotaoDirecional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBotaoDirecional.m; sourceTree = "<group>"; };
 		C5223F0019F6CF3A00C17FAD /* DQSceneTeste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQSceneTeste.h; sourceTree = "<group>"; };
@@ -416,6 +420,7 @@
 		C56A9D80196E252C00DD2347 /* DQFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFase.h; sourceTree = "<group>"; };
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
+		C58CFAEE19F98BCB006712C6 /* DQControleProtocoll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQControleProtocoll.h; sourceTree = "<group>"; };
 		C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
 		C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlertaHelicoptero.mp3; sourceTree = "<group>"; };
 		C58F75C119A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fundo01 - Passaros .mp3"; sourceTree = "<group>"; };
@@ -472,6 +477,7 @@
 		C5EE3A581974A9FD008D3D8D /* Fase2_Parte2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte2.png; sourceTree = "<group>"; };
 		C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
 		C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
+		C5F2D8F21A000B48009D384C /* FasesConfiguradas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FasesConfiguradas.plist; sourceTree = "<group>"; };
 		C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AmostrasQuimicas.plist; path = "Arquivos Plist/AmostrasQuimicas.plist"; sourceTree = "<group>"; };
 		C5FFB42519A93706004F3CD0 /* Receitas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Receitas.plist; path = "Arquivos Plist/Receitas.plist"; sourceTree = "<group>"; };
 		C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReceitasQuimicas.plist; path = "Arquivos Plist/ReceitasQuimicas.plist"; sourceTree = "<group>"; };
@@ -564,6 +570,7 @@
 				7505B4A519FACB3E00769C87 /* Fases.plist */,
 				9488196519901A6D00609A0F /* ItensReferencia.plist */,
 				9488196619901A6D00609A0F /* MissoesJogador.plist */,
+				C5F2D8F21A000B48009D384C /* FasesConfiguradas.plist */,
 			);
 			name = "Arquvos XML";
 			sourceTree = "<group>";
@@ -598,7 +605,7 @@
 		75FDF3F619F6E343007E1C66 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */,
+				75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */,
 				75FDF40019F6F1AB007E1C66 /* Usuario.h */,
 				75FDF40119F6F1AB007E1C66 /* Usuario.m */,
 				75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */,
@@ -651,6 +658,7 @@
 				C511252E1973868D00CECCAD /* ObjetosJogo */,
 				23477FF719463E0E00479AFE /* Falas e Cutscenes */,
 				CDB3FA4C194BA61D0099CF6C /* SKScenes */,
+				C5223F0519F6EDC300C17FAD /* Interface */,
 				94080EAF1933BA290024FB94 /* DQAppDelegate.h */,
 				94080EB01933BA290024FB94 /* DQAppDelegate.m */,
 				CDE817F11933C790003516E7 /* DQJogador.h */,
@@ -667,7 +675,6 @@
 				943710BC19A3DF1100B8846E /* DQArmadilhasJogador.m */,
 				C52FBF1F19A18D220059E973 /* DQUteis.h */,
 				C52FBF2019A18D220059E973 /* DQUteis.m */,
-				C5223F0519F6EDC300C17FAD /* Interface */,
 				94080EBD1933BA290024FB94 /* Images.xcassets */,
 				94080EB21933BA290024FB94 /* Main.storyboard */,
 				94080EA71933BA290024FB94 /* Supporting Files */,
@@ -837,6 +844,8 @@
 				C54B79C61972440400366512 /* DQEscalavel.m */,
 				C591815F1967756700AFD8B5 /* DQPlataforma.h */,
 				C59181601967756700AFD8B5 /* DQPlataforma.m */,
+				C513748A19FABFBB006E75D2 /* DQBackground.h */,
+				C513748B19FABFBB006E75D2 /* DQBackground.m */,
 			);
 			name = ObjetosJogo;
 			sourceTree = "<group>";
@@ -845,6 +854,7 @@
 			isa = PBXGroup;
 			children = (
 				C5223F0319F6D0F600C17FAD /* testeBotao.png */,
+				C58CFAEE19F98BCB006712C6 /* DQControleProtocoll.h */,
 				C5101E3D19F6C7A800FE7E66 /* DQBotao.h */,
 				C5101E3C19F6C7A800FE7E66 /* DQBotao.m */,
 				C5223EFD19F6C8A300C17FAD /* DQBotaoDirecional.h */,
@@ -1324,6 +1334,7 @@
 				9469691B19A2A2A600087B20 /* Helicoptero.mp3 in Resources */,
 				C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */,
 				C58F75E719A4F20B00DC7A71 /* Fase3_Parte4.png in Resources */,
+				C5F2D8F31A000B48009D384C /* FasesConfiguradas.plist in Resources */,
 				C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */,
 				C58F75F619A4F20B00DC7A71 /* Fase3_Parte19.png in Resources */,
 				9488196E19901A6D00609A0F /* MissoesJogador.plist in Resources */,
@@ -1376,7 +1387,7 @@
 				C52FBF2119A18D220059E973 /* DQUteis.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,
-				75FDF3F519F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld in Sources */,
+				75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */,
 				C54031EA1989FE98003384AB /* DQReferenciaMissaoJogador.m in Sources */,
 				CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */,
 				CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */,
@@ -1426,6 +1437,7 @@
 				C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
 				C52FBF1919A18D0A0059E973 /* DQAnimalCoelho.m in Sources */,
+				C513748C19FABFBB006E75D2 /* DQBackground.m in Sources */,
 				9488196019901A4600609A0F /* DQItensJogador.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1659,13 +1671,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		75FDF3F319F6E33B007E1C66 /* DQCoreDataModel.xcdatamodeld */ = {
+		75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */,
+				75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */,
 			);
-			currentVersion = 75FDF3F419F6E33B007E1C66 /* DQCoreDataModel.xcdatamodel */;
-			path = DQCoreDataModel.xcdatamodeld;
+			currentVersion = 75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */;
+			path = DrQuim.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -8,11 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+//Leonardo, alterado pois agora cada objeto do jogo definirá sua bitMask
+//define as categorias de colisao
+static const UInt32 JogadorCategoria = 0x1 << 0;
+static const UInt32 ChaoCategoria = 0x1 << 1;
+static const UInt32 PlataformaAtivadaCategoria = 0x1 << 2;
+static const UInt32 PlataformaDesativadaCategoria = 0x1 << 3;
+static const UInt32 EscadaCategoria = 0x1 << 4;
+
 @interface DQUteis : NSObject
+
 
 +(BOOL)string:(NSString*)strTestar contemPalavra:(NSString*)palavraProcurada;
 +(float)calcularDistanciaPontos:(CGPoint)primeiroPonto ponto2:(CGPoint)segundoPonto;
 +(NSMutableArray*)ordenarValores:(NSMutableArray*)array;
 +(BOOL)sortearChanceSim:(float)chanceSim;
 +(BOOL)array:(NSArray*)array contemString:(NSString*)stringTestar;
+
 @end

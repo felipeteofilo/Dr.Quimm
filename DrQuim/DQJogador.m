@@ -7,7 +7,10 @@
 //
 
 #import "DQJogador.h"
-#import "DQFase.h"
+
+#define distAndar 100
+#define impulsoPulo 210
+
 
 @implementation DQJogador
 
@@ -19,6 +22,7 @@
         
         //Leonardo 13/06/2014 - Inicia o sprite
         self.spriteNode=[SKSpriteNode spriteNodeWithImageNamed:name];
+        [self.spriteNode setName:@"spriteJogador"];
         
         [self setAnchorPoint:CGPointMake(0, 0)];
         
@@ -38,9 +42,7 @@
         self.sede = 100;
         self.vida = 100;
         self.respeito = 0;
-        
-        
-        
+
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
@@ -51,9 +53,8 @@
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
         
-        self.distAndar=100;
-        self.impulsoPulo=210;
         [self setName:@"Jogador"];
+        [self definePhisicsBody];
     }
     
     //retorna o jogador
@@ -85,13 +86,13 @@
     
 }
 
+//TODO: Mover método
 -(void)salvarJogoDoJogador:(NSString*)jogador{
     [DQCoreDataController salvarVida:self.vida respeito:self.respeito fome:self.fome sede:self.sede doJogador:jogador];
     
-    DQFase * fase = (DQFase*)self.scene;
+    //DQFase * fase = (DQFase*)self.scene;
     
-    [DQCoreDataController salvarFaseAtual:fase.faseAtual parte:fase.parteFaseAtual doJogador:jogador];
-    
+    //[DQCoreDataController salvarFaseAtual:fase.faseAtual parte:fase.parteFaseAtual doJogador:jogador];
     
     NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
     
@@ -188,8 +189,10 @@
     [self.spriteNode runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando
                                                                               timePerFrame:0.1f
                                                                                     resize:NO
-                                                                                   restore:YES]] withKey:@"animandoAndando"];
-    [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
+                                                                                   restore:YES]]withKey:@"animandoAndando"];
+    
+    //TODO: Adicionar controle de som
+    //    [self.controleSom tocarSomLooping:[self.controleSom configuraPlayerSom:@"Passo" nLoops:-1]];
     
 }
 
@@ -250,7 +253,7 @@
         // aplica um impulso para cima , ou seja o pulo e seta que ele esta no ar
         self.physicsBody.dynamic = YES;
         self.physicsBody.velocity = CGVectorMake(0, 0);
-        [self.physicsBody applyImpulse:CGVectorMake(0, self.impulsoPulo)];
+        [self.physicsBody applyImpulse:CGVectorMake(0, impulsoPulo)];
         
         self.estaNoChao = NO;
         
@@ -260,30 +263,27 @@
     }
 }
 
-//TODO:- Melhorar metodo e passar ele p o DQUteis
 -(BOOL)estaComContadorGeiger{
     return [self estaComItem:@"Contador Geiger"];
 }
+
+//TODO:- Melhorar metodo e passar ele p o DQUteis
 -(BOOL)estaComItem:(NSString*)nomeItem{
-    
     return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
 
 //Alterado cabeçalho funçao
-//-(void)andarParaDirecao:(NSString*)direcao{
--(void)andarParaDirecao:(char)direcao eDistancia:(float)distancia{
+-(void)andarParaDirecao:(char)direcao eVelocidade:(float)velocidade{
     if (![self.spriteNode actionForKey:@"animandoEscalada"] ) {
-        
         //variavel SKAction- define a direcao do movimento
-        SKAction *movimentar =[[SKAction alloc]init];
+        SKAction *movimentar;
         
         //se a direcao for para direita
         if (direcao=='D') {
             
             self.andandoParaDirecao = @"D";
             //Alterado para usar da propriedade
-            //movimentar=[SKAction moveByX:self.distAndar y:0 duration:1.0];
-            movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
+            movimentar=[SKAction moveByX:distAndar+(distAndar * velocidade) y:0 duration:1.0];
             
             if(self.physicsBody.velocity.dx > 10 && self.physicsBody.velocity.dy < -10){
                 [self.physicsBody setVelocity:CGVectorMake(10, -10)];
@@ -294,16 +294,24 @@
         }else{
             
             self.andandoParaDirecao = @"E";
-            //movimentar=[SKAction moveByX:(self.distAndar *-1) y:0 duration:1.0];
-            movimentar=[SKAction moveByX:distancia y:0 duration:1.0];
+            movimentar=[SKAction moveByX:(distAndar-(distAndar * velocidade))*-1 y:0 duration:1.0];
             
             //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
             self.spriteNode.xScale = fabs(self.spriteNode.xScale)*-1;
-            
         }
         
-        //anda para direcao
-        [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+        //verifica se nao esta animando o pulo e anima o jogador andando
+        if (![self.spriteNode actionForKey:@"animandoAndando"] && self.estaNoChao && ![self actionForKey:@"animandoCaindo"]) {
+            
+            //Cria action para animar
+            SKAction *animacaoMover = [SKAction runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando timePerFrame:0.09f resize:NO restore:YES]] onChildWithName:self.spriteNode.name];
+            
+            [self runAction:[SKAction repeatActionForever:[SKAction group:@[movimentar,animacaoMover]]] withKey:@"andar"];
+        }else{
+            //Esta no alto so move
+            [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+            
+        }
     }
 }
 
@@ -415,11 +423,17 @@
     [self removeActionForKey:@"andar"];
     [self.spriteNode removeActionForKey:@"animandoAndando"];
     
+    if (![self.spriteNode actionForKey:@"animandoEscalada"] && ![self.spriteNode actionForKey:@"animandoPulo"] && ![self.spriteNode actionForKey:@"animandoDerrapando"]&& ![self.spriteNode actionForKey:@"animandoCaindo"]) {
+        [self.spriteNode removeAllActions];
+        
+        [self animarParado];
+    }
+    
     [self.controleSom pararSom];
 }
 
 //funcao para fazer o jogador escalar
--(void)escalarParaDirecao:(NSString*)direcao{
+-(void)escalarParaDirecao:(char)direcao{
     //se puder escalar
     if (self.podeEscalar) {
         SKAction *escalar=[[SKAction alloc]init];
@@ -427,11 +441,11 @@
         //Desliga a gravidade para o Node
         self.physicsBody.dynamic=NO;
         // verifica para qual direcao sera a escalada
-        if ([direcao isEqualToString:@"C"]) {
+        if (direcao=='C') {
             //Sobe
             escalar =[SKAction moveByX:0.0f y:90.0f duration:1.0];
             
-        }else if([direcao isEqualToString:@"B"]){
+        }else if(direcao=='B'){
             //Desce
             escalar =[SKAction moveByX:0.0f y:-90.0f duration:1.0];
         }
@@ -589,5 +603,28 @@
         [self alterarVidaJogador:vida];
     }
 }
+-(void)definePhisicsBody{
+    //Chao Categoria
+    self.physicsBody.categoryBitMask=JogadorCategoria;
+    self.physicsBody.collisionBitMask=ChaoCategoria | PlataformaAtivadaCategoria;
+    self.physicsBody.contactTestBitMask= PlataformaDesativadaCategoria;
+    self.physicsBody.usesPreciseCollisionDetection=YES;
+}
 
+-(void)verificarAnimacaoCaindo{
+    //se esta caindo de uma distancia muito grande anima ele caindo
+    if (self.physicsBody.velocity.dy < -535 && ![self.spriteNode actionForKey:@"animandoCaindo"]) {
+        [self animarCaindo];
+    }
+}
+-(void)verificarAnimacaoDerrapagem{
+    //se jogador esta derrapando anima ele derrapando
+    if (self.estaNoChao && (self.physicsBody.velocity.dx < -10 || self.physicsBody.velocity.dx > 10) && ![self.spriteNode actionForKey:@"animandoAndando"] && ![self.spriteNode actionForKey:@"animandoDerrapando"]) {
+        [self animarDerrapando];
+    }
+    //se nao retira a animacao
+    if ([self.spriteNode actionForKey:@"animandoDerrapando"] && self.physicsBody.velocity.dx < 10 && self.physicsBody.velocity.dx > -10 ) {
+        [self pararDerrapar];
+    }
+}
 @end

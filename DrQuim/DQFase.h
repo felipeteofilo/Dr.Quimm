@@ -21,22 +21,14 @@
 #import "DQVidaControle.h"
 #import "DQFalasNoJogoControle.h"
 #import "DQControleSomScene.h"
-
 #import "DQCoreDataController.h"
 #import "DQBotaoDirecional.h"
+#import "DQControleProtocoll.h"
+#import "DQUteis.h"
+#import "DQBackground.h"
 #import "DQFasesControle.h"
 
-
-
-//define as categorias de colisao
-static const UInt32 JogadorCategoria = 0x1 << 0;
-static const UInt32 ChaoCategoria = 0x1 << 1;
-static const UInt32 PlataformaCategoria = 0x1 << 2;
-static const UInt32 EscadaCategoria = 0x1 << 3;
-
-static NSString* NomeNodePlataformas= @"NodeComPlataformas";
-
-@interface DQFase : SKScene <SKPhysicsContactDelegate>
+@interface DQFase : SKScene <SKPhysicsContactDelegate,DQControleProtocoll>
 
 //Variável DQJogador - Define o jogador
 @property DQJogador *jogador;
@@ -50,21 +42,22 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 //DQVidaControle para controlar a vida do personagem
 @property DQVidaControle *controladorDaVida;
 
-
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode *mundo;
+
+/* CLASSE ESPECIFICA
 @property SKSpriteNode *backgroundAnterior;
 @property SKSpriteNode *backgroundAtual;
 @property SKSpriteNode *backgroundFuturo;
+ */
+@property DQBackground *backgroundAnterior;
+@property DQBackground *backgroundAtual;
+@property DQBackground *backgroundFuturo;
 
 //Informações da Fase
 @property int faseAtual;
 @property int parteFaseAtual;
 @property int nPartesFase;
-
-//Removido pois terá um botao exclusivo
-////SKSpriteNode da setinha que auxilia o jogador a entender para onde ele precisa andar
-//@property SKSpriteNode *direcional;
 
 //CGPoint que guarda onde a pessoa pressionou e assim descobrir se o personagem vai para a direita ou esquerda
 @property CGPoint pontoDeToqueAndar;
@@ -83,14 +76,15 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
 //Controles
 @property DQBotaoDirecional *direcional;
+@property DQBotao *botaoPulo;
 
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(id)initFase:(int)fase Size:(CGSize)size;
 -(void)configuracoesFase:(int)faseAtual;
 -(void)criarParteFase;
--(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
-
--(void)escadaCategoria :(SKNode*)node;
+//-(SKSpriteNode*)configurarBackgroundParte:(int)parte naPos:(CGPoint)posicao;
+//
+//-(void)escadaCategoria :(SKNode*)node;
 -(void)criaJogador;
 @end
