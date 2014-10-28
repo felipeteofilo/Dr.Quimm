@@ -7,8 +7,10 @@
 //
 
 #import "DQJogador.h"
+
 #define distAndar 100
 #define impulsoPulo 210
+
 
 @implementation DQJogador
 
@@ -44,46 +46,9 @@
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
         self.armadilhas =[[DQArmadilhasJogador alloc]init];
-        
-        Usuario *infoSave = [DQCoreDataController procurarJogador:@"Jogador1"];
-        if (infoSave !=nil) {
-            self.fome = [[infoSave fome]intValue];
-            self.sede = [[infoSave sede]intValue];
-            self.vida= [[infoSave vida]intValue];
-            self.respeito = [[infoSave respeito]intValue];
-            
-            
-            self.itens = [infoSave itens];
-            self.armadilhas = [infoSave armadilhas];
-        }
-        
-        
-        
-        if ([DQControleUserDefalts itensAtuaisJogador]!=nil) {
-            self.itens.dicionarioDeItensJogador = [DQControleUserDefalts itensAtuaisJogador];
-        }
-        self.armadilhas =[[DQArmadilhasJogador alloc]init];
-        
-        
-        if ([DQControleUserDefalts armadilhasAtuaisJogador]!=nil) {
-            self.armadilhas.arrayDeArmadilhasJogador = [DQControleUserDefalts armadilhasAtuaisJogador];
-        }
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
-        //se nao existe nenhuma missao ainda
-        //        if([DQControleUserDefalts missaoAtualJogador] != nil){
-        //  NSDictionary *missao = [DQControleUserDefalts missaoAtualJogador];
-        
-        if (infoSave !=nil) {
-            
-            
-            NSDictionary *missao = [infoSave missao];
-            self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
-            self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
-            self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
-            
-            [self.controleMissoes iniciarMissao];
-        }
+        [self.controleMissoes iniciarMissao];
         
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
@@ -95,6 +60,56 @@
     //retorna o jogador
     return self;
 }
+
+
+-(void)carregarInformacoesDoJogador:(NSString*)jogador{
+    Usuario *infoSave = [DQCoreDataController procurarJogador:jogador];
+    if (infoSave !=nil) {
+        self.fome = [[infoSave fome]intValue];
+        self.sede = [[infoSave sede]intValue];
+        self.vida= [[infoSave vida]intValue];
+        self.respeito = [[infoSave respeito]intValue];
+        
+        
+        self.itens.dicionarioDeItensJogador = [infoSave itens];
+        self.armadilhas.arrayDeArmadilhasJogador = [infoSave armadilhas];
+        
+        
+        NSDictionary *missao = [infoSave missao];
+        self.controleMissoes.emMissao = [[missao objectForKey:@"EmMissao"]boolValue];
+        self.controleMissoes.parteAtual = [[missao objectForKey:@"ParteAtual"]intValue];
+        self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
+        
+        [self.controleMissoes iniciarMissao];
+        
+    }
+    
+}
+
+//TODO: Mover método
+-(void)salvarJogoDoJogador:(NSString*)jogador{
+    [DQCoreDataController salvarVida:self.vida respeito:self.respeito fome:self.fome sede:self.sede doJogador:jogador];
+    
+    //DQFase * fase = (DQFase*)self.scene;
+    
+    //[DQCoreDataController salvarFaseAtual:fase.faseAtual parte:fase.parteFaseAtual doJogador:jogador];
+    
+    NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
+    
+    [missao setObject:[NSNumber numberWithBool:self.controleMissoes.emMissao] forKey:@"EmMissao"];
+    [missao setObject:[NSNumber numberWithInt:self.controleMissoes.parteAtual]forKey:@"ParteAtual"];
+    
+    [missao setObject:[NSNumber numberWithInt:self.controleMissoes.proximaMissao] forKey:@"MissaoAtual"];
+    
+    
+    [DQCoreDataController salvarItens:self.itens.dicionarioDeItensJogador doJogador:jogador];
+    
+    [DQCoreDataController salvarArmadilhas:self.armadilhas.arrayDeArmadilhasJogador doJogador:jogador];
+    
+    [DQCoreDataController salvarMissao:missao doJogador:jogador];
+    
+}
+
 -(void)atualizaEstadoJogador{
     
     if (![DQControleUserDefalts estadoJogadorAtualizado]) {
@@ -248,10 +263,11 @@
     }
 }
 
-//TODO:- Melhorar metodo e passar ele p o DQUteis
 -(BOOL)estaComContadorGeiger{
     return [self estaComItem:@"Contador Geiger"];
 }
+
+//TODO:- Melhorar metodo e passar ele p o DQUteis
 -(BOOL)estaComItem:(NSString*)nomeItem{
     return [DQUteis array:[self.itens arrayItensJogador] contemString:nomeItem];
 }
@@ -461,9 +477,19 @@
 }
 
 //funcao que atualiza o status da missao
--(void)atualizarStatusMissao{
+-(void)atualizarStatusMissao :(DQFalasNoJogoControle*)controleFalas{
+    if(self.controleMissoes.emMissao){
+        [self interagirComNPC:@"Piloto" ControleDeFalas:controleFalas];
+    }
+    
     [self.controleMissoes atualizarCena:self.scene];
     [self.controleMissoes colocarBalaoDeMissao];
+    
+    if(![self.scene childNodeWithName:@"falasDoJogo"]){
+        [self.controleMissoes mudarFase];
+    }
+    
+    
 }
 
 
@@ -486,7 +512,7 @@
         NSString *keyDaParte;
         NSString *missao = self.controleMissoes.missao.ID;
         //Se é o NPC que passa a parte da missao
-        if ([self.controleMissoes passarParteMissao:nomeNPC inventario:[self.itens arrayItensJogador]]) {
+        if ([self.controleMissoes passarParteMissao:nomeNPC inventario:[self.itens arrayItensJogador]posicao:self.position]) {
             //Cria a key de uma fala principal da missao
             keyDaParte = [NSString stringWithFormat:@"Parte%i", self.controleMissoes.parteAtual-1];
             
@@ -499,15 +525,18 @@
             
         }
         //Se nao é o NPC que passa a parte da missao ou nao tem o item
-        else{
+        else if(![nomeNPC isEqualToString:@"Piloto"]){
             //Cria uma key de uma fala secundaria da missao
             keyDaParte = [NSString stringWithFormat:@"Parte%iR", self.controleMissoes.parteAtual];
         }
-        
-        //Cria a caixa de fala com as key obtidas e a adiciona na tela
-        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
-        
-        [self.scene addChild:caixaDeFala];
+        if (keyDaParte != nil) {
+            
+            
+            //Cria a caixa de fala com as key obtidas e a adiciona na tela
+            SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
+            
+            [self.scene addChild:caixaDeFala];
+        }
     }
 }
 

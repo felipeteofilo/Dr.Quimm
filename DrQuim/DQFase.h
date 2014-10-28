@@ -26,6 +26,7 @@
 #import "DQControleProtocoll.h"
 #import "DQUteis.h"
 #import "DQBackground.h"
+#import "DQFasesControle.h"
 
 @interface DQFase : SKScene <SKPhysicsContactDelegate,DQControleProtocoll>
 

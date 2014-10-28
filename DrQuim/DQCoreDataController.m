@@ -45,16 +45,19 @@
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newContact = [self procurarJogador:nome];
+    Usuario *newContact = [self procurarJogador:nome];
     
     if (newContact == nil) {
-        [newContact setValue:nome forKey:@"nome"];
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Usuario"
+                      inManagedObjectContext:context];
+        [newContact setNome:nome];
     }
     
-    [newContact setValue:[NSNumber numberWithInt:vida] forKey:@"vida"];
-    [newContact setValue:[NSNumber numberWithInt:respeito] forKey:@"respeito"];
-    [newContact setValue:[NSNumber numberWithInt:fome] forKey:@"fome"];
-    [newContact setValue:[NSNumber numberWithInt:sede] forKey:@"sede"];
+    [newContact setVida:[NSNumber numberWithInt:vida]];
+    [newContact setRespeito:[NSNumber numberWithInt:respeito]];
+    [newContact setFome:[NSNumber numberWithInt:fome]] ;
+    [newContact setSede:[NSNumber numberWithInt:sede]];
     
     
     NSError *erro;
@@ -65,13 +68,16 @@
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newContact = [self procurarJogador:nome];
+     Usuario *newContact = [self procurarJogador:nome];
     
     if (newContact == nil) {
-        [newContact setValue:nome forKey:@"nome"];
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Usuario"
+                      inManagedObjectContext:context];
+        [newContact setNome:nome];
     }
     
-    [newContact setValue:itens forKey:@"itens"];
+    [newContact setItens:itens];
     
     
     NSError *erro;
@@ -83,13 +89,16 @@
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newContact = [self procurarJogador:nome];
+    Usuario *newContact = [self procurarJogador:nome];
     
     if (newContact == nil) {
-        [newContact setValue:nome forKey:@"nome"];
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Usuario"
+                      inManagedObjectContext:context];
+        [newContact setNome:nome];
     }
     
-    [newContact setValue:armadilhas forKey:@"armadilhas"];
+    [newContact setArmadilhas:armadilhas];
     
     
     NSError *erro;
@@ -101,18 +110,42 @@
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newContact = [self procurarJogador:nome];
+    Usuario *newContact = [self procurarJogador:nome];
     
     if (newContact == nil) {
-        [newContact setValue:nome forKey:@"nome"];
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Usuario"
+                      inManagedObjectContext:context];
+        [newContact setNome:nome];
     }
     
-    [newContact setValue:missao forKey:@"missao"];
+    [newContact setMissao:missao];
     
     
     NSError *erro;
     [context save:&erro];
     
+}
++(void)salvarFaseAtual:(int)fase parte:(int)parte doJogador:(NSString*)nome{
+    DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    Usuario *newContact = [self procurarJogador:nome];
+    
+    if (newContact == nil) {
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Usuario"
+                      inManagedObjectContext:context];
+        [newContact setNome:nome];
+    }
+    
+    [newContact setFase:[NSNumber numberWithInt:fase]];
+    [newContact setPartefase:[NSNumber numberWithInt:parte]];
+    
+    
+    NSError *erro;
+    [context save:&erro];
+
 }
 
 @end

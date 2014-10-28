@@ -80,7 +80,7 @@
 -(void)interagirComNPC:(NSString*)nomeNPC ControleDeFalas:(DQFalasNoJogoControle*)controleDeFalas;
 
 //Metodo para atualizar o status da missao
--(void)atualizarStatusMissao;
+-(void)atualizarStatusMissao :(DQFalasNoJogoControle*)controleFalas;
 
 //Singleton do jogador
 +(id)sharedJogador;
@@ -119,10 +119,17 @@
 -(BOOL)estaComContadorGeiger;
 
 //Método de retorno VOID - Faz o personagem andar para a direção que foi passada
+
 -(void)andarParaDirecao:(char)direcao eVelocidade:(float)velocidade;
 //funcao para fazer o jogador escalar
 -(void)escalarParaDirecao:(char)direcao;
 
 -(void)verificarAnimacaoCaindo;
 -(void)verificarAnimacaoDerrapagem;
+
+//Método de salvar
+-(void)salvarJogoDoJogador:(NSString*)jogador;
+
+//Metodo de carregar
+-(void)carregarInformacoesDoJogador:(NSString*)jogador;
 @end

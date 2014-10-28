@@ -309,10 +309,14 @@
 				<integer>0</integer>
 			</dict>
 			<dict>
+				<key>FaseParaIr</key>
+				<integer>3</integer>
+				<key>PontoDeAvanco</key>
+				<string>{5700, 400}</string>
 				<key>Descricao</key>
 				<string>Pegar o animal descrito pelo Caçador</string>
 				<key>NPCRequisito</key>
-				<string>Animal</string>
+				<string>Piloto</string>
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
@@ -327,6 +331,8 @@
 				<integer>0</integer>
 			</dict>
 			<dict>
+				<key>FaseParaIr</key>
+				<integer>2</integer>
 				<key>Descricao</key>
 				<string>Pergunte ao Caçador como ele faz para capturar a criatura.</string>
 				<key>NPCRequisito</key>
@@ -489,6 +495,8 @@
 				<integer>0</integer>
 			</dict>
 			<dict>
+				<key>FaseParaIr</key>
+				<integer>3</integer>
 				<key>Descricao</key>
 				<string>Vá até o caçador para que ele te guie até o local onde estão os coelhos
 ￼</string>
@@ -519,6 +527,8 @@
 				<integer>0</integer>
 			</dict>
 			<dict>
+				<key>FaseParaIr</key>
+				<integer>2</integer>
 				<key>Descricao</key>
 				<string>Capture o coelho posicionando a armadilha e colocando a isca amarela no centro dela.</string>
 				<key>NPCRequisito</key>

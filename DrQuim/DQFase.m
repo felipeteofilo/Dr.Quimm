@@ -19,9 +19,6 @@
     if (self=[super initWithSize:size ]) {
         
         [self configuracoesFase:fase];
-        //[self iniciarFase];
-        //Chama o iniciar fase
-        //[self iniciarFase];
     }
     return self;
 }
@@ -76,7 +73,7 @@
     
     [self.backgroundAtual criarPlataformas:[[self infoParteFase:self.parteFaseAtual]objectForKey:@"Plataformas"]];
     
-    self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
+    self.controleDeFalas = [[DQFalasNoJogoControle alloc]init];
     
     [self criaJogador];
     [self configuraFisicaMundo];
@@ -282,8 +279,8 @@
     self.jogoPausado=self.paused;
     
     if (!self.jogoPausado) {
-        
-        [self.jogador atualizarStatusMissao];
+        [self.jogador atualizarStatusMissao:self.controleDeFalas];
+
         [self criarParteFase];
         
         //Converte a posicao do jogador para o sistema de coordenadas do no que tem a cobertura
@@ -302,24 +299,6 @@
                     [self.controleSom tocarSomLista];
                 }
             }
-            
-            NSString *nome = @"Jogador1";
-            
-            [DQCoreDataController salvarVida:self.jogador.vida respeito:self.jogador.respeito fome:self.jogador.fome sede:self.jogador.sede doJogador:nome];
-            
-            NSMutableDictionary *missao = [[NSMutableDictionary alloc]init];
-            
-            [missao setObject:[NSNumber numberWithBool:self.jogador.controleMissoes.emMissao] forKey:@"EmMissao"];
-            [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.parteAtual]forKey:@"ParteAtual"];
-            
-            [missao setObject:[NSNumber numberWithInt:self.jogador.controleMissoes.proximaMissao] forKey:@"MissaoAtual"];
-            
-            
-            [DQCoreDataController salvarItens:self.jogador.itens.dicionarioDeItensJogador doJogador:nome];
-            
-            [DQCoreDataController salvarArmadilhas:self.jogador.armadilhas.arrayDeArmadilhasJogador doJogador:nome];
-            
-            [DQCoreDataController salvarMissao:missao doJogador:nome];
         }
     }
 }
@@ -363,9 +342,10 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    UITouch *toque=[touches anyObject];
     
+    UITouch *toque=[touches anyObject];
     CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
+
     
     //Pega o node na posicao do toque
     SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];
@@ -467,7 +447,7 @@
     [self.jogador pular];
 }
 
-//Método para controle da posição da campera
+//Método para controle da posição da camera
 -(void)posicionaCamera{
     
     CGPoint posicaoJogador = self.jogador.position;

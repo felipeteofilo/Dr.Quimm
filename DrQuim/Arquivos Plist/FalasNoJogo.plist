@@ -5,46 +5,37 @@
 	<dict>
 		<key>Alertas</key>
 		<dict>
-			<key>Aleatoria1</key>
+			<key>RadiacaoBeta</key>
 			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Piloto</string>
+					<key>Texto</key>
+					<string>Mais radiação alfa?</string>
+					<key>Foto</key>
+					<string>rostoPiloto</string>
+				</dict>
 				<dict>
 					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>Já disse para não ir por aí!</string>
+					<string>Não, agora é Beta. Muito mais perigosa. Menos sendo menos energética que a alfa, ele tem um poder de penetração muito maior.</string>
 					<key>Foto</key>
 					<string>rostoCientista</string>
 				</dict>
-			</array>
-			<key>Aleatoria2</key>
-			<array>
 				<dict>
 					<key>Sujeito</key>
-					<string>Cientista</string>
+					<string>Piloto</string>
 					<key>Texto</key>
-					<string>Você não me ouviu? Vá por outro lugar!</string>
+					<string>Em outras palavras... Ela queima mais?</string>
 					<key>Foto</key>
-					<string>rostoCientista</string>
+					<string>rostoPiloto</string>
 				</dict>
-			</array>
-			<key>Aleatoria3</key>
-			<array>
 				<dict>
 					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>Qual o seu problema? Aí é perigoso!</string>
-					<key>Foto</key>
-					<string>rostoCientista</string>
-				</dict>
-			</array>
-			<key>Aleatoria4</key>
-			<array>
-				<dict>
-					<key>Sujeito</key>
-					<string>Cientista</string>
-					<key>Texto</key>
-					<string>Se você quiser se matar, faça isso sozinho! Pegue outro caminho!</string>
+					<string>Em outras palavras, vamos pegar um outro caminho.</string>
 					<key>Foto</key>
 					<string>rostoCientista</string>
 				</dict>
@@ -116,50 +107,50 @@
 					<string>rostoCientista</string>
 				</dict>
 			</array>
-			<key>RadiacaoBeta</key>
+			<key>Aleatoria4</key>
 			<array>
 				<dict>
 					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Mais radiação alfa?</string>
-					<key>Foto</key>
-					<string>rostoPiloto</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
 					<string>Cientista</string>
 					<key>Texto</key>
-					<string>Não, agora é Beta. Muito mais perigosa. Menos sendo menos energética que a alfa, ele tem um poder de penetração muito maior.</string>
-					<key>Foto</key>
-					<string>rostoCientista</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Em outras palavras... Ela queima mais?</string>
-					<key>Foto</key>
-					<string>rostoPiloto</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Cientista</string>
-					<key>Texto</key>
-					<string>Em outras palavras, vamos pegar um outro caminho.</string>
+					<string>Se você quiser se matar, faça isso sozinho! Pegue outro caminho!</string>
 					<key>Foto</key>
 					<string>rostoCientista</string>
 				</dict>
 			</array>
-		</dict>
-		<key>Com Missão</key>
-		<dict/>
-		<key>Sem Missão</key>
-		<dict/>
-	</dict>
-	<dict>
-		<key>Alertas</key>
-		<dict>
+			<key>Aleatoria3</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Qual o seu problema? Aí é perigoso!</string>
+					<key>Foto</key>
+					<string>rostoCientista</string>
+				</dict>
+			</array>
+			<key>Aleatoria2</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Você não me ouviu? Vá por outro lugar!</string>
+					<key>Foto</key>
+					<string>rostoCientista</string>
+				</dict>
+			</array>
+			<key>Aleatoria1</key>
+			<array>
+				<dict>
+					<key>Sujeito</key>
+					<string>Cientista</string>
+					<key>Texto</key>
+					<string>Já disse para não ir por aí!</string>
+					<key>Foto</key>
+					<string>rostoCientista</string>
+				</dict>
+			</array>
 			<key>Bronca Mae Todos</key>
 			<array>
 				<dict>
@@ -246,6 +237,47 @@
 		</dict>
 		<key>Com Missão</key>
 		<dict>
+			<key>Piloto</key>
+			<dict>
+				<key>Missao02</key>
+				<dict>
+					<key>Parte2</key>
+					<array>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Achei! agora é só pegar ele e... O que é isso?</string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Nossa! o contador geiger está apontando radiação onde está ele? deve ser perigoso chegar perto.</string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Mas o caçador disse que pega ele todos os dias... Como ele consegue?</string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+						<dict>
+							<key>Sujeito</key>
+							<string>Piloto</string>
+							<key>Texto</key>
+							<string>Vou voltar e perguntar para ele, deve existir alguma técnica.</string>
+							<key>Foto</key>
+							<string>rostoPiloto</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
 			<key>Maedetodos</key>
 			<dict>
 				<key>Missao01</key>
@@ -4942,50 +4974,6 @@ sorri sutilmente</string>
 				</array>
 			</dict>
 		</dict>
-	</dict>
-	<dict>
-		<key>Alertas</key>
-		<dict>
-			<key>RadiacaoLeopardinho</key>
-			<array>
-				<dict>
-					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Achei! agora é só pegar ele e... O que é isso?</string>
-					<key>Foto</key>
-					<string>rostoPiloto</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Nossa! o contador geiger está apontando radiação onde está ele? deve ser perigoso chegar perto.</string>
-					<key>Foto</key>
-					<string>rostoPiloto</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Mas o caçador disse que pega ele todos os dias... Como ele consegue?</string>
-					<key>Foto</key>
-					<string>rostoPiloto</string>
-				</dict>
-				<dict>
-					<key>Sujeito</key>
-					<string>Piloto</string>
-					<key>Texto</key>
-					<string>Vou voltar e perguntar para ele, deve existir alguma técnica.</string>
-					<key>Foto</key>
-					<string>rostoPiloto</string>
-				</dict>
-			</array>
-		</dict>
-		<key>Com Missão</key>
-		<dict/>
-		<key>Sem Missão</key>
-		<dict/>
 	</dict>
 </array>
 </plist>

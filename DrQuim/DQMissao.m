@@ -43,19 +43,38 @@
 }
 
 //Metodo que retorna um boolean informando se pode ser passada a parte atual ou ja esta no fim da missao
--(Boolean)podePassarComNPC :(NSString*)nomeNPC Item:(NSString*)item Parte:(int)parte{
+-(Boolean)podePassarComNPC :(NSString*)nomeNPC Item:(NSString*)item Parte:(int)parte posicao:(CGPoint)posicao{
+    
+    BOOL estaNoPonto = true;
     
     //Lemos o npc e o item requisitado pela missao
     NSString *NPCRequisitado = [[self.arrayPartes objectAtIndex:parte]objectForKey:@"NPCRequisito"];
     NSString *itemRequisitado = [[self.arrayPartes objectAtIndex:parte]objectForKey:@"ItemRequisito"];
     
+    
+    if ([[self.arrayPartes objectAtIndex:parte]objectForKey:@"PontoDeAvanco"]) {
+        NSString* ponto = [[self.arrayPartes objectAtIndex:parte]objectForKey:@"PontoDeAvanco"];
+        CGPoint pontoDeAvanco = CGPointFromString(ponto);
+        
+        if (posicao.x > pontoDeAvanco.x  && posicao.x < pontoDeAvanco.x+100 && posicao.y >= pontoDeAvanco.y -20) {
+            estaNoPonto = true;
+        }
+        else{
+            estaNoPonto = false;
+        }
+    }
+    
     //se for os items requisitados retornamos que a fase foi concluida e pode ser passada para a proxima fase
-    if ([itemRequisitado isEqual:@""]) {
+    
+    
+    
+    
+    if ([itemRequisitado isEqual:@""] && estaNoPonto) {
         if ([nomeNPC isEqual:NPCRequisitado]){
             return true;
         }
     }
-    if ([nomeNPC isEqual:NPCRequisitado] && [item isEqual:itemRequisitado]) {
+    if ([nomeNPC isEqual:NPCRequisitado] && [item isEqual:itemRequisitado] && estaNoPonto) {
         return true;
     }
     

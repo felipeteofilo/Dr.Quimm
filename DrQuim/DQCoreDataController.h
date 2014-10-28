@@ -18,6 +18,8 @@
 +(void)salvarItens :(NSDictionary*)itens doJogador:(NSString*)nome;
 +(void)salvarArmadilhas :(NSMutableArray*)armadilhas doJogador:(NSString*)nome;
 +(void)salvarMissao:(NSMutableDictionary*)missao doJogador:(NSString*)nome;
++(void)salvarFaseAtual:(int)fase parte:(int)parte doJogador:(NSString*)nome;
+
 
 
 @end

@@ -28,5 +28,7 @@
 @property BOOL apresentouVila;
 @property BOOL mostrandoContador;
 
+
+
 @property BOOL falouCurandeiroCacadaCoelho;
 @end

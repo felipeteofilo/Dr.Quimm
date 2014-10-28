@@ -24,7 +24,7 @@
         self.cenaAnterior=cenaAnterior;
         [self configuraPersonagens];
         [self configuraChao];
-        self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:2];
+        self.controleDeFalas = [[DQFalasNoJogoControle alloc]init];
         
     }
     return self;
