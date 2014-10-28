@@ -257,7 +257,6 @@
         
         self.estaNoChao = NO;
         
-        
         // anima ele pulando
         [self animarPular];
     }

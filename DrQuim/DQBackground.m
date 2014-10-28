@@ -25,7 +25,6 @@
 
 #pragma mark Controle de Plataformas
 -(void)criarPlataformas:(NSArray*)arrayPlataformas{
-    //[[self infoParteFase:parte]objectForKey:@"Plataformas"];
     
     SKNode *plataforma=[DQControleCorpoFisico criarPlataformaParte:self.parte daFase:self.fase CGFrameTela:self.frame ArrayPlataforma:arrayPlataformas];
     
@@ -49,7 +48,7 @@
     
     //Verifica se jogador esta abaixo da plataforma que colidiu
     if (YJogador < yPlataforma ) {
-        [self plataformaAtivadaCategoria:nodePlataforma];
+        [self plataformaDesativadaCategoria:nodePlataforma];
         
     }else if((velYJogador <= 0) && (YJogador > yPlataforma )){
         [self plataformaAtivadaCategoria:nodePlataforma];
