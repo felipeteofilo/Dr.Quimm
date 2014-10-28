@@ -251,7 +251,7 @@
     
     // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
-        if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
+        if ((secondBody.categoryBitMask & ChaoCategoria) !=0 ||(secondBody.categoryBitMask & PlataformaAtivadaCategoria) !=0) {
             
             //se o jogador colidiu com o chao setamos que ele estao no chao
             

@@ -19,7 +19,7 @@
     skView.showsPhysics = YES;
 
     //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
-   // DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+   //DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
     //DQSceneTeste *menuInicial=[[DQSceneTeste alloc]initWithSize:skView.bounds.size];
     
     DQFlorestaParte1 *menuInicial = [[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
