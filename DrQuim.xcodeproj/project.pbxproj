@@ -133,6 +133,7 @@
 		C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C8199BBDD300375C87 /* tutorialPular.atlas */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
+		C58A562C1A002C4300D8B870 /* Fases.m in Sources */ = {isa = PBXBuildFile; fileRef = C58A562B1A002C4300D8B870 /* Fases.m */; };
 		C58F75BF19A4EB9A00DC7A71 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */; };
 		C58F75C619A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */; };
 		C58F75C719A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C119A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 */; };
@@ -186,6 +187,7 @@
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
 		C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */; };
 		C5F2D8F31A000B48009D384C /* FasesConfiguradas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5F2D8F21A000B48009D384C /* FasesConfiguradas.plist */; };
+		C5F2D8F71A002891009D384C /* DQMapaMundiControle.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F2D8F61A002891009D384C /* DQMapaMundiControle.m */; };
 		C5FFB42719A93706004F3CD0 /* AmostrasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */; };
 		C5FFB42819A93706004F3CD0 /* Receitas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42519A93706004F3CD0 /* Receitas.plist */; };
 		C5FFB42919A93706004F3CD0 /* ReceitasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */; };
@@ -420,6 +422,8 @@
 		C56A9D80196E252C00DD2347 /* DQFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFase.h; sourceTree = "<group>"; };
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
+		C58A562A1A002C4300D8B870 /* Fases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fases.h; sourceTree = "<group>"; };
+		C58A562B1A002C4300D8B870 /* Fases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fases.m; sourceTree = "<group>"; };
 		C58CFAEE19F98BCB006712C6 /* DQControleProtocoll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQControleProtocoll.h; sourceTree = "<group>"; };
 		C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
 		C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlertaHelicoptero.mp3; sourceTree = "<group>"; };
@@ -478,6 +482,8 @@
 		C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte3.png; sourceTree = "<group>"; };
 		C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
 		C5F2D8F21A000B48009D384C /* FasesConfiguradas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FasesConfiguradas.plist; sourceTree = "<group>"; };
+		C5F2D8F51A002891009D384C /* DQMapaMundiControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMapaMundiControle.h; sourceTree = "<group>"; };
+		C5F2D8F61A002891009D384C /* DQMapaMundiControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMapaMundiControle.m; sourceTree = "<group>"; };
 		C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AmostrasQuimicas.plist; path = "Arquivos Plist/AmostrasQuimicas.plist"; sourceTree = "<group>"; };
 		C5FFB42519A93706004F3CD0 /* Receitas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Receitas.plist; path = "Arquivos Plist/Receitas.plist"; sourceTree = "<group>"; };
 		C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReceitasQuimicas.plist; path = "Arquivos Plist/ReceitasQuimicas.plist"; sourceTree = "<group>"; };
@@ -606,6 +612,8 @@
 			isa = PBXGroup;
 			children = (
 				75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */,
+				C58A562A1A002C4300D8B870 /* Fases.h */,
+				C58A562B1A002C4300D8B870 /* Fases.m */,
 				75FDF40019F6F1AB007E1C66 /* Usuario.h */,
 				75FDF40119F6F1AB007E1C66 /* Usuario.m */,
 				75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */,
@@ -1028,6 +1036,8 @@
 		C5F2D8F41A002192009D384C /* MapaMundi */ = {
 			isa = PBXGroup;
 			children = (
+				C5F2D8F51A002891009D384C /* DQMapaMundiControle.h */,
+				C5F2D8F61A002891009D384C /* DQMapaMundiControle.m */,
 			);
 			name = MapaMundi;
 			sourceTree = "<group>";
@@ -1408,6 +1418,7 @@
 				C54031E61989FE98003384AB /* DQMenuItem.m in Sources */,
 				943710C019A3DF3600B8846E /* DQMenuArmadilhas.m in Sources */,
 				C52FBF1E19A18D160059E973 /* DQIsca.m in Sources */,
+				C58A562C1A002C4300D8B870 /* Fases.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
 				C54031E11989FE98003384AB /* DQConfigMenu.m in Sources */,
 				C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */,
@@ -1417,6 +1428,7 @@
 				C54031E51989FE98003384AB /* DQMenuConfiguracao.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				CD54D9B019A51E4E00C2798D /* DQTransformacaoTela.m in Sources */,
+				C5F2D8F71A002891009D384C /* DQMapaMundiControle.m in Sources */,
 				C5223F0219F6CF3A00C17FAD /* DQSceneTeste.m in Sources */,
 				C54031EB1989FE98003384AB /* DQTexto.m in Sources */,
 				C54031E31989FE98003384AB /* DQControleReceita.m in Sources */,
