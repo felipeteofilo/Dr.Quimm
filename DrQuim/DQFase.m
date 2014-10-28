@@ -623,7 +623,7 @@
     
     [self criarPlataformaParte:self.parteFaseAtual noBackground:self.backgroundAtual];
 
-    self.controleDeFalas = [[DQFalasNoJogoControle alloc]initComFaseAtual:self.faseAtual];
+    self.controleDeFalas = [[DQFalasNoJogoControle alloc]init];
     
     [self criaJogador];
     [self configuraFisicaMundo];

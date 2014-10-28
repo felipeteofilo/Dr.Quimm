@@ -61,20 +61,6 @@
         if ((self.jogador.position.x > pontoAlertaRadiacao.x - RAIOAPITAR  && self.jogador.position.x < pontoAlertaRadiacao.x + RAIOAPITAR) && self.jogador.position.y > pontoAlertaRadiacao.y - 10 ){
             
             [self atualizarPerigoContador];
-            
-            //-> alerta alpha
-            if(self.jogador.position.x > pontoAlertaRadiacao.x  && self.jogador.position.x < pontoAlertaRadiacao.x+100 && self.jogador.position.y >= pontoAlertaRadiacao.y -20 && !self.falouRadiacaoLeopardinho){
-                
-                
-                //inicia a fala
-                NSString *keyDaFala = @"RadiacaoLeopardinho";
-                
-                [self addChild:[self.controleDeFalas mostrarAlertaComKey:keyDaFala Tamanho:self.size]];
-                self.jogador.controleMissoes.parteAtual++;
-                [self.direcional removeFromParent];
-                self.falouRadiacaoLeopardinho =YES;
-                [self.jogador pararAndar];
-            }
         }
     }
 }
@@ -89,23 +75,9 @@
     [self.hudFase atualizarHud];
     [self falarAlertaRadiacao];
     
-    if (![self childNodeWithName:@"falasDoJogo"] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao02"] && self.jogador.controleMissoes.parteAtual == 3) {
-        [self.controleSom pararSom];
-        [self.view presentScene:self.vila];
-    }
+    
 
-//TODO:- Melhorar Método
-    //Verifica se: esta na missao03, nao esta falando e ja tem o coelho
-    if (([self.jogador.controleMissoes.missao.ID isEqualToString:@"Missao03"])&&(self.jogador.controleMissoes.parteAtual==4)) {
-        
-        if ([self.jogador estaComItem:@"Coelho"]) {
-            //Esta na missao 3, e tem o coelho passa a parte da missao e volta p vila
-            [self.controleSom pararSom];
-            self.jogador.controleMissoes.parteAtual++;
-            [self.view presentScene:self.vila];
-        }
 
-    }
 }
 
 @end

@@ -19,6 +19,7 @@
 @property int proximaMissao;
 @property BOOL emMissao;
 @property SKScene *cena;
+@property Boolean podeMudar;
 
 @property SKSpriteNode *balao;
 

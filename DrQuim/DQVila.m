@@ -73,21 +73,7 @@
     self.jogador.controleMissoes.parteAtual++;
     [self.view presentScene:cenaBronca];
 }
--(void)apresentarFloresta2{
-    //Remove o som
-    [self.controleSom pararSom];
-    
-    self.posicaoJogador= self.jogador.position;
-    
-    [[DQFasesControle sharedFasesControle]mudarDeFase:3 Size:self];
-    
-   // [floresta2 salvarCenaVila:self];
-    
-    
-    
-    self.apresentouVila =YES;
-    
-}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     SKNode *nodeQuimm=[self.mundo nodeAtPoint:[[touches anyObject]locationInNode:self.mundo]];
@@ -105,48 +91,6 @@
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     
-    
-    if (self.apresentouVila) {
-        
-        [self.jogador removeFromParent];
-        
-        self.jogador.position = self.posicaoJogador;
-        
-        [self.mundo addChild:self.jogador];
-        self.apresentouVila =NO;
-    }
-    
-//    if (![self childNodeWithName:@"falasDoJogo"]){
-//        
-//        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao02"]) {
-//            
-//            if ((!self.apresentouCenaBronca) && (self.jogador.controleMissoes.parteAtual== 5)) {
-//                
-//                self.apresentouCenaBronca=YES;
-//                [self apresentarCenaBronca];
-//            }
-//            if((self.jogador.controleMissoes.parteAtual== 2)){
-//                
-//                [self apresentarFloresta2];
-//            }
-//        }
-//        
-//        if ([[self.jogador.controleMissoes.missao ID]isEqualToString:@"Missao03"]) {
-//            if(self.jogador.controleMissoes.parteAtual== 2){
-//                if (!self.falouCurandeiroCacadaCoelho) {
-//                    
-//                    //Atualiza para nao ficar chamando direto
-//                    self.falouCurandeiroCacadaCoelho=YES;
-//                    [DQControleUserDefalts setFalouCurandeiroCacadaCoelho:YES];
-//                    [self apresentarCenaMaleta];
-//                }
-//            }
-//            //Assim que ele fala com o cacador vai mudar a parte da missao, entao vai p floresta
-//            if(self.jogador.controleMissoes.parteAtual== 4){
-//                [self apresentarFloresta2];
-//            }
-//        }
-//    }
     if (!self.mostrandoContador) {
         
         if([self.jogador estaComContadorGeiger]){

@@ -316,7 +316,7 @@
 				<key>Descricao</key>
 				<string>Pegar o animal descrito pelo Caçador</string>
 				<key>NPCRequisito</key>
-				<string></string>
+				<string>Piloto</string>
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>

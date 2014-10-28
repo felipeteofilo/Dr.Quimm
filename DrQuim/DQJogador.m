@@ -471,7 +471,10 @@
     [self.controleMissoes atualizarCena:self.scene];
     [self.controleMissoes colocarBalaoDeMissao];
     
-   
+    if(![self.scene childNodeWithName:@"falasDoJogo"]){
+        [self.controleMissoes mudarFase];
+    }
+    
     
 }
 
@@ -514,11 +517,11 @@
         }
         if (keyDaParte != nil) {
             
-        
-        //Cria a caixa de fala com as key obtidas e a adiciona na tela
-        SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
-        
-        [self.scene addChild:caixaDeFala];
+            
+            //Cria a caixa de fala com as key obtidas e a adiciona na tela
+            SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
+            
+            [self.scene addChild:caixaDeFala];
         }
     }
 }

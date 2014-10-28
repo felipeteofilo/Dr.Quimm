@@ -11,16 +11,18 @@
 @implementation DQFalasNoJogoControle
 
 //Iniciar com a fase atual
--(id)initComFaseAtual:(int)faseAtual{
+-(id)init{
     
     if (self = [super init]) {
         //Pegamos o caminho do arquivo Plist a ser lido e iniciamos um array do arquivo Plist
         NSString *caminhoArquivo = [[NSBundle mainBundle] pathForResource:@"FalasNoJogo" ofType:@"plist"];
-        NSArray *arrayFalas = [NSArray arrayWithContentsOfFile:caminhoArquivo];
+        self.dicionarioDeFalas = [[NSMutableDictionary alloc]init];
+        
+        self.dicionarioDeFalas= [[NSArray arrayWithContentsOfFile:caminhoArquivo]objectAtIndex:0];
         
         //Alocamos o dicionario de falas, e o iniciamos com as falas do arquivo Plist de acordo com missao atual
-        self.dicionarioDeFalas = [[NSMutableDictionary alloc]init];
-        self.dicionarioDeFalas = [arrayFalas objectAtIndex:faseAtual -1];
+        
+        
         
         //Iniciamos o araay que ira conter as falas atuais e setamos que nao ha falas ainda
         self.arrayDeFalasAtuais =[[NSArray alloc]init];

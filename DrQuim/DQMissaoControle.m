@@ -82,9 +82,10 @@
 
 -(void)mudarFase{
     
-    if([[self.missao.arrayPartes objectAtIndex:self.parteAtual]objectForKey:@"FaseParaIr"]){
+    if([[self.missao.arrayPartes objectAtIndex:self.parteAtual]objectForKey:@"FaseParaIr"] && self.podeMudar){
         int fase = [[[self.missao.arrayPartes objectAtIndex:self.parteAtual]objectForKey:@"FaseParaIr"]intValue];
         [[DQFasesControle sharedFasesControle]mudarDeFase:fase Size:self.cena];
+        self.podeMudar = false;
     }
     
 }
@@ -123,9 +124,8 @@
     }
     
     if(podePassar){
-        
+        self.podeMudar = true;
         self.parteAtual++;
-        [self mudarFase];
         //retorna que a parte passou
         return YES;
     }

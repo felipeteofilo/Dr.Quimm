@@ -30,7 +30,7 @@
 @property DQControleSom *controleSom;
 
 //Iniciar com a fase atual
--(id)initComFaseAtual:(int)faseAtual;
+-(id)init;
 
 //Mostrar Algum alerta da fase passando a key do alerta
 -(SKSpriteNode*)mostrarAlertaComKey :(NSString*)key Tamanho:(CGSize)tamanho;
