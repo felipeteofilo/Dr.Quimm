@@ -650,6 +650,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				C5F2D8F41A002192009D384C /* MapaMundi */,
 				75FDF3F619F6E343007E1C66 /* CoreData */,
 				94331C7A19A538C300FD04F8 /* DrQuim.entitlements */,
 				CD616FE319A51DA800B5C63A /* Transformacoes */,
@@ -1022,6 +1023,13 @@
 				7505B4A819FAD07800769C87 /* DQFasesControle.m */,
 			);
 			name = Controladores;
+			sourceTree = "<group>";
+		};
+		C5F2D8F41A002192009D384C /* MapaMundi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MapaMundi;
 			sourceTree = "<group>";
 		};
 		C5FFB42A19A939FF004F3CD0 /* Recipientes */ = {

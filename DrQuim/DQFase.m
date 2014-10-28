@@ -260,8 +260,10 @@
         }
         
         if ([secondBody.node.name isEqualToString:nomePlataforma]){
-            
-            [self.backgroundAtual controleAtivacaoPlataforma:secondBody.node posicaoJogador:firstBody.node.position.y velocidadeY:firstBody.velocity.dy];
+            if ((secondBody.categoryBitMask & PlataformaDesativadaCategoria)!=0) {
+                [self.backgroundAtual controleAtivacaoPlataforma:secondBody.node posicaoJogador:firstBody.node.position.y velocidadeY:firstBody.velocity.dy];
+            }
+
         }
         
         //se colidir com a escada
