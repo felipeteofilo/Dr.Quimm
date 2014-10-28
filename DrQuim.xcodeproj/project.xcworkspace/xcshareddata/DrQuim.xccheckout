@@ -10,9 +10,9 @@
 	<string>DrQuim</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3EE7E87C37FF678AEE539DB1C5A363262271CFD4</key>
+		<key>0910241E8A443D014A0B87306C9533CB6C4C3F39</key>
 		<string>https://github.com/felipeteofilo/Dr.Quimm.git</string>
-		<key>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</key>
+		<key>3EE7E87C37FF678AEE539DB1C5A363262271CFD4</key>
 		<string>https://github.com/felipeteofilo/Dr.Quimm.git</string>
 		<key>78A154C0-F396-444F-877F-DBCFB3907EA7</key>
 		<string>https://bitbucket.org/sousaleonardo/appfinal-dr-quimm.git</string>
@@ -21,10 +21,10 @@
 	<string>DrQuim.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>0910241E8A443D014A0B87306C9533CB6C4C3F39</key>
+		<string>../../..</string>
 		<key>3EE7E87C37FF678AEE539DB1C5A363262271CFD4</key>
 		<string>../..</string>
-		<key>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</key>
-		<string>../../..</string>
 		<key>78A154C0-F396-444F-877F-DBCFB3907EA7</key>
 		<string>../../../AppFinal</string>
 	</dict>
@@ -40,7 +40,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5F08DE61-4A23-4BD7-B6F7-851DFD8A4269</string>
+			<string>0910241E8A443D014A0B87306C9533CB6C4C3F39</string>
 			<key>IDESourceControlWCCName</key>
 			<string></string>
 		</dict>
