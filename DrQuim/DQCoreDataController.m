@@ -40,6 +40,7 @@
     }
 }
 
++(void)novaFase:
 +(void)salvarVida:(int)vida respeito:(int)respeito fome:(int)fome sede:(int)sede doJogador:(NSString*)nome{
     
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];

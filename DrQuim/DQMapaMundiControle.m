@@ -26,4 +26,13 @@
 -(void)verificaRespeito{
     
 }
+
++(void)populaCoreData{
+    
+}
+
++(NSArray*)fasesConfiguradas{
+    
+}
+
 @end

@@ -292,6 +292,15 @@
 		</array>
 		<key>PontoAlertas</key>
 		<array/>
+		<key>Requisitos</key>
+		<array>
+			<dict>
+				<key>TipoRequisito</key>
+				<string></string>
+				<key>ObjRequisitado</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>SomFundo</key>
@@ -438,6 +447,15 @@
 		</array>
 		<key>PontoAlertas</key>
 		<array/>
+		<key>Requisitos</key>
+		<array>
+			<dict>
+				<key>TipoRequisito</key>
+				<string></string>
+				<key>ObjRequisitado</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>SomFundo</key>
@@ -1246,6 +1264,15 @@
 		</array>
 		<key>PontoAlertas</key>
 		<array/>
+		<key>Requisitos</key>
+		<array>
+			<dict>
+				<key>TipoRequisito</key>
+				<string></string>
+				<key>ObjRequisitado</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>
