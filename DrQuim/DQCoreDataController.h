@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DQAppDelegate.h"
 #import "Usuario.h"
+#import "Fases.h"
 
 @interface DQCoreDataController : NSObject
 

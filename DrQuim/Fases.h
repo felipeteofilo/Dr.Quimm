@@ -17,3 +17,7 @@
 @property (nonatomic, retain) id requisitos;
 
 @end
+
+@interface ArrayRequisitos : NSValueTransformer
+
+@end
