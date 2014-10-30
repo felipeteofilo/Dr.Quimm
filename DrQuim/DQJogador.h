@@ -132,4 +132,5 @@
 
 //Metodo de carregar
 -(void)carregarInformacoesDoJogador:(NSString*)jogador;
+
 @end

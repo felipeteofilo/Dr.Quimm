@@ -296,9 +296,9 @@
 		<array>
 			<dict>
 				<key>TipoRequisito</key>
-				<string></string>
+				<string>Respeito</string>
 				<key>ObjRequisitado</key>
-				<string></string>
+				<string>50</string>
 			</dict>
 		</array>
 	</dict>

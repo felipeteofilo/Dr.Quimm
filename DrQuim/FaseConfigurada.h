@@ -1,5 +1,5 @@
 //
-//  Fase.h
+//  FaseConfigurada.h
 //  DrQuim
 //
 //  Created by Leonardo de Sousa Mendes on 29/10/14.

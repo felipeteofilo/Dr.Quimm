@@ -10,8 +10,11 @@
 
 #import "DQConfiguracaoFase.h"
 #import "DQCoreDataController.h"
+#import "DQJogador.h"
 
 @interface DQMapaMundiControle : NSObject
 
 @property  NSArray *fasesConfiguradas;
+
+-(BOOL)faseDisponivel:(int)fase;
 @end

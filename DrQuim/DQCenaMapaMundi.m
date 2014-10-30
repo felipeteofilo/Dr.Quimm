@@ -16,4 +16,8 @@
     }
     return self;
 }
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.controleMapaMundi faseDisponivel:1];
+}
 @end

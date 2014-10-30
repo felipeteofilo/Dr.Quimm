@@ -115,7 +115,7 @@
 		C54031EF1989FEE7003384AB /* DQItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C54031EE1989FEE7003384AB /* DQItem.m */; };
 		C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */ = {isa = PBXBuildFile; fileRef = C54031F11989FF4A003384AB /* DQFlorestaParte2.m */; };
 		C54137AA1A01BEBE004C5866 /* DQCenaMapaMundi.m in Sources */ = {isa = PBXBuildFile; fileRef = C54137A91A01BEBE004C5866 /* DQCenaMapaMundi.m */; };
-		C54137AD1A01C260004C5866 /* FaseConfigurada.m in Sources */ = {isa = PBXBuildFile; fileRef = C54137AC1A01C260004C5866 /* FaseConfigurada.m */; };
+		C54137B01A01C799004C5866 /* FaseConfigurada.m in Sources */ = {isa = PBXBuildFile; fileRef = C54137AF1A01C799004C5866 /* FaseConfigurada.m */; };
 		C543E13219985F3400C90F19 /* DQMenuInicial.m in Sources */ = {isa = PBXBuildFile; fileRef = C543E13119985F3400C90F19 /* DQMenuInicial.m */; };
 		C543E1341998600A00C90F19 /* IniciarJogo.png in Resources */ = {isa = PBXBuildFile; fileRef = C543E1331998600A00C90F19 /* IniciarJogo.png */; };
 		C54B79B31971CC3D00366512 /* DQVila.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B79B21971CC3D00366512 /* DQVila.m */; };
@@ -401,8 +401,8 @@
 		C54031F11989FF4A003384AB /* DQFlorestaParte2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte2.m; sourceTree = "<group>"; };
 		C54137A81A01BEBE004C5866 /* DQCenaMapaMundi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCenaMapaMundi.h; sourceTree = "<group>"; };
 		C54137A91A01BEBE004C5866 /* DQCenaMapaMundi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCenaMapaMundi.m; sourceTree = "<group>"; };
-		C54137AB1A01C260004C5866 /* FaseConfigurada.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaseConfigurada.h; sourceTree = "<group>"; };
-		C54137AC1A01C260004C5866 /* FaseConfigurada.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaseConfigurada.m; sourceTree = "<group>"; };
+		C54137AE1A01C799004C5866 /* FaseConfigurada.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaseConfigurada.h; sourceTree = "<group>"; };
+		C54137AF1A01C799004C5866 /* FaseConfigurada.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaseConfigurada.m; sourceTree = "<group>"; };
 		C543E13019985F3400C90F19 /* DQMenuInicial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMenuInicial.h; sourceTree = "<group>"; };
 		C543E13119985F3400C90F19 /* DQMenuInicial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMenuInicial.m; sourceTree = "<group>"; };
 		C543E1331998600A00C90F19 /* IniciarJogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IniciarJogo.png; sourceTree = "<group>"; };
@@ -612,8 +612,8 @@
 			isa = PBXGroup;
 			children = (
 				75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */,
-				C54137AB1A01C260004C5866 /* FaseConfigurada.h */,
-				C54137AC1A01C260004C5866 /* FaseConfigurada.m */,
+				C54137AE1A01C799004C5866 /* FaseConfigurada.h */,
+				C54137AF1A01C799004C5866 /* FaseConfigurada.m */,
 				75FDF40019F6F1AB007E1C66 /* Usuario.h */,
 				75FDF40119F6F1AB007E1C66 /* Usuario.m */,
 				75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */,
@@ -1413,7 +1413,6 @@
 				75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				7560591319955FC700BD455A /* DQMissaoControle.m in Sources */,
-				C54137AD1A01C260004C5866 /* FaseConfigurada.m in Sources */,
 				C54031EF1989FEE7003384AB /* DQItem.m in Sources */,
 				94080EB71933BA290024FB94 /* DQViewController.m in Sources */,
 				23477FFA19463E7500479AFE /* DQFala.m in Sources */,
@@ -1448,6 +1447,7 @@
 				943710BA19A3DF0000B8846E /* DQArmadilha.m in Sources */,
 				C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */,
 				C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */,
+				C54137B01A01C799004C5866 /* FaseConfigurada.m in Sources */,
 				C5223EFF19F6C8A300C17FAD /* DQBotaoDirecional.m in Sources */,
 				9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,

@@ -45,10 +45,10 @@
     return [appDelegate managedObjectContext];
 }
 
-+(void)novaFaseID:(int)idFase comRequisitos:(NSArray*)requisitosFase{
++(void)salvarFaseID:(int)idFase comRequisitos:(NSArray*)requisitosFase{
     NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
     
-    FaseConfigurada *novaFase=[[FaseConfigurada alloc]init];
+    FaseConfigurada *novaFase=[[FaseConfigurada alloc]initWithEntity:[NSEntityDescription entityForName:@"FaseConfigurada"  inManagedObjectContext:contexto]insertIntoManagedObjectContext:contexto];
     
     [novaFase setId:[NSNumber numberWithInt:idFase]];
     [novaFase setRequisitos:requisitosFase];
@@ -69,7 +69,7 @@
 +(FaseConfigurada*)procurarFase:(int)idFase{
     NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
     
-    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"Fase"];
+    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"FaseConfigurada"];
     
     [request setPredicate:[NSPredicate predicateWithFormat:@"(id = %i)",idFase]];
     
@@ -85,7 +85,7 @@
 
 +(int)nFasesCoreData{
     NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
-    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"Fase"];
+    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"FaseConfigurada"];
     [request setPropertiesToFetch:@[@"id"]];
     
     

@@ -1,5 +1,5 @@
 //
-//  Fase.m
+//  FaseConfigurada.m
 //  DrQuim
 //
 //  Created by Leonardo de Sousa Mendes on 29/10/14.
@@ -35,4 +35,3 @@
     return [NSKeyedUnarchiver unarchiveObjectWithData:value];
 }
 @end
-
