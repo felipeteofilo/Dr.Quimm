@@ -87,9 +87,11 @@
 }
 -(void)esconderContador{
     [self.contador setHidden:YES];
+    self.exibindoContadorGeiger=NO;
 }
 -(void)exibirContador{
     [self.contador setHidden:NO];
+    self.exibindoContadorGeiger=YES;
 }
 
 -(void)configurarBotaoMenu{

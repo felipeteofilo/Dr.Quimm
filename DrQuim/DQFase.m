@@ -17,7 +17,7 @@
 -(id)initFase:(int)fase Size:(CGSize)size{
     
     if (self=[super initWithSize:size ]) {
-
+        
         [self configuracoesFase:fase];
     }
     return self;
@@ -177,7 +177,7 @@
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
                 
                 self.backgroundFuturo = [[DQBackground alloc]initBackgroundFase:self.faseAtual parte:self.parteFaseAtual+1 naPosicao:posicaoAdd infoParte:[self infoParteFase:self.parteFaseAtual+1]];
-
+                
                 //Adicionado Classe específica
                 [self.backgroundFuturo criaCoberturaParaBackground];
                 [self.backgroundFuturo criarPlataformas:[[self infoParteFase:self.parteFaseAtual+1]objectForKey:@"Plataformas"]];
@@ -265,7 +265,7 @@
             if ((secondBody.categoryBitMask & PlataformaDesativadaCategoria)!=0) {
                 [self.backgroundAtual controleAtivacaoPlataforma:secondBody.node posicaoJogador:firstBody.node.position.y velocidadeY:firstBody.velocity.dy];
             }
-
+            
         }
         
         //se colidir com a escada
@@ -284,7 +284,7 @@
     
     if (!self.jogoPausado) {
         [self.jogador atualizarStatusMissao:self.controleDeFalas];
-
+        
         [self criarParteFase];
         
         //Converte a posicao do jogador para o sistema de coordenadas do no que tem a cobertura
@@ -292,9 +292,7 @@
         [self.controladorDaVida atualizarSituacaoJogador];
         [self.hudFase atualizarBarraStatus];
         
-        
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
-        
         if (ultimoUpdate > 30) {
             self.intervaloUltimoUpdate = currentTime;
             
@@ -303,6 +301,11 @@
                     [self.controleSom tocarSomLista];
                 }
             }
+        }
+        
+        if([self.jogador estaComContadorGeiger]){
+            //tem nao esconde
+            [self.hudFase exibirContador];
         }
     }
 }
@@ -349,7 +352,7 @@
     
     UITouch *toque=[touches anyObject];
     CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
-
+    
     
     //Pega o node na posicao do toque
     SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];

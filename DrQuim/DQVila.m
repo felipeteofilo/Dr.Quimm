@@ -27,7 +27,6 @@
 }
 -(void)iniciarFase{
     [super iniciarFase];
-    
     [self adicionaNPC];
     
     //Verifica se o jogador ja tem o contador Geiger
@@ -38,6 +37,7 @@
         self.mostrandoContador=YES;
     }
 }
+
 
 -(void)adicionaNPC{
     NSArray *NPCsConfigurados = [DQConfiguracaoFase configNPCFase:self.faseAtual];
@@ -58,36 +58,6 @@
         [self.mundo addChild:npc];
     }
 }
--(void)apresentarCenaMaleta{
-    //Remove o som
-    [self.controleSom pararSom];
-    
-    DQTransformacaoTela *cenaTransformacoes=[[DQTransformacaoTela alloc]initWithSize:self.view.bounds.size];
-    
-    self.posicaoJogador=self.jogador.position;
-    [self.view presentScene:cenaTransformacoes];
-}
-
--(void)apresentarCenaBronca{
-    DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
-    
-    self.jogador.controleMissoes.parteAtual++;
-    [self.view presentScene:cenaBronca];
-}
-
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    SKNode *nodeQuimm=[self.mundo nodeAtPoint:[[touches anyObject]locationInNode:self.mundo]];
-    
-    //Verifica se esta sem missao e se tocou no Dr. Quimm
-    if ((![self.jogador.controleMissoes emMissao] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao00"])&&([nodeQuimm.name isEqualToString:@"Quimm"])) {
-        //Tocando abre a maleta
-        [self apresentarCenaMaleta];
-    }else{
-        [super touchesBegan:touches withEvent:event];
-    }
-    
-}
 
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
@@ -102,4 +72,38 @@
         }
     }
 }
+
+#pragma mark Métodos Removidos!
+//Removido pois agora temos o controlador de fases
+//-(void)apresentarCenaMaleta{
+//    //Remove o som
+//    [self.controleSom pararSom];
+//
+//    DQTransformacaoTela *cenaTransformacoes=[[DQTransformacaoTela alloc]initWithSize:self.view.bounds.size];
+//
+//    self.posicaoJogador=self.jogador.position;
+//    [self.view presentScene:cenaTransformacoes];
+//}
+
+//Removido! pois agora a transicao será feita pelo controle de missoes
+//-(void)apresentarCenaBronca{
+//    DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
+//
+//    self.jogador.controleMissoes.parteAtual++;
+//    [self.view presentScene:cenaBronca];
+//}
+
+
+//Removido, pois teremos que definir um método definitivo para mostrar a Cena dos NPCs
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+//    SKNode *nodeQuimm=[self.mundo nodeAtPoint:[[touches anyObject]locationInNode:self.mundo]];
+//
+//    //Verifica se esta sem missao e se tocou no Dr. Quimm
+//    if ((![self.jogador.controleMissoes emMissao] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao00"])&&([nodeQuimm.name isEqualToString:@"Quimm"])) {
+//        //Tocando abre a maleta
+//        [self.controleTransicaoScenas mudarDeFase:11 Scene:self];
+//    }else{
+//        [super touchesBegan:touches withEvent:event];
+//    }
+//}
 @end
