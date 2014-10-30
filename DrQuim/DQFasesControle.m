@@ -13,7 +13,7 @@
 
 -(id)init{
     if (self = [super init]) {
-        NSString *caminhoArquivo = [[NSBundle mainBundle] pathForResource:@"Fases" ofType:@"plist"];
+        NSString *caminhoArquivo = [[NSBundle mainBundle] pathForResource:@"FasesEspecificas" ofType:@"plist"];
         self.fases = [NSArray arrayWithContentsOfFile:caminhoArquivo];
     }
     return self;
