@@ -70,50 +70,42 @@
             
         case 3:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
             [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
             break;
             
-        case 3:
+        case 4:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
-            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.75f, CGRectGetHeight(self.frame)*0.4f)];
             break;
             
-        case 3:
+        case 5:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
-            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.7f, CGRectGetHeight(self.frame)*0.15f)];
             break;
             
-        case 3:
+        case 6:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
-            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.52f, CGRectGetHeight(self.frame)*0.6f)];
             break;
             
-        case 3:
+        case 7:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
-            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.53f, CGRectGetHeight(self.frame)*0.4f)];
             break;
             
-        case 3:
+        case 8:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
-            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.25f, CGRectGetHeight(self.frame)*0.67f)];
             break;
             
-        case 3:
+        case 9:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
-            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.15f, CGRectGetHeight(self.frame)*0.3f)];
             break;
             
-        case 3:
+        case 10:
             //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
-            [node setColor:[UIColor greenColor]];
-            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.365f, CGRectGetHeight(self.frame)*0.55f)];
             break;
         default:
             break;
