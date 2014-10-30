@@ -19,8 +19,7 @@
     skView.showsPhysics = YES;
 
     //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
-    //DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
-    DQCenaMapaMundi *menuInicial=[[DQCenaMapaMundi alloc]initWithSize:skView.bounds.size];
+    DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
     
     menuInicial.scaleMode = SKSceneScaleModeAspectFill;
     

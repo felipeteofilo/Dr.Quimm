@@ -1012,6 +1012,8 @@
 		C57D7C2A1964E3A100EF94C9 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				C5F2D8F51A002891009D384C /* DQMapaMundiControle.h */,
+				C5F2D8F61A002891009D384C /* DQMapaMundiControle.m */,
 				7560591119955FC700BD455A /* DQMissaoControle.h */,
 				7560591219955FC700BD455A /* DQMissaoControle.m */,
 				CDC48ACD1992A0C800588E79 /* DQFalasNoJogoControle.h */,
@@ -1051,10 +1053,6 @@
 		C5F2D8F41A002192009D384C /* MapaMundi */ = {
 			isa = PBXGroup;
 			children = (
-				C5F2D8F51A002891009D384C /* DQMapaMundiControle.h */,
-				C5F2D8F61A002891009D384C /* DQMapaMundiControle.m */,
-				C54137A81A01BEBE004C5866 /* DQCenaMapaMundi.h */,
-				C54137A91A01BEBE004C5866 /* DQCenaMapaMundi.m */,
 			);
 			name = MapaMundi;
 			sourceTree = "<group>";
@@ -1154,6 +1152,8 @@
 		CDB3FA4C194BA61D0099CF6C /* SKScenes */ = {
 			isa = PBXGroup;
 			children = (
+				C54137A81A01BEBE004C5866 /* DQCenaMapaMundi.h */,
+				C54137A91A01BEBE004C5866 /* DQCenaMapaMundi.m */,
 				943710B519A3DEF300B8846E /* DQArmadilhaAnimacao.h */,
 				943710B619A3DEF300B8846E /* DQArmadilhaAnimacao.m */,
 				CDC48AD01992A11400588E79 /* DQCutsceneTela.h */,

@@ -20,5 +20,11 @@
 		<key>ID</key>
 		<integer>3</integer>
 	</dict>
+	<dict>
+		<key>Nome</key>
+		<string>DQMaletaQuimica</string>
+		<key>ID</key>
+		<integer>11</integer>
+	</dict>
 </array>
 </plist>
