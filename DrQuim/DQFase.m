@@ -17,7 +17,7 @@
 -(id)initFase:(int)fase Size:(CGSize)size{
     
     if (self=[super initWithSize:size ]) {
-        
+
         [self configuracoesFase:fase];
     }
     return self;
@@ -28,6 +28,8 @@
 }
 
 -(void)configuracoesFase:(int)faseAtual{
+    //Agora qndo precisar mudar de fase chama pela propriedade
+    self.controleTransicaoScenas=[[DQFasesControle alloc]init];
     
     self.faseAtual=faseAtual;
     self.parteFaseAtual=1;

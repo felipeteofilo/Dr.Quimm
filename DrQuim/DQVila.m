@@ -67,6 +67,7 @@
     self.posicaoJogador=self.jogador.position;
     [self.view presentScene:cenaTransformacoes];
 }
+
 -(void)apresentarCenaBronca{
     DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
     
