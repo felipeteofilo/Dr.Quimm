@@ -16,6 +16,11 @@
         self.controleFases=[DQFasesControle sharedFasesControle];
         
         [self configuraMapa];
+        
+        SKSpriteNode *background=[SKSpriteNode spriteNodeWithImageNamed:@"MapaFundo"];
+        [background setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [background setZPosition:-100];
+        [self addChild:background];
     }
     return self;
 }
@@ -37,7 +42,7 @@
     
     SKSpriteNode *nodeIconeFase;
     for (int i=1; i< [self.controleMapaMundi.fasesConfiguradas count]+1; i++) {
-        nodeIconeFase=[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100, 100)];
+        nodeIconeFase=[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(80,80)];
         
         //Adicionado o +1 no I para acertar o index com o ID salvo no coreData
         if ([self.controleMapaMundi faseDisponivel:i]) {
@@ -54,15 +59,61 @@
 -(void)posicionaNode:(SKSpriteNode*)node idFase:(int)idFase{
     switch (idFase) {
         case 1:
-            [node setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.72f, CGRectGetHeight(self.frame)*0.7f)];
             break;
 
         case 2:
-            [node setPosition:CGPointZero];
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.73f, CGRectGetHeight(self.frame)*0.83f)];
             break;
             
         case 3:
-            [node setPosition:CGPointMake(CGRectGetMaxX(self.frame), CGRectGetMidY(self.frame))];
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            break;
+            
+        case 3:
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            break;
+            
+        case 3:
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            break;
+            
+        case 3:
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            break;
+            
+        case 3:
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            break;
+            
+        case 3:
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            break;
+            
+        case 3:
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
+            break;
+            
+        case 3:
+            //[node setTexture:[SKTexture textureWithImageNamed:@"aquiNomeImgCortada"]];
+            [node setColor:[UIColor greenColor]];
+            [node setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.65f, CGRectGetHeight(self.frame)*0.58f)];
             break;
         default:
             break;

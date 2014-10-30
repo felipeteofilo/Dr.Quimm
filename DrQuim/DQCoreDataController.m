@@ -48,9 +48,14 @@
 +(void)salvarFaseID:(int)idFase comRequisitos:(NSArray*)requisitosFase{
     NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
     
-    FaseConfigurada *novaFase=[[FaseConfigurada alloc]initWithEntity:[NSEntityDescription entityForName:@"FaseConfigurada"  inManagedObjectContext:contexto]insertIntoManagedObjectContext:contexto];
+    FaseConfigurada *novaFase=[DQCoreDataController procurarFase:idFase];
     
-    [novaFase setId:[NSNumber numberWithInt:idFase]];
+    if (!novaFase) {
+        novaFase=[[FaseConfigurada alloc]initWithEntity:[NSEntityDescription entityForName:@"FaseConfigurada"  inManagedObjectContext:contexto]insertIntoManagedObjectContext:contexto];
+        
+        [novaFase setId:[NSNumber numberWithInt:idFase]];
+    }
+    
     [novaFase setRequisitos:requisitosFase];
     
     NSError *erro;

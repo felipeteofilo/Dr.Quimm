@@ -104,7 +104,7 @@
     NSArray *arrayFasesConfiguradas=[DQConfiguracaoFase arquivoPlist];
     int nFaseCoreData=[DQCoreDataController nFasesCoreData];
     
-    if (nFaseCoreData != [arrayFasesConfiguradas count]) {
+    if ((nFaseCoreData != [arrayFasesConfiguradas count])||([DQControleConfigGeral precisaAtualizarFasesCoreData])) {
         //Para cada registro no plist eu pego os requisitos e subo no coreData
         for (int i=0; i<[arrayFasesConfiguradas count]; i++) {
             //Verifica se ja tem a fase adicionada se nao tiver adiciona

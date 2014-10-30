@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "DQConfiguracaoFase.h"
+#import "DQControleConfigGeral.h"
 #import "DQCoreDataController.h"
 #import "DQJogador.h"
 

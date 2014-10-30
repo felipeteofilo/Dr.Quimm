@@ -188,6 +188,11 @@
 		C5EE3A5D1974A9FD008D3D8D /* Fase2_Parte3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A591974A9FD008D3D8D /* Fase2_Parte3.png */; };
 		C5EE3A5E1974A9FD008D3D8D /* Fase2_Parte4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */; };
 		C5F2D8F71A002891009D384C /* DQMapaMundiControle.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F2D8F61A002891009D384C /* DQMapaMundiControle.m */; };
+		C5FA2C971A02B1BB002F244F /* ConfigGeral.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2C961A02B1BB002F244F /* ConfigGeral.plist */; };
+		C5FA2C9A1A02B298002F244F /* DQControleConfigGeral.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2C991A02B298002F244F /* DQControleConfigGeral.m */; };
+		C5FA2C9F1A02B47D002F244F /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2C9C1A02B47D002F244F /* Icon */; };
+		C5FA2CA01A02B47D002F244F /* Mapa_completo1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2C9D1A02B47D002F244F /* Mapa_completo1.png */; };
+		C5FA2CA11A02B47D002F244F /* MapaFundo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2C9E1A02B47D002F244F /* MapaFundo.png */; };
 		C5FFB42719A93706004F3CD0 /* AmostrasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */; };
 		C5FFB42819A93706004F3CD0 /* Receitas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42519A93706004F3CD0 /* Receitas.plist */; };
 		C5FFB42919A93706004F3CD0 /* ReceitasQuimicas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */; };
@@ -485,6 +490,12 @@
 		C5EE3A5A1974A9FD008D3D8D /* Fase2_Parte4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fase2_Parte4.png; sourceTree = "<group>"; };
 		C5F2D8F51A002891009D384C /* DQMapaMundiControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMapaMundiControle.h; sourceTree = "<group>"; };
 		C5F2D8F61A002891009D384C /* DQMapaMundiControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMapaMundiControle.m; sourceTree = "<group>"; };
+		C5FA2C961A02B1BB002F244F /* ConfigGeral.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigGeral.plist; sourceTree = "<group>"; };
+		C5FA2C981A02B298002F244F /* DQControleConfigGeral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleConfigGeral.h; sourceTree = "<group>"; };
+		C5FA2C991A02B298002F244F /* DQControleConfigGeral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQControleConfigGeral.m; sourceTree = "<group>"; };
+		C5FA2C9C1A02B47D002F244F /* Icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Icon"; sourceTree = "<group>"; };
+		C5FA2C9D1A02B47D002F244F /* Mapa_completo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mapa_completo1.png; sourceTree = "<group>"; };
+		C5FA2C9E1A02B47D002F244F /* MapaFundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapaFundo.png; sourceTree = "<group>"; };
 		C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AmostrasQuimicas.plist; path = "Arquivos Plist/AmostrasQuimicas.plist"; sourceTree = "<group>"; };
 		C5FFB42519A93706004F3CD0 /* Receitas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Receitas.plist; path = "Arquivos Plist/Receitas.plist"; sourceTree = "<group>"; };
 		C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReceitasQuimicas.plist; path = "Arquivos Plist/ReceitasQuimicas.plist"; sourceTree = "<group>"; };
@@ -565,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				C5FFB44719A94AF6004F3CD0 /* Missoes.plist */,
+				C5FA2C961A02B1BB002F244F /* ConfigGeral.plist */,
 				C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */,
 				C5FFB42519A93706004F3CD0 /* Receitas.plist */,
 				C5FFB42619A93706004F3CD0 /* ReceitasQuimicas.plist */,
@@ -812,9 +824,10 @@
 				CD2FE184194B3BEE006E3AC1 /* Fases */,
 				9433F5D71937B4BB00E55E73 /* Personagens */,
 				9469691C19A2A31100087B20 /* CutScenes */,
-				C543E1331998600A00C90F19 /* IniciarJogo.png */,
+				C5FA2C9B1A02B47D002F244F /* MapaIlha */,
 				C5B7FBDE19762A1A00C2CAFC /* BalaoAlerta.png */,
 				23BFADBC1966E4FB00691C04 /* setinhas.png */,
+				C543E1331998600A00C90F19 /* IniciarJogo.png */,
 				3CAE561519AA7B5A00C5B6E2 /* fundoMaleta.png */,
 				3CAE561619AA7B5A00C5B6E2 /* fundoTransformacao.png */,
 				23BFA4A9196A3CC700AD5F0C /* icon.png */,
@@ -1029,6 +1042,8 @@
 				9469691319A27EDA00087B20 /* DQControleSomScene.m */,
 				7505B4A719FAD07800769C87 /* DQFasesControle.h */,
 				7505B4A819FAD07800769C87 /* DQFasesControle.m */,
+				C5FA2C981A02B298002F244F /* DQControleConfigGeral.h */,
+				C5FA2C991A02B298002F244F /* DQControleConfigGeral.m */,
 			);
 			name = Controladores;
 			sourceTree = "<group>";
@@ -1042,6 +1057,16 @@
 				C54137A91A01BEBE004C5866 /* DQCenaMapaMundi.m */,
 			);
 			name = MapaMundi;
+			sourceTree = "<group>";
+		};
+		C5FA2C9B1A02B47D002F244F /* MapaIlha */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA2C9C1A02B47D002F244F /* Icon */,
+				C5FA2C9D1A02B47D002F244F /* Mapa_completo1.png */,
+				C5FA2C9E1A02B47D002F244F /* MapaFundo.png */,
+			);
+			path = MapaIlha;
 			sourceTree = "<group>";
 		};
 		C5FFB42A19A939FF004F3CD0 /* Recipientes */ = {
@@ -1273,6 +1298,7 @@
 				C58F75CA19A4EBEA00DC7A71 /* Fundo07 - Sapos .mp3 in Resources */,
 				C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */,
 				CD1392CB19A7C2A000143DCA /* elemento_Pb.png in Resources */,
+				C5FA2CA11A02B47D002F244F /* MapaFundo.png in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				943710C719A3E31100B8846E /* ArmadilhasReferencia.plist in Resources */,
 				C5FFB43919A939FF004F3CD0 /* Maleta_C2H4O2.png in Resources */,
@@ -1332,6 +1358,7 @@
 				C5FFB43E19A939FF004F3CD0 /* Maleta_H3PO4.png in Resources */,
 				9469692219A2A31100087B20 /* cutscene3.atlas in Resources */,
 				C5FFB44419A939FF004F3CD0 /* Maleta_Pb(NO3)2.png in Resources */,
+				C5FA2C971A02B1BB002F244F /* ConfigGeral.plist in Resources */,
 				94A8680A19995C4900604BA4 /* ContadorGeiger.atlas in Resources */,
 				C55CE580199BA91F00375C87 /* ContadorGeiger-1.mp3 in Resources */,
 				C5D2A6A2196A535800F3B7C4 /* Fase1_Parte6.png in Resources */,
@@ -1352,8 +1379,10 @@
 				C58F75EE19A4F20B00DC7A71 /* Fase3_Parte11.png in Resources */,
 				CD1392C719A7C2A000143DCA /* elemento_I.png in Resources */,
 				9469691B19A2A2A600087B20 /* Helicoptero.mp3 in Resources */,
+				C5FA2CA01A02B47D002F244F /* Mapa_completo1.png in Resources */,
 				C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */,
 				C58F75E719A4F20B00DC7A71 /* Fase3_Parte4.png in Resources */,
+				C5FA2C9F1A02B47D002F244F /* Icon in Resources */,
 				C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */,
 				C58F75F619A4F20B00DC7A71 /* Fase3_Parte19.png in Resources */,
 				9488196E19901A6D00609A0F /* MissoesJogador.plist in Resources */,
@@ -1458,6 +1487,7 @@
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
 				C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
+				C5FA2C9A1A02B298002F244F /* DQControleConfigGeral.m in Sources */,
 				C52FBF1919A18D0A0059E973 /* DQAnimalCoelho.m in Sources */,
 				C513748C19FABFBB006E75D2 /* DQBackground.m in Sources */,
 				9488196019901A4600609A0F /* DQItensJogador.m in Sources */,
