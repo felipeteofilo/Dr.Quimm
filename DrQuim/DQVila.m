@@ -18,13 +18,6 @@
     }
     return self;
 }
--(id)initFase:(int)fase Size:(CGSize)size{
-    if(self=[super initFase:fase Size:size]){
-        self.falouCurandeiroCacadaCoelho=[DQControleUserDefalts falouCurandeiroCacadaCoelho];
-    }
-    
-    return self;
-}
 -(void)iniciarFase{
     [super iniciarFase];
     [self adicionaNPC];
@@ -59,20 +52,6 @@
     }
 }
 
--(void)update:(NSTimeInterval)currentTime{
-    [super update:currentTime];
-    
-    if (!self.mostrandoContador) {
-        
-        if([self.jogador estaComContadorGeiger]){
-            //tem nao esconde
-            [self.hudFase exibirContador];
-            
-            self.mostrandoContador=YES;
-        }
-    }
-}
-
 #pragma mark Métodos Removidos!
 //Removido pois agora temos o controlador de fases
 //-(void)apresentarCenaMaleta{
@@ -84,7 +63,7 @@
 //    self.posicaoJogador=self.jogador.position;
 //    [self.view presentScene:cenaTransformacoes];
 //}
-
+//
 //Removido! pois agora a transicao será feita pelo controle de missoes
 //-(void)apresentarCenaBronca{
 //    DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
@@ -92,8 +71,8 @@
 //    self.jogador.controleMissoes.parteAtual++;
 //    [self.view presentScene:cenaBronca];
 //}
-
-
+//
+//
 //Removido, pois teremos que definir um método definitivo para mostrar a Cena dos NPCs
 //-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 //    SKNode *nodeQuimm=[self.mundo nodeAtPoint:[[touches anyObject]locationInNode:self.mundo]];
@@ -106,4 +85,15 @@
 //        [super touchesBegan:touches withEvent:event];
 //    }
 //}
+//
+//REMOVIDO, pois nao esta sendo usado!
+//-(id)initFase:(int)fase Size:(CGSize)size{
+//    if(self=[super initFase:fase Size:size]){
+//        self.falouCurandeiroCacadaCoelho=[DQControleUserDefalts falouCurandeiroCacadaCoelho];
+//    }
+//
+//    return self;
+//}
+
 @end
+

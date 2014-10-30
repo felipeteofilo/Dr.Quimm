@@ -303,9 +303,10 @@
             }
         }
         
-        if([self.jogador estaComContadorGeiger]){
-            //tem nao esconde
-            [self.hudFase exibirContador];
+        if (!self.hudFase.exibindoContadorGeiger) {
+            if([self.jogador estaComContadorGeiger]){
+                [self.hudFase exibirContador];
+            }
         }
     }
 }
