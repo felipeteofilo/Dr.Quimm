@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DQAppDelegate.h"
 #import "Usuario.h"
-#import "Fase.h"
+#import "FaseConfigurada.h"
 
 @interface DQCoreDataController : NSObject
 
@@ -21,7 +21,7 @@
 +(void)salvarMissao:(NSMutableDictionary*)missao doJogador:(NSString*)nome;
 +(void)salvarFaseAtual:(int)fase parte:(int)parte doJogador:(NSString*)nome;
 +(void)novaFaseID:(int)idFase comRequisitos:(NSArray*)requisitosFase;
-+(Fase*)procurarFase:(int)idFase;
++(FaseConfigurada*)procurarFase:(int)idFase;
 +(int)nFasesCoreData;
 +(NSArray*)pegarTodasFases;
 

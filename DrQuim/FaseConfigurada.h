@@ -1,8 +1,8 @@
 //
-//  Fases.h
+//  Fase.h
 //  DrQuim
 //
-//  Created by Leonardo de Sousa Mendes on 28/10/14.
+//  Created by Leonardo de Sousa Mendes on 29/10/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Fase : NSManagedObject
+@interface FaseConfigurada : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * disponivel;
 @property (nonatomic, retain) NSNumber * id;

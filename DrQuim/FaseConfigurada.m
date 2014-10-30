@@ -1,15 +1,15 @@
 //
-//  Fases.m
+//  Fase.m
 //  DrQuim
 //
-//  Created by Leonardo de Sousa Mendes on 28/10/14.
+//  Created by Leonardo de Sousa Mendes on 29/10/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import "Fase.h"
+#import "FaseConfigurada.h"
 
 
-@implementation Fase
+@implementation FaseConfigurada
 
 @dynamic disponivel;
 @dynamic id;
@@ -35,3 +35,4 @@
     return [NSKeyedUnarchiver unarchiveObjectWithData:value];
 }
 @end
+

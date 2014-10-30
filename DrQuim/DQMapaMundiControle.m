@@ -10,7 +10,7 @@
 
 @implementation DQMapaMundiControle
 
--(id)initMapaMundiControle{
+-(id)init{
     if (self=[super init]) {
         self.fasesConfiguradas=[DQCoreDataController pegarTodasFases];
     }
@@ -26,7 +26,7 @@
     
 }
 
--(void)verificaMissao{
+-(void)verificaMissaoConcluida{
     
 }
 
