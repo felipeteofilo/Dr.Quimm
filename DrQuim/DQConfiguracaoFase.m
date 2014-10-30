@@ -34,6 +34,16 @@
         return retorno;
     }
 }
+
+
++(NSArray*)alertasFase :(int)faseAtual{
+    NSArray *arquivoPlist = [self arquivoPlist];
+    if ([[arquivoPlist objectAtIndex:faseAtual -1]objectForKey:@"PontosAlertas"]) {
+        return [[arquivoPlist objectAtIndex:faseAtual -1]objectForKey:@"PontosAlertas"];
+    }
+    return nil;
+}
+
 +(NSArray*)configParteFase:(int)_fase{
 
     //Verifica se a fase procurada esta dentro do limites do array

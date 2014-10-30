@@ -75,6 +75,8 @@
     
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]init];
     
+    self.alertas = [[DQAlertasControle alloc]initComFaseAtual:self.faseAtual];
+    
     [self criaJogador];
     [self configuraFisicaMundo];
     [self configuraHUD];
@@ -289,7 +291,11 @@
         [self.backgroundAtual verificaCoberturaBackground:[self.mundo convertPoint:self.jogador.position toNode:self.backgroundAtual]];
         [self.controladorDaVida atualizarSituacaoJogador];
         [self.hudFase atualizarBarraStatus];
+        if (![self childNodeWithName:@"falasDoJogo"]) {
+            [self.alertas atualizarAlerta:self];
+        }
         
+        [self.alertas verificarAlerta:self.jogador.position fase:self];
         
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
         

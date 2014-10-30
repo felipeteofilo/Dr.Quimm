@@ -22,4 +22,5 @@
 +(NSDictionary*)configFase:(int)fase;
 +(NSString*)somFundoFase:(int)_fase;
 +(NSArray*)animaisFase:(int)fase Parte:(int)parte;
++(NSArray*)alertasFase :(int)faseAtual;
 @end

@@ -7,10 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
+#import "DQConfiguracaoFase.h"
 
 @interface DQAlertasControle : NSObject
 
 
+@property NSArray *arquivo;
+@property int referenciaAlertaAtual;
+@property NSDictionary *alertaAtual;
+@property Boolean podeMudar;
+
+-(id)initComFaseAtual :(int)fase;
+-(void)atualizarAlerta :(SKScene*)cena;
+-(void)verificarAlerta :(CGPoint)pontoJogador fase:(SKScene*)cena;
 
 
 @end

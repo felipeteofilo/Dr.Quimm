@@ -27,6 +27,7 @@
 #import "DQUteis.h"
 #import "DQBackground.h"
 #import "DQFasesControle.h"
+#import "DQAlertasControle.h"
 
 @interface DQFase : SKScene <SKPhysicsContactDelegate,DQControleProtocoll>
 
@@ -41,6 +42,9 @@
 
 //DQVidaControle para controlar a vida do personagem
 @property DQVidaControle *controladorDaVida;
+
+//DQAlertaControle para controlar os alertas das fases
+@property DQAlertasControle *alertas;
 
 //Adicionado o node que guarda o mundo para poder manipular ele durante a cena
 @property SKNode *mundo;
