@@ -33,8 +33,7 @@
 }
 
 
--(void)mudarDeFase :(int)fase Size:(SKScene*)scene{
-    
+-(void)mudarDeFase :(int)fase Scene:(SKScene*)scene{
     SKScene *faseRetorno;
     
     for (int i = 0; i < self.fases.count ; i++) {

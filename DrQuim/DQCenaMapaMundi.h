@@ -8,7 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQMapaMundiControle.h"
-#import "DQControle"
+#import "DQFasesControle.h"
+
 @interface DQCenaMapaMundi : SKScene
+
 @property DQMapaMundiControle *controleMapaMundi;
+@property  DQFasesControle *controleFases;
+
 @end

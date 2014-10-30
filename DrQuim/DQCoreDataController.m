@@ -118,7 +118,6 @@
     [context save:&erro];
 }
 +(void)salvarItens :(NSDictionary*)itens doJogador:(NSString*)nome{
-    
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];

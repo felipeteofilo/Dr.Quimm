@@ -14,12 +14,11 @@
     if (self=[super init]) {
         [DQMapaMundiControle populaCoreData];
 
-        [self verificaFasesConfiguradas];
+        [self carregarFasesCoreData];
     }
     
     return self;
 }
-
 -(BOOL)faseDisponivel:(int)fase{
     NSArray *requisitos=[self requisitosFase:fase];
     
@@ -27,10 +26,12 @@
     
     NSString *tipoRequisito;
     
-    if ([requisitos count]==0) {
+    //TODO:- Melhorar verificação
+    if ([requisitos count]==0 ) {
         //Nao tem requisito esta disponivel
         return YES;
     }
+    
     //Verifico cada requisito para a fase
     for (int i=0; i < [requisitos count];i++) {
         //Verifico qual o tipo de requisito e chamo o tratamento certo
@@ -64,11 +65,6 @@
     }
 }
 
-//TODO: - Verificar oq fazer
--(BOOL)atendeRequisitoMissao:(NSString*)missao{
-    return NO;
-}
-
 -(BOOL)atendeRequisitoRespeito:(NSString*)respeito{
 //Cria um jogador para poder acessar as info dele
     DQJogador *jogador=[DQJogador sharedJogador];
@@ -80,17 +76,24 @@
     }
 }
 
+//TODO: - Verificar oq fazer
+-(BOOL)atendeRequisitoMissao:(NSString*)missao{
+    return NO;
+}
+
 -(NSArray*)requisitosFase:(int)idFase{
     return [[self.fasesConfiguradas objectAtIndex:idFase-1]objectForKey:@"Requisitos"];
 }
--(void)verificaFasesConfiguradas{
+
+-(void)carregarFasesCoreData{
     NSArray *fasesCoreData=[DQCoreDataController pegarTodasFases];
     
     NSMutableArray *fasesMapaMundi=[NSMutableArray array];
     
     for (FaseConfigurada *fase in fasesCoreData) {
         //Configuro o dic e add ele
-        NSDictionary *infoFase=[NSDictionary dictionaryWithObjects:@[[fase requisitos]] forKeys:@[@"Requisitos"]];
+        //O campo Disponível é um controle a mais na verificação
+        NSDictionary *infoFase=[NSDictionary dictionaryWithObjects:@[[fase requisitos],[fase id]] forKeys:@[@"Requisitos",@"idFase"]];
         
         [fasesMapaMundi addObject:infoFase];
     }

@@ -14,7 +14,7 @@
 
 @property NSArray *fases;
 
--(void)mudarDeFase :(int)fase Size:(SKScene*)scene;
+-(void)mudarDeFase :(int)fase Scene:(SKScene*)scene;
 +(id)sharedFasesControle;
 
 @end
