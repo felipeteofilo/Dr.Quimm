@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DQConfiguracaoFase.h"
+#import "DQCoreDataController.h"
+
 @interface DQMapaMundiControle : NSObject
 
+@property  NSArray *fasesConfiguradas;
 @end

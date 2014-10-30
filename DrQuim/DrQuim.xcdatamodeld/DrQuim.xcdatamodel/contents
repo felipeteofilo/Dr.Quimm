@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Fases" representedClassName="Fases" syncable="YES">
+    <entity name="Fase" representedClassName="Fase" syncable="YES">
         <attribute name="disponivel" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="requisitos" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -17,9 +17,10 @@
         <attribute name="sede" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="vida" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
+    <fetchRequest name="idFase" entity="Fase" predicateString="id == 0"/>
     <configuration name="Configuration"/>
     <elements>
-        <element name="Fases" positionX="-63" positionY="54" width="128" height="88"/>
-        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Fase" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Usuario" positionX="0" positionY="0" width="128" height="195"/>
     </elements>
 </model>

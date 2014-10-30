@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import "Fases.h"
+#import "Fase.h"
 
 
-@implementation Fases
+@implementation Fase
 
 @dynamic disponivel;
 @dynamic id;

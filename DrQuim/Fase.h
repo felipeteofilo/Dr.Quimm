@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Fases : NSManagedObject
+@interface Fase : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * disponivel;
 @property (nonatomic, retain) NSNumber * id;
