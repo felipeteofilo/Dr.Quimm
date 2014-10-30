@@ -45,7 +45,7 @@
         nodeIconeFase=[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(80,80)];
         
         //Adicionado o +1 no I para acertar o index com o ID salvo no coreData
-        if ([self.controleMapaMundi faseDisponivel:i]) {
+        if (![self.controleMapaMundi faseDisponivel:i]) {
             [nodeIconeFase setAlpha:0.7f];
         }
         

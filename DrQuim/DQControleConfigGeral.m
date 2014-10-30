@@ -11,10 +11,12 @@
 @implementation DQControleConfigGeral
 
 +(NSDictionary*)arquivoPlist{
-    return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FalasNoJogo" ofType:@"plist"]];
+    return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ConfigGeral" ofType:@"plist"]];
 }
 
 +(BOOL)precisaAtualizarFasesCoreData{
+    NSLog(@"Precisa att %@",[[DQControleConfigGeral arquivoPlist]objectForKey:@"AtualizarFasesCoreData"]);
+    
     return [[[DQControleConfigGeral arquivoPlist]objectForKey:@"AtualizarFasesCoreData"]boolValue];
 }
 @end

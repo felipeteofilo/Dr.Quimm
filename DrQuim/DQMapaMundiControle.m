@@ -12,7 +12,8 @@
 
 -(id)init{
     if (self=[super init]) {
-        [DQMapaMundiControle populaCoreData];
+        
+        [DQMapaMundiControle atualizarCoreData];
 
         [self carregarFasesCoreData];
     }
@@ -100,11 +101,11 @@
     
     self.fasesConfiguradas=fasesMapaMundi;
 }
-+(void)populaCoreData{
++(void)atualizarCoreData{
     NSArray *arrayFasesConfiguradas=[DQConfiguracaoFase arquivoPlist];
     int nFaseCoreData=[DQCoreDataController nFasesCoreData];
     
-    if ((nFaseCoreData != [arrayFasesConfiguradas count])||([DQControleConfigGeral precisaAtualizarFasesCoreData])) {
+    if ((nFaseCoreData != [arrayFasesConfiguradas count]) || ([DQControleConfigGeral precisaAtualizarFasesCoreData])) {
         //Para cada registro no plist eu pego os requisitos e subo no coreData
         for (int i=0; i<[arrayFasesConfiguradas count]; i++) {
             //Verifica se ja tem a fase adicionada se nao tiver adiciona
