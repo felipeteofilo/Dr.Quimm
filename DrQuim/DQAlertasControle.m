@@ -48,14 +48,14 @@
 
 -(void)verificarAlerta :(CGPoint)pontoJogador fase:(SKScene*)cena{
     
-    if (self.alertaAtual != nil && !self.podeMudar) {
+    for (int i = 0; i < self.arquivo.count; i++) {
+        NSDictionary *alerta= [self.arquivo objectAtIndex:i];
         
-        
-        CGPoint pontoAnalisar = CGPointFromString([self.alertaAtual objectForKey:@"Posicao"]);
+        CGPoint pontoAnalisar = CGPointFromString([alerta objectForKey:@"Posicao"]);
         
         if(pontoJogador.x > pontoAnalisar.x  && pontoJogador.x < pontoAnalisar.x+100 && pontoJogador.y >= pontoAnalisar.y -20){
             
-            NSString *keyFalaRadiacao=[self.alertaAtual objectForKey:@"KeyDoAlerta"];
+            NSString *keyFalaRadiacao=[alerta objectForKey:@"KeyDoAlerta"];
             DQFase *cenaRecebida = (DQFase*)cena;
             [cenaRecebida addChild:[cenaRecebida.controleDeFalas mostrarAlertaComKey:keyFalaRadiacao Tamanho:cenaRecebida.size]];
             self.podeMudar = YES;
