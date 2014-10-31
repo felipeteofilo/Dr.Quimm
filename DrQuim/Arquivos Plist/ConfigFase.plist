@@ -294,9 +294,37 @@
 		<array>
 			<dict>
 				<key>Posicao</key>
-				<string>{1000, 542}</string>
+				<string>{3290, 1000}</string>
 				<key>KeyDoAlerta</key>
 				<string>RadiacaoAlfa</string>
+			</dict>
+			<dict>
+				<key>Posicao</key>
+				<string>{5798, 1150}</string>
+				<key>KeyDoAlerta</key>
+				<string>RadiacaoBeta</string>
+			</dict>
+			<dict>
+				<key>Aleatoria</key>
+				<array>
+					<string>Aleatoria1</string>
+					<string>Aleatoria2</string>
+					<string>Aleatoria3</string>
+					<string>Aleatoria4</string>
+				</array>
+				<key>Posicao</key>
+				<string>{3520, 1130}</string>
+			</dict>
+			<dict>
+				<key>Aleatoria</key>
+				<array>
+					<string>Aleatoria1</string>
+					<string>Aleatoria2</string>
+					<string>Aleatoria3</string>
+					<string>Aleatoria4</string>
+				</array>
+				<key>Posicao</key>
+				<string>{5990, 1255}</string>
 			</dict>
 		</array>
 	</dict>

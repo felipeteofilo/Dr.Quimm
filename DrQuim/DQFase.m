@@ -291,12 +291,11 @@
         [self.backgroundAtual verificaCoberturaBackground:[self.mundo convertPoint:self.jogador.position toNode:self.backgroundAtual]];
         [self.controladorDaVida atualizarSituacaoJogador];
         [self.hudFase atualizarBarraStatus];
+        
+        [self.alertas verificarAlerta:self.jogador.position fase:self];
         if (![self childNodeWithName:@"falasDoJogo"]) {
             [self.alertas atualizarAlerta:self];
         }
-        
-        [self.alertas verificarAlerta:self.jogador.position fase:self];
-        
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
         
         if (ultimoUpdate > 30) {

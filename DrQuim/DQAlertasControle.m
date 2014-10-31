@@ -16,53 +16,76 @@
     if (self = [super init]) {
         
         self.arquivo = [DQConfiguracaoFase alertasFase:fase];
-        self.referenciaAlertaAtual =0;
-        if(self.arquivo != nil){
-            self.alertaAtual = [self.arquivo objectAtIndex:self.referenciaAlertaAtual];
-        }
+        self.falouAlerta = [[NSMutableDictionary alloc]init];
+        
     }
     return self;
 }
 
 -(void)atualizarAlerta :(SKScene*)cena{
     if(self.podeMudar && self.arquivo != nil){
-        
+        DQFase *fase = (DQFase*)cena;
         NSString *keyDaFala = [self.alertaAtual objectForKey:@"KeyDoAlerta"];
+        if ([self.alertaAtual objectForKey:@"Aleatoria"]) {
+            [self afastarJogador:fase];
             
+            
+        }else {
             CGPoint ponto = CGPointFromString([self.alertaAtual objectForKey:@"Posicao"]);
-            DQFase *fase = (DQFase*)cena;
+            
             
             [self adicionaIconeRadiacao:keyDaFala naPosicao:ponto fase:fase];
-        self.referenciaAlertaAtual++;
-        if(self.referenciaAlertaAtual < self.arquivo.count){
-            self.alertaAtual = [self.arquivo objectAtIndex:self.referenciaAlertaAtual];
         }
-        else{
-            self.alertaAtual = nil;
-        }
-        
         self.podeMudar = NO;
     }
     
 }
 
 -(void)verificarAlerta :(CGPoint)pontoJogador fase:(SKScene*)cena{
-    
-    for (int i = 0; i < self.arquivo.count; i++) {
-        NSDictionary *alerta= [self.arquivo objectAtIndex:i];
-        
-        CGPoint pontoAnalisar = CGPointFromString([alerta objectForKey:@"Posicao"]);
-        
-        if(pontoJogador.x > pontoAnalisar.x  && pontoJogador.x < pontoAnalisar.x+100 && pontoJogador.y >= pontoAnalisar.y -20){
+    if(!self.podeMudar){
+        for (int i = 0; i < self.arquivo.count; i++) {
+            self.alertaAtual= [self.arquivo objectAtIndex:i];
             
-            NSString *keyFalaRadiacao=[alerta objectForKey:@"KeyDoAlerta"];
-            DQFase *cenaRecebida = (DQFase*)cena;
-            [cenaRecebida addChild:[cenaRecebida.controleDeFalas mostrarAlertaComKey:keyFalaRadiacao Tamanho:cenaRecebida.size]];
-            self.podeMudar = YES;
             
+            
+            CGPoint pontoAnalisar = CGPointFromString([self.alertaAtual objectForKey:@"Posicao"]);
+            
+            if(pontoJogador.x > pontoAnalisar.x  && pontoJogador.x < pontoAnalisar.x+10 && pontoJogador.y >= pontoAnalisar.y -20){
+                NSString *keyFalaRadiacao;
+                
+                if ([self.alertaAtual objectForKey:@"Aleatoria"]) {
+                    int numeroAleatorio = arc4random() % [[self.alertaAtual objectForKey:@"Aleatoria"]count]-1;
+                    numeroAleatorio++;
+                    
+                    keyFalaRadiacao= [[self.alertaAtual objectForKey:@"Aleatoria"]objectAtIndex:numeroAleatorio];
+                    
+                    
+                    
+                }else{
+                    keyFalaRadiacao=[self.alertaAtual objectForKey:@"KeyDoAlerta"];
+                    if ([[self.falouAlerta objectForKey:keyFalaRadiacao]boolValue]) {
+                        return;
+                    }
+                    
+                }
+                DQFase *cenaRecebida = (DQFase*)cena;
+                [cenaRecebida addChild:[cenaRecebida.controleDeFalas mostrarAlertaComKey:keyFalaRadiacao Tamanho:cenaRecebida.size]];
+                [cenaRecebida.jogador pararAndar];
+                [self.falouAlerta setObject:[NSNumber numberWithBool:YES] forKey:keyFalaRadiacao];
+                self.podeMudar = YES;
+                
+            }
         }
     }
 }
+
+-(void)afastarJogador :(DQFase*)fase{
+    
+    //[fase.jogador andarParaDirecao:'E' eVelocidade:0.5f];
+    [fase.jogador runAction:[SKAction moveToX:fase.jogador.position.x-20 duration:0] withKey:@"saindoDePerto"];
+}
+
+
 -(void)adicionaIconeRadiacao:(NSString*)nomeRadiacao naPosicao:(CGPoint)posicao fase:(DQFase*)fase{
     
     //Depois que o jogador inicia a fala cria-se um icone para quando ele quiser ler a fala novamente

@@ -14,7 +14,7 @@
 
 
 @property NSArray *arquivo;
-@property int referenciaAlertaAtual;
+@property NSMutableDictionary *falouAlerta;
 @property NSDictionary *alertaAtual;
 @property Boolean podeMudar;
 

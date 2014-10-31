@@ -33,37 +33,40 @@
 }
 
 //Verifica se esta movendo em X ou em Y
-    //Ambos NO verifica qual a maior alteração
+//Ambos NO verifica qual a maior alteração
 
-    //Verifica qual processo deve fazer 
+//Verifica qual processo deve fazer
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     //pega  a posicao do toque atual
     CGPoint posicaoToqueAtual=[[touches anyObject]locationInNode:self];
-    
-    //Verifica as alteracoes nas posicoes
-    float alteracaoX=posicaoToqueAtual.x - self.posicaoToqueInicial.x;
-    float alteracaoY=posicaoToqueAtual.y - self.posicaoToqueInicial.y;
-    
-    //Verifica se ja esta ocorrendo algum movimento
-    if (!self.movimentoX && !self.movimentoY) {
-        //Das alterações verifica qual é mais forte X ou Y
-        if (fabsf(alteracaoX)+2 > fabsf(alteracaoY)) {
-            self.movimentoX=YES;
-            //Moveu em X nao move em Y
-            self.movimentoY=NO;
-        }else{
-            self.movimentoY =YES;
-            self.movimentoX=NO;
+    if (![self.scene childNodeWithName:@"falasDoJogo"]) {
+        
+        
+        //Verifica as alteracoes nas posicoes
+        float alteracaoX=posicaoToqueAtual.x - self.posicaoToqueInicial.x;
+        float alteracaoY=posicaoToqueAtual.y - self.posicaoToqueInicial.y;
+        
+        //Verifica se ja esta ocorrendo algum movimento
+        if (!self.movimentoX && !self.movimentoY) {
+            //Das alterações verifica qual é mais forte X ou Y
+            if (fabsf(alteracaoX)+2 > fabsf(alteracaoY)) {
+                self.movimentoX=YES;
+                //Moveu em X nao move em Y
+                self.movimentoY=NO;
+            }else{
+                self.movimentoY =YES;
+                self.movimentoX=NO;
+            }
         }
-    }
-    
-    //Chama processo ref ao eixo que está movendo
-    if (self.movimentoX) {
-        [self processaMovimentoHorizontal:alteracaoX];
-    }
-    
-    if (self.movimentoY) {
-        [self processaMovimentoVertical:alteracaoY];
+        
+        //Chama processo ref ao eixo que está movendo
+        if (self.movimentoX) {
+            [self processaMovimentoHorizontal:alteracaoX];
+        }
+        
+        if (self.movimentoY) {
+            [self processaMovimentoVertical:alteracaoY];
+        }
     }
 }
 -(void)processaMovimentoHorizontal:(float)forcaMov{
@@ -73,7 +76,7 @@
         //Pega delta do movimento em X
         self.forcaMovimento =+forcaMov;
     }
-        
+    
     if ((self.forcaMovimento <= 0 )&&(self.forcaMovimento >= (limiteMovimento*-1))) {
         self.forcaMovimento =+forcaMov;
     }
@@ -94,7 +97,7 @@
     
     //Faz ele andar
     [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:(self.forcaMovimento/100)]];
-
+    
 }
 
 -(void)processaMovimentoVertical:(float)forcaMov{
