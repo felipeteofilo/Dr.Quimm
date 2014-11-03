@@ -77,6 +77,8 @@
     
     self.controleDeFalas = [[DQFalasNoJogoControle alloc]init];
     
+    self.alertas = [[DQAlertasControle alloc]initComFaseAtual:self.faseAtual];
+    
     [self criaJogador];
     [self configuraFisicaMundo];
     [self configuraHUD];
@@ -253,7 +255,7 @@
     
     // Compara as máscaras de categoria com os valores que nós usamos para os objetos do jogo
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
-        if ((secondBody.categoryBitMask & ChaoCategoria) !=0) {
+        if ((secondBody.categoryBitMask & ChaoCategoria) !=0 ||(secondBody.categoryBitMask & PlataformaAtivadaCategoria) !=0) {
             
             //se o jogador colidiu com o chao setamos que ele estao no chao
             
@@ -292,6 +294,12 @@
         [self.controladorDaVida atualizarSituacaoJogador];
         [self.hudFase atualizarBarraStatus];
         
+
+        [self.alertas verificarAlerta:self.jogador.position fase:self];
+        if (![self childNodeWithName:@"falasDoJogo"]) {
+            [self.alertas atualizarAlerta:self];
+        }
+
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
         if (ultimoUpdate > 30) {
             self.intervaloUltimoUpdate = currentTime;
