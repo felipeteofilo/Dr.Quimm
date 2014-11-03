@@ -257,7 +257,7 @@
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0 ||(secondBody.categoryBitMask & PlataformaAtivadaCategoria) !=0) {
             
-            //se o jogador colidiu com o chao setamos que ele estao no chao
+            //se o jogador colidiu com o chao setamos que ele esta no chao
             
             [self.jogador setEstaNoChao:YES];
             
@@ -267,7 +267,6 @@
             if ((secondBody.categoryBitMask & PlataformaDesativadaCategoria)!=0) {
                 [self.backgroundAtual controleAtivacaoPlataforma:secondBody.node posicaoJogador:firstBody.node.position.y velocidadeY:firstBody.velocity.dy];
             }
-            
         }
         
         //se colidir com a escada
@@ -362,7 +361,6 @@
     UITouch *toque=[touches anyObject];
     CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
     
-    
     //Pega o node na posicao do toque
     SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];
     
@@ -384,6 +382,16 @@
     
     //Se a caixa de fala nao esta na tela
     else{
+        //Verifico se toquei em um node alerta
+        if([nodeTocadoNoMundo.name isEqualToString:@"Alerta"]){
+            //Chamo o metodo
+            NSLog(@"keyalerta %@",[nodeTocadoNoMundo.userData objectForKey:@"KeyDoAlerta" ] );
+            
+            
+            SKSpriteNode *falaAtual =[self.controleDeFalas mostrarAlertaComKey:[nodeTocadoNoMundo.userData objectForKey:@"KeyDoAlerta" ]  Tamanho:self.size];;
+            [self addChild:falaAtual];
+        }
+        
         //Verifica se o Menu esta aparecendo se estiver remove eles
         if ([self childNodeWithName:@"MENU"]) {
             [[self childNodeWithName:@"MENU"]removeFromParent];

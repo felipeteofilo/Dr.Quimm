@@ -50,4 +50,24 @@
     [scene.view presentScene:faseRetorno];
 }
 
+-(void)mudarDeFase:(int)fase Scene:(SKScene *)scene idCutScene:(int)idCutScene{
+    //CutScene receberá essa fase e apresentará ela após terminar execução
+    SKScene *faseMandarCutScene;
+    
+    for (int i = 0; i < self.fases.count ; i++) {
+        if ([[[self.fases objectAtIndex:i]objectForKey:@"ID"]intValue] == fase) {
+            NSString *nomeDaClasse = [[self.fases objectAtIndex:i]objectForKey:@"Nome"];
+            faseMandarCutScene = [[NSClassFromString(nomeDaClasse) alloc]initWithSize:scene.size];
+            break;
+        }
+    }
+    if (faseMandarCutScene == nil) {
+        faseMandarCutScene = [[DQFase alloc]initFase:fase Size:scene.size];
+    }
+    
+    //Cria a cutScene
+    DQCutsceneTela *cutScene=[[DQCutsceneTela alloc]initCutScene:idCutScene Fase:faseMandarCutScene SizeScene:scene.size];
+    
+    [scene.view presentScene:cutScene];
+}
 @end

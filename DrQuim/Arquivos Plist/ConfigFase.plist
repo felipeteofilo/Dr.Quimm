@@ -290,15 +290,41 @@
 				<array/>
 			</dict>
 		</array>
-		<key>PontoAlertas</key>
-		<array/>
-		<key>Requisitos</key>
+		<key>PontosAlertas</key>
 		<array>
 			<dict>
-				<key>TipoRequisito</key>
-				<string>Respeito</string>
-				<key>ObjRequisitado</key>
-				<string>10000</string>
+				<key>Posicao</key>
+				<string>{3290, 1000}</string>
+				<key>KeyDoAlerta</key>
+				<string>RadiacaoAlfa</string>
+			</dict>
+			<dict>
+				<key>Posicao</key>
+				<string>{5798, 1150}</string>
+				<key>KeyDoAlerta</key>
+				<string>RadiacaoBeta</string>
+			</dict>
+			<dict>
+				<key>Aleatoria</key>
+				<array>
+					<string>Aleatoria1</string>
+					<string>Aleatoria2</string>
+					<string>Aleatoria3</string>
+					<string>Aleatoria4</string>
+				</array>
+				<key>Posicao</key>
+				<string>{3520, 1130}</string>
+			</dict>
+			<dict>
+				<key>Aleatoria</key>
+				<array>
+					<string>Aleatoria1</string>
+					<string>Aleatoria2</string>
+					<string>Aleatoria3</string>
+					<string>Aleatoria4</string>
+				</array>
+				<key>Posicao</key>
+				<string>{5990, 1255}</string>
 			</dict>
 		</array>
 	</dict>
@@ -447,15 +473,6 @@
 		</array>
 		<key>PontoAlertas</key>
 		<array/>
-		<key>Requisitos</key>
-		<array>
-			<dict>
-				<key>TipoRequisito</key>
-				<string></string>
-				<key>ObjRequisitado</key>
-				<string></string>
-			</dict>
-		</array>
 	</dict>
 	<dict>
 		<key>SomFundo</key>
@@ -1264,15 +1281,6 @@
 		</array>
 		<key>PontoAlertas</key>
 		<array/>
-		<key>Requisitos</key>
-		<array>
-			<dict>
-				<key>TipoRequisito</key>
-				<string></string>
-				<key>ObjRequisitado</key>
-				<string></string>
-			</dict>
-		</array>
 	</dict>
 </array>
 </plist>

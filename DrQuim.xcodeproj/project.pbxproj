@@ -1228,7 +1228,7 @@
 				ORGANIZATIONNAME = "LEONARDO DE SOUSA MENDES";
 				TargetAttributes = {
 					94080E9A1933BA290024FB94 = {
-						DevelopmentTeam = M25JU54534;
+						DevelopmentTeam = TET8UBYRXW;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;

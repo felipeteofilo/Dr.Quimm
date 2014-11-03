@@ -51,6 +51,7 @@
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
         [self.controleMissoes iniciarMissao];
+
         
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];
