@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Nome</key>
+		<string></string>
+		<key>Descricao</key>
+		<string></string>
+		<key>Imagem</key>
+		<string></string>
+		<key>FormulaMolecular</key>
+		<string></string>
+		<key>InfoExtra</key>
+		<dict>
+			<key>Obtencao</key>
+			<string></string>
+			<key>Aplicacao</key>
+			<string></string>
+		</dict>
+		<key>Elementos</key>
+		<array>
+			<string>nomeElementoSalvo</string>
+		</array>
+	</dict>
+</array>
+</plist>

@@ -5,16 +5,24 @@
 	<dict>
 		<key>Nome</key>
 		<string>Bomba de Bicarbonato</string>
-		<key>Ingredientes</key>
+		<key>descricao</key>
+		<string>Bombaaaaa</string>
+		<key>itemGerado</key>
+		<string>LiquidoAmarelo</string>
+		<key>infoConfigComposto</key>
 		<array>
-			<string>10x Lotus Verde</string>
-			<string>2x Agua do lago Miek</string>
-			<string>8x Carpa empedrada</string>
-			<string>1 garrafa</string>
-		</array>
-		<key>Requisitos</key>
-		<array>
-			<string>Bico de bunsen Coagulador</string>
+			<dict>
+				<key>NomeComposto</key>
+				<string>CO2</string>
+				<key>nEletronsRequisito</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>NomeComposto</key>
+				<string>H2</string>
+				<key>nEletronsRequisito</key>
+				<integer>8</integer>
+			</dict>
 		</array>
 	</dict>
 </array>
