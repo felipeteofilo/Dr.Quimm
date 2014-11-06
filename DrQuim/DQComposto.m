@@ -19,6 +19,8 @@
 */
 
 
+
+
 -(id)initComEntidadeComposto :(Composto*)composto{
     if (self = [super init]) {
         self.nome = composto.nome;
@@ -27,6 +29,8 @@
         self.imageView.image = [UIImage imageNamed:self.imagem];
         
         self.arrayElementos = composto.arrayElementos;
+        
+        NSLog(@"foi la");
     }
     return self;
 }
