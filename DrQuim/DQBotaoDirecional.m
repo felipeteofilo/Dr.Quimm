@@ -7,15 +7,20 @@
 //
 
 #import "DQBotaoDirecional.h"
-#define forcaMovBotao 0.5f
+#define forcaMovBotao 1.0f
 #define limiteMovimento 100
-#define limiteMovimentoBotao 10
+#define limiteMovimentoBotao 8
 
 @implementation DQBotaoDirecional
 
 -(id)initDirecional:(NSString*)imagemBotao seletorHorizontal:(SEL)seletorHorizontal seletorVertical:(SEL)selVertical selSoltarDir:(SEL)soltarDir dalegateSeletores:(id<DQControleProtocoll>)delegate{
     
     if (self=[super initBotao:imagemBotao comSel:seletorHorizontal eDelegate:delegate eTamanho:CGSizeMake(100,100)]) {
+        
+        self.botaoDirecional = [[SKSpriteNode alloc]initWithImageNamed:@"btn_lados2"];
+        self.botaoDirecional.zPosition = self.zPosition + 10;
+        [self.botaoDirecional setSize:CGSizeMake(100, 100)];
+        [self addChild:self.botaoDirecional];
         
         self.seletorVertical= selVertical;
         self.selSoltouDirecional=soltarDir;
@@ -29,7 +34,7 @@
     self.posicaoToqueInicial=[[touches anyObject]locationInNode:self];
     
     //Pega a posicaoX inicial do botao
-    self.posicaoInicialBotao=self.position;
+    self.posicaoInicialBotao= self.botaoDirecional.position;
 }
 
 //Verifica se esta movendo em X ou em Y
@@ -84,14 +89,14 @@
     if (!self.travaMovDirecional) {
         //Faz botao mecher
         if (self.forcaMovimento > 0) {
-            [self setPosition:CGPointMake(self.position.x+forcaMovBotao, self.position.y)];
+            [self.botaoDirecional setPosition:CGPointMake(self.botaoDirecional.position.x + forcaMovBotao, self.botaoDirecional.position.y)];
         }else{
-            [self setPosition:CGPointMake(self.position.x-forcaMovBotao, self.position.y)];
+            [self.botaoDirecional setPosition:CGPointMake(self.botaoDirecional.position.x - forcaMovBotao, self.botaoDirecional.position.y)];
         }
     }
     
     //Cria limite para animação movimento do botao
-    if (fabsf(self.position.x - self.posicaoInicialBotao.x) > limiteMovimentoBotao) {
+    if (fabsf(self.botaoDirecional.position.x - self.posicaoInicialBotao.x) > limiteMovimentoBotao) {
         self.travaMovDirecional=YES;
     }
     
@@ -109,14 +114,14 @@
     if (!self.travaMovDirecional) {
         //Faz botao mecher
         if (self.forcaMovimento > 0) {
-            [self setPosition:CGPointMake(self.position.x, self.position.y+forcaMovBotao)];
+            [self.botaoDirecional setPosition:CGPointMake(self.botaoDirecional.position.x, self.botaoDirecional.position.y+forcaMovBotao)];
         }else{
-            [self setPosition:CGPointMake(self.position.x, self.position.y-forcaMovBotao)];
+            [self.botaoDirecional setPosition:CGPointMake(self.botaoDirecional.position.x, self.botaoDirecional.position.y-forcaMovBotao)];
         }
     }
     
     //O carinha mexeu mais na vertical faz o jogador escala
-    if (fabsf(self.position.y - self.posicaoInicialBotao.y) > limiteMovimentoBotao) {
+    if (fabsf(self.botaoDirecional.position.y - self.posicaoInicialBotao.y) > limiteMovimentoBotao) {
         self.travaMovDirecional=YES;
     }
     
@@ -127,7 +132,7 @@
 //Faz a ação do botão
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     //Retorna á posição inicial
-    [self setPosition:self.posicaoInicialBotao];
+    [self.botaoDirecional setPosition:self.posicaoInicialBotao];
     [self setAlpha:0.2f];
     
     self.travaMovDirecional=NO;

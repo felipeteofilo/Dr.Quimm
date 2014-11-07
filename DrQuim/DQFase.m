@@ -421,12 +421,12 @@
 #pragma mark Controle Personagem
 //Configura controles
 -(void)configurarControles{
-    self.direcional=[[DQBotaoDirecional alloc]initDirecional:@"testeBotao" seletorHorizontal:@selector(movimentaPersonagem:) seletorVertical:@selector(escaladaPersonagem:) selSoltarDir:@selector(pararPersonagem) dalegateSeletores:self];
+    self.direcional=[[DQBotaoDirecional alloc]initDirecional:@"btn_lados1" seletorHorizontal:@selector(movimentaPersonagem:) seletorVertical:@selector(escaladaPersonagem:) selSoltarDir:@selector(pararPersonagem) dalegateSeletores:self];
     
     [self.direcional setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.9f,CGRectGetHeight(self.frame)*0.1f )];
     [self addChild:self.direcional];
     
-    self.botaoPulo=[[DQBotao alloc]initBotao:@"testeBotao" comSel:@selector(puloPersonagem) eDelegate:self eTamanho:CGSizeMake(100, 100)];
+    self.botaoPulo=[[DQBotao alloc]initBotao:@"btn_pular" comSel:@selector(puloPersonagem) eDelegate:self eTamanho:CGSizeMake(100, 100)];
     
     [self.botaoPulo setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.1f, CGRectGetHeight(self.frame)*0.1f)];
     [self addChild:self.botaoPulo];
