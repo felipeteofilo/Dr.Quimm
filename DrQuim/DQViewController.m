@@ -15,20 +15,19 @@
     [super viewDidAppear:animated];
 
 
-//    SKView * skView = (SKView *)self.view;
-//    
-//    skView.showsPhysics = YES;
+//   SKView * skView = (SKView *)self.view;
+//   skView.showsPhysics = YES;
 //
-//    //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
-//   //DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
-//    //DQSceneTeste *menuInicial=[[DQSceneTeste alloc]initWithSize:skView.bounds.size];
+//   //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
+//    // DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+//   //DQSceneTeste *menuInicial=[[DQSceneTeste alloc]initWithSize:skView.bounds.size];
 //    
 //    DQFlorestaParte1 *menuInicial = [[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
-//    
+//   
 //    menuInicial.scaleMode = SKSceneScaleModeAspectFill;
-//    
-//    [skView presentScene:menuInicial];
-//
+//  
+//   [skView presentScene:menuInicial];
+
 
 }
 

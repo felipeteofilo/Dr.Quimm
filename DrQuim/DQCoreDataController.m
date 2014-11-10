@@ -205,4 +205,115 @@
     [context save:&erro];
 
 }
++(NSArray*)receitas{
+    DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Receita"
+                inManagedObjectContext:context];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request
+                                              error:&error];
+    
+    return objects;
+}
++(NSArray*)compostos{
+    DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Composto"
+                                                  inManagedObjectContext:context];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request
+                                              error:&error];
+    
+    return objects;
+}
++(NSArray*)elementos{
+    DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Elemento"
+                                                  inManagedObjectContext:context];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request
+                                              error:&error];
+    
+    return objects;
+}
++(void)salvarCompostos:(NSMutableArray*)compostos{
+    
+    for (int i = 0; i<compostos.count; i++) {
+        Composto *composto =[compostos objectAtIndex:i];
+        NSError *erro;
+        [[composto managedObjectContext] save:&erro];
+    }
+    
+    
+    
+}
++(void)salvarReceitas:(NSMutableArray*)receitas{
+    
+    for (int i = 0; i<receitas.count; i++) {
+        Receita *receita =[receitas objectAtIndex:i];
+        NSError *erro;
+        [[receita managedObjectContext] save:&erro];
+    }
+}
++(void)salvarElementos:(NSMutableArray*)elementos{
+    
+    for (int i = 0; i<elementos.count; i++) {
+        Elemento *elemento =[elementos objectAtIndex:i];
+        NSError *erro;
+        [[elemento managedObjectContext] save:&erro];
+    }
+}
++(Composto*)procurarComposto: (NSString*)composto{
+    NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
+    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"Composto"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(nome = %@)",composto]];
+    
+    
+    NSError *erro;
+    NSArray *objetos=[contexto executeFetchRequest:request error:&erro];
+    
+    return [objetos objectAtIndex:0];
+}
++(Receita*)procurarReceita :(NSString*)receita{
+    NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
+    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"Receita"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(nome = %@)",receita]];
+    
+    
+    NSError *erro;
+    NSArray *objetos=[contexto executeFetchRequest:request error:&erro];
+    
+    return [objetos objectAtIndex:0];
+}
++(Elemento*)procurarElemento :(NSString*)elemento{
+    NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
+    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"Elemento"];
+     [request setPredicate:[NSPredicate predicateWithFormat:@"(nome = %@)",elemento]];
+    
+    
+    NSError *erro;
+    NSArray *objetos=[contexto executeFetchRequest:request error:&erro];
+    
+    return [objetos objectAtIndex:0];
+}
+
+
+
 @end

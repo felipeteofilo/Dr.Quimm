@@ -7,8 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DQCoreDataController.h"
 
 //Classe usada para pegar as informações dos plist e aplimentar o core data
 @interface DQPopularCoreData : NSObject
+
+
+@property NSDictionary *transformacoesPlist;
+@property NSDictionary *TransformacoesRef;
+
+
+
 
 @end

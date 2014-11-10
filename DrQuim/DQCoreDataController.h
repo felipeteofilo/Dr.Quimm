@@ -10,6 +10,10 @@
 #import "DQAppDelegate.h"
 #import "Usuario.h"
 #import "FaseConfigurada.h"
+#import "Composto.h"
+#import "Receita.h"
+#import "Elemento.h"
+
 
 @interface DQCoreDataController : NSObject
 
@@ -24,5 +28,17 @@
 +(FaseConfigurada*)procurarFase:(int)idFase;
 +(int)nFasesCoreData;
 +(NSArray*)pegarTodasFases;
+
++(NSArray*)receitas;
++(NSArray*)compostos;
++(NSArray*)elementos;
+
++(void)salvarCompostos:(NSMutableArray*)compostos;
++(void)salvarReceitas:(NSMutableArray*)receitas;
++(void)salvarElementos:(NSMutableArray*)elementos;
+
++(Composto*)procurarComposto: (NSString*)composto;
++(Receita*)procurarReceita: (NSString*)receita;
++(Elemento*)procurarElemento: (NSString*)elemento;
 
 @end
