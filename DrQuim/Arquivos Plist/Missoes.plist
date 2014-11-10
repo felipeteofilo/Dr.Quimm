@@ -312,7 +312,7 @@
 				<key>FaseParaIr</key>
 				<integer>3</integer>
 				<key>PontoDeAvanco</key>
-				<string>{5700, 400}</string>
+				<string>{1000, 400}</string>
 				<key>Descricao</key>
 				<string>Pegar o animal descrito pelo Caçador</string>
 				<key>NPCRequisito</key>

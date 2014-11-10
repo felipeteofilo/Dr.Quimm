@@ -31,8 +31,8 @@
     //Agora qndo precisar mudar de fase chama pela propriedade
     self.controleTransicaoScenas=[[DQFasesControle alloc]init];
     
-    self.faseAtual=faseAtual;
-    self.parteFaseAtual=1;
+    self.faseAtual = faseAtual;
+    self.parteFaseAtual = 1;
     self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
     
     [self pegarConfigFase:self.faseAtual];
@@ -40,7 +40,7 @@
 }
 
 -(void)pegarConfigFase:(int)fase{
-    self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
+    self.configFase = [DQConfiguracaoFase configFase:self.faseAtual];
 }
 
 -(void)configuraFisicaMundo{

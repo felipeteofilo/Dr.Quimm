@@ -20,8 +20,8 @@
 
     //DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
     //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
-    DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
-    //DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
+    //DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+    DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
     
     fase.scaleMode = SKSceneScaleModeAspectFill;
     

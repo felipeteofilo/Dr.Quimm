@@ -42,13 +42,13 @@
 -(void)verificarAlerta :(CGPoint)pontoJogador fase:(SKScene*)cena{
     if(!self.podeMudar){
         for (int i = 0; i < self.arquivo.count; i++) {
-            self.alertaAtual= [self.arquivo objectAtIndex:i];
+            self.alertaAtual = [self.arquivo objectAtIndex:i];
             
             
             
             CGPoint pontoAnalisar = CGPointFromString([self.alertaAtual objectForKey:@"Posicao"]);
             
-            if(pontoJogador.x > pontoAnalisar.x  && pontoJogador.x < pontoAnalisar.x+10 && pontoJogador.y >= pontoAnalisar.y -20){
+            if(pontoJogador.x > pontoAnalisar.x  && pontoJogador.x < pontoAnalisar.x+10 && pontoJogador.y <= pontoAnalisar.y -20){
                 NSString *keyFalaRadiacao;
                 
                 if ([self.alertaAtual objectForKey:@"Aleatoria"]) {
@@ -92,7 +92,7 @@
     SKSpriteNode * iconeRadiacaoAlpha = [[ SKSpriteNode alloc]initWithImageNamed:@"BalaoAlerta"];
     iconeRadiacaoAlpha.size = CGSizeMake(50, 50);
     [iconeRadiacaoAlpha setAnchorPoint:CGPointMake(0, 0)];
-    [iconeRadiacaoAlpha setPosition:CGPointMake(posicao.x, posicao.y + 80.0)];
+    [iconeRadiacaoAlpha setPosition:CGPointMake(posicao.x, posicao.y - 200)];
     
     NSMutableDictionary *keyFala = [[NSMutableDictionary alloc]init];
     [keyFala setValue:nomeRadiacao forKey:@"KeyDoAlerta"];
