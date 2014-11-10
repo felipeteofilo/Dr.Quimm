@@ -25,10 +25,6 @@
         NSString *urlItensReferencia = [[NSBundle mainBundle] pathForResource:@"ArmadilhasReferencia" ofType:@"plist"];
         //dicionario
         self.dicionarioDeArmadilhasReferencia = [[NSMutableDictionary alloc]initWithContentsOfFile:urlItensReferencia];
-        
-       
-        
-        
     }
     return self;
 }

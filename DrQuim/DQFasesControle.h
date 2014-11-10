@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "DQCutsceneTela.h"
 
 @interface DQFasesControle : NSObject
 
 
 @property NSArray *fases;
 
--(void)mudarDeFase :(int)fase Size:(SKScene*)scene;
+-(void)mudarDeFase :(int)fase Scene:(SKScene*)scene;
 +(id)sharedFasesControle;
-
+-(void)mudarDeFase:(int)fase Scene:(SKScene *)scene idCutScene:(int)idCutScene;
 @end

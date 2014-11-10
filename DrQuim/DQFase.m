@@ -28,6 +28,8 @@
 }
 
 -(void)configuracoesFase:(int)faseAtual{
+    //Agora qndo precisar mudar de fase chama pela propriedade
+    self.controleTransicaoScenas=[[DQFasesControle alloc]init];
     
     self.faseAtual=faseAtual;
     self.parteFaseAtual=1;
@@ -177,7 +179,7 @@
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x +CGRectGetMaxX(self.frame), 0);
                 
                 self.backgroundFuturo = [[DQBackground alloc]initBackgroundFase:self.faseAtual parte:self.parteFaseAtual+1 naPosicao:posicaoAdd infoParte:[self infoParteFase:self.parteFaseAtual+1]];
-
+                
                 //Adicionado Classe específica
                 [self.backgroundFuturo criaCoberturaParaBackground];
                 [self.backgroundFuturo criarPlataformas:[[self infoParteFase:self.parteFaseAtual+1]objectForKey:@"Plataformas"]];
@@ -255,7 +257,7 @@
     if ((firstBody.categoryBitMask & JogadorCategoria)!=0) {
         if ((secondBody.categoryBitMask & ChaoCategoria) !=0 ||(secondBody.categoryBitMask & PlataformaAtivadaCategoria) !=0) {
             
-            //se o jogador colidiu com o chao setamos que ele estao no chao
+            //se o jogador colidiu com o chao setamos que ele esta no chao
             
             [self.jogador setEstaNoChao:YES];
             
@@ -265,7 +267,6 @@
             if ((secondBody.categoryBitMask & PlataformaDesativadaCategoria)!=0) {
                 [self.backgroundAtual controleAtivacaoPlataforma:secondBody.node posicaoJogador:firstBody.node.position.y velocidadeY:firstBody.velocity.dy];
             }
-
         }
         
         //se colidir com a escada
@@ -284,7 +285,7 @@
     
     if (!self.jogoPausado) {
         [self.jogador atualizarStatusMissao:self.controleDeFalas];
-
+        
         [self criarParteFase];
         
         //Converte a posicao do jogador para o sistema de coordenadas do no que tem a cobertura
@@ -292,12 +293,13 @@
         [self.controladorDaVida atualizarSituacaoJogador];
         [self.hudFase atualizarBarraStatus];
         
+
         [self.alertas verificarAlerta:self.jogador.position fase:self];
         if (![self childNodeWithName:@"falasDoJogo"]) {
             [self.alertas atualizarAlerta:self];
         }
+
         CFTimeInterval ultimoUpdate = currentTime - self.intervaloUltimoUpdate;
-        
         if (ultimoUpdate > 30) {
             self.intervaloUltimoUpdate = currentTime;
             
@@ -305,6 +307,12 @@
                 if ([DQUteis sortearChanceSim:50.0]) {
                     [self.controleSom tocarSomLista];
                 }
+            }
+        }
+        
+        if (!self.hudFase.exibindoContadorGeiger) {
+            if([self.jogador estaComContadorGeiger]){
+                [self.hudFase exibirContador];
             }
         }
     }
@@ -352,7 +360,6 @@
     
     UITouch *toque=[touches anyObject];
     CGPoint posToqueNoMundo =[toque locationInNode:self.mundo];
-
     
     //Pega o node na posicao do toque
     SKNode *nodeTocadoNoMundo=[self.mundo nodeAtPoint:posToqueNoMundo];
@@ -375,6 +382,16 @@
     
     //Se a caixa de fala nao esta na tela
     else{
+        //Verifico se toquei em um node alerta
+        if([nodeTocadoNoMundo.name isEqualToString:@"Alerta"]){
+            //Chamo o metodo
+            NSLog(@"keyalerta %@",[nodeTocadoNoMundo.userData objectForKey:@"KeyDoAlerta" ] );
+            
+            
+            SKSpriteNode *falaAtual =[self.controleDeFalas mostrarAlertaComKey:[nodeTocadoNoMundo.userData objectForKey:@"KeyDoAlerta" ]  Tamanho:self.size];;
+            [self addChild:falaAtual];
+        }
+        
         //Verifica se o Menu esta aparecendo se estiver remove eles
         if ([self childNodeWithName:@"MENU"]) {
             [[self childNodeWithName:@"MENU"]removeFromParent];
@@ -404,12 +421,12 @@
 #pragma mark Controle Personagem
 //Configura controles
 -(void)configurarControles{
-    self.direcional=[[DQBotaoDirecional alloc]initDirecional:@"testeBotao" seletorHorizontal:@selector(movimentaPersonagem:) seletorVertical:@selector(escaladaPersonagem:) selSoltarDir:@selector(pararPersonagem) dalegateSeletores:self];
+    self.direcional=[[DQBotaoDirecional alloc]initDirecional:@"btn_lados1" seletorHorizontal:@selector(movimentaPersonagem:) seletorVertical:@selector(escaladaPersonagem:) selSoltarDir:@selector(pararPersonagem) dalegateSeletores:self];
     
     [self.direcional setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.9f,CGRectGetHeight(self.frame)*0.1f )];
     [self addChild:self.direcional];
     
-    self.botaoPulo=[[DQBotao alloc]initBotao:@"testeBotao" comSel:@selector(puloPersonagem) eDelegate:self eTamanho:CGSizeMake(100, 100)];
+    self.botaoPulo=[[DQBotao alloc]initBotao:@"btn_pular" comSel:@selector(puloPersonagem) eDelegate:self eTamanho:CGSizeMake(100, 100)];
     
     [self.botaoPulo setPosition:CGPointMake(CGRectGetWidth(self.frame)*0.1f, CGRectGetHeight(self.frame)*0.1f)];
     [self addChild:self.botaoPulo];

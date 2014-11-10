@@ -82,6 +82,9 @@
 @property DQBotaoDirecional *direcional;
 @property DQBotao *botaoPulo;
 
+//Vai cuidar da transição de Scenes
+@property DQFasesControle *controleTransicaoScenas;
+
 //metodo para iniciar a fase
 -(void)iniciarFase;
 -(id)initFase:(int)fase Size:(CGSize)size;

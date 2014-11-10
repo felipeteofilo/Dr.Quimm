@@ -20,6 +20,7 @@
 @property SKSpriteNode *botaoMenu;
 @property DQMenu *menu;
 @property DQContadorGeiger *contador;
+@property BOOL exibindoContadorGeiger;
 
 -(id)initHud;
 -(void)atualizarHud;

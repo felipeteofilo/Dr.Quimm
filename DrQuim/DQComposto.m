@@ -28,7 +28,7 @@
         
         self.imageView.image = [UIImage imageNamed:self.imagem];
         
-        self.arrayElementos = composto.arrayElementos;
+        //self.arrayElementos = composto.arrayElementos;
         
         NSLog(@"foi la");
     }

@@ -39,7 +39,66 @@
         return [objects objectAtIndex:0];
     }
 }
++(NSManagedObjectContext*)contextoApp{
+    DQAppDelegate *appDelegate=[[UIApplication sharedApplication]delegate];
+    
+    return [appDelegate managedObjectContext];
+}
 
++(void)salvarFaseID:(int)idFase comRequisitos:(NSArray*)requisitosFase{
+    NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
+    
+    FaseConfigurada *novaFase=[DQCoreDataController procurarFase:idFase];
+    
+    if (!novaFase) {
+        novaFase=[[FaseConfigurada alloc]initWithEntity:[NSEntityDescription entityForName:@"FaseConfigurada"  inManagedObjectContext:contexto]insertIntoManagedObjectContext:contexto];
+        
+        [novaFase setId:[NSNumber numberWithInt:idFase]];
+    }
+    
+    [novaFase setRequisitos:requisitosFase];
+    
+    NSError *erro;
+    
+    [contexto save:&erro];
+}
++(NSArray*)pegarTodasFases{
+    NSMutableArray* arrayRetorno=[NSMutableArray array];
+    
+    for (int i=0; i < [DQCoreDataController nFasesCoreData]; i++) {
+        [arrayRetorno addObject:[DQCoreDataController procurarFase:i+1]];
+    }
+    
+    return arrayRetorno;
+}
++(FaseConfigurada*)procurarFase:(int)idFase{
+    NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
+    
+    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"FaseConfigurada"];
+    
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(id = %i)",idFase]];
+    
+    NSError *erro;
+    NSArray *objects =[contexto executeFetchRequest:request error:&erro];
+    
+    if ([objects count]==0) {
+        return nil;
+    }else{
+        return [objects objectAtIndex:0];
+    }
+}
+
++(int)nFasesCoreData{
+    NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
+    NSFetchRequest *request=[[NSFetchRequest alloc]initWithEntityName:@"FaseConfigurada"];
+    [request setPropertiesToFetch:@[@"id"]];
+    
+    
+    NSError *erro;
+    NSArray *objetos=[contexto executeFetchRequest:request error:&erro];
+
+    return (int)[objetos count];
+}
 +(void)salvarVida:(int)vida respeito:(int)respeito fome:(int)fome sede:(int)sede doJogador:(NSString*)nome{
     
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -64,7 +123,6 @@
     [context save:&erro];
 }
 +(void)salvarItens :(NSDictionary*)itens doJogador:(NSString*)nome{
-    
     DQAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
@@ -147,5 +205,4 @@
     [context save:&erro];
 
 }
-
 @end

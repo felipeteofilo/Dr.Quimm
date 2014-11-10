@@ -41,7 +41,9 @@
         self.fome = 100;
         self.sede = 100;
         self.vida = 100;
-        self.respeito = 0;
+        
+        //TODO: Remover
+        self.respeito = 100;
 
         //Inicia a instância da classe itensJogador
         self.itens = [[DQItensJogador alloc] init];
@@ -49,6 +51,7 @@
         self.controleMissoes = [[DQMissaoControle alloc]initCena:self.scene];
         
         [self.controleMissoes iniciarMissao];
+
         
         self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
         [self addChild:self.controleSom];

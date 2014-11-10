@@ -126,4 +126,12 @@
     
     return arrayEscalaceis;
 }
+
++(NSArray*)requisitosFase:(int)fase{
+    return [[DQConfiguracaoFase configFase:fase]objectForKey:@"Requisitos"];
+}
+
++(int)nFasesConfiguradas{
+    return (int)[[DQConfiguracaoFase arquivoPlist]count];
+}
 @end

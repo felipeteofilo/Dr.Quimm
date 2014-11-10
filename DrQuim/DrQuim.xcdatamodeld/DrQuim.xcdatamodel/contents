@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Composto" representedClassName="Composto" syncable="YES">
+        <attribute name="formula_molecular" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info_Composto" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="elementos_composto" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Elemento" syncable="YES"/>
+    </entity>
+    <entity name="Elemento" representedClassName="Elemento" syncable="YES">
+        <attribute name="imagem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info_elemento" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="n_eletrons" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="simbolo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FaseConfigurada" representedClassName="FaseConfigurada" syncable="YES">
+        <attribute name="disponivel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="requisitos" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="Receita" representedClassName="Receita" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_item_gerar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info_conf_composto" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="composto_receita" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Composto" syncable="YES"/>
+    </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
         <attribute name="armadilhas" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="fase" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -12,7 +38,13 @@
         <attribute name="sede" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="vida" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
+    <fetchRequest name="idFase" entity="FaseConfigurada" predicateString="id == 0"/>
+    <configuration name="Configuration"/>
     <elements>
-        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Composto" positionX="9" positionY="-81" width="128" height="118"/>
+        <element name="Elemento" positionX="36" positionY="-54" width="128" height="120"/>
+        <element name="FaseConfigurada" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Receita" positionX="0" positionY="-90" width="128" height="120"/>
+        <element name="Usuario" positionX="-2" positionY="-225" width="128" height="195"/>
     </elements>
 </model>

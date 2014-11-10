@@ -29,10 +29,8 @@
         if ([self.alertaAtual objectForKey:@"Aleatoria"]) {
             [self afastarJogador:fase];
             
-            
         }else {
             CGPoint ponto = CGPointFromString([self.alertaAtual objectForKey:@"Posicao"]);
-            
             
             [self adicionaIconeRadiacao:keyDaFala naPosicao:ponto fase:fase];
         }
@@ -68,12 +66,14 @@
                     }
                     
                 }
+                
                 DQFase *cenaRecebida = (DQFase*)cena;
                 [cenaRecebida addChild:[cenaRecebida.controleDeFalas mostrarAlertaComKey:keyFalaRadiacao Tamanho:cenaRecebida.size]];
                 [cenaRecebida.jogador pararAndar];
                 [self.falouAlerta setObject:[NSNumber numberWithBool:YES] forKey:keyFalaRadiacao];
                 self.podeMudar = YES;
                 
+                break;
             }
         }
     }

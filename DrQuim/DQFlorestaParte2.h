@@ -20,9 +20,8 @@
 @property SKScene *vila;
 
 //Booleanos para controle da DQCutsceneControle
-@property BOOL falouRadiacaoLeopardinho;
+//@property BOOL falouRadiacaoLeopardinho;
 
 //funcao que salva referencia da vila
 -(void)salvarCenaVila :(SKScene*)vila;
-
 @end

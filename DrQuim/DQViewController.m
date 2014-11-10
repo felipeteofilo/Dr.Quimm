@@ -14,6 +14,7 @@
 {
     [super viewDidAppear:animated];
 
+
 //    SKView * skView = (SKView *)self.view;
 //    
 //    skView.showsPhysics = YES;
@@ -28,6 +29,7 @@
 //    
 //    [skView presentScene:menuInicial];
 //
+
 }
 
 -(BOOL)prefersStatusBarHidden
