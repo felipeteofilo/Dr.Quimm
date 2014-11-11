@@ -28,6 +28,7 @@
 +(FaseConfigurada*)procurarFase:(int)idFase;
 +(int)nFasesCoreData;
 +(NSArray*)pegarTodasFases;
++(NSManagedObjectContext*)contextoApp;
 
 +(NSArray*)receitas;
 +(NSArray*)compostos;

@@ -8,22 +8,22 @@
 			<key>Info</key>
 			<dict>
 				<key>Categoria</key>
-				<string></string>
+				<string>Categoria</string>
 				<key>Historia</key>
-				<string></string>
+				<string>Historia</string>
 				<key>EstadoEncontrado</key>
-				<string></string>
+				<string>Estado</string>
 				<key>LugarEncontrado</key>
-				<string></string>
+				<string>Lugar</string>
 			</dict>
 			<key>Simbolo</key>
-			<string></string>
+			<string>D</string>
 			<key>NumeroEletrons</key>
 			<integer>0</integer>
 			<key>Imagem</key>
-			<string></string>
+			<string>Elemento</string>
 			<key>Nome</key>
-			<string></string>
+			<string>Elemento</string>
 		</dict>
 	</array>
 	<key>Compostos</key>
@@ -31,8 +31,8 @@
 		<dict>
 			<key>Elementos</key>
 			<array>
-				<string>0</string>
-				<string>0</string>
+				<string>Elemento</string>
+				<string>Elemento</string>
 			</array>
 			<key>Info</key>
 			<dict>
@@ -42,28 +42,30 @@
 				<string></string>
 			</dict>
 			<key>FormulaMolecular</key>
-			<string></string>
+			<string>Formula</string>
 			<key>Imagem</key>
-			<string></string>
+			<string>Imagem</string>
 			<key>Nome</key>
-			<string></string>
+			<string>Nome</string>
 		</dict>
 	</array>
 	<key>Receitas</key>
 	<array>
 		<dict>
 			<key>Compostos</key>
-			<array/>
+			<array>
+				<string>Nome</string>
+			</array>
 			<key>Bolinhas</key>
 			<array>
-				<integer>0</integer>
+				<integer>8</integer>
 			</array>
 			<key>ItemGerado</key>
-			<string></string>
+			<string>Item</string>
 			<key>Descricao</key>
-			<string></string>
+			<string>Descricao</string>
 			<key>Nome</key>
-			<string></string>
+			<string>Receita</string>
 		</dict>
 	</array>
 </dict>

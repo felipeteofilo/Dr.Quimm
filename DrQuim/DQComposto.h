@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Composto.h"
+#import "DQTelaInfoComposto.h"
 
-@interface DQComposto : UIButton
+@interface DQComposto : UIImageView
 
 
 @property NSString* nome;
 @property NSString *imagem;
-@property NSArray *arrayElementos;
+@property NSMutableArray *arrayElementos;
+@property DQTelaInfoComposto *info;
 
 -(id)initComEntidadeComposto :(Composto*)composto;
 

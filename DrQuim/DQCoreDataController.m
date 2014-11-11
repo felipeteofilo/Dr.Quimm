@@ -289,7 +289,12 @@
     NSError *erro;
     NSArray *objetos=[contexto executeFetchRequest:request error:&erro];
     
-    return [objetos objectAtIndex:0];
+    if (objetos.count >=1) {
+        return [objetos objectAtIndex:0];
+    }
+    else{
+        return nil;
+    }
 }
 +(Receita*)procurarReceita :(NSString*)receita{
     NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
@@ -300,7 +305,12 @@
     NSError *erro;
     NSArray *objetos=[contexto executeFetchRequest:request error:&erro];
     
-    return [objetos objectAtIndex:0];
+    if (objetos.count >=1) {
+        return [objetos objectAtIndex:0];
+    }
+    else{
+        return nil;
+    }
 }
 +(Elemento*)procurarElemento :(NSString*)elemento{
     NSManagedObjectContext *contexto=[DQCoreDataController contextoApp];
@@ -310,8 +320,13 @@
     
     NSError *erro;
     NSArray *objetos=[contexto executeFetchRequest:request error:&erro];
-    
-    return [objetos objectAtIndex:0];
+    if (objetos.count >=1) {
+        return [objetos objectAtIndex:0];
+    }
+    else{
+        return nil;
+    }
+        
 }
 
 

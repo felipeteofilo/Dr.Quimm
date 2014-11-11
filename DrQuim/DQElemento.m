@@ -16,7 +16,7 @@
     if(self  = [super initWithImageNamed:elemento.imagem]){
         
         self.nome = elemento.nome;
-       // self.numeroEletrons = elemento.numeroEletrons;
+        self.numeroEletrons = elemento.n_eletrons.intValue;
     }
     
     

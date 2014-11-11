@@ -18,20 +18,19 @@
 }
 */
 
--(id)initComNome:(Receita*)receita{
+-(id)initComReceita:(Receita*)receita{
     if (self = [super init]) {
         self.nome = receita.nome;
         self.imageView.image = [UIImage imageNamed:@"imagemReceita"];
         [self setTitle:self.nome forState:UIControlStateNormal];
         
         self.descricao = receita.descricao;
+        self.arrayCompostos = [[NSMutableArray alloc]initWithArray:receita.composto_receita.array];
         
     }
     return self;
 }
 
--(void)iniciarCompostos{
-    
-}
+
 
 @end

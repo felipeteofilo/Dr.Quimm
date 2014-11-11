@@ -55,6 +55,7 @@
 		758D783B1A0C035D00ACB248 /* Composto.m in Sources */ = {isa = PBXBuildFile; fileRef = 758D783A1A0C035D00ACB248 /* Composto.m */; };
 		758D783E1A0C055000ACB248 /* DQReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = 758D783D1A0C055000ACB248 /* DQReceita.m */; };
 		758D78411A0C096000ACB248 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 758D78401A0C096000ACB248 /* Receita.m */; };
+		75F74AFC1A128FCB00BEE2C1 /* DQTelaInfoComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */; };
 		75F9E2271A002C8100DFF3AE /* DQAlertasControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F9E2261A002C8100DFF3AE /* DQAlertasControle.m */; };
 		75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */; };
 		75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */; };
@@ -291,6 +292,8 @@
 		758D783D1A0C055000ACB248 /* DQReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQReceita.m; sourceTree = "<group>"; };
 		758D783F1A0C096000ACB248 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
 		758D78401A0C096000ACB248 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
+		75F74AFA1A128FCB00BEE2C1 /* DQTelaInfoComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTelaInfoComposto.h; sourceTree = "<group>"; };
+		75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTelaInfoComposto.m; sourceTree = "<group>"; };
 		75F9E2251A002C8100DFF3AE /* DQAlertasControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAlertasControle.h; sourceTree = "<group>"; };
 		75F9E2261A002C8100DFF3AE /* DQAlertasControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAlertasControle.m; sourceTree = "<group>"; };
 		75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -1021,6 +1024,8 @@
 				C511258B1973AB4E00CECCAD /* DQHudController.m */,
 				94080EB51933BA290024FB94 /* DQViewController.h */,
 				94080EB61933BA290024FB94 /* DQViewController.m */,
+				75F74AFA1A128FCB00BEE2C1 /* DQTelaInfoComposto.h */,
+				75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */,
 				947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */,
 				947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */,
 				C5B174091968C77800143B8D /* DQConfiguracaoFase.h */,
@@ -1411,6 +1416,7 @@
 				C54031F21989FF4A003384AB /* DQFlorestaParte2.m in Sources */,
 				C5223EFF19F6C8A300C17FAD /* DQBotaoDirecional.m in Sources */,
 				9469691419A27EDA00087B20 /* DQControleSomScene.m in Sources */,
+				75F74AFC1A128FCB00BEE2C1 /* DQTelaInfoComposto.m in Sources */,
 				C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */,
 				C54031E91989FE98003384AB /* DQOpcaoMenu.m in Sources */,
 				943D3BBA19A667B600A87254 /* DQCenaBronca.m in Sources */,

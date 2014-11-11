@@ -49,18 +49,21 @@
         NSArray *compostosPlist = [self.transformacoesPlist objectForKey:@"Compostos"];
         
         for (int i = 0 ;i < compostosPlist.count; i++) {
-            Composto *novoComposto = [DQCoreDataController procurarComposto:[[compostosPlist objectAtIndex:i]objectForKey:@"Nome"]];
+           Composto* novoComposto = [DQCoreDataController procurarComposto:[[compostosPlist objectAtIndex:i]objectForKey:@"Nome"]];
             
             if (novoComposto == nil) {
-                novoComposto =[[Composto alloc]init];
+                novoComposto =[NSEntityDescription
+                               insertNewObjectForEntityForName:@"Composto"
+                               inManagedObjectContext:[DQCoreDataController contextoApp]];
+                
                 
                 novoComposto.nome = [[compostosPlist objectAtIndex:i]objectForKey:@"Nome"];
             }
             
             
-            for (int j = 0; j< [[[compostosPlist objectAtIndex:i]objectForKey:@"Elementos"]count]; i++) {
+            for (int j = 0; j< [[[compostosPlist objectAtIndex:i]objectForKey:@"Elementos"]count]; j++) {
                 
-                NSString *nomeElemento = [[[compostosPlist objectAtIndex:i]objectForKey:@"Elementos"]objectAtIndex:i];
+                NSString *nomeElemento = [[[compostosPlist objectAtIndex:i]objectForKey:@"Elementos"]objectAtIndex:j];
                 
                 Elemento* elementoComposto = [DQCoreDataController procurarElemento:nomeElemento];
                 
@@ -82,12 +85,94 @@
 }
 -(void)iniciarElementos{
     
+    NSArray* elementos =[DQCoreDataController elementos];
     
+    NSMutableArray *elementosParaSalvar = [[NSMutableArray alloc]init];
+    if(elementos.count < [[self.TransformacoesRef objectForKey:@"Elementos"]intValue]){
+        
+        [self lerPlistTransformacoes];
+        NSArray *elementosPlist = [self.transformacoesPlist objectForKey:@"Elementos"];
+        
+        for (int i = 0 ;i < elementosPlist.count; i++) {
+            Elemento *novoElemento = [DQCoreDataController procurarElemento:[[elementosPlist objectAtIndex:i]objectForKey:@"Nome"]];
+            
+            if (novoElemento == nil) {
+                novoElemento =[NSEntityDescription
+                               insertNewObjectForEntityForName:@"Elemento"
+                               inManagedObjectContext:[DQCoreDataController contextoApp]];
+                
+                novoElemento.nome = [[elementosPlist objectAtIndex:i]objectForKey:@"Nome"];
+            }
+            
+            
+            
+            
+            
+            novoElemento.imagem = [[elementosPlist objectAtIndex:i]objectForKey:@"Imagem"];
+            novoElemento.n_eletrons = [[elementosPlist objectAtIndex:i]objectForKey:@"NumeroEletrons"];
+            
+            novoElemento.simbolo = [[elementosPlist objectAtIndex:i]objectForKey:@"Simbolo"];
+            novoElemento.info_elemento= [[elementosPlist objectAtIndex:i]objectForKey:@"Info"];
+            
+            [elementosParaSalvar addObject:novoElemento];
+        }
+        
+        [DQCoreDataController salvarCompostos:elementosParaSalvar];
+    }
     
     
 }
 -(void)iniciarReceitas{
     
+    NSArray* receitas =[DQCoreDataController receitas];
+    
+    NSMutableArray *receitasParaSalvar = [[NSMutableArray alloc]init];
+    if(receitas.count < [[self.TransformacoesRef objectForKey:@"Receitas"]intValue]){
+        
+        [self lerPlistTransformacoes];
+        NSArray *receitasPlist = [self.transformacoesPlist objectForKey:@"Receitas"];
+        
+        for (int i = 0 ;i < receitasPlist.count; i++) {
+            Receita *novaReceita = [DQCoreDataController procurarReceita:[[receitasPlist objectAtIndex:i]objectForKey:@"Nome"]];
+            
+            if (novaReceita == nil) {
+                novaReceita =[NSEntityDescription
+                              insertNewObjectForEntityForName:@"Receita"
+                              inManagedObjectContext:[DQCoreDataController contextoApp]];
+                
+                
+                novaReceita.nome = [[receitasPlist objectAtIndex:i]objectForKey:@"Nome"];
+            }
+            
+            
+            for (int j = 0; j< [[[receitasPlist objectAtIndex:i]objectForKey:@"Compostos"]count]; j++) {
+                
+                NSString *nomeComposto = [[[receitasPlist objectAtIndex:i]objectForKey:@"Compostos"]objectAtIndex:j];
+                
+                Composto *composto = [DQCoreDataController procurarComposto:nomeComposto];
+                
+                [novaReceita addComposto_receitaObject:composto];
+            }
+            
+            
+            novaReceita.id_item_gerar = [[receitasPlist objectAtIndex:i]objectForKey:@"ItemGerado"];
+            novaReceita.descricao = [[receitasPlist objectAtIndex:i]objectForKey:@"Descricao"];
+            
+            novaReceita.info_conf_composto = [[receitasPlist objectAtIndex:i]objectForKey:@"Bolinhas"];
+            
+            
+            [receitasParaSalvar addObject:novaReceita];
+        }
+        
+        [DQCoreDataController salvarReceitas:receitasParaSalvar];
+    }
+    
+}
+
+-(void)iniciarReferenciasTransformacoes{
+    [self iniciarElementos];
+    [self iniciarCompostos];
+    [self iniciarReceitas];
 }
 
 @end

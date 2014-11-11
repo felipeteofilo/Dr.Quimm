@@ -7,6 +7,12 @@
 //
 
 #import "DQViewController.h"
+#import "DQPopularCoreData.h"
+#import "DQComposto.h"
+#import "DQElemento.h"
+#import "DQReceita.h"
+#import "DQTelaInfoComposto.h"
+
 
 @implementation DQViewController
 
@@ -27,6 +33,26 @@
 //    menuInicial.scaleMode = SKSceneScaleModeAspectFill;
 //  
 //   [skView presentScene:menuInicial];
+    
+    DQPopularCoreData *core = [[DQPopularCoreData alloc]init];
+    
+    
+    [core iniciarReferenciasTransformacoes];
+    
+//    DQElemento * elemento =[[DQElemento alloc]initComEntidadeElemento:[DQCoreDataController procurarElemento:@"Elemento"]];
+//    
+    DQComposto *composto = [[DQComposto alloc]initComEntidadeComposto:[DQCoreDataController procurarComposto:@"Nome"]];
+//    DQReceita *receita = [[DQReceita alloc]initComReceita:[DQCoreDataController procurarReceita:@"Receita"]];
+    
+    
+    
+    
+//    DQTelaInfoComposto *info = [[DQTelaInfoComposto alloc]initNaPosicao:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2) tamanho:self.view.frame.size];
+    
+    
+    
+   // [self.view addSubview:info];
+    [self.view addSubview:composto];
 
 
 }

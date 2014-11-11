@@ -16,6 +16,8 @@
 @property NSDictionary *transformacoesPlist;
 @property NSDictionary *TransformacoesRef;
 
+-(void)iniciarReferenciasTransformacoes;
+
 
 
 

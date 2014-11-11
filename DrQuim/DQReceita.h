@@ -12,11 +12,11 @@
 @interface DQReceita : UIButton
 
 @property NSString *nome;
-@property NSDictionary *descricao;
-@property NSArray *arrayCompostos;
+@property NSString *descricao;
+@property NSMutableArray *arrayCompostos;
 
--(id)initComNome:(Receita*)receita;
+-(id)initComReceita:(Receita*)receita;
 
--(void)iniciarCompostos;
+//-(void)iniciarCompostos;
 
 @end
