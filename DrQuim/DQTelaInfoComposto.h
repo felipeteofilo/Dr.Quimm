@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface DQTelaInfoComposto : UIView
 
 
--(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho ;
+-(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho informacao:(NSDictionary*)info;
 
 @end
