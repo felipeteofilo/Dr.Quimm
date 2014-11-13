@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     //ARRAY TEMPORARIO
-    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", nil];
+    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
     int numeroDeCompostos = arrayDeCompostos.count;
     
     valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 350, 120, 30)];
@@ -34,7 +34,7 @@
     valueLabel.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:valueLabel];
 	
-    SMRotaryWheel *wheel = [[SMRotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 200, 200) andDelegate:self withSections:numeroDeCompostos];
+    SMRotaryWheel *wheel = [[SMRotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 200, 200) andDelegate:self withSections:numeroDeCompostos eCompostos:arrayDeCompostos];
     
     wheel.center = CGPointMake(160, 240);
     [self.view addSubview:wheel];

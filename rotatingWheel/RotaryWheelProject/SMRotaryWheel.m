@@ -28,10 +28,12 @@ static float maxAlphavalue = 1.0;
 @synthesize delegate, container, numberOfSections, startTransform, cloves, currentValue;
 
 
-- (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber {
+- (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber eCompostos:(NSArray *)arrayDeCompostos {
     
     if ((self = [super initWithFrame:frame])) {
 		
+        self.arrayDeCompostos = [[NSArray alloc]initWithArray:arrayDeCompostos];
+        
         self.currentValue = 0;
         self.numberOfSections = sectionsNumber;
         self.delegate = del;
@@ -49,38 +51,16 @@ static float maxAlphavalue = 1.0;
     CGFloat angleSize = 2*M_PI/numberOfSections;
     
     for (int i = 0; i < numberOfSections; i++) {
+        AreaComposto *areaComposto = [[AreaComposto alloc]initComFrame:CGRectMake(container.bounds.size.width/2.0, container.bounds.size.height/2.0, container.bounds.size.width * 0.5, container.bounds.size.height * 0.5) eComposto:[self.arrayDeCompostos objectAtIndex:i]];
         
-        UIImageView *im = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"recipiente.png"]];
-        
-        im.layer.anchorPoint = CGPointMake(0.5f, 1.0f);
-        im.frame = CGRectMake(container.bounds.size.width/2.0, container.bounds.size.height/2.0, container.bounds.size.width * 0.5, container.bounds.size.height * 0.5);
-        im.contentMode = UIViewContentModeScaleAspectFit;
-        im.layer.position = CGPointMake(container.bounds.size.width/2.0 - container.frame.origin.x,
-                                        container.bounds.size.height/2.0 - container.frame.origin.y);
-        im.transform = CGAffineTransformMakeRotation(angleSize * i);
-        im.alpha = minAlphavalue;
-        im.tag = i;
-        
-        if (i == 0) {
-            im.alpha = maxAlphavalue;
-        }
-        
-        NSLog(@"%.0f | %.0f | %.0f | %.0f", im.frame.origin.x, im.frame.origin.y, im.frame.size.height, im.frame.size.width);
-        
-        
-        UIImageView *cloveImage = [[UIImageView alloc] initWithFrame:CGRectMake(im.frame.origin.x * 0.05,     //x
-                                                                                im.frame.origin.y * 0.05,     //y
-                                                                                im.frame.size.height * 0.2,     //largura
-                                                                                im.frame.size.height * 0.2)];   //altura
-        cloveImage.layer.anchorPoint = CGPointMake(0, 0);
-        
-        NSLog(@"%.0f | %.0f | %.0f | %.0f", cloveImage.frame.origin.x, cloveImage.frame.origin.y, cloveImage.frame.size.height, cloveImage.frame.size.width);
-        
-        cloveImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon%i.png", i]];
-        [im addSubview:cloveImage];
-        
-        [container addSubview:im];
-        
+        areaComposto.layer.anchorPoint = CGPointMake(0.5f, 1.0f);
+        areaComposto.contentMode = UIViewContentModeScaleAspectFit;
+        areaComposto.layer.position = CGPointMake(container.bounds.size.width/2.0 - container.frame.origin.x, container.bounds.size.height/2.0 - container.frame.origin.y);
+        areaComposto.transform = CGAffineTransformMakeRotation(angleSize * i);
+        areaComposto.alpha = minAlphavalue;
+        areaComposto.tag = i;
+
+        [container addSubview:areaComposto];
     }
     
     container.userInteractionEnabled = NO;
@@ -95,95 +75,65 @@ static float maxAlphavalue = 1.0;
     }
     
     [self.delegate wheelDidChangeValue:[self getCloveName:currentValue]];
-
-    
 }
 
 
 - (UIImageView *) getCloveByValue:(int)value {
 
     UIImageView *res;
-    
     NSArray *views = [container subviews];
-    
     for (UIImageView *im in views) {
-        
         if (im.tag == value)
             res = im;
-        
     }
-    
     return res;
-    
 }
 
 - (void) buildClovesEven {
-    
     CGFloat fanWidth = M_PI*2/numberOfSections;
     CGFloat mid = 0;
     
     for (int i = 0; i < numberOfSections; i++) {
-        
         SMClove *clove = [[SMClove alloc] init];
         clove.midValue = mid;
         clove.minValue = mid - (fanWidth/2);
         clove.maxValue = mid + (fanWidth/2);
         clove.value = i;
         
-        
         if (clove.maxValue - fanWidth < - M_PI) {
-            
             mid = M_PI;
             clove.midValue = mid;
             clove.midValue = fabsf(clove.maxValue);
-            
         }
         
         mid -= fanWidth;
-        
-        
-        NSLog(@"cl is %@", clove);
-        
         [cloves addObject:clove];
-        
     }
-    
 }
 
 
 - (void) buildClovesOdd {
-    
     CGFloat fanWidth = M_PI*2/numberOfSections;
     CGFloat mid = 0;
-    
     for (int i = 0; i < numberOfSections; i++) {
-        
         SMClove *clove = [[SMClove alloc] init];
         clove.midValue = mid;
         clove.minValue = mid - (fanWidth/2);
         clove.maxValue = mid + (fanWidth/2);
         clove.value = i;
-        
         mid -= fanWidth;
         
         if (clove.minValue < - M_PI) {
-            
             mid = -mid;
-            mid -= fanWidth; 
-            
+            mid -= fanWidth;
         }
         
-                
         [cloves addObject:clove];
-        
         NSLog(@"cl is %@", clove);
-        
     }
-    
 }
 
 - (float) calculateDistanceFromCenter:(CGPoint)point {
-    
     CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
 	float dx = point.x - center.x;
 	float dy = point.y - center.y;
@@ -192,7 +142,6 @@ static float maxAlphavalue = 1.0;
 }
 
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
-    
     CGPoint touchPoint = [touch locationInView:self];
     float dist = [self calculateDistanceFromCenter:touchPoint];
     
@@ -213,76 +162,40 @@ static float maxAlphavalue = 1.0;
     im.alpha = minAlphavalue;
     
     return YES;
-    
 }
 
-- (BOOL)continueTrackingWithTouch:(UITouch*)touch withEvent:(UIEvent*)event
-{
-        
+- (BOOL)continueTrackingWithTouch:(UITouch*)touch withEvent:(UIEvent*)event{
 	CGPoint pt = [touch locationInView:self];
-    
     float dist = [self calculateDistanceFromCenter:pt];
-    
-    if (dist < 40 || dist > 100) 
-    {
-        // a drag path too close to the center
-        NSLog(@"drag path too close to the center (%f,%f)", pt.x, pt.y);
-        
-        // here you might want to implement your solution when the drag 
-        // is too close to the center
-        // You might go back to the clove previously selected
-        // or you might calculate the clove corresponding to
-        // the "exit point" of the drag.
-
-    }
 	
 	float dx = pt.x  - container.center.x;
 	float dy = pt.y  - container.center.y;
 	float ang = atan2(dy,dx);
     
     float angleDifference = deltaAngle - ang;
-    
     container.transform = CGAffineTransformRotate(startTransform, -angleDifference);
     
     return YES;
-	
 }
 
-- (void)endTrackingWithTouch:(UITouch*)touch withEvent:(UIEvent*)event
-{
-    
+- (void)endTrackingWithTouch:(UITouch*)touch withEvent:(UIEvent*)event{
     CGFloat radians = atan2f(container.transform.b, container.transform.a);
-    
     CGFloat newVal = 0.0;
-    
     for (SMClove *c in cloves) {
-        
         if (c.minValue > 0 && c.maxValue < 0) { // anomalous case
-            
             if (c.maxValue > radians || c.minValue < radians) {
-                
                 if (radians > 0) { // we are in the positive quadrant
-                    
                     newVal = radians - M_PI;
-                    
                 } else { // we are in the negative one
-                    
-                    newVal = M_PI + radians;                    
-                    
+                    newVal = M_PI + radians;
                 }
                 currentValue = c.value;
-                
             }
-            
         }
-        
         else if (radians > c.minValue && radians < c.maxValue) {
-            
             newVal = radians - c.midValue;
             currentValue = c.value;
-            
         }
-        
     }
     
     [UIView beginAnimations:nil context:NULL];
@@ -297,55 +210,12 @@ static float maxAlphavalue = 1.0;
     
     UIImageView *im = [self getCloveByValue:currentValue];
     im.alpha = maxAlphavalue;
-    
 }
 
 - (NSString *) getCloveName:(int)position {
     
-    NSString *res = @"";
-    
-    switch (position) {
-        case 0:
-            res = @"Circles";
-            break;
-            
-        case 1:
-            res = @"Flower";
-            break;
-            
-        case 2:
-            res = @"Monster";
-            break;
-            
-        case 3:
-            res = @"Person";
-            break;
-            
-        case 4:
-            res = @"Smile";
-            break;
-            
-        case 5:
-            res = @"Sun";
-            break;
-            
-        case 6:
-            res = @"Swirl";
-            break;
-            
-        case 7:
-            res = @"3 circles";
-            break;
-            
-        case 8:
-            res = @"Triangle";
-            break;
-            
-        default:
-            break;
-    }
-    
-    return res;
+    NSString *nome =[NSString stringWithFormat:@"%@", [self.arrayDeCompostos objectAtIndex:position]];
+    return nome;
 }
 
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SMRotaryProtocol.h"
+#import "AreaComposto.h"
 
 @interface SMRotaryWheel : UIControl
 
@@ -17,6 +18,8 @@
 @property CGAffineTransform startTransform;
 @property (nonatomic, strong) NSMutableArray *cloves;
 @property int currentValue;
+
+@property NSArray *arrayDeCompostos;
 
 
 - (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber eCompostos:(NSArray *)arrayDeCompostos;

@@ -10,5 +10,6 @@
 
 @interface AreaComposto: UIImageView
 
+-(id)initComFrame:(CGRect)frame eComposto:(NSString *)nomeDoComposto;
 
 @end

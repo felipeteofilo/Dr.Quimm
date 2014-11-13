@@ -55,6 +55,7 @@
     
 }
 
+
 -(void)iniciarFase{
     
     //Alterado a inicialização do mundo para usar a variavel da skScene e assim poder manipular ele durante a cena toda

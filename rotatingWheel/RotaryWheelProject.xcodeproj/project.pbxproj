@@ -31,6 +31,7 @@
 		BDF438C614E572EB00A27135 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF438C514E572EB00A27135 /* QuartzCore.framework */; };
 		CD81FD211A12748A0090C4D6 /* recipiente.png in Resources */ = {isa = PBXBuildFile; fileRef = CD81FD201A12748A0090C4D6 /* recipiente.png */; };
 		CD81FD271A1295520090C4D6 /* AreaComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = CD81FD261A1295520090C4D6 /* AreaComposto.m */; };
+		CD83B8451A1518FE00CBC4CE /* elementoTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = CD83B8441A1518FE00CBC4CE /* elementoTeste.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,9 +65,10 @@
 		BDF438BE14E5641000A27135 /* SMRotaryWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRotaryWheel.m; sourceTree = "<group>"; };
 		BDF438C414E56B4B00A27135 /* SMRotaryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRotaryProtocol.h; sourceTree = "<group>"; };
 		BDF438C514E572EB00A27135 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CD81FD201A12748A0090C4D6 /* recipiente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recipiente.png; sourceTree = "<group>"; };
+		CD81FD201A12748A0090C4D6 /* recipiente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recipiente.png; path = assets/recipiente.png; sourceTree = "<group>"; };
 		CD81FD251A1295520090C4D6 /* AreaComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaComposto.h; sourceTree = "<group>"; };
 		CD81FD261A1295520090C4D6 /* AreaComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaComposto.m; sourceTree = "<group>"; };
+		CD83B8441A1518FE00CBC4CE /* elementoTeste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elementoTeste.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,6 @@
 		BD683C5214EAB964005EF069 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				CD81FD201A12748A0090C4D6 /* recipiente.png */,
 				BD683C5314EAB964005EF069 /* bg.png */,
 				BD683C5414EAB964005EF069 /* centerButton.png */,
 				BD683C5514EAB964005EF069 /* icon0.png */,
@@ -155,6 +156,8 @@
 		BDF438A714E5638700A27135 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD83B8441A1518FE00CBC4CE /* elementoTeste.png */,
+				CD81FD201A12748A0090C4D6 /* recipiente.png */,
 				BDF438A814E5638700A27135 /* RotaryWheelProject-Info.plist */,
 				BDF438A914E5638700A27135 /* InfoPlist.strings */,
 				BDF438AC14E5638700A27135 /* main.m */,
@@ -223,6 +226,7 @@
 				BD683C6314EAB964005EF069 /* icon3.png in Resources */,
 				BD683C6414EAB964005EF069 /* icon4.png in Resources */,
 				BD683C6514EAB964005EF069 /* icon5.png in Resources */,
+				CD83B8451A1518FE00CBC4CE /* elementoTeste.png in Resources */,
 				BD683C6614EAB964005EF069 /* icon6.png in Resources */,
 				CD81FD211A12748A0090C4D6 /* recipiente.png in Resources */,
 				BD683C6714EAB964005EF069 /* icon7.png in Resources */,
