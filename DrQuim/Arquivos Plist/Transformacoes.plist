@@ -37,16 +37,16 @@
 			<key>Info</key>
 			<dict>
 				<key>Aplicacao</key>
-				<string></string>
+				<string>Aplica</string>
 				<key>Obtencao</key>
-				<string></string>
+				<string>Obtem</string>
 			</dict>
 			<key>FormulaMolecular</key>
 			<string>Formula</string>
 			<key>Imagem</key>
 			<string>Imagem</string>
 			<key>Nome</key>
-			<string>Nome</string>
+			<string>Composto muito grande kkkkkkm</string>
 		</dict>
 	</array>
 	<key>Receitas</key>
@@ -54,7 +54,7 @@
 		<dict>
 			<key>Compostos</key>
 			<array>
-				<string>Nome</string>
+				<string>Composto muito grande kkkkkkm</string>
 			</array>
 			<key>Bolinhas</key>
 			<array>

@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface DQTelaInfoComposto : UIView
+
+@interface DQTelaInfoComposto : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource>
 
 
--(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho informacao:(NSDictionary*)info;
+-(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho nomeComposto:(NSString*)nome;
 
 @end
