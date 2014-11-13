@@ -27,12 +27,14 @@ static float maxAlphavalue = 1.0;
 
 @synthesize delegate, container, numberOfSections, startTransform, cloves, currentValue;
 
-
+//MODIFICADO PELA JULIA
 - (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber eCompostos:(NSArray *)arrayDeCompostos {
     
     if ((self = [super initWithFrame:frame])) {
 		
+        //MODIFICADO PELA JULIA
         self.arrayDeCompostos = [[NSArray alloc]initWithArray:arrayDeCompostos];
+        self.tagImagemSelecionada = 0;
         
         self.currentValue = 0;
         self.numberOfSections = sectionsNumber;
@@ -50,6 +52,7 @@ static float maxAlphavalue = 1.0;
     container = [[UIView alloc] initWithFrame:self.frame];
     CGFloat angleSize = 2*M_PI/numberOfSections;
     
+    //MODIFICADO PELA JULIA
     for (int i = 0; i < numberOfSections; i++) {
         AreaComposto *areaComposto = [[AreaComposto alloc]initComFrame:CGRectMake(container.bounds.size.width/2.0, container.bounds.size.height/2.0, container.bounds.size.width * 0.5, container.bounds.size.height * 0.5) eComposto:[self.arrayDeCompostos objectAtIndex:i]];
         
@@ -159,14 +162,15 @@ static float maxAlphavalue = 1.0;
     startTransform = container.transform;
     
     UIImageView *im = [self getCloveByValue:currentValue];
-    im.alpha = minAlphavalue;
+    
+    //MODIFICADO PELA JULIA
+    [self alterarAlphanaImagem:im];
     
     return YES;
 }
 
 - (BOOL)continueTrackingWithTouch:(UITouch*)touch withEvent:(UIEvent*)event{
 	CGPoint pt = [touch locationInView:self];
-    float dist = [self calculateDistanceFromCenter:pt];
 	
 	float dx = pt.x  - container.center.x;
 	float dy = pt.y  - container.center.y;
@@ -174,6 +178,9 @@ static float maxAlphavalue = 1.0;
     
     float angleDifference = deltaAngle - ang;
     container.transform = CGAffineTransformRotate(startTransform, -angleDifference);
+    
+    UIImageView *im = [self getCloveByValue:currentValue];
+    NSLog(@"%i", im.tag);
     
     return YES;
 }
@@ -209,13 +216,22 @@ static float maxAlphavalue = 1.0;
     [self.delegate wheelDidChangeValue:[self getCloveName:currentValue]];
     
     UIImageView *im = [self getCloveByValue:currentValue];
-    im.alpha = maxAlphavalue;
+    
+    //MODIFICADO PELA JULIA
+    [self alterarAlphanaImagem:im];
 }
 
 - (NSString *) getCloveName:(int)position {
     
     NSString *nome =[NSString stringWithFormat:@"%@", [self.arrayDeCompostos objectAtIndex:position]];
     return nome;
+}
+
+//MODIFICADO PELA JULIA
+-(void)alterarAlphanaImagem:(UIImageView *)imagem{
+    
+    
+    
 }
 
 

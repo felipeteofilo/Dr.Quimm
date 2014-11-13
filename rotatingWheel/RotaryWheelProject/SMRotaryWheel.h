@@ -20,6 +20,7 @@
 @property int currentValue;
 
 @property NSArray *arrayDeCompostos;
+@property int tagImagemSelecionada;
 
 
 - (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber eCompostos:(NSArray *)arrayDeCompostos;
