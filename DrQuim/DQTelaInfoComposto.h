@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DQScroolView.h"
 
 
 
 @interface DQTelaInfoComposto : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource>
 
+@property DQScroolView *scrollViewElementos;
+@property UIView * infoElemento;
 
 -(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho nomeComposto:(NSString*)nome;
 

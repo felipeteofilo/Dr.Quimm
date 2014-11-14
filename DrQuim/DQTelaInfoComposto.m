@@ -93,47 +93,60 @@
 
 -(void)montarBotoesElementos :(NSArray*)nomesElementos{
     
-//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-//    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-//    
-//    UICollectionView *viewElementos = [[UICollectionView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)collectionViewLayout:layout];
     
+    self.scrollViewElementos = [[DQScroolView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)];
     
-    
-    
-    UIScrollView *viewElementos = [[UIScrollView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)];
-    
+
     for (int i = 0; i < 5; i++) {
         
         CGSize tamanhoBotao = CGSizeMake(self.view.frame.size.height *0.22, self.view.frame.size.height *0.22);
         
         UIButton *elemento = [[UIButton alloc]init];
         
-        [elemento setFrame:CGRectMake((tamanhoBotao.width * i)+(15*i), tamanhoBotao.height*0.03, tamanhoBotao.width, tamanhoBotao.height)];
+        [elemento setFrame:CGRectMake((tamanhoBotao.width * i)+(13.5*i), tamanhoBotao.height*0.03, tamanhoBotao.width, tamanhoBotao.height)];
        
         
         [elemento setBackgroundColor:[UIColor redColor]];
         
-        if (elemento.frame.origin.x > viewElementos.frame.size.width) {
-            [viewElementos setContentSize:CGSizeMake(elemento.frame.origin.x + elemento.frame.size.width, viewElementos.frame.size.height)];
+        if (elemento.frame.origin.x > self.scrollViewElementos.frame.size.width) {
+            [self.scrollViewElementos setContentSize:CGSizeMake(elemento.frame.origin.x + elemento.frame.size.width, self.scrollViewElementos.frame.size.height)];
         }
         
+        [elemento addTarget:self action:@selector(mostrarInfoElemento:) forControlEvents:UIControlEventTouchUpInside];
         
+        [elemento setTitle:@"nome" forState:UIControlStateDisabled];
         
-        [viewElementos addSubview:elemento];
-        
+        //[elemento set]
+        [self.scrollViewElementos addSubview:elemento];
     }
-   
+    [self.scrollViewElementos setCanCancelContentTouches:YES];
     
+    [self.view addSubview:self.scrollViewElementos];
     
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-   // [viewElementos ]
+    if([self.view.subviews containsObject:self.infoElemento] ){
+        [self.infoElemento removeFromSuperview];
+    }
     
-    
-   // [viewElementos setBackgroundColor:[UIColor clearColor]];
-    
-    [self.view addSubview:viewElementos];
+}
 
+
+
+-(void)mostrarInfoElemento :(UIButton*)button{
+    
+    
+    if([self.view.subviews containsObject:self.infoElemento] ){
+        [self.infoElemento removeFromSuperview];
+    }
+    self.infoElemento= [[UIView alloc]initWithFrame:CGRectMake(button.frame.origin.x+(button.frame.size.width/1.5),button.frame.origin.y +self.view.frame.size.height - button.frame.size.height*0.8 , self.view.frame.size.width, self.view.frame.size.height *0.7)];
+    
+    [self.infoElemento setBackgroundColor:[UIColor blueColor]];
+    
+    [self.view addSubview:self.infoElemento];
+    
+    NSLog(@"%@",[button titleForState:UIControlStateDisabled]);
 }
 
 

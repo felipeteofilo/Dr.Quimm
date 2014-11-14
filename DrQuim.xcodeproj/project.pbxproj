@@ -58,6 +58,7 @@
 		75E512941A15314F001F3F83 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E512931A15314F001F3F83 /* MarqueeLabel.m */; };
 		75F74AFC1A128FCB00BEE2C1 /* DQTelaInfoComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */; };
 		75F9E2271A002C8100DFF3AE /* DQAlertasControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F9E2261A002C8100DFF3AE /* DQAlertasControle.m */; };
+		75FB4C2E1A168A33001E8669 /* DQScroolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB4C2D1A168A33001E8669 /* DQScroolView.m */; };
 		75FC87AB1A13D17E00874DC1 /* descript.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FC87AA1A13D17E00874DC1 /* descript.png */; };
 		75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */; };
 		75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */; };
@@ -300,6 +301,8 @@
 		75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTelaInfoComposto.m; sourceTree = "<group>"; };
 		75F9E2251A002C8100DFF3AE /* DQAlertasControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAlertasControle.h; sourceTree = "<group>"; };
 		75F9E2261A002C8100DFF3AE /* DQAlertasControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAlertasControle.m; sourceTree = "<group>"; };
+		75FB4C2C1A168A33001E8669 /* DQScroolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQScroolView.h; sourceTree = "<group>"; };
+		75FB4C2D1A168A33001E8669 /* DQScroolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQScroolView.m; sourceTree = "<group>"; };
 		75FC87AA1A13D17E00874DC1 /* descript.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = descript.png; sourceTree = "<group>"; };
 		75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrQuim.xcdatamodel; sourceTree = "<group>"; };
@@ -1032,6 +1035,8 @@
 				94080EB61933BA290024FB94 /* DQViewController.m */,
 				75E512921A15314F001F3F83 /* MarqueeLabel.h */,
 				75E512931A15314F001F3F83 /* MarqueeLabel.m */,
+				75FB4C2C1A168A33001E8669 /* DQScroolView.h */,
+				75FB4C2D1A168A33001E8669 /* DQScroolView.m */,
 				75F74AFA1A128FCB00BEE2C1 /* DQTelaInfoComposto.h */,
 				75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */,
 				947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */,
@@ -1396,6 +1401,7 @@
 				C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */,
 				943710BD19A3DF1100B8846E /* DQArmadilhasJogador.m in Sources */,
 				C5101E3E19F6C7A800FE7E66 /* DQBotao.m in Sources */,
+				75FB4C2E1A168A33001E8669 /* DQScroolView.m in Sources */,
 				C54031E71989FE98003384AB /* DQMenuQuest.m in Sources */,
 				C54031E51989FE98003384AB /* DQMenuConfiguracao.m in Sources */,
 				75F9E2271A002C8100DFF3AE /* DQAlertasControle.m in Sources */,
