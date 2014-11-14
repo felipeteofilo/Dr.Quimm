@@ -93,44 +93,49 @@
 
 -(void)montarBotoesElementos :(NSArray*)nomesElementos{
     
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+//    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+//    
+//    UICollectionView *viewElementos = [[UICollectionView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)collectionViewLayout:layout];
     
-    UICollectionView *viewElementos = [[UICollectionView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)collectionViewLayout:layout];
     
-    [viewElementos setDataSource:self];
-    [viewElementos setDelegate:self];
-     [viewElementos registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    
+    
+    UIScrollView *viewElementos = [[UIScrollView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)];
+    
+    for (int i = 0; i < 5; i++) {
+        
+        CGSize tamanhoBotao = CGSizeMake(self.view.frame.size.height *0.22, self.view.frame.size.height *0.22);
+        
+        UIButton *elemento = [[UIButton alloc]init];
+        
+        [elemento setFrame:CGRectMake((tamanhoBotao.width * i)+(15*i), tamanhoBotao.height*0.03, tamanhoBotao.width, tamanhoBotao.height)];
+       
+        
+        [elemento setBackgroundColor:[UIColor redColor]];
+        
+        if (elemento.frame.origin.x > viewElementos.frame.size.width) {
+            [viewElementos setContentSize:CGSizeMake(elemento.frame.origin.x + elemento.frame.size.width, viewElementos.frame.size.height)];
+        }
+        
+        
+        
+        [viewElementos addSubview:elemento];
+        
+    }
+   
+    
+    
     
    // [viewElementos ]
     
     
-    [viewElementos setBackgroundColor:[UIColor clearColor]];
+   // [viewElementos setBackgroundColor:[UIColor clearColor]];
     
     [self.view addSubview:viewElementos];
 
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return 15;
-}
-
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-//    
-//    [cell.
-//    
-//    
-   return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake(50, 50);
-}
 
 
 
