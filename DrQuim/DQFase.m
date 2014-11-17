@@ -306,7 +306,7 @@
             
             if (self.faseAtual !=2) {
                 if ([DQUteis sortearChanceSim:50.0]) {
-                    [self.controleSom tocarSomLista];
+//                    [self.controleSom tocarSomLista];
                 }
             }
         }
