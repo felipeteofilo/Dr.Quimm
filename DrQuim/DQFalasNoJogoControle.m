@@ -52,10 +52,10 @@
     
     
     //Cria o controlador de som
-    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
+//    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
     
     //Verifica qual a duracao do som da fala a ser tocado
-    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
+//    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
     
     //Adiciona o controlador de Som á caixa de falas
     [self.caixaDeFala addChild:self.controleSom];
@@ -93,10 +93,10 @@
     
     
     //Cria o controlador de som
-    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
+//    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
     
     //Verifica qual a duracao do som da fala a ser tocado
-    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
+//    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
     
     //Adiciona o controlador de Som á caixa de falas
     [self.caixaDeFala addChild:self.controleSom];
@@ -111,7 +111,7 @@
     self.falaAtual++;
     
     //Remover sons Anteriores
-    [self.controleSom pararSom];
+//    [self.controleSom pararSom];
     
     
     [self.caixaDeFala removeFromParent];
@@ -125,6 +125,6 @@
 }
 
 -(void)configurarControleSom{
-    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
+//    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
 }
 @end
