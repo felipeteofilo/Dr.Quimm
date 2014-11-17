@@ -100,6 +100,7 @@
 		948819761990218400609A0F /* FalasCutScene.plist in Resources */ = {isa = PBXBuildFile; fileRef = 948819751990218400609A0F /* FalasCutScene.plist */; };
 		94A8680A19995C4900604BA4 /* ContadorGeiger.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94A8680919995C4900604BA4 /* ContadorGeiger.atlas */; };
 		94A8681C1999683800604BA4 /* DQContadorGeiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8681B1999683800604BA4 /* DQContadorGeiger.m */; };
+		C50C8F431A196D35006B6478 /* ConfigSons.plist in Resources */ = {isa = PBXBuildFile; fileRef = C50C8F421A196D35006B6478 /* ConfigSons.plist */; };
 		C5101E3E19F6C7A800FE7E66 /* DQBotao.m in Sources */ = {isa = PBXBuildFile; fileRef = C5101E3C19F6C7A800FE7E66 /* DQBotao.m */; };
 		C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C51125891973AB4E00CECCAD /* DQBarraStatus.m */; };
 		C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */ = {isa = PBXBuildFile; fileRef = C511258B1973AB4E00CECCAD /* DQHudController.m */; };
@@ -161,8 +162,6 @@
 		C58F75BF19A4EB9A00DC7A71 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */; };
 		C58F75C619A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */; };
 		C58F75C719A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C119A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 */; };
-		C58F75C819A4EBEA00DC7A71 /* Fundo03 - Animal .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C219A4EBEA00DC7A71 /* Fundo03 - Animal .mp3 */; };
-		C58F75C919A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C319A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 */; };
 		C58F75CA19A4EBEA00DC7A71 /* Fundo07 - Sapos .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C419A4EBEA00DC7A71 /* Fundo07 - Sapos .mp3 */; };
 		C58F75CB19A4EBEA00DC7A71 /* Fundo08 - Vento .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C519A4EBEA00DC7A71 /* Fundo08 - Vento .mp3 */; };
 		C59181611967756700AFD8B5 /* DQPlataforma.m in Sources */ = {isa = PBXBuildFile; fileRef = C59181601967756700AFD8B5 /* DQPlataforma.m */; };
@@ -353,6 +352,7 @@
 		94A8680919995C4900604BA4 /* ContadorGeiger.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ContadorGeiger.atlas; sourceTree = "<group>"; };
 		94A8681A1999683800604BA4 /* DQContadorGeiger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQContadorGeiger.h; sourceTree = "<group>"; };
 		94A8681B1999683800604BA4 /* DQContadorGeiger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQContadorGeiger.m; sourceTree = "<group>"; };
+		C50C8F421A196D35006B6478 /* ConfigSons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigSons.plist; sourceTree = "<group>"; };
 		C5101E3C19F6C7A800FE7E66 /* DQBotao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBotao.m; sourceTree = "<group>"; };
 		C5101E3D19F6C7A800FE7E66 /* DQBotao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBotao.h; sourceTree = "<group>"; };
 		C51125881973AB4E00CECCAD /* DQBarraStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBarraStatus.h; sourceTree = "<group>"; };
@@ -452,8 +452,6 @@
 		C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
 		C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlertaHelicoptero.mp3; sourceTree = "<group>"; };
 		C58F75C119A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fundo01 - Passaros .mp3"; sourceTree = "<group>"; };
-		C58F75C219A4EBEA00DC7A71 /* Fundo03 - Animal .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fundo03 - Animal .mp3"; sourceTree = "<group>"; };
-		C58F75C319A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fundo05 - Insetos.mp3"; sourceTree = "<group>"; };
 		C58F75C419A4EBEA00DC7A71 /* Fundo07 - Sapos .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fundo07 - Sapos .mp3"; sourceTree = "<group>"; };
 		C58F75C519A4EBEA00DC7A71 /* Fundo08 - Vento .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fundo08 - Vento .mp3"; sourceTree = "<group>"; };
 		C591815F1967756700AFD8B5 /* DQPlataforma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQPlataforma.h; sourceTree = "<group>"; };
@@ -562,6 +560,7 @@
 			children = (
 				C5FFB44719A94AF6004F3CD0 /* Missoes.plist */,
 				C5FA2C961A02B1BB002F244F /* ConfigGeral.plist */,
+				C50C8F421A196D35006B6478 /* ConfigSons.plist */,
 				C514DC401A0C0E10008A8475 /* ElementosQuimicos.plist */,
 				C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */,
 				C5FFB42519A93706004F3CD0 /* Receitas.plist */,
@@ -978,8 +977,6 @@
 			children = (
 				C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */,
 				C58F75C119A4EBEA00DC7A71 /* Fundo01 - Passaros .mp3 */,
-				C58F75C219A4EBEA00DC7A71 /* Fundo03 - Animal .mp3 */,
-				C58F75C319A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 */,
 				C58F75C419A4EBEA00DC7A71 /* Fundo07 - Sapos .mp3 */,
 				C58F75C519A4EBEA00DC7A71 /* Fundo08 - Vento .mp3 */,
 			);
@@ -1280,7 +1277,6 @@
 				C552650019A24A5B00BD59CE /* MusicaFundo01.mp3 in Resources */,
 				23D665B81A081B0200DD441D /* Fase1_Parte4.png in Resources */,
 				CD54D9BD19A51F7700C2798D /* maletaFrente.png in Resources */,
-				C58F75C919A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 in Resources */,
 				C5FFB43D19A939FF004F3CD0 /* Maleta_H2SO4.png in Resources */,
 				7505B4A619FACB3E00769C87 /* FasesEspecificas.plist in Resources */,
 				CD1392C819A7C2A000143DCA /* elemento_K.png in Resources */,
@@ -1311,6 +1307,7 @@
 				9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */,
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
+				C50C8F431A196D35006B6478 /* ConfigSons.plist in Resources */,
 				943710B019A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 in Resources */,
 				C5FFB44819A94AF6004F3CD0 /* Missoes.plist in Resources */,
 				CD1392C119A7C25A00143DCA /* destino.png in Resources */,
@@ -1365,7 +1362,6 @@
 				C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */,
 				23D665BA1A081B0200DD441D /* Fase2_Parte1.png in Resources */,
 				9488196E19901A6D00609A0F /* MissoesJogador.plist in Resources */,
-				C58F75C819A4EBEA00DC7A71 /* Fundo03 - Animal .mp3 in Resources */,
 				C55CE581199BA91F00375C87 /* ContadorGeiger-2.mp3 in Resources */,
 				C5E1F417198B223800F7A320 /* Menu.atlas in Resources */,
 				C514DC3F1A0C0D12008A8475 /* CompostosQuimico.plist in Resources */,
