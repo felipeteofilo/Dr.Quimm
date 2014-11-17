@@ -16,19 +16,15 @@
         
         self.cutSceneAtual=cutSceneAtual;
         self.faseApresentar=faseApresentar;
-        
-        //Leonardo- Removido controle de SOM para faz Atualizacao
-        //self.controleSomScene=[[DQControleSomScene alloc]initControleSomFundo:CutScene nomeSom:[self.controleCutScene somCenaCutScene] indiceCena:self.cutSceneAtual];
+        self.controleSomScene=[[DQControleSomScene alloc]initControleSomFundo:CutScene nomeSom:[self.controleCutScene somCenaCutScene] indiceCena:self.cutSceneAtual];
         
         if (![self.controleCutScene fimCutScene]) {
             [self mostrarCena];
-            //Leonardo- Removido controle de SOM para faz Atualizacao
-//            [self.controleSomScene tocarMusicaFundo];
+            [self.controleSomScene tocarMusicaFundo];
         }else{
             [self apresentarFase];
         }
-        //Leonardo- Removido controle de SOM para faz Atualizacao
-//        [self addChild:self.controleSomScene];
+        [self addChild:self.controleSomScene];
         
     }
     return self;
@@ -40,20 +36,17 @@
     }
     
     //Remove os sons anteriores
-    //Leonardo- Removido controle de SOM para faz Atualizacao
-//    [self.controleSomScene removeAllActions];
+    [self.controleSomScene removeAllActions];
     
     NSString *nomeSomCenaCutScene=[self.controleCutScene somCenaCutScene];
     
     if ([nomeSomCenaCutScene length]!=0){
         //Remove o som anteriores
-        //Leonardo- Removido controle de SOM para faz Atualizacao
-//        [self.controleSomScene removeActionForKey:@"tocandoSom"];
-//        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene nLoops:-1]];
+        [self.controleSomScene removeActionForKey:@"tocandoSom"];
+        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene nLoops:-1]];
         
     }else if ([nomeSomCenaCutScene isEqualToString:@"REMOVERSOM"]){
-//        //Leonardo- Removido controle de SOM para faz Atualizacao
-//        [self.controleSomScene.playerMusicaFundo stop];
+        [self.controleSomScene.playerMusicaFundo stop];
     }
     
     

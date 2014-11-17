@@ -52,9 +52,9 @@
         
         [self.controleMissoes iniciarMissao];
 
-//Leonardo- Removido controle de SOM para faz Atualizacao
-//        self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
-//        [self addChild:self.controleSom];
+        
+        self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
+        [self addChild:self.controleSom];
         
         [self setName:@"Jogador"];
         [self definePhisicsBody];
@@ -404,8 +404,8 @@
         else{
             [self setSede:(self.vida - vida)];
         }
-        //Leonardo- Removido controle de SOM para faz Atualizacao
-//        [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:@"somPerdeuVida"]];
+        
+        [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:@"somPerdeuVida"]];
     }
     //está ganhando vida
     else{
@@ -430,8 +430,8 @@
         
         [self animarParado];
     }
-    //Leonardo- Removido controle de SOM para faz Atualizacao
-//    [self.controleSom pararSom];
+    
+    [self.controleSom pararSom];
 }
 
 //funcao para fazer o jogador escalar
