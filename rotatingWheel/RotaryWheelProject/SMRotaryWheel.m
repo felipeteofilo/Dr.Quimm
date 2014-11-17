@@ -162,9 +162,7 @@ static float maxAlphavalue = 1.0;
     startTransform = container.transform;
     
     UIImageView *im = [self getCloveByValue:currentValue];
-    
-    //MODIFICADO PELA JULIA
-    [self alterarAlphanaImagem:im];
+    im.alpha = minAlphavalue;
     
     return YES;
 }
@@ -180,7 +178,7 @@ static float maxAlphavalue = 1.0;
     container.transform = CGAffineTransformRotate(startTransform, -angleDifference);
     
     UIImageView *im = [self getCloveByValue:currentValue];
-    NSLog(@"%i", im.tag);
+    im.alpha = minAlphavalue;
     
     return YES;
 }
@@ -216,9 +214,8 @@ static float maxAlphavalue = 1.0;
     [self.delegate wheelDidChangeValue:[self getCloveName:currentValue]];
     
     UIImageView *im = [self getCloveByValue:currentValue];
+    im.alpha = maxAlphavalue;
     
-    //MODIFICADO PELA JULIA
-    [self alterarAlphanaImagem:im];
 }
 
 - (NSString *) getCloveName:(int)position {
@@ -227,12 +224,7 @@ static float maxAlphavalue = 1.0;
     return nome;
 }
 
-//MODIFICADO PELA JULIA
--(void)alterarAlphanaImagem:(UIImageView *)imagem{
-    
-    
-    
-}
+
 
 
 

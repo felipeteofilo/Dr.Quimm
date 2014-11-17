@@ -203,6 +203,11 @@
 		CD1392C919A7C2A000143DCA /* elemento_N.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C419A7C2A000143DCA /* elemento_N.png */; };
 		CD1392CA19A7C2A000143DCA /* elemento_O.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C519A7C2A000143DCA /* elemento_O.png */; };
 		CD1392CB19A7C2A000143DCA /* elemento_Pb.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C619A7C2A000143DCA /* elemento_Pb.png */; };
+		CD35242D1A1A6AFE008D0509 /* DQCirculoComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35242C1A1A6AFE008D0509 /* DQCirculoComposto.m */; };
+		CD35242F1A1A6BA7008D0509 /* elementoTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = CD35242E1A1A6BA7008D0509 /* elementoTeste.png */; };
+		CD3524321A1A6BC8008D0509 /* recipienteTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3524311A1A6BC8008D0509 /* recipienteTeste.png */; };
+		CD3524351A1A6BE4008D0509 /* DQAreaComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3524341A1A6BE4008D0509 /* DQAreaComposto.m */; };
+		CD3524381A1A6E03008D0509 /* DQcirculo.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3524371A1A6E03008D0509 /* DQcirculo.m */; };
 		CD54D9AB19A51E4E00C2798D /* DQAmostraQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */; };
 		CD54D9AD19A51E4E00C2798D /* DQMaletaQuimica.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A419A51E4E00C2798D /* DQMaletaQuimica.m */; };
 		CD54D9AF19A51E4E00C2798D /* DQTransformacaoControle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54D9A819A51E4E00C2798D /* DQTransformacaoControle.m */; };
@@ -497,6 +502,15 @@
 		CD1392C419A7C2A000143DCA /* elemento_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_N.png; sourceTree = "<group>"; };
 		CD1392C519A7C2A000143DCA /* elemento_O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_O.png; sourceTree = "<group>"; };
 		CD1392C619A7C2A000143DCA /* elemento_Pb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_Pb.png; sourceTree = "<group>"; };
+		CD35242A1A1A6AFE008D0509 /* DQProtocoloGiratorio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQProtocoloGiratorio.h; sourceTree = "<group>"; };
+		CD35242B1A1A6AFE008D0509 /* DQCirculoComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCirculoComposto.h; sourceTree = "<group>"; };
+		CD35242C1A1A6AFE008D0509 /* DQCirculoComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCirculoComposto.m; sourceTree = "<group>"; };
+		CD35242E1A1A6BA7008D0509 /* elementoTeste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = elementoTeste.png; path = ../elementoTeste.png; sourceTree = "<group>"; };
+		CD3524311A1A6BC8008D0509 /* recipienteTeste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recipienteTeste.png; sourceTree = "<group>"; };
+		CD3524331A1A6BE4008D0509 /* DQAreaComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAreaComposto.h; sourceTree = "<group>"; };
+		CD3524341A1A6BE4008D0509 /* DQAreaComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAreaComposto.m; sourceTree = "<group>"; };
+		CD3524361A1A6E03008D0509 /* DQcirculo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQcirculo.h; sourceTree = "<group>"; };
+		CD3524371A1A6E03008D0509 /* DQcirculo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQcirculo.m; sourceTree = "<group>"; };
 		CD54D99F19A51E4E00C2798D /* DQAmostraQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAmostraQuimica.h; sourceTree = "<group>"; };
 		CD54D9A019A51E4E00C2798D /* DQAmostraQuimica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAmostraQuimica.m; sourceTree = "<group>"; };
 		CD54D9A319A51E4E00C2798D /* DQMaletaQuimica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMaletaQuimica.h; sourceTree = "<group>"; };
@@ -701,6 +715,7 @@
 		94080EA61933BA290024FB94 /* DrQuim */ = {
 			isa = PBXGroup;
 			children = (
+				CD3524281A1A6AD5008D0509 /* Transformacoes - CirculoSelecao */,
 				94331C7A19A538C300FD04F8 /* DrQuim.entitlements */,
 				C5F2D8F41A002192009D384C /* MapaMundi */,
 				75FDF3F619F6E343007E1C66 /* CoreData */,
@@ -843,6 +858,7 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				CD3524301A1A6BB5008D0509 /* TransformacoesNova */,
 				23D7E8501A0D321D0075C71A /* BotoesMovimento */,
 				CD54D9B119A51F7700C2798D /* Transformacoes */,
 				943710C119A3E04000B8846E /* Armadilhas */,
@@ -1087,6 +1103,29 @@
 			name = Fases;
 			sourceTree = "<group>";
 		};
+		CD3524281A1A6AD5008D0509 /* Transformacoes - CirculoSelecao */ = {
+			isa = PBXGroup;
+			children = (
+				CD35242A1A1A6AFE008D0509 /* DQProtocoloGiratorio.h */,
+				CD35242B1A1A6AFE008D0509 /* DQCirculoComposto.h */,
+				CD35242C1A1A6AFE008D0509 /* DQCirculoComposto.m */,
+				CD3524361A1A6E03008D0509 /* DQcirculo.h */,
+				CD3524371A1A6E03008D0509 /* DQcirculo.m */,
+				CD3524331A1A6BE4008D0509 /* DQAreaComposto.h */,
+				CD3524341A1A6BE4008D0509 /* DQAreaComposto.m */,
+			);
+			name = "Transformacoes - CirculoSelecao";
+			sourceTree = "<group>";
+		};
+		CD3524301A1A6BB5008D0509 /* TransformacoesNova */ = {
+			isa = PBXGroup;
+			children = (
+				CD35242E1A1A6BA7008D0509 /* elementoTeste.png */,
+				CD3524311A1A6BC8008D0509 /* recipienteTeste.png */,
+			);
+			name = TransformacoesNova;
+			sourceTree = "<group>";
+		};
 		CD54D9B119A51F7700C2798D /* Transformacoes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1273,6 +1312,7 @@
 				C5FFB42719A93706004F3CD0 /* AmostrasQuimicas.plist in Resources */,
 				3CAC84301979FAD5000FB1A1 /* Derrapando.atlas in Resources */,
 				CD54D9BC19A51F7700C2798D /* maletaCorpo.png in Resources */,
+				CD35242F1A1A6BA7008D0509 /* elementoTeste.png in Resources */,
 				943710C419A3E04000B8846E /* Armadilhas.atlas in Resources */,
 				C55264F519A24A5B00BD59CE /* Animal01 - Coelho.mp3 in Resources */,
 				943710AF19A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 in Resources */,
@@ -1338,6 +1378,7 @@
 				C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */,
 				C5FA2C9F1A02B47D002F244F /* Icon in Resources */,
 				C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */,
+				CD3524321A1A6BC8008D0509 /* recipienteTeste.png in Resources */,
 				23D665BA1A081B0200DD441D /* Fase2_Parte1.png in Resources */,
 				9488196E19901A6D00609A0F /* MissoesJogador.plist in Resources */,
 				C58F75C819A4EBEA00DC7A71 /* Fundo03 - Animal .mp3 in Resources */,
@@ -1406,6 +1447,7 @@
 				C54137AA1A01BEBE004C5866 /* DQCenaMapaMundi.m in Sources */,
 				C52FBF1E19A18D160059E973 /* DQIsca.m in Sources */,
 				C56A9D82196E252C00DD2347 /* DQFase.m in Sources */,
+				CD35242D1A1A6AFE008D0509 /* DQCirculoComposto.m in Sources */,
 				C54031E11989FE98003384AB /* DQConfigMenu.m in Sources */,
 				C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */,
 				943710BD19A3DF1100B8846E /* DQArmadilhasJogador.m in Sources */,
@@ -1426,6 +1468,7 @@
 				75FDF40219F6F1AB007E1C66 /* Usuario.m in Sources */,
 				3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */,
 				CD54D9AF19A51E4E00C2798D /* DQTransformacaoControle.m in Sources */,
+				CD3524381A1A6E03008D0509 /* DQcirculo.m in Sources */,
 				755876FF199AB5E40084E5AC /* DQCutsceneControle.m in Sources */,
 				C514DC371A0C0662008A8475 /* Composto.m in Sources */,
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
@@ -1449,6 +1492,7 @@
 				C5FA2C9A1A02B298002F244F /* DQControleConfigGeral.m in Sources */,
 				C52FBF1919A18D0A0059E973 /* DQAnimalCoelho.m in Sources */,
 				C513748C19FABFBB006E75D2 /* DQBackground.m in Sources */,
+				CD3524351A1A6BE4008D0509 /* DQAreaComposto.m in Sources */,
 				9488196019901A4600609A0F /* DQItensJogador.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

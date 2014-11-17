@@ -12,20 +12,36 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    //PARA O CIRCULO DE TRANSFORMAÇÃO
     [super viewDidAppear:animated];
-
     SKView * skView = (SKView *)self.view;
-    
     skView.showsPhysics = YES;
+    
+    //Array temporarios - substitui pela array de compostos que o jogador possui
+    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
+    int numeroDeCompostos = arrayDeCompostos.count;
+    
+    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, 200, 200) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
+    
+    circulo.center = CGPointMake(160, 240);
+    [self.view addSubview:circulo];
+    
+    
+//    //PARA CENAS DO JOGO
+//
+//    //DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
+//    //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
+//    //DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+//    DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
+//    
+//    fase.scaleMode = SKSceneScaleModeAspectFill;
+//    
+//    [skView presentScene:fase];
+}
 
-    //DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
-    //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
-    //DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
-    DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
+-(void)viewDidLoad
+{
     
-    fase.scaleMode = SKSceneScaleModeAspectFill;
-    
-    [skView presentScene:fase];
 }
 
 -(BOOL)prefersStatusBarHidden
