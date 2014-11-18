@@ -31,22 +31,117 @@
 		<dict>
 			<key>Elementos</key>
 			<array>
-				<string>Elemento</string>
-				<string>Elemento</string>
+				<string>Hidrogênio</string>
+				<string>Sulfato</string>
 			</array>
 			<key>Info</key>
 			<dict>
 				<key>Aplicacao</key>
-				<string>Aplica</string>
+				<string>Na produção de: 
+- Fertilizantes, como os superfosfatos e o sulfato de amônio;
+- Papel;
+- Corantes;
+- Fibras de raiom;
+- Medicamentos;
+- Tintas;
+- Inseticidas;
+- Explosivos;
+- Na produção de outros ácidos;
+- Nas indústrias petroquímicas para o refino de petróleo;
+- Em baterias de automóveis (acumuladores de chumbo).</string>
 				<key>Obtencao</key>
-				<string>Obtem</string>
+				<string>O ácido sulfúrico é obtido a partir de enxofre, oxigênio e água, por meio de um processo chamado  &quot;processo de contato&quot;. O processo de contato é um processo industrial químico para a produção de ácido sulfúrico usando um catalisador fixo como por exemplo compostos de vanádio</string>
 			</dict>
 			<key>FormulaMolecular</key>
-			<string>Formula</string>
+			<string>H2SO4</string>
 			<key>Imagem</key>
-			<string>Imagem</string>
+			<string>acidoSulfurico</string>
 			<key>Nome</key>
-			<string>Composto muito grande kkkkkkm</string>
+			<string>Ácido Sulfúrico</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Oxigênio</string>
+				<string>Hidrogênio</string>
+				<string>Carbono</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>É usado para alterar (adoçar) o gosto de bebidas e alimentos.</string>
+				<key>Obtencao</key>
+				<string>No Brasil, obtém-se o açúcar principalmente através da cana-de-açúcar, que é moída, obtendo-se a garapa, com alto teor de sacarose. Posteriormente, essa garapa é aquecida, formando um melaço, que contém aproximadamente 40% de sacarose em massa; e parte dessa sacarose se cristaliza, formando o açúcar comum.</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>C12H22O11</string>
+			<key>Imagem</key>
+			<string>acucarSacarose</string>
+			<key>Nome</key>
+			<string>Açúcar (Sacarose)</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Oxigênio</string>
+				<string>Hidrogênio</string>
+				<string>Carbono</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>Aplicações :  - Saúde e fatores de risco; - Alimentos e bebidas; - Medicamentos; - Na produção de tabaco; - Na indústria têxtil; - Pode ser utilizado como lubrificante em máquinas que fabricam produtos alimentícios; - Utilizado em misturas anticongelantes; - Utilizado para preservar bactérias a temperaturas baixas.</string>
+				<key>Obtencao</key>
+				<string>Todo o glicerol produzido no mundo, até 1949, era proveniente da indústria de sabão. Atualmente, 70% da produção de glicerol nos Estados Unidos ainda provém dos glicerídeos (óleos e gorduras naturais) e, o restante, da produção do glicerol sintético (subproduto da fabricação de propileno), da produção de ácidos graxos e também como subproduto transesterificação de ésteres, onde é substituída como álcool ligado aos de ácidos graxos pelo metanol ou etanol, resultando em biodiesel.</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>C3H8O3</string>
+			<key>Imagem</key>
+			<string>glicerina</string>
+			<key>Nome</key>
+			<string>Glicerina</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Oxigênio</string>
+				<string>Potássio</string>
+				<string>Manganês</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>Aplicações :  - Saúde e fatores de risco; - Alimentos e bebidas; - Medicamentos; - Na produção de tabaco; - Na indústria têxtil; - Pode ser utilizado como lubrificante em máquinas que fabricam produtos alimentícios; - Utilizado em misturas anticongelantes; - Utilizado para preservar bactérias a temperaturas baixas.</string>
+				<key>Obtencao</key>
+				<string>Obtido pelos íons potássio (K+) e permanganato (MnO4−). É um forte agente oxidante. Tanto como sólido como em solução aquosa apresenta uma coloração violeta bastante intensa que, na proporção de 1,5g por litro de água (em média), torna-se vermelho forte.</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>KMnO4</string>
+			<key>Imagem</key>
+			<string>permanganatoPotassio</string>
+			<key>Nome</key>
+			<string>Permanganato de potássio</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Oxigênio</string>
+				<string>Hidrogênio</string>
+				<string>Carbono</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>Aplicações :  - Saúde e fatores de risco; - Alimentos e bebidas; - Medicamentos; - Na produção de tabaco; - Na indústria têxtil; - Pode ser utilizado como lubrificante em máquinas que fabricam produtos alimentícios; - Utilizado em misturas anticongelantes; - Utilizado para preservar bactérias a temperaturas baixas.</string>
+				<key>Obtencao</key>
+				<string>Todo o glicerol produzido no mundo, até 1949, era proveniente da indústria de sabão. Atualmente, 70% da produção de glicerol nos Estados Unidos ainda provém dos glicerídeos (óleos e gorduras naturais) e, o restante, da produção do glicerol sintético (subproduto da fabricação de propileno), da produção de ácidos graxos e também como subproduto transesterificação de ésteres, onde é substituída como álcool ligado aos de ácidos graxos pelo metanol ou etanol, resultando em biodiesel.</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>Pb(NO3)2</string>
+			<key>Imagem</key>
+			<string>nitratoDeChumbo</string>
+			<key>Nome</key>
+			<string>Nitrato de chumbo II</string>
 		</dict>
 	</array>
 	<key>Receitas</key>
@@ -54,7 +149,7 @@
 		<dict>
 			<key>Compostos</key>
 			<array>
-				<string>Composto muito grande kkkkkkm</string>
+				<string>Ácido Sulfúrico</string>
 			</array>
 			<key>Bolinhas</key>
 			<array>

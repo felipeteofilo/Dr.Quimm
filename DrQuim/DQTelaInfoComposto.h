@@ -11,11 +11,13 @@
 
 
 
-@interface DQTelaInfoComposto : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface DQTelaInfoComposto : UIViewController 
 
 @property DQScroolView *scrollViewElementos;
 @property UIView * infoElemento;
+@property UIButton * botaoFechar;
 
 -(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho nomeComposto:(NSString*)nome;
+
 
 @end

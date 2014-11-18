@@ -33,10 +33,6 @@
         [self setUserInteractionEnabled:YES];
         
         [self setBackgroundColor:[UIColor blueColor]];
-        
-        self.arrayElementos = [[NSMutableArray alloc]initWithArray:composto.elementos_composto.array];
-        
-       
     }
     return self;
 }
@@ -46,19 +42,12 @@
     if (self.info == nil) {
         self.info = [[DQTelaInfoComposto alloc]init];
         
-        
-        
-        
         [self.info colocarNaPosicao:CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y - self.superview.frame.size.height *0.4) tamanho:self.superview.frame.size nomeComposto:self.nome];
-        
-        
-        
         [self.superview addSubview:self.info.view];
     }
     else{
         
-        [self.info.view removeFromSuperview];
-        self.info = nil;
+        [self.superview addSubview:self.info.view];
     }
 }
 

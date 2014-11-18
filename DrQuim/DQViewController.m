@@ -41,7 +41,7 @@
     
 //    DQElemento * elemento =[[DQElemento alloc]initComEntidadeElemento:[DQCoreDataController procurarElemento:@"Elemento"]];
 //    
-    DQComposto *composto = [[DQComposto alloc]initComEntidadeComposto:[DQCoreDataController procurarComposto:@"Composto muito grande kkkkkkm"]];
+    DQComposto *composto = [[DQComposto alloc]initComEntidadeComposto:[DQCoreDataController procurarComposto:@"Ácido Sulfúrico"]];
 //    DQReceita *receita = [[DQReceita alloc]initComReceita:[DQCoreDataController procurarReceita:@"Receita"]];
     
     

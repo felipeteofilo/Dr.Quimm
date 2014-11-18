@@ -60,16 +60,12 @@
                 novoComposto.nome = [[compostosPlist objectAtIndex:i]objectForKey:@"Nome"];
             }
             
+            NSMutableArray *elementos = [[NSMutableArray alloc]init];
             
-            for (int j = 0; j< [[[compostosPlist objectAtIndex:i]objectForKey:@"Elementos"]count]; j++) {
-                
-                NSString *nomeElemento = [[[compostosPlist objectAtIndex:i]objectForKey:@"Elementos"]objectAtIndex:j];
-                
-                Elemento* elementoComposto = [DQCoreDataController procurarElemento:nomeElemento];
-                
-                [novoComposto addElementos_compostoObject:elementoComposto];
-            }
+            elementos = [[compostosPlist objectAtIndex:i]objectForKey:@"Elementos"];
             
+            
+            novoComposto.elementos = elementos;
             
             novoComposto.imagem = [[compostosPlist objectAtIndex:i]objectForKey:@"Imagem"];
             novoComposto.formula_molecular = [[compostosPlist objectAtIndex:i]objectForKey:@"FormulaMolecular"];
