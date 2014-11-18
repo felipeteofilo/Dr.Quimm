@@ -188,6 +188,7 @@ static float maxAlphavalue = 1.0;
     CGFloat newVal = 0.0;
     for (SMClove *c in cloves) {
         if (c.minValue > 0 && c.maxValue < 0) { // anomalous case
+            
             if (c.maxValue > radians || c.minValue < radians) {
                 if (radians > 0) { // we are in the positive quadrant
                     newVal = radians - M_PI;

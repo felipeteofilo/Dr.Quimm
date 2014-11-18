@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DQProtocoloGiratorio.h"
 #import "DQAreaComposto.h"
+#import "DQCirculoComposto.h"
 
 @interface DQcirculo: UIControl
 
@@ -19,6 +20,8 @@
 @property id <DQProtocoloGiratorio> delegate;
 
 @property UIView *base;
+@property NSMutableArray *arrayDeCompostosDesenho;
+@property CGAffineTransform iniciaTransformacao;
 
 -(id)initComFrame: (CGRect)frame comDelegate:(id)del comNumeroDeCompostos:(int)numeroDeCompostos eCompostos:(NSArray *)arrayDeCompostos;
 

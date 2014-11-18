@@ -21,9 +21,9 @@
     NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
     int numeroDeCompostos = arrayDeCompostos.count;
     
-    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, 200, 200) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
+    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.frame.size.height * 0.5, self.view.frame.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
     
-    circulo.center = CGPointMake(160, 240);
+    circulo.center = CGPointMake(self.view.frame.size.height/2, self.view.frame.size.width/2);
     [self.view addSubview:circulo];
     
     
