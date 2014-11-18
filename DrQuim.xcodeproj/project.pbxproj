@@ -206,6 +206,8 @@
 		CD1DCC981A1BD86C00CBA7A9 /* fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC961A1BD86C00CBA7A9 /* fundo.png */; };
 		CD1DCC991A1BD86C00CBA7A9 /* fundoTransparente.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC971A1BD86C00CBA7A9 /* fundoTransparente.png */; };
 		CD1DCC9B1A1BDAE400CBA7A9 /* KNO3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC9A1A1BDAE400CBA7A9 /* KNO3.png */; };
+		CD1DCC9E1A1BDC4700CBA7A9 /* btnMIX.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC9C1A1BDC4700CBA7A9 /* btnMIX.png */; };
+		CD1DCC9F1A1BDC4700CBA7A9 /* postit.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC9D1A1BDC4700CBA7A9 /* postit.png */; };
 		CD35242D1A1A6AFE008D0509 /* DQCirculoComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35242C1A1A6AFE008D0509 /* DQCirculoComposto.m */; };
 		CD35242F1A1A6BA7008D0509 /* elementoTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = CD35242E1A1A6BA7008D0509 /* elementoTeste.png */; };
 		CD3524321A1A6BC8008D0509 /* recipienteTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3524311A1A6BC8008D0509 /* recipienteTeste.png */; };
@@ -508,6 +510,8 @@
 		CD1DCC961A1BD86C00CBA7A9 /* fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundo.png; sourceTree = "<group>"; };
 		CD1DCC971A1BD86C00CBA7A9 /* fundoTransparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundoTransparente.png; sourceTree = "<group>"; };
 		CD1DCC9A1A1BDAE400CBA7A9 /* KNO3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KNO3.png; sourceTree = "<group>"; };
+		CD1DCC9C1A1BDC4700CBA7A9 /* btnMIX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnMIX.png; sourceTree = "<group>"; };
+		CD1DCC9D1A1BDC4700CBA7A9 /* postit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postit.png; sourceTree = "<group>"; };
 		CD35242A1A1A6AFE008D0509 /* DQProtocoloGiratorio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQProtocoloGiratorio.h; sourceTree = "<group>"; };
 		CD35242B1A1A6AFE008D0509 /* DQCirculoComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCirculoComposto.h; sourceTree = "<group>"; };
 		CD35242C1A1A6AFE008D0509 /* DQCirculoComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCirculoComposto.m; sourceTree = "<group>"; };
@@ -1126,6 +1130,8 @@
 		CD3524301A1A6BB5008D0509 /* TransformacoesNova */ = {
 			isa = PBXGroup;
 			children = (
+				CD1DCC9C1A1BDC4700CBA7A9 /* btnMIX.png */,
+				CD1DCC9D1A1BDC4700CBA7A9 /* postit.png */,
 				CD1DCC9A1A1BDAE400CBA7A9 /* KNO3.png */,
 				CD1DCC961A1BD86C00CBA7A9 /* fundo.png */,
 				CD1DCC971A1BD86C00CBA7A9 /* fundoTransparente.png */,
@@ -1379,6 +1385,7 @@
 				943D3BB719A6654A00A87254 /* Rostos.atlas in Resources */,
 				3CAE561719AA7B5A00C5B6E2 /* fundoMaleta.png in Resources */,
 				23D665C01A081B0200DD441D /* Fase3_Parte4.png in Resources */,
+				CD1DCC9E1A1BDC4700CBA7A9 /* btnMIX.png in Resources */,
 				3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */,
 				948819761990218400609A0F /* FalasCutScene.plist in Resources */,
 				CD1392CA19A7C2A000143DCA /* elemento_O.png in Resources */,
@@ -1408,6 +1415,7 @@
 				23D7E8541A0D32850075C71A /* btn_lados1.png in Resources */,
 				C5FFB43A19A939FF004F3CD0 /* Maleta_C3H6O.png in Resources */,
 				3CAC842A1979F63D000FB1A1 /* PulandoDr.atlas in Resources */,
+				CD1DCC9F1A1BDC4700CBA7A9 /* postit.png in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
 				C52FBF2719A18D790059E973 /* Coelho.atlas in Resources */,
 				C5FFB44219A939FF004F3CD0 /* Maleta_NaHCO.png in Resources */,
