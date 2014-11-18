@@ -48,6 +48,8 @@ static float alphaMaximo = 1.0;
         [self.base addSubview:areaComposto];
     }
     self.base.userInteractionEnabled = NO;
+    [self criarFundoNormal];
+    [self criarFundoTransparente];
     [self addSubview:self.base];
     
     self.arrayDeCompostosDesenho = [NSMutableArray arrayWithCapacity:self.numeroDeCompostos];
@@ -102,6 +104,22 @@ static float alphaMaximo = 1.0;
         [self.arrayDeCompostosDesenho addObject:compostoDesenho];
     }
 }
+
+-(void)criarFundoNormal{
+    UIImageView *imagemFundo = [[UIImageView alloc]initWithFrame:self.base.frame];
+    [imagemFundo setImage:[UIImage imageNamed:@"fundo"]];
+    [imagemFundo.layer setZPosition:-100];
+    imagemFundo.tag = 1000;
+    [self.base addSubview:imagemFundo];
+}
+
+-(void)criarFundoTransparente{
+    UIImageView *imagemFundo = [[UIImageView alloc]initWithFrame:self.base.frame];
+    [imagemFundo setImage:[UIImage imageNamed:@"fundoTransparente"]];
+    [imagemFundo.layer setZPosition:100];
+    imagemFundo.tag = 1000;
+    [self addSubview:imagemFundo];
+}
 //METODOS PARA DESENHO - FIM
 
 
@@ -116,13 +134,9 @@ static float alphaMaximo = 1.0;
 
 -(BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    //CGPoint pontoDeToque = [touch locationInView::self];
-    //float distancia = [self calculaDistanciaDoCentro:pontoDeToque];
-    
     CGPoint pontoDeToque = [touch locationInView:self];
     float distancia = [self calculaDistanciaDoCentro:pontoDeToque];
     
-    NSLog(@"%2.f | %2.f", self.base.frame.size.width * 0.5f, self.base.frame.size.width);
     if(distancia < self.base.frame.size.height * 0.1f || distancia > self.base.frame.size.height){
         return NO;
     }
@@ -134,7 +148,9 @@ static float alphaMaximo = 1.0;
     self.iniciaTransformacao = self.base.transform;
     
     UIImageView *imagem = [self pegarNomeCompostoPeloValor:self.compostoAtual];
-    imagem.alpha = alphaMinimo;
+    if(imagem.tag != 1000){
+        imagem.alpha = alphaMinimo;
+    }
     
     return YES;
 }

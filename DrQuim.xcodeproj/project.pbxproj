@@ -203,6 +203,9 @@
 		CD1392C919A7C2A000143DCA /* elemento_N.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C419A7C2A000143DCA /* elemento_N.png */; };
 		CD1392CA19A7C2A000143DCA /* elemento_O.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C519A7C2A000143DCA /* elemento_O.png */; };
 		CD1392CB19A7C2A000143DCA /* elemento_Pb.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1392C619A7C2A000143DCA /* elemento_Pb.png */; };
+		CD1DCC981A1BD86C00CBA7A9 /* fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC961A1BD86C00CBA7A9 /* fundo.png */; };
+		CD1DCC991A1BD86C00CBA7A9 /* fundoTransparente.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC971A1BD86C00CBA7A9 /* fundoTransparente.png */; };
+		CD1DCC9B1A1BDAE400CBA7A9 /* KNO3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1DCC9A1A1BDAE400CBA7A9 /* KNO3.png */; };
 		CD35242D1A1A6AFE008D0509 /* DQCirculoComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35242C1A1A6AFE008D0509 /* DQCirculoComposto.m */; };
 		CD35242F1A1A6BA7008D0509 /* elementoTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = CD35242E1A1A6BA7008D0509 /* elementoTeste.png */; };
 		CD3524321A1A6BC8008D0509 /* recipienteTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3524311A1A6BC8008D0509 /* recipienteTeste.png */; };
@@ -502,6 +505,9 @@
 		CD1392C419A7C2A000143DCA /* elemento_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_N.png; sourceTree = "<group>"; };
 		CD1392C519A7C2A000143DCA /* elemento_O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_O.png; sourceTree = "<group>"; };
 		CD1392C619A7C2A000143DCA /* elemento_Pb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_Pb.png; sourceTree = "<group>"; };
+		CD1DCC961A1BD86C00CBA7A9 /* fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundo.png; sourceTree = "<group>"; };
+		CD1DCC971A1BD86C00CBA7A9 /* fundoTransparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundoTransparente.png; sourceTree = "<group>"; };
+		CD1DCC9A1A1BDAE400CBA7A9 /* KNO3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KNO3.png; sourceTree = "<group>"; };
 		CD35242A1A1A6AFE008D0509 /* DQProtocoloGiratorio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQProtocoloGiratorio.h; sourceTree = "<group>"; };
 		CD35242B1A1A6AFE008D0509 /* DQCirculoComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCirculoComposto.h; sourceTree = "<group>"; };
 		CD35242C1A1A6AFE008D0509 /* DQCirculoComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCirculoComposto.m; sourceTree = "<group>"; };
@@ -1120,6 +1126,9 @@
 		CD3524301A1A6BB5008D0509 /* TransformacoesNova */ = {
 			isa = PBXGroup;
 			children = (
+				CD1DCC9A1A1BDAE400CBA7A9 /* KNO3.png */,
+				CD1DCC961A1BD86C00CBA7A9 /* fundo.png */,
+				CD1DCC971A1BD86C00CBA7A9 /* fundoTransparente.png */,
 				CD35242E1A1A6BA7008D0509 /* elementoTeste.png */,
 				CD3524311A1A6BC8008D0509 /* recipienteTeste.png */,
 			);
@@ -1272,6 +1281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1DCC991A1BD86C00CBA7A9 /* fundoTransparente.png in Resources */,
 				C5FFB43B19A939FF004F3CD0 /* Maleta_H2C2O.png in Resources */,
 				C5FFB42919A93706004F3CD0 /* ReceitasQuimicas.plist in Resources */,
 				CD54D9CB19A523C800C2798D /* DerrapandoDr.atlas in Resources */,
@@ -1296,6 +1306,7 @@
 				CD54D9BD19A51F7700C2798D /* maletaFrente.png in Resources */,
 				C58F75C919A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 in Resources */,
 				C5FFB43D19A939FF004F3CD0 /* Maleta_H2SO4.png in Resources */,
+				CD1DCC981A1BD86C00CBA7A9 /* fundo.png in Resources */,
 				7505B4A619FACB3E00769C87 /* FasesEspecificas.plist in Resources */,
 				CD1392C819A7C2A000143DCA /* elemento_K.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
@@ -1352,6 +1363,7 @@
 				C55CE5C6199BBAAF00375C87 /* tutorialCorrerEsquerda.atlas in Resources */,
 				23D7E8551A0D32850075C71A /* btn_lados2.png in Resources */,
 				C5223F0419F6D0F600C17FAD /* testeBotao.png in Resources */,
+				CD1DCC9B1A1BDAE400CBA7A9 /* KNO3.png in Resources */,
 				3CAE561819AA7B5A00C5B6E2 /* fundoTransformacao.png in Resources */,
 				9488196B19901A6D00609A0F /* FalasNoJogo.plist in Resources */,
 				C5FFB43E19A939FF004F3CD0 /* Maleta_H3PO4.png in Resources */,
