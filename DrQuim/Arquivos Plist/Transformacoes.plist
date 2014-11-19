@@ -61,11 +61,7 @@
 		</dict>
 		<dict>
 			<key>Elementos</key>
-			<array>
-				<string>Oxigênio</string>
-				<string>Hidrogênio</string>
-				<string>Carbono</string>
-			</array>
+			<array/>
 			<key>Info</key>
 			<dict>
 				<key>Aplicacao</key>

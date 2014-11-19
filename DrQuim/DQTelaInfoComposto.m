@@ -17,30 +17,50 @@
 
 -(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho nomeComposto:(NSString*)nome{
     
-    [self.view setFrame:CGRectMake(posicao.x, posicao.y, tamanho.width *0.25, tamanho.height *0.4)];
+    [self.view setFrame:CGRectMake(posicao.x, posicao.y, tamanho.width *0.20, tamanho.height *0.35)];
     
     UIImageView *imagemFundo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"descript"]];
     
     [imagemFundo setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
-    Composto *composto = [DQCoreDataController procurarComposto:nome];
-    
-    MarqueeLabel *nomeComposto1 = [[MarqueeLabel alloc]initWithFrame:CGRectMake(imagemFundo.frame.size.width*0.3, imagemFundo.frame.size.height*0.07, imagemFundo.frame.size.width*0.65, imagemFundo.frame.size.height*0.07) duration:5 andFadeLength:10];
-    
-    [nomeComposto1 setText:nome];
-    
-    [nomeComposto1 setTextColor:[UIColor blueColor]];
-    
-    
     
     
     [self.view addSubview:imagemFundo];
-    [self.view addSubview:[self montarInfoComposto:composto frameImagem:imagemFundo.frame]];
-    [self.view addSubview:nomeComposto1];
     
-    [self montarBotoesElementos:composto.elementos];
-    
+    [self atualizarInfoComposto:nome];
 }
+
+-(void)atualizarInfoComposto:(NSString*)nome{
+    
+    if([self.ultimoComposto isEqualToString:nome]){
+    
+    Composto *composto = [DQCoreDataController procurarComposto:nome];
+    
+    
+    if (self.nomeComposto == nil) {
+        self.nomeComposto = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.3, self.view.frame.size.height*0.07, self.view.frame.size.width*0.65, self.view.frame.size.height*0.07) duration:5 andFadeLength:10];
+        [self.nomeComposto setTextColor:[UIColor blueColor]];
+        [self.view addSubview:self.nomeComposto];
+    }
+    
+    if (self.imagemComposto == nil) {
+        self.imagemComposto = [[UIImageView alloc]init];
+        [self.imagemComposto setFrame:CGRectMake(0, 0, self.view.frame.size.width*0.26, self.view.frame.size.width*0.26)];
+        [self.view addSubview:self.imagemComposto];
+    }
+    
+    [self.imagemComposto setImage:[UIImage imageNamed:composto.imagem]];
+    
+    [self.nomeComposto setText:nome];
+    
+        if (self.telaInfo == nil) {
+            [self montarInfoComposto:composto frameImagem:self.view.frame];
+            [self.view addSubview:self.telaInfo];
+        }
+        [self montarBotoesElementos:composto.elementos];
+    }
+}
+
 
 -(void)montarBotoesElementos :(NSArray*)nomesElementos{
     
@@ -115,7 +135,7 @@
     
     [self.botaoFechar addTarget:self action:@selector(fecharInfo:) forControlEvents:UIControlEventTouchUpInside];
     
-
+    
     
     [self.infoElemento addSubview:imagemFundo];
     [self.infoElemento addSubview:[self montarInfoElemento:elemento frameImagem:imagemFundo.frame]];
@@ -181,13 +201,14 @@
     return telaInfo;
 }
 
--(UITextView*)montarInfoComposto :(Composto*)composto frameImagem:(CGRect)frameImagem{
-    
-    UITextView * telaInfo = [[UITextView alloc]initWithFrame:CGRectMake(frameImagem.size.width*0.05, frameImagem.size.height*0.182, frameImagem.size.width * 0.895, frameImagem.size.height * 0.512)];
-    
-    [telaInfo setBackgroundColor:[UIColor clearColor]];
-    
-    
+-(void)montarInfoComposto :(Composto*)composto frameImagem:(CGRect)frameImagem{
+    if(self.telaInfo == nil){
+        self.telaInfo = [[UITextView alloc]initWithFrame:CGRectMake(frameImagem.size.width*0.05, frameImagem.size.height*0.182, frameImagem.size.width * 0.895, frameImagem.size.height * 0.512)];
+        
+        [self.telaInfo setBackgroundColor:[UIColor clearColor]];
+        
+        [self.telaInfo setEditable:NO];
+    }
     
     
     NSString *infoAplicacao = [composto.info_Composto objectForKey:@"Aplicacao"];
@@ -221,13 +242,7 @@
     [textInfo appendAttributedString:aplicacao];
     [textInfo appendAttributedString:obtencao];
     
-    [telaInfo setAttributedText:textInfo];
-    
-    [telaInfo setTextAlignment:NSTextAlignmentLeft];
-    
-    [telaInfo setEditable:NO];
-    
-    return telaInfo;
+    [self.telaInfo setAttributedText:textInfo];
 }
 
 -(IBAction)fecharInfo:(id)sender{

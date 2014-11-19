@@ -20,6 +20,7 @@
 @property int compostoAtual;
 @property int numeroDeCompostos;
 @property id <DQProtocoloGiratorio> delegate;
+@property DQTelaInfoComposto * infoComposto;
 
 
 

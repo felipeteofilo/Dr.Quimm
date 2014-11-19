@@ -26,6 +26,7 @@ static float alphaMaximo = 1.0;
         self.delegate = del;
         
         [self desenharCirculo];
+        [self mostrarInfoComposto];
     }
     return self;
 }
@@ -208,14 +209,25 @@ static float alphaMaximo = 1.0;
     
     [UIView commitAnimations];
     
-    DQComposto *imagem = [self pegarNomeCompostoPeloValor:self.compostoAtual];
+    UIImageView *imagem = [self pegarNomeCompostoPeloValor:self.compostoAtual];
     
+    DQComposto *composto = (DQComposto*)imagem;
+    [self.infoComposto atualizarInfoComposto:composto.nome];
     
     imagem.alpha = alphaMaximo;
 }
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    DQComposto *imagem = [self pegarNomeCompostoPeloValor:self.compostoAtual];
-    [imagem mostrarInfoComposto];
+
+-(void)mostrarInfoComposto{
+    self.infoComposto = [[DQTelaInfoComposto alloc]init];
+    
+    UIImageView *imagem = [self pegarNomeCompostoPeloValor:self.compostoAtual];
+    
+    DQComposto *composto = (DQComposto*)imagem;
+    
+    [self.infoComposto colocarNaPosicao:CGPointMake(self.superview.frame.size.width *0.7, 0) tamanho:self.superview.frame.size nomeComposto:composto.nome];
+    
+    self.infoComposto.view.tag = 100;
+    [self.superview addSubview:self.infoComposto.view];
 }
 
 
@@ -225,10 +237,10 @@ static float alphaMaximo = 1.0;
     NSString *nome = [NSString stringWithFormat:@"%@", [self.arrayDeCompostos objectAtIndex:posicao]];
     return nome;
 }
--(DQComposto *)pegarNomeCompostoPeloValor:(int)valor{
-    DQComposto *imagem;
+-(UIImageView*)pegarNomeCompostoPeloValor:(int)valor{
+    UIImageView *imagem;
     NSArray *views = [self.base subviews];
-    for(DQComposto *img in views){
+    for(UIImageView *img in views){
         if(img.tag == valor) {
             imagem = img;
         }

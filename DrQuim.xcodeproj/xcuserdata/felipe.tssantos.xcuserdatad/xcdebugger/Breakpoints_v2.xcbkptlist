@@ -120,12 +120,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DrQuim/DQcirculo.m"
-            timestampString = "438111556.81352"
+            timestampString = "438120569.441511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "-pegarNomeCompostoPeloValor:"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "-mostrarInfoComposto"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

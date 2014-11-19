@@ -42,28 +42,38 @@
         
         self.nome = composto.nome;
         self.imagem = composto.imagem;
-        
-        // self.imageView.image = [UIImage imageNamed:self.imagem];
-        
-        
         [self setUserInteractionEnabled:YES];
         
-       // [self setBackgroundColor:[UIColor blueColor]];
+       
     }
     return self;
 }
 
--(void)mostrarInfoComposto{
+-(void)mostrarInfoComposto :(UIView*)view{
+    
+    NSArray *views = [self.superview subviews];
+    for(int i = 0; i < views.count ;i++){
+        if([[views objectAtIndex:i]tag] == 100) {
+            [[views objectAtIndex:i]removeFromSuperview];
+            break;
+        }
+    }
+    
+    
     if (self.info == nil) {
         self.info = [[DQTelaInfoComposto alloc]init];
         
-        [self.info colocarNaPosicao:CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y - self.superview.frame.size.height *0.4) tamanho:self.superview.frame.size nomeComposto:self.nome];
-        [self.superview addSubview:self.info.view];
-    }
-    else{
+        [self.info colocarNaPosicao:CGPointMake(view.frame.size.width *0.7, 0) tamanho:view.frame.size nomeComposto:self.nome];
         
-        [self.superview addSubview:self.info.view];
+        self.info.view.tag = 100;
+        [view addSubview:self.info.view];
+        
+        
     }
+//    else{
+//        
+//       [view addSubview:self.info.view];
+//    }
 }
 
 

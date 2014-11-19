@@ -29,7 +29,7 @@
     [core iniciarReferenciasTransformacoes];
     
     //Array temporarios - substitui pela array de compostos que o jogador possui
-    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", nil];
+    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Açúcar (Sacarose)", @"Açúcar (Sacarose)", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Ácido Sulfúrico", @"Ácido Sulfúrico", nil];
     int numeroDeCompostos = arrayDeCompostos.count;
     
     DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.frame.size.height * 0.5, self.view.frame.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];

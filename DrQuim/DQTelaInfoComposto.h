@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DQScroolView.h"
+#import "MarqueeLabel.h"
 
 
 
@@ -16,8 +17,13 @@
 @property DQScroolView *scrollViewElementos;
 @property UIView * infoElemento;
 @property UIButton * botaoFechar;
+@property MarqueeLabel *nomeComposto;
+@property UIImageView * imagemComposto;
+@property UITextView * telaInfo;
+@property NSString * ultimoComposto;
 
 -(void)colocarNaPosicao :(CGPoint)posicao tamanho:(CGSize)tamanho nomeComposto:(NSString*)nome;
+-(void)atualizarInfoComposto:(NSString*)nome;
 
 
 @end
