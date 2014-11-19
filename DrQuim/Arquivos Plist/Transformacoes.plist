@@ -31,8 +31,8 @@
 		<dict>
 			<key>Elementos</key>
 			<array>
-				<string>Hidrogênio</string>
-				<string>Sulfato</string>
+				<string>Elemento</string>
+				<string>Elemento</string>
 			</array>
 			<key>Info</key>
 			<dict>
@@ -148,9 +148,7 @@
 	<array>
 		<dict>
 			<key>Compostos</key>
-			<array>
-				<string>Ácido Sulfúrico</string>
-			</array>
+			<array/>
 			<key>Bolinhas</key>
 			<array>
 				<integer>8</integer>

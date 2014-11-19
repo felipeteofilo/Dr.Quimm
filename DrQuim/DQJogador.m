@@ -320,10 +320,10 @@
 -(void)configuraCorpoFisico{
     CGMutablePathRef path=CGPathCreateMutable();
     
-    CGPoint primeiroPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)+15), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPoint primeiroPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)+15), CGRectGetMinY(self.spriteNode.frame)+10);
     CGPathMoveToPoint(path, NULL, primeiroPonto.x,primeiroPonto.y);
     
-    CGPoint segundoPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)-15), CGRectGetMinY(self.spriteNode.frame)+20);
+    CGPoint segundoPonto=CGPointMake((CGRectGetMidX(self.spriteNode.frame)-15), CGRectGetMinY(self.spriteNode.frame)+10);
     CGPathAddLineToPoint(path, NULL, segundoPonto.x,segundoPonto.y);
     
     CGPoint terceiroPonto=CGPointMake(CGRectGetMinX(self.spriteNode.frame)+15, CGRectGetMidY(self.spriteNode.frame));

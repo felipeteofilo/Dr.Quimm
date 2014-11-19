@@ -22,23 +22,38 @@
 
 
 
--(id)initComEntidadeComposto :(Composto*)composto{
+-(id)initComEntidadeComposto :(Composto*)composto :(CGRect)frame{
     if (self = [super init]) {
+        
+        
+        
+        self.frame = frame;
+        
+        //Mudar abaixo para colocar o nome do recipiente e adiquirir sua imagem
+        UIImageView *imagemDoComposto = [[UIImageView alloc]initWithImage:[UIImage imageNamed:composto.imagem]];
+        
+        imagemDoComposto.frame = CGRectMake(self.frame.size.width/2 - (self.frame.size.height * 0.15)/2,
+                                            self.frame.size.height * 0.15 - (self.frame.size.height * 0.15)/2,
+                                            self.frame.size.height * 0.35,
+                                            self.frame.size.height * 0.35);
+        
+        imagemDoComposto.layer.zPosition = -10;
+        [self addSubview:imagemDoComposto];
+        
         self.nome = composto.nome;
         self.imagem = composto.imagem;
         
         // self.imageView.image = [UIImage imageNamed:self.imagem];
         
-        [self setFrame:CGRectMake(50, 500, 100, 100)];
+        
         [self setUserInteractionEnabled:YES];
         
-        [self setBackgroundColor:[UIColor blueColor]];
+       // [self setBackgroundColor:[UIColor blueColor]];
     }
     return self;
 }
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesEnded:touches withEvent:event];
+-(void)mostrarInfoComposto{
     if (self.info == nil) {
         self.info = [[DQTelaInfoComposto alloc]init];
         

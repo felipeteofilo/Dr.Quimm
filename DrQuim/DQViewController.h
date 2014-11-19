@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQMenuInicial.h"
 #import "DQCutsceneTela.h"
+#import "DQcirculo.h"
 
 @interface DQViewController : UIViewController
 

@@ -18,42 +18,41 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    //PARA O CIRCULO DE TRANSFORMAÇÃO
     [super viewDidAppear:animated];
-
-
-//   SKView * skView = (SKView *)self.view;
-//   skView.showsPhysics = YES;
-//
-//   //DQMenuInicial *menuInicial=[DQMenuInicial sceneWithSize:skView.bounds.size];
-//    // DQVila *menuInicial=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
-//   //DQSceneTeste *menuInicial=[[DQSceneTeste alloc]initWithSize:skView.bounds.size];
-//    
-//    DQFlorestaParte1 *menuInicial = [[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
-//   
-//    menuInicial.scaleMode = SKSceneScaleModeAspectFill;
-//  
-//   [skView presentScene:menuInicial];
+    
+    SKView * skView = (SKView *)self.view;
+    skView.showsPhysics = YES;
     
     DQPopularCoreData *core = [[DQPopularCoreData alloc]init];
     
-    
     [core iniciarReferenciasTransformacoes];
     
-//    DQElemento * elemento =[[DQElemento alloc]initComEntidadeElemento:[DQCoreDataController procurarElemento:@"Elemento"]];
+    //Array temporarios - substitui pela array de compostos que o jogador possui
+    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", @"Ácido Sulfúrico", nil];
+    int numeroDeCompostos = arrayDeCompostos.count;
+    
+    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.frame.size.height * 0.5, self.view.frame.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
+    
+    circulo.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+    [self.view addSubview:circulo];
+    
+    
+//    //PARA CENAS DO JOGO
+//
+//    //DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
+//    //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
+//    //DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+//    DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
 //    
-    DQComposto *composto = [[DQComposto alloc]initComEntidadeComposto:[DQCoreDataController procurarComposto:@"Ácido Sulfúrico"]];
-//    DQReceita *receita = [[DQReceita alloc]initComReceita:[DQCoreDataController procurarReceita:@"Receita"]];
-    
-    
-    
-    
-//    DQTelaInfoComposto *info = [[DQTelaInfoComposto alloc]initNaPosicao:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2) tamanho:self.view.frame.size];
-    
-    
-    
-   // [self.view addSubview:info];
-    [self.view addSubview:composto];
+//    fase.scaleMode = SKSceneScaleModeAspectFill;
+//    
+//    [skView presentScene:fase];
+}
 
+-(void)viewDidLoad
+{
+    
 
 }
 

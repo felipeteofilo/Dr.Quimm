@@ -31,8 +31,8 @@
     //Agora qndo precisar mudar de fase chama pela propriedade
     self.controleTransicaoScenas=[[DQFasesControle alloc]init];
     
-    self.faseAtual=faseAtual;
-    self.parteFaseAtual=1;
+    self.faseAtual = faseAtual;
+    self.parteFaseAtual = 1;
     self.nPartesFase=[DQConfiguracaoFase nPartesFase:self.faseAtual];
     
     [self pegarConfigFase:self.faseAtual];
@@ -40,7 +40,7 @@
 }
 
 -(void)pegarConfigFase:(int)fase{
-    self.configFase=[DQConfiguracaoFase configFase:self.faseAtual];
+    self.configFase = [DQConfiguracaoFase configFase:self.faseAtual];
 }
 
 -(void)configuraFisicaMundo{
@@ -54,6 +54,7 @@
     [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
     
 }
+
 
 -(void)iniciarFase{
     
@@ -305,7 +306,7 @@
             
             if (self.faseAtual !=2) {
                 if ([DQUteis sortearChanceSim:50.0]) {
-                    [self.controleSom tocarSomLista];
+//                    [self.controleSom tocarSomLista];
                 }
             }
         }

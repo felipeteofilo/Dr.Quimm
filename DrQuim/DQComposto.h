@@ -18,7 +18,8 @@
 @property NSMutableArray *arrayElementos;
 @property DQTelaInfoComposto *info;
 
--(id)initComEntidadeComposto :(Composto*)composto;
+-(id)initComEntidadeComposto :(Composto*)composto :(CGRect)frame;
+-(void)mostrarInfoComposto;
 
 
 

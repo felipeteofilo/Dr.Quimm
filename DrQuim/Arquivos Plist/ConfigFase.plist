@@ -6,7 +6,7 @@
 		<key>SomFundo</key>
 		<string></string>
 		<key>PosInicialJogador</key>
-		<string>{200, 600}</string>
+		<string>{2000, 600}</string>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -263,13 +263,13 @@
 		<array>
 			<dict>
 				<key>Posicao</key>
-				<string>{3290, 1000}</string>
+				<string>{1000, 800}</string>
 				<key>KeyDoAlerta</key>
 				<string>RadiacaoAlfa</string>
 			</dict>
 			<dict>
 				<key>Posicao</key>
-				<string>{5798, 1150}</string>
+				<string>{2413, 650}</string>
 				<key>KeyDoAlerta</key>
 				<string>RadiacaoBeta</string>
 			</dict>
@@ -282,7 +282,7 @@
 					<string>Aleatoria4</string>
 				</array>
 				<key>Posicao</key>
-				<string>{3520, 1130}</string>
+				<string>{1250, 500}</string>
 			</dict>
 			<dict>
 				<key>Aleatoria</key>
@@ -293,7 +293,7 @@
 					<string>Aleatoria4</string>
 				</array>
 				<key>Posicao</key>
-				<string>{5990, 1255}</string>
+				<string>{2520, 650}</string>
 			</dict>
 		</array>
 	</dict>
@@ -301,7 +301,7 @@
 		<key>SomFundo</key>
 		<string>MusicaFundo04</string>
 		<key>PosInicialJogador</key>
-		<string>{10, 200}</string>
+		<string>{100, 400}</string>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -321,31 +321,31 @@
 		<array>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{1180, 135}</string>
+				<string>{800, 220}</string>
 				<key>Nome</key>
 				<string>Maedetodos</string>
 			</dict>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{3480, 130}</string>
+				<string>{2060, 220}</string>
 				<key>Nome</key>
 				<string>Cacador</string>
 			</dict>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{1800, 975}</string>
+				<string>{1400, 240}</string>
 				<key>Nome</key>
 				<string>Curandeiro</string>
 			</dict>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{2700, 825}</string>
+				<string>{1780, 245}</string>
 				<key>Nome</key>
 				<string>Chefe</string>
 			</dict>
 			<dict>
 				<key>PosicaoNPC</key>
-				<string>{2000, 980}</string>
+				<string>{1390, 240}</string>
 				<key>Nome</key>
 				<string>Quimm</string>
 			</dict>
@@ -356,8 +356,8 @@
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
-					<string>{0, 160}</string>
-					<string>{1024, 160}</string>
+					<string>{0, 180}</string>
+					<string>{1024, 180}</string>
 					<string>{1024, 0}</string>
 				</array>
 				<key>Plataformas</key>
@@ -367,8 +367,8 @@
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
-					<string>{0, 160}</string>
-					<string>{1024, 160}</string>
+					<string>{0, 180}</string>
+					<string>{1024, 180}</string>
 					<string>{1024, 0}</string>
 				</array>
 				<key>Plataformas</key>
@@ -378,8 +378,8 @@
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
-					<string>{0, 160}</string>
-					<string>{650, 160}</string>
+					<string>{0, 180}</string>
+					<string>{650, 180}</string>
 					<string>{650, 0}</string>
 				</array>
 				<key>Plataformas</key>
