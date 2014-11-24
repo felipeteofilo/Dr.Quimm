@@ -84,7 +84,6 @@
         self.controleMissoes.proximaMissao = [[missao objectForKey:@"MissaoAtual"]intValue];
         
         [self.controleMissoes iniciarMissao];
-        
     }
     
 }

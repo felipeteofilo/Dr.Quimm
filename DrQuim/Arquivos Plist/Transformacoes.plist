@@ -25,6 +25,27 @@
 			<key>Nome</key>
 			<string>Elemento</string>
 		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Categoria</string>
+				<key>Historia</key>
+				<string>Historia</string>
+				<key>EstadoEncontrado</key>
+				<string>Estado</string>
+				<key>LugarEncontrado</key>
+				<string>Lugar</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>C</string>
+			<key>NumeroEletrons</key>
+			<integer>0</integer>
+			<key>Imagem</key>
+			<string>carbono</string>
+			<key>Nome</key>
+			<string>Carbono</string>
+		</dict>
 	</array>
 	<key>Compostos</key>
 	<array>
