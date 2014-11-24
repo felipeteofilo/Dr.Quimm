@@ -72,25 +72,25 @@
 		75F9E7E01A1D0452004F12AF /* postit.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7DA1A1D0452004F12AF /* postit.png */; };
 		75F9E7E11A1D0452004F12AF /* recipienteTeste.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7DB1A1D0452004F12AF /* recipienteTeste.png */; };
 		75F9E7F91A1D0908004F12AF /* elemento_carbono.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E31A1D0908004F12AF /* elemento_carbono.png */; };
-		75F9E7FA1A1D0908004F12AF /* acucarSacarose.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E41A1D0908004F12AF /* acucarSacarose.png */; };
-		75F9E7FB1A1D0908004F12AF /* C3H5(OH)3.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E51A1D0908004F12AF /* C3H5(OH)3.png */; };
+		75F9E7FA1A1D0908004F12AF /* composto_acucarSacarose.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E41A1D0908004F12AF /* composto_acucarSacarose.png */; };
+		75F9E7FB1A1D0908004F12AF /* composto_glicerina.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E51A1D0908004F12AF /* composto_glicerina.png */; };
 		75F9E7FC1A1D0908004F12AF /* elemento_cloro.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E61A1D0908004F12AF /* elemento_cloro.png */; };
 		75F9E7FD1A1D0908004F12AF /* elemento_hidrogenio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E71A1D0908004F12AF /* elemento_hidrogenio.png */; };
-		75F9E7FE1A1D0908004F12AF /* acidoSulfurico.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E81A1D0908004F12AF /* acidoSulfurico.png */; };
+		75F9E7FE1A1D0908004F12AF /* composto_acidoSulfurico.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E81A1D0908004F12AF /* composto_acidoSulfurico.png */; };
 		75F9E7FF1A1D0908004F12AF /* elemento_iodo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7E91A1D0908004F12AF /* elemento_iodo.png */; };
 		75F9E8001A1D0908004F12AF /* elemento_potassio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EA1A1D0908004F12AF /* elemento_potassio.png */; };
-		75F9E8011A1D0908004F12AF /* K2SO4.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EB1A1D0908004F12AF /* K2SO4.png */; };
-		75F9E8021A1D0908004F12AF /* KI.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EC1A1D0908004F12AF /* KI.png */; };
-		75F9E8031A1D0908004F12AF /* KMnO4.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7ED1A1D0908004F12AF /* KMnO4.png */; };
-		75F9E8041A1D0908004F12AF /* KNO3.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EE1A1D0908004F12AF /* KNO3.png */; };
+		75F9E8011A1D0908004F12AF /* composto_sulfatoDePotassio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EB1A1D0908004F12AF /* composto_sulfatoDePotassio.png */; };
+		75F9E8021A1D0908004F12AF /* composto_iodetoDePotassio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EC1A1D0908004F12AF /* composto_iodetoDePotassio.png */; };
+		75F9E8031A1D0908004F12AF /* composto_permanganatoPotassio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7ED1A1D0908004F12AF /* composto_permanganatoPotassio.png */; };
+		75F9E8041A1D0908004F12AF /* composto_nitratoDePotassio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EE1A1D0908004F12AF /* composto_nitratoDePotassio.png */; };
 		75F9E8051A1D0908004F12AF /* elemento_magnesio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7EF1A1D0908004F12AF /* elemento_magnesio.png */; };
-		75F9E8061A1D0908004F12AF /* MgSO4.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F01A1D0908004F12AF /* MgSO4.png */; };
+		75F9E8061A1D0908004F12AF /* composto_sulfatoDeMagnesio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F01A1D0908004F12AF /* composto_sulfatoDeMagnesio.png */; };
 		75F9E8071A1D0908004F12AF /* elemento_manganes.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F11A1D0908004F12AF /* elemento_manganes.png */; };
 		75F9E8081A1D0908004F12AF /* elemento_nitrogenio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F21A1D0908004F12AF /* elemento_nitrogenio.png */; };
 		75F9E8091A1D0908004F12AF /* elemento_sodio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F31A1D0908004F12AF /* elemento_sodio.png */; };
-		75F9E80A1A1D0908004F12AF /* NaCl.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F41A1D0908004F12AF /* NaCl.png */; };
+		75F9E80A1A1D0908004F12AF /* composto_cloretoDeSodio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F41A1D0908004F12AF /* composto_cloretoDeSodio.png */; };
 		75F9E80B1A1D0908004F12AF /* elemento_oxigenio.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F51A1D0908004F12AF /* elemento_oxigenio.png */; };
-		75F9E80C1A1D0908004F12AF /* Pb(NO3)2.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F61A1D0908004F12AF /* Pb(NO3)2.png */; };
+		75F9E80C1A1D0908004F12AF /* composto_nitratoDeChumbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F61A1D0908004F12AF /* composto_nitratoDeChumbo.png */; };
 		75F9E80D1A1D0908004F12AF /* elemento_chumbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */; };
 		75F9E80E1A1D0908004F12AF /* elemento_enxofre.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */; };
 		75FB4C2E1A168A33001E8669 /* DQScroolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB4C2D1A168A33001E8669 /* DQScroolView.m */; };
@@ -354,25 +354,25 @@
 		75F9E7DA1A1D0452004F12AF /* postit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postit.png; sourceTree = "<group>"; };
 		75F9E7DB1A1D0452004F12AF /* recipienteTeste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recipienteTeste.png; sourceTree = "<group>"; };
 		75F9E7E31A1D0908004F12AF /* elemento_carbono.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_carbono.png; sourceTree = "<group>"; };
-		75F9E7E41A1D0908004F12AF /* acucarSacarose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acucarSacarose.png; sourceTree = "<group>"; };
-		75F9E7E51A1D0908004F12AF /* C3H5(OH)3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "C3H5(OH)3.png"; sourceTree = "<group>"; };
+		75F9E7E41A1D0908004F12AF /* composto_acucarSacarose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_acucarSacarose.png; sourceTree = "<group>"; };
+		75F9E7E51A1D0908004F12AF /* composto_glicerina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_glicerina.png; sourceTree = "<group>"; };
 		75F9E7E61A1D0908004F12AF /* elemento_cloro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_cloro.png; sourceTree = "<group>"; };
 		75F9E7E71A1D0908004F12AF /* elemento_hidrogenio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_hidrogenio.png; sourceTree = "<group>"; };
-		75F9E7E81A1D0908004F12AF /* acidoSulfurico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acidoSulfurico.png; sourceTree = "<group>"; };
+		75F9E7E81A1D0908004F12AF /* composto_acidoSulfurico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_acidoSulfurico.png; sourceTree = "<group>"; };
 		75F9E7E91A1D0908004F12AF /* elemento_iodo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_iodo.png; sourceTree = "<group>"; };
 		75F9E7EA1A1D0908004F12AF /* elemento_potassio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_potassio.png; sourceTree = "<group>"; };
-		75F9E7EB1A1D0908004F12AF /* K2SO4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = K2SO4.png; sourceTree = "<group>"; };
-		75F9E7EC1A1D0908004F12AF /* KI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KI.png; sourceTree = "<group>"; };
-		75F9E7ED1A1D0908004F12AF /* KMnO4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KMnO4.png; sourceTree = "<group>"; };
-		75F9E7EE1A1D0908004F12AF /* KNO3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KNO3.png; sourceTree = "<group>"; };
+		75F9E7EB1A1D0908004F12AF /* composto_sulfatoDePotassio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_sulfatoDePotassio.png; sourceTree = "<group>"; };
+		75F9E7EC1A1D0908004F12AF /* composto_iodetoDePotassio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_iodetoDePotassio.png; sourceTree = "<group>"; };
+		75F9E7ED1A1D0908004F12AF /* composto_permanganatoPotassio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_permanganatoPotassio.png; sourceTree = "<group>"; };
+		75F9E7EE1A1D0908004F12AF /* composto_nitratoDePotassio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_nitratoDePotassio.png; sourceTree = "<group>"; };
 		75F9E7EF1A1D0908004F12AF /* elemento_magnesio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_magnesio.png; sourceTree = "<group>"; };
-		75F9E7F01A1D0908004F12AF /* MgSO4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MgSO4.png; sourceTree = "<group>"; };
+		75F9E7F01A1D0908004F12AF /* composto_sulfatoDeMagnesio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_sulfatoDeMagnesio.png; sourceTree = "<group>"; };
 		75F9E7F11A1D0908004F12AF /* elemento_manganes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_manganes.png; sourceTree = "<group>"; };
 		75F9E7F21A1D0908004F12AF /* elemento_nitrogenio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_nitrogenio.png; sourceTree = "<group>"; };
 		75F9E7F31A1D0908004F12AF /* elemento_sodio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_sodio.png; sourceTree = "<group>"; };
-		75F9E7F41A1D0908004F12AF /* NaCl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NaCl.png; sourceTree = "<group>"; };
+		75F9E7F41A1D0908004F12AF /* composto_cloretoDeSodio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_cloretoDeSodio.png; sourceTree = "<group>"; };
 		75F9E7F51A1D0908004F12AF /* elemento_oxigenio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_oxigenio.png; sourceTree = "<group>"; };
-		75F9E7F61A1D0908004F12AF /* Pb(NO3)2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pb(NO3)2.png"; sourceTree = "<group>"; };
+		75F9E7F61A1D0908004F12AF /* composto_nitratoDeChumbo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_nitratoDeChumbo.png; sourceTree = "<group>"; };
 		75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_chumbo.png; sourceTree = "<group>"; };
 		75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_enxofre.png; sourceTree = "<group>"; };
 		75FB4C2C1A168A33001E8669 /* DQScroolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQScroolView.h; sourceTree = "<group>"; };
@@ -766,9 +766,9 @@
 		75F9E7E21A1D0908004F12AF /* ElementosCompostos */ = {
 			isa = PBXGroup;
 			children = (
-				75F9E7E81A1D0908004F12AF /* acidoSulfurico.png */,
-				75F9E7E41A1D0908004F12AF /* acucarSacarose.png */,
-				75F9E7E51A1D0908004F12AF /* C3H5(OH)3.png */,
+				75F9E7E81A1D0908004F12AF /* composto_acidoSulfurico.png */,
+				75F9E7E41A1D0908004F12AF /* composto_acucarSacarose.png */,
+				75F9E7E51A1D0908004F12AF /* composto_glicerina.png */,
 				75F9E7E31A1D0908004F12AF /* elemento_carbono.png */,
 				75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */,
 				75F9E7E61A1D0908004F12AF /* elemento_cloro.png */,
@@ -781,13 +781,13 @@
 				75F9E7F51A1D0908004F12AF /* elemento_oxigenio.png */,
 				75F9E7EA1A1D0908004F12AF /* elemento_potassio.png */,
 				75F9E7F31A1D0908004F12AF /* elemento_sodio.png */,
-				75F9E7EB1A1D0908004F12AF /* K2SO4.png */,
-				75F9E7EC1A1D0908004F12AF /* KI.png */,
-				75F9E7ED1A1D0908004F12AF /* KMnO4.png */,
-				75F9E7EE1A1D0908004F12AF /* KNO3.png */,
-				75F9E7F01A1D0908004F12AF /* MgSO4.png */,
-				75F9E7F41A1D0908004F12AF /* NaCl.png */,
-				75F9E7F61A1D0908004F12AF /* Pb(NO3)2.png */,
+				75F9E7EB1A1D0908004F12AF /* composto_sulfatoDePotassio.png */,
+				75F9E7EC1A1D0908004F12AF /* composto_iodetoDePotassio.png */,
+				75F9E7ED1A1D0908004F12AF /* composto_permanganatoPotassio.png */,
+				75F9E7EE1A1D0908004F12AF /* composto_nitratoDePotassio.png */,
+				75F9E7F01A1D0908004F12AF /* composto_sulfatoDeMagnesio.png */,
+				75F9E7F41A1D0908004F12AF /* composto_cloretoDeSodio.png */,
+				75F9E7F61A1D0908004F12AF /* composto_nitratoDeChumbo.png */,
 			);
 			path = ElementosCompostos;
 			sourceTree = "<group>";
@@ -1377,7 +1377,7 @@
 				C5FFB42919A93706004F3CD0 /* ReceitasQuimicas.plist in Resources */,
 				75F9E7FD1A1D0908004F12AF /* elemento_hidrogenio.png in Resources */,
 				CD54D9CB19A523C800C2798D /* DerrapandoDr.atlas in Resources */,
-				75F9E8021A1D0908004F12AF /* KI.png in Resources */,
+				75F9E8021A1D0908004F12AF /* composto_iodetoDePotassio.png in Resources */,
 				75F9E8081A1D0908004F12AF /* elemento_nitrogenio.png in Resources */,
 				C5E1F40D198AD0A300F7A320 /* itens.atlas in Resources */,
 				9437111B19A3EF1E00B8846E /* NPCS.atlas in Resources */,
@@ -1404,18 +1404,18 @@
 				C58F75C919A4EBEA00DC7A71 /* Fundo05 - Insetos.mp3 in Resources */,
 				C5FFB43D19A939FF004F3CD0 /* Maleta_H2SO4.png in Resources */,
 				CD1392C819A7C2A000143DCA /* elemento_K.png in Resources */,
-				75F9E80C1A1D0908004F12AF /* Pb(NO3)2.png in Resources */,
+				75F9E80C1A1D0908004F12AF /* composto_nitratoDeChumbo.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,
 				C5FFB43F19A939FF004F3CD0 /* Maleta_KI.png in Resources */,
 				C58F75CA19A4EBEA00DC7A71 /* Fundo07 - Sapos .mp3 in Resources */,
 				75F9E80D1A1D0908004F12AF /* elemento_chumbo.png in Resources */,
 				C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */,
 				CD1392CB19A7C2A000143DCA /* elemento_Pb.png in Resources */,
-				75F9E8031A1D0908004F12AF /* KMnO4.png in Resources */,
+				75F9E8031A1D0908004F12AF /* composto_permanganatoPotassio.png in Resources */,
 				C51125921973AB6000CECCAD /* FundoHUD.png in Resources */,
 				75F9E7E01A1D0452004F12AF /* postit.png in Resources */,
 				75F9E7DE1A1D0452004F12AF /* fundoTransparente.png in Resources */,
-				75F9E80A1A1D0908004F12AF /* NaCl.png in Resources */,
+				75F9E80A1A1D0908004F12AF /* composto_cloretoDeSodio.png in Resources */,
 				943710C719A3E31100B8846E /* ArmadilhasReferencia.plist in Resources */,
 				7531C2361A1125AC002CC7F5 /* Fase3_Parte3.png in Resources */,
 				C5FFB43919A939FF004F3CD0 /* Maleta_C2H4O2.png in Resources */,
@@ -1429,7 +1429,7 @@
 				C55264F519A24A5B00BD59CE /* Animal01 - Coelho.mp3 in Resources */,
 				75F54FCB1A1BB73800C1F454 /* descript_popup.png in Resources */,
 				75F9E8051A1D0908004F12AF /* elemento_magnesio.png in Resources */,
-				75F9E8011A1D0908004F12AF /* K2SO4.png in Resources */,
+				75F9E8011A1D0908004F12AF /* composto_sulfatoDePotassio.png in Resources */,
 				943710AF19A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 in Resources */,
 				C5FFB43C19A939FF004F3CD0 /* Maleta_H2O.png in Resources */,
 				9469692019A2A31100087B20 /* cutscene1.atlas in Resources */,
@@ -1440,14 +1440,14 @@
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
 				75F9E8091A1D0908004F12AF /* elemento_sodio.png in Resources */,
 				943710B019A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 in Resources */,
-				75F9E8041A1D0908004F12AF /* KNO3.png in Resources */,
+				75F9E8041A1D0908004F12AF /* composto_nitratoDePotassio.png in Resources */,
 				C5FFB44819A94AF6004F3CD0 /* Missoes.plist in Resources */,
 				7531C21B1A1124F3002CC7F5 /* FasesEspecificas.plist in Resources */,
 				7531C23D1A1126A8002CC7F5 /* btn_lados2.png in Resources */,
 				CD1392C119A7C25A00143DCA /* destino.png in Resources */,
 				C552650119A24A5B00BD59CE /* MusicaFundo02.mp3 in Resources */,
 				3CAC8436197A01FB000FB1A1 /* Pulando.atlas in Resources */,
-				75F9E8061A1D0908004F12AF /* MgSO4.png in Resources */,
+				75F9E8061A1D0908004F12AF /* composto_sulfatoDeMagnesio.png in Resources */,
 				943710B219A3CE8600B8846E /* FalaPersonagens-Pequena-2.mp3 in Resources */,
 				C5FFB44119A939FF004F3CD0 /* Maleta_NaCl.png in Resources */,
 				CD54D9BF19A51F7700C2798D /* papelReceita.png in Resources */,
@@ -1456,7 +1456,7 @@
 				75F54FCA1A1BB73800C1F454 /* descript_elementos.png in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
 				943710AE19A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 in Resources */,
-				75F9E7FA1A1D0908004F12AF /* acucarSacarose.png in Resources */,
+				75F9E7FA1A1D0908004F12AF /* composto_acucarSacarose.png in Resources */,
 				7531C2321A1125AC002CC7F5 /* Fase2_Parte2.png in Resources */,
 				3CAC84311979FAD5000FB1A1 /* Parado.atlas in Resources */,
 				7531C23C1A1126A8002CC7F5 /* btn_lados1.png in Resources */,
@@ -1492,7 +1492,7 @@
 				943D3BB719A6654A00A87254 /* Rostos.atlas in Resources */,
 				3CAE561719AA7B5A00C5B6E2 /* fundoMaleta.png in Resources */,
 				3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */,
-				75F9E7FB1A1D0908004F12AF /* C3H5(OH)3.png in Resources */,
+				75F9E7FB1A1D0908004F12AF /* composto_glicerina.png in Resources */,
 				948819761990218400609A0F /* FalasCutScene.plist in Resources */,
 				CD1392CA19A7C2A000143DCA /* elemento_O.png in Resources */,
 				7531C22D1A1125AC002CC7F5 /* Fase1_Parte2.png in Resources */,
@@ -1502,7 +1502,7 @@
 				9469691B19A2A2A600087B20 /* Helicoptero.mp3 in Resources */,
 				C52FBF2819A18D790059E973 /* Leopardinho.atlas in Resources */,
 				7531C2341A1125AC002CC7F5 /* Fase3_Parte1.png in Resources */,
-				75F9E7FE1A1D0908004F12AF /* acidoSulfurico.png in Resources */,
+				75F9E7FE1A1D0908004F12AF /* composto_acidoSulfurico.png in Resources */,
 				C55CE5C5199BBAAF00375C87 /* tutorialCorrerDireita.atlas in Resources */,
 				75F9E80B1A1D0908004F12AF /* elemento_oxigenio.png in Resources */,
 				9488196E19901A6D00609A0F /* MissoesJogador.plist in Resources */,
