@@ -29,22 +29,253 @@
 			<key>Info</key>
 			<dict>
 				<key>Categoria</key>
-				<string>Categoria</string>
+				<string>Não-Metais (grupo 14)</string>
 				<key>Historia</key>
-				<string>Historia</string>
+				<string>O carbono criou-se durante o Big Bang porque havia necessidade da tripla colisão de partículas alfa (núcleos atômicos de hélio), tendo o universo se expandido e esfriado bastante rápido para que tal probabilidade fosse significativa.</string>
 				<key>EstadoEncontrado</key>
-				<string>Estado</string>
+				<string>Sólido</string>
 				<key>LugarEncontrado</key>
-				<string>Lugar</string>
+				<string>O carbono é o 17º elemento mais abundantes e a maior parte encontra-se em forma de carvão e petróleo. É um componente essencial de todas a matéria viva, como carboidratos, gorduras e proteínas. </string>
 			</dict>
 			<key>Simbolo</key>
 			<string>C</string>
 			<key>NumeroEletrons</key>
-			<integer>0</integer>
+			<integer>4</integer>
 			<key>Imagem</key>
-			<string>carbono</string>
+			<string>elemento_carbono</string>
 			<key>Nome</key>
 			<string>Carbono</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Halogênios (grupo 17)</string>
+				<key>Historia</key>
+				<string>O composto mais comum do cloro, o cloreto de sódio, é conhecido desde a antiguidade tendo os arqueologistas encontrado evidências que o sal era usado já por volta de 6000 a.C. Por volta de 1630, o cloro foi reconhecido como um gás pelo químico belga Jan Baptista Van Helmont.</string>
+				<key>EstadoEncontrado</key>
+				<string>Gasoso</string>
+				<key>LugarEncontrado</key>
+				<string>Por ser muito reativo, o cloro não ocorre no estado livre. Contudo, é encontrado na forma de compostos na crosta terrestre.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>Cl</string>
+			<key>NumeroEletrons</key>
+			<integer>7</integer>
+			<key>Imagem</key>
+			<string>elemento_cloro</string>
+			<key>Nome</key>
+			<string>Cloro</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Não-Metais (grupo 1)</string>
+				<key>Historia</key>
+				<string>O gás hidrogênio, H2, foi o primeiro produzido artificialmente e formalmente descrito por T. Von Hohenheim (também conhecido como Paracelso, 1493–1541) por meio da reação química entre metais e ácidos fortes. Paracelso não tinha o conhecimento de que o gás inflamável produzido por esta reação química era constituído por um novo elemento químico</string>
+				<key>EstadoEncontrado</key>
+				<string>Gasoso</string>
+				<key>LugarEncontrado</key>
+				<string>Hidrogênio é o elemento mais abundante no universo, compondo 75% da matéria normal por massa e mais de 90% por número de átomos.20 Este elemento é encontrado em grande abundância em estrelas e planetas gigantes de gás.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>H</string>
+			<key>NumeroEletrons</key>
+			<integer>1</integer>
+			<key>Imagem</key>
+			<string>elemento_hidrogenio</string>
+			<key>Nome</key>
+			<string>Hidrogênio</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Halogênios (grupo 17)</string>
+				<key>Historia</key>
+				<string>O iodo (do grego iodes, que significa &quot;violeta&quot;) foi descoberto na França pelo químico Bernard Courtois em 1811 a partir de algas marinhas, não continuando com suas investigações por falta de dinheiro. Posteriormente, o químico inglês Humphry Davy e o químico francês Gay-Lussac estudaram em separado a substância e terminaram identificando-a definitivamente como um novo elemento. Ambos deram o crédito do descobrimento a Courtois.</string>
+				<key>EstadoEncontrado</key>
+				<string>Sólido</string>
+				<key>LugarEncontrado</key>
+				<string>O iodo é o halogênio menos abundante, pode ser obtido a partir dos iodetos, I-, presentes na água do mar e nas algas. Também pode ser obtido a partir dos iodatos, IO3- existente nos nitratos de Chile, separando-os previamente destes.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>I</string>
+			<key>NumeroEletrons</key>
+			<integer>7</integer>
+			<key>Imagem</key>
+			<string>elemento_iodo</string>
+			<key>Nome</key>
+			<string>Iodo</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Metais-Alcalinos (grupo 1)</string>
+				<key>Historia</key>
+				<string>O nome potássio vem do latim científico pontassionim, e este do neerlandês pottasche, cinza de pote, nome dado por Humphry Davy ao ser descoberto em 1807. Foi o primeiro elemento metálico isolado por eletrólise, no caso a partir da potassa (KOH), composto de cujo nome latino, Kalium, originou o símbolo químico do potássio.</string>
+				<key>EstadoEncontrado</key>
+				<string>Sólido</string>
+				<key>LugarEncontrado</key>
+				<string>O potássio constitui cerca de 2,4% em peso da crosta terrestre, sendo o sétimo elemento mais abundante. Devido a sua insolubilidade é muito difícil obter o metal puro a partir dos seus minerais. Ainda assim, em antigos leitos marítimos e lagos existem grandes depósitos de minerais de potássio dos quais é economicamente viável a extração do metal e seus sais.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>K</string>
+			<key>NumeroEletrons</key>
+			<integer>1</integer>
+			<key>Imagem</key>
+			<string>elemento_potassio</string>
+			<key>Nome</key>
+			<string>Potássio</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Metais alcalino-terrosos (Grupo 2)</string>
+				<key>Historia</key>
+				<string>O nome é originário de Magnésia, que em grego designava uma região da Tessália. O escocês Joseph Black, reconheceu o magnésio como um elemento químico em 1755. Em 1808 Sir Humphry Davy obteve o metal puro mediante a eletrólise de uma mistura de magnésia e HgO (óxido de mercúrio).</string>
+				<key>EstadoEncontrado</key>
+				<string>Sólido</string>
+				<key>LugarEncontrado</key>
+				<string>O magnésio é o oitavo elemento mais abundante na crosta terrestre. Não é encontrado livre na natureza, porém entra na composição de mais de 60 minerais</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>Mg</string>
+			<key>NumeroEletrons</key>
+			<integer>2</integer>
+			<key>Imagem</key>
+			<string>elemento_ magnesio</string>
+			<key>Nome</key>
+			<string>Magnésio</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Metais de Transição (Grupo 7)</string>
+				<key>Historia</key>
+				<string>Vários óxidos de manganês são abundantes na natureza e por causa de suas cores têm sido utilizados como pigmentos desde a Idade da Pedra. Vidreiros egípcios e romanos utilizavam tais compostos tanto para remover a cor do vidro quanto para adicioná-la.5 Por causa de sua utilização na fabricação de vidros, o dióxido de manganês estava disponível aos alquimistas e foi utilizado em experimentos. Em 1770 Ignatius Gottfried Kaim (1746-1778) e Johann Rudolf Glauber (1604-1670) descobriram que o dióxido podia ser convertido em permanganato, um reagente de laboratório útil pelo seu poder oxidante.</string>
+				<key>EstadoEncontrado</key>
+				<string>Sólido</string>
+				<key>LugarEncontrado</key>
+				<string>O manganês é o 12º elemento mais abundante na crosta terrestre. O elemento não é encontrado na forma pura, mas faz parte da composição de mais de cem minérios</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>Mn</string>
+			<key>NumeroEletrons</key>
+			<integer>2</integer>
+			<key>Imagem</key>
+			<string>elemento_manganes</string>
+			<key>Nome</key>
+			<string>Manganês</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Não-Metais (grupo 15)</string>
+				<key>Historia</key>
+				<string>O nitrogênio considera-se que foi descoberto formalmente por Daniel Rutherford em 1772 ao determinar algumas de suas propriedades. Entretanto, pela mesma época, também se dedicaram ao seu estudo Scheele que o isolou, Cavendish, e Priestley.</string>
+				<key>EstadoEncontrado</key>
+				<string>Gasoso</string>
+				<key>LugarEncontrado</key>
+				<string>O nitrogênio é o componente principal da atmosfera terrestre. É obtido, para usos industriais, pela destilação do ar líquido ou pelo enriquecimento através de filtros moleculares. O elemento está presente na composição de substâncias excretadas pelos animais, usualmente na forma de ureia e ácido úrico.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>N</string>
+			<key>NumeroEletrons</key>
+			<integer>5</integer>
+			<key>Imagem</key>
+			<string>elemento_nitrogenio</string>
+			<key>Nome</key>
+			<string>Nitrogênio</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Metais-Alcalinos (Grupo 1)</string>
+				<key>Historia</key>
+				<string>Foi isolado em 1807 por Sir Humphry Davy através da eletrólise da soda cáustica. Na Europa medieval era empregado como remédio para as enxaquecas um composto de sódio denominado sodanum. O símbolo do sódio (Na), provém de natron ( ou natrium, do grego nítron ) nome que recebia antigamente o carbonato de sódio.</string>
+				<key>EstadoEncontrado</key>
+				<string>Sólido</string>
+				<key>LugarEncontrado</key>
+				<string>A crosta terrestre contém aproximadamente 2,6% de sódio, sendo o quarto elemento mais abundante e o mais comum entre os metais alcalinos. O composto mais abundante de sódio é o cloreto de sódio, o sal comum de cozinha. Também se encontra presente em diversos minerais.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>Na</string>
+			<key>NumeroEletrons</key>
+			<integer>1</integer>
+			<key>Imagem</key>
+			<string>elemento_sodio</string>
+			<key>Nome</key>
+			<string>Sódio</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Não-Metais (Grupo 16)</string>
+				<key>Historia</key>
+				<string>O elemento oxigênio foi descoberto pelo farmacêutico sueco Carl Wilhelm Scheele em 1771, porém o seu trabalho não obteve reconhecimento imediato. Muitos atribuem a Joseph Priestley o seu descobrimento, que ocorreu independentemente em 1 de agosto de 1774.</string>
+				<key>EstadoEncontrado</key>
+				<string>Gasoso</string>
+				<key>LugarEncontrado</key>
+				<string>Representa aproximadamente 20% da composição da atmosfera terrestre. O composto mais notável do oxigênio é a água (H2O).</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>O</string>
+			<key>NumeroEletrons</key>
+			<integer>6</integer>
+			<key>Imagem</key>
+			<string>elemento_ oxigenio</string>
+			<key>Nome</key>
+			<string>Oxigênio</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Metais Representativos (Grupo 14)</string>
+				<key>Historia</key>
+				<string>Os alquimistas achavam que o chumbo era o mais velho dos metais e associavam este metal ao planeta Saturno. A partir de 700 d.C. os alemães iniciaram a exploração deste metal, juntamente com a da prata, nas minas existentes nas montanhas de Hartz, no vale do vale do Reno e na Boêmia a partir do século XIII. Na Grã-Bretanha, a partir do século XVII, principalmente nas regiões de Derbyshire e Gales as indústrias de fundições deste metal prosperaram.</string>
+				<key>EstadoEncontrado</key>
+				<string>Sólido</string>
+				<key>LugarEncontrado</key>
+				<string>O chumbo raramente é encontrado no seu estado elementar. O mineral de chumbo mais comum é o sulfeto denominado de galena (com 86,6% deste metal) . Outros minerais de importância comercial são o carbonato (cerusita) e o sulfato (anglesita), que são mais raros. Geralmente é encontrado com minerais de zinco, prata e, em maior abundância, de cobre.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>Pb</string>
+			<key>NumeroEletrons</key>
+			<integer>4</integer>
+			<key>Imagem</key>
+			<string>elemento_ chumbo</string>
+			<key>Nome</key>
+			<string>Chumbo</string>
+		</dict>
+		<dict>
+			<key>Info</key>
+			<dict>
+				<key>Categoria</key>
+				<string>Não-Metais (Grupo 16)</string>
+				<key>Historia</key>
+				<string>O enxofre (do latím sulphur, -ŭris) é conhecido desde a antiguidade. No século IX a.C. Homero já recomendava evitar a pestilência do enxofre. Os alquimistas na Idade Média conheciam a possibilidade de combinar o enxofre com o mercúrio. Somente nos finais da década de 1770 a comunidade científica convenceu-se, através de Antoine Lavoisier, de que o enxofre era um elemento químico e não um composto.</string>
+				<key>EstadoEncontrado</key>
+				<string>Sólido</string>
+				<key>LugarEncontrado</key>
+				<string>O enxofre é o 16º elemento em ordem de abundância na crosta terrestre. Na forma nativa é encontrado junto a fontes termais, zonas vulcânicas. Também está presente, em pequenas quantidades, em combustíveis fósseis como carvão e petróleo, cuja combustão produz dióxido de enxofre que combinado a água resulta na chuva ácida.</string>
+			</dict>
+			<key>Simbolo</key>
+			<string>S</string>
+			<key>NumeroEletrons</key>
+			<integer>6</integer>
+			<key>Imagem</key>
+			<string>elemento_enxofre</string>
+			<key>Nome</key>
+			<string>Enxofre</string>
 		</dict>
 	</array>
 	<key>Compostos</key>

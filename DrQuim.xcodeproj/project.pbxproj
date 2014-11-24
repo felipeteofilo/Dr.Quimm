@@ -766,28 +766,28 @@
 		75F9E7E21A1D0908004F12AF /* ElementosCompostos */ = {
 			isa = PBXGroup;
 			children = (
-				75F9E7E31A1D0908004F12AF /* elemento_carbono.png */,
+				75F9E7E81A1D0908004F12AF /* acidoSulfurico.png */,
 				75F9E7E41A1D0908004F12AF /* acucarSacarose.png */,
 				75F9E7E51A1D0908004F12AF /* C3H5(OH)3.png */,
+				75F9E7E31A1D0908004F12AF /* elemento_carbono.png */,
+				75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */,
 				75F9E7E61A1D0908004F12AF /* elemento_cloro.png */,
+				75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */,
 				75F9E7E71A1D0908004F12AF /* elemento_hidrogenio.png */,
-				75F9E7E81A1D0908004F12AF /* acidoSulfurico.png */,
 				75F9E7E91A1D0908004F12AF /* elemento_iodo.png */,
+				75F9E7EF1A1D0908004F12AF /* elemento_magnesio.png */,
+				75F9E7F11A1D0908004F12AF /* elemento_manganes.png */,
+				75F9E7F21A1D0908004F12AF /* elemento_nitrogenio.png */,
+				75F9E7F51A1D0908004F12AF /* elemento_oxigenio.png */,
 				75F9E7EA1A1D0908004F12AF /* elemento_potassio.png */,
+				75F9E7F31A1D0908004F12AF /* elemento_sodio.png */,
 				75F9E7EB1A1D0908004F12AF /* K2SO4.png */,
 				75F9E7EC1A1D0908004F12AF /* KI.png */,
 				75F9E7ED1A1D0908004F12AF /* KMnO4.png */,
 				75F9E7EE1A1D0908004F12AF /* KNO3.png */,
-				75F9E7EF1A1D0908004F12AF /* elemento_magnesio.png */,
 				75F9E7F01A1D0908004F12AF /* MgSO4.png */,
-				75F9E7F11A1D0908004F12AF /* elemento_manganes.png */,
-				75F9E7F21A1D0908004F12AF /* elemento_nitrogenio.png */,
-				75F9E7F31A1D0908004F12AF /* elemento_sodio.png */,
 				75F9E7F41A1D0908004F12AF /* NaCl.png */,
-				75F9E7F51A1D0908004F12AF /* elemento_oxigenio.png */,
 				75F9E7F61A1D0908004F12AF /* Pb(NO3)2.png */,
-				75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */,
-				75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */,
 			);
 			path = ElementosCompostos;
 			sourceTree = "<group>";
