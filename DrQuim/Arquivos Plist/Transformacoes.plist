@@ -283,8 +283,9 @@
 		<dict>
 			<key>Elementos</key>
 			<array>
-				<string>Elemento</string>
-				<string>Elemento</string>
+				<string>Hidrogenio</string>
+				<string>Enxofre</string>
+				<string>Oxigenio</string>
 			</array>
 			<key>Info</key>
 			<dict>
@@ -307,13 +308,17 @@
 			<key>FormulaMolecular</key>
 			<string>H2SO4</string>
 			<key>Imagem</key>
-			<string>acidoSulfurico</string>
+			<string>composto_acidoSulfurico</string>
 			<key>Nome</key>
 			<string>Ácido Sulfúrico</string>
 		</dict>
 		<dict>
 			<key>Elementos</key>
-			<array/>
+			<array>
+				<string>Carbono</string>
+				<string>Hidrogênio</string>
+				<string>Oxigênio</string>
+			</array>
 			<key>Info</key>
 			<dict>
 				<key>Aplicacao</key>
@@ -324,7 +329,7 @@
 			<key>FormulaMolecular</key>
 			<string>C12H22O11</string>
 			<key>Imagem</key>
-			<string>acucarSacarose</string>
+			<string>composto_acucarSacarose</string>
 			<key>Nome</key>
 			<string>Açúcar (Sacarose)</string>
 		</dict>
@@ -345,7 +350,7 @@
 			<key>FormulaMolecular</key>
 			<string>C3H8O3</string>
 			<key>Imagem</key>
-			<string>glicerina</string>
+			<string>composto_glicerina</string>
 			<key>Nome</key>
 			<string>Glicerina</string>
 		</dict>
@@ -366,7 +371,7 @@
 			<key>FormulaMolecular</key>
 			<string>KMnO4</string>
 			<key>Imagem</key>
-			<string>permanganatoPotassio</string>
+			<string>composto_permanganatoPotassio</string>
 			<key>Nome</key>
 			<string>Permanganato de potássio</string>
 		</dict>
@@ -387,9 +392,112 @@
 			<key>FormulaMolecular</key>
 			<string>Pb(NO3)2</string>
 			<key>Imagem</key>
-			<string>nitratoDeChumbo</string>
+			<string>composto_nitratoDeChumbo</string>
 			<key>Nome</key>
 			<string>Nitrato de chumbo II</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Potassio</string>
+				<string>Enxofre</string>
+				<string>Oxigenio</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>Assim como o cloro e o sódio, está envolvido no balanço e distribuição de água, no equilíbrio osmótico, no equilíbrio ácido-base e na regulação da atividade neuromuscular. Promove, também, o crescimento celular. </string>
+				<key>Obtencao</key>
+				<string>O potássio é encontrado em vegetais, frutas, carnes, aves, peixes, leite e cereais. </string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>K2SO4</string>
+			<key>Imagem</key>
+			<string>composto_sulfatoDePotassio</string>
+			<key>Nome</key>
+			<string>Sulfato de potássio</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Potássio</string>
+				<string>Iodo</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>Iodeto de potássio é usado em fotografia, na preparação de iodeto de prata para filme fotográfico de alta velocidade</string>
+				<key>Obtencao</key>
+				<string>É obtido da reação do hidróxido de potássio com o iodo</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>KI</string>
+			<key>Imagem</key>
+			<string>composto_iodetoDePotassio</string>
+			<key>Nome</key>
+			<string>Iodeto de Potássio</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Potássio</string>
+				<string>Nitrogênio</string>
+				<string>Oxigênio</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>É usado pelas indústrias de alimentos que produzem carnes defumadas e embutidos (salsichas, linguiças, salames, etc.) a fim de evitar a proliferação de bactéria causadora do botulismo, que causa uma intoxicação alimentar grave. Serve também para ressaltar a cor e o sabor do alimento. </string>
+				<key>Obtencao</key>
+				<string>Atualmente, a maioria do nitrato de potássio vem dos vastos depósitos de nitrato de sódio existentes nos desertos chilenos. O nitrato de sódio é purificado e posteriormente colocado para reagir com uma solução de cloreto de potássio, na qual o nitrato de potássio obtido, menos solúvel, cristaliza.</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>KNO3</string>
+			<key>Imagem</key>
+			<string>composto_nitratoDePotassio</string>
+			<key>Nome</key>
+			<string>Nitrato de Potássio</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Magnésio</string>
+				<string>Enxofre</string>
+				<string>Oxigênio</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>Em agricultura e jardinagem o sulfato de magnésio é empregado como corretor da deficiência de magnésio no solo. Em uso local pode utilizar-se para o tratamento da unha encravada. O sulfato de magnésio oral e o hidróxido de magnésio se empregam como laxante para as grávidas. O sulfato de magnésio é empregado além disso como sais de banho, particularmente na terapia de flutuação, porque altas concentrações deste sal dissolvido em água aumentam a densidade da solução, o que faz que um corpo humano flutue como uma bóia.</string>
+				<key>Obtencao</key>
+				<string>O sulfato de magnésio pode ser obtido a partir de magnésio e ácido sulfúrico</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>MgSO4</string>
+			<key>Imagem</key>
+			<string>composto_sulfatoDeMagnesio</string>
+			<key>Nome</key>
+			<string>Sulfato de Magnésio</string>
+		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Sodio</string>
+				<string>Cloro</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>Embora a maioria das pessoas esteja familiarizada com os vários usos do sal na culinária, desconhece que a substância é utilizada em várias outras aplicações, como a manufatura de papel e a produção de sabão e detergentes.</string>
+				<key>Obtencao</key>
+				<string>Atualmente a água do mar, lagos, rios, e rochas podem conter sal. O processo de fabricação do sal é físico e não químico, dando-se por dissolução de sal gema com água quente injetada nas jazidas para a produção de salmoura. Após, procede-se a concentração, etapa que também é realizada com a água do mar e de lagos salgados, a cristalização do cloreto de sódio e a colheita e sua lavagem, e se adequado, refino e adição de compostos contendo iodo para o consumo humano.</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>NaCl</string>
+			<key>Imagem</key>
+			<string>composto_cloretoDeSodio</string>
+			<key>Nome</key>
+			<string>Cloreto de sódio</string>
 		</dict>
 	</array>
 	<key>Receitas</key>
