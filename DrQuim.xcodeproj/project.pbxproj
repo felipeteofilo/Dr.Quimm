@@ -94,6 +94,8 @@
 		75F9E80D1A1D0908004F12AF /* elemento_chumbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */; };
 		75F9E80E1A1D0908004F12AF /* elemento_enxofre.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */; };
 		75FB4C2E1A168A33001E8669 /* DQScroolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB4C2D1A168A33001E8669 /* DQScroolView.m */; };
+		75FD765E1A24F77C0085FB3E /* DQTelaInfoReceitas.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD765D1A24F77C0085FB3E /* DQTelaInfoReceitas.m */; };
+		75FD76601A24F8190085FB3E /* Xis.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FD765F1A24F8190085FB3E /* Xis.png */; };
 		75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */; };
 		75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */; };
 		75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF3F819F6E584007E1C66 /* DQCoreDataController.m */; };
@@ -377,6 +379,9 @@
 		75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_enxofre.png; sourceTree = "<group>"; };
 		75FB4C2C1A168A33001E8669 /* DQScroolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQScroolView.h; sourceTree = "<group>"; };
 		75FB4C2D1A168A33001E8669 /* DQScroolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQScroolView.m; sourceTree = "<group>"; };
+		75FD765C1A24F77C0085FB3E /* DQTelaInfoReceitas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTelaInfoReceitas.h; sourceTree = "<group>"; };
+		75FD765D1A24F77C0085FB3E /* DQTelaInfoReceitas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTelaInfoReceitas.m; sourceTree = "<group>"; };
+		75FD765F1A24F8190085FB3E /* Xis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xis.png; sourceTree = "<group>"; };
 		75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		75FDF3F419F6E33B007E1C66 /* DrQuim.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrQuim.xcdatamodel; sourceTree = "<group>"; };
 		75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoreDataController.h; sourceTree = "<group>"; };
@@ -752,6 +757,7 @@
 		75F9E7D51A1D0452004F12AF /* TransformacoesNova */ = {
 			isa = PBXGroup;
 			children = (
+				75FD765F1A24F8190085FB3E /* Xis.png */,
 				75F9E7E21A1D0908004F12AF /* ElementosCompostos */,
 				75F9E7D61A1D0452004F12AF /* btnMIX.png */,
 				75F9E7D71A1D0452004F12AF /* fundo.png */,
@@ -1183,6 +1189,8 @@
 				75FB4C2D1A168A33001E8669 /* DQScroolView.m */,
 				75F74AFA1A128FCB00BEE2C1 /* DQTelaInfoComposto.h */,
 				75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */,
+				75FD765C1A24F77C0085FB3E /* DQTelaInfoReceitas.h */,
+				75FD765D1A24F77C0085FB3E /* DQTelaInfoReceitas.m */,
 				947A33D91959EED1003EC57D /* DQControleCorpoFisico.h */,
 				947A33DA1959EED1003EC57D /* DQControleCorpoFisico.m */,
 				C5B174091968C77800143B8D /* DQConfiguracaoFase.h */,
@@ -1438,6 +1446,7 @@
 				9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */,
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
+				75FD76601A24F8190085FB3E /* Xis.png in Resources */,
 				75F9E8091A1D0908004F12AF /* elemento_sodio.png in Resources */,
 				943710B019A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 in Resources */,
 				75F9E8041A1D0908004F12AF /* composto_nitratoDePotassio.png in Resources */,
@@ -1552,6 +1561,7 @@
 				23A538E9196C6E9E00821BAF /* DQNpc.m in Sources */,
 				CD54D9AB19A51E4E00C2798D /* DQAmostraQuimica.m in Sources */,
 				94A8681C1999683800604BA4 /* DQContadorGeiger.m in Sources */,
+				75FD765E1A24F77C0085FB3E /* DQTelaInfoReceitas.m in Sources */,
 				C52FBF2119A18D220059E973 /* DQUteis.m in Sources */,
 				947A33DB1959EED1003EC57D /* DQControleCorpoFisico.m in Sources */,
 				CDE817F31933C790003516E7 /* DQJogador.m in Sources */,

@@ -25,6 +25,8 @@
     
     
     
+    
+    
     [self.view addSubview:imagemFundo];
     
     [self atualizarInfoComposto:nome];
@@ -32,37 +34,42 @@
 
 -(void)atualizarInfoComposto:(NSString*)nome{
     
-    if([self.ultimoComposto isEqualToString:nome]){
-    
-    Composto *composto = [DQCoreDataController procurarComposto:nome];
-    
-    
-    if (self.nomeComposto == nil) {
-        self.nomeComposto = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.3, self.view.frame.size.height*0.07, self.view.frame.size.width*0.65, self.view.frame.size.height*0.07) duration:5 andFadeLength:10];
-        [self.nomeComposto setTextColor:[UIColor blueColor]];
-        [self.view addSubview:self.nomeComposto];
-    }
-    
-    if (self.imagemComposto == nil) {
-        self.imagemComposto = [[UIImageView alloc]init];
-        [self.imagemComposto setFrame:CGRectMake(0, 0, self.view.frame.size.width*0.26, self.view.frame.size.width*0.26)];
-        [self.view addSubview:self.imagemComposto];
-    }
-    
-    [self.imagemComposto setImage:[UIImage imageNamed:composto.imagem]];
-    
-    [self.nomeComposto setText:nome];
-    
-        if (self.telaInfo == nil) {
-            [self montarInfoComposto:composto frameImagem:self.view.frame];
-            [self.view addSubview:self.telaInfo];
+    if(![self.ultimoComposto isEqualToString:nome]){
+        
+        Composto *composto = [DQCoreDataController procurarComposto:nome];
+        
+        if([self.infoElemento superview]){
+            [self.infoElemento removeFromSuperview];
         }
+        if (self.nomeComposto == nil) {
+            self.nomeComposto = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.3, self.view.frame.size.height*0.07, self.view.frame.size.width*0.65, self.view.frame.size.height*0.07) duration:5 andFadeLength:10];
+            [self.nomeComposto setTextColor:[UIColor blueColor]];
+            [self.view addSubview:self.nomeComposto];
+        }
+        
+        if (self.imagemComposto == nil) {
+            self.imagemComposto = [[UIImageView alloc]init];
+            [self.imagemComposto setFrame:CGRectMake(0, 0, self.view.frame.size.width*0.26, self.view.frame.size.width*0.26)];
+            [self.view addSubview:self.imagemComposto];
+        }
+        
+        [self.imagemComposto setImage:[UIImage imageNamed:composto.imagem]];
+        
+        [self.nomeComposto setText:nome];
+        
+        
+        [self montarInfoComposto:composto frameImagem:self.view.frame];
+        [self.view addSubview:self.telaInfo];
+        
         [self montarBotoesElementos:composto.elementos];
     }
 }
 
 
 -(void)montarBotoesElementos :(NSArray*)nomesElementos{
+    if([self.scrollViewElementos superview]){
+        [self.scrollViewElementos removeFromSuperview];
+    }
     
     
     self.scrollViewElementos = [[DQScroolView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)];
@@ -76,10 +83,11 @@
         
         [elemento setFrame:CGRectMake((tamanhoBotao.width * i)+(13.5*i), tamanhoBotao.height*0.03, tamanhoBotao.width, tamanhoBotao.height)];
         
+        Elemento *elementoParaAdicionar = [DQCoreDataController procurarElemento:[nomesElementos objectAtIndex:i]];
         
-        [elemento setBackgroundImage:[UIImage imageNamed:@"descript_elementos"] forState:UIControlStateNormal];
+        [elemento setBackgroundImage:[UIImage imageNamed:elementoParaAdicionar.imagem] forState:UIControlStateNormal];
         
-        if (elemento.frame.origin.x > self.scrollViewElementos.frame.size.width) {
+        if (elemento.frame.origin.x + elemento.frame.size.width > self.scrollViewElementos.frame.size.width) {
             [self.scrollViewElementos setContentSize:CGSizeMake(elemento.frame.origin.x + elemento.frame.size.width, self.scrollViewElementos.frame.size.height)];
         }
         
@@ -92,6 +100,8 @@
         [self.scrollViewElementos addSubview:elemento];
     }
     [self.scrollViewElementos setCanCancelContentTouches:YES];
+    
+    
     
     [self.view addSubview:self.scrollViewElementos];
     
@@ -117,29 +127,30 @@
     
     Elemento *elemento = [DQCoreDataController procurarElemento:[button titleForState:UIControlStateDisabled]];
     
-    
-    
-    MarqueeLabel *nomeElemento = [[MarqueeLabel alloc]initWithFrame:CGRectMake(imagemFundo.frame.size.width*0.33, imagemFundo.frame.size.height*0.1, imagemFundo.frame.size.width*0.65, imagemFundo.frame.size.height*0.07) duration:5 andFadeLength:10];
-    
-    
-    [nomeElemento setText:[button titleForState:UIControlStateDisabled]];
-    
     [self.infoElemento setBackgroundColor:[UIColor blueColor]];
     
     
-    self.botaoFechar = [[UIButton alloc]initWithFrame:CGRectMake(0 ,0, self.infoElemento.frame.size.height*0.1, self.infoElemento.frame.size.height*0.1)];
+    self.botaoFechar = [[UIButton alloc]initWithFrame:CGRectMake(self.infoElemento.frame.size.width - self.infoElemento.frame.size.height*0.15 ,0, self.infoElemento.frame.size.height*0.15, self.infoElemento.frame.size.height*0.15)];
     
-    [self.botaoFechar setBackgroundColor:[UIColor blackColor]];
-    
-    
+    [self.botaoFechar setImage:[UIImage imageNamed:@"Xis"] forState:UIControlStateNormal];
     
     [self.botaoFechar addTarget:self action:@selector(fecharInfo:) forControlEvents:UIControlEventTouchUpInside];
     
+    UIImageView* imagemElemento= [[UIImageView alloc]initWithImage:[UIImage imageNamed:elemento.imagem]];
+    
+    [imagemElemento setFrame:CGRectMake(0, 0, self.infoElemento.frame.size.width*0.25, self.infoElemento.frame.size.width*0.25)];
+    
+    MarqueeLabel *nomeElemento = [[MarqueeLabel alloc]initWithFrame:CGRectMake(imagemFundo.frame.size.width*0.36, imagemFundo.frame.size.height*0.1, imagemFundo.frame.size.width*0.65, imagemFundo.frame.size.height*0.13) duration:5 andFadeLength:10];
+    
+    
+    [nomeElemento setText:[button titleForState:UIControlStateDisabled]];
+    [nomeElemento setTextColor:[UIColor blueColor]];
     
     
     [self.infoElemento addSubview:imagemFundo];
     [self.infoElemento addSubview:[self montarInfoElemento:elemento frameImagem:imagemFundo.frame]];
     [self.infoElemento addSubview:nomeElemento];
+    [self.infoElemento addSubview:imagemElemento];
     [self.view addSubview:self.infoElemento];
     [self.infoElemento addSubview:self.botaoFechar];
     

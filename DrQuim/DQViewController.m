@@ -12,6 +12,7 @@
 #import "DQElemento.h"
 #import "DQReceita.h"
 #import "DQTelaInfoComposto.h"
+#import "DQTelaInfoReceitas.h"
 
 
 @implementation DQViewController
@@ -32,10 +33,21 @@
     NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio", nil];
     int numeroDeCompostos = arrayDeCompostos.count;
     
-    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.frame.size.height * 0.5, self.view.frame.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
+    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.bounds.size.height * 0.5, self.view.bounds.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
     
     circulo.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
     [self.view addSubview:circulo];
+    
+    [circulo mostrarInfoComposto];
+    
+    
+    NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Receita 1234567",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2", nil];
+    
+    
+    DQTelaInfoReceitas * infoReceitas = [[DQTelaInfoReceitas alloc]initComReceitas:arrayReceitas frame:self.view.bounds];
+    
+    [self.view addSubview:infoReceitas];
+    
     
     
 //    //PARA CENAS DO JOGO

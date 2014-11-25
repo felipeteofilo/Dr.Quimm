@@ -8,27 +8,6 @@
 			<key>Info</key>
 			<dict>
 				<key>Categoria</key>
-				<string>Categoria</string>
-				<key>Historia</key>
-				<string>Historia</string>
-				<key>EstadoEncontrado</key>
-				<string>Estado</string>
-				<key>LugarEncontrado</key>
-				<string>Lugar</string>
-			</dict>
-			<key>Simbolo</key>
-			<string>D</string>
-			<key>NumeroEletrons</key>
-			<integer>0</integer>
-			<key>Imagem</key>
-			<string>Elemento</string>
-			<key>Nome</key>
-			<string>Elemento</string>
-		</dict>
-		<dict>
-			<key>Info</key>
-			<dict>
-				<key>Categoria</key>
 				<string>Não-Metais (grupo 14)</string>
 				<key>Historia</key>
 				<string>O carbono criou-se durante o Big Bang porque havia necessidade da tripla colisão de partículas alfa (núcleos atômicos de hélio), tendo o universo se expandido e esfriado bastante rápido para que tal probabilidade fosse significativa.</string>
@@ -147,7 +126,7 @@
 			<key>NumeroEletrons</key>
 			<integer>2</integer>
 			<key>Imagem</key>
-			<string>elemento_ magnesio</string>
+			<string>elemento_magnesio</string>
 			<key>Nome</key>
 			<string>Magnésio</string>
 		</dict>
@@ -231,7 +210,7 @@
 			<key>NumeroEletrons</key>
 			<integer>6</integer>
 			<key>Imagem</key>
-			<string>elemento_ oxigenio</string>
+			<string>elemento_oxigenio</string>
 			<key>Nome</key>
 			<string>Oxigênio</string>
 		</dict>
@@ -283,9 +262,9 @@
 		<dict>
 			<key>Elementos</key>
 			<array>
-				<string>Hidrogenio</string>
+				<string>Hidrogênio</string>
 				<string>Enxofre</string>
-				<string>Oxigenio</string>
+				<string>Oxigênio</string>
 			</array>
 			<key>Info</key>
 			<dict>
@@ -399,9 +378,9 @@
 		<dict>
 			<key>Elementos</key>
 			<array>
-				<string>Potassio</string>
+				<string>Potássio</string>
 				<string>Enxofre</string>
-				<string>Oxigenio</string>
+				<string>Oxigênio</string>
 			</array>
 			<key>Info</key>
 			<dict>
@@ -482,7 +461,7 @@
 		<dict>
 			<key>Elementos</key>
 			<array>
-				<string>Sodio</string>
+				<string>Sódio</string>
 				<string>Cloro</string>
 			</array>
 			<key>Info</key>

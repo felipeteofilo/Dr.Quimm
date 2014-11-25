@@ -29,6 +29,7 @@
 @property CGAffineTransform iniciaTransformacao;
 
 -(id)initComFrame: (CGRect)frame comDelegate:(id)del comNumeroDeCompostos:(int)numeroDeCompostos eCompostos:(NSArray *)arrayDeCompostos;
+-(void)mostrarInfoComposto;
 
 
 @end

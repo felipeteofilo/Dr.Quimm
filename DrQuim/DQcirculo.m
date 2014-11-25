@@ -26,7 +26,7 @@ static float alphaMaximo = 1.0;
         self.delegate = del;
         
         [self desenharCirculo];
-        [self mostrarInfoComposto];
+        
     }
     return self;
 }
@@ -67,6 +67,8 @@ static float alphaMaximo = 1.0;
     
     if(self.numeroDeCompostos %2 == 0) { [self desenharCirculoPar]; }
     else { [self desenharCirculoImpar]; }
+    
+    
     
     //[self.delegate mudouDeValor:[self pegarNomeComposto:self.compostoAtual]]; //???
 }
@@ -214,6 +216,7 @@ static float alphaMaximo = 1.0;
     DQComposto *composto = (DQComposto*)imagem;
     [self.infoComposto atualizarInfoComposto:composto.nome];
     
+    
     imagem.alpha = alphaMaximo;
 }
 
@@ -223,11 +226,11 @@ static float alphaMaximo = 1.0;
     UIImageView *imagem = [self pegarNomeCompostoPeloValor:self.compostoAtual];
     
     DQComposto *composto = (DQComposto*)imagem;
-    
-    [self.infoComposto colocarNaPosicao:CGPointMake(self.superview.frame.size.width *0.7, 0) tamanho:self.superview.frame.size nomeComposto:composto.nome];
+    [self.superview addSubview:self.infoComposto.view];
+    [self.infoComposto colocarNaPosicao:CGPointMake(self.superview.bounds.size.width *0.7, 0) tamanho:self.superview.bounds.size nomeComposto:composto.nome];
     
     self.infoComposto.view.tag = 100;
-    [self.superview addSubview:self.infoComposto.view];
+   
 }
 
 
