@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DQScroolView : UIScrollView
+@interface DQScrollView : UIScrollView
 
 @end

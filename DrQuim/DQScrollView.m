@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
-#import "DQScroolView.h"
+#import "DQScrollView.h"
 
-@implementation DQScroolView
+@implementation DQScrollView
 
 /*
 // Only override drawRect: if you perform custom drawing.

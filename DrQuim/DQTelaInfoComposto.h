@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DQScroolView.h"
+#import "DQScrollView.h"
 #import "MarqueeLabel.h"
 
 
 
 @interface DQTelaInfoComposto : UIViewController 
 
-@property DQScroolView *scrollViewElementos;
+@property DQScrollView *scrollViewElementos;
 @property UIView * infoElemento;
 @property UIButton * botaoFechar;
 @property MarqueeLabel *nomeComposto;

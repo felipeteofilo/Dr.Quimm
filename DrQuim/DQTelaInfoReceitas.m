@@ -57,12 +57,124 @@
         
         [tituloReceita setText:[receitas objectAtIndex:i]];
         
+        [receita addTarget:self action:@selector(mostrarInfoReceita:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [receita setTitle:[receitas objectAtIndex:i]  forState:UIControlStateDisabled];
+        
         [receita addSubview:tituloReceita];
         
         [self addSubview:receita];
     }
     [self setCanCancelContentTouches:YES];
 }
+
+
+-(void)mostrarInfoReceita :(UIButton*)button{
+    
+    
+    
+    if(![self.viewInfo superview] || ![[button titleForState:UIControlStateDisabled] isEqualToString:self.ultimaReceita]){
+        if([self.viewInfo superview]){
+            [self.viewInfo removeFromSuperview];
+        }
+        
+        Receita *receita = [DQCoreDataController procurarReceita:[button titleForState:UIControlStateDisabled]];
+        
+        
+        
+        
+        self.viewInfo = [[UIView alloc]initWithFrame:CGRectMake(self.superview.bounds.size.width*0.01, self.superview.bounds.size.height*0.4, self.superview.bounds.size.width*0.2, self.superview.bounds.size.width*0.25)];
+        
+        
+        UIImageView * imagemFundo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"descript"]];
+        
+        [imagemFundo setFrame:CGRectMake(0, 0, self.viewInfo.frame.size.width, self.viewInfo.frame.size.height)];
+        
+        MarqueeLabel *nomeReceita = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.viewInfo.frame.size.width*0.3, self.viewInfo.frame.size.height*0.07, self.viewInfo.frame.size.width*0.65, self.viewInfo.frame.size.height*0.07) duration:5 andFadeLength:10];
+        
+        
+        MarqueeLabel *compostosNecessários = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.viewInfo.frame.size.width * 0.05, self.viewInfo.frame.size.height*0.7, self.viewInfo.frame.size.width*0.9, self.viewInfo.frame.size.height*0.07) duration:5 andFadeLength:10];
+        
+        
+        
+        
+        
+        [nomeReceita setText:[button titleForState:UIControlStateDisabled]];
+        
+        [compostosNecessários setText:@"Compostos Necessários:"];
+        
+         UIFont *boldFontName = [UIFont boldSystemFontOfSize:14];
+        
+        NSMutableAttributedString *descricao= [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"Descrição: %@\n\n",receita.descricao]];
+        
+        [descricao beginEditing];
+        [descricao addAttribute:NSFontAttributeName value:boldFontName range:NSMakeRange(0, 9)];
+        [descricao endEditing];
+       
+        UITextView * info = [[UITextView alloc]initWithFrame:CGRectMake(imagemFundo.frame.size.width*0.05, imagemFundo.frame.size.height*0.182, imagemFundo.frame.size.width * 0.895, imagemFundo.frame.size.height * 0.512)];
+        
+        
+        [info setAttributedText:descricao];
+        
+        
+        
+        [self.viewInfo addSubview:imagemFundo];
+        [self.viewInfo addSubview:nomeReceita];
+        [self.viewInfo addSubview:compostosNecessários];
+        
+        [self.superview addSubview:self.viewInfo];
+        
+        self.ultimaReceita = [button titleForState:UIControlStateDisabled];
+        
+        
+        NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio", nil];
+        
+        [self montarCompostosNecessários:arrayDeCompostos];
+        
+        [self.viewInfo addSubview:info];
+    
+    }else {
+        [self.viewInfo removeFromSuperview];
+    }
+}
+
+-(void)montarCompostosNecessários :(NSArray*)compostos{
+    if([self.scrollViewCompostos superview]){
+        [self.scrollViewCompostos  removeFromSuperview];
+    }
+    
+    
+    self.scrollViewCompostos  = [[DQScrollView alloc]initWithFrame:CGRectMake(self.viewInfo.frame.size.width*0.05,self.viewInfo.frame.size.height*0.724, self.viewInfo.frame.size.width*0.9, self.viewInfo.frame.size.height*0.26)];
+    
+    
+    for (int i = 0; i < compostos.count; i++) {
+        
+        CGSize tamanhoImagem = CGSizeMake(self.viewInfo.frame.size.height *0.20, self.viewInfo.frame.size.height *0.20);
+        
+        
+        Composto *composto = [DQCoreDataController procurarComposto:[compostos objectAtIndex:i]];
+        
+        UIImageView *compostoImagem = [[UIImageView alloc]initWithImage:[UIImage imageNamed:composto.imagem]];
+        
+        [compostoImagem setFrame:CGRectMake((tamanhoImagem.width * i)+(13.5*i), tamanhoImagem.height*0.2, tamanhoImagem.width, tamanhoImagem.height)];
+        
+        if (compostoImagem.frame.origin.x + compostoImagem.frame.size.width > self.scrollViewCompostos.frame.size.width) {
+            [self.scrollViewCompostos setContentSize:CGSizeMake(compostoImagem.frame.origin.x + compostoImagem.frame.size.width, self.scrollViewCompostos.frame.size.height)];
+        }
+      
+        
+        
+        
+        [self.scrollViewCompostos addSubview:compostoImagem];
+    }
+    [self.scrollViewCompostos setCanCancelContentTouches:YES];
+    
+    
+    
+    [self.viewInfo addSubview:self.scrollViewCompostos];
+
+}
+
 
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view
 {

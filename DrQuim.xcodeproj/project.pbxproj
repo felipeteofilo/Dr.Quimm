@@ -25,6 +25,7 @@
 		3CAE561719AA7B5A00C5B6E2 /* fundoMaleta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CAE561519AA7B5A00C5B6E2 /* fundoMaleta.png */; };
 		3CAE561819AA7B5A00C5B6E2 /* fundoTransformacao.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CAE561619AA7B5A00C5B6E2 /* fundoTransformacao.png */; };
 		7505B4A919FAD07800769C87 /* DQFasesControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505B4A819FAD07800769C87 /* DQFasesControle.m */; };
+		7505B9011A2660C60040DF40 /* DQScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505B9001A2660C60040DF40 /* DQScrollView.m */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
 		7531C2191A112499002CC7F5 /* FaseConfigurada.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531C2181A112499002CC7F5 /* FaseConfigurada.m */; };
 		7531C21B1A1124F3002CC7F5 /* FasesEspecificas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7531C21A1A1124F3002CC7F5 /* FasesEspecificas.plist */; };
@@ -93,7 +94,6 @@
 		75F9E80C1A1D0908004F12AF /* composto_nitratoDeChumbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F61A1D0908004F12AF /* composto_nitratoDeChumbo.png */; };
 		75F9E80D1A1D0908004F12AF /* elemento_chumbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */; };
 		75F9E80E1A1D0908004F12AF /* elemento_enxofre.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */; };
-		75FB4C2E1A168A33001E8669 /* DQScroolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB4C2D1A168A33001E8669 /* DQScroolView.m */; };
 		75FD765E1A24F77C0085FB3E /* DQTelaInfoReceitas.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD765D1A24F77C0085FB3E /* DQTelaInfoReceitas.m */; };
 		75FD76601A24F8190085FB3E /* Xis.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FD765F1A24F8190085FB3E /* Xis.png */; };
 		75FDF3EF19F6E2B5007E1C66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FDF3EE19F6E2B5007E1C66 /* CoreData.framework */; };
@@ -289,6 +289,8 @@
 		3CAE561619AA7B5A00C5B6E2 /* fundoTransformacao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundoTransformacao.png; sourceTree = "<group>"; };
 		7505B4A719FAD07800769C87 /* DQFasesControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFasesControle.h; sourceTree = "<group>"; };
 		7505B4A819FAD07800769C87 /* DQFasesControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFasesControle.m; sourceTree = "<group>"; };
+		7505B8FF1A2660C60040DF40 /* DQScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQScrollView.h; sourceTree = "<group>"; };
+		7505B9001A2660C60040DF40 /* DQScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQScrollView.m; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
 		7531C2171A112499002CC7F5 /* FaseConfigurada.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaseConfigurada.h; sourceTree = "<group>"; };
@@ -377,8 +379,6 @@
 		75F9E7F61A1D0908004F12AF /* composto_nitratoDeChumbo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composto_nitratoDeChumbo.png; sourceTree = "<group>"; };
 		75F9E7F71A1D0908004F12AF /* elemento_chumbo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_chumbo.png; sourceTree = "<group>"; };
 		75F9E7F81A1D0908004F12AF /* elemento_enxofre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elemento_enxofre.png; sourceTree = "<group>"; };
-		75FB4C2C1A168A33001E8669 /* DQScroolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQScroolView.h; sourceTree = "<group>"; };
-		75FB4C2D1A168A33001E8669 /* DQScroolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQScroolView.m; sourceTree = "<group>"; };
 		75FD765C1A24F77C0085FB3E /* DQTelaInfoReceitas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTelaInfoReceitas.h; sourceTree = "<group>"; };
 		75FD765D1A24F77C0085FB3E /* DQTelaInfoReceitas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTelaInfoReceitas.m; sourceTree = "<group>"; };
 		75FD765F1A24F8190085FB3E /* Xis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xis.png; sourceTree = "<group>"; };
@@ -1175,6 +1175,8 @@
 				C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */,
 				C54031CE1989FE98003384AB /* DQControleReceita.h */,
 				C54031CF1989FE98003384AB /* DQControleReceita.m */,
+				7505B8FF1A2660C60040DF40 /* DQScrollView.h */,
+				7505B9001A2660C60040DF40 /* DQScrollView.m */,
 				C54031CA1989FE98003384AB /* DQConfigMenu.h */,
 				C54031CB1989FE98003384AB /* DQConfigMenu.m */,
 				C54031DD1989FE98003384AB /* DQReferenciaMissaoJogador.h */,
@@ -1185,8 +1187,6 @@
 				94080EB61933BA290024FB94 /* DQViewController.m */,
 				75E512921A15314F001F3F83 /* MarqueeLabel.h */,
 				75E512931A15314F001F3F83 /* MarqueeLabel.m */,
-				75FB4C2C1A168A33001E8669 /* DQScroolView.h */,
-				75FB4C2D1A168A33001E8669 /* DQScroolView.m */,
 				75F74AFA1A128FCB00BEE2C1 /* DQTelaInfoComposto.h */,
 				75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */,
 				75FD765C1A24F77C0085FB3E /* DQTelaInfoReceitas.h */,
@@ -1569,6 +1569,7 @@
 				75FDF3F519F6E33B007E1C66 /* DrQuim.xcdatamodeld in Sources */,
 				C54031EA1989FE98003384AB /* DQReferenciaMissaoJogador.m in Sources */,
 				CDC48ACF1992A0C800588E79 /* DQFalasNoJogoControle.m in Sources */,
+				7505B9011A2660C60040DF40 /* DQScrollView.m in Sources */,
 				CDC48AD21992A11400588E79 /* DQCutsceneTela.m in Sources */,
 				758D78411A0C096000ACB248 /* Receita.m in Sources */,
 				75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */,
@@ -1586,7 +1587,6 @@
 				C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */,
 				943710BD19A3DF1100B8846E /* DQArmadilhasJogador.m in Sources */,
 				C5101E3E19F6C7A800FE7E66 /* DQBotao.m in Sources */,
-				75FB4C2E1A168A33001E8669 /* DQScroolView.m in Sources */,
 				C54031E71989FE98003384AB /* DQMenuQuest.m in Sources */,
 				C54031E51989FE98003384AB /* DQMenuConfiguracao.m in Sources */,
 				75F9E2271A002C8100DFF3AE /* DQAlertasControle.m in Sources */,

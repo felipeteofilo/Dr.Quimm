@@ -72,7 +72,7 @@
     }
     
     
-    self.scrollViewElementos = [[DQScroolView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)];
+    self.scrollViewElementos = [[DQScrollView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.05, self.view.frame.size.height*0.724, self.view.frame.size.width*0.9, self.view.frame.size.height*0.23)];
     
     
     for (int i = 0; i < nomesElementos.count; i++) {

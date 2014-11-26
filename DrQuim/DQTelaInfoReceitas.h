@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MarqueeLabel.h"
+#import "DQCoreDataController.h"
+#import "DQScrollView.h"
 
 @interface DQTelaInfoReceitas : UIScrollView
+
+@property UIView *viewInfo;
+@property NSString* ultimaReceita;
+@property DQScrollView *scrollViewCompostos;
 
 
 -(id)initComReceitas:(NSArray*)receitas frame:(CGRect)frame;
