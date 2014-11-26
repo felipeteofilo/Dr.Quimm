@@ -13,7 +13,7 @@
 
 @property NSString *nome;
 @property NSString *descricao;
-@property NSMutableArray *arrayCompostos;
+
 
 -(id)initComReceita:(Receita*)receita;
 

@@ -15,7 +15,7 @@
 
 @property NSString* nome;
 @property NSString *imagem;
-@property NSMutableArray *arrayElementos;
+
 @property DQTelaInfoComposto *info;
 
 -(id)initComEntidadeComposto :(Composto*)composto :(CGRect)frame;

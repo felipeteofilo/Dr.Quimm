@@ -141,14 +141,7 @@
             }
             
             
-            for (int j = 0; j< [[[receitasPlist objectAtIndex:i]objectForKey:@"Compostos"]count]; j++) {
-                
-                NSString *nomeComposto = [[[receitasPlist objectAtIndex:i]objectForKey:@"Compostos"]objectAtIndex:j];
-                
-                Composto *composto = [DQCoreDataController procurarComposto:nomeComposto];
-                
-                [novaReceita addComposto_receitaObject:composto];
-            }
+            novaReceita.compostos = [[receitasPlist objectAtIndex:i]objectForKey:@"Compostos"];
             
             
             novaReceita.id_item_gerar = [[receitasPlist objectAtIndex:i]objectForKey:@"ItemGerado"];

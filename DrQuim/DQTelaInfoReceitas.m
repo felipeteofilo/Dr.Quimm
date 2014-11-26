@@ -101,7 +101,7 @@
         
         [nomeReceita setText:[button titleForState:UIControlStateDisabled]];
         
-        [compostosNecessários setText:@"Compostos Necessários:"];
+        [compostosNecessários setText:@"Compostos/Elementos Necessários:"];
         
          UIFont *boldFontName = [UIFont boldSystemFontOfSize:14];
         
@@ -127,9 +127,9 @@
         self.ultimaReceita = [button titleForState:UIControlStateDisabled];
         
         
-        NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio", nil];
         
-        [self montarCompostosNecessários:arrayDeCompostos];
+        
+        [self montarCompostosNecessários:[receita.compostos allKeys]];
         
         [self.viewInfo addSubview:info];
     
@@ -151,10 +151,19 @@
         
         CGSize tamanhoImagem = CGSizeMake(self.viewInfo.frame.size.height *0.20, self.viewInfo.frame.size.height *0.20);
         
-        
+        NSString *imagem ;
         Composto *composto = [DQCoreDataController procurarComposto:[compostos objectAtIndex:i]];
         
-        UIImageView *compostoImagem = [[UIImageView alloc]initWithImage:[UIImage imageNamed:composto.imagem]];
+        if(composto == nil){
+            
+            Elemento *elemento = [DQCoreDataController procurarElemento:[compostos objectAtIndex:i]];
+            
+            imagem = elemento.imagem;
+        }else{
+            imagem = composto.imagem;
+        }
+        
+        UIImageView *compostoImagem = [[UIImageView alloc]initWithImage:[UIImage imageNamed:imagem]];
         
         [compostoImagem setFrame:CGRectMake((tamanhoImagem.width * i)+(13.5*i), tamanhoImagem.height*0.2, tamanhoImagem.width, tamanhoImagem.height)];
         

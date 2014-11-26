@@ -41,7 +41,7 @@
     [circulo mostrarInfoComposto];
     
     
-    NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Receita 1234567",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2",@"Receita 2", nil];
+    NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Líquido Amarelo",@"Pequenas Explosões",@"Fogo",@"Carbono",@"Polvora", nil];
     
     
     DQTelaInfoReceitas * infoReceitas = [[DQTelaInfoReceitas alloc]initComReceitas:arrayReceitas frame:self.view.bounds];

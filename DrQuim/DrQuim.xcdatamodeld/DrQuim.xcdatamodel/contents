@@ -20,11 +20,11 @@
         <attribute name="requisitos" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <entity name="Receita" representedClassName="Receita" syncable="YES">
+        <attribute name="compostos" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_item_gerar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info_conf_composto" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="composto_receita" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Composto" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
         <attribute name="armadilhas" optional="YES" attributeType="Transformable" syncable="YES"/>

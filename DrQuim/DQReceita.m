@@ -25,7 +25,7 @@
         [self setTitle:self.nome forState:UIControlStateNormal];
         
         self.descricao = receita.descricao;
-        self.arrayCompostos = [[NSMutableArray alloc]initWithArray:receita.composto_receita.array];
+        
         
     }
     return self;

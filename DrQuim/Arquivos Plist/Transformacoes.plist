@@ -501,7 +501,7 @@
 			<dict>
 				<key>Ácido Sulfúrico</key>
 				<integer>1</integer>
-				<key>Permanganato de Potássio</key>
+				<key>Permanganato de potássio</key>
 				<integer>2</integer>
 			</dict>
 			<key>ItemGerado</key>
@@ -516,7 +516,7 @@
 			<dict>
 				<key>Glicerina</key>
 				<string>4</string>
-				<key>Permanganato de Potássio</key>
+				<key>Permanganato de potássio</key>
 				<string>14</string>
 			</dict>
 			<key>ItemGerado</key>
@@ -531,7 +531,7 @@
 			<dict>
 				<key>Ácido Sulfúrico</key>
 				<integer>11</integer>
-				<key>Açucar (Sacarose)</key>
+				<key>Açúcar (Sacarose)</key>
 				<integer>1</integer>
 			</dict>
 			<key>ItemGerado</key>
