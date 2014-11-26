@@ -483,17 +483,80 @@
 	<array>
 		<dict>
 			<key>Compostos</key>
-			<array/>
-			<key>Bolinhas</key>
-			<array>
-				<integer>8</integer>
-			</array>
+			<dict>
+				<key>Nitrato de Chumbo</key>
+				<integer>1</integer>
+				<key>Iodeto de Potássio</key>
+				<integer>2</integer>
+			</dict>
 			<key>ItemGerado</key>
-			<string>Item</string>
+			<string>LiquidoAmarelo</string>
 			<key>Descricao</key>
-			<string>Descricao</string>
+			<string>O líquido amarelo, apesar de parecer uma mistura homogênea é feito de dois compostos (portanto uma mistura heterogênea): Iodeto de Chumbo(um pó de cor amarelada) e o Nitrato de potássio (Um líquido de cor amarelada). </string>
 			<key>Nome</key>
-			<string>Receita</string>
+			<string>Líquido Amarelo</string>
+		</dict>
+		<dict>
+			<key>Compostos</key>
+			<dict>
+				<key>Ácido Sulfúrico</key>
+				<integer>1</integer>
+				<key>Permanganato de Potássio</key>
+				<integer>2</integer>
+			</dict>
+			<key>ItemGerado</key>
+			<string>Bombinhas</string>
+			<key>Descricao</key>
+			<string>A mistura gera uma reação onde pequenas explosões acontecem, não são o suficiente para queimar nada, mas conseguem assustar pela luminosidade e barulho gerados.</string>
+			<key>Nome</key>
+			<string>Pequenas Explosões</string>
+		</dict>
+		<dict>
+			<key>Compostos</key>
+			<dict>
+				<key>Glicerina</key>
+				<string>4</string>
+				<key>Permanganato de Potássio</key>
+				<string>14</string>
+			</dict>
+			<key>ItemGerado</key>
+			<string>geradorFogo</string>
+			<key>Descricao</key>
+			<string>A mistura é extremamente exotérmica (libera calor) e o fogo demora alguns segundos para aparecer. O Carbonato de Potássio, junto da água liberada na reação, causa o aumento da temperatura.</string>
+			<key>Nome</key>
+			<string>Fogo</string>
+		</dict>
+		<dict>
+			<key>Compostos</key>
+			<dict>
+				<key>Ácido Sulfúrico</key>
+				<integer>11</integer>
+				<key>Açucar (Sacarose)</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemGerado</key>
+			<string>Carbono</string>
+			<key>Descricao</key>
+			<string>O açúcar (sacarose) é composta de água e carbono. O ácido Sulfúrico, desidrata o açúcar, saindo em forma de gás com a água e deixando apenas o carbono na mistura</string>
+			<key>Nome</key>
+			<string>Carbono</string>
+		</dict>
+		<dict>
+			<key>Compostos</key>
+			<dict>
+				<key>Nitrato de Potássio</key>
+				<integer>2</integer>
+				<key>Enxofre</key>
+				<integer>1</integer>
+				<key>Carbono</key>
+				<integer>3</integer>
+			</dict>
+			<key>ItemGerado</key>
+			<string>Pólvora</string>
+			<key>Descricao</key>
+			<string>A produção da póvoa é delicada pois fazem parte da mistura, elementos perigosos (inflamáveis) e deve ser feita longe de faíscas e do fogo.</string>
+			<key>Nome</key>
+			<string>Polvora</string>
 		</dict>
 	</array>
 </dict>
