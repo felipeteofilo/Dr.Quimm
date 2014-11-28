@@ -478,6 +478,27 @@
 			<key>Nome</key>
 			<string>Cloreto de sódio</string>
 		</dict>
+		<dict>
+			<key>Elementos</key>
+			<array>
+				<string>Chumbo</string>
+				<string>Nitrogênio</string>
+				<string>Oxigênio</string>
+			</array>
+			<key>Info</key>
+			<dict>
+				<key>Aplicacao</key>
+				<string>É usado como matéria prima para compostos de chumbo, fósforos de segurança, agente anticorrosivo e pigmentos para várias tintas.</string>
+				<key>Obtencao</key>
+				<string>O nitrato de potássio é obtido dissolvendo óxido de potássio em ácido nítrico</string>
+			</dict>
+			<key>FormulaMolecular</key>
+			<string>Pb(NO3)2</string>
+			<key>Imagem</key>
+			<string>composto_nitratoDeChumbo</string>
+			<key>Nome</key>
+			<string>Nitrato de Chumbo</string>
+		</dict>
 	</array>
 	<key>Receitas</key>
 	<array>
