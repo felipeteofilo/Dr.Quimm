@@ -40,7 +40,7 @@
     
     [circulo mostrarInfoComposto];
     
-    
+  
     NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Líquido Amarelo",@"Pequenas Explosões",@"Fogo",@"Carbono",@"Polvora", nil];
     
     
