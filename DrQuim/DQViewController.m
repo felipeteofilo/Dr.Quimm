@@ -30,7 +30,7 @@
     [core iniciarReferenciasTransformacoes];
     
     //Array temporarios - substitui pela array de compostos que o jogador possui
-    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio", nil];
+    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio",@"Nitrato de Chumbo", nil];
     int numeroDeCompostos = arrayDeCompostos.count;
     
     DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.bounds.size.height * 0.5, self.view.bounds.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
@@ -47,6 +47,16 @@
     DQTelaInfoReceitas * infoReceitas = [[DQTelaInfoReceitas alloc]initComReceitas:arrayReceitas frame:self.view.bounds];
     
     [self.view addSubview:infoReceitas];
+    
+    
+    UIButton *botaoMix =[[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width* 0.5 - (self.view.bounds.size.width * 0.1)/2, self.view.bounds.size.height*0.05, self.view.bounds.size.width * 0.10, self.view.bounds.size.width * 0.10)];
+    
+ 
+    
+    [botaoMix setBackgroundImage:[UIImage imageNamed:@"btnMIX"] forState:UIControlStateNormal];
+    
+    [self.view addSubview:botaoMix];
+    
     
     
     

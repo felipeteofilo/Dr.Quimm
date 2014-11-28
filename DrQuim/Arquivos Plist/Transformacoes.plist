@@ -231,7 +231,7 @@
 			<key>NumeroEletrons</key>
 			<integer>4</integer>
 			<key>Imagem</key>
-			<string>elemento_ chumbo</string>
+			<string>elemento_chumbo</string>
 			<key>Nome</key>
 			<string>Chumbo</string>
 		</dict>

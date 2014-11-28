@@ -119,7 +119,7 @@
         
         [info setAttributedText:descricao];
         
-        
+        [info setEditable:NO];
         
         [self.viewInfo addSubview:imagemFundo];
         [self.viewInfo addSubview:nomeReceita];
