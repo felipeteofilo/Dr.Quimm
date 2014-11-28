@@ -90,7 +90,7 @@
         
         [imagemFundo setFrame:CGRectMake(0, 0, self.viewInfo.frame.size.width, self.viewInfo.frame.size.height)];
         
-        MarqueeLabel *nomeReceita = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.viewInfo.frame.size.width*0.3, self.viewInfo.frame.size.height*0.07, self.viewInfo.frame.size.width*0.65, self.viewInfo.frame.size.height*0.07) duration:5 andFadeLength:10];
+        MarqueeLabel *nomeReceita = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.viewInfo.frame.size.width*0.3, self.viewInfo.frame.size.height*0.07, self.viewInfo.frame.size.width*0.65, self.viewInfo.frame.size.height*0.09) duration:5 andFadeLength:10];
         
         
         MarqueeLabel *compostosNecessários = [[MarqueeLabel alloc]initWithFrame:CGRectMake(self.viewInfo.frame.size.width * 0.05, self.viewInfo.frame.size.height*0.7, self.viewInfo.frame.size.width*0.9, self.viewInfo.frame.size.height*0.07) duration:5 andFadeLength:10];
@@ -102,6 +102,9 @@
         [nomeReceita setText:[button titleForState:UIControlStateDisabled]];
         
         [compostosNecessários setText:@"Compostos/Elementos Necessários:"];
+        
+        [nomeReceita setTextColor:[UIColor blueColor]];
+        [compostosNecessários setTextColor:[UIColor blueColor]];
         
          UIFont *boldFontName = [UIFont boldSystemFontOfSize:14];
         
