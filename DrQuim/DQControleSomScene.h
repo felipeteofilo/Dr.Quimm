@@ -22,6 +22,14 @@ typedef NS_ENUM(int, TipoCena){
 @property int indiceScene;
 @property TipoCena tipoCena;
 
+//Aqui terei o nome do animal e som correspondente
+@property NSDictionary *sonsDisponiveisAnimais;
+
+
+@property AVAudioPlayer *playerMusicaFase;
+@property AVAudioPlayer *playerEfeitoFase;
+@property AVAudioPlayer *playerAnimal;
+
 -(id)initControleSomFundo:(TipoCena)tipoCena nomeSom:(NSString*)somFundo indiceCena:(int)idCena;
 -(void)tocarMusicaFundo;
 @end
