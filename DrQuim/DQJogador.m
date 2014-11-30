@@ -314,6 +314,9 @@
             [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
             
         }
+        
+        //Posto uma notificaçao avisando ao controler de som para tocar o som de caminhada do player e falando que será tocado em looping
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoJogadorPlaySom object:nil userInfo:[NSDictionary dictionaryWithObjects:@[@"Andar",[NSNumber numberWithInt:-1]] forKeys:@[@"acaoJogador",@"nLoops"]]];
     }
 }
 
@@ -432,6 +435,9 @@
     }
     //Leonardo- Removido controle de SOM para faz Atualizacao
 //    [self.controleSom pararSom];
+    
+    //Posta msg para o controlador parar o som
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoJogadorStopSom object:nil userInfo:nil];
 }
 
 //funcao para fazer o jogador escalar
@@ -455,6 +461,7 @@
         [self animarEscalando];
         // move o jogador
         [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
+        
     }
 }
 //Funcao para parar de derrapar

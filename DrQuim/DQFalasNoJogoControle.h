@@ -27,7 +27,7 @@
 //Variavel do tipo NSString que define se esta passando alerta ou fala de jogo
 @property NSString *estadoFala;
 
-@property DQControleSom *controleSom;
+//@property DQControleSom *controleSom;
 
 //Iniciar com a fase atual
 -(id)init;

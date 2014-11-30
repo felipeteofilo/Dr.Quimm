@@ -101,13 +101,17 @@
     [self configurarFundoSprite];
     
     if (self.nivelPerigo >0) {
-        if (![self actionForKey:@"tocarSom"]) {
-            NSString *nomeSom=[NSString stringWithFormat:@"ContadorGeiger-%i.mp3",self.nivelPerigo];
-            
-            [self removeActionForKey:@"tocarSom"];
-            [self runAction:[SKAction repeatActionForever:[SKAction playSoundFileNamed:nomeSom waitForCompletion:YES]]withKey:@"tocarSom"];
-        }
+//        if (![self actionForKey:@"tocarSom"]) {
+//            NSString *nomeSom=[NSString stringWithFormat:@"ContadorGeiger-%i.mp3",self.nivelPerigo];
+//            
+//            [self removeActionForKey:@"tocarSom"];
+//            [self runAction:[SKAction repeatActionForever:[SKAction playSoundFileNamed:nomeSom waitForCompletion:YES]]withKey:@"tocarSom"];
+//        }
         
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoContadorPlaySom object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:self.nivelPerigo] forKey:@"nivelPerigo"]];
+    }else{
+        //Para o som
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoContadorStopSom object:nil ];
     }
 }
 @end

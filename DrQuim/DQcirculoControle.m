@@ -98,15 +98,15 @@ static float maxAlphavalue = 1.0;
     
     for (int i = 0; i < numberOfSections; i++) {
         DQcirculoComposto *circuloComposto = [[DQcirculoComposto alloc] init];
-        circuloComposto.midValue = mid;
-        circuloComposto.minValue = mid - (fanWidth/2);
-        circuloComposto.maxValue = mid + (fanWidth/2);
-        circuloComposto.value = i;
+        circuloComposto.valorMediano = mid;
+        circuloComposto.valorMinimo = mid - (fanWidth/2);
+        circuloComposto.valorMaximo = mid + (fanWidth/2);
+        circuloComposto.valor = i;
         
-        if (circuloComposto.maxValue - fanWidth < - M_PI) {
+        if (circuloComposto.valorMaximo - fanWidth < - M_PI) {
             mid = M_PI;
-            circuloComposto.midValue = mid;
-            circuloComposto.midValue = fabsf(circuloComposto.maxValue);
+            circuloComposto.valorMinimo = mid;
+            circuloComposto.valorMediano = fabsf(circuloComposto.valorMaximo);
         }
         
         mid -= fanWidth;
@@ -120,13 +120,13 @@ static float maxAlphavalue = 1.0;
     CGFloat mid = 0;
     for (int i = 0; i < numberOfSections; i++) {
         DQcirculoComposto *clove = [[SMClove alloc] init];
-        clove.midValue = mid;
-        clove.minValue = mid - (fanWidth/2);
-        clove.maxValue = mid + (fanWidth/2);
-        clove.value = i;
+        clove.valorMediano = mid;
+        clove.valorMinimo = mid - (fanWidth/2);
+        clove.valorMaximo = mid + (fanWidth/2);
+        clove.valor = i;
         mid -= fanWidth;
         
-        if (clove.minValue < - M_PI) {
+        if (clove.valorMinimo < - M_PI) {
             mid = -mid;
             mid -= fanWidth;
         }
@@ -189,19 +189,19 @@ static float maxAlphavalue = 1.0;
     CGFloat radians = atan2f(container.transform.b, container.transform.a);
     CGFloat newVal = 0.0;
     for (SMClove *c in cloves) {
-        if (c.minValue > 0 && c.maxValue < 0) { // anomalous case
-            if (c.maxValue > radians || c.minValue < radians) {
+        if (c.valorMinimo  > 0 && c.valorMaximo < 0) { // anomalous case
+            if (c.valorMaximo > radians || c.valorMinimo < radians) {
                 if (radians > 0) { // we are in the positive quadrant
                     newVal = radians - M_PI;
                 } else { // we are in the negative one
                     newVal = M_PI + radians;
                 }
-                currentValue = c.value;
+                currentValue = c.valor;
             }
         }
-        else if (radians > c.minValue && radians < c.maxValue) {
+        else if (radians > c.valorMinimo && radians < c.valorMaximo) {
             newVal = radians - c.midValue;
-            currentValue = c.value;
+            currentValue = c.valor;
         }
     }
     

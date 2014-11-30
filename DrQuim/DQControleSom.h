@@ -13,7 +13,6 @@
 #import "DQUteis.h"
 
 //Agora o controle de som ficará na viewController,
-
 typedef NS_ENUM(int, TipoObjeto){
     Jogador=0,
     ContadorGeiger=1,
@@ -31,6 +30,7 @@ typedef NS_ENUM(int, TamanhoTexto){
 //Dicionários usados para guardar os sons para o jogador e o NPC
 @property NSDictionary *sonsDisponiveisJogador;
 @property NSDictionary *sonsDisponiveisNPC;
+
 @property AVAudioPlayer *playerSomJogador;
 @property AVAudioPlayer *playerSomNPC;
 @property AVAudioPlayer *playerContador;

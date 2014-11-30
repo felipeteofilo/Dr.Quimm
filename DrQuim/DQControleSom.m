@@ -20,10 +20,18 @@
         
         //Estou usando a variavel criada na DQUteis, para facilitar caso precisemos trocar os nomes e garantir que os nomes sejam iguais tanto quando postar a notificacao quanto cria-la
         
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarSomJogador:) name:notificacaoJogador object:nil];
+        //Jogador
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarSomJogador:) name:notificacaoJogadorPlaySom object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pararSomJogador) name:notificacaoJogadorStopSom object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarSomFalaJogador:) name:notificacaoJogadorFala object:nil];
         
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarSomContadorGeiger:) name:notificacaoContador object:nil];
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarSomNPC:) name:notificacaoNPC object:nil];
+        //Contador Gueiger
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarSomContadorGeiger:) name:notificacaoContadorPlaySom object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pararSomContador) name:notificacaoContadorStopSom object:nil];
+        
+        //NPC
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tocarSomNPC:) name:notificacaoNPCFalar object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pararSomNPC) name:notificacaoNPCParar object:nil];
         
         //Acessa o plist e pega as informações para os sons do jogador e de Fala dos NPCs,
         [self inializaDicionariosSons];
@@ -31,6 +39,7 @@
     return self;
 }
 
+#pragma mark Config e Play nos players
 -(void)tocarSomJogador:(NSNotification*)notification{
     //Paro qualquer som que já esteja tocando
     [self.playerSomJogador stop];
@@ -44,7 +53,7 @@
     //Definir o som a ser tocado
     NSString *somTocar=[self definirNomeSomJogadorAcao:acaoJogador];
     
-    [self configuraPlayerSom:self.playerSomJogador urlSom:[self urlParaSom:somTocar]nLoops:nLoops];
+    self.playerSomJogador=[self configuraPlayerSomUrlSom:[self urlParaSom:somTocar] nLoops:nLoops];
     [self.playerSomJogador play];
 }
 
@@ -57,12 +66,13 @@
     NSString *nomeSomTocar=[NSString stringWithFormat:@"ContadorGeiger-%i.mp3",nivelPerigo];
     
     //Configuro o player e toco o som em looping
-    [self configuraPlayerSom:self.playerContador urlSom:[self urlParaSom:nomeSomTocar] nLoops:-1];
+    self.playerContador=[self configuraPlayerSomUrlSom:[self urlParaSom:nomeSomTocar] nLoops:-1];
     [self.playerContador play];
 }
+
 -(void)tocarSomFalaJogador:(NSNotification*)notification{
     //Recebo no dicionario da notificacao o nome do NPC e o tamanho da fala dele
-    [self.playerSomNPC stop];
+    [self.playerSomJogador stop];
     
     //Mudanca no tamanho da fala agora iremos receber 0=Peq, 1=Media, 2=Grande assim facilita para localizar no Array :P
     int tamanhoFala=[[notification.userInfo valueForKey:@"tamanhoFala"]intValue];
@@ -74,9 +84,11 @@
     NSString *nomeSomTocar=[sonsFala objectAtIndex:arc4random()%[sonsFala count]];
     
     //Configuro o player e toco o som em looping
-    [self configuraPlayerSom:self.playerSomJogador urlSom:[self urlParaSom:nomeSomTocar] nLoops:0];
-    [self.playerSomNPC play];
+    self.playerSomJogador=[self configuraPlayerSomUrlSom:[self urlParaSom:nomeSomTocar] nLoops:0];
+    
+    [self.playerSomJogador play];
 }
+
 -(void)tocarSomNPC:(NSNotification*)notification{
     //Recebo no dicionario da notificacao o nome do NPC e o tamanho da fala dele
     [self.playerSomNPC stop];
@@ -92,9 +104,24 @@
     NSString *nomeSomTocar=[sonsFala objectAtIndex:arc4random()%[sonsFala count]];
     
     //Configuro o player e toco o som em looping
-    [self configuraPlayerSom:self.playerSomNPC urlSom:[self urlParaSom:nomeSomTocar] nLoops:0];
+    self.playerSomNPC=[self configuraPlayerSomUrlSom:[self urlParaSom:nomeSomTocar] nLoops:0];
+    
     [self.playerSomNPC play];
 }
+
+#pragma mark STOP players
+-(void)pararSomJogador{
+    [self.playerSomJogador stop];
+}
+
+-(void)pararSomContador{
+    [self.playerContador stop];
+}
+
+-(void)pararSomNPC{
+    [self.playerSomNPC stop];
+}
+#pragma mark outros
 
 //Metodo auxiliar que irá verificar qual ação o jogador esta realizando e definir qual som irá tocar
 -(NSString*)definirNomeSomJogadorAcao:(NSString*)acaoRealizada{
@@ -104,12 +131,14 @@
     
     return stringRetorno;
 }
--(void)configuraPlayerSom:(AVAudioPlayer*)player urlSom:(NSURL*)urlSom nLoops:(int)nLoops{
+-(AVAudioPlayer*)configuraPlayerSomUrlSom:(NSURL*)urlSom nLoops:(int)nLoops{
     NSError *erro;
-    player=[[AVAudioPlayer alloc]initWithContentsOfURL:urlSom error:&erro];
+    AVAudioPlayer *player=[[AVAudioPlayer alloc]initWithContentsOfURL:urlSom error:&erro];
     
-    [player setVolume:[DQControleUserDefalts volumeSons]];
+    [player setVolume:0.5f];
     [player setNumberOfLoops:nLoops];
+    
+    return player;
 }
 -(NSURL*)urlParaSom:(NSString*)nomeSom{
     return [[NSBundle mainBundle] URLForResource:nomeSom withExtension:@"mp3"];
