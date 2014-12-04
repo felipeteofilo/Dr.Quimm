@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DQCoreDataController.h"
+#import "DQTelaInfoReceitas.h"
 
-@interface DQViewCompostosMix : UIScrollView
+@interface DQViewCompostosMix : UIScrollView <DQTelaInfoReceitasDelegate>
 
 
 

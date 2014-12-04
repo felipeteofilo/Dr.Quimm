@@ -10,9 +10,7 @@
 #import "DQScrollView.h"
 #import "MarqueeLabel.h"
 
-
-
-@interface DQTelaInfoComposto : UIViewController 
+@interface DQTelaInfoComposto : UIViewController
 
 @property DQScrollView *scrollViewElementos;
 @property UIView * infoElemento;

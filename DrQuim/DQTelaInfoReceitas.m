@@ -133,7 +133,7 @@
         
         
         [self montarCompostosNecessários:[receita.compostos allKeys]];
-        
+        [self.delegate clicou:self];
         
         [self.viewInfo addSubview:info];
     

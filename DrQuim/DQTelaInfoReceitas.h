@@ -11,7 +11,19 @@
 #import "DQCoreDataController.h"
 #import "DQScrollView.h"
 
+
+@class DQTelaInfoReceitas;
+
+@protocol DQTelaInfoReceitasDelegate <NSObject>
+
+-(void)clicou:(DQTelaInfoReceitas*)sender;
+
+@end
+
+
 @interface DQTelaInfoReceitas : UIScrollView
+
+@property (nonatomic, assign) id delegate;
 
 @property UIView *viewInfo;
 @property NSString* ultimaReceita;

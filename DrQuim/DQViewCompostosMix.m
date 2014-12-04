@@ -64,6 +64,9 @@
     }
 }
 
+-(void)clicou:(DQTelaInfoReceitas *)sender{
+    NSLog(@"teste");
+}
 
 -(void)adicionarComposto :(NSString*)nome{
     
