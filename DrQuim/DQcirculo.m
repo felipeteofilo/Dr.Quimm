@@ -42,13 +42,6 @@ static float alphaMaximo = 1.0;
         Composto * composto = [DQCoreDataController procurarComposto:[self.arrayDeCompostos objectAtIndex:i]];
         
         DQComposto * areaComposto = [[DQComposto alloc]initComEntidadeComposto:composto :CGRectMake(self.base.bounds.size.width/2, self.base.bounds.size.height/2, self.base.bounds.size.height * 0.5f, self.base.bounds.size.height * 0.5f)];
-        
-        
-        
-        
-        
-       // DQAreaComposto *areaComposto = [[DQAreaComposto alloc]initComFrame:CGRectMake(self.base.bounds.size.width/2, self.base.bounds.size.height/2, self.base.bounds.size.height * 0.5f, self.base.bounds.size.height * 0.5f) eComposto:[self.arrayDeCompostos objectAtIndex:i]];
-    
         areaComposto.layer.anchorPoint = CGPointMake(0.5f, 1.0f);
         areaComposto.contentMode = UIViewContentModeScaleAspectFit;
         areaComposto.layer.position = CGPointMake(self.base.bounds.size.width/2 - self.base.frame.origin.x, self.base.bounds.size.height/2 - self.base.frame.origin.y);
@@ -217,6 +210,12 @@ static float alphaMaximo = 1.0;
     [self.infoComposto atualizarInfoComposto:composto.nome];
     
     
+    if(touch.tapCount > 1){
+        
+        [self.mix adicionarComposto:composto.nome];
+    }
+    
+    
     imagem.alpha = alphaMaximo;
 }
 
@@ -230,6 +229,14 @@ static float alphaMaximo = 1.0;
     [self.infoComposto colocarNaPosicao:CGPointMake(self.superview.bounds.size.width *0.7, 0) tamanho:self.superview.bounds.size nomeComposto:composto.nome];
     
     self.infoComposto.view.tag = 100;
+    
+    self.mix = [[DQViewCompostosMix alloc]initComTamanho:self.superview.bounds];
+    
+    
+    [self.superview addSubview:self.mix];
+    
+    [self.mix mostrarBotaoMix];
+
    
 }
 

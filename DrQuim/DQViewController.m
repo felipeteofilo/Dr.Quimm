@@ -15,6 +15,7 @@
 #import "DQTelaInfoReceitas.h"
 
 
+
 @implementation DQViewController
 
 - (void)viewDidAppear:(BOOL)animated
@@ -49,15 +50,12 @@
     [self.view addSubview:infoReceitas];
     
     
-    UIButton *botaoMix =[[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width* 0.5 - (self.view.bounds.size.width * 0.1)/2, self.view.bounds.size.height*0.05, self.view.bounds.size.width * 0.10, self.view.bounds.size.width * 0.10)];
-    
- 
-    
-    [botaoMix setBackgroundImage:[UIImage imageNamed:@"btnMIX"] forState:UIControlStateNormal];
-    
-    [self.view addSubview:botaoMix];
-    
-    
+//    DQViewCompostosMix *mix = [[DQViewCompostosMix alloc]initComTamanho:self.view.bounds];
+//    
+//    
+//    [self.view addSubview:mix];
+//    
+//    [mix mostrarBotaoMix];
     
     
 //    //PARA CENAS DO JOGO

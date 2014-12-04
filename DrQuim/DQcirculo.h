@@ -12,6 +12,7 @@
 #import "DQCirculoComposto.h"
 #import "DQCoreDataController.h"
 #import "DQComposto.h"
+#import "DQViewCompostosMix.h"
 
 @interface DQcirculo: UIControl
 
@@ -21,7 +22,7 @@
 @property int numeroDeCompostos;
 @property id <DQProtocoloGiratorio> delegate;
 @property DQTelaInfoComposto * infoComposto;
-
+@property DQViewCompostosMix *mix;
 
 
 @property UIView *base;

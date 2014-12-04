@@ -134,6 +134,7 @@
         
         [self montarCompostosNecessários:[receita.compostos allKeys]];
         
+        
         [self.viewInfo addSubview:info];
     
     }else {

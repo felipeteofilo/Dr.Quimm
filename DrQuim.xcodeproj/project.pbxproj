@@ -62,6 +62,7 @@
 		75F54FCB1A1BB73800C1F454 /* descript_popup.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54FC81A1BB73800C1F454 /* descript_popup.png */; };
 		75F54FCE1A1BD62800C1F454 /* DQCompostosJogador.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F54FCD1A1BD62800C1F454 /* DQCompostosJogador.m */; };
 		75F74AFC1A128FCB00BEE2C1 /* DQTelaInfoComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */; };
+		75F989811A30CCBF00F7F306 /* DQViewCompostosMix.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F989801A30CCBF00F7F306 /* DQViewCompostosMix.m */; };
 		75F9E2271A002C8100DFF3AE /* DQAlertasControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F9E2261A002C8100DFF3AE /* DQAlertasControle.m */; };
 		75F9E7D21A1D03FA004F12AF /* DQAreaComposto.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F9E7CC1A1D03FA004F12AF /* DQAreaComposto.m */; };
 		75F9E7D31A1D03FA004F12AF /* DQcirculo.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F9E7CE1A1D03FA004F12AF /* DQcirculo.m */; };
@@ -342,6 +343,8 @@
 		75F54FCD1A1BD62800C1F454 /* DQCompostosJogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCompostosJogador.m; sourceTree = "<group>"; };
 		75F74AFA1A128FCB00BEE2C1 /* DQTelaInfoComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTelaInfoComposto.h; sourceTree = "<group>"; };
 		75F74AFB1A128FCB00BEE2C1 /* DQTelaInfoComposto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTelaInfoComposto.m; sourceTree = "<group>"; };
+		75F9897F1A30CCBF00F7F306 /* DQViewCompostosMix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQViewCompostosMix.h; sourceTree = "<group>"; };
+		75F989801A30CCBF00F7F306 /* DQViewCompostosMix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQViewCompostosMix.m; sourceTree = "<group>"; };
 		75F9E2251A002C8100DFF3AE /* DQAlertasControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAlertasControle.h; sourceTree = "<group>"; };
 		75F9E2261A002C8100DFF3AE /* DQAlertasControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAlertasControle.m; sourceTree = "<group>"; };
 		75F9E7CB1A1D03FA004F12AF /* DQAreaComposto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAreaComposto.h; sourceTree = "<group>"; };
@@ -1185,6 +1188,8 @@
 				C511258B1973AB4E00CECCAD /* DQHudController.m */,
 				94080EB51933BA290024FB94 /* DQViewController.h */,
 				94080EB61933BA290024FB94 /* DQViewController.m */,
+				75F9897F1A30CCBF00F7F306 /* DQViewCompostosMix.h */,
+				75F989801A30CCBF00F7F306 /* DQViewCompostosMix.m */,
 				75E512921A15314F001F3F83 /* MarqueeLabel.h */,
 				75E512931A15314F001F3F83 /* MarqueeLabel.m */,
 				75F74AFA1A128FCB00BEE2C1 /* DQTelaInfoComposto.h */,
@@ -1612,6 +1617,7 @@
 				755876FF199AB5E40084E5AC /* DQCutsceneControle.m in Sources */,
 				C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */,
 				C52FBF1819A18D0A0059E973 /* DQAnimal.m in Sources */,
+				75F989811A30CCBF00F7F306 /* DQViewCompostosMix.m in Sources */,
 				C543E13219985F3400C90F19 /* DQMenuInicial.m in Sources */,
 				943710BA19A3DF0000B8846E /* DQArmadilha.m in Sources */,
 				C511258E1973AB4E00CECCAD /* DQBarraStatus.m in Sources */,
