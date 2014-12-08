@@ -13,6 +13,7 @@
 #import "DQReceita.h"
 #import "DQTelaInfoComposto.h"
 #import "DQTelaInfoReceitas.h"
+#import "DQTelaTransformacao.h"
 
 
 
@@ -33,41 +34,41 @@
     //Array temporarios - substitui pela array de compostos que o jogador possui
     NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio",@"Nitrato de Chumbo", nil];
     int numeroDeCompostos = arrayDeCompostos.count;
-    
-    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.bounds.size.height * 0.5, self.view.bounds.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
-    
-    circulo.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
-    [self.view addSubview:circulo];
-    
-    [circulo mostrarInfoComposto];
+//    
+//    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.bounds.size.height * 0.5, self.view.bounds.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
+//    
+//    circulo.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+//    [self.view addSubview:circulo];
+//    
+//    [circulo mostrarInfoComposto];
+//    
+//  
+//    NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Líquido Amarelo",@"Pequenas Explosões",@"Fogo",@"Carbono",@"Polvora", nil];
+//    
+//    
+//    DQTelaInfoReceitas * infoReceitas = [[DQTelaInfoReceitas alloc]initComReceitas:arrayReceitas frame:self.view.bounds];
+//    
+//    [self.view addSubview:infoReceitas];
     
   
-    NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Líquido Amarelo",@"Pequenas Explosões",@"Fogo",@"Carbono",@"Polvora", nil];
+    
+    NSArray * elementos = [NSArray arrayWithObjects:@"Carbono", @"Cloro",@"Hidrogênio", nil];
     
     
-    DQTelaInfoReceitas * infoReceitas = [[DQTelaInfoReceitas alloc]initComReceitas:arrayReceitas frame:self.view.bounds];
+    DQTelaTransformacao *trans = [[DQTelaTransformacao alloc]initWithSize:skView.bounds.size :elementos :nil];
     
-    [self.view addSubview:infoReceitas];
-    
-    
-//    DQViewCompostosMix *mix = [[DQViewCompostosMix alloc]initComTamanho:self.view.bounds];
-//    
-//    
-//    [self.view addSubview:mix];
-//    
-//    [mix mostrarBotaoMix];
-    
+    [skView presentScene:trans];
     
 //    //PARA CENAS DO JOGO
 //
-//    //DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
+//DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
 //    //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
-//    //DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+//DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
 //    DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
 //    
-//    fase.scaleMode = SKSceneScaleModeAspectFill;
-//    
-//    [skView presentScene:fase];
+// fase.scaleMode = SKSceneScaleModeAspectFill;
+//
+//  [skView presentScene:fase];
 }
 
 
