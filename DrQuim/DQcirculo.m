@@ -143,6 +143,7 @@ static float alphaMaximo = 1.0;
     CGPoint pontoDeToque = [touch locationInView:self];
     float distancia = [self calculaDistanciaDoCentro:pontoDeToque];
     
+    //Para rodar
     if(distancia < self.base.frame.size.height * 0.1f || distancia > self.base.frame.size.height){
         return NO;
     }
@@ -157,6 +158,17 @@ static float alphaMaximo = 1.0;
     if(imagem.tag != 1000){
         imagem.alpha = alphaMinimo;
     }
+    //FIM - Para rodar
+    
+    
+    //Para selecionar
+    self.imagemSelecionada = nil;
+    
+    
+    //FIM - para
+    
+
+    
     
     return YES;
 }
@@ -239,9 +251,46 @@ static float alphaMaximo = 1.0;
 
    
 }
-
-
 //METODOS PARA GIRAR - FIM
+
+
+//-(BOOL)tocouDentroDeUmaImagem: (CGPoint)ponto
+//{
+//    //percorre todas as imagens do tipo AAImagens na superview
+//    for(UIImageView *img in self.view.subviews){
+//        
+//        //verifica se a imagem de fato pertence á classe
+//        if([img isMemberOfClass:[UIImageView class]]){
+//            
+//            //verifica se o ponto de toque foi dentro de alguma imagem
+//            if(ponto.x > img.frame.origin.x &&
+//               ponto.x < img.frame.origin.x + img.frame.size.width &&
+//               ponto.y > img.frame.origin.y &&
+//               ponto.y < img.frame.origin.y + img.frame.size.height){
+//                
+//                //verifica se essa imagem está visível
+//                if(img.alpha != 0 && img.tag == 1){
+//                    NSLog(@"tocou na imagem correta");
+//                    self.imagemSelecionada = img;
+//                    self.posicaoInicial = CGPointMake(img.frame.origin.x, img.frame.origin.y);
+//                    self.diferencaEntrePontoEOrigem = CGPointMake(ponto.x - img.frame.origin.x, ponto.y - img.frame.origin.y);
+//                    [self.view bringSubviewToFront:self.imagemSelecionada];
+//                    return YES;
+//                }
+//                else{
+//                    NSLog(@"tocou em imagem icorreta");
+//                    self.quantidadeErros++;
+//                    
+//                    if(self.quantidadeErros >= 3){
+//                        [self iniciarAnimacaoErro];
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    return NO;
+//}
+
 
 -(NSString *)pegarNomeComposto:(int)posicao{
     NSString *nome = [NSString stringWithFormat:@"%@", [self.arrayDeCompostos objectAtIndex:posicao]];

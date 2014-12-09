@@ -21,9 +21,14 @@
 @property int compostoAtual;
 @property int numeroDeCompostos;
 @property id <DQProtocoloGiratorio> delegate;
+
 @property DQTelaInfoComposto * infoComposto;
 @property DQViewCompostosMix *mix;
 
+//@property DQTelaInfoComposto *infoComposto;
+
+
+@property UIImageView *imagemSelecionada;
 
 @property UIView *base;
 @property NSMutableArray *arrayDeCompostosDesenho;

@@ -34,6 +34,8 @@
     //Array temporarios - substitui pela array de compostos que o jogador possui
     NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio",@"Nitrato de Chumbo", nil];
     int numeroDeCompostos = arrayDeCompostos.count;
+    
+    
 //    
 //    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.bounds.size.height * 0.5, self.view.bounds.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
 //    
@@ -51,24 +53,25 @@
 //    [self.view addSubview:infoReceitas];
     
   
-    
-    NSArray * elementos = [NSArray arrayWithObjects:@"Carbono", @"Cloro",@"Hidrogênio", nil];
-    
-    
-    DQTelaTransformacao *trans = [[DQTelaTransformacao alloc]initWithSize:skView.bounds.size :elementos :nil];
-    
-    [skView presentScene:trans];
-    
-//    //PARA CENAS DO JOGO
-//
-//DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
-//    //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
-//DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
-//    DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
 //    
-// fase.scaleMode = SKSceneScaleModeAspectFill;
-//
-//  [skView presentScene:fase];
+//    NSArray * elementos = [NSArray arrayWithObjects:@"Carbono", @"Cloro",@"Hidrogênio", nil];
+//    
+//    
+//    DQTelaTransformacao *trans = [[DQTelaTransformacao alloc]initWithSize:skView.bounds.size :elementos :nil];
+//    
+//    [skView presentScene:trans];
+    
+    
+    //PARA CENAS DO JOGO
+
+//DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
+    //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
+DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+   // DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
+    
+ fase.scaleMode = SKSceneScaleModeAspectFill;
+
+  [skView presentScene:fase];
 }
 
 
