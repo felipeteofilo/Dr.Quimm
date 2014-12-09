@@ -25,7 +25,7 @@
     [super viewDidAppear:animated];
     
     SKView * skView = (SKView *)self.view;
-    skView.showsPhysics = YES;
+    //skView.showsPhysics = YES;
     
     DQPopularCoreData *core = [[DQPopularCoreData alloc]init];
     

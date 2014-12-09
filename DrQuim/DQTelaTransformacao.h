@@ -9,9 +9,16 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQCoreDataController.h"
 
-@interface DQTelaTransformacao : SKScene
+static const UInt32 ElementoCategoria = 0x1 << 0;
+static const UInt32 ParedesCategoria = 0x1 << 1;
 
-@property NSMutableArray* lugaresAnteriores;
+
+@interface DQTelaTransformacao : SKScene <SKPhysicsContactDelegate>
+
+@property NSMutableArray *lugaresAnteriores;
+@property SKSpriteNode *nodeTocado;
+@property CGPoint posicaoDelta;
+
 
 -(id)initWithSize:(CGSize)size :(NSArray*)elementos :(Receita*)receita;
 
