@@ -58,12 +58,13 @@
         
         [self setName:@"Jogador"];
         [self definePhisicsBody];
+        
+        [[NSNotificationCenter   defaultCenter]addObserver:self selector:@selector(adicionarFruta:) name:notificacaoFruta object:nil];
     }
     
     //retorna o jogador
     return self;
 }
-
 
 -(void)carregarInformacoesDoJogador:(NSString*)jogador{
     Usuario *infoSave = [DQCoreDataController procurarJogador:jogador];
@@ -635,5 +636,12 @@
     if ([self.spriteNode actionForKey:@"animandoDerrapando"] && self.physicsBody.velocity.dx < 10 && self.physicsBody.velocity.dx > -10 ) {
         [self pararDerrapar];
     }
+}
+
+//Adiciona a fruta com o nome igual ao recebido no dicionario ao inventario do jogador
+-(void)adicionarFruta:(NSNotification*)notification{
+    NSString *nomeFruta=[notification.userInfo objectForKey:@"NomeFruta"];
+    
+    [self.itens receberItem:nomeFruta quantidade:1];
 }
 @end

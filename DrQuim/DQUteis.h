@@ -33,6 +33,8 @@ static  NSString *notificacaoNPCFalar =@"somNotificationNPCFalar";
 static  NSString *notificacaoNPCParar =@"somNotificationNPCPararFalar";
 static  NSString *notificacaoAnimal =@"somNotificationAnimal";
 
+static NSString *notificacaoFruta =@"notificarionAddFruta";
+
 @interface DQUteis : NSObject
 
 

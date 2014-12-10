@@ -158,6 +158,7 @@
 		C55CE5C6199BBAAF00375C87 /* tutorialCorrerEsquerda.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C3199BBAAF00375C87 /* tutorialCorrerEsquerda.atlas */; };
 		C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C8199BBDD300375C87 /* tutorialPular.atlas */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
+		C5716C7D1A38A14B00A8CC0A /* DQFruta.m in Sources */ = {isa = PBXBuildFile; fileRef = C5716C7C1A38A14B00A8CC0A /* DQFruta.m */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
 		C58F75BF19A4EB9A00DC7A71 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */; };
 		C58F75C619A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */; };
@@ -447,6 +448,8 @@
 		C55CE5C8199BBDD300375C87 /* tutorialPular.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tutorialPular.atlas; sourceTree = "<group>"; };
 		C56A9D80196E252C00DD2347 /* DQFase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFase.h; sourceTree = "<group>"; };
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
+		C5716C7B1A38A14B00A8CC0A /* DQFruta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFruta.h; sourceTree = "<group>"; };
+		C5716C7C1A38A14B00A8CC0A /* DQFruta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFruta.m; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
 		C58CFAEE19F98BCB006712C6 /* DQControleProtocoll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQControleProtocoll.h; sourceTree = "<group>"; };
 		C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
@@ -882,6 +885,8 @@
 		C511252E1973868D00CECCAD /* ObjetosJogo */ = {
 			isa = PBXGroup;
 			children = (
+				C5716C7B1A38A14B00A8CC0A /* DQFruta.h */,
+				C5716C7C1A38A14B00A8CC0A /* DQFruta.m */,
 				7560590E19955F9C00BD455A /* DQMissao.h */,
 				7560590F19955F9C00BD455A /* DQMissao.m */,
 				23477FF819463E7500479AFE /* DQFala.h */,
@@ -1418,6 +1423,7 @@
 				75FDF3F919F6E584007E1C66 /* DQCoreDataController.m in Sources */,
 				94080EAD1933BA290024FB94 /* main.m in Sources */,
 				7560591319955FC700BD455A /* DQMissaoControle.m in Sources */,
+				C5716C7D1A38A14B00A8CC0A /* DQFruta.m in Sources */,
 				C514DC471A0C1016008A8475 /* Elemento.m in Sources */,
 				C54031EF1989FEE7003384AB /* DQItem.m in Sources */,
 				75F7215C1A07EEAA00A36CED /* DQAlertasControle.m in Sources */,
