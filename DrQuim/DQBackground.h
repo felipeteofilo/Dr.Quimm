@@ -14,6 +14,7 @@
 #import "DQControleCorpoFisico.h"
 #import "DQEscalavel.h"
 #import "DQCoberturaBackground.h"
+#import "DQFruta.h"
 
 static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 @interface DQBackground : SKSpriteNode
@@ -24,6 +25,7 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 
 -(id)initBackgroundFase:(int)fase parte:(int)parte naPosicao:(CGPoint)posicao infoParte:(NSDictionary*)infoParte;
 -(void)criarPlataformas:(NSArray*)arrayPlataformas;
+-(void)criaFrutasBackground:(NSArray*)frutasAdd;
 -(void)adicionarPlataforma:(SKNode*)plataformaAdd noNode:(SKNode*)nodeAddPlataforma;
 -(void)desativaPlataformas:(float)posicaoYJogador;
 -(void)criaEscalavel:(NSArray*)arrayEscalaveis;
@@ -31,4 +33,5 @@ static NSString* NomeNodePlataformas= @"NodeComPlataformas";
 -(void)escondeCobertura;
 -(void)controleAtivacaoPlataforma:(SKNode*)nodePlataforma posicaoJogador:(float)YJogador velocidadeY:(float)velYJogador;
 -(void)verificaCoberturaBackground:(CGPoint)posJogadorConvertida;
+
 @end

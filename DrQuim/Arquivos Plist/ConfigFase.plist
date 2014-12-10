@@ -196,6 +196,15 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Frutas</key>
+				<array>
+					<dict>
+						<key>NomeFruta</key>
+						<string></string>
+						<key>Posicao</key>
+						<string></string>
+					</dict>
+				</array>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -412,6 +421,15 @@
 		<key>Partes</key>
 		<array>
 			<dict>
+				<key>Frutas</key>
+				<array>
+					<dict>
+						<key>NomeFruta</key>
+						<string>fruit1</string>
+						<key>Posicao</key>
+						<string>{100, 100}</string>
+					</dict>
+				</array>
 				<key>Animais</key>
 				<array>
 					<string>Coelho</string>

@@ -159,6 +159,7 @@
 		C55CE5C9199BBDD300375C87 /* tutorialPular.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C55CE5C8199BBDD300375C87 /* tutorialPular.atlas */; };
 		C56A9D82196E252C00DD2347 /* DQFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56A9D81196E252C00DD2347 /* DQFase.m */; };
 		C5716C7D1A38A14B00A8CC0A /* DQFruta.m in Sources */ = {isa = PBXBuildFile; fileRef = C5716C7C1A38A14B00A8CC0A /* DQFruta.m */; };
+		C5716C7F1A38A33800A8CC0A /* FrutasDefinicao.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5716C7E1A38A33800A8CC0A /* FrutasDefinicao.plist */; };
 		C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D7C2B1964E99000EF94C9 /* Jogador.png */; };
 		C58F75BF19A4EB9A00DC7A71 /* Passo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */; };
 		C58F75C619A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C58F75C019A4EBEA00DC7A71 /* AlertaHelicoptero.mp3 */; };
@@ -450,6 +451,7 @@
 		C56A9D81196E252C00DD2347 /* DQFase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFase.m; sourceTree = "<group>"; };
 		C5716C7B1A38A14B00A8CC0A /* DQFruta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFruta.h; sourceTree = "<group>"; };
 		C5716C7C1A38A14B00A8CC0A /* DQFruta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFruta.m; sourceTree = "<group>"; };
+		C5716C7E1A38A33800A8CC0A /* FrutasDefinicao.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FrutasDefinicao.plist; path = "Arquivos Plist/FrutasDefinicao.plist"; sourceTree = "<group>"; };
 		C57D7C2B1964E99000EF94C9 /* Jogador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jogador.png; sourceTree = "<group>"; };
 		C58CFAEE19F98BCB006712C6 /* DQControleProtocoll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQControleProtocoll.h; sourceTree = "<group>"; };
 		C58F75BE19A4EB9A00DC7A71 /* Passo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passo.mp3; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				7505B4A519FACB3E00769C87 /* FasesEspecificas.plist */,
 				9488196519901A6D00609A0F /* ItensReferencia.plist */,
 				9488196619901A6D00609A0F /* MissoesJogador.plist */,
+				C5716C7E1A38A33800A8CC0A /* FrutasDefinicao.plist */,
 			);
 			name = "Arquvos XML";
 			sourceTree = "<group>";
@@ -1283,6 +1286,7 @@
 				23D665B81A081B0200DD441D /* Fase1_Parte4.png in Resources */,
 				CD54D9BD19A51F7700C2798D /* maletaFrente.png in Resources */,
 				C5FFB43D19A939FF004F3CD0 /* Maleta_H2SO4.png in Resources */,
+				C5716C7F1A38A33800A8CC0A /* FrutasDefinicao.plist in Resources */,
 				7505B4A619FACB3E00769C87 /* FasesEspecificas.plist in Resources */,
 				CD1392C819A7C2A000143DCA /* elemento_K.png in Resources */,
 				94080EAB1933BA290024FB94 /* InfoPlist.strings in Resources */,

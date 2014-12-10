@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fruit1</key>
+	<dict>
+		<key>ElementoPresente</key>
+		<string></string>
+		<key>imagem</key>
+		<string>fruit1</string>
+	</dict>
+	<key>fruit2</key>
+	<dict>
+		<key>ElementoPresente</key>
+		<string></string>
+		<key>imagem</key>
+		<string>fruit2</string>
+	</dict>
+	<key>fruit3</key>
+	<dict>
+		<key>ElementoPresente</key>
+		<string></string>
+		<key>imagem</key>
+		<string>fruit3</string>
+	</dict>
+	<key>fruit4</key>
+	<dict>
+		<key>ElementoPresente</key>
+		<string></string>
+		<key>imagem</key>
+		<string>fruit4</string>
+	</dict>
+	<key>fruit5</key>
+	<dict>
+		<key>ElementoPresente</key>
+		<string></string>
+		<key>imagem</key>
+		<string>fruit5</string>
+	</dict>
+</dict>
+</plist>

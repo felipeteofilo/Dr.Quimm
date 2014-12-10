@@ -110,6 +110,16 @@
     
 }
 
+-(void)criaFrutasBackground:(NSArray*)frutasAdd{
+    for (NSDictionary *infoFruta in frutasAdd) {
+        DQFruta *fruta=[[DQFruta alloc]initFrutaComNome:[infoFruta objectForKey:@"NomeFruta"]];
+        
+        [fruta setPosition:CGPointFromString([infoFruta objectForKey:@"Posicao"])];
+        
+        [self addChild:fruta];
+    }
+}
+
 #pragma mark Configuracao corpos Fisicos
 -(void)chaoCategoria{
     //Chao Categoria
