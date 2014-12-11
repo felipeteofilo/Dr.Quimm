@@ -43,6 +43,8 @@
     NSString *nomeMusica=[[self.sonsDisponiveisScene objectForKey:@"Musicas"]objectAtIndex:indiceMusica];
     
     self.playerMusicaFundo=[self configuraPlayerSomUrlSom:[self urlParaSom:nomeMusica] nLoops:-1];
+    
+    [self tocarMusicaFundo];
 }
 -(void)tocarSomAnimal:(NSNotification*)notificacao{
     //Para o animal receberemos o nome dele e como convencao colocamos o nome do arquivo de som igual ao nome do animal

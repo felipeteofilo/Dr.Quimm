@@ -91,7 +91,7 @@
 	</array>
 	<key>NPC</key>
 	<dict>
-		<key>Maedetodos</key>
+		<key>Mãe de todos</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>
@@ -105,7 +105,7 @@
 				<string>FalaPersonagens-Grande-1</string>
 			</array>
 		</array>
-		<key>Cacador</key>
+		<key>Caçador</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>
@@ -119,7 +119,21 @@
 				<string>FalaPersonagens-Grande-1</string>
 			</array>
 		</array>
-		<key>Chefe</key>
+		<key>Chefe - Cabeça Simpática</key>
+		<array>
+			<array>
+				<string>FalaPersonagens-Pequena-1</string>
+				<string>FalaPersonagens-Pequena-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Media-1</string>
+				<string>FalaPersonagens-Media-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Grande-1</string>
+			</array>
+		</array>
+		<key>Chefe - Cabeça Ranzinza</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>
@@ -147,7 +161,21 @@
 				<string>FalaPersonagens-Grande-1</string>
 			</array>
 		</array>
-		<key>Quimm</key>
+		<key>Cientista</key>
+		<array>
+			<array>
+				<string>FalaPersonagens-Pequena-1</string>
+				<string>FalaPersonagens-Pequena-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Media-1</string>
+				<string>FalaPersonagens-Media-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Grande-1</string>
+			</array>
+		</array>
+		<key>Piloto:</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>
