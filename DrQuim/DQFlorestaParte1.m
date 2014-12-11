@@ -103,14 +103,14 @@
 //Metodo chamado toda hora pela spriteKit, usado para criar as partes do corpo fisico da fase ==OK==
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
-
+    
     [self segundaCutScene];
 }
 
 -(void)segundaCutScene{
     CGPoint pontoSegundaCutscene;
 
-    pontoSegundaCutscene = CGPointMake(7640, 330);
+    pontoSegundaCutscene = CGPointMake(4480, 452);
     
     //Alterado para verificar apenas pelo X
     if( self.jogador.position.x > pontoSegundaCutscene.x){

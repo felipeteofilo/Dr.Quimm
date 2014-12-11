@@ -12,6 +12,7 @@
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
 		23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFADBC1966E4FB00691C04 /* setinhas.png */; };
+		3C33B1711A39AF210062C701 /* ConfigSons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C33B1701A39AF210062C701 /* ConfigSons.plist */; };
 		3C44C5F21A38CF2B009EF1A3 /* Conectado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5EF1A38CF2B009EF1A3 /* Conectado.atlas */; };
 		3C44C5F31A38CF2B009EF1A3 /* Falha.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5F01A38CF2B009EF1A3 /* Falha.atlas */; };
 		3C44C5F41A38CF2B009EF1A3 /* Sucesso.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5F11A38CF2B009EF1A3 /* Sucesso.atlas */; };
@@ -288,6 +289,7 @@
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		23BFADBC1966E4FB00691C04 /* setinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setinhas.png; sourceTree = "<group>"; };
+		3C33B1701A39AF210062C701 /* ConfigSons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ConfigSons.plist; path = "Arquivos Plist/ConfigSons.plist"; sourceTree = "<group>"; };
 		3C44C5EF1A38CF2B009EF1A3 /* Conectado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Conectado.atlas; sourceTree = "<group>"; };
 		3C44C5F01A38CF2B009EF1A3 /* Falha.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Falha.atlas; sourceTree = "<group>"; };
 		3C44C5F11A38CF2B009EF1A3 /* Sucesso.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sucesso.atlas; sourceTree = "<group>"; };
@@ -664,6 +666,7 @@
 		2323166F1947BCAB0002FB1D /* Arquvos XML */ = {
 			isa = PBXGroup;
 			children = (
+				3C33B1701A39AF210062C701 /* ConfigSons.plist */,
 				7531C21A1A1124F3002CC7F5 /* FasesEspecificas.plist */,
 				C5FFB44719A94AF6004F3CD0 /* Missoes.plist */,
 				C5FFB42419A93706004F3CD0 /* AmostrasQuimicas.plist */,
@@ -1548,6 +1551,7 @@
 				9469692219A2A31100087B20 /* cutscene3.atlas in Resources */,
 				75F9E7F91A1D0908004F12AF /* elemento_carbono.png in Resources */,
 				C5FFB44419A939FF004F3CD0 /* Maleta_Pb(NO3)2.png in Resources */,
+				3C33B1711A39AF210062C701 /* ConfigSons.plist in Resources */,
 				94A8680A19995C4900604BA4 /* ContadorGeiger.atlas in Resources */,
 				C55CE580199BA91F00375C87 /* ContadorGeiger-1.mp3 in Resources */,
 				75F54FC91A1BB73800C1F454 /* descript.png in Resources */,
@@ -1780,7 +1784,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1813,7 +1817,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;

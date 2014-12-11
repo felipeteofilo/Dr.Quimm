@@ -305,8 +305,7 @@
         //verifica se nao esta animando o pulo e anima o jogador andando
         if (![self.spriteNode actionForKey:@"animandoAndando"] && self.estaNoChao && ![self actionForKey:@"animandoCaindo"]) {
             
-            //Cria action para animar
-           // SKAction *animacaoMover = [SKAction runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando timePerFrame:0.09f resize:NO restore:YES]] onChildWithName:self.spriteNode.name];
+           
             
            [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
             

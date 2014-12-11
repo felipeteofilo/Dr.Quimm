@@ -17,13 +17,13 @@
         self.cena = cenaRecebida;
         
         //Inicia na parte 0
-        self.parteAtual = 1;
+        self.parteAtual = 0;
         
         //E sem nenhuma missão
         self.emMissao = YES;
         
         //Define a próxima missão (a primeira)
-        self.proximaMissao = 2;
+        self.proximaMissao = 1;
         
         //Apresentando a próxima missão (no caso, a primeira)
         [self iniciarMissao];

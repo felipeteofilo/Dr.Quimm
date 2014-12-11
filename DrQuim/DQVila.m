@@ -65,12 +65,26 @@
 //}
 //
 //Removido! pois agora a transicao será feita pelo controle de missoes
-//-(void)apresentarCenaBronca{
-//    DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
-//
-//    self.jogador.controleMissoes.parteAtual++;
-//    [self.view presentScene:cenaBronca];
-//}
+-(void)apresentarCenaBronca{
+    DQCenaBronca *cenaBronca=[[DQCenaBronca alloc]initCena:self.view.bounds.size cena:self];
+
+    self.jogador.controleMissoes.parteAtual++;
+    [self.view presentScene:cenaBronca];
+}
+
+
+-(void)update:(NSTimeInterval)currentTime{
+    [super update:currentTime];
+    
+    if([self.jogador.controleMissoes emMissao] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao02"] && self.jogador.controleMissoes.parteAtual == 5 && !self.apresentouCenaBronca){
+        [self apresentarCenaBronca];
+        self.apresentouCenaBronca = YES;
+    }
+    
+    
+    
+}
+
 //
 //
 //Removido, pois teremos que definir um método definitivo para mostrar a Cena dos NPCs
