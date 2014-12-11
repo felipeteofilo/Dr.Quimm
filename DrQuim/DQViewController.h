@@ -10,7 +10,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "DQMenuInicial.h"
 #import "DQCutsceneTela.h"
+#import "DQControleSom.h"
+#import "DQControleSomScene.h"
 
 @interface DQViewController : UIViewController
+
+@property DQControleSom *controleSomEfeitos;
+@property DQControleSomScene *controleSomScenes;
 
 @end

@@ -14,6 +14,10 @@
 {
     [super viewDidAppear:animated];
 
+    //Inicia controladores de som
+    self.controleSomEfeitos =[[DQControleSom alloc]initControleSom];
+    self.controleSomScenes =[[DQControleSomScene alloc]initControleSomCena];
+    
     SKView * skView = (SKView *)self.view;
     
     skView.showsPhysics = YES;
