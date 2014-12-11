@@ -459,14 +459,7 @@
 				<key>ItemRequisito</key>
 				<string></string>
 				<key>ItemRecebido</key>
-				<array>
-					<dict>
-						<key>Nome</key>
-						<string>liquidoAmarelo</string>
-						<key>Quantidade</key>
-						<integer>2</integer>
-					</dict>
-				</array>
+				<array/>
 				<key>ItemEntregue</key>
 				<array/>
 				<key>Fome</key>

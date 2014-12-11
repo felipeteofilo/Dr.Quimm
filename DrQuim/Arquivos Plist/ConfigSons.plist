@@ -55,43 +55,27 @@
 		<dict>
 			<key>Musicas</key>
 			<array>
-				<string>MusicaFundo01</string>
-				<string>MusicaFundo02</string>
+				<string>Helicoptero</string>
 			</array>
 			<key>Efeitos</key>
-			<array>
-				<string>Fundo08 - Vento </string>
-				<string>Fundo01 - Passaros </string>
-				<string>Fundo07 - Sapos </string>
-			</array>
+			<array/>
 		</dict>
 		<dict>
 			<key>Musicas</key>
-			<array>
-				<string>MusicaFundo04</string>
-			</array>
+			<array/>
 			<key>Efeitos</key>
-			<array>
-				<string>Fundo08 - Vento </string>
-				<string>Fundo01 - Passaros </string>
-			</array>
+			<array/>
 		</dict>
 		<dict>
 			<key>Musicas</key>
-			<array>
-				<string>MusicaFundo02</string>
-				<string>MusicaFundo03</string>
-			</array>
+			<array/>
 			<key>Efeitos</key>
-			<array>
-				<string>Fundo08 - Vento </string>
-				<string>Fundo01 - Passaros </string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>NPC</key>
 	<dict>
-		<key>Maedetodos</key>
+		<key>Mãe de todos</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>
@@ -105,7 +89,7 @@
 				<string>FalaPersonagens-Grande-1</string>
 			</array>
 		</array>
-		<key>Cacador</key>
+		<key>Caçador</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>
@@ -119,7 +103,21 @@
 				<string>FalaPersonagens-Grande-1</string>
 			</array>
 		</array>
-		<key>Chefe</key>
+		<key>Chefe - Cabeça Simpática</key>
+		<array>
+			<array>
+				<string>FalaPersonagens-Pequena-1</string>
+				<string>FalaPersonagens-Pequena-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Media-1</string>
+				<string>FalaPersonagens-Media-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Grande-1</string>
+			</array>
+		</array>
+		<key>Chefe - Cabeça Ranzinza</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>
@@ -147,7 +145,35 @@
 				<string>FalaPersonagens-Grande-1</string>
 			</array>
 		</array>
-		<key>Quimm</key>
+		<key>Cientista</key>
+		<array>
+			<array>
+				<string>FalaPersonagens-Pequena-1</string>
+				<string>FalaPersonagens-Pequena-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Media-1</string>
+				<string>FalaPersonagens-Media-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Grande-1</string>
+			</array>
+		</array>
+		<key>Piloto</key>
+		<array>
+			<array>
+				<string>FalaPersonagens-Pequena-1</string>
+				<string>FalaPersonagens-Pequena-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Media-1</string>
+				<string>FalaPersonagens-Media-2</string>
+			</array>
+			<array>
+				<string>FalaPersonagens-Grande-1</string>
+			</array>
+		</array>
+		<key>Piloto:</key>
 		<array>
 			<array>
 				<string>FalaPersonagens-Pequena-1</string>

@@ -846,7 +846,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>Não se preocupe, está tudo bem.</string>
 							<key>Foto</key>
@@ -862,7 +862,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>e-eu já disse que não foi esse o problema, o contador geiger ele...</string>
 							<key>Foto</key>
@@ -878,7 +878,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>... estava marcando que tinha radicação e...</string>
 							<key>Foto</key>
@@ -894,7 +894,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>... e é muito perigoso chegar perto de alguma fonte de radiação.</string>
 							<key>Foto</key>
@@ -910,7 +910,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>Mãe, você ouviu oque eu falei?</string>
 							<key>Foto</key>
@@ -926,7 +926,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>... Então tá bom!</string>
 							<key>Foto</key>
@@ -942,7 +942,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>Isca! Que isca?</string>
 							<key>Foto</key>
@@ -980,7 +980,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>Estou procurando.</string>
 							<key>Foto</key>
@@ -1007,7 +1007,7 @@
 						</dict>
 						<dict>
 							<key>Sujeito</key>
-							<string>Piloto:</string>
+							<string>Piloto</string>
 							<key>Texto</key>
 							<string>Estou procurando.</string>
 							<key>Foto</key>
@@ -4033,7 +4033,7 @@
 							<key>Sujeito</key>
 							<string>Cientista</string>
 							<key>Texto</key>
-							<string>stão dizendo que aquela mulher... A que chamam de “Mãe de todos” está te procurando. Aliás... você percebeu que ela é a única mulher nessa vila? Me pergunto o motivo...</string>
+							<string>Estão dizendo que aquela mulher... A que chamam de “Mãe de todos” está te procurando. Aliás... você percebeu que ela é a única mulher nessa vila? Me pergunto o motivo...</string>
 							<key>Foto</key>
 							<string>rostoCientista</string>
 						</dict>

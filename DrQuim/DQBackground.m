@@ -58,14 +58,15 @@
 -(void)desativaPlataformas:(float)posicaoYJogador{
     //Se tiver um node com plataformas
     if ([self childNodeWithName:NomeNodePlataformas]) {
-        
+    
         //Para cada node plataforma no Node que contem as plataformas verificar
         for (SKNode *plataforma in [[self childNodeWithName:NomeNodePlataformas]children]) {
             if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > posicaoYJogador) {
+                NSLog(@"%f",[[plataforma.userData objectForKey:nomeMaiorY]floatValue]);
                 //Evita ficar chamando toda hora
-               // if (!(plataforma.physicsBody.categoryBitMask & PlataformaAtivadaCategoria)!=0) {
+//               if ((plataforma.physicsBody.categoryBitMask & PlataformaAtivadaCategoria)!=0) {
                     [self plataformaDesativadaCategoria:plataforma];
-                //}
+//                }
             }
         }
     }

@@ -7,16 +7,16 @@
 //
 
 #import "DQViewController.h"
-#import "DQViewControllerInfoTransformacao.h"
+
 
 
 
 @implementation DQViewController
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLoad
 {
     //PARA O CIRCULO DE TRANSFORMAÇÃO
-    [super viewDidAppear:animated];
+    [super viewDidLoad];
 
 
     //Inicia controladores de som
@@ -25,12 +25,16 @@
     
     SKView * skView = (SKView *)self.view;
 
+    //skView.showsPhysics = YES;
 //    
-//    DQViewControllerInfoTransformacao *infoTransformacao = [[DQViewControllerInfoTransformacao alloc]init];
+   DQViewControllerInfoTransformacao *infoTransformacao = [[DQViewControllerInfoTransformacao alloc]init];
 //
-//    [self presentViewController:infoTransformacao animated:NO completion:nil];
+   [self presentViewController:infoTransformacao animated:NO completion:nil];
 //  
     
+
+
+
     
   
     
@@ -44,14 +48,14 @@
     
     //PARA CENAS DO JOGO
 
-DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
+//DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
    // DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
 //DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
    // DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
     
- fase.scaleMode = SKSceneScaleModeAspectFill;
+ //fase.scaleMode = SKSceneScaleModeAspectFill;
 
-  [skView presentScene:fase];
+ // [skView presentScene:fase];
 }
 
 

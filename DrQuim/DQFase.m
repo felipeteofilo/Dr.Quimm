@@ -87,12 +87,12 @@
     [self configuraHUD];
     [self configurarSomFundo];
     [self configurarControles];
+    
 }
 
 -(void)configurarSomFundo{
-    //self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
-//    
-//    [self addChild:self.controleSom];
+
+
     
 }
 
@@ -359,7 +359,12 @@
     [DQControleUserDefalts setFaseAtual:self.faseAtual];
     [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
     
-    [self.controleSom playerMusicaFundo];
+    
+    //Posta uma notificação para alterar o controle de som da scene
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoTipoScene object:nil userInfo:[NSDictionary dictionaryWithObjects:@[[NSNumber numberWithInt:0],[NSNumber numberWithInt:self.faseAtual]] forKeys:@[@"tipoFase",@"idFase"]]];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoMusicaFundo object:nil];
 }
 
 
@@ -374,6 +379,9 @@
     
     //Se a caixa de fala esta na tela
     if([self childNodeWithName:@"falasDoJogo"]){
+        //Se ja tem uma caixa de fala para o som do npc
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoNPCParar object:nil];
+        
         
         //Ve se pode pode ir para proxima fala
         if ([self.controleDeFalas proximaFala]) {
@@ -510,4 +518,5 @@
     //seta a nova posicao do mundo
     self.mundo.position = posicaoMundo;
 }
+
 @end

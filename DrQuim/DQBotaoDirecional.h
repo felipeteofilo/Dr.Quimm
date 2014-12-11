@@ -13,6 +13,9 @@
 @property CGPoint posicaoToqueInicial;
 @property CGPoint posicaoInicialBotao;
 @property float forcaMovimento;
+
+@property float ultimoMov;
+
 @property BOOL travaMovDirecional;
 
 //Boleanos p decidir se aumenta em X ou Y

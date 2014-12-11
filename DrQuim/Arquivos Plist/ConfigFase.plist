@@ -6,7 +6,7 @@
 		<key>SomFundo</key>
 		<string></string>
 		<key>PosInicialJogador</key>
-		<string>{2000, 600}</string>
+		<string>{300, 600}</string>
 		<key>Animacoes</key>
 		<dict>
 			<key>Derrapando</key>
@@ -101,9 +101,6 @@
 						<string>{435, 580}</string>
 					</array>
 					<array>
-						<string>{435, 580}</string>
-					</array>
-					<array>
 						<string>{495, 580}</string>
 						<string>{495, 620}</string>
 						<string>{585, 620}</string>
@@ -116,10 +113,10 @@
 						<string>{850, 365}</string>
 					</array>
 					<array>
-						<string>{830, 445}</string>
-						<string>{825, 485}</string>
-						<string>{1024, 485}</string>
-						<string>{1024, 445}</string>
+						<string>{830, 465}</string>
+						<string>{825, 500}</string>
+						<string>{1024, 500}</string>
+						<string>{1024, 465}</string>
 					</array>
 					<array>
 						<string>{965, 655}</string>

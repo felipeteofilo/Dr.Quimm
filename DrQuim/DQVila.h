@@ -15,6 +15,10 @@
 #import "DQTransformacaoTela.h"
 #import "DQControleUserDefalts.h"
 
+#import "DQViewControllerInfoTransformacao.h"
+
+
+
 @interface DQVila : DQFase
 
 @property NSMutableArray *escalavel;
@@ -24,7 +28,7 @@
 @property NSMutableArray *npcs;
 
 //Usado para definir se irá apresentar a cena da bronca ou não
-@property BOOL apresentouCenaBronca;
+@property BOOL apresentouTransformacao;
 @property BOOL apresentouVila;
 @property BOOL mostrandoContador;
 

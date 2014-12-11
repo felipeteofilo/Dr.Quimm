@@ -76,9 +76,16 @@
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     
-    if([self.jogador.controleMissoes emMissao] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao02"] && self.jogador.controleMissoes.parteAtual == 5 && !self.apresentouCenaBronca){
-        [self apresentarCenaBronca];
-        self.apresentouCenaBronca = YES;
+    if([self.jogador.controleMissoes emMissao] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao02"] && self.jogador.controleMissoes.parteAtual == 5 && ![self childNodeWithName:@"falasDoJogo"]){
+        self.jogador.controleMissoes.parteAtual++;
+    }
+    if([self.jogador.controleMissoes emMissao] && [self.jogador.controleMissoes.missao.ID isEqual:@"Missao03"] && self.jogador.controleMissoes.parteAtual == 2 && ![self childNodeWithName:@"falasDoJogo"] && !self.apresentouTransformacao){
+        
+        DQViewControllerInfoTransformacao *infoTransformacao = [[DQViewControllerInfoTransformacao alloc]init];
+        
+        [self.view.window.rootViewController presentViewController:infoTransformacao animated:NO completion:nil];
+        self.apresentouTransformacao = true;
+        
     }
     
     

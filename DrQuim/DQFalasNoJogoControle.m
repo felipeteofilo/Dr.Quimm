@@ -86,21 +86,34 @@
     
     //Criamos a caixa de fala que ira ser mostrada no jogo
      self.caixaDeFala =[[DQFala alloc]initComDicionario:[self.arrayDeFalasAtuais objectAtIndex:self.falaAtual] eTamanho:tamanho];
+    
     self.caixaDeFala.anchorPoint = CGPointZero;
     [self.caixaDeFala setPosition:CGPointMake(tamanho.width*0.1, tamanho.height *0.75)];
     [self.caixaDeFala setName:@"falasDoJogo"];
     
+    NSNumber *tamanhoFala;
     
+    switch ([self.caixaDeFala tamanhoTexo]) {
+        case Pequeno:
+            tamanhoFala=[NSNumber numberWithInt:0];
+            break;
+            
+            case Medio:
+            tamanhoFala=[NSNumber numberWithInt:1];
+            break;
+            
+            case Grande:
+            tamanhoFala=[NSNumber numberWithInt:2];
+            break;
+            
+        default:
+            break;
+    }
     
+    NSDictionary *infoSons = [NSDictionary dictionaryWithObjects:@[tamanhoFala,self.caixaDeFala.sujeito] forKeys:@[@"tamanhoFala",@"nomeNPC"]];
     
-    //Cria o controlador de som
-//    self.controleSom=[[DQControleSom alloc]initControleSom:NPC];
-    
-    //Verifica qual a duracao do som da fala a ser tocado
-//    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
-    
-    //Adiciona o controlador de Som á caixa de falas
-//    [self.caixaDeFala addChild:self.controleSom];
+    //Posta a notificação
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoNPCFalar object:nil userInfo:infoSons];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;

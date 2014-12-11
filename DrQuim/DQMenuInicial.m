@@ -108,7 +108,7 @@
             if (![DQControleUserDefalts rodouCutSceneFase:ultimaFaseJogador]) {
                 cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
                 
-                [DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
+                //[DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
             }
             
             break;
@@ -120,7 +120,7 @@
             if (![DQControleUserDefalts rodouCutSceneFase:ultimaFaseJogador]) {
                 cutscene=[[DQCutsceneTela alloc]initCutScene:ultimaFaseJogador-1 Fase:faseIniciar SizeScene:self.frame.size];
                 
-                [DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
+               // [DQControleUserDefalts setRodouCutSceneFase:ultimaFaseJogador Valor:YES];
             }
             
             break;

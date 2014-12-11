@@ -15,6 +15,9 @@
 #import "DQControleSom.h"
 #import "DQControleSomScene.h"
 
+#import "DQViewControllerInfoTransformacao.h"
+
+
 
 @interface DQViewController : UIViewController
 

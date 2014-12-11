@@ -18,10 +18,10 @@
         
         //Configura o SpriteNode
         if ([nome isEqual:@"Quimm"]) {
-            [self setSize:CGSizeMake(70, 100)];
+            [self setSize:CGSizeMake(120, 120)];
         }
         else{
-            [self setSize:CGSizeMake(180, 200)];
+            [self setSize:CGSizeMake(180, 180)];
         }
         [self setAnchorPoint:CGPointMake(0, 0)];
         [self setName:nome];

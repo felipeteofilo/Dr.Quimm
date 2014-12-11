@@ -285,7 +285,7 @@
             self.ligacoes++;
             
             if(self.ligacoes >= [self.receita.numero_ligacoes intValue]){
-                
+                [self transformacaoCompleta];
             }
             
             pode = true;
@@ -295,7 +295,10 @@
 }
 
 -(void)transformacaoCompleta{
-    [[DQJogador sharedJogador]receberItem:self.receita.id_item_gerar quantidade:1];
+    DQJogador *jogador = [DQJogador sharedJogador];
+    
+    [jogador.itens receberItem:self.receita.id_item_gerar quantidade:1];
+    [self.view.window.rootViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 //metodo para centralizar o physics body na textura dele

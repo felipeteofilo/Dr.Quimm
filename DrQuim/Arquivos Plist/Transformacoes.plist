@@ -613,7 +613,7 @@
 				<integer>2</integer>
 			</dict>
 			<key>ItemGerado</key>
-			<string>LiquidoAmarelo</string>
+			<string>liquidoAmarelo</string>
 			<key>Descricao</key>
 			<string>O líquido amarelo, apesar de parecer uma mistura homogênea é feito de dois compostos (portanto uma mistura heterogênea): Iodeto de Chumbo(um pó de cor amarelada) e o Nitrato de potássio (Um líquido de cor amarelada). </string>
 			<key>Nome</key>

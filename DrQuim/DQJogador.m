@@ -229,9 +229,6 @@
 -(void)animarPular{
     
     //Leonardo 13/06/2014 - alterado para dar xScale na propriedade spriteNode
-    
-    
-    
     [self.spriteNode runAction:[SKAction animateWithTextures:framesPulando timePerFrame:0.5f                                           resize:NO restore:YES] withKey:@"animandoPulo"];
     
     
@@ -259,6 +256,8 @@
         [self.physicsBody applyImpulse:CGVectorMake(0, impulsoPulo)];
         
         self.estaNoChao = NO;
+        
+//        [self animarParado];
         
         // anima ele pulando
         [self animarPular];
@@ -305,11 +304,10 @@
         //verifica se nao esta animando o pulo e anima o jogador andando
         if (![self.spriteNode actionForKey:@"animandoAndando"] && self.estaNoChao && ![self actionForKey:@"animandoCaindo"]) {
             
-           
+           [self animarAndando];
             
            [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
             
-            [self animarAndando];
         }else{
             //Esta no alto so move
             [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
@@ -529,6 +527,7 @@
             [self entregarItem];
             [self receberItem];
             [self alterarEstados];
+            
             if(self.controleMissoes.parteAtual+1 > self.controleMissoes.missao.quantidadeDePartes){
                 [self.controleMissoes fimDaMissao];
             }
@@ -540,8 +539,6 @@
             keyDaParte = [NSString stringWithFormat:@"Parte%iR", self.controleMissoes.parteAtual];
         }
         if (keyDaParte != nil) {
-            
-            
             //Cria a caixa de fala com as key obtidas e a adiciona na tela
             SKSpriteNode *caixaDeFala = [controleDeFalas mostrarFalaComNPC:nomeNPC KeyDaFala:keyDaParte Missao:missao Tamanho:self.scene.size];
             

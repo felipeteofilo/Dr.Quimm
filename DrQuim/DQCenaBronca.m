@@ -46,7 +46,7 @@
     [self addChild:self.jogador];
 }
 -(void)configuraChao{
-    [self setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:4 daFase:2]];
+    [self setPhysicsBody:[DQControleCorpoFisico criaCorpoFisicoChaoParte:3 daFase:2]];
     
     //Cria o chao e seta o phisics body dele e cria a gravidade do mundo
     self.physicsWorld.gravity=CGVectorMake(0, -3);
@@ -166,7 +166,7 @@
             //se moveu para a direita, anda para a direita - D
             if(posicaoToque.x > self.pontoDeToqueAndar.x){
                 if (![self.jogador.andandoParaDirecao isEqualToString:@"D"]) {
-                    //[self.jogador andarParaDirecao:@"D"];
+               //     [self.jogador andarParaDirecao:<#(char)#> eVelocidade:<#(float)#>
                 }
             }
             

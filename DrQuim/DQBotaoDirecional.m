@@ -46,7 +46,6 @@
     CGPoint posicaoToqueAtual=[[touches anyObject]locationInNode:self];
     if (![self.scene childNodeWithName:@"falasDoJogo"]) {
         
-        
         //Verifica as alteracoes nas posicoes
         float alteracaoX=posicaoToqueAtual.x - self.posicaoToqueInicial.x;
         float alteracaoY=posicaoToqueAtual.y - self.posicaoToqueInicial.y;
@@ -66,7 +65,11 @@
         
         //Chama processo ref ao eixo que está movendo
         if (self.movimentoX) {
-            [self processaMovimentoHorizontal:alteracaoX];
+            if (!alteracaoX == self.forcaMovimento) {
+                [self processaMovimentoHorizontal:alteracaoX];
+                
+                self.ultimoMov= self.forcaMovimento;
+            }
         }
         
         if (self.movimentoY) {
@@ -101,7 +104,7 @@
     }
     
     //Faz ele andar
-    [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:(self.forcaMovimento/100)]];
+    [self.delegateBotao performSelector:self.acaoRealizar withObject:[NSNumber numberWithFloat:(self.forcaMovimento/25)]];
     
 }
 
