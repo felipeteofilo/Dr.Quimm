@@ -44,7 +44,7 @@
 //    
 //    [circulo mostrarInfoComposto];
 //    
-//  
+  
 //    NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Líquido Amarelo",@"Pequenas Explosões",@"Fogo",@"Carbono",@"Polvora", nil];
 //    
 //    
@@ -53,25 +53,25 @@
 //    [self.view addSubview:infoReceitas];
     
   
-//    
-//    NSArray * elementos = [NSArray arrayWithObjects:@"Carbono", @"Cloro",@"Hidrogênio", nil];
-//    
-//    
-//    DQTelaTransformacao *trans = [[DQTelaTransformacao alloc]initWithSize:skView.bounds.size :elementos :nil];
-//    
-//    [skView presentScene:trans];
+    
+    NSArray * elementos = [NSArray arrayWithObjects:@"Oxigênio", @"Chumbo",@"Iodo",@"Potássio",@"Nitrogênio", nil];
+    
+    
+    DQTelaTransformacao *trans = [[DQTelaTransformacao alloc]initWithSize:skView.bounds.size :elementos :[DQCoreDataController procurarReceita:@"Líquido Amarelo"]];
+    
+    [skView presentScene:trans];
     
     
     //PARA CENAS DO JOGO
 
 //DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
-    //DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
-DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
+   // DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
+//DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
    // DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
     
- fase.scaleMode = SKSceneScaleModeAspectFill;
+ //fase.scaleMode = SKSceneScaleModeAspectFill;
 
-  [skView presentScene:fase];
+  //[skView presentScene:fase];
 }
 
 

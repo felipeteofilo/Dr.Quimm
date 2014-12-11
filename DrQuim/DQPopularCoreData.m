@@ -141,6 +141,11 @@
             }
             
             
+            if([[receitasPlist objectAtIndex:i]objectForKey:@"Ligacoes"]){
+                novaReceita.ligacoes = [[receitasPlist objectAtIndex:i]objectForKey:@"Ligacoes"];
+            }
+            
+            
             novaReceita.compostos = [[receitasPlist objectAtIndex:i]objectForKey:@"Compostos"];
             
             

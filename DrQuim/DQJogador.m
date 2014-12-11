@@ -26,7 +26,7 @@
         
         [self setAnchorPoint:CGPointMake(0, 0)];
         
-        [self.spriteNode setSize:CGSizeMake(90, 160)];
+        [self.spriteNode setSize:CGSizeMake(110, 160)];
         
         [self.spriteNode setZPosition:100.0f];
         
@@ -305,9 +305,11 @@
         if (![self.spriteNode actionForKey:@"animandoAndando"] && self.estaNoChao && ![self actionForKey:@"animandoCaindo"]) {
             
             //Cria action para animar
-            SKAction *animacaoMover = [SKAction runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando timePerFrame:0.09f resize:NO restore:YES]] onChildWithName:self.spriteNode.name];
+           // SKAction *animacaoMover = [SKAction runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:framesAndando timePerFrame:0.09f resize:NO restore:YES]] onChildWithName:self.spriteNode.name];
             
-            [self runAction:[SKAction repeatActionForever:[SKAction group:@[movimentar,animacaoMover]]] withKey:@"andar"];
+           [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
+            
+            [self animarAndando];
         }else{
             //Esta no alto so move
             [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];

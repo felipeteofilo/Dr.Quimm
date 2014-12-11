@@ -24,6 +24,7 @@
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_item_gerar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info_conf_composto" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="ligacoes" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
@@ -44,7 +45,7 @@
         <element name="Composto" positionX="9" positionY="-81" width="128" height="120"/>
         <element name="Elemento" positionX="36" positionY="-54" width="128" height="120"/>
         <element name="FaseConfigurada" positionX="0" positionY="0" width="128" height="90"/>
-        <element name="Receita" positionX="0" positionY="-90" width="128" height="120"/>
+        <element name="Receita" positionX="0" positionY="-90" width="128" height="135"/>
         <element name="Usuario" positionX="-2" positionY="-225" width="128" height="195"/>
     </elements>
 </model>

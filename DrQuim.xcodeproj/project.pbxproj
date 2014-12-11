@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		234448201A37BB08009C88BB /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2344481F1A37BB08009C88BB /* Andando.atlas */; };
-		234448251A37BBA4009C88BB /* Caindo.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 234448211A37BBA4009C88BB /* Caindo.atlas */; };
-		234448261A37BBA4009C88BB /* Derrapando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 234448221A37BBA4009C88BB /* Derrapando.atlas */; };
-		234448271A37BBA4009C88BB /* Parado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 234448231A37BBA4009C88BB /* Parado.atlas */; };
-		234448281A37BBA4009C88BB /* Pulando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 234448241A37BBA4009C88BB /* Pulando.atlas */; };
 		23477FFA19463E7500479AFE /* DQFala.m in Sources */ = {isa = PBXBuildFile; fileRef = 23477FF919463E7500479AFE /* DQFala.m */; };
 		23A538E9196C6E9E00821BAF /* DQNpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A538E8196C6E9E00821BAF /* DQNpc.m */; };
 		23A6DE9B19477F1500982F9D /* DQCena.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6DE9A19477F1500982F9D /* DQCena.m */; };
 		23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFA4A9196A3CC700AD5F0C /* icon.png */; };
 		23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BFADBC1966E4FB00691C04 /* setinhas.png */; };
+		3C44C5F21A38CF2B009EF1A3 /* Conectado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5EF1A38CF2B009EF1A3 /* Conectado.atlas */; };
+		3C44C5F31A38CF2B009EF1A3 /* Falha.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5F01A38CF2B009EF1A3 /* Falha.atlas */; };
+		3C44C5F41A38CF2B009EF1A3 /* Sucesso.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5F11A38CF2B009EF1A3 /* Sucesso.atlas */; };
+		3C56EC681A38B29B00EAC536 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EC671A38B29B00EAC536 /* Receita.m */; };
+		3C56EC6E1A38C05400EAC536 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC691A38C05400EAC536 /* Andando.atlas */; };
+		3C56EC6F1A38C05400EAC536 /* Caindo.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC6A1A38C05400EAC536 /* Caindo.atlas */; };
+		3C56EC701A38C05400EAC536 /* Derrapando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC6B1A38C05400EAC536 /* Derrapando.atlas */; };
+		3C56EC711A38C05400EAC536 /* Escalando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC6C1A38C05400EAC536 /* Escalando.atlas */; };
+		3C56EC721A38C05400EAC536 /* Parado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC6D1A38C05400EAC536 /* Parado.atlas */; };
+		3C56EC741A38C09000EAC536 /* Pulando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC731A38C09000EAC536 /* Pulando.atlas */; };
+		3C56EC781A38C96100EAC536 /* transform_fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC771A38C96100EAC536 /* transform_fundo.png */; };
 		3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CABE62D1977533F0064199A /* DQCoberturaBackground.m */; };
 		3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */; };
 		3CAC84281979F63D000FB1A1 /* Escalando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84231979F63D000FB1A1 /* Escalando.atlas */; };
@@ -26,7 +32,6 @@
 		3CAE561819AA7B5A00C5B6E2 /* fundoTransformacao.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CAE561619AA7B5A00C5B6E2 /* fundoTransformacao.png */; };
 		7505B4A919FAD07800769C87 /* DQFasesControle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505B4A819FAD07800769C87 /* DQFasesControle.m */; };
 		7505B9011A2660C60040DF40 /* DQScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505B9001A2660C60040DF40 /* DQScrollView.m */; };
-		7505B9041A26661C0040DF40 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505B9031A26661C0040DF40 /* Receita.m */; };
 		752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */ = {isa = PBXBuildFile; fileRef = 752FB1D11935146300DB4328 /* DQFlorestaParte1.m */; };
 		7531C2191A112499002CC7F5 /* FaseConfigurada.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531C2181A112499002CC7F5 /* FaseConfigurada.m */; };
 		7531C21B1A1124F3002CC7F5 /* FasesEspecificas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7531C21A1A1124F3002CC7F5 /* FasesEspecificas.plist */; };
@@ -270,11 +275,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2344481F1A37BB08009C88BB /* Andando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Andando.atlas; sourceTree = "<group>"; };
-		234448211A37BBA4009C88BB /* Caindo.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Caindo.atlas; sourceTree = "<group>"; };
-		234448221A37BBA4009C88BB /* Derrapando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Derrapando.atlas; sourceTree = "<group>"; };
-		234448231A37BBA4009C88BB /* Parado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Parado.atlas; sourceTree = "<group>"; };
-		234448241A37BBA4009C88BB /* Pulando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Pulando.atlas; sourceTree = "<group>"; };
 		23477FF819463E7500479AFE /* DQFala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFala.h; sourceTree = "<group>"; };
 		23477FF919463E7500479AFE /* DQFala.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFala.m; sourceTree = "<group>"; };
 		23A538E7196C6E9E00821BAF /* DQNpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNpc.h; sourceTree = "<group>"; };
@@ -283,6 +283,18 @@
 		23A6DE9A19477F1500982F9D /* DQCena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCena.m; sourceTree = "<group>"; };
 		23BFA4A9196A3CC700AD5F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		23BFADBC1966E4FB00691C04 /* setinhas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setinhas.png; sourceTree = "<group>"; };
+		3C44C5EF1A38CF2B009EF1A3 /* Conectado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Conectado.atlas; sourceTree = "<group>"; };
+		3C44C5F01A38CF2B009EF1A3 /* Falha.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Falha.atlas; sourceTree = "<group>"; };
+		3C44C5F11A38CF2B009EF1A3 /* Sucesso.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sucesso.atlas; sourceTree = "<group>"; };
+		3C56EC661A38B29B00EAC536 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
+		3C56EC671A38B29B00EAC536 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
+		3C56EC691A38C05400EAC536 /* Andando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Andando.atlas; path = Animacoes/Andando.atlas; sourceTree = "<group>"; };
+		3C56EC6A1A38C05400EAC536 /* Caindo.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Caindo.atlas; path = Animacoes/Caindo.atlas; sourceTree = "<group>"; };
+		3C56EC6B1A38C05400EAC536 /* Derrapando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Derrapando.atlas; path = Animacoes/Derrapando.atlas; sourceTree = "<group>"; };
+		3C56EC6C1A38C05400EAC536 /* Escalando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Escalando.atlas; path = Animacoes/Escalando.atlas; sourceTree = "<group>"; };
+		3C56EC6D1A38C05400EAC536 /* Parado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Parado.atlas; path = Animacoes/Parado.atlas; sourceTree = "<group>"; };
+		3C56EC731A38C09000EAC536 /* Pulando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Pulando.atlas; path = Animacoes/Pulando.atlas; sourceTree = "<group>"; };
+		3C56EC771A38C96100EAC536 /* transform_fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transform_fundo.png; sourceTree = "<group>"; };
 		3CABE62C1977533F0064199A /* DQCoberturaBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoberturaBackground.h; sourceTree = "<group>"; };
 		3CABE62D1977533F0064199A /* DQCoberturaBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoberturaBackground.m; sourceTree = "<group>"; };
 		3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = AndandoDr.atlas; path = Animacoes/AndandoDr.atlas; sourceTree = "<group>"; };
@@ -295,8 +307,6 @@
 		7505B4A819FAD07800769C87 /* DQFasesControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFasesControle.m; sourceTree = "<group>"; };
 		7505B8FF1A2660C60040DF40 /* DQScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQScrollView.h; sourceTree = "<group>"; };
 		7505B9001A2660C60040DF40 /* DQScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQScrollView.m; sourceTree = "<group>"; };
-		7505B9021A26661C0040DF40 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receita.h; path = ../Receita.h; sourceTree = "<group>"; };
-		7505B9031A26661C0040DF40 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Receita.m; path = ../Receita.m; sourceTree = "<group>"; };
 		752FB1D01935146300DB4328 /* DQFlorestaParte1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFlorestaParte1.h; sourceTree = "<group>"; };
 		752FB1D11935146300DB4328 /* DQFlorestaParte1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFlorestaParte1.m; sourceTree = "<group>"; };
 		7531C2171A112499002CC7F5 /* FaseConfigurada.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaseConfigurada.h; sourceTree = "<group>"; };
@@ -672,17 +682,18 @@
 		3CAC84201979F630000FB1A1 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				3C56EC731A38C09000EAC536 /* Pulando.atlas */,
 				CD54D9C819A523C800C2798D /* CaindoDr.atlas */,
 				CD54D9C919A523C800C2798D /* DerrapandoDr.atlas */,
 				3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */,
 				3CAC84241979F63D000FB1A1 /* ParadoDr.atlas */,
 				3CAC84251979F63D000FB1A1 /* PulandoDr.atlas */,
-				2344481F1A37BB08009C88BB /* Andando.atlas */,
+				3C56EC691A38C05400EAC536 /* Andando.atlas */,
+				3C56EC6A1A38C05400EAC536 /* Caindo.atlas */,
+				3C56EC6B1A38C05400EAC536 /* Derrapando.atlas */,
+				3C56EC6C1A38C05400EAC536 /* Escalando.atlas */,
+				3C56EC6D1A38C05400EAC536 /* Parado.atlas */,
 				3CAC84231979F63D000FB1A1 /* Escalando.atlas */,
-				234448211A37BBA4009C88BB /* Caindo.atlas */,
-				234448221A37BBA4009C88BB /* Derrapando.atlas */,
-				234448231A37BBA4009C88BB /* Parado.atlas */,
-				234448241A37BBA4009C88BB /* Pulando.atlas */,
 				C5E1F416198B223800F7A320 /* Menu.atlas */,
 			);
 			name = Animacoes;
@@ -768,6 +779,10 @@
 		75F9E7D51A1D0452004F12AF /* TransformacoesNova */ = {
 			isa = PBXGroup;
 			children = (
+				3C44C5EF1A38CF2B009EF1A3 /* Conectado.atlas */,
+				3C44C5F01A38CF2B009EF1A3 /* Falha.atlas */,
+				3C44C5F11A38CF2B009EF1A3 /* Sucesso.atlas */,
+				3C56EC771A38C96100EAC536 /* transform_fundo.png */,
 				75FD765F1A24F8190085FB3E /* Xis.png */,
 				75F9E7E21A1D0908004F12AF /* ElementosCompostos */,
 				75F9E7D61A1D0452004F12AF /* btnMIX.png */,
@@ -812,8 +827,6 @@
 		75FDF3F619F6E343007E1C66 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				7505B9021A26661C0040DF40 /* Receita.h */,
-				7505B9031A26661C0040DF40 /* Receita.m */,
 				75F54FC21A1BB23100C1F454 /* Composto.h */,
 				75F54FC31A1BB23100C1F454 /* Composto.m */,
 				7531C23F1A1128E5002CC7F5 /* DQPopularCoreData.h */,
@@ -823,6 +836,8 @@
 				7531C2171A112499002CC7F5 /* FaseConfigurada.h */,
 				7531C2181A112499002CC7F5 /* FaseConfigurada.m */,
 				75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */,
+				3C56EC661A38B29B00EAC536 /* Receita.h */,
+				3C56EC671A38B29B00EAC536 /* Receita.m */,
 				75FDF40019F6F1AB007E1C66 /* Usuario.h */,
 				75FDF40119F6F1AB007E1C66 /* Usuario.m */,
 				75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */,
@@ -1409,6 +1424,7 @@
 				CD54D9BE19A51F7700C2798D /* ok.png in Resources */,
 				C5FFB44319A939FF004F3CD0 /* Maleta_NH4OH.png in Resources */,
 				7531C23E1A1126A8002CC7F5 /* btn_pular.png in Resources */,
+				3C56EC711A38C05400EAC536 /* Escalando.atlas in Resources */,
 				23BFA4AA196A3CC700AD5F0C /* icon.png in Resources */,
 				9488196A19901A6D00609A0F /* ConfigMenu.plist in Resources */,
 				9488196D19901A6D00609A0F /* ItensReferencia.plist in Resources */,
@@ -1417,6 +1433,7 @@
 				CD54D9C019A51F7700C2798D /* quadrado.png in Resources */,
 				C55264F619A24A5B00BD59CE /* Animal02 - animalFeroz.mp3 in Resources */,
 				7531C22C1A1125AC002CC7F5 /* Fase1_Parte1.png in Resources */,
+				3C56EC701A38C05400EAC536 /* Derrapando.atlas in Resources */,
 				C58F75CB19A4EBEA00DC7A71 /* Fundo08 - Vento .mp3 in Resources */,
 				7531C2331A1125AC002CC7F5 /* Fase2_Parte3.png in Resources */,
 				75F9E7DF1A1D0452004F12AF /* KNO3.png in Resources */,
@@ -1447,23 +1464,26 @@
 				CD54D9BC19A51F7700C2798D /* maletaCorpo.png in Resources */,
 				75F9E7FF1A1D0908004F12AF /* elemento_iodo.png in Resources */,
 				943710C419A3E04000B8846E /* Armadilhas.atlas in Resources */,
+				3C44C5F41A38CF2B009EF1A3 /* Sucesso.atlas in Resources */,
 				C55264F519A24A5B00BD59CE /* Animal01 - Coelho.mp3 in Resources */,
 				75F54FCB1A1BB73800C1F454 /* descript_popup.png in Resources */,
 				75F9E8051A1D0908004F12AF /* elemento_magnesio.png in Resources */,
 				75F9E8011A1D0908004F12AF /* composto_sulfatoDePotassio.png in Resources */,
 				943710AF19A3CE8600B8846E /* FalaPersonagens-Media-2.mp3 in Resources */,
+				3C44C5F21A38CF2B009EF1A3 /* Conectado.atlas in Resources */,
 				C5FFB43C19A939FF004F3CD0 /* Maleta_H2O.png in Resources */,
 				9469692019A2A31100087B20 /* cutscene1.atlas in Resources */,
 				943710C519A3E04000B8846E /* ArmadilhaSimples.atlas in Resources */,
 				CD54D9CA19A523C800C2798D /* CaindoDr.atlas in Resources */,
 				9469691919A2934100087B20 /* somPerdeuVida.mp3 in Resources */,
-				234448251A37BBA4009C88BB /* Caindo.atlas in Resources */,
 				C55CE57D199B9D0000375C87 /* BalaoMissao.atlas in Resources */,
 				C52FBF2919A18D790059E973 /* Toupeira.atlas in Resources */,
 				75FD76601A24F8190085FB3E /* Xis.png in Resources */,
 				75F9E8091A1D0908004F12AF /* elemento_sodio.png in Resources */,
 				943710B019A3CE8600B8846E /* FalaPersonagens-Media-3.mp3 in Resources */,
+				3C56EC781A38C96100EAC536 /* transform_fundo.png in Resources */,
 				75F9E8041A1D0908004F12AF /* composto_nitratoDePotassio.png in Resources */,
+				3C56EC721A38C05400EAC536 /* Parado.atlas in Resources */,
 				C5FFB44819A94AF6004F3CD0 /* Missoes.plist in Resources */,
 				7531C21B1A1124F3002CC7F5 /* FasesEspecificas.plist in Resources */,
 				7531C23D1A1126A8002CC7F5 /* btn_lados2.png in Resources */,
@@ -1477,10 +1497,11 @@
 				C5FFB44019A939FF004F3CD0 /* Maleta_LiAlH4.png in Resources */,
 				75F54FCA1A1BB73800C1F454 /* descript_elementos.png in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
-				234448261A37BBA4009C88BB /* Derrapando.atlas in Resources */,
 				943710AE19A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 in Resources */,
 				75F9E7FA1A1D0908004F12AF /* composto_acucarSacarose.png in Resources */,
 				7531C2321A1125AC002CC7F5 /* Fase2_Parte2.png in Resources */,
+				3C56EC6F1A38C05400EAC536 /* Caindo.atlas in Resources */,
+				3C56EC741A38C09000EAC536 /* Pulando.atlas in Resources */,
 				7531C23C1A1126A8002CC7F5 /* btn_lados1.png in Resources */,
 				C55264F719A24A5B00BD59CE /* Animal04 - Topeira.mp3 in Resources */,
 				C543E1341998600A00C90F19 /* IniciarJogo.png in Resources */,
@@ -1489,6 +1510,7 @@
 				3CAC84281979F63D000FB1A1 /* Escalando.atlas in Resources */,
 				943710AD19A3CE8600B8846E /* FalaPersonagens-Grande-1.mp3 in Resources */,
 				7553CB371A377CF800228EEA /* spark.png in Resources */,
+				3C56EC6E1A38C05400EAC536 /* Andando.atlas in Resources */,
 				23BFADBD1966E4FB00691C04 /* setinhas.png in Resources */,
 				CD1392C919A7C2A000143DCA /* elemento_N.png in Resources */,
 				9469692119A2A31100087B20 /* cutscene2.atlas in Resources */,
@@ -1499,15 +1521,12 @@
 				C5223F0419F6D0F600C17FAD /* testeBotao.png in Resources */,
 				3CAE561819AA7B5A00C5B6E2 /* fundoTransformacao.png in Resources */,
 				9488196B19901A6D00609A0F /* FalasNoJogo.plist in Resources */,
-				234448281A37BBA4009C88BB /* Pulando.atlas in Resources */,
 				C5FFB43E19A939FF004F3CD0 /* Maleta_H3PO4.png in Resources */,
 				7531C22E1A1125AC002CC7F5 /* Fase1_Parte3.png in Resources */,
 				9469692219A2A31100087B20 /* cutscene3.atlas in Resources */,
-				234448271A37BBA4009C88BB /* Parado.atlas in Resources */,
 				75F9E7F91A1D0908004F12AF /* elemento_carbono.png in Resources */,
 				C5FFB44419A939FF004F3CD0 /* Maleta_Pb(NO3)2.png in Resources */,
 				94A8680A19995C4900604BA4 /* ContadorGeiger.atlas in Resources */,
-				234448201A37BB08009C88BB /* Andando.atlas in Resources */,
 				C55CE580199BA91F00375C87 /* ContadorGeiger-1.mp3 in Resources */,
 				75F54FC91A1BB73800C1F454 /* descript.png in Resources */,
 				9488196919901A6D00609A0F /* ConfigFase.plist in Resources */,
@@ -1536,6 +1555,7 @@
 				7531C2371A1125AC002CC7F5 /* Fase3_Parte4.png in Resources */,
 				C58F75C819A4EBEA00DC7A71 /* Fundo03 - Animal .mp3 in Resources */,
 				C55CE581199BA91F00375C87 /* ContadorGeiger-2.mp3 in Resources */,
+				3C44C5F31A38CF2B009EF1A3 /* Falha.atlas in Resources */,
 				C5E1F417198B223800F7A320 /* Menu.atlas in Resources */,
 				C5B7FBDF19762A1A00C2CAFC /* BalaoAlerta.png in Resources */,
 				3CAC84291979F63D000FB1A1 /* ParadoDr.atlas in Resources */,
@@ -1610,6 +1630,7 @@
 				75F9E2271A002C8100DFF3AE /* DQAlertasControle.m in Sources */,
 				758D783E1A0C055000ACB248 /* DQReceita.m in Sources */,
 				758D78351A0C028600ACB248 /* Elemento.m in Sources */,
+				3C56EC681A38B29B00EAC536 /* Receita.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				CD54D9B019A51E4E00C2798D /* DQTransformacaoTela.m in Sources */,
 				C5223F0219F6CF3A00C17FAD /* DQSceneTeste.m in Sources */,
@@ -1646,7 +1667,6 @@
 				C54B79C71972440400366512 /* DQEscalavel.m in Sources */,
 				752FB1D21935146300DB4328 /* DQFlorestaParte1.m in Sources */,
 				C511258F1973AB4E00CECCAD /* DQHudController.m in Sources */,
-				7505B9041A26661C0040DF40 /* Receita.m in Sources */,
 				23A6DE9B19477F1500982F9D /* DQCena.m in Sources */,
 				75F54FCE1A1BD62800C1F454 /* DQCompostosJogador.m in Sources */,
 				C52FBF1919A18D0A0059E973 /* DQAnimalCoelho.m in Sources */,

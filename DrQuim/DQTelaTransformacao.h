@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DQCoreDataController.h"
+#import "DQConfigMenu.h"
+#import "DQUteis.h"
 
 static const UInt32 ElementoCategoria = 0x1 << 0;
 static const UInt32 ParedesCategoria = 0x1 << 1;
@@ -18,6 +20,18 @@ static const UInt32 ParedesCategoria = 0x1 << 1;
 @property NSMutableArray *lugaresAnteriores;
 @property SKSpriteNode *nodeTocado;
 @property CGPoint posicaoDelta;
+@property float lastTouch;
+
+
+@property NSArray *framesSucesso;
+@property NSArray *framesErro;
+
+@property NSArray *framesJuntos;
+
+
+
+
+@property Receita *receita;
 
 
 -(id)initWithSize:(CGSize)size :(NSArray*)elementos :(Receita*)receita;

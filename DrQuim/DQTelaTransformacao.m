@@ -14,13 +14,23 @@
 
 -(id)initWithSize:(CGSize)size :(NSArray*)elementos :(Receita*)receita{
     if (self = [super initWithSize:size]) {
+        SKSpriteNode *fundo = [[SKSpriteNode alloc]initWithImageNamed:@"transform_fundo"];
         
+        [fundo setSize:self.size];
+        [fundo setAnchorPoint:CGPointZero];
+        [fundo setZPosition:-100];
+        [self addChild:fundo];
+        
+        [self lerFrames];
         self.lugaresAnteriores =[[NSMutableArray alloc]init];
         [self criarElementos:elementos];
         [self.physicsWorld setContactDelegate:self];
         
+        self.receita = receita;
         
         [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
+        
+       
         [self.physicsBody setCategoryBitMask:ParedesCategoria];
         
         
@@ -34,14 +44,13 @@
     for(int i = 0; i < elementos.count; i++){
         
         Elemento * elemento = [DQCoreDataController procurarElemento:[elementos objectAtIndex:i]];
-       
+        
         SKSpriteNode *elementoSprite =[[SKSpriteNode alloc]initWithImageNamed:elemento.imagem];
+        
         [elementoSprite setAnchorPoint:CGPointZero];
-       
+        
         [elementoSprite setSize:CGSizeMake(self.size.width*0.1, self.size.width*0.1)];
         
-        
-       
         int x = arc4random() % (int)(self.size.width - elementoSprite.size.width);
         
         int y = arc4random() % (int)(self.size.height - elementoSprite.size.height);
@@ -63,7 +72,7 @@
                 
                 
                 if (distanciaX < elementoSprite.size.width ){
-                     x = arc4random() % (int)(self.size.width - elementoSprite.size.width);
+                    x = arc4random() % (int)(self.size.width - elementoSprite.size.width);
                     j--;
                 }
                 if (distanciaY < elementoSprite.size.height ){
@@ -86,27 +95,49 @@
         
         [elementoSprite setPosition:CGPointMake(x, y)];
         
-         [elementoSprite setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:[self pathForRectangleOfSize:elementoSprite.size withAnchorPoint:elementoSprite.anchorPoint]]];
+        [elementoSprite setPhysicsBody:[SKPhysicsBody bodyWithPolygonFromPath:[self pathForRectangleOfSize:elementoSprite.size withAnchorPoint:elementoSprite.anchorPoint]]];
         
         [elementoSprite.physicsBody setAffectedByGravity:NO];
         [elementoSprite.physicsBody setFriction:0];
         [elementoSprite.physicsBody setRestitution:0];
         [elementoSprite.physicsBody setAllowsRotation:NO];
-       
+        
         [elementoSprite.physicsBody setUsesPreciseCollisionDetection:YES];
         
         
         
         [elementoSprite.physicsBody setCategoryBitMask:ElementoCategoria];
-       
+        
         
         [elementoSprite.physicsBody setContactTestBitMask:ElementoCategoria];
         
-      
+        
         [self shake:4 node:elementoSprite];
         
         
         [elementoSprite setName:@"Elemento"];
+        
+        NSMutableDictionary *info = [[NSMutableDictionary alloc]init];
+        
+        [info setObject:elemento.simbolo forKey:@"Nome"];
+        [info setObject:[NSNumber numberWithInt:1] forKey:@"Quantidade"];
+        
+        [elementoSprite setUserData:info];
+        
+        SKLabelNode *numero = [[SKLabelNode alloc]init];
+        
+        [numero setName:@"Numero"];
+        
+        [numero setText:[NSString stringWithFormat:@"%d",1]];
+        
+        [numero setColor:[UIColor whiteColor]];
+        [numero setFontName:[DQConfigMenu fonteMenu]];
+        
+        [numero setPosition:CGPointMake(elementoSprite.size.width, 0)];
+        
+        [elementoSprite addChild:numero];
+        
+        
         [self addChild:elementoSprite];
         
     }
@@ -132,30 +163,103 @@
     if ((firstBody.categoryBitMask & ElementoCategoria)!=0) {
         if ((secondBody.categoryBitMask & ElementoCategoria) !=0 ) {
             
-            SKPhysicsJointLimit *pin = [SKPhysicsJointLimit jointWithBodyA:contact.bodyA bodyB:contact.bodyB anchorA:contact.bodyA.node.position anchorB:contact.bodyB.node.position ];
+            SKSpriteNode *elemento1 = (SKSpriteNode*)firstBody.node;
             
-            [pin setMaxLength:self.size.width*0.1];
-            
-            NSString *firePath = [[NSBundle mainBundle] pathForResource:@"Spark" ofType:@"sks"];
-            
-            SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
-            [fire setParticleScale:1];
-            [fire setParticleLifetime:0.3];
-            [fire setParticleSize:CGSizeMake(10, 10)];
+            SKSpriteNode *elemento2 = (SKSpriteNode*)secondBody.node;
             
             
-            
-            //changing the targetnode from spaceship to scene so that it gets influenced by movement
-            fire.targetNode = firstBody.node;
-            
-            [firstBody.node addChild:fire];
-            
-            [self.physicsWorld addJoint:pin];
-    }
+            if([self verificarJuncao:elemento1 elemento2:elemento2]){
+                
+                SKSpriteNode *sprite =[[SKSpriteNode alloc]init];
+                
+                
+                [sprite setSize:CGSizeMake(elemento1.size.height*3.5,elemento1.size.width*3.5)];
+                [sprite setAnchorPoint:CGPointMake(0.4, 0.4)];
+                
+                [elemento1 addChild:sprite];
+                
+                [sprite runAction:[SKAction animateWithTextures:self.framesSucesso timePerFrame:0.1] completion:^{
+                    [sprite removeFromParent];
+                }];
+                
+                
+                
+                SKPhysicsJointLimit *pin = [SKPhysicsJointLimit jointWithBodyA:contact.bodyA bodyB:contact.bodyB anchorA:contact.bodyA.node.position anchorB:contact.bodyB.node.position ];
+                
+                [pin setMaxLength:self.size.width*0.1];
+                
+                [self animarJuntos:elemento1];
+                [self animarJuntos:elemento2];
+                
+                
+                [self.physicsWorld addJoint:pin];
+            }
+            else {
+                SKSpriteNode *sprite =[[SKSpriteNode alloc]init];
+                
+                
+                [sprite setSize:CGSizeMake(elemento1.size.height*3.5,elemento1.size.width*3.5)];
+                [sprite setAnchorPoint:CGPointMake(0.4, 0.4)];
+                
+                [elemento1 addChild:sprite];
+                
+                [sprite runAction:[SKAction animateWithTextures:self.framesErro timePerFrame:0.1] completion:^{
+                    [sprite removeFromParent];
+                }];
+                
+            }
+        }
     }
 }
 
 
+
+-(void)animarJuntos :(SKSpriteNode*)elemento1{
+    if(![elemento1 childNodeWithName:@"raios"]){
+    SKSpriteNode *sprite =[[SKSpriteNode alloc]init];
+    [sprite setName:@"raios"];
+    
+    [sprite setSize:CGSizeMake(elemento1.size.height*2,elemento1.size.width*2)];
+    [sprite setAnchorPoint:CGPointMake(0.4, 0.4)];
+        [sprite setZPosition:-10];
+    [elemento1 addChild:sprite];
+    
+    [sprite runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:self.framesJuntos timePerFrame:0.1]]];
+    }
+}
+
+
+-(void)lerFrames{
+   
+    
+    self.framesSucesso = [DQUteis lerFrames:[SKTextureAtlas atlasNamed:@"Sucesso"]];
+    self.framesJuntos = [DQUteis lerFrames:[SKTextureAtlas atlasNamed:@"Conectado"]];
+    self.framesErro = [DQUteis lerFrames:[SKTextureAtlas atlasNamed:@"Falha"]];
+}
+
+
+-(BOOL)verificarJuncao :(SKSpriteNode*)elemento1 elemento2:(SKSpriteNode*)elemento2{
+    
+    BOOL pode = false;
+    
+    
+    NSDictionary * info =[self.receita.ligacoes objectForKey:[elemento1.userData objectForKey:@"Nome"]];
+    
+    SKLabelNode *numero = (SKLabelNode*)[elemento1 childNodeWithName:@"Numero"];
+    SKLabelNode *numero2 = (SKLabelNode*)[elemento2 childNodeWithName:@"Numero"];
+    
+    if([numero.text intValue] == [[info objectForKey:@"Quantidade"]intValue]){
+        if ([[[info objectForKey:@"Elemento"]objectForKey:@"Nome"] isEqualToString:[elemento2.userData objectForKey:@"Nome"]] && [[[info objectForKey:@"Elemento"]objectForKey:@"Quantidade"]intValue] == [numero2.text intValue] ) {
+            
+            [elemento1.userData setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
+            [elemento2.userData setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
+            
+            
+            pode = true;
+        }
+    }
+    return pode;
+}
 
 
 
@@ -168,8 +272,8 @@
 
 -(void)shake:(NSInteger)times node:(SKSpriteNode*)elemento {
     
-    NSInteger amplitudeX = 20;
-    NSInteger amplitudeY = 20;
+    NSInteger amplitudeX = 10;
+    NSInteger amplitudeY = 10;
     NSMutableArray * randomActions = [NSMutableArray array];
     for (int i=0; i<times; i++) {
         NSInteger randX = elemento.position.x+arc4random() % amplitudeX - amplitudeX/2;
@@ -193,6 +297,23 @@
     self.nodeTocado = (SKSpriteNode*)[self nodeAtPoint:posicaoToque];
     self.posicaoDelta = CGPointMake(posicaoToque.x - self.nodeTocado.frame.origin.x, posicaoToque.y - self.nodeTocado.frame.origin.y);
     
+    if(toque.tapCount == 2){
+        SKLabelNode *numero = (SKLabelNode*)[self.nodeTocado childNodeWithName:@"Numero"];
+        NSString *numeroString = numero.text;
+        
+        int num = [numeroString intValue];
+        num++;
+        
+        [numero setText:[NSString stringWithFormat:@"%d",num]];
+        
+        [self.nodeTocado.userData setObject:[NSNumber numberWithInt:num] forKey:@"Quantidade"];
+        
+        [self.nodeTocado removeAllChildren];
+        [self.nodeTocado addChild:numero];
+    }
+    self.lastTouch = event.timestamp ;
+    
+    
 }
 
 
@@ -201,6 +322,9 @@
     
     UITouch *toque = [touches anyObject];
     CGPoint posicaoToque = [toque locationInNode:self];
+    
+    
+    
     
     if ([self.nodeTocado.name isEqualToString:@"Elemento"]) {
         [self.nodeTocado removeAllActions];
@@ -221,6 +345,18 @@
     
     [super touchesEnded:touches withEvent:event];
     
+    
+    if(event.timestamp - self.lastTouch > 0.5 && [self.nodeTocado hasActions] && [self.nodeTocado.name isEqualToString:@"Elemento"]){
+        
+        SKLabelNode *numero = (SKLabelNode*)[self.nodeTocado childNodeWithName:@"Numero"];
+        [numero setText:[NSString stringWithFormat:@"%d",1]];
+        
+        [self.nodeTocado.userData setObject:[NSNumber numberWithInt:1] forKey:@"Quantidade"];
+        
+        [self.nodeTocado removeAllChildren];
+        [self.nodeTocado addChild:numero];
+        
+    }
     
     if ([self.nodeTocado.name isEqualToString:@"Elemento"]) {
         [self shake:4 node:self.nodeTocado];

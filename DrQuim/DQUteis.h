@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 //Leonardo, alterado pois agora cada objeto do jogo definirá sua bitMask
 //define as categorias de colisao
@@ -24,5 +25,6 @@ static const UInt32 EscadaCategoria = 0x1 << 4;
 +(NSMutableArray*)ordenarValores:(NSMutableArray*)array;
 +(BOOL)sortearChanceSim:(float)chanceSim;
 +(BOOL)array:(NSArray*)array contemString:(NSString*)stringTestar;
++(NSMutableArray*)lerFrames :(SKTextureAtlas*)pastaFrames;
 
 @end
