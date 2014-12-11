@@ -19,6 +19,9 @@
     if (self=[super initWithImageNamed:[NSString stringWithFormat:@"%@.png",nomeFruta]]) {
         [self setUserInteractionEnabled:YES];
         [self setNomeFruta:nomeFruta];
+        
+        [self setScale:0.5];
+        [self setZPosition:100];
     }
     return self;
 }

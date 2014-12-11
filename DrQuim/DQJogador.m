@@ -642,6 +642,7 @@
 -(void)adicionarFruta:(NSNotification*)notification{
     NSString *nomeFruta=[notification.userInfo objectForKey:@"NomeFruta"];
     
-    [self.itens receberItem:nomeFruta quantidade:1];
+    //TODO:- Decidir como fazer com frutas e legumes :P
+    //[self.itens receberItem:nomeFruta quantidade:1];
 }
 @end

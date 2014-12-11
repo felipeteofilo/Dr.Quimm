@@ -35,4 +35,7 @@ typedef NS_ENUM(int, TamanhoTexto){
 @property AVAudioPlayer *playerSomNPC;
 @property AVAudioPlayer *playerContador;
 
+-(AVAudioPlayer*)configuraPlayerSomUrlSom:(NSURL*)urlSom nLoops:(int)nLoops;
+-(NSURL*)urlParaSom:(NSString*)nomeSom;
+-(NSDictionary*)arquivoPlist;
 @end

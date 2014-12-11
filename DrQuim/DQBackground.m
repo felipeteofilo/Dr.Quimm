@@ -63,9 +63,9 @@
         for (SKNode *plataforma in [[self childNodeWithName:NomeNodePlataformas]children]) {
             if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > posicaoYJogador) {
                 //Evita ficar chamando toda hora
-                if (!(plataforma.physicsBody.categoryBitMask & PlataformaAtivadaCategoria)!=0) {
+               // if (!(plataforma.physicsBody.categoryBitMask & PlataformaAtivadaCategoria)!=0) {
                     [self plataformaDesativadaCategoria:plataforma];
-                }
+                //}
             }
         }
     }

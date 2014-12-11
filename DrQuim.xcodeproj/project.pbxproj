@@ -170,6 +170,7 @@
 		C5B1740B1968C77800143B8D /* DQConfiguracaoFase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1740A1968C77800143B8D /* DQConfiguracaoFase.m */; };
 		C5B7FBDF19762A1A00C2CAFC /* BalaoAlerta.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B7FBDE19762A1A00C2CAFC /* BalaoAlerta.png */; };
 		C5BFD5A4198C4F53005F3460 /* DQVidaControle.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFD5A3198C4F53005F3460 /* DQVidaControle.m */; };
+		C5CD8C9B1A390E8300FFF059 /* Frutas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5CD8C9A1A390E8300FFF059 /* Frutas.atlas */; };
 		C5DB265219A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5DB265119A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 */; };
 		C5E1F40D198AD0A300F7A320 /* itens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C5E1F40B198AD0A300F7A320 /* itens.atlas */; };
 		C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E1F414198AECC800F7A320 /* DQControleUserDefalts.m */; };
@@ -466,6 +467,7 @@
 		C5B7FBDE19762A1A00C2CAFC /* BalaoAlerta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BalaoAlerta.png; sourceTree = "<group>"; };
 		C5BFD5A2198C4F53005F3460 /* DQVidaControle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQVidaControle.h; sourceTree = "<group>"; };
 		C5BFD5A3198C4F53005F3460 /* DQVidaControle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQVidaControle.m; sourceTree = "<group>"; };
+		C5CD8C9A1A390E8300FFF059 /* Frutas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Frutas.atlas; sourceTree = "<group>"; };
 		C5DB265119A63B20004A62FF /* FalaPersonagens-Grande-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "FalaPersonagens-Grande-2.mp3"; sourceTree = "<group>"; };
 		C5E1F40B198AD0A300F7A320 /* itens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = itens.atlas; sourceTree = "<group>"; };
 		C5E1F413198AECC800F7A320 /* DQControleUserDefalts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQControleUserDefalts.h; sourceTree = "<group>"; };
@@ -874,6 +876,7 @@
 				9469691C19A2A31100087B20 /* CutScenes */,
 				C5FA2C9B1A02B47D002F244F /* MapaIlha */,
 				C5B7FBDE19762A1A00C2CAFC /* BalaoAlerta.png */,
+				C5CD8C9A1A390E8300FFF059 /* Frutas.atlas */,
 				23BFADBC1966E4FB00691C04 /* setinhas.png */,
 				C543E1331998600A00C90F19 /* IniciarJogo.png */,
 				3CAE561519AA7B5A00C5B6E2 /* fundoMaleta.png */,
@@ -1285,6 +1288,7 @@
 				C552650019A24A5B00BD59CE /* MusicaFundo01.mp3 in Resources */,
 				23D665B81A081B0200DD441D /* Fase1_Parte4.png in Resources */,
 				CD54D9BD19A51F7700C2798D /* maletaFrente.png in Resources */,
+				C5CD8C9B1A390E8300FFF059 /* Frutas.atlas in Resources */,
 				C5FFB43D19A939FF004F3CD0 /* Maleta_H2SO4.png in Resources */,
 				C5716C7F1A38A33800A8CC0A /* FrutasDefinicao.plist in Resources */,
 				7505B4A619FACB3E00769C87 /* FasesEspecificas.plist in Resources */,

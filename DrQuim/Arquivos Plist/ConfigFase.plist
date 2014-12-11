@@ -196,15 +196,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>Frutas</key>
-				<array>
-					<dict>
-						<key>NomeFruta</key>
-						<string></string>
-						<key>Posicao</key>
-						<string></string>
-					</dict>
-				</array>
 				<key>CorpoFisicoChao</key>
 				<array>
 					<string>{0, 0}</string>
@@ -425,9 +416,9 @@
 				<array>
 					<dict>
 						<key>NomeFruta</key>
-						<string>fruit1</string>
+						<string></string>
 						<key>Posicao</key>
-						<string>{100, 100}</string>
+						<string></string>
 					</dict>
 				</array>
 				<key>Animais</key>
@@ -472,6 +463,15 @@
 				</array>
 			</dict>
 			<dict>
+				<key>Frutas</key>
+				<array>
+					<dict>
+						<key>NomeFruta</key>
+						<string>fruit1</string>
+						<key>Posicao</key>
+						<string>{500, 500}</string>
+					</dict>
+				</array>
 				<key>Animais</key>
 				<array/>
 				<key>CorpoFisicoChao</key>

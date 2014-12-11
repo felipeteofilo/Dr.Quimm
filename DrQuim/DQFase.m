@@ -68,6 +68,8 @@
     //Leonardo - Alterado para classe específica
     self.backgroundAtual=[[DQBackground alloc]initBackgroundFase:self.faseAtual parte:self.parteFaseAtual naPosicao:CGPointZero infoParte:[self infoParteFase:self.parteFaseAtual]];
     
+    [self.backgroundAtual criaFrutasBackground:[[self infoParteFase:self.parteFaseAtual+1]objectForKey:@"Frutas"]];
+    
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:self.backgroundAtual];
     
