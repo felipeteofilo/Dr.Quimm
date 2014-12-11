@@ -55,38 +55,22 @@
 		<dict>
 			<key>Musicas</key>
 			<array>
-				<string>MusicaFundo01</string>
-				<string>MusicaFundo02</string>
+				<string>Helicoptero</string>
 			</array>
 			<key>Efeitos</key>
-			<array>
-				<string>Fundo08 - Vento </string>
-				<string>Fundo01 - Passaros </string>
-				<string>Fundo07 - Sapos </string>
-			</array>
+			<array/>
 		</dict>
 		<dict>
 			<key>Musicas</key>
-			<array>
-				<string>MusicaFundo04</string>
-			</array>
+			<array/>
 			<key>Efeitos</key>
-			<array>
-				<string>Fundo08 - Vento </string>
-				<string>Fundo01 - Passaros </string>
-			</array>
+			<array/>
 		</dict>
 		<dict>
 			<key>Musicas</key>
-			<array>
-				<string>MusicaFundo02</string>
-				<string>MusicaFundo03</string>
-			</array>
+			<array/>
 			<key>Efeitos</key>
-			<array>
-				<string>Fundo08 - Vento </string>
-				<string>Fundo01 - Passaros </string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>NPC</key>

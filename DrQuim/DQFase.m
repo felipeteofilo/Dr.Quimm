@@ -88,11 +88,6 @@
     [self configurarSomFundo];
     [self configurarControles];
     
-    //Posta uma notificação para alterar o controle de som da scene
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoTipoScene object:nil userInfo:[NSDictionary dictionaryWithObjects:@[[NSNumber numberWithInt:0],[NSNumber numberWithInt:self.faseAtual]] forKeys:@[@"tipoFase",@"idFase"]]];
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoMusicaFundo object:nil];
 }
 
 -(void)configurarSomFundo{
@@ -363,7 +358,12 @@
     [DQControleUserDefalts setFaseAtual:self.faseAtual];
     [DQControleUserDefalts setParteFaseAtual:self.parteFaseAtual];
     
-    [self.controleSom playerMusicaFundo];
+    
+    //Posta uma notificação para alterar o controle de som da scene
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoTipoScene object:nil userInfo:[NSDictionary dictionaryWithObjects:@[[NSNumber numberWithInt:0],[NSNumber numberWithInt:self.faseAtual]] forKeys:@[@"tipoFase",@"idFase"]]];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoMusicaFundo object:nil];
 }
 
 
@@ -517,4 +517,5 @@
     //seta a nova posicao do mundo
     self.mundo.position = posicaoMundo;
 }
+
 @end

@@ -20,6 +20,11 @@
         //Leonardo- Removido controle de SOM para faz Atualizacao
         //self.controleSomScene=[[DQControleSomScene alloc]initControleSomFundo:CutScene nomeSom:[self.controleCutScene somCenaCutScene] indiceCena:self.cutSceneAtual];
         
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoTipoScene object:nil userInfo:[NSDictionary dictionaryWithObjects:@[[NSNumber numberWithInt:1],[NSNumber numberWithInt:cutSceneAtual+1]] forKeys:@[@"tipoFase",@"idFase"]]];
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoMusicaFundo object:nil];
+        
         if (![self.controleCutScene fimCutScene]) {
             [self mostrarCena];
             //Leonardo- Removido controle de SOM para faz Atualizacao
@@ -50,6 +55,9 @@
         //Leonardo- Removido controle de SOM para faz Atualizacao
 //        [self.controleSomScene removeActionForKey:@"tocandoSom"];
 //        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene nLoops:-1]];
+        
+        //Posta notificaçao p efeito de fundo
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoFaseEfeito object:nil userInfo:[NSDictionary dictionaryWithObject:nomeSomCenaCutScene forKey:@"idEfeitoCena"]];
         
     }else if ([nomeSomCenaCutScene isEqualToString:@"REMOVERSOM"]){
 //        //Leonardo- Removido controle de SOM para faz Atualizacao

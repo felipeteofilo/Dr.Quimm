@@ -29,22 +29,32 @@
 -(void)tocarEfeitoCena:(NSNotification*)notificacao{
     [self.playerEfeitoCena stop];
     
-    int idEfeito =[[notificacao.userInfo objectForKey:@"idEfeitoCena"]intValue];
+    NSString *nomeEfeito;
     
-    NSString *nomeEfeito= [[self.sonsDisponiveisScene objectForKey:@"Efeitos"]objectAtIndex:idEfeito];
+    if (self.tipoCena == CutScene) {
+        nomeEfeito= [notificacao.userInfo objectForKey:@"idEfeitoCena"];
+    }else{
+        
+        int idEfeito =[[notificacao.userInfo objectForKey:@"idEfeitoCena"]intValue];
+        
+        nomeEfeito= [[self.sonsDisponiveisScene objectForKey:@"Efeitos"]objectAtIndex:idEfeito];
+    }
     
     self.playerEfeitoCena=[self configuraPlayerSomUrlSom:[self urlParaSom:nomeEfeito] nLoops:0];
     [self.playerEfeitoCena play];
+    
 }
 -(void)tocarMusicaCena:(NSNotification*)notificacao{
     [self.playerMusicaFundo stop];
     
-    int indiceMusica=[[notificacao.userInfo objectForKey:@"idMusicaCena"]intValue];
-    NSString *nomeMusica=[[self.sonsDisponiveisScene objectForKey:@"Musicas"]objectAtIndex:indiceMusica];
-    
-    self.playerMusicaFundo=[self configuraPlayerSomUrlSom:[self urlParaSom:nomeMusica] nLoops:-1];
-    
-    [self tocarMusicaFundo];
+    if ([[self.sonsDisponiveisScene objectForKey:@"Musicas"] count]>0){
+        int indiceMusica=[[notificacao.userInfo objectForKey:@"idMusicaCena"]intValue];
+        NSString *nomeMusica=[[self.sonsDisponiveisScene objectForKey:@"Musicas"]objectAtIndex:indiceMusica];
+        
+        self.playerMusicaFundo=[self configuraPlayerSomUrlSom:[self urlParaSom:nomeMusica] nLoops:-1];
+        
+        [self tocarMusicaFundo];
+    }
 }
 -(void)tocarSomAnimal:(NSNotification*)notificacao{
     //Para o animal receberemos o nome dele e como convencao colocamos o nome do arquivo de som igual ao nome do animal
