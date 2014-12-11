@@ -22,7 +22,7 @@
     
     if(self = [super init]){
         
-        
+        self.compostosParaMix = [[NSMutableArray alloc]init];
         
         [self setFrame:CGRectMake(frame.size.width * 0.5 - (frame.size.width * 0.3)/2,0,frame.size.width * 0.3,frame.size.width * 0.09)];
         
@@ -34,6 +34,8 @@
         
         
         [self.botaoMix setBackgroundImage:[UIImage imageNamed:@"btnMIX"] forState:UIControlStateNormal];
+        
+        [self.botaoMix addTarget:self action:@selector(mix) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
     
@@ -41,15 +43,19 @@
 }
 
 -(void)mostrarBotaoMix{
+    [self.botaoMix setEnabled:NO];
     [self.superview addSubview:self.botaoMix];
 }
 
 
+
+
+
 -(void)verificarComposto:(NSString*)composto{
     
-    for (int i = 0; i< self.compostosNecessarios.count;i++) {
+    for (int i = 0; i< [self.receita.compostos allKeys].count;i++) {
         
-        if([[self.compostosNecessarios objectAtIndex:i] isEqualToString:composto]){
+        if([[[self.receita.compostos allKeys] objectAtIndex:i] isEqualToString:composto]){
             
             for (int j = 0; j< self.compostosParaMix.count; j++) {
                 if ([[self.compostosParaMix objectAtIndex:j]isEqualToString:composto]) {
@@ -57,29 +63,39 @@
                 }
                 if (j == self.compostosParaMix.count -1) {
                     [self.compostosParaMix addObject:composto];
+                    if(self.compostosParaMix.count == [self.receita.compostos allKeys].count){
+                        [self.botaoMix setEnabled:YES];
+                    }
+                    
                 }
+            }
+            if (self.compostosParaMix.count  == 0) {
+                [self.compostosParaMix addObject:composto];
             }
             break;
         }
     }
 }
 
--(void)clicou:(DQTelaInfoReceitas *)sender{
-    NSLog(@"teste");
+-(void)mix{
+    
+    DQViewControllerTransformacao *viewTransformacao =[[DQViewControllerTransformacao alloc]initWithReceita:self.receita.nome];
+    
+    if([self.superview.nextResponder isKindOfClass:[UIViewController class]]){
+        [((UIViewController*)self.superview.nextResponder)presentViewController:viewTransformacao animated:NO completion:nil];
+    }
+
 }
 
 -(void)adicionarComposto :(NSString*)nome{
     
     [self verificarComposto:nome];
-    
+    if([self subviews]){
+        [[self subviews] makeObjectsPerformSelector: @selector(removeFromSuperview)];
+    }
     
     for (int i = 0; i < self.compostosParaMix.count; i++) {
-        
-        if([self subviews]){
-            [[self subviews] makeObjectsPerformSelector: @selector(removeFromSuperview)];
-        }
-        
-        CGSize tamanhoImagem = CGSizeMake(self.frame.size.height *0.20, self.frame.size.height *0.20);
+        CGSize tamanhoImagem = CGSizeMake(self.frame.size.height *0.7, self.frame.size.height *0.7);
         
         NSString *imagem ;
         Composto *composto = [DQCoreDataController procurarComposto:[self.compostosParaMix objectAtIndex:i]];

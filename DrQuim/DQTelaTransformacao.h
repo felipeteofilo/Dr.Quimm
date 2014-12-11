@@ -10,6 +10,7 @@
 #import "DQCoreDataController.h"
 #import "DQConfigMenu.h"
 #import "DQUteis.h"
+#import "DQJogador.h"
 
 static const UInt32 ElementoCategoria = 0x1 << 0;
 static const UInt32 ParedesCategoria = 0x1 << 1;
@@ -22,7 +23,7 @@ static const UInt32 ParedesCategoria = 0x1 << 1;
 @property CGPoint posicaoDelta;
 @property float lastTouch;
 
-
+@property int ligacoes;
 @property NSArray *framesSucesso;
 @property NSArray *framesErro;
 
@@ -34,7 +35,7 @@ static const UInt32 ParedesCategoria = 0x1 << 1;
 @property Receita *receita;
 
 
--(id)initWithSize:(CGSize)size :(NSArray*)elementos :(Receita*)receita;
+-(id)initWithSize:(CGSize)size receita:(Receita*)receita;
 
 
 @end

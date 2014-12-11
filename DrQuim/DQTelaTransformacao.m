@@ -12,7 +12,7 @@
 
 
 
--(id)initWithSize:(CGSize)size :(NSArray*)elementos :(Receita*)receita{
+-(id)initWithSize:(CGSize)size receita:(Receita*)receita{
     if (self = [super initWithSize:size]) {
         SKSpriteNode *fundo = [[SKSpriteNode alloc]initWithImageNamed:@"transform_fundo"];
         
@@ -23,14 +23,27 @@
         
         [self lerFrames];
         self.lugaresAnteriores =[[NSMutableArray alloc]init];
-        [self criarElementos:elementos];
+        [self criarElementos:receita.elementos];
         [self.physicsWorld setContactDelegate:self];
         
         self.receita = receita;
         
         [self setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
         
-       
+        
+        
+        
+        SKLabelNode *formula = [[SKLabelNode alloc]initWithFontNamed:[DQConfigMenu fonteMenu]];
+        
+        [formula setText:receita.resultado];
+        
+        [formula setPosition:CGPointMake(self.size.width *0.8, self.size.height*0.9)];
+        
+        
+        
+        [self addChild:formula];
+        
+        
         [self.physicsBody setCategoryBitMask:ParedesCategoria];
         
         
@@ -173,9 +186,9 @@
                 SKSpriteNode *sprite =[[SKSpriteNode alloc]init];
                 
                 
-                [sprite setSize:CGSizeMake(elemento1.size.height*3.5,elemento1.size.width*3.5)];
+                [sprite setSize:CGSizeMake(elemento1.size.height*4.5,elemento1.size.width*4.5)];
                 [sprite setAnchorPoint:CGPointMake(0.4, 0.4)];
-                
+                [sprite setZPosition:-10];
                 [elemento1 addChild:sprite];
                 
                 [sprite runAction:[SKAction animateWithTextures:self.framesSucesso timePerFrame:0.1] completion:^{
@@ -186,6 +199,7 @@
                 
                 SKPhysicsJointLimit *pin = [SKPhysicsJointLimit jointWithBodyA:contact.bodyA bodyB:contact.bodyB anchorA:contact.bodyA.node.position anchorB:contact.bodyB.node.position ];
                 
+               
                 [pin setMaxLength:self.size.width*0.1];
                 
                 [self animarJuntos:elemento1];
@@ -202,7 +216,7 @@
                 [sprite setAnchorPoint:CGPointMake(0.4, 0.4)];
                 
                 [elemento1 addChild:sprite];
-                
+                [sprite setZPosition:-10];
                 [sprite runAction:[SKAction animateWithTextures:self.framesErro timePerFrame:0.1] completion:^{
                     [sprite removeFromParent];
                 }];
@@ -216,21 +230,21 @@
 
 -(void)animarJuntos :(SKSpriteNode*)elemento1{
     if(![elemento1 childNodeWithName:@"raios"]){
-    SKSpriteNode *sprite =[[SKSpriteNode alloc]init];
-    [sprite setName:@"raios"];
-    
-    [sprite setSize:CGSizeMake(elemento1.size.height*2,elemento1.size.width*2)];
-    [sprite setAnchorPoint:CGPointMake(0.4, 0.4)];
+        SKSpriteNode *sprite =[[SKSpriteNode alloc]init];
+        [sprite setName:@"raios"];
+        
+        [sprite setSize:CGSizeMake(elemento1.size.height*2,elemento1.size.width*2)];
+        [sprite setAnchorPoint:CGPointMake(0.35, 0.35)];
         [sprite setZPosition:-10];
-    [elemento1 addChild:sprite];
-    
-    [sprite runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:self.framesJuntos timePerFrame:0.1]]];
+        [elemento1 addChild:sprite];
+        
+        [sprite runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:self.framesJuntos timePerFrame:0.1]]];
     }
 }
 
 
 -(void)lerFrames{
-   
+    
     
     self.framesSucesso = [DQUteis lerFrames:[SKTextureAtlas atlasNamed:@"Sucesso"]];
     self.framesJuntos = [DQUteis lerFrames:[SKTextureAtlas atlasNamed:@"Conectado"]];
@@ -254,6 +268,25 @@
             [elemento1.userData setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
             [elemento2.userData setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
             
+            if(elemento1.physicsBody.joints.count >0){
+                for (int i = 0; i < elemento1.physicsBody.joints.count; i++) {
+                    [[[[[elemento1.physicsBody.joints objectAtIndex:i]bodyA]node]userData]setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
+                    [[[[[elemento1.physicsBody.joints objectAtIndex:i]bodyB]node]userData]setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
+                }
+            }
+            if(elemento2.physicsBody.joints.count >0){
+                for (int i = 0; i < elemento2.physicsBody.joints.count; i++) {
+                    
+                    [[[[[elemento2.physicsBody.joints objectAtIndex:i]bodyA]node]userData]setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
+                    [[[[[elemento2.physicsBody.joints objectAtIndex:i]bodyB]node]userData]setObject:[info objectForKey:@"Resultado"] forKey:@"Nome"];
+                }
+            }
+            
+            self.ligacoes++;
+            
+            if(self.ligacoes >= [self.receita.numero_ligacoes intValue]){
+                
+            }
             
             pode = true;
         }
@@ -261,7 +294,9 @@
     return pode;
 }
 
-
+-(void)transformacaoCompleta{
+    [[DQJogador sharedJogador]receberItem:self.receita.id_item_gerar quantidade:1];
+}
 
 //metodo para centralizar o physics body na textura dele
 - (CGPathRef)pathForRectangleOfSize:(CGSize)size withAnchorPoint:(CGPoint)anchor {
@@ -346,7 +381,7 @@
     [super touchesEnded:touches withEvent:event];
     
     
-    if(event.timestamp - self.lastTouch > 0.5 && [self.nodeTocado hasActions] && [self.nodeTocado.name isEqualToString:@"Elemento"]){
+    if(event.timestamp - self.lastTouch > 0.5 && [self.nodeTocado hasActions] && [self.nodeTocado.name isEqualToString:@"Elemento"] && !self.nodeTocado.physicsBody.joints.count > 0){
         
         SKLabelNode *numero = (SKLabelNode*)[self.nodeTocado childNodeWithName:@"Numero"];
         [numero setText:[NSString stringWithFormat:@"%d",1]];

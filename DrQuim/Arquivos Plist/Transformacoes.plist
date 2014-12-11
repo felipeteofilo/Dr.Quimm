@@ -503,8 +503,21 @@
 	<key>Receitas</key>
 	<array>
 		<dict>
+			<key>NumeroLigacoes</key>
+			<integer>5</integer>
+			<key>Elementos</key>
+			<array>
+				<string>Nitrogênio</string>
+				<string>Nitrogênio</string>
+				<string>Potássio</string>
+				<string>Potássio</string>
+				<string>Oxigênio</string>
+				<string>Oxigênio</string>
+				<string>Chumbo</string>
+				<string>Iodo</string>
+			</array>
 			<key>ResultadoFinal</key>
-			<string>PbI2+KNO3</string>
+			<string>PbI2+2KNO3</string>
 			<key>Ligacoes</key>
 			<dict>
 				<key>KN</key>

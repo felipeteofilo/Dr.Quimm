@@ -12,15 +12,6 @@
 #import "DQScrollView.h"
 
 
-@class DQTelaInfoReceitas;
-
-@protocol DQTelaInfoReceitasDelegate <NSObject>
-
--(void)clicou:(DQTelaInfoReceitas*)sender;
-
-@end
-
-
 @interface DQTelaInfoReceitas : UIScrollView
 
 @property (nonatomic, assign) id delegate;
@@ -28,6 +19,7 @@
 @property UIView *viewInfo;
 @property NSString* ultimaReceita;
 @property DQScrollView *scrollViewCompostos;
+@property Receita *receitaEscolhida;
 
 
 -(id)initComReceitas:(NSArray*)receitas frame:(CGRect)frame;

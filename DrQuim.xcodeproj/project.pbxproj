@@ -15,7 +15,6 @@
 		3C44C5F21A38CF2B009EF1A3 /* Conectado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5EF1A38CF2B009EF1A3 /* Conectado.atlas */; };
 		3C44C5F31A38CF2B009EF1A3 /* Falha.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5F01A38CF2B009EF1A3 /* Falha.atlas */; };
 		3C44C5F41A38CF2B009EF1A3 /* Sucesso.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C44C5F11A38CF2B009EF1A3 /* Sucesso.atlas */; };
-		3C56EC681A38B29B00EAC536 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EC671A38B29B00EAC536 /* Receita.m */; };
 		3C56EC6E1A38C05400EAC536 /* Andando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC691A38C05400EAC536 /* Andando.atlas */; };
 		3C56EC6F1A38C05400EAC536 /* Caindo.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC6A1A38C05400EAC536 /* Caindo.atlas */; };
 		3C56EC701A38C05400EAC536 /* Derrapando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC6B1A38C05400EAC536 /* Derrapando.atlas */; };
@@ -23,6 +22,9 @@
 		3C56EC721A38C05400EAC536 /* Parado.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC6D1A38C05400EAC536 /* Parado.atlas */; };
 		3C56EC741A38C09000EAC536 /* Pulando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC731A38C09000EAC536 /* Pulando.atlas */; };
 		3C56EC781A38C96100EAC536 /* transform_fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C56EC771A38C96100EAC536 /* transform_fundo.png */; };
+		3C6BF47A1A398488009B8048 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BF4791A398488009B8048 /* Receita.m */; };
+		3C6BF47D1A39958F009B8048 /* DQViewControllerInfoTransformacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BF47C1A39958F009B8048 /* DQViewControllerInfoTransformacao.m */; };
+		3C6BF4801A399622009B8048 /* DQViewControllerTransformacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BF47F1A399622009B8048 /* DQViewControllerTransformacao.m */; };
 		3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CABE62D1977533F0064199A /* DQCoberturaBackground.m */; };
 		3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */; };
 		3CAC84281979F63D000FB1A1 /* Escalando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84231979F63D000FB1A1 /* Escalando.atlas */; };
@@ -286,8 +288,6 @@
 		3C44C5EF1A38CF2B009EF1A3 /* Conectado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Conectado.atlas; sourceTree = "<group>"; };
 		3C44C5F01A38CF2B009EF1A3 /* Falha.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Falha.atlas; sourceTree = "<group>"; };
 		3C44C5F11A38CF2B009EF1A3 /* Sucesso.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sucesso.atlas; sourceTree = "<group>"; };
-		3C56EC661A38B29B00EAC536 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
-		3C56EC671A38B29B00EAC536 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
 		3C56EC691A38C05400EAC536 /* Andando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Andando.atlas; path = Animacoes/Andando.atlas; sourceTree = "<group>"; };
 		3C56EC6A1A38C05400EAC536 /* Caindo.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Caindo.atlas; path = Animacoes/Caindo.atlas; sourceTree = "<group>"; };
 		3C56EC6B1A38C05400EAC536 /* Derrapando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Derrapando.atlas; path = Animacoes/Derrapando.atlas; sourceTree = "<group>"; };
@@ -295,6 +295,12 @@
 		3C56EC6D1A38C05400EAC536 /* Parado.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Parado.atlas; path = Animacoes/Parado.atlas; sourceTree = "<group>"; };
 		3C56EC731A38C09000EAC536 /* Pulando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Pulando.atlas; path = Animacoes/Pulando.atlas; sourceTree = "<group>"; };
 		3C56EC771A38C96100EAC536 /* transform_fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transform_fundo.png; sourceTree = "<group>"; };
+		3C6BF4781A398488009B8048 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
+		3C6BF4791A398488009B8048 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
+		3C6BF47B1A39958F009B8048 /* DQViewControllerInfoTransformacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQViewControllerInfoTransformacao.h; sourceTree = "<group>"; };
+		3C6BF47C1A39958F009B8048 /* DQViewControllerInfoTransformacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQViewControllerInfoTransformacao.m; sourceTree = "<group>"; };
+		3C6BF47E1A399622009B8048 /* DQViewControllerTransformacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQViewControllerTransformacao.h; sourceTree = "<group>"; };
+		3C6BF47F1A399622009B8048 /* DQViewControllerTransformacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQViewControllerTransformacao.m; sourceTree = "<group>"; };
 		3CABE62C1977533F0064199A /* DQCoberturaBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoberturaBackground.h; sourceTree = "<group>"; };
 		3CABE62D1977533F0064199A /* DQCoberturaBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoberturaBackground.m; sourceTree = "<group>"; };
 		3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = AndandoDr.atlas; path = Animacoes/AndandoDr.atlas; sourceTree = "<group>"; };
@@ -836,8 +842,8 @@
 				7531C2171A112499002CC7F5 /* FaseConfigurada.h */,
 				7531C2181A112499002CC7F5 /* FaseConfigurada.m */,
 				75FDF3F319F6E33B007E1C66 /* DrQuim.xcdatamodeld */,
-				3C56EC661A38B29B00EAC536 /* Receita.h */,
-				3C56EC671A38B29B00EAC536 /* Receita.m */,
+				3C6BF4781A398488009B8048 /* Receita.h */,
+				3C6BF4791A398488009B8048 /* Receita.m */,
 				75FDF40019F6F1AB007E1C66 /* Usuario.h */,
 				75FDF40119F6F1AB007E1C66 /* Usuario.m */,
 				75FDF3F719F6E584007E1C66 /* DQCoreDataController.h */,
@@ -1212,8 +1218,12 @@
 				C511258B1973AB4E00CECCAD /* DQHudController.m */,
 				94080EB51933BA290024FB94 /* DQViewController.h */,
 				94080EB61933BA290024FB94 /* DQViewController.m */,
+				3C6BF47B1A39958F009B8048 /* DQViewControllerInfoTransformacao.h */,
+				3C6BF47C1A39958F009B8048 /* DQViewControllerInfoTransformacao.m */,
 				75F9897F1A30CCBF00F7F306 /* DQViewCompostosMix.h */,
 				75F989801A30CCBF00F7F306 /* DQViewCompostosMix.m */,
+				3C6BF47E1A399622009B8048 /* DQViewControllerTransformacao.h */,
+				3C6BF47F1A399622009B8048 /* DQViewControllerTransformacao.m */,
 				75F7DDE31A3607C300EA354E /* DQTelaTransformacao.h */,
 				75F7DDE41A3607C300EA354E /* DQTelaTransformacao.m */,
 				75E512921A15314F001F3F83 /* MarqueeLabel.h */,
@@ -1630,7 +1640,7 @@
 				75F9E2271A002C8100DFF3AE /* DQAlertasControle.m in Sources */,
 				758D783E1A0C055000ACB248 /* DQReceita.m in Sources */,
 				758D78351A0C028600ACB248 /* Elemento.m in Sources */,
-				3C56EC681A38B29B00EAC536 /* Receita.m in Sources */,
+				3C6BF47A1A398488009B8048 /* Receita.m in Sources */,
 				94080EB11933BA290024FB94 /* DQAppDelegate.m in Sources */,
 				CD54D9B019A51E4E00C2798D /* DQTransformacaoTela.m in Sources */,
 				C5223F0219F6CF3A00C17FAD /* DQSceneTeste.m in Sources */,
@@ -1671,6 +1681,8 @@
 				75F54FCE1A1BD62800C1F454 /* DQCompostosJogador.m in Sources */,
 				C52FBF1919A18D0A0059E973 /* DQAnimalCoelho.m in Sources */,
 				758D78321A0C014500ACB248 /* DQElemento.m in Sources */,
+				3C6BF4801A399622009B8048 /* DQViewControllerTransformacao.m in Sources */,
+				3C6BF47D1A39958F009B8048 /* DQViewControllerInfoTransformacao.m in Sources */,
 				C513748C19FABFBB006E75D2 /* DQBackground.m in Sources */,
 				9488196019901A4600609A0F /* DQItensJogador.m in Sources */,
 			);

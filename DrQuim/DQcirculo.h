@@ -24,6 +24,7 @@
 
 @property DQTelaInfoComposto * infoComposto;
 @property DQViewCompostosMix *mix;
+@property DQTelaInfoReceitas *telaReceitas;
 
 //@property DQTelaInfoComposto *infoComposto;
 

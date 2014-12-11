@@ -133,7 +133,9 @@
         
         
         [self montarCompostosNecessários:[receita.compostos allKeys]];
-        [self.delegate clicou:self];
+        
+        self.receitaEscolhida = receita;
+        
         
         [self.viewInfo addSubview:info];
     

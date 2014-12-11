@@ -144,6 +144,15 @@
             if([[receitasPlist objectAtIndex:i]objectForKey:@"Ligacoes"]){
                 novaReceita.ligacoes = [[receitasPlist objectAtIndex:i]objectForKey:@"Ligacoes"];
             }
+            if([[receitasPlist objectAtIndex:i]objectForKey:@"ResultadoFinal"]){
+                novaReceita.resultado = [[receitasPlist objectAtIndex:i]objectForKey:@"ResultadoFinal"];
+            }
+            if([[receitasPlist objectAtIndex:i]objectForKey:@"Elementos"]){
+                novaReceita.elementos = [[receitasPlist objectAtIndex:i]objectForKey:@"Elementos"];
+            }
+            if([[receitasPlist objectAtIndex:i]objectForKey:@"NumeroLigacoes"]){
+                novaReceita.numero_ligacoes = [[receitasPlist objectAtIndex:i]objectForKey:@"NumeroLigacoes"];
+            }
             
             
             novaReceita.compostos = [[receitasPlist objectAtIndex:i]objectForKey:@"Compostos"];

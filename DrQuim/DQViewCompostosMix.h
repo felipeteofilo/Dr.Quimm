@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
 #import "DQCoreDataController.h"
 #import "DQTelaInfoReceitas.h"
+#import "DQTelaTransformacao.h"
+#import "DQViewControllerTransformacao.h"
 
-@interface DQViewCompostosMix : UIScrollView <DQTelaInfoReceitasDelegate>
+@interface DQViewCompostosMix : UIScrollView 
 
 
 
 
-@property NSArray *compostosNecessarios;
+@property Receita *receita;
 @property NSMutableArray * compostosParaMix;
 @property UIButton *botaoMix;
 

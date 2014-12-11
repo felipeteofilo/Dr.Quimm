@@ -7,13 +7,7 @@
 //
 
 #import "DQViewController.h"
-#import "DQPopularCoreData.h"
-#import "DQComposto.h"
-#import "DQElemento.h"
-#import "DQReceita.h"
-#import "DQTelaInfoComposto.h"
-#import "DQTelaInfoReceitas.h"
-#import "DQTelaTransformacao.h"
+#import "DQViewControllerInfoTransformacao.h"
 
 
 
@@ -24,42 +18,20 @@
     //PARA O CIRCULO DE TRANSFORMAÇÃO
     [super viewDidAppear:animated];
     
-    SKView * skView = (SKView *)self.view;
-    //skView.showsPhysics = YES;
-    
-    DQPopularCoreData *core = [[DQPopularCoreData alloc]init];
-    
-    [core iniciarReferenciasTransformacoes];
-    
-    //Array temporarios - substitui pela array de compostos que o jogador possui
-    NSArray *arrayDeCompostos = [[NSArray alloc]initWithObjects:@"Ácido Sulfúrico", @"Açúcar (Sacarose)", @"Glicerina", @"Permanganato de potássio", @"Nitrato de chumbo II", @"Sulfato de potássio", @"Iodeto de Potássio", @"Nitrato de Potássio", @"Sulfato de Magnésio", @"Cloreto de sódio",@"Nitrato de Chumbo", nil];
-    int numeroDeCompostos = arrayDeCompostos.count;
-    
-    
-//    
-//    DQcirculo *circulo = [[DQcirculo alloc]initComFrame:CGRectMake(0, 0, self.view.bounds.size.height * 0.5, self.view.bounds.size.height * 0.5) comDelegate:self comNumeroDeCompostos:numeroDeCompostos eCompostos:arrayDeCompostos];
-//    
-//    circulo.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
-//    [self.view addSubview:circulo];
-//    
-//    [circulo mostrarInfoComposto];
-//    
+    DQViewControllerInfoTransformacao *infoTransformacao = [[DQViewControllerInfoTransformacao alloc]init];
+
+    [self presentViewController:infoTransformacao animated:NO completion:nil];
   
-//    NSArray *arrayReceitas = [[NSArray alloc]initWithObjects:@"Líquido Amarelo",@"Pequenas Explosões",@"Fogo",@"Carbono",@"Polvora", nil];
-//    
-//    
-//    DQTelaInfoReceitas * infoReceitas = [[DQTelaInfoReceitas alloc]initComReceitas:arrayReceitas frame:self.view.bounds];
-//    
-//    [self.view addSubview:infoReceitas];
+    
     
   
     
-    NSArray * elementos = [NSArray arrayWithObjects:@"Oxigênio", @"Chumbo",@"Iodo",@"Potássio",@"Nitrogênio", nil];
-    
-    
-    DQTelaTransformacao *trans = [[DQTelaTransformacao alloc]initWithSize:skView.bounds.size :elementos :[DQCoreDataController procurarReceita:@"Líquido Amarelo"]];
-    
-    [skView presentScene:trans];
+//    NSArray * elementos = [NSArray arrayWithObjects:@"Oxigênio", @"Chumbo",@"Iodo",@"Potássio",@"Nitrogênio", nil];
+//    
+//    
+//    DQTelaTransformacao *trans = [[DQTelaTransformacao alloc]initWithSize:skView.bounds.size receita:[DQCoreDataController procurarReceita:@"Líquido Amarelo"]];
+//    
+//    [skView presentScene:trans];
     
     
     //PARA CENAS DO JOGO

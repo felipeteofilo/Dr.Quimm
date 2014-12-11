@@ -2,7 +2,7 @@
 //  Receita.m
 //  DrQuim
 //
-//  Created by Felipe Teofilo on 10/12/14.
+//  Created by Felipe Teofilo on 11/12/14.
 //  Copyright (c) 2014 LEONARDO DE SOUSA MENDES. All rights reserved.
 //
 
@@ -15,7 +15,10 @@
 @dynamic descricao;
 @dynamic id_item_gerar;
 @dynamic info_conf_composto;
-@dynamic nome;
 @dynamic ligacoes;
+@dynamic nome;
+@dynamic resultado;
+@dynamic elementos;
+@dynamic numero_ligacoes;
 
 @end
