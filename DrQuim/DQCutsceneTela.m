@@ -16,15 +16,19 @@
         
         self.cutSceneAtual=cutSceneAtual;
         self.faseApresentar=faseApresentar;
-        self.controleSomScene=[[DQControleSomScene alloc]initControleSomFundo:CutScene nomeSom:[self.controleCutScene somCenaCutScene] indiceCena:self.cutSceneAtual];
+        
+        //Leonardo- Removido controle de SOM para faz Atualizacao
+        //self.controleSomScene=[[DQControleSomScene alloc]initControleSomFundo:CutScene nomeSom:[self.controleCutScene somCenaCutScene] indiceCena:self.cutSceneAtual];
         
         if (![self.controleCutScene fimCutScene]) {
             [self mostrarCena];
-            [self.controleSomScene tocarMusicaFundo];
+            //Leonardo- Removido controle de SOM para faz Atualizacao
+//            [self.controleSomScene tocarMusicaFundo];
         }else{
             [self apresentarFase];
         }
-        [self addChild:self.controleSomScene];
+        //Leonardo- Removido controle de SOM para faz Atualizacao
+//        [self addChild:self.controleSomScene];
         
     }
     return self;
@@ -36,17 +40,20 @@
     }
     
     //Remove os sons anteriores
-    [self.controleSomScene removeAllActions];
+    //Leonardo- Removido controle de SOM para faz Atualizacao
+//    [self.controleSomScene removeAllActions];
     
     NSString *nomeSomCenaCutScene=[self.controleCutScene somCenaCutScene];
     
     if ([nomeSomCenaCutScene length]!=0){
         //Remove o som anteriores
-        [self.controleSomScene removeActionForKey:@"tocandoSom"];
-        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene nLoops:-1]];
+        //Leonardo- Removido controle de SOM para faz Atualizacao
+//        [self.controleSomScene removeActionForKey:@"tocandoSom"];
+//        [self.controleSomScene tocarSom:[self.controleSomScene configuraPlayerSom:nomeSomCenaCutScene nLoops:-1]];
         
     }else if ([nomeSomCenaCutScene isEqualToString:@"REMOVERSOM"]){
-        [self.controleSomScene.playerMusicaFundo stop];
+//        //Leonardo- Removido controle de SOM para faz Atualizacao
+//        [self.controleSomScene.playerMusicaFundo stop];
     }
     
     

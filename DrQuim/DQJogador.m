@@ -52,18 +52,19 @@
         
         [self.controleMissoes iniciarMissao];
 
-        
-        self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
-        [self addChild:self.controleSom];
+//Leonardo- Removido controle de SOM para faz Atualizacao
+//        self.controleSom=[[DQControleSom alloc]initControleSom:Jogador];
+//        [self addChild:self.controleSom];
         
         [self setName:@"Jogador"];
         [self definePhisicsBody];
+        
+        [[NSNotificationCenter   defaultCenter]addObserver:self selector:@selector(adicionarFruta:) name:notificacaoFruta object:nil];
     }
     
     //retorna o jogador
     return self;
 }
-
 
 -(void)carregarInformacoesDoJogador:(NSString*)jogador{
     Usuario *infoSave = [DQCoreDataController procurarJogador:jogador];
@@ -315,6 +316,9 @@
             [self runAction:[SKAction repeatActionForever: movimentar] withKey:@"andar"];
             
         }
+        
+        //Posto uma notificaçao avisando ao controler de som para tocar o som de caminhada do player e falando que será tocado em looping
+        [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoJogadorPlaySom object:nil userInfo:[NSDictionary dictionaryWithObjects:@[@"Andar",[NSNumber numberWithInt:-1]] forKeys:@[@"acaoJogador",@"nLoops"]]];
     }
 }
 
@@ -405,8 +409,8 @@
         else{
             [self setSede:(self.vida - vida)];
         }
-        
-        [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:@"somPerdeuVida"]];
+        //Leonardo- Removido controle de SOM para faz Atualizacao
+//        [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:@"somPerdeuVida"]];
     }
     //está ganhando vida
     else{
@@ -431,8 +435,11 @@
         
         [self animarParado];
     }
+    //Leonardo- Removido controle de SOM para faz Atualizacao
+//    [self.controleSom pararSom];
     
-    [self.controleSom pararSom];
+    //Posta msg para o controlador parar o som
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoJogadorStopSom object:nil userInfo:nil];
 }
 
 //funcao para fazer o jogador escalar
@@ -456,6 +463,7 @@
         [self animarEscalando];
         // move o jogador
         [self runAction:[SKAction repeatActionForever:escalar]withKey:@"escalar"];
+        
     }
 }
 //Funcao para parar de derrapar
@@ -629,5 +637,13 @@
     if ([self.spriteNode actionForKey:@"animandoDerrapando"] && self.physicsBody.velocity.dx < 10 && self.physicsBody.velocity.dx > -10 ) {
         [self pararDerrapar];
     }
+}
+
+//Adiciona a fruta com o nome igual ao recebido no dicionario ao inventario do jogador
+-(void)adicionarFruta:(NSNotification*)notification{
+    NSString *nomeFruta=[notification.userInfo objectForKey:@"NomeFruta"];
+    
+    //TODO:- Decidir como fazer com frutas e legumes na alumentação :P
+    //[self.itens receberItem:nomeFruta quantidade:1];
 }
 @end

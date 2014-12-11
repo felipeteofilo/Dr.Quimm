@@ -12,6 +12,13 @@
 #import "DQCutsceneTela.h"
 #import "DQcirculo.h"
 
+#import "DQControleSom.h"
+#import "DQControleSomScene.h"
+
+
 @interface DQViewController : UIViewController
+
+@property DQControleSom *controleSomEfeitos;
+@property DQControleSomScene *controleSomScenes;
 
 @end

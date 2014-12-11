@@ -68,6 +68,8 @@
     //Leonardo - Alterado para classe específica
     self.backgroundAtual=[[DQBackground alloc]initBackgroundFase:self.faseAtual parte:self.parteFaseAtual naPosicao:CGPointZero infoParte:[self infoParteFase:self.parteFaseAtual]];
     
+    [self.backgroundAtual criaFrutasBackground:[[self infoParteFase:self.parteFaseAtual+1]objectForKey:@"Frutas"]];
+    
     //Adiciona a primeira parte da tela e o jogador no mundo
     [self.mundo addChild:self.backgroundAtual];
     
@@ -88,9 +90,10 @@
 }
 
 -(void)configurarSomFundo{
-    self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
+//    self.controleSom=[[DQControleSomScene alloc]initControleSomFundo:Fase nomeSom:[DQConfiguracaoFase somFundoFase:self.faseAtual] indiceCena:self.faseAtual];
+//    
+//    [self addChild:self.controleSom];
     
-    [self addChild:self.controleSom];
 }
 
 -(void)criaJogador{
@@ -184,6 +187,8 @@
                 //Adicionado Classe específica
                 [self.backgroundFuturo criaCoberturaParaBackground];
                 [self.backgroundFuturo criarPlataformas:[[self infoParteFase:self.parteFaseAtual+1]objectForKey:@"Plataformas"]];
+                [self.backgroundFuturo criaFrutasBackground:[[self infoParteFase:self.parteFaseAtual+1]objectForKey:@"Frutas"]];
+                
                 //Adiciona o background no mundo
                 [self.mundo addChild:self.backgroundFuturo];
                 
@@ -202,9 +207,11 @@
             if (self.parteFaseAtual -1 > 0) {
                 CGPoint posicaoAdd=CGPointMake(self.backgroundAtual.position.x -CGRectGetMaxX(self.frame), 0);
                 self.backgroundAnterior =[[DQBackground alloc]initBackgroundFase:self.faseAtual parte:self.parteFaseAtual-1 naPosicao:posicaoAdd infoParte:[self infoParteFase:self.parteFaseAtual-1]];
+
                 [self.backgroundAnterior criaCoberturaParaBackground];
                 [self.backgroundAnterior criarPlataformas:[[self infoParteFase:self.parteFaseAtual-1]objectForKey:@"Plataformas"]];
                 [self.backgroundAnterior criaEscalavel:[[[self.configFase objectForKey:@"Partes"]objectAtIndex:self.parteFaseAtual-2]objectForKey:@"Escalaveis"]];
+                [self.backgroundFuturo criaFrutasBackground:[[self infoParteFase:self.parteFaseAtual-1]objectForKey:@"Frutas"]];
                 
                 [self.mundo addChild:self.backgroundAnterior];
             }

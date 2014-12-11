@@ -7,8 +7,6 @@
 //
 
 #import "DQControleSom.h"
-#import "DQConfiguracaoFase.h"
-#import "DQCutsceneControle.h"
 
 typedef NS_ENUM(int, TipoCena){
     Fase=0,
@@ -18,10 +16,21 @@ typedef NS_ENUM(int, TipoCena){
 @interface DQControleSomScene : DQControleSom
 
 @property AVAudioPlayer *playerMusicaFundo;
-@property NSString *musicaFundo;
-@property int indiceScene;
-@property TipoCena tipoCena;
 
--(id)initControleSomFundo:(TipoCena)tipoCena nomeSom:(NSString*)somFundo indiceCena:(int)idCena;
+@property (atomic)int indiceCena;
+@property (atomic)TipoCena tipoCena;
+
+@property NSDictionary *sonsDisponiveisScene;
+//Aqui terei o nome do animal e som correspondente
+@property NSDictionary *sonsDisponiveisAnimais;
+
+@property AVAudioPlayer *playerMusicaCena;
+@property AVAudioPlayer *playerEfeitoCena;
+@property AVAudioPlayer *playerAnimal;
+
+
+-(id)initControleSomCena;
+
 -(void)tocarMusicaFundo;
+
 @end

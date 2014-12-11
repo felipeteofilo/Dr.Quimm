@@ -10,7 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "DQControleUserDefalts.h"
+#import "DQUteis.h"
 
+//Agora o controle de som ficará na viewController,
 typedef NS_ENUM(int, TipoObjeto){
     Jogador=0,
     ContadorGeiger=1,
@@ -23,22 +25,18 @@ typedef NS_ENUM(int, TamanhoTexto){
     Grande=3,
 };
 
-@interface DQControleSom : SKNode
+@interface DQControleSom : NSObject
 
-@property AVAudioPlayer *playerSom;
-@property NSArray * listaSons;
-@property int indiceSomTocar;
-@property TipoObjeto tipoObjeto;
+//Dicionários usados para guardar os sons para o jogador e o NPC
+@property NSDictionary *sonsDisponiveisJogador;
+@property NSDictionary *sonsDisponiveisNPC;
 
--(void)tocarSom;
--(int)sortearSomTocar;
--(void)tocarSom:(AVAudioPlayer*)player;
--(void)proxSom;
--(id)initControleSom:(TipoObjeto)objetoControlado;
--(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar;
--(AVAudioPlayer*)configuraPlayerSom:(NSString*)nomeSomTocar nLoops:(int)nLoops;
--(void)tocarSomLista;
--(void)tocarSomLooping:(AVAudioPlayer*)player;
--(void)pararSom;
--(NSString*)somFala:(TamanhoTexto)tamanhoFala;
+@property AVAudioPlayer *playerSomJogador;
+@property AVAudioPlayer *playerSomNPC;
+@property AVAudioPlayer *playerContador;
+
+-(id)initControleSom;
+-(AVAudioPlayer*)configuraPlayerSomUrlSom:(NSURL*)urlSom nLoops:(int)nLoops;
+-(NSURL*)urlParaSom:(NSString*)nomeSom;
+-(NSDictionary*)arquivoPlist;
 @end

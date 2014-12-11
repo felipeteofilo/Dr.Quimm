@@ -63,9 +63,9 @@
         for (SKNode *plataforma in [[self childNodeWithName:NomeNodePlataformas]children]) {
             if ([[plataforma.userData objectForKey:nomeMaiorY]floatValue] > posicaoYJogador) {
                 //Evita ficar chamando toda hora
-                if (!(plataforma.physicsBody.categoryBitMask & PlataformaAtivadaCategoria)!=0) {
+               // if (!(plataforma.physicsBody.categoryBitMask & PlataformaAtivadaCategoria)!=0) {
                     [self plataformaDesativadaCategoria:plataforma];
-                }
+                //}
             }
         }
     }
@@ -108,6 +108,16 @@
 
 -(void)escondeCobertura{
     
+}
+
+-(void)criaFrutasBackground:(NSArray*)frutasAdd{
+    for (NSDictionary *infoFruta in frutasAdd) {
+        DQFruta *fruta=[[DQFruta alloc]initFrutaComNome:[infoFruta objectForKey:@"NomeFruta"]];
+        
+        [fruta setPosition:CGPointFromString([infoFruta objectForKey:@"Posicao"])];
+        
+        [self addChild:fruta];
+    }
 }
 
 #pragma mark Configuracao corpos Fisicos

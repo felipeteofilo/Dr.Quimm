@@ -58,7 +58,8 @@
 //    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
     
     //Adiciona o controlador de Som á caixa de falas
-    [self.caixaDeFala addChild:self.controleSom];
+//    [self.caixaDeFala addChild:self.controleSom];
+    
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
@@ -99,7 +100,7 @@
 //    [self.controleSom tocarSom:[self.controleSom configuraPlayerSom:[self.controleSom somFala:[self.caixaDeFala tamanhoTexo]]]];
     
     //Adiciona o controlador de Som á caixa de falas
-    [self.caixaDeFala addChild:self.controleSom];
+//    [self.caixaDeFala addChild:self.controleSom];
     
     //retornamos a caixa de fala ja feita com as falas
     return self.caixaDeFala;
@@ -110,9 +111,8 @@
     //Setamos a fala atual para a proxima e removemos a caixa de falas anterior da tela
     self.falaAtual++;
     
-    //Remover sons Anteriores
-//    [self.controleSom pararSom];
-    
+    //Remover sons Anteriores // Verificar se o jogador terá voz diferente
+    [[NSNotificationCenter defaultCenter]postNotificationName:notificacaoNPCParar object:nil];
     
     [self.caixaDeFala removeFromParent];
     //verificamos se e o fim das falas atuais e retornamos que nao ha mais falas

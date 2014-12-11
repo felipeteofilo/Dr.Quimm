@@ -17,11 +17,19 @@
 {
     //PARA O CIRCULO DE TRANSFORMAÇÃO
     [super viewDidAppear:animated];
-    
-    DQViewControllerInfoTransformacao *infoTransformacao = [[DQViewControllerInfoTransformacao alloc]init];
 
-    [self presentViewController:infoTransformacao animated:NO completion:nil];
-  
+
+    //Inicia controladores de som
+    self.controleSomEfeitos =[[DQControleSom alloc]initControleSom];
+    self.controleSomScenes =[[DQControleSomScene alloc]initControleSomCena];
+    
+    SKView * skView = (SKView *)self.view;
+
+//    
+//    DQViewControllerInfoTransformacao *infoTransformacao = [[DQViewControllerInfoTransformacao alloc]init];
+//
+//    [self presentViewController:infoTransformacao animated:NO completion:nil];
+//  
     
     
   
@@ -36,14 +44,14 @@
     
     //PARA CENAS DO JOGO
 
-//DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
+DQMenuInicial *fase=[DQMenuInicial sceneWithSize:skView.bounds.size];
    // DQFlorestaParte1 *fase=[[DQFlorestaParte1 alloc]initFase:1 Size:skView.bounds.size];
 //DQVila *fase=[[DQVila alloc]initFase:2 Size:skView.bounds.size];
    // DQFlorestaParte2 *fase=[[DQFlorestaParte2 alloc]initFase:3 Size:skView.bounds.size];
     
- //fase.scaleMode = SKSceneScaleModeAspectFill;
+ fase.scaleMode = SKSceneScaleModeAspectFill;
 
-  //[skView presentScene:fase];
+  [skView presentScene:fase];
 }
 
 

@@ -25,6 +25,9 @@
 		3C6BF47A1A398488009B8048 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BF4791A398488009B8048 /* Receita.m */; };
 		3C6BF47D1A39958F009B8048 /* DQViewControllerInfoTransformacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BF47C1A39958F009B8048 /* DQViewControllerInfoTransformacao.m */; };
 		3C6BF4801A399622009B8048 /* DQViewControllerTransformacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BF47F1A399622009B8048 /* DQViewControllerTransformacao.m */; };
+		3C6BF4831A39A1D2009B8048 /* DQFruta.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BF4821A39A1D2009B8048 /* DQFruta.m */; };
+		3C6BF4851A39A247009B8048 /* Frutas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3C6BF4841A39A247009B8048 /* Frutas.atlas */; };
+		3C6BF4871A39A258009B8048 /* MapaIlha in Resources */ = {isa = PBXBuildFile; fileRef = 3C6BF4861A39A258009B8048 /* MapaIlha */; };
 		3CABE62E1977533F0064199A /* DQCoberturaBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CABE62D1977533F0064199A /* DQCoberturaBackground.m */; };
 		3CAC84261979F63D000FB1A1 /* AndandoDr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */; };
 		3CAC84281979F63D000FB1A1 /* Escalando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC84231979F63D000FB1A1 /* Escalando.atlas */; };
@@ -301,6 +304,10 @@
 		3C6BF47C1A39958F009B8048 /* DQViewControllerInfoTransformacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQViewControllerInfoTransformacao.m; sourceTree = "<group>"; };
 		3C6BF47E1A399622009B8048 /* DQViewControllerTransformacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQViewControllerTransformacao.h; sourceTree = "<group>"; };
 		3C6BF47F1A399622009B8048 /* DQViewControllerTransformacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQViewControllerTransformacao.m; sourceTree = "<group>"; };
+		3C6BF4811A39A1D2009B8048 /* DQFruta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQFruta.h; sourceTree = "<group>"; };
+		3C6BF4821A39A1D2009B8048 /* DQFruta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQFruta.m; sourceTree = "<group>"; };
+		3C6BF4841A39A247009B8048 /* Frutas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Frutas.atlas; sourceTree = "<group>"; };
+		3C6BF4861A39A258009B8048 /* MapaIlha */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapaIlha; sourceTree = "<group>"; };
 		3CABE62C1977533F0064199A /* DQCoberturaBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCoberturaBackground.h; sourceTree = "<group>"; };
 		3CABE62D1977533F0064199A /* DQCoberturaBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCoberturaBackground.m; sourceTree = "<group>"; };
 		3CAC84211979F63D000FB1A1 /* AndandoDr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = AndandoDr.atlas; path = Animacoes/AndandoDr.atlas; sourceTree = "<group>"; };
@@ -1035,6 +1042,8 @@
 		94AE258A19351620003E6015 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				3C6BF4861A39A258009B8048 /* MapaIlha */,
+				3C6BF4841A39A247009B8048 /* Frutas.atlas */,
 				75F9E7D51A1D0452004F12AF /* TransformacoesNova */,
 				75F54FC51A1BB73800C1F454 /* InfosTransformacao */,
 				7531C2381A1126A8002CC7F5 /* BotoesMovimento */,
@@ -1090,6 +1099,8 @@
 				C54B79C61972440400366512 /* DQEscalavel.m */,
 				C591815F1967756700AFD8B5 /* DQPlataforma.h */,
 				C59181601967756700AFD8B5 /* DQPlataforma.m */,
+				3C6BF4811A39A1D2009B8048 /* DQFruta.h */,
+				3C6BF4821A39A1D2009B8048 /* DQFruta.m */,
 				C513748A19FABFBB006E75D2 /* DQBackground.h */,
 				C513748B19FABFBB006E75D2 /* DQBackground.m */,
 				758D78301A0C014500ACB248 /* DQElemento.h */,
@@ -1506,6 +1517,7 @@
 				7531C22F1A1125AC002CC7F5 /* Fase1_Parte4.png in Resources */,
 				C5FFB44019A939FF004F3CD0 /* Maleta_LiAlH4.png in Resources */,
 				75F54FCA1A1BB73800C1F454 /* descript_elementos.png in Resources */,
+				3C6BF4851A39A247009B8048 /* Frutas.atlas in Resources */,
 				C57D7C2C1964E99000EF94C9 /* Jogador.png in Resources */,
 				943710AE19A3CE8600B8846E /* FalaPersonagens-Media-1.mp3 in Resources */,
 				75F9E7FA1A1D0908004F12AF /* composto_acucarSacarose.png in Resources */,
@@ -1577,6 +1589,7 @@
 				C5FFB43A19A939FF004F3CD0 /* Maleta_C3H6O.png in Resources */,
 				3CAC842A1979F63D000FB1A1 /* PulandoDr.atlas in Resources */,
 				75F9E80E1A1D0908004F12AF /* elemento_enxofre.png in Resources */,
+				3C6BF4871A39A258009B8048 /* MapaIlha in Resources */,
 				94080EB41933BA290024FB94 /* Main.storyboard in Resources */,
 				C52FBF2719A18D790059E973 /* Coelho.atlas in Resources */,
 				75F9E7FC1A1D0908004F12AF /* elemento_cloro.png in Resources */,
@@ -1608,6 +1621,7 @@
 				C5E1F415198AECC800F7A320 /* DQControleUserDefalts.m in Sources */,
 				23A538E9196C6E9E00821BAF /* DQNpc.m in Sources */,
 				CD54D9AB19A51E4E00C2798D /* DQAmostraQuimica.m in Sources */,
+				3C6BF4831A39A1D2009B8048 /* DQFruta.m in Sources */,
 				94A8681C1999683800604BA4 /* DQContadorGeiger.m in Sources */,
 				75FD765E1A24F77C0085FB3E /* DQTelaInfoReceitas.m in Sources */,
 				C52FBF2119A18D220059E973 /* DQUteis.m in Sources */,
