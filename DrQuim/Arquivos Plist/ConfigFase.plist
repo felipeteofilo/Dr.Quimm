@@ -416,9 +416,9 @@
 				<array>
 					<dict>
 						<key>NomeFruta</key>
-						<string></string>
+						<string>fruit2</string>
 						<key>Posicao</key>
-						<string></string>
+						<string>{100,100}</string>
 					</dict>
 				</array>
 				<key>Animais</key>
